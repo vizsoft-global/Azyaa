@@ -53,6 +53,7 @@ void main() async {
 
   // Start initial custom actions code
   await actions.changeStatusBarColor();
+  await actions.initBranch();
   // End initial custom actions code
 
   await FFLocalizations.initialize();
@@ -65,10 +66,6 @@ void main() async {
     "",
     loadDataAfterLaunch: true,
   );
-
-  // Start final custom action Branch init
-  await actions.initBranchnew();
-  // End Final custom action
 
   runApp(ChangeNotifierProvider(
     create: (context) => appState,

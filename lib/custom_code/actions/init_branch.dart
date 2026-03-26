@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 //
 import 'package:flutter_branch_sdk/flutter_branch_sdk.dart';
 
-Future initBranchnew() async {
+Future initBranch() async {
   // Add your function code here!
   await FlutterBranchSdk.init();
 }

@@ -72,7 +72,7 @@ dependencies:
   firebase_storage_platform_interface: 5.2.7
   firebase_storage_web: 3.10.14
   flutter_animate: 4.5.0
-  flutter_branch_sdk: ^8.9.0+1
+  flutter_branch_sdk: ^8.11.0
   flutter_cache_manager: 3.4.1
   flutter_card_swiper: 6.0.0
   flutter_native_splash: 2.4.1

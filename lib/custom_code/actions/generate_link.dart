@@ -21,15 +21,22 @@ Future<String?> generateLink(
 ) async {
   // Add your function code here!
   try {
-    // Step 1: Build metadata object
+    // Guard: canonicalIdentifier must not be empty
+    if (canonicalIdentifier.isEmpty) return null;
+
+    // Init SDK
+    FlutterBranchSdk.init();
+    await Future.delayed(const Duration(milliseconds: 300));
+
+    // Metadata
     final contentMetaData = BranchContentMetaData();
     if (metadata is Map<String, dynamic>) {
       metadata.forEach((key, value) {
-        contentMetaData.addCustomMetadata(key, value);
+        contentMetaData.addCustomMetadata(key, value.toString());
       });
     }
 
-    // Step 2: Create BranchUniversalObject
+    // BranchUniversalObject
     final buo = BranchUniversalObject(
       canonicalIdentifier: canonicalIdentifier,
       title: title,
@@ -37,15 +44,21 @@ Future<String?> generateLink(
       contentMetadata: contentMetaData,
     );
 
-    // Step 3: Build BranchLinkProperties
+    // BranchLinkProperties — set individually, safer across SDK versions
     final props = BranchLinkProperties(
-      channel: linkProperties['channel']?.toString() ?? '',
-      feature: linkProperties['feature']?.toString() ?? '',
-      campaign: linkProperties['campaign']?.toString() ?? '',
-      stage: linkProperties['stage']?.toString() ?? '',
+      channel: linkProperties is Map
+          ? linkProperties['channel']?.toString() ?? ''
+          : '',
+      feature: linkProperties is Map
+          ? linkProperties['feature']?.toString() ?? ''
+          : '',
+      campaign: linkProperties is Map
+          ? linkProperties['campaign']?.toString() ?? ''
+          : '',
+      stage: linkProperties is Map
+          ? linkProperties['stage']?.toString() ?? ''
+          : '',
     );
-
-    // Step 4: Add custom control parameters
     if (linkProperties is Map) {
       linkProperties.forEach((key, value) {
         if (!['channel', 'feature', 'campaign', 'stage'].contains(key)) {
@@ -54,49 +67,46 @@ Future<String?> generateLink(
       });
     }
 
-    // Step 5: Generate short link
+    // Generate link
     final response = await FlutterBranchSdk.getShortUrl(
       buo: buo,
       linkProperties: props,
     );
 
+    debugPrint(
+        'Branch response: ${response.success} | ${response.result} | ${response.errorMessage}');
+
     if (response.success) {
       return response.result;
     } else {
-      // SHOW ERROR DIALOG
       await showDialog(
         context: context,
-        builder: (alertDialogContext) {
-          return AlertDialog(
-            title: Text('Branch Link Error'),
-            content: Text(response.errorMessage ?? 'Unknown SDK Error'),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(alertDialogContext),
-                child: Text('Ok'),
-              ),
-            ],
-          );
-        },
+        builder: (ctx) => AlertDialog(
+          title: const Text('Branch Link Error'),
+          content: Text(response.errorMessage ?? 'Unknown SDK Error'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx),
+              child: const Text('Ok'),
+            ),
+          ],
+        ),
       );
       return null;
     }
   } catch (e) {
-    // SHOW EXCEPTION DIALOG
     await showDialog(
       context: context,
-      builder: (alertDialogContext) {
-        return AlertDialog(
-          title: Text('System Error'),
-          content: Text(e.toString()),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(alertDialogContext),
-              child: Text('Ok'),
-            ),
-          ],
-        );
-      },
+      builder: (ctx) => AlertDialog(
+        title: const Text('System Error'),
+        content: Text(e.toString()),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('Ok'),
+          ),
+        ],
+      ),
     );
     return null;
   }

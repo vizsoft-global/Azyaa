@@ -87,7 +87,13 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
       children: [
         Stack(
           children: [
-            if (widget!.backButtonStatus == true)
+            if ((widget!.backButtonStatus == true) &&
+                responsiveVisibility(
+                  context: context,
+                  tablet: false,
+                  tabletLandscape: false,
+                  desktop: false,
+                ))
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                 child: FlutterFlowIconButton(
@@ -118,7 +124,8 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                         );
                       },
                     );
-                    if (widget!.designerRef != null) {
+                    if ((widget!.designerRef != null) &&
+                        (widget!.navigationFrom == 'default')) {
                       await showDialog(
                         context: context,
                         builder: (alertDialogContext) {
@@ -453,19 +460,43 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  if (Navigator.of(context).canPop()) {
-                                    context.pop();
+                                  if (widget!.navigationFrom == 'designer') {
+                                    if (Navigator.of(context).canPop()) {
+                                      context.pop();
+                                    }
+                                    context.pushNamed(
+                                      CartWidget.routeName,
+                                      queryParameters: {
+                                        'designerRef': serializeParam(
+                                          widget!.designerRef,
+                                          ParamType.DocumentReference,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        '__transition_info__': TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
+                                        ),
+                                      },
+                                    );
+                                  } else {
+                                    if (Navigator.of(context).canPop()) {
+                                      context.pop();
+                                    }
+                                    context.pushNamed(
+                                      CartWidget.routeName,
+                                      extra: <String, dynamic>{
+                                        '__transition_info__': TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
+                                        ),
+                                      },
+                                    );
                                   }
-                                  context.pushNamed(
-                                    CartWidget.routeName,
-                                    extra: <String, dynamic>{
-                                      '__transition_info__': TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType: PageTransitionType.fade,
-                                        duration: Duration(milliseconds: 0),
-                                      ),
-                                    },
-                                  );
                                 },
                                 child: badges.Badge(
                                   badgeContent: Text(

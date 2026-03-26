@@ -8,7 +8,7 @@ export 'get_screen_width.dart' show getScreenWidth;
 export 'get_fcm_token_and_save.dart' show getFcmTokenAndSave;
 export 'register_fcm_token_if_missing.dart' show registerFcmTokenIfMissing;
 export 'notification_redirect.dart' show notificationRedirect;
-export 'init_branchnew.dart' show initBranchnew;
+export 'init_branch.dart' show initBranch;
 export 'generate_link.dart' show generateLink;
 export 'generate_branch_link.dart' show generateBranchLink;
 export 'handle_branch_routing.dart' show handleBranchRouting;
