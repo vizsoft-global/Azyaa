@@ -1,0 +1,48 @@
+import '/auth/base_auth_user_provider.dart';
+import '/auth/firebase_auth/auth_util.dart';
+import '/azyaa_group_a/customer/zone/user_wishlist/user_wishlist_widget.dart';
+import '/azyaa_group_a/payment/default_cart_button/default_cart_button_widget.dart';
+import '/azyaa_group_a/payment/product_attribute_cart_level/product_attribute_cart_level_widget.dart';
+import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
+import 'dart:ui';
+import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
+import 'product_listview_widget.dart' show ProductListviewWidget;
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
+
+class ProductListviewModel extends FlutterFlowModel<ProductListviewWidget> {
+  ///  State fields for stateful widgets in this component.
+
+  // Model for User-Wishlist component.
+  late UserWishlistModel userWishlistModel;
+  // Stores action output result for [Firestore Query - Query a collection] action in Container widget.
+  IdMapRecord? idMapResultNew;
+  // Stores action output result for [Backend Call - Read Document] action in Container widget.
+  ProductsRecord? iconProductResult;
+  // Model for DefaultCartButton component.
+  late DefaultCartButtonModel defaultCartButtonModel;
+
+  @override
+  void initState(BuildContext context) {
+    userWishlistModel = createModel(context, () => UserWishlistModel());
+    defaultCartButtonModel =
+        createModel(context, () => DefaultCartButtonModel());
+  }
+
+  @override
+  void dispose() {
+    userWishlistModel.dispose();
+    defaultCartButtonModel.dispose();
+  }
+}
