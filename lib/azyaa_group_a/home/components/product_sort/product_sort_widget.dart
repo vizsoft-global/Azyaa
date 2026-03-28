@@ -200,7 +200,8 @@ class _ProductSortWidgetState extends State<ProductSortWidget> {
                     ..isSortHtoL = null,
                 );
                 FFAppState().update(() {});
-                if (_model.radioButtonValue == 'Newer') {
+                if ((_model.radioButtonValue == 'Newer') &&
+                    (_model.radioButtonValue == 'أحدث')) {
                   FFAppState().updateUserFilterStruct(
                     (e) => e
                       ..sortStatus = null
@@ -208,7 +209,8 @@ class _ProductSortWidgetState extends State<ProductSortWidget> {
                   );
                   FFAppState().update(() {});
                 } else {
-                  if (_model.radioButtonValue == 'Popular') {
+                  if ((_model.radioButtonValue == 'Popular') &&
+                      (_model.radioButtonValue == 'شائع')) {
                     FFAppState().updateUserFilterStruct(
                       (e) => e
                         ..sortStatus = 'set'
@@ -216,7 +218,8 @@ class _ProductSortWidgetState extends State<ProductSortWidget> {
                     );
                     FFAppState().update(() {});
                   } else {
-                    if (_model.radioButtonValue == 'Recommended') {
+                    if ((_model.radioButtonValue == 'Recommended') &&
+                        (_model.radioButtonValue == 'مُستَحسَن')) {
                       FFAppState().updateUserFilterStruct(
                         (e) => e
                           ..sortStatus = 'set'
@@ -224,7 +227,9 @@ class _ProductSortWidgetState extends State<ProductSortWidget> {
                       );
                       FFAppState().update(() {});
                     } else {
-                      if (_model.radioButtonValue == 'Price - Low to High') {
+                      if ((_model.radioButtonValue == 'Price - Low to High') &&
+                          (_model.radioButtonValue ==
+                              'السعر - من الأقل إلى الأعلى')) {
                         FFAppState().updateUserFilterStruct(
                           (e) => e
                             ..sortStatus = 'set'
@@ -232,7 +237,10 @@ class _ProductSortWidgetState extends State<ProductSortWidget> {
                         );
                         FFAppState().update(() {});
                       } else {
-                        if (_model.radioButtonValue == 'Price - High to Low') {
+                        if ((_model.radioButtonValue ==
+                                'Price - High to Low') &&
+                            (_model.radioButtonValue ==
+                                'السعر - من الأعلى إلى الأدنى')) {
                           FFAppState().updateUserFilterStruct(
                             (e) => e
                               ..sortStatus = 'set'
@@ -267,7 +275,10 @@ class _ProductSortWidgetState extends State<ProductSortWidget> {
                                 return 'Newer';
                               }
                             }()
-                          : 'Newer'),
+                          : FFLocalizations.of(context).getVariableText(
+                              enText: 'Newer',
+                              arText: 'أحدث',
+                            )),
               optionHeight: 32.0,
               textStyle: FlutterFlowTheme.of(context).labelMedium.override(
                     fontFamily: 'Aileron',

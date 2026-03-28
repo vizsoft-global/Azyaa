@@ -39,7 +39,7 @@
         <key>CFBundleTypeRole</key>
         <string>Editor</string>
         <key>CFBundleURLName</key>
-        <string>v2qlt.test.app.link</string>
+        <string>v2qlt.test-app.link</string>
         <key>CFBundleURLSchemes</key>
         <array>
           <string>v2qlt</string>

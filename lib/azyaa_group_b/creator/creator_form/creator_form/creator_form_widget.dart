@@ -617,9 +617,10 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                               }
                                             }
 
-                                            if (_model
-                                                    .uploadedFileUrl_uploadDataWvr134 !=
-                                                '') {
+                                            if (_model.uploadedFileUrl_uploadDataWvr134 !=
+                                                    null &&
+                                                _model.uploadedFileUrl_uploadDataWvr134 !=
+                                                    '') {
                                               _model.photoUploadStatus =
                                                   'uploaded';
                                               safeSetState(() {});
@@ -2191,98 +2192,139 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                          MainAxisAlignment.start,
                                       children: [
                                         if (_model.thumbnailImages.length <= 5)
                                           FFButtonWidget(
                                             onPressed: () async {
-                                              final selectedMedia =
-                                                  await selectMediaWithSourceBottomSheet(
-                                                context: context,
-                                                allowPhoto: true,
-                                              );
-                                              if (selectedMedia != null &&
-                                                  selectedMedia.every((m) =>
-                                                      validateFileFormat(
-                                                          m.storagePath,
-                                                          context))) {
-                                                safeSetState(() => _model
-                                                        .isDataUploading_thumbailimages =
-                                                    true);
-                                                var selectedUploadedFiles =
-                                                    <FFUploadedFile>[];
-
-                                                var downloadUrls = <String>[];
-                                                try {
-                                                  selectedUploadedFiles =
-                                                      selectedMedia
-                                                          .map((m) =>
-                                                              FFUploadedFile(
-                                                                name: m
-                                                                    .storagePath
-                                                                    .split('/')
-                                                                    .last,
-                                                                bytes: m.bytes,
-                                                                height: m
-                                                                    .dimensions
-                                                                    ?.height,
-                                                                width: m
-                                                                    .dimensions
-                                                                    ?.width,
-                                                                blurHash:
-                                                                    m.blurHash,
-                                                                originalFilename:
-                                                                    m.originalFilename,
-                                                              ))
-                                                          .toList();
-
-                                                  downloadUrls =
-                                                      (await Future.wait(
-                                                    selectedMedia.map(
-                                                      (m) async =>
-                                                          await uploadData(
-                                                              m.storagePath,
-                                                              m.bytes),
-                                                    ),
-                                                  ))
-                                                          .where(
-                                                              (u) => u != null)
-                                                          .map((u) => u!)
-                                                          .toList();
-                                                } finally {
-                                                  _model.isDataUploading_thumbailimages =
-                                                      false;
-                                                }
-                                                if (selectedUploadedFiles
-                                                            .length ==
-                                                        selectedMedia.length &&
-                                                    downloadUrls.length ==
-                                                        selectedMedia.length) {
-                                                  safeSetState(() {
-                                                    _model.uploadedLocalFile_thumbailimages =
-                                                        selectedUploadedFiles
-                                                            .first;
-                                                    _model.uploadedFileUrl_thumbailimages =
-                                                        downloadUrls.first;
-                                                  });
-                                                } else {
-                                                  safeSetState(() {});
-                                                  return;
-                                                }
-                                              }
-
                                               if (_model
-                                                      .uploadedFileUrl_thumbailimages !=
-                                                  '') {
-                                                _model.addToThumbnailImages(_model
-                                                    .uploadedFileUrl_thumbailimages);
-                                                _model.photoUploadStatus =
-                                                    'uploaded';
-                                                safeSetState(() {});
+                                                      .thumbnailImages.length <
+                                                  5) {
+                                                final selectedMedia =
+                                                    await selectMediaWithSourceBottomSheet(
+                                                  context: context,
+                                                  allowPhoto: true,
+                                                );
+                                                if (selectedMedia != null &&
+                                                    selectedMedia.every((m) =>
+                                                        validateFileFormat(
+                                                            m.storagePath,
+                                                            context))) {
+                                                  safeSetState(() => _model
+                                                          .isDataUploading_thumbailimages =
+                                                      true);
+                                                  var selectedUploadedFiles =
+                                                      <FFUploadedFile>[];
+
+                                                  var downloadUrls = <String>[];
+                                                  try {
+                                                    selectedUploadedFiles =
+                                                        selectedMedia
+                                                            .map((m) =>
+                                                                FFUploadedFile(
+                                                                  name: m
+                                                                      .storagePath
+                                                                      .split(
+                                                                          '/')
+                                                                      .last,
+                                                                  bytes:
+                                                                      m.bytes,
+                                                                  height: m
+                                                                      .dimensions
+                                                                      ?.height,
+                                                                  width: m
+                                                                      .dimensions
+                                                                      ?.width,
+                                                                  blurHash: m
+                                                                      .blurHash,
+                                                                  originalFilename:
+                                                                      m.originalFilename,
+                                                                ))
+                                                            .toList();
+
+                                                    downloadUrls = (await Future
+                                                            .wait(
+                                                      selectedMedia.map(
+                                                        (m) async =>
+                                                            await uploadData(
+                                                                m.storagePath,
+                                                                m.bytes),
+                                                      ),
+                                                    ))
+                                                        .where((u) => u != null)
+                                                        .map((u) => u!)
+                                                        .toList();
+                                                  } finally {
+                                                    _model.isDataUploading_thumbailimages =
+                                                        false;
+                                                  }
+                                                  if (selectedUploadedFiles
+                                                              .length ==
+                                                          selectedMedia
+                                                              .length &&
+                                                      downloadUrls.length ==
+                                                          selectedMedia
+                                                              .length) {
+                                                    safeSetState(() {
+                                                      _model.uploadedLocalFile_thumbailimages =
+                                                          selectedUploadedFiles
+                                                              .first;
+                                                      _model.uploadedFileUrl_thumbailimages =
+                                                          downloadUrls.first;
+                                                    });
+                                                  } else {
+                                                    safeSetState(() {});
+                                                    return;
+                                                  }
+                                                }
+
+                                                if (_model
+                                                        .uploadedFileUrl_thumbailimages !=
+                                                    '') {
+                                                  _model.addToThumbnailImages(_model
+                                                      .uploadedFileUrl_thumbailimages);
+                                                  _model.photoUploadStatus =
+                                                      'uploaded';
+                                                  safeSetState(() {});
+                                                } else {
+                                                  _model.photoUploadStatus =
+                                                      'notyet';
+                                                  safeSetState(() {});
+                                                }
                                               } else {
-                                                _model.photoUploadStatus =
-                                                    'notyet';
-                                                safeSetState(() {});
+                                                await showDialog(
+                                                  context: context,
+                                                  builder:
+                                                      (alertDialogContext) {
+                                                    return WebViewAware(
+                                                      child: AlertDialog(
+                                                        content: Text(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getVariableText(
+                                                          enText:
+                                                              'Only 5 samples are allowed.',
+                                                          arText:
+                                                              'مسموح بـ 5 عينات فقط.',
+                                                        )),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext),
+                                                            child: Text(
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getVariableText(
+                                                              enText: 'Ok',
+                                                              arText: 'نعم',
+                                                            )),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    );
+                                                  },
+                                                );
                                               }
                                             },
                                             text: FFLocalizations.of(context)
@@ -2331,9 +2373,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                       .info,
                                             ),
                                           ),
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
+                                        Expanded(
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -2348,13 +2388,25 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                 arText: 'ليس بعد',
                                               );
                                               safeSetState(() {});
+                                              safeSetState(() {
+                                                _model.isDataUploading_thumbailimages =
+                                                    false;
+                                                _model.uploadedLocalFile_thumbailimages =
+                                                    FFUploadedFile(
+                                                        bytes:
+                                                            Uint8List.fromList(
+                                                                []),
+                                                        originalFilename: '');
+                                                _model.uploadedFileUrl_thumbailimages =
+                                                    '';
+                                              });
                                             },
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
                                                 'np1d0az1' /* Remove all */,
                                               ),
-                                              textAlign: TextAlign.center,
+                                              textAlign: TextAlign.end,
                                               maxLines: 1,
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -2484,6 +2536,18 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                                   imageListIndex);
                                                               safeSetState(
                                                                   () {});
+                                                              safeSetState(() {
+                                                                _model.isDataUploading_thumbailimages =
+                                                                    false;
+                                                                _model.uploadedLocalFile_thumbailimages = FFUploadedFile(
+                                                                    bytes: Uint8List
+                                                                        .fromList(
+                                                                            []),
+                                                                    originalFilename:
+                                                                        '');
+                                                                _model.uploadedFileUrl_thumbailimages =
+                                                                    '';
+                                                              });
                                                             },
                                                             child: Container(
                                                               decoration:
@@ -5510,110 +5574,147 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     !_model.formKey.currentState!.validate()) {
                                   return;
                                 }
-                                if (_model.termsCheckboxValue == true) {
-                                  _model.iDMapResult =
-                                      await queryIdMapRecordOnce(
-                                    queryBuilder: (idMapRecord) =>
-                                        idMapRecord.where(
-                                      'type',
-                                      isEqualTo: 'Main',
-                                    ),
-                                    singleRecord: true,
-                                  ).then((s) => s.firstOrNull);
-                                  _shouldSetState = true;
+                                if (_model.styles.length > 0) {
+                                  if (_model.termsCheckboxValue == true) {
+                                    _model.iDMapResult =
+                                        await queryIdMapRecordOnce(
+                                      queryBuilder: (idMapRecord) =>
+                                          idMapRecord.where(
+                                        'type',
+                                        isEqualTo: 'Main',
+                                      ),
+                                      singleRecord: true,
+                                    ).then((s) => s.firstOrNull);
+                                    _shouldSetState = true;
 
-                                  await currentUserReference!
-                                      .update(createUsersRecordData(
-                                    creatorRequests:
-                                        createCreatorRequestsStruct(
-                                      creatorRequestId: _model
-                                          .iDMapResult?.creatorRequestId
-                                          ?.toString(),
-                                      requestType: 'Pending',
-                                      submissionDate: getCurrentTimestamp,
-                                      formData: createFormListStruct(
-                                        name: _model
-                                            .fullnameFieldTextController.text,
-                                        bio: _model
-                                            .aboutYourselfFieldTextController
-                                            .text,
-                                        experienceInYears: double.tryParse(
-                                            _model.experienceFieldTextController
-                                                .text),
-                                        preferredPromotionStyle: _model
-                                            .preferredPromotionStyleFieldTextController
-                                            .text,
-                                        portfolioLink: _model
-                                            .portfolioorWebsiteLinkFieldTextController
-                                            .text,
-                                        instagramProfile: _model
-                                            .instagramFieldTextController.text,
-                                        tiktokHandle: _model
-                                            .tikTokFieldTextController.text,
-                                        youtubeChannel: _model
-                                            .facebookFollowersfieldTextController
-                                            .text,
-                                        otherProfile: _model
-                                            .otherFieldTextController.text,
-                                        eventCollabrations:
-                                            _model.collaborationsCheckboxValue,
-                                        email: _model.emailTextController.text,
-                                        formId: _model.iDMapResult?.formId,
-                                        alternativeEmail: _model
-                                            .alternativeEmailTextController
-                                            .text,
-                                        alternativePhone:
-                                            '${functions.getDailCode(_model.countryListValue)}${_model.alternativephonenumberTextController.text}',
-                                        phone: _model
-                                            .phonenumberReadOnlyTextController
-                                            .text,
-                                        brandPhoto: _model
-                                            .uploadedFileUrl_uploadDataWvr134,
-                                        facebookProfile: _model
-                                            .facebookFieldTextController.text,
-                                        instagramProfileFollowers: _model
-                                            .instagramFollowersFieldTextController
-                                            .text,
-                                        facebookProfileFollowers: _model
-                                            .facebookFollowersfieldTextController
-                                            .text,
-                                        tiktokProfileFollowers: _model
-                                            .tikTokFollowersfieldTextController
-                                            .text,
-                                        youtubeProfileFollowers: _model
-                                            .youtubeFollowersfieldTextController
-                                            .text,
-                                        brandCollaboration:
-                                            _model.collaborationsCheckboxValue,
-                                        alternativeCountry:
-                                            _model.countryListValue,
-                                        country: _model.countryListmobileValue,
-                                        location: _model
-                                            .locationFieldTextController.text,
-                                        fieldValues: {
-                                          'brand_gallery':
-                                              _model.thumbnailImages,
-                                          'content_category_list':
-                                              _model.styles,
-                                        },
+                                    await currentUserReference!
+                                        .update(createUsersRecordData(
+                                      creatorRequests:
+                                          createCreatorRequestsStruct(
+                                        creatorRequestId: _model
+                                            .iDMapResult?.creatorRequestId
+                                            ?.toString(),
+                                        requestType: 'Pending',
+                                        submissionDate: getCurrentTimestamp,
+                                        formData: createFormListStruct(
+                                          name: _model
+                                              .fullnameFieldTextController.text,
+                                          bio: _model
+                                              .aboutYourselfFieldTextController
+                                              .text,
+                                          experienceInYears: double.tryParse(
+                                              _model
+                                                  .experienceFieldTextController
+                                                  .text),
+                                          preferredPromotionStyle: _model
+                                              .preferredPromotionStyleFieldTextController
+                                              .text,
+                                          portfolioLink: _model
+                                              .portfolioorWebsiteLinkFieldTextController
+                                              .text,
+                                          instagramProfile: _model
+                                              .instagramFieldTextController
+                                              .text,
+                                          tiktokHandle: _model
+                                              .tikTokFieldTextController.text,
+                                          youtubeChannel: _model
+                                              .facebookFollowersfieldTextController
+                                              .text,
+                                          otherProfile: _model
+                                              .otherFieldTextController.text,
+                                          eventCollabrations: _model
+                                              .collaborationsCheckboxValue,
+                                          email:
+                                              _model.emailTextController.text,
+                                          formId: _model.iDMapResult?.formId,
+                                          alternativeEmail: _model
+                                              .alternativeEmailTextController
+                                              .text,
+                                          alternativePhone:
+                                              '${functions.getDailCode(_model.countryListValue)}${_model.alternativephonenumberTextController.text}',
+                                          phone: _model
+                                              .phonenumberReadOnlyTextController
+                                              .text,
+                                          brandPhoto: _model
+                                              .uploadedFileUrl_uploadDataWvr134,
+                                          facebookProfile: _model
+                                              .facebookFieldTextController.text,
+                                          instagramProfileFollowers: _model
+                                              .instagramFollowersFieldTextController
+                                              .text,
+                                          facebookProfileFollowers: _model
+                                              .facebookFollowersfieldTextController
+                                              .text,
+                                          tiktokProfileFollowers: _model
+                                              .tikTokFollowersfieldTextController
+                                              .text,
+                                          youtubeProfileFollowers: _model
+                                              .youtubeFollowersfieldTextController
+                                              .text,
+                                          brandCollaboration: _model
+                                              .collaborationsCheckboxValue,
+                                          alternativeCountry:
+                                              _model.countryListValue,
+                                          country:
+                                              _model.countryListmobileValue,
+                                          location: _model
+                                              .locationFieldTextController.text,
+                                          fieldValues: {
+                                            'brand_gallery':
+                                                _model.thumbnailImages,
+                                            'content_category_list':
+                                                _model.styles,
+                                          },
+                                          clearUnsetFields: false,
+                                        ),
                                         clearUnsetFields: false,
                                       ),
-                                      clearUnsetFields: false,
-                                    ),
-                                  ));
+                                    ));
 
-                                  await _model.iDMapResult!.reference.update({
-                                    ...mapToFirestore(
-                                      {
-                                        'form_id': FieldValue.increment(1),
-                                        'creator_request_id':
-                                            FieldValue.increment(1),
+                                    await _model.iDMapResult!.reference.update({
+                                      ...mapToFirestore(
+                                        {
+                                          'form_id': FieldValue.increment(1),
+                                          'creator_request_id':
+                                              FieldValue.increment(1),
+                                        },
+                                      ),
+                                    });
+
+                                    context.pushNamed(
+                                        CreatorFormUploadWidget.routeName);
+                                  } else {
+                                    await showDialog(
+                                      context: context,
+                                      builder: (alertDialogContext) {
+                                        return WebViewAware(
+                                          child: AlertDialog(
+                                            content: Text(
+                                                FFLocalizations.of(context)
+                                                    .getVariableText(
+                                              enText:
+                                                  'Accept Terms and Conditions.',
+                                              arText: 'قبول الشروط والأحكام.',
+                                            )),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext),
+                                                child: Text(
+                                                    FFLocalizations.of(context)
+                                                        .getVariableText(
+                                                  enText: 'Ok',
+                                                  arText: 'نعم',
+                                                )),
+                                              ),
+                                            ],
+                                          ),
+                                        );
                                       },
-                                    ),
-                                  });
-
-                                  context.pushNamed(
-                                      CreatorFormUploadWidget.routeName);
+                                    );
+                                    if (_shouldSetState) safeSetState(() {});
+                                    return;
+                                  }
                                 } else {
                                   await showDialog(
                                     context: context,
@@ -5624,8 +5725,8 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                               FFLocalizations.of(context)
                                                   .getVariableText(
                                             enText:
-                                                'Accept Terms and Conditions.',
-                                            arText: 'قبول الشروط والأحكام.',
+                                                'Select primary content niche ',
+                                            arText: 'اختر مجال المحتوى الأساسي',
                                           )),
                                           actions: [
                                             TextButton(
@@ -5643,8 +5744,6 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                       );
                                     },
                                   );
-                                  if (_shouldSetState) safeSetState(() {});
-                                  return;
                                 }
 
                                 if (_shouldSetState) safeSetState(() {});

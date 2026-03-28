@@ -1,6 +1,7 @@
 import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/loglist_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -12,6 +13,7 @@ import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'home_app_bar_model.dart';
 export 'home_app_bar_model.dart';
 
@@ -133,41 +135,68 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                         ),
                       ),
                       if (functions.getTimeOfDay() != 'hide')
-                        Text(
-                          () {
-                            if (functions.getTimeOfDay() == 'Morning') {
-                              return FFLocalizations.of(context)
-                                  .getVariableText(
-                                enText: 'Good Morning',
-                                arText: 'صباح الخير',
-                              );
-                            } else if (functions.getTimeOfDay() ==
-                                'Afternoon') {
-                              return FFLocalizations.of(context)
-                                  .getVariableText(
-                                enText: 'Good Afternoon',
-                                arText: 'مساء الخير',
-                              );
-                            } else if (functions.getTimeOfDay() == 'Evening') {
-                              return FFLocalizations.of(context)
-                                  .getVariableText(
-                                enText: 'Good Evening',
-                                arText: 'مساء الخير',
-                              );
-                            } else {
-                              return FFLocalizations.of(context)
-                                  .getVariableText(
-                                enText: 'Good Evening',
-                                arText: 'مساء الخير',
-                              );
-                            }
-                          }(),
-                          style:
-                              FlutterFlowTheme.of(context).bodyLarge.override(
-                                    fontFamily: 'Aileron',
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: Colors.transparent,
+                              context: context,
+                              builder: (context) {
+                                return WebViewAware(
+                                  child: Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: Container(
+                                      height:
+                                          MediaQuery.sizeOf(context).height *
+                                              0.85,
+                                      child: LoglistWidget(),
+                                    ),
                                   ),
+                                );
+                              },
+                            ).then((value) => safeSetState(() {}));
+                          },
+                          child: Text(
+                            () {
+                              if (functions.getTimeOfDay() == 'Morning') {
+                                return FFLocalizations.of(context)
+                                    .getVariableText(
+                                  enText: 'Good Morning',
+                                  arText: 'صباح الخير',
+                                );
+                              } else if (functions.getTimeOfDay() ==
+                                  'Afternoon') {
+                                return FFLocalizations.of(context)
+                                    .getVariableText(
+                                  enText: 'Good Afternoon',
+                                  arText: 'مساء الخير',
+                                );
+                              } else if (functions.getTimeOfDay() ==
+                                  'Evening') {
+                                return FFLocalizations.of(context)
+                                    .getVariableText(
+                                  enText: 'Good Evening',
+                                  arText: 'مساء الخير',
+                                );
+                              } else {
+                                return FFLocalizations.of(context)
+                                    .getVariableText(
+                                  enText: 'Good Evening',
+                                  arText: 'مساء الخير',
+                                );
+                              }
+                            }(),
+                            style:
+                                FlutterFlowTheme.of(context).bodyLarge.override(
+                                      fontFamily: 'Aileron',
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                          ),
                         ),
                     ],
                   ),

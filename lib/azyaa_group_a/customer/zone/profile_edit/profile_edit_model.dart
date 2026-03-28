@@ -84,17 +84,22 @@ class ProfileEditModel extends FlutterFlowModel<ProfileEditWidget> {
     return null;
   }
 
-  // State field(s) for Last widget.
-  FocusNode? lastFocusNode;
-  TextEditingController? lastTextController;
-  String? Function(BuildContext, String?)? lastTextControllerValidator;
-  String? _lastTextControllerValidator(BuildContext context, String? val) {
+  // State field(s) for LastName widget.
+  FocusNode? lastNameFocusNode;
+  TextEditingController? lastNameTextController;
+  String? Function(BuildContext, String?)? lastNameTextControllerValidator;
+  String? _lastNameTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'nvunjvhu' /* Please enter last name */,
       );
     }
 
+    if (!RegExp('^[A-Za-z][A-Za-z\\s\'-]*\$').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'wh6wyg0c' /* Invalid input */,
+      );
+    }
     return null;
   }
 
@@ -144,7 +149,7 @@ class ProfileEditModel extends FlutterFlowModel<ProfileEditWidget> {
     universalAppBarModel = createModel(context, () => UniversalAppBarModel());
     userInitialModel = createModel(context, () => UserInitialModel());
     firstTextControllerValidator = _firstTextControllerValidator;
-    lastTextControllerValidator = _lastTextControllerValidator;
+    lastNameTextControllerValidator = _lastNameTextControllerValidator;
     emailTextControllerValidator = _emailTextControllerValidator;
     phone1TextControllerValidator = _phone1TextControllerValidator;
   }
@@ -157,8 +162,8 @@ class ProfileEditModel extends FlutterFlowModel<ProfileEditWidget> {
     firstFocusNode?.dispose();
     firstTextController?.dispose();
 
-    lastFocusNode?.dispose();
-    lastTextController?.dispose();
+    lastNameFocusNode?.dispose();
+    lastNameTextController?.dispose();
 
     emailFocusNode?.dispose();
     emailTextController?.dispose();

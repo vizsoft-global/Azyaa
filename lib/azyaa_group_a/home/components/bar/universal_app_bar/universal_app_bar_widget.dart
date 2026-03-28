@@ -1,6 +1,7 @@
 import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/loglist_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -90,6 +91,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
             if ((widget!.backButtonStatus == true) &&
                 responsiveVisibility(
                   context: context,
+                  phone: false,
                   tablet: false,
                   tabletLandscape: false,
                   desktop: false,
@@ -125,7 +127,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                       },
                     );
                     if ((widget!.designerRef != null) &&
-                        (widget!.navigationFrom == 'default')) {
+                        (widget!.navigationFrom == 'designer')) {
                       await showDialog(
                         context: context,
                         builder: (alertDialogContext) {
@@ -175,14 +177,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                   },
                 ),
               ),
-            if ((widget!.backButtonStatus == true) &&
-                responsiveVisibility(
-                  context: context,
-                  phone: false,
-                  tablet: false,
-                  tabletLandscape: false,
-                  desktop: false,
-                ))
+            if (widget!.backButtonStatus == true)
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                 child: FlutterFlowIconButton(
@@ -278,18 +273,42 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
             alignment: AlignmentDirectional(-1.0, 0.0),
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
-              child: Text(
-                widget!.title.maybeHandleOverflow(
-                  maxChars: 40,
-                  replacement: '…',
+              child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  await showModalBottomSheet(
+                    isScrollControlled: true,
+                    backgroundColor: Colors.transparent,
+                    context: context,
+                    builder: (context) {
+                      return WebViewAware(
+                        child: Padding(
+                          padding: MediaQuery.viewInsetsOf(context),
+                          child: Container(
+                            height: 85.0,
+                            child: LoglistWidget(),
+                          ),
+                        ),
+                      );
+                    },
+                  ).then((value) => safeSetState(() {}));
+                },
+                child: Text(
+                  widget!.title.maybeHandleOverflow(
+                    maxChars: 40,
+                    replacement: '…',
+                  ),
+                  textAlign: TextAlign.center,
+                  style: FlutterFlowTheme.of(context).bodyLarge.override(
+                        fontFamily: 'Aileron',
+                        fontSize: 18.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
-                textAlign: TextAlign.center,
-                style: FlutterFlowTheme.of(context).bodyLarge.override(
-                      fontFamily: 'Aileron',
-                      fontSize: 18.0,
-                      letterSpacing: 0.0,
-                      fontWeight: FontWeight.bold,
-                    ),
               ),
             ),
           ),

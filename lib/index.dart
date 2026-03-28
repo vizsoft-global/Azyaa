@@ -59,7 +59,7 @@ export '/azyaa_group_a/customer/sign/phone/phone/phone_widget.dart'
     show PhoneWidget;
 export '/azyaa_group_a/customer/sign/phone/phone_verification/phone_verification_widget.dart'
     show PhoneVerificationWidget;
-export '/azyaa_group_a/payment/cart/cart_widget.dart' show CartWidget;
+export '/azyaa_group_a/cart/cart_widget.dart' show CartWidget;
 export '/ui/gift_wallet_module/s4_redeem_gift_card/s4_redeem_gift_card_widget.dart'
     show S4RedeemGiftCardWidget;
 export '/azyaa_group_a/customer/zone/wishlist/wishlist_widget.dart'

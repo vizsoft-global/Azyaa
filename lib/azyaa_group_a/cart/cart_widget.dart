@@ -94,6 +94,7 @@ class _CartWidgetState extends State<CartWidget> {
                         navigationFrom: 'default',
                         tryonStatus: false,
                         shareIconStatus: false,
+                        designerRef: widget!.designerRef,
                       ),
                     ),
                   ],

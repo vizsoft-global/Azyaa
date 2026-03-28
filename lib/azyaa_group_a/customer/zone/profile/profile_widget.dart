@@ -112,7 +112,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                         searchIconStatus: false,
                         wishlistIconStatus: true,
                         tryonStatus: false,
-                        shareIconStatus: true,
+                        shareIconStatus: false,
                       ),
                     ),
                   ],
@@ -1042,7 +1042,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                                 text: FFLocalizations.of(
                                                                         context)
                                                                     .getText(
-                                                                  'x45fgxa4' /* Our  */,
+                                                                  'x45fgxa4' /* Creators */,
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -1063,7 +1063,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                                 text: FFLocalizations.of(
                                                                         context)
                                                                     .getText(
-                                                                  'rdbxo1pm' /* Creators  */,
+                                                                  'rdbxo1pm' /*  Space */,
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)

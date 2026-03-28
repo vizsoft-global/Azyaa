@@ -519,6 +519,18 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                                       null;
                                                                   safeSetState(
                                                                       () {});
+                                                                  safeSetState(
+                                                                      () {
+                                                                    _model.isDataUploading_uploadDataYua1 =
+                                                                        false;
+                                                                    _model.uploadedLocalFile_uploadDataYua1 = FFUploadedFile(
+                                                                        bytes: Uint8List.fromList(
+                                                                            []),
+                                                                        originalFilename:
+                                                                            '');
+                                                                    _model.uploadedFileUrl_uploadDataYua1 =
+                                                                        '';
+                                                                  });
                                                                 },
                                                                 child:
                                                                     Container(

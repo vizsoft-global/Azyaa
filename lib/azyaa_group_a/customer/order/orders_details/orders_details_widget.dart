@@ -405,7 +405,7 @@ class _OrdersDetailsWidgetState extends State<OrdersDetailsWidget> {
                                     child: ExpandablePanel(
                                       header: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 0.0, 0.0),
+                                            16.0, 0.0, 16.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
                                             'ref0lgvo' /* Order item details  */,

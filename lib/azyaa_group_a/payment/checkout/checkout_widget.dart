@@ -2458,8 +2458,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                       ),
                                                     ),
                                                     Icon(
-                                                      Icons
-                                                          .keyboard_arrow_right_rounded,
+                                                      Icons.chevron_right,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)

@@ -103,7 +103,7 @@ class _CreatorFormSuccessWidgetState extends State<CreatorFormSuccessWidget> {
                             size: 20.0,
                           ),
                           onPressed: () async {
-                            Navigator.pop(context);
+                            context.goNamed(HomeWidget.routeName);
                           },
                         ),
                       ].divide(SizedBox(width: 8.0)),

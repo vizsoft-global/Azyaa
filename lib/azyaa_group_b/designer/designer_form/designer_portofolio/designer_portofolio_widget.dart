@@ -372,6 +372,16 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                         : '',
                                               ));
                                               safeSetState(() {});
+                                              safeSetState(() {
+                                                _model.isDataUploading_uploadData11n =
+                                                    false;
+                                                _model.uploadedLocalFile_uploadData11n =
+                                                    FFUploadedFile(
+                                                        bytes:
+                                                            Uint8List.fromList(
+                                                                []),
+                                                        originalFilename: '');
+                                              });
                                             } else {
                                               await showDialog(
                                                 context: context,
@@ -661,6 +671,17 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                             _model.removeAtIndexFromAllsamples(
                                                                 samplesIndex);
                                                             safeSetState(() {});
+                                                            safeSetState(() {
+                                                              _model.isDataUploading_uploadData11n =
+                                                                  false;
+                                                              _model.uploadedLocalFile_uploadData11n =
+                                                                  FFUploadedFile(
+                                                                      bytes: Uint8List
+                                                                          .fromList(
+                                                                              []),
+                                                                      originalFilename:
+                                                                          '');
+                                                            });
                                                           },
                                                           child: Icon(
                                                             Icons

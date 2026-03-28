@@ -130,8 +130,16 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                   child: Text(
                                     rowProductsRecord?.product?.productType ==
                                             'ready'
-                                        ? 'Ready Made'
-                                        : 'Custom Made',
+                                        ? FFLocalizations.of(context)
+                                            .getVariableText(
+                                            enText: 'Ready Made',
+                                            arText: 'جاهز',
+                                          )
+                                        : FFLocalizations.of(context)
+                                            .getVariableText(
+                                            enText: 'Custom Made',
+                                            arText: 'مصنوع بطريقة مخصصة',
+                                          ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(

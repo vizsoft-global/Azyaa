@@ -1550,7 +1550,7 @@ bool isDateWithinRange(
 }
 
 DocumentReference stringToProductDocRef(String docId) {
-  return FirebaseFirestore.instance.collection('settings').doc(docId);
+  return FirebaseFirestore.instance.collection('products').doc(docId);
 }
 
 bool? isValidLength(

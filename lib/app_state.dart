@@ -202,6 +202,41 @@ class FFAppState extends ChangeNotifier {
   void insertAtIndexInAdminUsersRefs(int index, DocumentReference value) {
     adminUsersRefs.insert(index, value);
   }
+
+  List<String> _branchDebugLogs = ['--- Log Started ---'];
+  List<String> get branchDebugLogs => _branchDebugLogs;
+  set branchDebugLogs(List<String> value) {
+    _branchDebugLogs = value;
+  }
+
+  void addToBranchDebugLogs(String value) {
+    branchDebugLogs.add(value);
+  }
+
+  void removeFromBranchDebugLogs(String value) {
+    branchDebugLogs.remove(value);
+  }
+
+  void removeAtIndexFromBranchDebugLogs(int index) {
+    branchDebugLogs.removeAt(index);
+  }
+
+  void updateBranchDebugLogsAtIndex(
+    int index,
+    String Function(String) updateFn,
+  ) {
+    branchDebugLogs[index] = updateFn(_branchDebugLogs[index]);
+  }
+
+  void insertAtIndexInBranchDebugLogs(int index, String value) {
+    branchDebugLogs.insert(index, value);
+  }
+
+  DocumentReference? _deeplinkproductRef;
+  DocumentReference? get deeplinkproductRef => _deeplinkproductRef;
+  set deeplinkproductRef(DocumentReference? value) {
+    _deeplinkproductRef = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

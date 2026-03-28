@@ -549,7 +549,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          '99hpik9g' /* Search */,
+                                          '99hpik9g' /* Search... */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium

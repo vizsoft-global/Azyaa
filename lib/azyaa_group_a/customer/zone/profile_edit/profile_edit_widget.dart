@@ -61,9 +61,9 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget>
         TextEditingController(text: currentUserDocument?.userInfo?.firstName);
     _model.firstFocusNode ??= FocusNode();
 
-    _model.lastTextController ??=
+    _model.lastNameTextController ??=
         TextEditingController(text: currentUserDocument?.userInfo?.lastName);
-    _model.lastFocusNode ??= FocusNode();
+    _model.lastNameFocusNode ??= FocusNode();
 
     _model.emailTextController ??=
         TextEditingController(text: currentUserDocument?.userInfo?.email);
@@ -846,9 +846,9 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget>
                                                                 child:
                                                                     TextFormField(
                                                                   controller: _model
-                                                                      .lastTextController,
+                                                                      .lastNameTextController,
                                                                   focusNode: _model
-                                                                      .lastFocusNode,
+                                                                      .lastNameFocusNode,
                                                                   autofocus:
                                                                       false,
                                                                   textCapitalization:
@@ -877,7 +877,7 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget>
                                                                     hintText: FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'fbue2crf' /* Enter your name */,
+                                                                      'fbue2crf' /* Enter your last name */,
                                                                     ),
                                                                     hintStyle: FlutterFlowTheme.of(
                                                                             context)
@@ -971,7 +971,7 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget>
                                                                               context)
                                                                           .primaryText,
                                                                   validator: _model
-                                                                      .lastTextControllerValidator
+                                                                      .lastNameTextControllerValidator
                                                                       .asValidator(
                                                                           context),
                                                                   inputFormatters: [
@@ -2073,13 +2073,14 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget>
                                                               .userInfo
                                                               .dateOfBirth!),
                                                   lastName: _model
-                                                      .lastTextController.text,
+                                                      .lastNameTextController
+                                                      .text,
                                                   gender: _model.genderValue,
                                                 ),
                                                 clearUnsetFields: false,
                                               ),
                                               displayName:
-                                                  '${_model.firstTextController.text} ${_model.lastTextController.text}',
+                                                  '${_model.firstTextController.text} ${_model.lastNameTextController.text}',
                                               photoUrl: _model
                                                   .uploadedFileUrl_userPhotoUpload2,
                                             ));

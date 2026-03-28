@@ -818,10 +818,19 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                             text: TextSpan(
                               children: [
                                 TextSpan(
-                                  text: widget!.product?.product?.productType ==
-                                          'ready'
-                                      ? 'Ready made'
-                                      : 'Custom made',
+                                  text: FFLocalizations.of(context)
+                                      .getVariableText(
+                                    enText:
+                                        widget!.product?.product?.productType ==
+                                                'ready'
+                                            ? 'Ready made'
+                                            : 'Custom made',
+                                    arText:
+                                        widget!.product?.product?.productType ==
+                                                'ready'
+                                            ? 'جاهز'
+                                            : 'مصنوع بطريقة مخصصة',
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(

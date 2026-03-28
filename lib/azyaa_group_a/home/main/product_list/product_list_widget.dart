@@ -1244,7 +1244,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
-                                              size: 20.0,
+                                              size: 24.0,
                                             ),
                                           ),
                                         if (_model.defaultView == 'list')
@@ -1319,22 +1319,24 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
-                                              size: 20.0,
+                                              size: 18.0,
                                             ),
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '5667jh1y' /* Sort By */,
+                                            Expanded(
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '5667jh1y' /* Sort By */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Aileron',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Aileron',
-                                                        letterSpacing: 0.0,
-                                                      ),
                                             ),
-                                          ].divide(SizedBox(width: 8.0)),
+                                          ].divide(SizedBox(width: 7.0)),
                                         ),
                                       ),
                                     ),
@@ -1404,80 +1406,95 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                       .primaryText,
                                               size: 16.0,
                                             ),
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'k5l8vj4u' /* Filter */,
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Aileron',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                            if (((FFAppState()
-                                                            .UserFilter
-                                                            .filterStatus ==
-                                                        'set') &&
-                                                    (FFAppState()
-                                                            .UserFilter
-                                                            .productId
-                                                            .length >
-                                                        0)) &&
-                                                responsiveVisibility(
-                                                  context: context,
-                                                  phone: false,
-                                                  tablet: false,
-                                                  tabletLandscape: false,
-                                                  desktop: false,
-                                                ))
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 4.0, 0.0),
-                                                child: Container(
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .purple,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            4.0),
-                                                  ),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(4.0, 2.0,
-                                                                4.0, 2.0),
-                                                    child: Text(
-                                                      valueOrDefault<String>(
-                                                        FFAppState()
-                                                            .UserFilter
-                                                            .productId
-                                                            .length
-                                                            .toString(),
-                                                        '0',
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodySmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Aileron',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBackground,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
+                                            Expanded(
+                                              child: Stack(
+                                                children: [
+                                                  Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'k5l8vj4u' /* Filter */,
                                                     ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Aileron',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                   ),
-                                                ),
+                                                  if (((FFAppState()
+                                                                  .UserFilter
+                                                                  .filterStatus ==
+                                                              'set') &&
+                                                          (FFAppState()
+                                                                  .UserFilter
+                                                                  .productId
+                                                                  .length >
+                                                              0)) &&
+                                                      responsiveVisibility(
+                                                        context: context,
+                                                        phone: false,
+                                                        tablet: false,
+                                                        tabletLandscape: false,
+                                                        desktop: false,
+                                                      ))
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  4.0,
+                                                                  0.0),
+                                                      child: Container(
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .purple,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      4.0),
+                                                        ),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      4.0,
+                                                                      2.0,
+                                                                      4.0,
+                                                                      2.0),
+                                                          child: Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              FFAppState()
+                                                                  .UserFilter
+                                                                  .productId
+                                                                  .length
+                                                                  .toString(),
+                                                              '0',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodySmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Aileron',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                ],
                                               ),
-                                          ].divide(SizedBox(width: 8.0)),
+                                            ),
+                                          ].divide(SizedBox(width: 7.0)),
                                         ),
                                       ),
                                     ),
@@ -1501,11 +1518,12 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                       size: 14.0,
                                     ),
                                     options: FFButtonOptions(
-                                      width: 72.0,
                                       height: 35.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          8.0, 0.0, 8.0, 0.0),
-                                      iconPadding: EdgeInsets.all(0.0),
+                                          12.0, 0.0, 12.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
                                       textStyle: FlutterFlowTheme.of(context)

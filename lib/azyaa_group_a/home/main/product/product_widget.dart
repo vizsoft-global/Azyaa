@@ -1024,7 +1024,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                       await actions
                                                           .generateLink(
                                                     context,
-                                                    getCurrentRoute(context),
+                                                    '/azyaa-product',
                                                     valueOrDefault<String>(
                                                       stackProductsRecord
                                                           .productInfo.name,
@@ -1032,8 +1032,8 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                     ),
                                                     'Azyaa Product',
                                                     <String, String>{
-                                                      'page': 'azyaa-product',
-                                                      'product':
+                                                      'page_name': 'Product',
+                                                      'page_parameter':
                                                           stackProductsRecord
                                                               .reference.id,
                                                     },

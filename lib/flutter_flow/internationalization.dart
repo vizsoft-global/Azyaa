@@ -151,8 +151,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'البحث عن المنتجات',
     },
     '261y1faf': {
-      'en': 'Search Products',
-      'ar': '',
+      'en': 'Search products here...',
+      'ar': 'ابحث عن المنتجات هنا...',
     },
     'c63vwxjh': {
       'en': 'Choose  ',
@@ -1547,11 +1547,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'pwu5bnzr': {
       'en': 'All',
-      'ar': 'الكل',
+      'ar': 'الجميع',
     },
     'tucde2pp': {
       'en': 'Discover',
-      'ar': 'اكتشف',
+      'ar': 'يكتشف',
     },
     'vvmg98id': {
       'en': 'Following',
@@ -1595,7 +1595,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ps7h58i4': {
       'en': 'All',
-      'ar': 'الكل',
+      'ar': 'الجميع',
     },
     'kbahpuim': {
       'en': 'Discover',
@@ -1603,7 +1603,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'f51lm7sx': {
       'en': 'Following',
-      'ar': 'المتابَعون',
+      'ar': 'التالي',
     },
     'ez53m93z': {
       'en': 'All',
@@ -2018,11 +2018,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '7kut8vgw': {
       'en': 'All',
-      'ar': 'الكل',
+      'ar': 'الجميع',
     },
     'nst7p0t9': {
       'en': 'Discover',
-      'ar': 'اكتشف',
+      'ar': 'يكتشف',
     },
     'uxdp9stf': {
       'en': 'Following',
@@ -2030,15 +2030,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'sf23yl78': {
       'en': 'All',
-      'ar': 'الكل',
+      'ar': 'الجميع',
     },
     'fnkxbtam': {
       'en': 'All',
-      'ar': 'الكل',
+      'ar': 'الجميع',
     },
     'fi7ekjly': {
       'en': 'All',
-      'ar': 'الكل',
+      'ar': 'الجميع',
     },
     'wts05ndc': {
       'en': 'Best Rated',
@@ -2193,12 +2193,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'كن مبدعًا',
     },
     'x45fgxa4': {
-      'en': 'Our ',
-      'ar': 'مبدعونا',
+      'en': 'Creators',
+      'ar': 'المبدعين',
     },
     'rdbxo1pm': {
-      'en': 'Creators ',
-      'ar': 'صناع المحتوى',
+      'en': ' Space',
+      'ar': 'فضاء',
     },
     'qcus2z7s': {
       'en':
@@ -2334,8 +2334,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '',
     },
     'fbue2crf': {
-      'en': 'Enter your name',
-      'ar': 'أدخل اسمك',
+      'en': 'Enter your last name',
+      'ar': 'أدخل اسمك الأخير',
     },
     'wyuodekp': {
       'en': 'Gender ',
@@ -2420,6 +2420,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'nvunjvhu': {
       'en': 'Please enter last name',
       'ar': 'الرجاء إدخال الاسم الأخير',
+    },
+    'wh6wyg0c': {
+      'en': 'Invalid input',
+      'ar': 'إدخال غير صالح',
     },
     'v01v5138': {
       'en': 'Please choose an option from the dropdown',
@@ -5217,7 +5221,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '40ncbqy3': {
       'en':
-          'We\'ve received your application to become a designer. Our team will review your details, and you\'ll be notified via email & in-app once approved.',
+          'We\'ve received your application to become a creator. Our team will review your details, and you\'ll be notified via email & in-app once approved.',
       'ar':
           'لقد استلمنا طلبك لتصبح مصمّمًا. سيقوم فريقنا بمراجعة بياناتك، وسيتم إشعارك عبر البريد الإلكتروني وفي التطبيق عند الموافقة.',
     },
@@ -5530,7 +5534,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'sd2nqg1k': {
       'en': 'Verifying payment....\ndon\'t close the app',
-      'ar': '\"جاري التحقق من الدفع....',
+      'ar': 'جارٍ التحقق من الدفع...\nلا تغلق التطبيق',
     },
     '2cwdbql1': {
       'en': 'Home',
@@ -7273,11 +7277,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'aibnfycg': {
       'en': 'All',
-      'ar': 'الكل',
+      'ar': 'الجميع',
     },
     '5urltqi8': {
       'en': 'Discover',
-      'ar': 'استكشف',
+      'ar': 'يكتشف',
     },
     'otd0s83z': {
       'en': 'Following',
@@ -8072,7 +8076,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '107zlwf3': {
       'en': 'Search',
-      'ar': '',
+      'ar': 'يبحث',
     },
     'gjheybsf': {
       'en': 'Search Products',
@@ -8570,8 +8574,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'أدخل بريدك الإلكتروني',
     },
     'w3thcnm8': {
-      'en': 'Address 1 ',
-      'ar': 'العنوان 1',
+      'en': 'Address ',
+      'ar': 'عنوان',
     },
     'wj5ndder': {
       'en': '*',
@@ -9409,8 +9413,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'أدخل بريدك الإلكتروني',
     },
     '5myf5a1f': {
-      'en': 'Address 1 ',
-      'ar': 'العنوان 1',
+      'en': 'Address',
+      'ar': 'عنوان',
     },
     'oqga7jg6': {
       'en': '*',
@@ -10109,7 +10113,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '8efijf1a': {
       'en': 'Category',
-      'ar': 'الفئة',
+      'ar': 'فئة',
     },
     'ij2bbqk6': {
       'en': 'Style',
@@ -10117,7 +10121,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '87hsyjzh': {
       'en': '2',
-      'ar': '',
+      'ar': '2',
     },
     '3yko7g9m': {
       'en': 'Price',
@@ -10125,7 +10129,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'mwkfugua': {
       'en': '5',
-      'ar': '',
+      'ar': '5',
     },
     '5vlmrwrj': {
       'en': 'Search Categories',
@@ -10141,23 +10145,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'nt2bqqbv': {
       'en': 'Below 100KD',
-      'ar': '',
+      'ar': 'أقل من 100 دينار كويتي',
     },
     '6sj9tjzn': {
       'en': '100 KD to 250 KD',
-      'ar': '',
+      'ar': 'من 100 إلى 250 دينار كويتي',
     },
     '4gqwtnop': {
       'en': '250 KD to 1000 KD',
-      'ar': '',
+      'ar': 'من 250 إلى 1000 دينار كويتي',
     },
     'ukswgei9': {
       'en': '1000 KD to 5000 KD',
-      'ar': '',
+      'ar': 'من 1000 دينار كويتي إلى 5000 دينار كويتي',
     },
     'fhujdmea': {
       'en': 'Custom Range',
-      'ar': '',
+      'ar': 'مجموعة مخصصة',
     },
     '1pflz26o': {
       'en': 'Reset',
@@ -10383,7 +10387,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jpms8xiw': {
       'en': 'Style',
-      'ar': '',
+      'ar': 'أسلوب',
     },
     '39uqap9k': {
       'en': '1',
@@ -10391,7 +10395,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'qio2oh4q': {
       'en': 'Colors',
-      'ar': '',
+      'ar': 'الألوان',
     },
     'zydes5qe': {
       'en': '1',
@@ -10399,7 +10403,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'x8y9mu4r': {
       'en': 'Sizes',
-      'ar': '',
+      'ar': 'المقاسات',
     },
     'tyh8b6a9': {
       'en': '1',
@@ -10407,7 +10411,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'q1dmqqbg': {
       'en': 'Sizes',
-      'ar': '',
+      'ar': 'المقاسات',
     },
     '56ul1azu': {
       'en': '1',
@@ -10415,7 +10419,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'sqx4b7e9': {
       'en': 'Price',
-      'ar': '',
+      'ar': 'سعر',
     },
     'vfrfn5ac': {
       'en': '1',
@@ -10423,15 +10427,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'bvfm0ych': {
       'en': 'Brands',
-      'ar': '',
+      'ar': 'العلامات التجارية',
     },
     'xki6zdzp': {
       'en': '1',
       'ar': '',
     },
     '99hpik9g': {
-      'en': 'Search',
-      'ar': '',
+      'en': 'Search...',
+      'ar': 'يبحث...',
     },
     'rsqfg13s': {
       'en': 'Select all',

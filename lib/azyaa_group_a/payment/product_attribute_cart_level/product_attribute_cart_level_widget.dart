@@ -1759,7 +1759,12 @@ class _ProductAttributeCartLevelWidgetState
                                                                 .toList()
                                                                 .length ==
                                                             0)
-                                                    ? 'Choose here..'
+                                                    ? FFLocalizations.of(
+                                                            context)
+                                                        .getVariableText(
+                                                        enText: 'Choose here..',
+                                                        arText: 'اختر هنا ..',
+                                                      )
                                                     : (currentUserDocument
                                                                 ?.userBody
                                                                 ?.toList() ??

@@ -600,30 +600,44 @@ selecting dre... */
                                             AuthUserStreamWidget(
                                               builder: (context) => Builder(
                                                 builder: (context) {
-                                                  final storeDesignerList = containerUsersRecordList
-                                                      .where((e) =>
-                                                          (e
-                                                                  .designerMainInfo
-                                                                  .designerInfo
-                                                                  .storeAvailable ==
-                                                              true) &&
-                                                          (_model.storeDesignerChoiceChipsValue ==
-                                                                  'All'
-                                                              ? true
-                                                              : ((currentUserDocument?.userDesignerFollowing?.toList() ??
-                                                                          [])
-                                                                      .contains(e
-                                                                          .reference) ==
-                                                                  (_model.storeDesignerChoiceChipsValue ==
-                                                                          'Discover'
-                                                                      ? false
-                                                                      : true))))
-                                                      .toList()
-                                                      .sortedList(
-                                                          keyOf: (e) =>
-                                                              e.createdTime!,
-                                                          desc: false)
-                                                      .toList();
+                                                  final storeDesignerList =
+                                                      containerUsersRecordList
+                                                          .where((e) =>
+                                                              (e
+                                                                      .designerMainInfo
+                                                                      .designerInfo
+                                                                      .storeAvailable ==
+                                                                  true) &&
+                                                              (_model
+                                                                          .storeDesignerChoiceChipsValue ==
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getVariableText(
+                                                                        enText:
+                                                                            'All',
+                                                                        arText:
+                                                                            'الجميع',
+                                                                      )
+                                                                  ? true
+                                                                  : ((currentUserDocument?.userDesignerFollowing?.toList() ??
+                                                                              [])
+                                                                          .contains(e
+                                                                              .reference) ==
+                                                                      (_model
+                                                                                  .storeDesignerChoiceChipsValue ==
+                                                                              FFLocalizations.of(context)
+                                                                                  .getVariableText(
+                                                                                enText: 'Discover',
+                                                                                arText: 'يكتشف',
+                                                                              )
+                                                                          ? false
+                                                                          : true))))
+                                                          .toList()
+                                                          .sortedList(
+                                                              keyOf: (e) => e
+                                                                  .createdTime!,
+                                                              desc: false)
+                                                          .toList();
 
                                                   return ListView.separated(
                                                     padding: EdgeInsets.zero,

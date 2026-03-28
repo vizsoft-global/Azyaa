@@ -342,9 +342,13 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                 snapshot.data!;
 
                                                             return Text(
-                                                              textCategoryRecordList
-                                                                  .length
-                                                                  .toString(),
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                textCategoryRecordList
+                                                                    .length
+                                                                    .toString(),
+                                                                '0',
+                                                              ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium
@@ -1049,9 +1053,9 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                           context)
                                                       .getVariableText(
                                                     enText:
-                                                        'Search ${containerAttributesRecordList.where((e) => e.attributeInfo.name == _model.navigationName).toList().firstOrNull?.attributeInfo?.name}',
+                                                        'يبحث${containerAttributesRecordList.where((e) => e.attributeInfo.name == _model.navigationName).toList().firstOrNull?.attributeInfo?.name}',
                                                     arText:
-                                                        'Search ${containerAttributesRecordList.where((e) => e.attributeInfo.name == _model.navigationName).toList().firstOrNull?.attributeInfoTranslate?.name?.ar}',
+                                                        'يبحث${containerAttributesRecordList.where((e) => e.attributeInfo.name == _model.navigationName).toList().firstOrNull?.attributeInfoTranslate?.name?.ar}',
                                                   ),
                                                   hintStyle: FlutterFlowTheme
                                                           .of(context)
@@ -2360,7 +2364,9 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                   },
                 ),
               ),
-            ].addToStart(SizedBox(height: 24.0)),
+            ]
+                .addToStart(SizedBox(height: 24.0))
+                .addToEnd(SizedBox(height: 69.0)),
           ),
           Align(
             alignment: AlignmentDirectional(0.0, 1.0),

@@ -91,7 +91,7 @@ class _DesignersListWidgetState extends State<DesignersListWidget>
                         navigationIconStatus: true,
                         searchIconStatus: false,
                         wishlistIconStatus: true,
-                        navigationFrom: '',
+                        navigationFrom: 'designerList',
                         tryonStatus: false,
                         shareIconStatus: false,
                       ),

@@ -1157,42 +1157,46 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                   ].divide(SizedBox(width: 12.0)),
                                 ),
                               ),
-                              if (valueOrDefault<String>(
-                                        containerDeliveryRecordList
-                                            .where((e) =>
-                                                widget!.order!.deliveryInfoList
-                                                    .where((e) =>
-                                                        e.productIds.contains(
-                                                            activeOrderItemsItem
-                                                                .productId) ==
-                                                        true)
-                                                    .toList()
-                                                    .length >
-                                                0)
-                                            .toList()
-                                            .firstOrNull
-                                            ?.deliveryTrackingId,
-                                        '-',
-                                      ) !=
-                                      null &&
-                                  valueOrDefault<String>(
-                                        containerDeliveryRecordList
-                                            .where((e) =>
-                                                widget!.order!.deliveryInfoList
-                                                    .where((e) =>
-                                                        e.productIds.contains(
-                                                            activeOrderItemsItem
-                                                                .productId) ==
-                                                        true)
-                                                    .toList()
-                                                    .length >
-                                                0)
-                                            .toList()
-                                            .firstOrNull
-                                            ?.deliveryTrackingId,
-                                        '-',
-                                      ) !=
-                                      '')
+                              if ((widget!.order?.paymentStatus ==
+                                      'CAPTURED') &&
+                                  (valueOrDefault<String>(
+                                            containerDeliveryRecordList
+                                                .where((e) =>
+                                                    widget!
+                                                        .order!.deliveryInfoList
+                                                        .where((e) =>
+                                                            e.productIds.contains(
+                                                                activeOrderItemsItem
+                                                                    .productId) ==
+                                                            true)
+                                                        .toList()
+                                                        .length >
+                                                    0)
+                                                .toList()
+                                                .firstOrNull
+                                                ?.deliveryTrackingId,
+                                            '-',
+                                          ) !=
+                                          null &&
+                                      valueOrDefault<String>(
+                                            containerDeliveryRecordList
+                                                .where((e) =>
+                                                    widget!
+                                                        .order!.deliveryInfoList
+                                                        .where((e) =>
+                                                            e.productIds.contains(
+                                                                activeOrderItemsItem
+                                                                    .productId) ==
+                                                            true)
+                                                        .toList()
+                                                        .length >
+                                                    0)
+                                                .toList()
+                                                .firstOrNull
+                                                ?.deliveryTrackingId,
+                                            '-',
+                                          ) !=
+                                          ''))
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 16.0, 0.0),

@@ -11,8 +11,7 @@
     <!-- Start of branch -->
     <key>com.apple.developer.associated-domains</key>
     <array>
-      <string>applinks:v2qlt.app.link</string>
-      <string>applinks:v2qlt-alternate.app.link</string>
+      <string>applinks:v2qlt.test-app.link</string>
     </array>
     <!-- End of branch -->
     <!-- Start of Support for Universal Links -->

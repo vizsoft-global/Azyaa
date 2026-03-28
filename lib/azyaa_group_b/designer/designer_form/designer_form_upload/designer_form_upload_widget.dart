@@ -115,21 +115,28 @@ class _DesignerFormUploadWidgetState extends State<DesignerFormUploadWidget> {
                             ),
                           ),
                         ),
-                        FlutterFlowIconButton(
-                          borderColor: FlutterFlowTheme.of(context).border,
-                          borderRadius: 100.0,
-                          buttonSize: 42.0,
-                          fillColor:
-                              FlutterFlowTheme.of(context).primaryBackground,
-                          icon: Icon(
-                            Icons.more_vert,
-                            color: FlutterFlowTheme.of(context).primary,
-                            size: 20.0,
+                        if (responsiveVisibility(
+                          context: context,
+                          phone: false,
+                          tablet: false,
+                          tabletLandscape: false,
+                          desktop: false,
+                        ))
+                          FlutterFlowIconButton(
+                            borderColor: FlutterFlowTheme.of(context).border,
+                            borderRadius: 100.0,
+                            buttonSize: 42.0,
+                            fillColor:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            icon: Icon(
+                              Icons.more_vert,
+                              color: FlutterFlowTheme.of(context).primary,
+                              size: 20.0,
+                            ),
+                            onPressed: () {
+                              print('IconButton pressed ...');
+                            },
                           ),
-                          onPressed: () {
-                            print('IconButton pressed ...');
-                          },
-                        ),
                       ].divide(SizedBox(width: 8.0)),
                     ),
                   ],
