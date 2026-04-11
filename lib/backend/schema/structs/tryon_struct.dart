@@ -1226,7 +1226,8 @@ Map<String, dynamic> getTryonFirestoreData(
   final firestoreData = mapToFirestore(tryon.toMap());
 
   // Add any Firestore field values
-  tryon.firestoreUtilData.fieldValues.forEach((k, v) => firestoreData[k] = v);
+  mapToFirestore(tryon.firestoreUtilData.fieldValues)
+      .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
 }

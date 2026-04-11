@@ -286,7 +286,7 @@ Map<String, dynamic> getUserShippingaddressFirestoreData(
   );
 
   // Add any Firestore field values
-  userShippingaddress.firestoreUtilData.fieldValues
+  mapToFirestore(userShippingaddress.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

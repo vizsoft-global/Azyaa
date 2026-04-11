@@ -311,7 +311,7 @@ Map<String, dynamic> getSalesUserInfoFirestoreData(
   );
 
   // Add any Firestore field values
-  salesUserInfo.firestoreUtilData.fieldValues
+  mapToFirestore(salesUserInfo.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

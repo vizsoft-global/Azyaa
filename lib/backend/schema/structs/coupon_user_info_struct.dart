@@ -351,7 +351,7 @@ Map<String, dynamic> getCouponUserInfoFirestoreData(
   final firestoreData = mapToFirestore(couponUserInfo.toMap());
 
   // Add any Firestore field values
-  couponUserInfo.firestoreUtilData.fieldValues
+  mapToFirestore(couponUserInfo.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

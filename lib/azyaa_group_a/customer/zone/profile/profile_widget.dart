@@ -111,6 +111,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                         navigationIconStatus: true,
                         searchIconStatus: false,
                         wishlistIconStatus: true,
+                        navigationFrom: 'account',
                         tryonStatus: false,
                         shareIconStatus: false,
                       ),
@@ -355,18 +356,12 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                             .secondaryBackground,
                                                         borderRadius:
                                                             BorderRadius.only(
-                                                          bottomLeft:
-                                                              Radius.circular(
-                                                                  16.0),
-                                                          bottomRight:
-                                                              Radius.circular(
-                                                                  0.0),
                                                           topLeft:
                                                               Radius.circular(
                                                                   16.0),
-                                                          topRight:
+                                                          bottomLeft:
                                                               Radius.circular(
-                                                                  0.0),
+                                                                  16.0),
                                                         ),
                                                         border: Border.all(
                                                           color: FlutterFlowTheme
@@ -417,16 +412,10 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                             .secondaryBackground,
                                                         borderRadius:
                                                             BorderRadius.only(
-                                                          bottomLeft:
-                                                              Radius.circular(
-                                                                  0.0),
-                                                          bottomRight:
+                                                          topRight:
                                                               Radius.circular(
                                                                   16.0),
-                                                          topLeft:
-                                                              Radius.circular(
-                                                                  0.0),
-                                                          topRight:
+                                                          bottomRight:
                                                               Radius.circular(
                                                                   16.0),
                                                         ),

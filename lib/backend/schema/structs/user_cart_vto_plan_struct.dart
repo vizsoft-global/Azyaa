@@ -207,7 +207,7 @@ Map<String, dynamic> getUserCartVtoPlanFirestoreData(
   final firestoreData = mapToFirestore(userCartVtoPlan.toMap());
 
   // Add any Firestore field values
-  userCartVtoPlan.firestoreUtilData.fieldValues
+  mapToFirestore(userCartVtoPlan.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

@@ -263,7 +263,7 @@ Map<String, dynamic> getSessionSlotFirestoreData(
   final firestoreData = mapToFirestore(sessionSlot.toMap());
 
   // Add any Firestore field values
-  sessionSlot.firestoreUtilData.fieldValues
+  mapToFirestore(sessionSlot.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

@@ -361,7 +361,7 @@ Map<String, dynamic> getSettingsAppVersionInfoFirestoreData(
   final firestoreData = mapToFirestore(settingsAppVersionInfo.toMap());
 
   // Add any Firestore field values
-  settingsAppVersionInfo.firestoreUtilData.fieldValues
+  mapToFirestore(settingsAppVersionInfo.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

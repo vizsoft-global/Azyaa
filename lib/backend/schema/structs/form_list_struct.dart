@@ -1265,7 +1265,7 @@ Map<String, dynamic> getFormListFirestoreData(
   final firestoreData = mapToFirestore(formList.toMap());
 
   // Add any Firestore field values
-  formList.firestoreUtilData.fieldValues
+  mapToFirestore(formList.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

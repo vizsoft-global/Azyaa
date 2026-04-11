@@ -100,8 +100,6 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
           )
         ],
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0.0),
-          bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -2784,6 +2782,10 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
             child: FFButtonWidget(
               onPressed: () async {
                 var _shouldSetState = false;
+                if (_model.formKey.currentState == null ||
+                    !_model.formKey.currentState!.validate()) {
+                  return;
+                }
                 if (_model.hieghtTextController.text == null ||
                     _model.hieghtTextController.text == '') {
                   await showDialog(

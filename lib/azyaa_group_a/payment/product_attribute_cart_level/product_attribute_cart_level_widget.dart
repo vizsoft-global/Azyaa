@@ -85,8 +85,6 @@ class _ProductAttributeCartLevelWidgetState
           )
         ],
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0.0),
-          bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -1155,126 +1153,202 @@ class _ProductAttributeCartLevelWidgetState
                                             ),
                                           ),
                                         Expanded(
-                                          child: Builder(
-                                            builder: (context) {
-                                              final termList = attributeListItem
-                                                  .attributesBrandTermIds
-                                                  .toList();
+                                          child: Align(
+                                            alignment:
+                                                AlignmentDirectional(1.0, 0.0),
+                                            child: Builder(
+                                              builder: (context) {
+                                                final termList =
+                                                    attributeListItem
+                                                        .attributesBrandTermIds
+                                                        .toList();
 
-                                              return SingleChildScrollView(
-                                                scrollDirection:
-                                                    Axis.horizontal,
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.end,
-                                                  children: List.generate(
-                                                          termList.length,
-                                                          (termListIndex) {
-                                                    final termListItem =
-                                                        termList[termListIndex];
-                                                    return StreamBuilder<
-                                                        List<BrandsRecord>>(
-                                                      stream: queryBrandsRecord(
-                                                        queryBuilder:
-                                                            (brandsRecord) =>
-                                                                brandsRecord
-                                                                    .where(
-                                                                      'brand_id',
-                                                                      isEqualTo:
-                                                                          termListItem,
-                                                                    )
-                                                                    .where(
-                                                                      'status',
-                                                                      isEqualTo:
-                                                                          'active',
-                                                                    ),
-                                                        singleRecord: true,
-                                                      ),
-                                                      builder:
-                                                          (context, snapshot) {
-                                                        // Customize what your widget looks like when it's loading.
-                                                        if (!snapshot.hasData) {
-                                                          return Center(
-                                                            child: SizedBox(
-                                                              width: 2.0,
-                                                              height: 2.0,
-                                                              child:
-                                                                  CircularProgressIndicator(
-                                                                valueColor:
-                                                                    AlwaysStoppedAnimation<
-                                                                        Color>(
-                                                                  Colors
-                                                                      .transparent,
+                                                return SingleChildScrollView(
+                                                  scrollDirection:
+                                                      Axis.horizontal,
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.end,
+                                                    children: List.generate(
+                                                            termList.length,
+                                                            (termListIndex) {
+                                                      final termListItem =
+                                                          termList[
+                                                              termListIndex];
+                                                      return StreamBuilder<
+                                                          List<BrandsRecord>>(
+                                                        stream:
+                                                            queryBrandsRecord(
+                                                          queryBuilder:
+                                                              (brandsRecord) =>
+                                                                  brandsRecord
+                                                                      .where(
+                                                                        'brand_id',
+                                                                        isEqualTo:
+                                                                            termListItem,
+                                                                      )
+                                                                      .where(
+                                                                        'status',
+                                                                        isEqualTo:
+                                                                            'active',
+                                                                      ),
+                                                          singleRecord: true,
+                                                        ),
+                                                        builder: (context,
+                                                            snapshot) {
+                                                          // Customize what your widget looks like when it's loading.
+                                                          if (!snapshot
+                                                              .hasData) {
+                                                            return Center(
+                                                              child: SizedBox(
+                                                                width: 2.0,
+                                                                height: 2.0,
+                                                                child:
+                                                                    CircularProgressIndicator(
+                                                                  valueColor:
+                                                                      AlwaysStoppedAnimation<
+                                                                          Color>(
+                                                                    Colors
+                                                                        .transparent,
+                                                                  ),
                                                                 ),
                                                               ),
-                                                            ),
-                                                          );
-                                                        }
-                                                        List<BrandsRecord>
-                                                            stackBrandsRecordList =
-                                                            snapshot.data!;
-                                                        // Return an empty Container when the item does not exist.
-                                                        if (snapshot
-                                                            .data!.isEmpty) {
-                                                          return Container();
-                                                        }
-                                                        final stackBrandsRecord =
-                                                            stackBrandsRecordList
-                                                                    .isNotEmpty
-                                                                ? stackBrandsRecordList
-                                                                    .first
-                                                                : null;
+                                                            );
+                                                          }
+                                                          List<BrandsRecord>
+                                                              stackBrandsRecordList =
+                                                              snapshot.data!;
+                                                          // Return an empty Container when the item does not exist.
+                                                          if (snapshot
+                                                              .data!.isEmpty) {
+                                                            return Container();
+                                                          }
+                                                          final stackBrandsRecord =
+                                                              stackBrandsRecordList
+                                                                      .isNotEmpty
+                                                                  ? stackBrandsRecordList
+                                                                      .first
+                                                                  : null;
 
-                                                        return InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          onTap: () async {
-                                                            if (FFAppState()
-                                                                    .UserDataFlow
-                                                                    .userProductSwatchesList
-                                                                    .where((e) =>
-                                                                        e.viewedItemId ==
-                                                                        widget!
+                                                          return InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              if (FFAppState()
+                                                                      .UserDataFlow
+                                                                      .userProductSwatchesList
+                                                                      .where((e) =>
+                                                                          e.viewedItemId ==
+                                                                          widget!
+                                                                              .product
+                                                                              ?.productId)
+                                                                      .toList()
+                                                                      .length ==
+                                                                  0) {
+                                                                FFAppState()
+                                                                    .updateUserDataFlowStruct(
+                                                                  (e) => e
+                                                                    ..count = widget!
+                                                                        .product
+                                                                        ?.productAttribute
+                                                                        ?.length
+                                                                    ..userSwatchesProductAttribute = widget!
+                                                                        .product!
+                                                                        .productAttribute
+                                                                        .toList(),
+                                                                );
+                                                                while (FFAppState()
+                                                                        .UserDataFlow
+                                                                        .count >
+                                                                    0) {
+                                                                  FFAppState()
+                                                                      .updateUserDataFlowStruct(
+                                                                    (e) => e
+                                                                      ..updateUserSwatchesProductAttribute(
+                                                                        (e) => e[
+                                                                            FFAppState().UserDataFlow.count -
+                                                                                1]
+                                                                          ..attributesDefaultTermId =
+                                                                              null,
+                                                                      ),
+                                                                  );
+                                                                  FFAppState()
+                                                                      .updateUserDataFlowStruct(
+                                                                    (e) => e
+                                                                      ..count =
+                                                                          FFAppState().UserDataFlow.count -
+                                                                              1,
+                                                                  );
+                                                                }
+                                                                FFAppState()
+                                                                    .updateUserDataFlowStruct(
+                                                                  (e) => e
+                                                                    ..updateUserProductSwatchesList(
+                                                                      (e) => e.add(
+                                                                          UserRecentViewedListStruct(
+                                                                        createdAt:
+                                                                            getCurrentTimestamp,
+                                                                        viewedItemId: widget!
                                                                             .product
-                                                                            ?.productId)
-                                                                    .toList()
-                                                                    .length ==
-                                                                0) {
+                                                                            ?.productId,
+                                                                        productAttribute: FFAppState()
+                                                                            .UserDataFlow
+                                                                            .userSwatchesProductAttribute,
+                                                                        viewedEntityType:
+                                                                            'product',
+                                                                      )),
+                                                                    ),
+                                                                );
+                                                              }
                                                               FFAppState()
                                                                   .updateUserDataFlowStruct(
                                                                 (e) => e
-                                                                  ..count = widget!
-                                                                      .product
-                                                                      ?.productAttribute
-                                                                      ?.length
-                                                                  ..userSwatchesProductAttribute = widget!
-                                                                      .product!
-                                                                      .productAttribute
-                                                                      .toList(),
+                                                                  ..count = FFAppState()
+                                                                      .UserDataFlow
+                                                                      .userProductSwatchesList
+                                                                      .length,
                                                               );
                                                               while (FFAppState()
                                                                       .UserDataFlow
                                                                       .count >
                                                                   0) {
-                                                                FFAppState()
-                                                                    .updateUserDataFlowStruct(
-                                                                  (e) => e
-                                                                    ..updateUserSwatchesProductAttribute(
-                                                                      (e) => e[
-                                                                          FFAppState().UserDataFlow.count -
-                                                                              1]
-                                                                        ..attributesDefaultTermId =
-                                                                            null,
-                                                                    ),
-                                                                );
+                                                                if (FFAppState()
+                                                                        .UserDataFlow
+                                                                        .userProductSwatchesList
+                                                                        .elementAtOrNull(
+                                                                            FFAppState().UserDataFlow.count -
+                                                                                1)
+                                                                        ?.viewedItemId ==
+                                                                    widget!
+                                                                        .product
+                                                                        ?.productId) {
+                                                                  FFAppState()
+                                                                      .updateUserDataFlowStruct(
+                                                                    (e) => e
+                                                                      ..updateUserProductSwatchesList(
+                                                                        (e) => e[
+                                                                            FFAppState().UserDataFlow.count -
+                                                                                1]
+                                                                          ..updateProductAttribute(
+                                                                            (e) => e[attributeListIndex]
+                                                                              ..attributesDefaultTermId = termListItem,
+                                                                          ),
+                                                                      ),
+                                                                  );
+                                                                  FFAppState()
+                                                                      .update(
+                                                                          () {});
+                                                                  break;
+                                                                }
                                                                 FFAppState()
                                                                     .updateUserDataFlowStruct(
                                                                   (e) => e
@@ -1284,319 +1358,233 @@ class _ProductAttributeCartLevelWidgetState
                                                                         1,
                                                                 );
                                                               }
-                                                              FFAppState()
-                                                                  .updateUserDataFlowStruct(
-                                                                (e) => e
-                                                                  ..updateUserProductSwatchesList(
-                                                                    (e) => e.add(
-                                                                        UserRecentViewedListStruct(
-                                                                      createdAt:
-                                                                          getCurrentTimestamp,
-                                                                      viewedItemId: widget!
-                                                                          .product
-                                                                          ?.productId,
-                                                                      productAttribute: FFAppState()
-                                                                          .UserDataFlow
-                                                                          .userSwatchesProductAttribute,
-                                                                      viewedEntityType:
-                                                                          'product',
-                                                                    )),
-                                                                  ),
-                                                              );
-                                                            }
-                                                            FFAppState()
-                                                                .updateUserDataFlowStruct(
-                                                              (e) => e
-                                                                ..count = FFAppState()
-                                                                    .UserDataFlow
-                                                                    .userProductSwatchesList
-                                                                    .length,
-                                                            );
-                                                            while (FFAppState()
-                                                                    .UserDataFlow
-                                                                    .count >
-                                                                0) {
-                                                              if (FFAppState()
-                                                                      .UserDataFlow
-                                                                      .userProductSwatchesList
-                                                                      .elementAtOrNull(
-                                                                          FFAppState().UserDataFlow.count -
-                                                                              1)
-                                                                      ?.viewedItemId ==
-                                                                  widget!
-                                                                      .product
-                                                                      ?.productId) {
-                                                                FFAppState()
-                                                                    .updateUserDataFlowStruct(
-                                                                  (e) => e
-                                                                    ..updateUserProductSwatchesList(
-                                                                      (e) => e[
-                                                                          FFAppState().UserDataFlow.count -
-                                                                              1]
-                                                                        ..updateProductAttribute(
-                                                                          (e) => e[
-                                                                              attributeListIndex]
-                                                                            ..attributesDefaultTermId =
-                                                                                termListItem,
-                                                                        ),
-                                                                    ),
-                                                                );
-                                                                FFAppState()
-                                                                    .update(
-                                                                        () {});
-                                                                break;
-                                                              }
-                                                              FFAppState()
-                                                                  .updateUserDataFlowStruct(
-                                                                (e) => e
-                                                                  ..count = FFAppState()
-                                                                          .UserDataFlow
-                                                                          .count -
-                                                                      1,
-                                                              );
-                                                            }
-                                                            if (widget!
-                                                                    .popupType ==
-                                                                'icon') {
-                                                              return;
-                                                            }
-                                                            FFAppState()
-                                                                .updateUserDataFlowStruct(
-                                                              (e) => e
-                                                                ..count =
-                                                                    currentUserDocument
-                                                                        ?.userCart
-                                                                        ?.cartItems
-                                                                        ?.length
-                                                                ..userCartItemList =
-                                                                    currentUserDocument!
-                                                                        .userCart
-                                                                        .cartItems
-                                                                        .toList(),
-                                                            );
-                                                            while (FFAppState()
-                                                                    .UserDataFlow
-                                                                    .count >
-                                                                0) {
-                                                              if (FFAppState()
-                                                                      .UserDataFlow
-                                                                      .userCartItemList
-                                                                      .elementAtOrNull(
-                                                                          FFAppState().UserDataFlow.count -
-                                                                              1)
-                                                                      ?.productId ==
-                                                                  widget!
-                                                                      .product
-                                                                      ?.productId) {
-                                                                FFAppState()
-                                                                    .updateUserDataFlowStruct(
-                                                                  (e) => e
-                                                                    ..updateUserCartItemList(
-                                                                      (e) => e[
-                                                                          FFAppState().UserDataFlow.count -
-                                                                              1]
-                                                                        ..updateCartItemAttribute(
-                                                                          (e) => e[
-                                                                              attributeListIndex]
-                                                                            ..attributesDefaultTermId =
-                                                                                termListItem,
-                                                                        ),
-                                                                    ),
-                                                                );
-                                                                FFAppState()
-                                                                    .update(
-                                                                        () {});
-
-                                                                await currentUserReference!
-                                                                    .update(
-                                                                        createUsersRecordData(
-                                                                  userCart:
-                                                                      createUserCartStruct(
-                                                                    updatedAt:
-                                                                        getCurrentTimestamp,
-                                                                    subtotal: functions.newCartTotal(FFAppState()
-                                                                        .UserDataFlow
-                                                                        .userCartItemList
-                                                                        .map((e) =>
-                                                                            e.totalPrice)
-                                                                        .toList()),
-                                                                    total: functions.newCartTotal(FFAppState()
-                                                                        .UserDataFlow
-                                                                        .userCartItemList
-                                                                        .map((e) =>
-                                                                            e.totalPrice)
-                                                                        .toList()),
-                                                                    fieldValues: {
-                                                                      'cart_items':
-                                                                          getUserCartItemsListFirestoreData(
-                                                                        FFAppState()
-                                                                            .UserDataFlow
-                                                                            .userCartItemList,
-                                                                      ),
-                                                                    },
-                                                                    clearUnsetFields:
-                                                                        false,
-                                                                  ),
-                                                                ));
+                                                              if (widget!
+                                                                      .popupType ==
+                                                                  'icon') {
                                                                 return;
                                                               }
                                                               FFAppState()
                                                                   .updateUserDataFlowStruct(
                                                                 (e) => e
-                                                                  ..count = FFAppState()
-                                                                          .UserDataFlow
-                                                                          .count -
-                                                                      1,
+                                                                  ..count = currentUserDocument
+                                                                      ?.userCart
+                                                                      ?.cartItems
+                                                                      ?.length
+                                                                  ..userCartItemList = currentUserDocument!
+                                                                      .userCart
+                                                                      .cartItems
+                                                                      .toList(),
                                                               );
-                                                            }
-                                                          },
-                                                          child: Stack(
-                                                            children: [
-                                                              if ((variationAttributesRecord
-                                                                          ?.attributeId ==
-                                                                      '1001') &&
-                                                                  (stackBrandsRecord
-                                                                          ?.brandInfo
-                                                                          ?.color !=
-                                                                      null))
-                                                                Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      Container(
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      shape: BoxShape
-                                                                          .circle,
-                                                                      border:
-                                                                          Border
-                                                                              .all(
-                                                                        color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == widget!.product?.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId ==
-                                                                                stackBrandsRecord?.brandId
-                                                                            ? FlutterFlowTheme.of(context).primaryText
-                                                                            : FlutterFlowTheme.of(context).primaryBackground,
+                                                              while (FFAppState()
+                                                                      .UserDataFlow
+                                                                      .count >
+                                                                  0) {
+                                                                if (FFAppState()
+                                                                        .UserDataFlow
+                                                                        .userCartItemList
+                                                                        .elementAtOrNull(
+                                                                            FFAppState().UserDataFlow.count -
+                                                                                1)
+                                                                        ?.productId ==
+                                                                    widget!
+                                                                        .product
+                                                                        ?.productId) {
+                                                                  FFAppState()
+                                                                      .updateUserDataFlowStruct(
+                                                                    (e) => e
+                                                                      ..updateUserCartItemList(
+                                                                        (e) => e[
+                                                                            FFAppState().UserDataFlow.count -
+                                                                                1]
+                                                                          ..updateCartItemAttribute(
+                                                                            (e) => e[attributeListIndex]
+                                                                              ..attributesDefaultTermId = termListItem,
+                                                                          ),
                                                                       ),
+                                                                  );
+                                                                  FFAppState()
+                                                                      .update(
+                                                                          () {});
+
+                                                                  await currentUserReference!
+                                                                      .update(
+                                                                          createUsersRecordData(
+                                                                    userCart:
+                                                                        createUserCartStruct(
+                                                                      updatedAt:
+                                                                          getCurrentTimestamp,
+                                                                      subtotal: functions.newCartTotal(FFAppState()
+                                                                          .UserDataFlow
+                                                                          .userCartItemList
+                                                                          .map((e) =>
+                                                                              e.totalPrice)
+                                                                          .toList()),
+                                                                      total: functions.newCartTotal(FFAppState()
+                                                                          .UserDataFlow
+                                                                          .userCartItemList
+                                                                          .map((e) =>
+                                                                              e.totalPrice)
+                                                                          .toList()),
+                                                                      fieldValues: {
+                                                                        'cart_items':
+                                                                            getUserCartItemsListFirestoreData(
+                                                                          FFAppState()
+                                                                              .UserDataFlow
+                                                                              .userCartItemList,
+                                                                        ),
+                                                                      },
+                                                                      clearUnsetFields:
+                                                                          false,
                                                                     ),
+                                                                  ));
+                                                                  return;
+                                                                }
+                                                                FFAppState()
+                                                                    .updateUserDataFlowStruct(
+                                                                  (e) => e
+                                                                    ..count = FFAppState()
+                                                                            .UserDataFlow
+                                                                            .count -
+                                                                        1,
+                                                                );
+                                                              }
+                                                            },
+                                                            child: Stack(
+                                                              children: [
+                                                                if ((variationAttributesRecord
+                                                                            ?.attributeId ==
+                                                                        '1001') &&
+                                                                    (stackBrandsRecord
+                                                                            ?.brandInfo
+                                                                            ?.color !=
+                                                                        null))
+                                                                  Align(
+                                                                    alignment:
+                                                                        AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
                                                                     child:
-                                                                        Padding(
-                                                                      padding:
-                                                                          EdgeInsets.all(
-                                                                              2.0),
+                                                                        Container(
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        shape: BoxShape
+                                                                            .circle,
+                                                                        border:
+                                                                            Border.all(
+                                                                          color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == widget!.product?.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId
+                                                                              ? FlutterFlowTheme.of(context).primaryText
+                                                                              : FlutterFlowTheme.of(context).primaryBackground,
+                                                                        ),
+                                                                      ),
                                                                       child:
-                                                                          Container(
-                                                                        width:
-                                                                            40.0,
-                                                                        height:
-                                                                            40.0,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color: stackBrandsRecord
-                                                                              ?.brandInfo
-                                                                              ?.color,
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(100.0),
-                                                                          border:
-                                                                              Border.all(
+                                                                          Padding(
+                                                                        padding:
+                                                                            EdgeInsets.all(2.0),
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              40.0,
+                                                                          height:
+                                                                              40.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
                                                                             color:
-                                                                                Color(0x27000000),
+                                                                                stackBrandsRecord?.brandInfo?.color,
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(100.0),
+                                                                            border:
+                                                                                Border.all(
+                                                                              color: Color(0x27000000),
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
                                                                   ),
-                                                                ),
-                                                              if (!((variationAttributesRecord
-                                                                          ?.attributeId ==
-                                                                      '1001') &&
-                                                                  (stackBrandsRecord
-                                                                          ?.brandInfo
-                                                                          ?.color !=
-                                                                      null)))
-                                                                Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      Container(
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              4.0),
-                                                                      border:
-                                                                          Border
-                                                                              .all(
-                                                                        color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == widget!.product?.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId ==
-                                                                                stackBrandsRecord?.brandId
-                                                                            ? FlutterFlowTheme.of(context).primaryText
-                                                                            : FlutterFlowTheme.of(context).secondaryText,
-                                                                      ),
-                                                                    ),
+                                                                if (!((variationAttributesRecord
+                                                                            ?.attributeId ==
+                                                                        '1001') &&
+                                                                    (stackBrandsRecord
+                                                                            ?.brandInfo
+                                                                            ?.color !=
+                                                                        null)))
+                                                                  Align(
+                                                                    alignment:
+                                                                        AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
                                                                     child:
-                                                                        Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          12.0,
-                                                                          8.0,
-                                                                          12.0,
-                                                                          8.0),
-                                                                      child:
-                                                                          Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getVariableText(
-                                                                          enText:
-                                                                              () {
-                                                                            if (stackBrandsRecord?.brandInfoCustomTranslate?.name?.en !=
-                                                                                '') {
-                                                                              return stackBrandsRecord?.brandInfoCustomTranslate?.name?.en;
-                                                                            } else if (stackBrandsRecord?.brandInfoTranslate?.name?.en !=
-                                                                                '') {
-                                                                              return stackBrandsRecord?.brandInfoTranslate?.name?.en;
-                                                                            } else {
-                                                                              return stackBrandsRecord?.brandInfo?.name;
-                                                                            }
-                                                                          }(),
-                                                                          arText:
-                                                                              () {
-                                                                            if (stackBrandsRecord?.brandInfoCustomTranslate?.name?.ar !=
-                                                                                '') {
-                                                                              return stackBrandsRecord?.brandInfoCustomTranslate?.name?.ar;
-                                                                            } else if (stackBrandsRecord?.brandInfoTranslate?.name?.ar !=
-                                                                                '') {
-                                                                              return stackBrandsRecord?.brandInfoTranslate?.name?.ar;
-                                                                            } else {
-                                                                              return stackBrandsRecord?.brandInfo?.name;
-                                                                            }
-                                                                          }(),
+                                                                        Container(
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(4.0),
+                                                                        border:
+                                                                            Border.all(
+                                                                          color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == widget!.product?.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId
+                                                                              ? FlutterFlowTheme.of(context).primaryText
+                                                                              : FlutterFlowTheme.of(context).secondaryText,
                                                                         ),
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyLarge
-                                                                            .override(
-                                                                              fontFamily: 'Aileron',
-                                                                              color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == widget!.product?.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
-                                                                              letterSpacing: 0.0,
-                                                                            ),
+                                                                      ),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            12.0,
+                                                                            8.0,
+                                                                            12.0,
+                                                                            8.0),
+                                                                        child:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getVariableText(
+                                                                            enText:
+                                                                                () {
+                                                                              if (stackBrandsRecord?.brandInfoCustomTranslate?.name?.en != '') {
+                                                                                return stackBrandsRecord?.brandInfoCustomTranslate?.name?.en;
+                                                                              } else if (stackBrandsRecord?.brandInfoTranslate?.name?.en != '') {
+                                                                                return stackBrandsRecord?.brandInfoTranslate?.name?.en;
+                                                                              } else {
+                                                                                return stackBrandsRecord?.brandInfo?.name;
+                                                                              }
+                                                                            }(),
+                                                                            arText:
+                                                                                () {
+                                                                              if (stackBrandsRecord?.brandInfoCustomTranslate?.name?.ar != '') {
+                                                                                return stackBrandsRecord?.brandInfoCustomTranslate?.name?.ar;
+                                                                              } else if (stackBrandsRecord?.brandInfoTranslate?.name?.ar != '') {
+                                                                                return stackBrandsRecord?.brandInfoTranslate?.name?.ar;
+                                                                              } else {
+                                                                                return stackBrandsRecord?.brandInfo?.name;
+                                                                              }
+                                                                            }(),
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyLarge
+                                                                              .override(
+                                                                                fontFamily: 'Aileron',
+                                                                                color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == widget!.product?.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   ),
-                                                                ),
-                                                            ],
-                                                          ),
-                                                        );
-                                                      },
-                                                    );
-                                                  })
-                                                      .divide(
-                                                          SizedBox(width: 4.0))
-                                                      .addToStart(
-                                                          SizedBox(width: 8.0))
-                                                      .addToEnd(
-                                                          SizedBox(width: 8.0)),
-                                                ),
-                                              );
-                                            },
+                                                              ],
+                                                            ),
+                                                          );
+                                                        },
+                                                      );
+                                                    })
+                                                        .divide(SizedBox(
+                                                            width: 4.0))
+                                                        .addToStart(SizedBox(
+                                                            width: 8.0))
+                                                        .addToEnd(SizedBox(
+                                                            width: 8.0)),
+                                                  ),
+                                                );
+                                              },
+                                            ),
                                           ),
                                         ),
                                         Builder(

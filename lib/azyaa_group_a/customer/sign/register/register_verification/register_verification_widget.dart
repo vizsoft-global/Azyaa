@@ -271,13 +271,48 @@ class _RegisterVerificationWidgetState
                                         if (currentUserDocument?.userInfo
                                                 ?.isPhoneVerificationStatus ==
                                             false) {
-                                          context
-                                              .goNamed(PhoneWidget.routeName);
+                                          context.goNamed(
+                                            PhoneWidget.routeName,
+                                            extra: <String, dynamic>{
+                                              '__transition_info__':
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
+                                          );
                                         } else {
-                                          context.goNamed(HomeWidget.routeName);
+                                          context.goNamed(
+                                            HomeWidget.routeName,
+                                            extra: <String, dynamic>{
+                                              '__transition_info__':
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
+                                          );
                                         }
                                       } else {
-                                        context.goNamed(HomeWidget.routeName);
+                                        context.goNamed(
+                                          HomeWidget.routeName,
+                                          extra: <String, dynamic>{
+                                            '__transition_info__':
+                                                TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 0),
+                                            ),
+                                          },
+                                        );
                                       }
                                     } else {
                                       await showDialog(
@@ -584,8 +619,18 @@ class _RegisterVerificationWidgetState
                                       GoRouter.of(context)
                                           .clearRedirectLocation();
 
-                                      context.goNamedAuth(LoginWidget.routeName,
-                                          context.mounted);
+                                      context.goNamedAuth(
+                                        LoginWidget.routeName,
+                                        context.mounted,
+                                        extra: <String, dynamic>{
+                                          '__transition_info__': TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                            duration: Duration(milliseconds: 0),
+                                          ),
+                                        },
+                                      );
                                     },
                                     child: RichText(
                                       textScaler:

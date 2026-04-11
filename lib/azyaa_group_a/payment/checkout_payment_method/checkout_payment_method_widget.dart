@@ -80,6 +80,7 @@ class _CheckoutPaymentMethodWidgetState
 
     return Column(
       mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -96,8 +97,6 @@ class _CheckoutPaymentMethodWidgetState
               )
             ],
             borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(0.0),
-              bottomRight: Radius.circular(0.0),
               topLeft: Radius.circular(16.0),
               topRight: Radius.circular(16.0),
             ),
@@ -182,6 +181,150 @@ class _CheckoutPaymentMethodWidgetState
                     ],
                   ),
                 ),
+                Padding(
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                  child: InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      if (_model.payStatus == 'clickable') {
+                        FFAppState().updatePaymentFlowStruct(
+                          (e) => e
+                            ..selectedPaymentType = 'KNET'
+                            ..selectedPaymentId = 1,
+                        );
+                        _model.selectedMethod = 'KNET';
+                        safeSetState(() {});
+                      }
+                    },
+                    child: Container(
+                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).accent1,
+                        borderRadius: BorderRadius.circular(8.0),
+                        border: Border.all(
+                          color: _model.selectedMethod == 'KNET'
+                              ? FlutterFlowTheme.of(context).primary
+                              : FlutterFlowTheme.of(context).accent1,
+                          width: _model.selectedMethod == 'KNET' ? 2.0 : 0.0,
+                        ),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  'sdhgcktd' /* Pay with K-Net */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Aileron',
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      fontSize: 16.0,
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(0.0),
+                              child: Image.asset(
+                                'assets/images/Group_(6).png',
+                                width: 50.0,
+                                height: 30.0,
+                                fit: BoxFit.contain,
+                                alignment: Alignment(0.0, 0.0),
+                              ),
+                            ),
+                          ]
+                              .divide(SizedBox(width: 8.0))
+                              .addToStart(SizedBox(width: 8.0))
+                              .addToEnd(SizedBox(width: 8.0)),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                  child: InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      if (_model.payStatus == 'clickable') {
+                        FFAppState().updatePaymentFlowStruct(
+                          (e) => e
+                            ..selectedPaymentType = 'VISA/MASTER'
+                            ..selectedPaymentId = 2,
+                        );
+                        _model.selectedMethod = 'VISA/MASTER';
+                        safeSetState(() {});
+                      }
+                    },
+                    child: Container(
+                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).accent1,
+                        borderRadius: BorderRadius.circular(8.0),
+                        border: Border.all(
+                          color: _model.selectedMethod == 'VISA/MASTER'
+                              ? FlutterFlowTheme.of(context).primary
+                              : FlutterFlowTheme.of(context).accent1,
+                          width: _model.selectedMethod == 'VISA/MASTER'
+                              ? 2.0
+                              : 0.0,
+                        ),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  'h4tvsidt' /* Pay with Card */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Aileron',
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      fontSize: 16.0,
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(0.0),
+                              child: Image.asset(
+                                'assets/images/master_card.png',
+                                width: 80.0,
+                                height: 30.0,
+                                fit: BoxFit.contain,
+                                alignment: Alignment(0.0, 0.0),
+                              ),
+                            ),
+                          ]
+                              .divide(SizedBox(width: 8.0))
+                              .addToStart(SizedBox(width: 8.0))
+                              .addToEnd(SizedBox(width: 8.0)),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
                 if (responsiveVisibility(
                   context: context,
                   phone: false,
@@ -242,145 +385,6 @@ class _CheckoutPaymentMethodWidgetState
                       ],
                     ),
                   ),
-                Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
-                  child: InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      if (_model.payStatus == 'clickable') {
-                        FFAppState().updatePaymentFlowStruct(
-                          (e) => e
-                            ..selectedPaymentType = 'KNET'
-                            ..selectedPaymentId = 1,
-                        );
-                        _model.selectedMethod = 'KNET';
-                        safeSetState(() {});
-                      }
-                    },
-                    child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
-                      decoration: BoxDecoration(
-                        color: _model.selectedMethod == 'KNET'
-                            ? FlutterFlowTheme.of(context).primary
-                            : FlutterFlowTheme.of(context).accent1,
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Expanded(
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'sdhgcktd' /* Pay with K-Net */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Aileron',
-                                      color: _model.selectedMethod == 'KNET'
-                                          ? FlutterFlowTheme.of(context).info
-                                          : FlutterFlowTheme.of(context)
-                                              .primary,
-                                      fontSize: 16.0,
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(0.0),
-                              child: Image.asset(
-                                'assets/images/Group_(6).png',
-                                width: 50.0,
-                                height: 30.0,
-                                fit: BoxFit.contain,
-                                alignment: Alignment(0.0, 0.0),
-                              ),
-                            ),
-                          ]
-                              .divide(SizedBox(width: 8.0))
-                              .addToStart(SizedBox(width: 8.0))
-                              .addToEnd(SizedBox(width: 8.0)),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
-                  child: InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      if (_model.payStatus == 'clickable') {
-                        FFAppState().updatePaymentFlowStruct(
-                          (e) => e
-                            ..selectedPaymentType = 'VISA/MASTER'
-                            ..selectedPaymentId = 2,
-                        );
-                        _model.selectedMethod = 'VISA/MASTER';
-                        safeSetState(() {});
-                      }
-                    },
-                    child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
-                      decoration: BoxDecoration(
-                        color: _model.selectedMethod == 'VISA/MASTER'
-                            ? FlutterFlowTheme.of(context).primary
-                            : FlutterFlowTheme.of(context).accent1,
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Expanded(
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'h4tvsidt' /* Pay with Card */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Aileron',
-                                      color: _model.selectedMethod ==
-                                              'VISA/MASTER'
-                                          ? FlutterFlowTheme.of(context).info
-                                          : FlutterFlowTheme.of(context)
-                                              .primary,
-                                      fontSize: 16.0,
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(0.0),
-                              child: Image.asset(
-                                'assets/images/Frame_2085662491.png',
-                                width: 80.0,
-                                height: 30.0,
-                                fit: BoxFit.contain,
-                                alignment: Alignment(0.0, 0.0),
-                              ),
-                            ),
-                          ]
-                              .divide(SizedBox(width: 8.0))
-                              .addToStart(SizedBox(width: 8.0))
-                              .addToEnd(SizedBox(width: 8.0)),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
                 if (responsiveVisibility(
                   context: context,
                   phone: false,

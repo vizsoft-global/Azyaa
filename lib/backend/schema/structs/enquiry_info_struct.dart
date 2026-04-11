@@ -330,7 +330,7 @@ Map<String, dynamic> getEnquiryInfoFirestoreData(
   final firestoreData = mapToFirestore(enquiryInfo.toMap());
 
   // Add any Firestore field values
-  enquiryInfo.firestoreUtilData.fieldValues
+  mapToFirestore(enquiryInfo.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

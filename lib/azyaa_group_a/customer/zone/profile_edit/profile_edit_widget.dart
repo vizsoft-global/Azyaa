@@ -76,7 +76,10 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget>
     _model.alternativephoneTextController ??= TextEditingController(
         text: currentUserDocument?.userInfo?.alternatePhoneNumber != null &&
                 currentUserDocument?.userInfo?.alternatePhoneNumber != ''
-            ? '+${currentUserDocument?.userInfo?.alternatePhoneNumber}'
+            ? '${FFLocalizations.of(context).getVariableText(
+                enText: '+',
+                arText: '+',
+              )}${currentUserDocument?.userInfo?.alternatePhoneNumber}'
             : '');
     _model.alternativephoneFocusNode ??= FocusNode();
 
@@ -125,9 +128,7 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget>
                         navigationIconStatus: true,
                         searchIconStatus: false,
                         wishlistIconStatus: true,
-                        navigationFrom: FFLocalizations.of(context).getText(
-                          '393bsfs9' /* editprofile */,
-                        ),
+                        navigationFrom: 'editprofile',
                         tryonStatus: true,
                         shareIconStatus: false,
                       ),
@@ -252,9 +253,14 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget>
                                                       height: 80.0,
                                                       child: Stack(
                                                         children: [
-                                                          if (_model
-                                                                  .isDataUploading_userPhotoUpload2 ==
-                                                              false)
+                                                          if ((_model.uploadedFileUrl_userPhotoUpload2 !=
+                                                                      null &&
+                                                                  _model.uploadedFileUrl_userPhotoUpload2 !=
+                                                                      '') ||
+                                                              (currentUserPhoto !=
+                                                                      null &&
+                                                                  currentUserPhoto !=
+                                                                      ''))
                                                             Align(
                                                               alignment:
                                                                   AlignmentDirectional(
@@ -455,12 +461,18 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget>
                                                                   arText:
                                                                       'تم تحديث الصورة...',
                                                                 ),
-                                                                style:
-                                                                    TextStyle(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Aileron',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
                                                               ),
                                                               duration: Duration(
                                                                   milliseconds:
@@ -2411,63 +2423,68 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget>
                                                                 CrossAxisAlignment
                                                                     .center,
                                                             children: [
-                                                              Align(
-                                                                alignment:
-                                                                    AlignmentDirectional(
-                                                                        0.0,
-                                                                        0.0),
-                                                                child: Theme(
-                                                                  data:
-                                                                      ThemeData(
-                                                                    checkboxTheme:
-                                                                        CheckboxThemeData(
-                                                                      visualDensity:
-                                                                          VisualDensity
-                                                                              .compact,
-                                                                      materialTapTargetSize:
-                                                                          MaterialTapTargetSize
-                                                                              .shrinkWrap,
-                                                                      shape:
-                                                                          RoundedRectangleBorder(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(100.0),
+                                                              if (responsiveVisibility(
+                                                                context:
+                                                                    context,
+                                                                phone: false,
+                                                                tablet: false,
+                                                                tabletLandscape:
+                                                                    false,
+                                                                desktop: false,
+                                                              ))
+                                                                Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Theme(
+                                                                    data:
+                                                                        ThemeData(
+                                                                      checkboxTheme:
+                                                                          CheckboxThemeData(
+                                                                        visualDensity:
+                                                                            VisualDensity.compact,
+                                                                        materialTapTargetSize:
+                                                                            MaterialTapTargetSize.shrinkWrap,
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(100.0),
+                                                                        ),
                                                                       ),
+                                                                      unselectedWidgetColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .alternate,
                                                                     ),
-                                                                    unselectedWidgetColor:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .alternate,
-                                                                  ),
-                                                                  child:
-                                                                      Checkbox(
-                                                                    value: _model
-                                                                            .checkboxValueMap[
-                                                                        measurementListItem] ??= measurementListItem
-                                                                            .isDefault ==
-                                                                        true,
-                                                                    onChanged:
-                                                                        (newValue) async {
-                                                                      safeSetState(() =>
-                                                                          _model.checkboxValueMap[measurementListItem] =
-                                                                              newValue!);
-                                                                    },
-                                                                    side: (FlutterFlowTheme.of(context).alternate !=
-                                                                            null)
-                                                                        ? BorderSide(
-                                                                            width:
-                                                                                2,
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).alternate!,
-                                                                          )
-                                                                        : null,
-                                                                    activeColor:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .primary,
-                                                                    checkColor:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .info,
+                                                                    child:
+                                                                        Checkbox(
+                                                                      value: _model
+                                                                              .checkboxValueMap[
+                                                                          measurementListItem] ??= measurementListItem
+                                                                              .isDefault ==
+                                                                          true,
+                                                                      onChanged:
+                                                                          (newValue) async {
+                                                                        safeSetState(() =>
+                                                                            _model.checkboxValueMap[measurementListItem] =
+                                                                                newValue!);
+                                                                      },
+                                                                      side: (FlutterFlowTheme.of(context).alternate !=
+                                                                              null)
+                                                                          ? BorderSide(
+                                                                              width: 2,
+                                                                              color: FlutterFlowTheme.of(context).alternate!,
+                                                                            )
+                                                                          : null,
+                                                                      activeColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primary,
+                                                                      checkColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .info,
+                                                                    ),
                                                                   ),
                                                                 ),
-                                                              ),
                                                               Expanded(
                                                                 child: Column(
                                                                   mainAxisSize:
@@ -3171,129 +3188,99 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget>
                                           ),
                                         ),
                                       ),
-                                      if (isiOS)
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 16.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              var confirmDialogResponse =
-                                                  await showDialog<bool>(
-                                                        context: context,
-                                                        builder:
-                                                            (alertDialogContext) {
-                                                          return WebViewAware(
-                                                            child: AlertDialog(
-                                                              title: Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getVariableText(
-                                                                enText:
-                                                                    'Are you sure you want to delete your account?',
-                                                                arText:
-                                                                    'هل أنت متأكد أنك تريد حذف حسابك؟',
-                                                              )),
-                                                              content: Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getVariableText(
-                                                                enText:
-                                                                    'This will permanently erase your account.',
-                                                                arText:
-                                                                    'سيؤدي هذا إلى حذف حسابك بشكل دائم.',
-                                                              )),
-                                                              actions: [
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext,
-                                                                          false),
-                                                                  child: Text(FFLocalizations.of(
-                                                                          context)
-                                                                      .getVariableText(
-                                                                    enText:
-                                                                        'Cancel',
-                                                                    arText:
-                                                                        'يلغي',
-                                                                  )),
-                                                                ),
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext,
-                                                                          true),
-                                                                  child: Text(FFLocalizations.of(
-                                                                          context)
-                                                                      .getVariableText(
-                                                                    enText:
-                                                                        'Confirm',
-                                                                    arText:
-                                                                        'يتأكد',
-                                                                  )),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          );
-                                                        },
-                                                      ) ??
-                                                      false;
-                                              if (confirmDialogResponse) {
-                                                await authManager
-                                                    .deleteUser(context);
-
-                                                context.goNamed(
-                                                    LoginWidget.routeName);
-                                              } else {
-                                                return;
-                                              }
-                                            },
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          -1.0, 0.0),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 4.0),
-                                                    child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'mk6b88h0' /* Delete my account */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Aileron',
-                                                                color: FlutterFlowTheme.of(
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 0.0, 16.0, 0.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            var confirmDialogResponse =
+                                                await showDialog<bool>(
+                                                      context: context,
+                                                      builder:
+                                                          (alertDialogContext) {
+                                                        return WebViewAware(
+                                                          child: AlertDialog(
+                                                            title: Text(
+                                                                FFLocalizations.of(
                                                                         context)
-                                                                    .error,
-                                                                letterSpacing:
-                                                                    0.0,
+                                                                    .getVariableText(
+                                                              enText:
+                                                                  'Are you sure you want to delete your account?',
+                                                              arText:
+                                                                  'هل أنت متأكد أنك تريد حذف حسابك؟',
+                                                            )),
+                                                            content: Text(
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getVariableText(
+                                                              enText:
+                                                                  'This will permanently erase your account.',
+                                                              arText:
+                                                                  'سيؤدي هذا إلى حذف حسابك بشكل دائم.',
+                                                            )),
+                                                            actions: [
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext,
+                                                                        false),
+                                                                child: Text(FFLocalizations.of(
+                                                                        context)
+                                                                    .getVariableText(
+                                                                  enText:
+                                                                      'Cancel',
+                                                                  arText:
+                                                                      'يلغي',
+                                                                )),
                                                               ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Padding(
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext,
+                                                                        true),
+                                                                child: Text(FFLocalizations.of(
+                                                                        context)
+                                                                    .getVariableText(
+                                                                  enText:
+                                                                      'Confirm',
+                                                                  arText:
+                                                                      'يتأكد',
+                                                                )),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        );
+                                                      },
+                                                    ) ??
+                                                    false;
+                                            if (confirmDialogResponse) {
+                                              await authManager
+                                                  .deleteUser(context);
+
+                                              context.goNamed(
+                                                  LoginWidget.routeName);
+                                            } else {
+                                              return;
+                                            }
+                                          },
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    -1.0, 0.0),
+                                                child: Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          0.0, 0.0, 0.0, 24.0),
+                                                          0.0, 0.0, 0.0, 8.0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      't00wctkm' /* You will not be able to access... */,
+                                                      'mk6b88h0' /* Delete my account */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -3302,17 +3289,40 @@ class _ProfileEditWidgetState extends State<ProfileEditWidget>
                                                           fontFamily: 'Aileron',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .secondaryText,
-                                                          fontSize: 10.0,
+                                                              .error,
                                                           letterSpacing: 0.0,
-                                                          lineHeight: 1.5,
                                                         ),
                                                   ),
                                                 ),
-                                              ],
-                                            ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 24.0),
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    't00wctkm' /* You will not be able to access... */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Aileron',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                        lineHeight: 1.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
+                                      ),
                                     ],
                                   ),
                                 ],

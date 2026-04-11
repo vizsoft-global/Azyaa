@@ -112,17 +112,11 @@ class RegisterModel extends FlutterFlowModel<RegisterWidget> {
       );
     }
 
-    if (val.length < 8) {
+    if (!RegExp('^\\+?[1-9]\\d{6,14}\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'e75o7cxi' /* Enter correct number */,
+        'vkvmd8f3' /* Invalid phone number  */,
       );
     }
-    if (val.length > 8) {
-      return FFLocalizations.of(context).getText(
-        'gl0iq18j' /* Enter correct number */,
-      );
-    }
-
     return null;
   }
 

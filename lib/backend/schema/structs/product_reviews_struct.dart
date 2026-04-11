@@ -326,7 +326,7 @@ Map<String, dynamic> getProductReviewsFirestoreData(
   final firestoreData = mapToFirestore(productReviews.toMap());
 
   // Add any Firestore field values
-  productReviews.firestoreUtilData.fieldValues
+  mapToFirestore(productReviews.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

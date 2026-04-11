@@ -111,12 +111,12 @@ class _ProductWidgetState extends State<ProductWidget> {
                     title: FFLocalizations.of(context).getText(
                       '54vo9rtg' /* Product */,
                     ),
-                    navigationIconStatus: false,
+                    navigationIconStatus: true,
                     searchIconStatus: false,
                     wishlistIconStatus: false,
-                    navigationFrom: 'default',
+                    navigationFrom: 'productDetails',
                     tryonStatus: false,
-                    shareIconStatus: true,
+                    shareIconStatus: false,
                     productRef: widget!.product,
                   ),
                 ),
@@ -1020,16 +1020,12 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                 ),
                                                 showLoadingIndicator: true,
                                                 onPressed: () async {
-                                                  _model.sharelink =
-                                                      await actions
-                                                          .generateLink(
+                                                  _model.newlink = await actions
+                                                      .generateLinkNew(
                                                     context,
                                                     '/azyaa-product',
-                                                    valueOrDefault<String>(
-                                                      stackProductsRecord
-                                                          .productInfo.name,
-                                                      '-',
-                                                    ),
+                                                    stackProductsRecord
+                                                        .productInfo.name,
                                                     'Azyaa Product',
                                                     <String, String>{
                                                       'page_name': 'Product',
@@ -1045,7 +1041,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                     },
                                                   );
                                                   await Share.share(
-                                                    _model.sharelink!,
+                                                    _model.newlink!,
                                                     sharePositionOrigin:
                                                         getWidgetBoundingBox(
                                                             context),
@@ -2538,10 +2534,6 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                 Radius.circular(8.0),
                                                                             bottomRight:
                                                                                 Radius.circular(8.0),
-                                                                            topLeft:
-                                                                                Radius.circular(0.0),
-                                                                            topRight:
-                                                                                Radius.circular(0.0),
                                                                           ),
                                                                         ),
                                                                         child:
@@ -2791,12 +2783,6 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   Radius
                                                                       .circular(
                                                                           16.0),
-                                                              topLeft: Radius
-                                                                  .circular(
-                                                                      0.0),
-                                                              topRight: Radius
-                                                                  .circular(
-                                                                      0.0),
                                                             ),
                                                           ),
                                                           child: Padding(

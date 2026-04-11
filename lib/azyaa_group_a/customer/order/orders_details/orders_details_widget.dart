@@ -607,7 +607,7 @@ class _OrdersDetailsWidgetState extends State<OrdersDetailsWidget> {
                                         iconColor: FlutterFlowTheme.of(context)
                                             .primary,
                                         iconPadding: EdgeInsets.fromLTRB(
-                                            0.0, 0.0, 16.0, 0.0),
+                                            16.0, 0.0, 16.0, 0.0),
                                       ),
                                     ),
                                   ),
@@ -1574,14 +1574,27 @@ class _OrdersDetailsWidgetState extends State<OrdersDetailsWidget> {
                                                           return WebViewAware(
                                                             child: AlertDialog(
                                                               title: Text(
-                                                                  'No return'),
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getVariableText(
+                                                                enText:
+                                                                    'No return',
+                                                                arText:
+                                                                    'لا عودة',
+                                                              )),
                                                               actions: [
                                                                 TextButton(
                                                                   onPressed: () =>
                                                                       Navigator.pop(
                                                                           alertDialogContext),
-                                                                  child: Text(
-                                                                      'Ok'),
+                                                                  child: Text(FFLocalizations.of(
+                                                                          context)
+                                                                      .getVariableText(
+                                                                    enText:
+                                                                        'Ok',
+                                                                    arText:
+                                                                        'نعم',
+                                                                  )),
                                                                 ),
                                                               ],
                                                             ),
@@ -2223,7 +2236,17 @@ class _OrdersDetailsWidgetState extends State<OrdersDetailsWidget> {
                                     if (Navigator.of(context).canPop()) {
                                       context.pop();
                                     }
-                                    context.pushNamed(HomeWidget.routeName);
+                                    context.pushNamed(
+                                      HomeWidget.routeName,
+                                      extra: <String, dynamic>{
+                                        '__transition_info__': TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
+                                        ),
+                                      },
+                                    );
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     'ih7mg9uh' /* Back to Shop */,

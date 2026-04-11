@@ -58,8 +58,6 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
       elevation: 5.0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0.0),
-          bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -69,8 +67,6 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
           borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(0.0),
-            bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(16.0),
             topRight: Radius.circular(16.0),
           ),
@@ -125,10 +121,10 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
                 height: 40.0,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(8.0),
-                    bottomRight: Radius.circular(8.0),
                     topLeft: Radius.circular(8.0),
                     topRight: Radius.circular(8.0),
+                    bottomLeft: Radius.circular(8.0),
+                    bottomRight: Radius.circular(8.0),
                   ),
                   border: Border.all(
                     color: FlutterFlowTheme.of(context).border,
@@ -272,10 +268,8 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
                               : FlutterFlowTheme.of(context).border,
                         ),
                         borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(0.0),
-                          bottomRight: Radius.circular(8.0),
-                          topLeft: Radius.circular(0.0),
                           topRight: Radius.circular(8.0),
+                          bottomRight: Radius.circular(8.0),
                         ),
                       ),
                     ),

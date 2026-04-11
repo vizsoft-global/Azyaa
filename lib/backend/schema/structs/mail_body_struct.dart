@@ -197,7 +197,7 @@ Map<String, dynamic> getMailBodyFirestoreData(
   final firestoreData = mapToFirestore(mailBody.toMap());
 
   // Add any Firestore field values
-  mailBody.firestoreUtilData.fieldValues
+  mapToFirestore(mailBody.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

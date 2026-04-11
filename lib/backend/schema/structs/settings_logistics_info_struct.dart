@@ -367,7 +367,7 @@ Map<String, dynamic> getSettingsLogisticsInfoFirestoreData(
   final firestoreData = mapToFirestore(settingsLogisticsInfo.toMap());
 
   // Add any Firestore field values
-  settingsLogisticsInfo.firestoreUtilData.fieldValues
+  mapToFirestore(settingsLogisticsInfo.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

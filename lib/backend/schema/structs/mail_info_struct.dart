@@ -183,7 +183,7 @@ Map<String, dynamic> getMailInfoFirestoreData(
   );
 
   // Add any Firestore field values
-  mailInfo.firestoreUtilData.fieldValues
+  mapToFirestore(mailInfo.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

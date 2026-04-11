@@ -390,7 +390,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'f0bhaq3e': {
       'en': 'Kuwait',
-      'ar': 'الكويت',
+      'ar': 'Kuwait',
     },
     'wsk10cv3': {
       'en': 'Please select...',
@@ -479,6 +479,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'gl0iq18j': {
       'en': 'Enter correct number',
       'ar': 'أدخل الرقم الصحيح',
+    },
+    'vkvmd8f3': {
+      'en': 'Invalid phone number ',
+      'ar': 'رقم هاتف غير صالح',
     },
     'jp6h5wtr': {
       'en': 'Please choose an option from the dropdown',
@@ -587,8 +591,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الاسم',
     },
     'ud8mri0s': {
-      'en': 'Enter your last name',
-      'ar': '',
+      'en': 'Enter last name',
+      'ar': 'أدخل الاسم الأخير',
     },
     'stmlru7u': {
       'en': 'Gender ',
@@ -1038,7 +1042,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'Shopping has never been this simple. Browse, select, and purchase your favorite items with ease. Enjoy a smooth, secure checkout process',
       'ar':
-          'التسوّق لم يكن يومًا بهذه السهولة. تصفّح، واختر، واشترِ منتجاتك المفضلة بكل سلاسة. استمتع بعملية دفع آمنة وسهلة\n',
+          'التسوّق لم يكن يومًا بهذه السهولة. تصفّح، واختر، واشترِ منتجاتك المفضلة بكل سلاسة. استمتع بعملية دفع آمنة وسهلة',
     },
     '77042cho': {
       'en': 'Next',
@@ -1547,7 +1551,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'pwu5bnzr': {
       'en': 'All',
-      'ar': 'الجميع',
+      'ar': 'الكل',
     },
     'tucde2pp': {
       'en': 'Discover',
@@ -1575,7 +1579,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '28n811cb': {
       'en': 'Discover',
-      'ar': 'اكتشف',
+      'ar': 'يكتشف',
     },
     'gy6luqfa': {
       'en': 'Following',
@@ -1595,7 +1599,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ps7h58i4': {
       'en': 'All',
-      'ar': 'الجميع',
+      'ar': 'الكل',
     },
     'kbahpuim': {
       'en': 'Discover',
@@ -1651,7 +1655,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'hn7zrls9': {
       'en': 'All',
-      'ar': 'الجميع',
+      'ar': 'الكل',
     },
     '86tx2xmf': {
       'en': 'Discover',
@@ -1663,7 +1667,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ovs14rcm': {
       'en': 'All',
-      'ar': 'الجميع',
+      'ar': 'الكل',
     },
     '0ilbyaqs': {
       'en': 'Casual Designer ',
@@ -2293,10 +2297,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Edit Profile ',
       'ar': 'تعديل الملف الشخصي',
     },
-    '393bsfs9': {
-      'en': 'editprofile',
-      'ar': 'تعديل الملف الشخصي',
-    },
     'wa4e6hxr': {
       'en': 'My Info',
       'ar': 'معلوماتي',
@@ -2517,7 +2517,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     't00wctkm': {
       'en':
-          'You will not be able to access your personal data including your old orders, saved address, payment methods etc.',
+          'You will not be able to access your personal data including your old orders, saved address, payment methods etc.\n\nYour Personal Information, Usage Data, Connected Data will be deleted.',
       'ar':
           'لن تتمكن من الوصول إلى بياناتك الشخصية بما في ذلك الطلبات السابقة، والعناوين المحفوظة، وطرق الدفع، وغير ذلك.\n',
     },
@@ -3284,7 +3284,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'iknnzi9o': {
       'en': 'Bag',
-      'ar': 'الحقيبة\n',
+      'ar': 'الحقيبة',
     },
     '1n7yy5xa': {
       'en': 'Home',
@@ -4233,7 +4233,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'qdv1bl4i': {
       'en': 'Search...',
-      'ar': '',
+      'ar': 'يبحث...',
     },
     'vpg957ke': {
       'en': 'Classic Style',
@@ -4341,7 +4341,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '3xninvl3': {
       'en': 'Please enter name / brand',
-      'ar': '',
+      'ar': 'الرجاء إدخال الاسم / العلامة التجارية',
     },
     'rj70c0v7': {
       'en': 'Please choose an option from the dropdown',
@@ -4381,7 +4381,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '3tvpo4e6': {
       'en': 'Please provide portfolio / website link',
-      'ar': '',
+      'ar': 'يرجى تقديم رابط لمحفظة أعمالك / موقعك الإلكتروني',
     },
     'obwxd4fv': {
       'en': 'Please choose an option from the dropdown',
@@ -4389,7 +4389,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'iito5zro': {
       'en': 'Please enter brief bio',
-      'ar': '',
+      'ar': 'الرجاء إدخال السيرة الذاتية المختصرة',
     },
     '8nzomqd6': {
       'en': 'Please choose an option from the dropdown',
@@ -4397,7 +4397,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '1sinmrr7': {
       'en': 'Please enter year of experience',
-      'ar': '',
+      'ar': 'يرجى إدخال سنوات الخبرة',
     },
     'chcjkpep': {
       'en': 'Please choose an option from the dropdown',
@@ -4405,7 +4405,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'tyai15fr': {
       'en': 'Please add production capacity/month',
-      'ar': '',
+      'ar': 'يرجى إضافة الطاقة الإنتاجية/شهريًا',
     },
     'nub1elea': {
       'en': 'Please choose an option from the dropdown',
@@ -4413,7 +4413,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'l45a7krt': {
       'en': 'Please enter location / city ',
-      'ar': '',
+      'ar': 'الرجاء إدخال الموقع / المدينة',
     },
     'bv31grz5': {
       'en': 'Please choose an option from the dropdown',
@@ -4758,7 +4758,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'a2h2czk9': {
       'en': 'Search...',
-      'ar': '',
+      'ar': 'يبحث...',
     },
     'de6suzx7': {
       'en': 'Classic Style',
@@ -4993,8 +4993,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'التالي',
     },
     '0le351ff': {
-      'en': 'Please enter name',
-      'ar': '',
+      'en': 'Please enter full name/username',
+      'ar': 'الرجاء إدخال الاسم الكامل/اسم المستخدم',
     },
     'ppivy3e2': {
       'en': 'Please choose an option from the dropdown',
@@ -5002,7 +5002,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '1zdxi0ai': {
       'en': 'Please provide a valid email',
-      'ar': '',
+      'ar': 'يرجى تقديم بريد إلكتروني صحيح',
     },
     '6zqkykjt': {
       'en': 'Please choose an option from the dropdown',
@@ -5026,7 +5026,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'v3oevowr': {
       'en': 'Please enter mobile  number',
-      'ar': '',
+      'ar': 'الرجاء إدخال رقم الجوال',
     },
     'quj4xy1w': {
       'en': 'Please choose an option from the dropdown',
@@ -5058,6 +5058,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'j3kenw11': {
       'en': 'Please enter years of experience',
+      'ar': 'يرجى إدخال سنوات الخبرة',
+    },
+    '9jrbibpt': {
+      'en': 'Invalid format',
       'ar': '',
     },
     'nwqzu26e': {
@@ -5074,7 +5078,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0h97vb5p': {
       'en': 'Please enter preferred promotion style',
-      'ar': '',
+      'ar': 'يرجى إدخال نمط الترويج المفضل',
     },
     'ncgkth3u': {
       'en': 'Please choose an option from the dropdown',
@@ -5327,18 +5331,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'azzy5cn9': {
       'en': 'All',
       'ar': 'الكل',
-    },
-    'nvf79nuv': {
-      'en': 'No orders yet?',
-      'ar': 'لا توجد طلبات حتى الآن؟',
-    },
-    '4natkksr': {
-      'en': 'Your next great find is just a tap away',
-      'ar': 'اكتشافك الرائع التالي على بُعد نقرة واحدة فقط',
-    },
-    'zwoqfkdt': {
-      'en': 'let’s go shopping',
-      'ar': 'هيا بنا نتسوق',
     },
     'ogy2y8be': {
       'en': 'Home',
@@ -6597,7 +6589,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'r66b2c27': {
       'en': 'Email ',
-      'ar': 'البريد الإلكتروني',
+      'ar': 'بريد إلكتروني',
     },
     'y6zwf08c': {
       'en': '*',
@@ -7158,7 +7150,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'ua8ylzdj': {
       'en': 'Address',
-      'ar': '',
+      'ar': 'عنوان',
     },
     'ka9uqgyv': {
       'en': 'Add a New Address',
@@ -7277,7 +7269,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'aibnfycg': {
       'en': 'All',
-      'ar': 'الجميع',
+      'ar': 'الكل',
     },
     '5urltqi8': {
       'en': 'Discover',
@@ -8115,6 +8107,112 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '',
     },
   },
+  // addresstest
+  {
+    'pyxxgobd': {
+      'en': 'Button',
+      'ar': '',
+    },
+    '0yrvnzkp': {
+      'en': 'My address',
+      'ar': '',
+    },
+    'r894ambl': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // Delete
+  {
+    'p8ljx6xb': {
+      'en': 'Azyaa',
+      'ar': 'يرجى تسجيل الدخول',
+    },
+    'yzhadtyg': {
+      'en': 'Add your Email - ID to request your account to delete it.',
+      'ar': 'ادخل إلى حسابك للاستمتاع بتجربة سلسة.',
+    },
+    'nkvjfxdz': {
+      'en': 'Email ',
+      'ar': 'البريد الإلكتروني',
+    },
+    'whdcy5vt': {
+      'en': '*',
+      'ar': '*',
+    },
+    '2jy6wgwv': {
+      'en': 'Name *',
+      'ar': 'الاسم',
+    },
+    '8t954e8y': {
+      'en': 'Enter your email',
+      'ar': 'أدخل بريدك الإلكتروني',
+    },
+    'tfb7v781': {
+      'en': 'Password ',
+      'ar': 'كلمة المرور',
+    },
+    '7313kofs': {
+      'en': '*',
+      'ar': '*',
+    },
+    'lxv62fal': {
+      'en': 'Email *',
+      'ar': 'البريد الإلكتروني',
+    },
+    'hxel6kmn': {
+      'en': 'Enter your password',
+      'ar': 'أدخل كلمة المرور',
+    },
+    'wq9uda7v': {
+      'en': 'Forgot your password?',
+      'ar': 'هل نسيت كلمة المرور؟',
+    },
+    'eysqalxg': {
+      'en': 'Name *',
+      'ar': '',
+    },
+    'x2gkixpn': {
+      'en': 'Request to Delete account',
+      'ar': 'تسجيل الدخول',
+    },
+    'emgkbn0b': {
+      'en': 'By continuing you agree ',
+      'ar': 'بالمتابعة فإنك توافق على',
+    },
+    '86nkny01': {
+      'en': 'Terms of Services ',
+      'ar': '',
+    },
+    'hgfodckm': {
+      'en': '& ',
+      'ar': '',
+    },
+    'mp7c39ju': {
+      'en': 'Privacy Policy ',
+      'ar': '',
+    },
+    'rd0l7aph': {
+      'en': 'Please provide a valid email ',
+      'ar': 'يرجى تقديم بريد إلكتروني صالح',
+    },
+    'f5yn3z1t': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    '0w1n5qze': {
+      'en': 'Please enter password',
+      'ar': 'الرجاء إدخال كلمة المرور',
+    },
+    '72p1twi9': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    '5jbk1pfo': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
   // Universal_NavigationBar
   {
     'qym5k4mn': {
@@ -8216,7 +8314,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '5ccfh2b9': {
       'en': 'Cm',
-      'ar': '',
+      'ar': 'سم',
     },
     'm0g4kuhl': {
       'en': 'Weight',
@@ -8244,11 +8342,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'djb1pn0c': {
       'en': 'Cm',
-      'ar': '',
+      'ar': 'سم',
     },
     'ibui2qed': {
       'en': 'Cm',
-      'ar': '',
+      'ar': 'سم',
     },
     'q4wfgamb': {
       'en': 'Search...',
@@ -8383,8 +8481,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'تعيين كقياس افتراضي',
     },
     'meopz8eh': {
-      'en': 'Please enter name',
-      'ar': '',
+      'en': 'Please enter name.',
+      'ar': 'الرجاء إدخال الاسم.',
     },
     'x6h1ppv1': {
       'en': 'Please choose an option from the dropdown',
@@ -8400,7 +8498,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ad6u5qpk': {
       'en': 'Field is required',
-      'ar': '',
+      'ar': 'الحقل مطلوب',
     },
     '27dyxt6n': {
       'en': 'Please choose an option from the dropdown',
@@ -8408,7 +8506,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '8jvr0y89': {
       'en': 'Field is required',
-      'ar': '',
+      'ar': 'الحقل مطلوب',
     },
     'yoyetpdz': {
       'en': 'Please choose an option from the dropdown',
@@ -8677,6 +8775,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Please enter region',
       'ar': 'يرجى إدخال المنطقة',
     },
+    'h074ilwa': {
+      'en': 'Minimum 2 characters are required',
+      'ar': 'الحد الأدنى المطلوب هو حرفان',
+    },
+    's6vunooi': {
+      'en': 'Maximum 100 characters are required',
+      'ar': 'الحد الأقصى 100 حرف',
+    },
+    'f2phudcc': {
+      'en': 'Invalid format.',
+      'ar': '',
+    },
     'mrep3vi8': {
       'en': 'Please choose an option from the dropdown',
       'ar': '',
@@ -8748,6 +8858,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'po1zs7z0': {
       'en': 'Please enter postal code',
       'ar': 'يرجى إدخال الرمز البريدي',
+    },
+    'rkfozaot': {
+      'en': 'Invalid postal code.',
+      'ar': 'رمز بريدي غير صالح.',
     },
     's9t7zd6m': {
       'en': 'Please choose an option from the dropdown',
@@ -9607,10 +9721,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'How do you pay',
       'ar': 'كيف تدفع',
     },
-    'i8gz6h3u': {
-      'en': 'Remember my choice',
-      'ar': 'تذكر اختياري',
-    },
     'sdhgcktd': {
       'en': 'Pay with K-Net',
       'ar': 'الدفع عبر K-Net',
@@ -9618,6 +9728,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'h4tvsidt': {
       'en': 'Pay with Card',
       'ar': 'الدفع عبر البطاقة',
+    },
+    'i8gz6h3u': {
+      'en': 'Remember my choice',
+      'ar': 'تذكر اختياري',
     },
     '6eekr0uw': {
       'en': 'Pay with G-Pay',
@@ -10008,7 +10122,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '0ohv0220': {
       'en': 'Try more',
-      'ar': '',
+      'ar': 'جرب المزيد',
     },
   },
   // App_Updater_Popup_Android
@@ -10340,15 +10454,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'gatq8815': {
       'en': 'Google',
-      'ar': '',
+      'ar': 'جوجل',
     },
     '6n0eqkfo': {
       'en': 'Apple',
-      'ar': '',
+      'ar': 'تفاحة',
     },
     'wpu9hjb9': {
       'en': 'Facebook',
-      'ar': '',
+      'ar': 'فيسبوك',
     },
   },
   // VTO_DeleteConfirm
@@ -10925,7 +11039,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '9ug8moss': {
       'en': 'Available Coupons',
-      'ar': '',
+      'ar': 'قسائم متاحة',
     },
     '7s9t8th5': {
       'en': 'Apply',

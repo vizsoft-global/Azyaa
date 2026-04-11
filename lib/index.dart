@@ -59,7 +59,7 @@ export '/azyaa_group_a/customer/sign/phone/phone/phone_widget.dart'
     show PhoneWidget;
 export '/azyaa_group_a/customer/sign/phone/phone_verification/phone_verification_widget.dart'
     show PhoneVerificationWidget;
-export '/azyaa_group_a/cart/cart_widget.dart' show CartWidget;
+export '/azyaa_group_a/payment/cart/cart_widget.dart' show CartWidget;
 export '/ui/gift_wallet_module/s4_redeem_gift_card/s4_redeem_gift_card_widget.dart'
     show S4RedeemGiftCardWidget;
 export '/azyaa_group_a/customer/zone/wishlist/wishlist_widget.dart'
@@ -75,7 +75,7 @@ export '/ui/loyalty_module/s2_coupon_details/s2_coupon_details_widget.dart'
 export '/azyaa_group_a/payment/success/success_widget.dart' show SuccessWidget;
 export '/azyaa_group_a/membership/membership_plan/membership_plan_widget.dart'
     show MembershipPlanWidget;
-export '/azyaa_group_b/designer/designer_form/designer_form/designer_form_widget.dart'
+export '/azyaa_group_b/designer/designer_form/designer_form_widget.dart'
     show DesignerFormWidget;
 export '/azyaa_group_b/designer/designer_form/designer_portofolio/designer_portofolio_widget.dart'
     show DesignerPortofolioWidget;
@@ -167,3 +167,5 @@ export '/azyaa_group_a/payment/free_payment/free_payment_widget.dart'
     show FreePaymentWidget;
 export '/azyaa_group_a/home/main/home_search/home_search_widget.dart'
     show HomeSearchWidget;
+export '/addresstest/addresstest_widget.dart' show AddresstestWidget;
+export '/delete/delete_widget.dart' show DeleteWidget;

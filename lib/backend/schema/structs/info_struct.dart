@@ -710,7 +710,8 @@ Map<String, dynamic> getInfoFirestoreData(
   );
 
   // Add any Firestore field values
-  info.firestoreUtilData.fieldValues.forEach((k, v) => firestoreData[k] = v);
+  mapToFirestore(info.firestoreUtilData.fieldValues)
+      .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
 }

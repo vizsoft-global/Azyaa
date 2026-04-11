@@ -317,16 +317,18 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                             FormFieldController<
                                                                 String>(
                                                           _model.countryListValue ??=
-                                                              valueOrDefault<
-                                                                  String>(
-                                                            FFAppState()
-                                                                .UserDataFlow
-                                                                .phoneNumberCountry,
-                                                            'Kuwait',
-                                                          ),
+                                                              'Kuwait',
                                                         ),
-                                                        options: functions
-                                                            .getCountrList(),
+                                                        options: List<
+                                                                String>.from(
+                                                            functions
+                                                                .getGCCCountryListWithTranslation(
+                                                                    'en')),
+                                                        optionLabels: functions
+                                                            .getGCCCountryListWithTranslation(
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .languageCode),
                                                         onChanged: (val) =>
                                                             safeSetState(() =>
                                                                 _model.countryListValue =

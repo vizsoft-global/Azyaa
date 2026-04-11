@@ -497,7 +497,16 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.goNamed(
-                                          ForgotPasswordWidget.routeName);
+                                        ForgotPasswordWidget.routeName,
+                                        extra: <String, dynamic>{
+                                          '__transition_info__': TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                            duration: Duration(milliseconds: 0),
+                                          ),
+                                        },
+                                      );
                                     },
                                     child: RichText(
                                       textScaler:
@@ -622,8 +631,19 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             .clearRedirectLocation();
 
                                         context.goNamedAuth(
-                                            LoginWidget.routeName,
-                                            context.mounted);
+                                          LoginWidget.routeName,
+                                          context.mounted,
+                                          extra: <String, dynamic>{
+                                            '__transition_info__':
+                                                TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 0),
+                                            ),
+                                          },
+                                        );
 
                                         if (_shouldSetState)
                                           safeSetState(() {});
@@ -666,8 +686,19 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               ?.isPofileCompleteStatus ==
                                           true) {
                                         context.goNamedAuth(
-                                            HomeWidget.routeName,
-                                            context.mounted);
+                                          HomeWidget.routeName,
+                                          context.mounted,
+                                          extra: <String, dynamic>{
+                                            '__transition_info__':
+                                                TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 0),
+                                            ),
+                                          },
+                                        );
                                       } else {
                                         if (_model.settingsDoc!
                                                 .settingsPhoneOtpStatus &&
@@ -675,8 +706,19 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     ?.isPhoneVerificationStatus ==
                                                 false)) {
                                           context.goNamedAuth(
-                                              PhoneWidget.routeName,
-                                              context.mounted);
+                                            PhoneWidget.routeName,
+                                            context.mounted,
+                                            extra: <String, dynamic>{
+                                              '__transition_info__':
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
+                                          );
                                         } else {
                                           if (currentUserDocument?.userInfo
                                                   ?.isEmailVerificationStatus ==
@@ -707,38 +749,96 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                 ));
 
                                             context.goNamedAuth(
-                                                RegisterVerificationWidget
-                                                    .routeName,
-                                                context.mounted);
+                                              RegisterVerificationWidget
+                                                  .routeName,
+                                              context.mounted,
+                                              extra: <String, dynamic>{
+                                                '__transition_info__':
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                  duration:
+                                                      Duration(milliseconds: 0),
+                                                ),
+                                              },
+                                            );
                                           } else {
                                             if (currentUserDocument
                                                     ?.userInfo?.isStep1Status ==
                                                 false) {
                                               context.goNamedAuth(
-                                                  Step1PersonalWidget.routeName,
-                                                  context.mounted);
+                                                Step1PersonalWidget.routeName,
+                                                context.mounted,
+                                                extra: <String, dynamic>{
+                                                  '__transition_info__':
+                                                      TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType.fade,
+                                                    duration: Duration(
+                                                        milliseconds: 0),
+                                                  ),
+                                                },
+                                              );
                                             } else {
                                               if (currentUserDocument?.userInfo
                                                       ?.isStep2Status ==
                                                   false) {
                                                 context.goNamedAuth(
-                                                    Step2MeasurementsWidget
-                                                        .routeName,
-                                                    context.mounted);
+                                                  Step2MeasurementsWidget
+                                                      .routeName,
+                                                  context.mounted,
+                                                  extra: <String, dynamic>{
+                                                    '__transition_info__':
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .fade,
+                                                      duration: Duration(
+                                                          milliseconds: 0),
+                                                    ),
+                                                  },
+                                                );
                                               } else {
                                                 if (currentUserDocument
                                                         ?.userInfo
                                                         ?.isStep3Status ==
                                                     false) {
                                                   context.goNamedAuth(
-                                                      Step3PreferredStyleWidget
-                                                          .routeName,
-                                                      context.mounted);
+                                                    Step3PreferredStyleWidget
+                                                        .routeName,
+                                                    context.mounted,
+                                                    extra: <String, dynamic>{
+                                                      '__transition_info__':
+                                                          TransitionInfo(
+                                                        hasTransition: true,
+                                                        transitionType:
+                                                            PageTransitionType
+                                                                .fade,
+                                                        duration: Duration(
+                                                            milliseconds: 0),
+                                                      ),
+                                                    },
+                                                  );
                                                 } else {
                                                   context.goNamedAuth(
-                                                      Step4ReferralCodeWidget
-                                                          .routeName,
-                                                      context.mounted);
+                                                    Step4ReferralCodeWidget
+                                                        .routeName,
+                                                    context.mounted,
+                                                    extra: <String, dynamic>{
+                                                      '__transition_info__':
+                                                          TransitionInfo(
+                                                        hasTransition: true,
+                                                        transitionType:
+                                                            PageTransitionType
+                                                                .fade,
+                                                        duration: Duration(
+                                                            milliseconds: 0),
+                                                      ),
+                                                    },
+                                                  );
                                                 }
                                               }
                                             }
@@ -782,8 +882,18 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       GoRouter.of(context)
                                           .clearRedirectLocation();
 
-                                      context.goNamedAuth(LoginWidget.routeName,
-                                          context.mounted);
+                                      context.goNamedAuth(
+                                        LoginWidget.routeName,
+                                        context.mounted,
+                                        extra: <String, dynamic>{
+                                          '__transition_info__': TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                            duration: Duration(milliseconds: 0),
+                                          ),
+                                        },
+                                      );
                                     }
 
                                     if (_shouldSetState) safeSetState(() {});
@@ -907,7 +1017,17 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.goNamed(RegisterWidget.routeName);
+                                    context.goNamed(
+                                      RegisterWidget.routeName,
+                                      extra: <String, dynamic>{
+                                        '__transition_info__': TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
+                                        ),
+                                      },
+                                    );
                                   },
                                   child: RichText(
                                     textScaler:

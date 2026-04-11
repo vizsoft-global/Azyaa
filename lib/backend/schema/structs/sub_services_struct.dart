@@ -202,7 +202,7 @@ Map<String, dynamic> getSubServicesFirestoreData(
   final firestoreData = mapToFirestore(subServices.toMap());
 
   // Add any Firestore field values
-  subServices.firestoreUtilData.fieldValues
+  mapToFirestore(subServices.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

@@ -661,7 +661,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'ud8mri0s' /* Enter your last name */,
+                                                      'ud8mri0s' /* Enter last name */,
                                                     ),
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
@@ -736,6 +736,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                         fontFamily: 'Aileron',
                                                         letterSpacing: 0.0,
                                                       ),
+                                                  textAlign: TextAlign.start,
                                                   maxLength: 15,
                                                   maxLengthEnforcement:
                                                       MaxLengthEnforcement
@@ -779,7 +780,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                           ],
                                         ),
                                       ),
-                                    ].divide(SizedBox(width: 16.0)),
+                                    ].divide(SizedBox(width: 10.0)),
                                   ),
                                 ),
                                 Padding(
@@ -849,13 +850,31 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                           )
                                         ].toList(),
                                         onChanged: (val) => safeSetState(() {}),
-                                        controller:
-                                            _model.genderValueController ??=
-                                                FormFieldController<String>(
-                                                    valueOrDefault<String>(
-                                          currentUserDocument?.userInfo?.gender,
-                                          'Female',
-                                        )),
+                                        controller: _model
+                                                .genderValueController ??=
+                                            FormFieldController<String>(
+                                                (valueOrDefault<String>(
+                                                              currentUserDocument
+                                                                  ?.userInfo
+                                                                  ?.gender,
+                                                              'Female',
+                                                            ) ==
+                                                            'Female') ||
+                                                        (valueOrDefault<String>(
+                                                              currentUserDocument
+                                                                  ?.userInfo
+                                                                  ?.gender,
+                                                              'Female',
+                                                            ) ==
+                                                            'أنثى')
+                                                    ? FFLocalizations.of(
+                                                            context)
+                                                        .getVariableText(
+                                                        enText: 'Female',
+                                                        arText: 'أنثى',
+                                                      )
+                                                    : currentUserDocument!
+                                                        .userInfo.gender),
                                         optionHeight: 32.0,
                                         textStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -1804,14 +1823,18 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                           FormFieldController<
                                                               String>(
                                                         _model.countryListValue2 ??=
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                          '5ljvov7e' /* Kuwait */,
-                                                        ),
+                                                            'Kuwait',
                                                       ),
-                                                      options: functions
-                                                          .getCountrList(),
+                                                      options: List<
+                                                              String>.from(
+                                                          functions
+                                                              .getGCCCountryListWithTranslation(
+                                                                  'en')),
+                                                      optionLabels: functions
+                                                          .getGCCCountryListWithTranslation(
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .languageCode),
                                                       onChanged: (val) async {
                                                         safeSetState(() => _model
                                                                 .countryListValue2 =

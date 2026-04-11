@@ -10,5 +10,7 @@ export 'register_fcm_token_if_missing.dart' show registerFcmTokenIfMissing;
 export 'notification_redirect.dart' show notificationRedirect;
 export 'init_branch.dart' show initBranch;
 export 'generate_link.dart' show generateLink;
+export 'generate_link_new.dart' show generateLinkNew;
 export 'generate_branch_link.dart' show generateBranchLink;
 export 'handle_branch_routing.dart' show handleBranchRouting;
+export 'handle_branch_routing_new.dart' show handleBranchRoutingNew;

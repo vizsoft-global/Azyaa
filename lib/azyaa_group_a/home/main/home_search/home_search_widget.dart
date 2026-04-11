@@ -96,22 +96,18 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                           },
                         ),
                         Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 8.0, 0.0),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                '107zlwf3' /* Search */,
-                              ),
-                              textAlign: TextAlign.start,
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    fontFamily: 'Aileron',
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              '107zlwf3' /* Search */,
                             ),
+                            textAlign: TextAlign.start,
+                            style: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .override(
+                                  fontFamily: 'Aileron',
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
                           ),
                         ),
                         if (responsiveVisibility(

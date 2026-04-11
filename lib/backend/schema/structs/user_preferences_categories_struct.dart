@@ -229,7 +229,7 @@ Map<String, dynamic> getUserPreferencesCategoriesFirestoreData(
   );
 
   // Add any Firestore field values
-  userPreferencesCategories.firestoreUtilData.fieldValues
+  mapToFirestore(userPreferencesCategories.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

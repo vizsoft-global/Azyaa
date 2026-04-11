@@ -396,7 +396,7 @@ Map<String, dynamic> getUserMembershipsFirestoreData(
   final firestoreData = mapToFirestore(userMemberships.toMap());
 
   // Add any Firestore field values
-  userMemberships.firestoreUtilData.fieldValues
+  mapToFirestore(userMemberships.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

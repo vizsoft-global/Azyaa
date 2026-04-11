@@ -174,7 +174,7 @@ Map<String, dynamic> getMovementInfoFirestoreData(
   final firestoreData = mapToFirestore(movementInfoStruct.toMap());
 
   // Add any Firestore field values
-  movementInfoStruct.firestoreUtilData.fieldValues
+  mapToFirestore(movementInfoStruct.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

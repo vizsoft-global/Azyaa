@@ -792,7 +792,7 @@ Map<String, dynamic> getMailDataFirestoreData(
   final firestoreData = mapToFirestore(mailData.toMap());
 
   // Add any Firestore field values
-  mailData.firestoreUtilData.fieldValues
+  mapToFirestore(mailData.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

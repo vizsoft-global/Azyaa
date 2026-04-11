@@ -241,7 +241,16 @@ class _Highlights3WidgetState extends State<Highlights3Widget> {
                             onPressed: () async {
                               FFAppState().Onboard = 'complete';
 
-                              context.goNamed(HomeWidget.routeName);
+                              context.goNamed(
+                                HomeWidget.routeName,
+                                extra: <String, dynamic>{
+                                  '__transition_info__': TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
+                              );
                             },
                             text: FFLocalizations.of(context).getText(
                               '77042cho' /* Next */,
@@ -278,7 +287,16 @@ class _Highlights3WidgetState extends State<Highlights3Widget> {
                               arText: 'مكتمل',
                             );
 
-                            context.goNamed(HomeWidget.routeName);
+                            context.goNamed(
+                              HomeWidget.routeName,
+                              extra: <String, dynamic>{
+                                '__transition_info__': TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
                           },
                           child: Text(
                             FFLocalizations.of(context).getText(

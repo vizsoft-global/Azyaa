@@ -1212,7 +1212,7 @@ Map<String, dynamic> getUserFlowFirestoreData(
   );
 
   // Add any Firestore field values
-  userFlow.firestoreUtilData.fieldValues
+  mapToFirestore(userFlow.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

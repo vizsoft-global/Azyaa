@@ -70,8 +70,8 @@ class ProductModel extends FlutterFlowModel<ProductWidget> {
 
   // Model for User-Wishlist component.
   late UserWishlistModel userWishlistModel;
-  // Stores action output result for [Custom Action - generateLink] action in IconButton widget.
-  String? sharelink;
+  // Stores action output result for [Custom Action - generateLinkNew] action in IconButton widget.
+  String? newlink;
   // State field(s) for CountController widget.
   int? countControllerValue;
   // Model for DefaultCartButton component.

@@ -40,7 +40,7 @@ class ProfileBodyAddModel extends FlutterFlowModel<ProfileBodyAddWidget> {
   String? _nameTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'meopz8eh' /* Please enter name */,
+        'meopz8eh' /* Please enter name. */,
       );
     }
 

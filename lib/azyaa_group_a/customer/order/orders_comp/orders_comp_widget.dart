@@ -95,6 +95,13 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                     ParamType.DocumentReference,
                   ),
                 }.withoutNulls,
+                extra: <String, dynamic>{
+                  '__transition_info__': TransitionInfo(
+                    hasTransition: true,
+                    transitionType: PageTransitionType.fade,
+                    duration: Duration(milliseconds: 0),
+                  ),
+                },
               );
             }
           },
@@ -1217,13 +1224,16 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                                       'completed') ||
                                                   ((widget!.order
                                                               ?.orderStatus ==
-                                                          'Failed') ||
+                                                          'FAILED') ||
                                                       (widget!.order
                                                               ?.orderStatus ==
                                                           'Cancelled') ||
                                                       (widget!.order
                                                               ?.orderStatus ==
-                                                          'Initialization'))
+                                                          'Initialization') ||
+                                                      (widget!.order
+                                                              ?.orderStatus ==
+                                                          'CAPTURED'))
                                               ? widget!.order?.orderStatus
                                               : valueOrDefault<String>(
                                                   containerDeliveryRecordList

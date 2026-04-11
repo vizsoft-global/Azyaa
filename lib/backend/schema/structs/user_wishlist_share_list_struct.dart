@@ -353,7 +353,7 @@ Map<String, dynamic> getUserWishlistShareListFirestoreData(
   );
 
   // Add any Firestore field values
-  userWishlistShareList.firestoreUtilData.fieldValues
+  mapToFirestore(userWishlistShareList.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

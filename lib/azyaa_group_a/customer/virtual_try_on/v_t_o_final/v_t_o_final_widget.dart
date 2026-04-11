@@ -72,8 +72,6 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0.0),
-          bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -100,8 +98,6 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                         )
                       ],
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(0.0),
-                        bottomRight: Radius.circular(0.0),
                         topLeft: Radius.circular(16.0),
                         topRight: Radius.circular(16.0),
                       ),
@@ -1101,8 +1097,6 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                             )
                           ],
                           borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(0.0),
-                            bottomRight: Radius.circular(0.0),
                             topLeft: Radius.circular(16.0),
                             topRight: Radius.circular(16.0),
                           ),
@@ -1234,8 +1228,6 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                             )
                           ],
                           borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(0.0),
-                            bottomRight: Radius.circular(0.0),
                             topLeft: Radius.circular(16.0),
                             topRight: Radius.circular(16.0),
                           ),

@@ -269,6 +269,8 @@ final parametersBuilderMap =
   'TESTheader': ParameterData.none(),
   'freePayment': ParameterData.none(),
   'home-search': ParameterData.none(),
+  'addresstest': ParameterData.none(),
+  'Delete': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

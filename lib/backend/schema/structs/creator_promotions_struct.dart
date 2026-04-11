@@ -750,7 +750,7 @@ Map<String, dynamic> getCreatorPromotionsFirestoreData(
   );
 
   // Add any Firestore field values
-  creatorPromotions.firestoreUtilData.fieldValues
+  mapToFirestore(creatorPromotions.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

@@ -555,7 +555,7 @@ Map<String, dynamic> getAddressInfoFirestoreData(
   final firestoreData = mapToFirestore(addressInfo.toMap());
 
   // Add any Firestore field values
-  addressInfo.firestoreUtilData.fieldValues
+  mapToFirestore(addressInfo.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

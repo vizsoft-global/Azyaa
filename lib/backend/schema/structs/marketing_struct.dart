@@ -281,7 +281,7 @@ Map<String, dynamic> getMarketingFirestoreData(
   final firestoreData = mapToFirestore(marketing.toMap());
 
   // Add any Firestore field values
-  marketing.firestoreUtilData.fieldValues
+  mapToFirestore(marketing.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

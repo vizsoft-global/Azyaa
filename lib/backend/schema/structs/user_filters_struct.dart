@@ -699,7 +699,7 @@ Map<String, dynamic> getUserFiltersFirestoreData(
   final firestoreData = mapToFirestore(userFilters.toMap());
 
   // Add any Firestore field values
-  userFilters.firestoreUtilData.fieldValues
+  mapToFirestore(userFilters.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

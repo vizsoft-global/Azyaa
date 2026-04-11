@@ -455,7 +455,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                                 : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/i9u1ra67p2p4/Azyaa-logo_(2).jpg',
                                                             width: 80.0,
                                                             height: 80.0,
-                                                            fit: BoxFit.cover,
+                                                            fit: BoxFit.contain,
                                                             alignment:
                                                                 Alignment(
                                                                     0.0, 0.0),
@@ -1576,9 +1576,9 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                           _model.countryListValue ??=
                                                               loggedIn
                                                                   ? currentUserDocument
-                                                                      ?.designerMainInfo
-                                                                      ?.designerInfo
-                                                                      ?.alternativeCountry
+                                                                      ?.designerRequests
+                                                                      ?.formData
+                                                                      ?.country
                                                                   : valueOrDefault<
                                                                       String>(
                                                                       FFLocalizations.of(
@@ -1592,8 +1592,16 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                                       'Kuwait',
                                                                     ),
                                                         ),
-                                                        options: functions
-                                                            .getCountrList(),
+                                                        options: List<
+                                                                String>.from(
+                                                            functions
+                                                                .getGCCCountryListWithTranslation(
+                                                                    'en')),
+                                                        optionLabels: functions
+                                                            .getGCCCountryListWithTranslation(
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .languageCode),
                                                         onChanged: (val) =>
                                                             safeSetState(() =>
                                                                 _model.countryListValue =
@@ -3556,7 +3564,13 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                   onPressed: () =>
                                                       Navigator.pop(
                                                           alertDialogContext),
-                                                  child: Text('Ok'),
+                                                  child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getVariableText(
+                                                    enText: 'Ok',
+                                                    arText: 'نعم',
+                                                  )),
                                                 ),
                                               ],
                                             ),

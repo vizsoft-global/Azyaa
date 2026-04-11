@@ -192,23 +192,19 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                           },
                         ),
                         Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                'cr4dh4ua' /* Creators Form */,
-                              ),
-                              textAlign: TextAlign.start,
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    fontFamily: 'Aileron',
-                                    fontSize: 18.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'cr4dh4ua' /* Creators Form */,
                             ),
+                            textAlign: TextAlign.start,
+                            style: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .override(
+                                  fontFamily: 'Aileron',
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
                           ),
                         ),
                         if (responsiveVisibility(
@@ -1794,8 +1790,15 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                                   'Kuwait',
                                                                 ),
                                                     ),
-                                                    options: functions
-                                                        .getCountrList(),
+                                                    options: List<String>.from(
+                                                        functions
+                                                            .getGCCCountryListWithTranslation(
+                                                                'en')),
+                                                    optionLabels: functions
+                                                        .getGCCCountryListWithTranslation(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .languageCode),
                                                     onChanged: (val) async {
                                                       safeSetState(() => _model
                                                               .countryListValue =
@@ -3300,7 +3303,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                       .primaryText,
                                               letterSpacing: 0.0,
                                             ),
-                                        maxLength: 25,
+                                        maxLength: 4,
                                         maxLengthEnforcement:
                                             MaxLengthEnforcement.enforced,
                                         buildCounter: (context,
@@ -3308,12 +3311,17 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                 required isFocused,
                                                 maxLength}) =>
                                             null,
+                                        keyboardType: TextInputType.number,
                                         cursorColor:
                                             FlutterFlowTheme.of(context)
                                                 .primaryText,
                                         validator: _model
                                             .experienceFieldTextControllerValidator
                                             .asValidator(context),
+                                        inputFormatters: [
+                                          FilteringTextInputFormatter.allow(
+                                              RegExp('[0-9]'))
+                                        ],
                                       ),
                                     ),
                                   ),

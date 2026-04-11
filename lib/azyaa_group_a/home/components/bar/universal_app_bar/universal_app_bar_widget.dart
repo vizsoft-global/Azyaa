@@ -1,7 +1,6 @@
 import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/loglist_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -192,7 +191,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                   ),
                   onPressed: () async {
                     if (widget!.navigationFrom == 'default') {
-                      context.pop();
+                      context.safePop();
                     } else {
                       if (widget!.navigationFrom == 'shop') {
                         if (Navigator.of(context).canPop()) {
@@ -224,15 +223,15 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                 if ((widget!.navigationFrom == 'designer') &&
                                     (widget!.designerRef != null)) {
                                   context
-                                      .pushNamed(DesignersListWidget.routeName);
+                                      .goNamed(DesignersListWidget.routeName);
                                 } else {
-                                  if (widget!.navigationFrom == 'address') {
+                                  if (widget!.navigationFrom == 'account') {
                                     context.pushNamed(AddressWidget.routeName);
                                   } else {
                                     if (widget!.navigationFrom ==
                                         'editprofile') {
-                                      context.pushNamed(
-                                          ProfileEditWidget.routeName);
+                                      context
+                                          .pushNamed(ProfileWidget.routeName);
                                     } else {
                                       if (widget!.navigationFrom == 'orders') {
                                         if (Navigator.of(context).canPop()) {
@@ -248,11 +247,18 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                           context.pushNamed(
                                               VirtualTryOnWidget.routeName);
                                         } else {
-                                          context.safePop();
+                                          if (widget!.navigationFrom ==
+                                              'account') {
+                                            if (Navigator.of(context)
+                                                .canPop()) {
+                                              context.pop();
+                                            }
+                                            context.pushNamed(
+                                                ProfileWidget.routeName);
+                                          } else {
+                                            context.safePop();
+                                          }
                                         }
-
-                                        FFAppState().fromNav = '';
-                                        safeSetState(() {});
                                       }
                                     }
                                   }
@@ -278,24 +284,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                 focusColor: Colors.transparent,
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
-                onTap: () async {
-                  await showModalBottomSheet(
-                    isScrollControlled: true,
-                    backgroundColor: Colors.transparent,
-                    context: context,
-                    builder: (context) {
-                      return WebViewAware(
-                        child: Padding(
-                          padding: MediaQuery.viewInsetsOf(context),
-                          child: Container(
-                            height: 85.0,
-                            child: LoglistWidget(),
-                          ),
-                        ),
-                      );
-                    },
-                  ).then((value) => safeSetState(() {}));
-                },
+                onTap: () async {},
                 child: Text(
                   widget!.title.maybeHandleOverflow(
                     maxChars: 40,

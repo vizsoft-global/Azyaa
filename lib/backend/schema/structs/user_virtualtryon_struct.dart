@@ -238,7 +238,7 @@ Map<String, dynamic> getUserVirtualtryonFirestoreData(
   final firestoreData = mapToFirestore(userVirtualtryon.toMap());
 
   // Add any Firestore field values
-  userVirtualtryon.firestoreUtilData.fieldValues
+  mapToFirestore(userVirtualtryon.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

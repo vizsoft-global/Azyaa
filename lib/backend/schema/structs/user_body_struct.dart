@@ -272,7 +272,7 @@ Map<String, dynamic> getUserBodyFirestoreData(
   );
 
   // Add any Firestore field values
-  userBody.firestoreUtilData.fieldValues
+  mapToFirestore(userBody.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

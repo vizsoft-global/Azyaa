@@ -983,6 +983,7 @@ List<String> getGCCCountrList() {
 
 List<String> getGCCCountryListWithTranslation(String langCode) {
   final englishCountries = [
+    "India",
     "Kuwait",
     "Bahrain",
     "Oman",
@@ -993,6 +994,7 @@ List<String> getGCCCountryListWithTranslation(String langCode) {
 
   // Map of English country names to their Arabic translations.
   final Map<String, String> arabicTranslations = {
+    "India": "الهند",
     "Kuwait": "الكويت",
     "Bahrain": "البحرين",
     "Oman": "عمان",
@@ -1550,7 +1552,9 @@ bool isDateWithinRange(
 }
 
 DocumentReference stringToProductDocRef(String docId) {
-  return FirebaseFirestore.instance.collection('products').doc(docId);
+  String cleanDocId = docId.replaceAll('"', '').replaceAll("'", '').trim();
+
+  return FirebaseFirestore.instance.collection('products').doc(cleanDocId);
 }
 
 bool? isValidLength(
@@ -1577,4 +1581,37 @@ bool? isValidLength(
 
   // Fallback for all other countries: International standard is usually 7-15
   return digitsOnly.length >= 7;
+}
+
+LatLng? buildLatLng(
+  double pickedLat,
+  double pickedLng,
+) {
+  return LatLng(
+    pickedLat,
+    pickedLng,
+  );
+}
+
+int? getLocalPhoneLengthByInput(String? phoneNumber) {
+  if (phoneNumber == null || phoneNumber.isEmpty) return null;
+
+  // Keep only digits (in case user enters spaces or symbols)
+  String cleaned = phoneNumber.replaceAll(RegExp(r'\D'), '');
+
+  return cleaned.length;
+}
+
+List<String> getGccCountriesListPlusIndia() {
+  final countries = [
+    "India",
+    "Saudi Arabia",
+    "United Arab Emirates",
+    "Kuwait",
+    "Oman",
+    "Qatar",
+    "Bahrain",
+  ];
+
+  return countries;
 }

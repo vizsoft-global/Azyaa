@@ -96,23 +96,19 @@ class _DesignerFormUploadWidgetState extends State<DesignerFormUploadWidget> {
                           },
                         ),
                         Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                'c4s5tkwg' /* Designer Form */,
-                              ),
-                              textAlign: TextAlign.start,
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    fontFamily: 'Aileron',
-                                    fontSize: 18.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'c4s5tkwg' /* Designer Form */,
                             ),
+                            textAlign: TextAlign.start,
+                            style: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .override(
+                                  fontFamily: 'Aileron',
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
                           ),
                         ),
                         if (responsiveVisibility(
@@ -410,8 +406,22 @@ class _DesignerFormUploadWidgetState extends State<DesignerFormUploadWidget> {
                                                                 null &&
                                                             _model.indIDimage !=
                                                                 ''
-                                                        ? 'Reupload Image'
-                                                        : 'Upload Image',
+                                                        ? FFLocalizations.of(
+                                                                context)
+                                                            .getVariableText(
+                                                            enText:
+                                                                'Reupload Image',
+                                                            arText:
+                                                                'إعادة تحميل الصورة',
+                                                          )
+                                                        : FFLocalizations.of(
+                                                                context)
+                                                            .getVariableText(
+                                                            enText:
+                                                                'Upload Image',
+                                                            arText:
+                                                                'تحميل الصورة',
+                                                          ),
                                                     icon: Icon(
                                                       Icons.add,
                                                       size: 14.0,
@@ -478,6 +488,9 @@ class _DesignerFormUploadWidgetState extends State<DesignerFormUploadWidget> {
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
                                                     children: [
                                                       if (_model.indIDimage !=
                                                               null &&
@@ -486,20 +499,14 @@ class _DesignerFormUploadWidgetState extends State<DesignerFormUploadWidget> {
                                                         Align(
                                                           alignment:
                                                               AlignmentDirectional(
-                                                                  0.0, 0.0),
+                                                                  -1.0, 0.0),
                                                           child: Container(
-                                                            width: MediaQuery
-                                                                        .sizeOf(
-                                                                            context)
-                                                                    .width *
-                                                                1.0,
-                                                            height: 100.0,
+                                                            width: 80.0,
+                                                            height: 80.0,
                                                             decoration:
                                                                 BoxDecoration(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          8.0),
+                                                              shape: BoxShape
+                                                                  .circle,
                                                               border:
                                                                   Border.all(
                                                                 color: FlutterFlowTheme.of(
@@ -514,16 +521,14 @@ class _DesignerFormUploadWidgetState extends State<DesignerFormUploadWidget> {
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              8.0),
+                                                                              100.0),
                                                                   child: Image
                                                                       .network(
                                                                     _model
                                                                         .indIDimage!,
-                                                                    width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        1.0,
+                                                                    width: 80.0,
                                                                     height:
-                                                                        100.0,
+                                                                        80.0,
                                                                     fit: BoxFit
                                                                         .cover,
                                                                     alignment:
@@ -538,68 +543,62 @@ class _DesignerFormUploadWidgetState extends State<DesignerFormUploadWidget> {
                                                                           1.0,
                                                                           -1.0),
                                                                   child:
-                                                                      Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            6.0,
-                                                                            6.0,
-                                                                            0.0),
+                                                                      InkWell(
+                                                                    splashColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    focusColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    hoverColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    highlightColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    onTap:
+                                                                        () async {
+                                                                      _model.indIDimage =
+                                                                          null;
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    },
                                                                     child:
-                                                                        InkWell(
-                                                                      splashColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      focusColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      hoverColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      highlightColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      onTap:
-                                                                          () async {
-                                                                        _model.indIDimage =
-                                                                            null;
-                                                                        safeSetState(
-                                                                            () {});
-                                                                      },
+                                                                        Container(
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondary,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(100.0),
+                                                                      ),
                                                                       child:
-                                                                          Container(
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).secondary,
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(100.0),
-                                                                        ),
+                                                                          Padding(
+                                                                        padding:
+                                                                            EdgeInsets.all(4.0),
                                                                         child:
-                                                                            Padding(
-                                                                          padding:
-                                                                              EdgeInsets.all(4.0),
+                                                                            InkWell(
+                                                                          splashColor:
+                                                                              Colors.transparent,
+                                                                          focusColor:
+                                                                              Colors.transparent,
+                                                                          hoverColor:
+                                                                              Colors.transparent,
+                                                                          highlightColor:
+                                                                              Colors.transparent,
+                                                                          onTap:
+                                                                              () async {
+                                                                            _model.indIDimage =
+                                                                                null;
+                                                                            safeSetState(() {});
+                                                                          },
                                                                           child:
-                                                                              InkWell(
-                                                                            splashColor:
-                                                                                Colors.transparent,
-                                                                            focusColor:
-                                                                                Colors.transparent,
-                                                                            hoverColor:
-                                                                                Colors.transparent,
-                                                                            highlightColor:
-                                                                                Colors.transparent,
-                                                                            onTap:
-                                                                                () async {
-                                                                              _model.indIDimage = null;
-                                                                              safeSetState(() {});
-                                                                            },
-                                                                            child:
-                                                                                Icon(
-                                                                              Icons.close,
-                                                                              color: FlutterFlowTheme.of(context).secondaryText,
-                                                                              size: 16.0,
-                                                                            ),
+                                                                              Icon(
+                                                                            Icons.close,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryText,
+                                                                            size:
+                                                                                16.0,
                                                                           ),
                                                                         ),
                                                                       ),
@@ -784,8 +783,22 @@ class _DesignerFormUploadWidgetState extends State<DesignerFormUploadWidget> {
                                                                 null &&
                                                             _model.storeIDimage !=
                                                                 ''
-                                                        ? 'Reupload Image'
-                                                        : 'Upload Image',
+                                                        ? FFLocalizations.of(
+                                                                context)
+                                                            .getVariableText(
+                                                            enText:
+                                                                'Reupload Image',
+                                                            arText:
+                                                                'إعادة تحميل الصورة',
+                                                          )
+                                                        : FFLocalizations.of(
+                                                                context)
+                                                            .getVariableText(
+                                                            enText:
+                                                                'Upload Image',
+                                                            arText:
+                                                                'تحميل الصورة',
+                                                          ),
                                                     icon: Icon(
                                                       Icons.add,
                                                       size: 14.0,
@@ -1063,25 +1076,34 @@ class _DesignerFormUploadWidgetState extends State<DesignerFormUploadWidget> {
                                                       AlignmentDirectional(
                                                           0.0, 0.0),
                                                   children: [
-                                                    if ((_model.uploadedFileUrl_uploadDataSelfie !=
-                                                            '') &&
-                                                        (_model.isDataUploading_uploadDataSelfie ==
-                                                            false))
-                                                      ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(
-                                                                    100.0),
-                                                        child: Image.network(
-                                                          _model
-                                                              .uploadedFileUrl_uploadDataSelfie,
-                                                          width: 80.0,
-                                                          height: 80.0,
-                                                          fit: BoxFit.cover,
-                                                          alignment: Alignment(
-                                                              0.0, 0.0),
+                                                    Container(
+                                                      decoration: BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                      ),
+                                                      child: Visibility(
+                                                        visible: (_model
+                                                                    .uploadedFileUrl_uploadDataSelfie !=
+                                                                '') &&
+                                                            (_model.isDataUploading_uploadDataSelfie ==
+                                                                false),
+                                                        child: ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      100.0),
+                                                          child: Image.network(
+                                                            _model
+                                                                .uploadedFileUrl_uploadDataSelfie,
+                                                            width: 80.0,
+                                                            height: 80.0,
+                                                            fit: BoxFit.cover,
+                                                            alignment:
+                                                                Alignment(
+                                                                    0.0, 0.0),
+                                                          ),
                                                         ),
                                                       ),
+                                                    ),
                                                     if ((_model.uploadedFileUrl_uploadDataSelfie ==
                                                             '') &&
                                                         (_model.isDataUploading_uploadDataSelfie ==
@@ -1276,8 +1298,22 @@ class _DesignerFormUploadWidgetState extends State<DesignerFormUploadWidget> {
                                                               null &&
                                                           _model.uploadedFileUrl_uploadDataSelfie !=
                                                               ''
-                                                      ? 'Reupload Photo'
-                                                      : 'Upload Photo',
+                                                      ? FFLocalizations.of(
+                                                              context)
+                                                          .getVariableText(
+                                                          enText:
+                                                              'Reupload photo',
+                                                          arText:
+                                                              'إعادة تحميل الصورة',
+                                                        )
+                                                      : FFLocalizations.of(
+                                                              context)
+                                                          .getVariableText(
+                                                          enText:
+                                                              'Upload photo',
+                                                          arText:
+                                                              'تحميل الصورة',
+                                                        ),
                                                   icon: Icon(
                                                     Icons.add,
                                                     size: 14.0,

@@ -297,7 +297,7 @@ Map<String, dynamic> getDesignerApprovalsFirestoreData(
   final firestoreData = mapToFirestore(designerApprovals.toMap());
 
   // Add any Firestore field values
-  designerApprovals.firestoreUtilData.fieldValues
+  mapToFirestore(designerApprovals.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

@@ -262,7 +262,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Expanded(
                                           child: Container(

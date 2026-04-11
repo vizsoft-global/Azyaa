@@ -4,12 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
-import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:branchio_dynamic_linking_akp5u6/custom_code/actions/index.dart'
-    as branchio_dynamic_linking_akp5u6_actions;
-import 'package:branchio_dynamic_linking_akp5u6/flutter_flow/custom_functions.dart'
-    as branchio_dynamic_linking_akp5u6_functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
@@ -18,7 +13,6 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'entry_model.dart';
 export 'entry_model.dart';
 
@@ -44,67 +38,12 @@ class _EntryWidgetState extends State<EntryWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await actions.initBranch();
-      await branchio_dynamic_linking_akp5u6_actions.handleBranchDeeplink(
-        (linkData) async {
-          await showDialog(
-            context: context,
-            builder: (alertDialogContext) {
-              return WebViewAware(
-                child: AlertDialog(
-                  content: Text(getJsonField(
-                    linkData,
-                    r'''$''',
-                  ).toString()),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(alertDialogContext),
-                      child: Text('Ok'),
-                    ),
-                  ],
-                ),
-              );
-            },
-          );
-          if (branchio_dynamic_linking_akp5u6_functions.isTargetingPage(
-              getJsonField(
-                linkData,
-                r'''$.page''',
-              ),
-              'Product')) {
-            await showDialog(
-              context: context,
-              builder: (alertDialogContext) {
-                return WebViewAware(
-                  child: AlertDialog(
-                    content: Text('page verified'),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.pop(alertDialogContext),
-                        child: Text('Ok'),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            );
-
-            context.goNamed(
-              ProductWidget.routeName,
-              queryParameters: {
-                'product': serializeParam(
-                  functions.stringToProductDocRef(getJsonField(
-                    linkData,
-                    r'''$.page_parameter''',
-                  ).toString()),
-                  ParamType.DocumentReference,
-                ),
-              }.withoutNulls,
-            );
-          }
-        },
+      await actions.handleBranchRoutingNew(
+        context,
       );
-      if (FFAppState().Onboard == 'welcome') {
+      if ((isAndroid == true) || (isiOS == true)) {}
+      if ((FFAppState().Onboard == 'welcome') ||
+          (FFAppState().Onboard == 'مكتمل')) {
         _model.settingsSecretFeatureResult = await querySettingsRecordOnce(
           queryBuilder: (settingsRecord) => settingsRecord.where(
             'type',
@@ -123,25 +62,52 @@ class _EntryWidgetState extends State<EntryWidget> {
                 ParamType.String,
               ),
             }.withoutNulls,
+            extra: <String, dynamic>{
+              '__transition_info__': TransitionInfo(
+                hasTransition: true,
+                transitionType: PageTransitionType.fade,
+                duration: Duration(milliseconds: 0),
+              ),
+            },
           );
         } else {
           if (_model.settingsSecretFeatureResult?.settingsSecretFeature
                   ?.settingsWaitlistFeature ==
               true) {
-            context.goNamed(WaitlistMainWidget.routeName);
+            context.goNamed(
+              WaitlistMainWidget.routeName,
+              extra: <String, dynamic>{
+                '__transition_info__': TransitionInfo(
+                  hasTransition: true,
+                  transitionType: PageTransitionType.fade,
+                  duration: Duration(milliseconds: 0),
+                ),
+              },
+            );
           } else {
-            context.goNamed(WelcomeWidget.routeName);
+            context.goNamed(
+              WelcomeWidget.routeName,
+              extra: <String, dynamic>{
+                '__transition_info__': TransitionInfo(
+                  hasTransition: true,
+                  transitionType: PageTransitionType.fade,
+                  duration: Duration(milliseconds: 0),
+                ),
+              },
+            );
           }
         }
       } else {
-        await actions.handleBranchRouting(
-          context,
+        context.goNamed(
+          HomeWidget.routeName,
+          extra: <String, dynamic>{
+            '__transition_info__': TransitionInfo(
+              hasTransition: true,
+              transitionType: PageTransitionType.fade,
+              duration: Duration(milliseconds: 0),
+            ),
+          },
         );
-        await actions.notificationRedirect(
-          context,
-        );
-
-        context.goNamed(HomeWidget.routeName);
       }
     });
 

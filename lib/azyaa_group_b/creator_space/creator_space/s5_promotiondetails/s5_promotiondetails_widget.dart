@@ -97,23 +97,18 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                             context.safePop();
                           },
                         ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              8.0, 0.0, 0.0, 0.0),
-                          child: Text(
-                            FFLocalizations.of(context).getText(
-                              'fvwof7iq' /* Promoted Products  */,
-                            ),
-                            textAlign: TextAlign.center,
-                            style: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .override(
-                                  fontFamily: 'Aileron',
-                                  fontSize: 18.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                        Text(
+                          FFLocalizations.of(context).getText(
+                            'fvwof7iq' /* Promoted Products  */,
                           ),
+                          textAlign: TextAlign.center,
+                          style:
+                              FlutterFlowTheme.of(context).titleLarge.override(
+                                    fontFamily: 'Aileron',
+                                    fontSize: 18.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                         ),
                         if (responsiveVisibility(
                           context: context,
@@ -525,10 +520,8 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                         height: 40.0,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(8.0),
-                            bottomRight: Radius.circular(0.0),
                             topLeft: Radius.circular(8.0),
-                            topRight: Radius.circular(0.0),
+                            bottomLeft: Radius.circular(8.0),
                           ),
                           border: Border.all(
                             color: FlutterFlowTheme.of(context).border,
@@ -600,10 +593,10 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                     ),
                                 elevation: 0.0,
                                 borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(8.0),
-                                  bottomRight: Radius.circular(8.0),
                                   topLeft: Radius.circular(8.0),
                                   topRight: Radius.circular(8.0),
+                                  bottomLeft: Radius.circular(8.0),
+                                  bottomRight: Radius.circular(8.0),
                                 ),
                               ),
                             ),

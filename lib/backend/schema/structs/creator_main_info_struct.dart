@@ -563,7 +563,7 @@ Map<String, dynamic> getCreatorMainInfoFirestoreData(
   );
 
   // Add any Firestore field values
-  creatorMainInfo.firestoreUtilData.fieldValues
+  mapToFirestore(creatorMainInfo.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

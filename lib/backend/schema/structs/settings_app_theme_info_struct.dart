@@ -266,7 +266,7 @@ Map<String, dynamic> getSettingsAppThemeInfoFirestoreData(
   final firestoreData = mapToFirestore(settingsAppThemeInfo.toMap());
 
   // Add any Firestore field values
-  settingsAppThemeInfo.firestoreUtilData.fieldValues
+  mapToFirestore(settingsAppThemeInfo.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

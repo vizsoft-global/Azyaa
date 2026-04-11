@@ -8,13 +8,13 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:async';
 import 'dart:ui';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -93,6 +93,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
     if (currentUserLocationValue == null) {
       return Container(
         color: FlutterFlowTheme.of(context).primaryBackground,
@@ -125,8 +126,6 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
           )
         ],
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0.0),
-          bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -1445,13 +1444,13 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                                     FormFieldController<String>(
                                   _model.countryGCCValue ??= 'Kuwait',
                                 ),
-                                options: List<String>.from(
-                                    functions.getGCCCountrList()),
+                                options: List<String>.from(functions
+                                    .getGCCCountryListWithTranslation('en')),
                                 optionLabels:
                                     functions.getGCCCountryListWithTranslation(
                                         (FFLocalizations.of(context)
                                                         .languageCode ==
-                                                    'AR') &&
+                                                    'AR') ||
                                                 (FFLocalizations.of(context)
                                                         .languageCode ==
                                                     'ar')
@@ -1774,48 +1773,92 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            16.0, 0.0, 16.0, 24.0),
-                        child: Container(
-                          width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: 200.0,
-                          decoration: BoxDecoration(
-                            color:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                            borderRadius: BorderRadius.circular(16.0),
+                      Stack(
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 24.0),
+                            child: Container(
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: 200.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                borderRadius: BorderRadius.circular(16.0),
+                              ),
+                              child: Builder(builder: (context) {
+                                final _googleMapMarker =
+                                    currentUserLocationValue;
+                                return FlutterFlowGoogleMap(
+                                  controller: _model.googleMapsController,
+                                  onCameraIdle: (latLng) =>
+                                      _model.googleMapsCenter = latLng,
+                                  initialLocation: _model.googleMapsCenter ??=
+                                      currentUserLocationValue!,
+                                  markers: [
+                                    if (_googleMapMarker != null)
+                                      FlutterFlowMarker(
+                                        _googleMapMarker.serialize(),
+                                        _googleMapMarker,
+                                      ),
+                                  ],
+                                  markerColor: GoogleMarkerColor.red,
+                                  mapType: MapType.normal,
+                                  style: GoogleMapStyle.standard,
+                                  initialZoom: 14.0,
+                                  allowInteraction: true,
+                                  allowZoom: true,
+                                  showZoomControls: true,
+                                  showLocation: true,
+                                  showCompass: false,
+                                  showMapToolbar: false,
+                                  showTraffic: false,
+                                  centerMapOnMarkerTap: true,
+                                  mapTakesGesturePreference: true,
+                                );
+                              }),
+                            ),
                           ),
-                          child: Builder(builder: (context) {
-                            final _googleMapMarker = _model.googleMapsCenter;
-                            return FlutterFlowGoogleMap(
-                              controller: _model.googleMapsController,
-                              onCameraIdle: (latLng) => safeSetState(
-                                  () => _model.googleMapsCenter = latLng),
-                              initialLocation: _model.googleMapsCenter ??=
-                                  currentUserLocationValue!,
-                              markers: [
-                                if (_googleMapMarker != null)
-                                  FlutterFlowMarker(
-                                    _googleMapMarker.serialize(),
-                                    _googleMapMarker,
+                          if ((isAndroid || isiOS) &&
+                              responsiveVisibility(
+                                context: context,
+                                phone: false,
+                                tablet: false,
+                                tabletLandscape: false,
+                                desktop: false,
+                              ))
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 24.0),
+                              child: Container(
+                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                height: 200.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  borderRadius: BorderRadius.circular(16.0),
+                                ),
+                                child: Container(
+                                  width: MediaQuery.sizeOf(context).width * 1.0,
+                                  height:
+                                      MediaQuery.sizeOf(context).height * 1.0,
+                                  child: custom_widgets.MapLocationPickerWidget(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 1.0,
+                                    height:
+                                        MediaQuery.sizeOf(context).height * 1.0,
+                                    pickedLat: FFAppState().pickedLat,
+                                    pickedLng: FFAppState().pickedLng,
+                                    initialLocation:
+                                        FFAppState().defaultLocation!,
+                                    onLocationPicked: () async {
+                                      safeSetState(() {});
+                                    },
                                   ),
-                              ],
-                              markerColor: GoogleMarkerColor.red,
-                              mapType: MapType.normal,
-                              style: GoogleMapStyle.standard,
-                              initialZoom: 14.0,
-                              allowInteraction: true,
-                              allowZoom: true,
-                              showZoomControls: true,
-                              showLocation: true,
-                              showCompass: false,
-                              showMapToolbar: false,
-                              showTraffic: false,
-                              centerMapOnMarkerTap: true,
-                              mapTakesGesturePreference: false,
-                            );
-                          }),
-                        ),
+                                ),
+                              ),
+                            ),
+                        ],
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(

@@ -235,7 +235,7 @@ Map<String, dynamic> getSettingsCreatorBannerListFirestoreData(
   final firestoreData = mapToFirestore(settingsCreatorBannerList.toMap());
 
   // Add any Firestore field values
-  settingsCreatorBannerList.firestoreUtilData.fieldValues
+  mapToFirestore(settingsCreatorBannerList.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

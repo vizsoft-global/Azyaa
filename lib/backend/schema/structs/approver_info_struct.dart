@@ -259,7 +259,7 @@ Map<String, dynamic> getApproverInfoFirestoreData(
   final firestoreData = mapToFirestore(approverInfo.toMap());
 
   // Add any Firestore field values
-  approverInfo.firestoreUtilData.fieldValues
+  mapToFirestore(approverInfo.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

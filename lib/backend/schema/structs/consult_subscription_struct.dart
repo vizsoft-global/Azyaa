@@ -397,7 +397,7 @@ Map<String, dynamic> getConsultSubscriptionFirestoreData(
   );
 
   // Add any Firestore field values
-  consultSubscription.firestoreUtilData.fieldValues
+  mapToFirestore(consultSubscription.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

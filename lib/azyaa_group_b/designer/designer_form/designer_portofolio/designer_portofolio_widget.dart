@@ -94,23 +94,19 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                           },
                         ),
                         Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                '3kr7gcc3' /* Designer Form */,
-                              ),
-                              textAlign: TextAlign.start,
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    fontFamily: 'Aileron',
-                                    fontSize: 18.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              '3kr7gcc3' /* Designer Form */,
                             ),
+                            textAlign: TextAlign.start,
+                            style: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .override(
+                                  fontFamily: 'Aileron',
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
                           ),
                         ),
                         if (responsiveVisibility(
@@ -749,7 +745,8 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                                               context)
                                                                       .height *
                                                                   1.0,
-                                                              fit: BoxFit.cover,
+                                                              fit: BoxFit
+                                                                  .contain,
                                                               alignment:
                                                                   Alignment(
                                                                       0.0, 0.0),

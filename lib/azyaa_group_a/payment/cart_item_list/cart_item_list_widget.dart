@@ -138,7 +138,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                         : FFLocalizations.of(context)
                                             .getVariableText(
                                             enText: 'Custom Made',
-                                            arText: 'مصنوع بطريقة مخصصة',
+                                            arText: 'حسب الطلب',
                                           ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium

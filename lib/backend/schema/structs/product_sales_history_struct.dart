@@ -254,7 +254,7 @@ Map<String, dynamic> getProductSalesHistoryFirestoreData(
   );
 
   // Add any Firestore field values
-  productSalesHistory.firestoreUtilData.fieldValues
+  mapToFirestore(productSalesHistory.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

@@ -66,7 +66,7 @@ class CreatorFormModel extends FlutterFlowModel<CreatorFormWidget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '0le351ff' /* Please enter name */,
+        '0le351ff' /* Please enter full name/usernam... */,
       );
     }
 
@@ -153,6 +153,11 @@ class CreatorFormModel extends FlutterFlowModel<CreatorFormWidget> {
       );
     }
 
+    if (!RegExp('^(0|[1-9][0-9]*)(\\.[0-9]+)?\$').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        '9jrbibpt' /* Invalid format */,
+      );
+    }
     return null;
   }
 

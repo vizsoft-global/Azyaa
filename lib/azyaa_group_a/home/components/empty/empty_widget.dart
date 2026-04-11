@@ -15,7 +15,7 @@ class EmptyWidget extends StatefulWidget {
     required this.messageOne,
     required this.image,
     required this.messageTwo,
-    required this.buttonText,
+    this.buttonText,
   });
 
   final String? messageOne;
@@ -96,55 +96,57 @@ class _EmptyWidgetState extends State<EmptyWidget> {
                     ),
               ),
             ),
-            FFButtonWidget(
-              onPressed: () async {
-                if (widget!.buttonText ==
-                    FFLocalizations.of(context).getVariableText(
-                      enText: 'Explore Creators',
-                      arText: 'استكشف المبدعين',
-                    )) {
-                  context.goNamed(
-                    CreatorsWidget.routeName,
-                    extra: <String, dynamic>{
-                      '__transition_info__': TransitionInfo(
-                        hasTransition: true,
-                        transitionType: PageTransitionType.fade,
-                        duration: Duration(milliseconds: 0),
+            if (widget!.buttonText != null && widget!.buttonText != '')
+              FFButtonWidget(
+                onPressed: () async {
+                  if (widget!.buttonText ==
+                      FFLocalizations.of(context).getVariableText(
+                        enText: 'Explore Creators',
+                        arText: 'استكشف المبدعين',
+                      )) {
+                    context.goNamed(
+                      CreatorsWidget.routeName,
+                      extra: <String, dynamic>{
+                        '__transition_info__': TransitionInfo(
+                          hasTransition: true,
+                          transitionType: PageTransitionType.fade,
+                          duration: Duration(milliseconds: 0),
+                        ),
+                      },
+                    );
+                  } else {
+                    context.pushNamed(
+                      ShopWidget.routeName,
+                      extra: <String, dynamic>{
+                        '__transition_info__': TransitionInfo(
+                          hasTransition: true,
+                          transitionType: PageTransitionType.fade,
+                          duration: Duration(milliseconds: 0),
+                        ),
+                      },
+                    );
+                  }
+                },
+                text: widget!.buttonText!,
+                options: FFButtonOptions(
+                  width: 200.0,
+                  height: 40.0,
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  iconPadding:
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                        fontFamily: 'Aileron',
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        letterSpacing: 0.0,
                       ),
-                    },
-                  );
-                } else {
-                  context.pushNamed(
-                    ShopWidget.routeName,
-                    extra: <String, dynamic>{
-                      '__transition_info__': TransitionInfo(
-                        hasTransition: true,
-                        transitionType: PageTransitionType.fade,
-                        duration: Duration(milliseconds: 0),
-                      ),
-                    },
-                  );
-                }
-              },
-              text: widget!.buttonText!,
-              options: FFButtonOptions(
-                width: 200.0,
-                height: 40.0,
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                color: FlutterFlowTheme.of(context).primaryBackground,
-                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Aileron',
-                      color: FlutterFlowTheme.of(context).primaryText,
-                      letterSpacing: 0.0,
-                    ),
-                elevation: 0.0,
-                borderSide: BorderSide(
-                  color: FlutterFlowTheme.of(context).buttonBorder,
+                  elevation: 0.0,
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).buttonBorder,
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
                 ),
-                borderRadius: BorderRadius.circular(8.0),
               ),
-            ),
           ].divide(SizedBox(height: 8.0)),
         ),
       ),

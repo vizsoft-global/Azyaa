@@ -318,7 +318,17 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                         ),
                                       );
 
-                                      context.pushNamed(LoginWidget.routeName);
+                                      context.pushNamed(
+                                        LoginWidget.routeName,
+                                        extra: <String, dynamic>{
+                                          '__transition_info__': TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                            duration: Duration(milliseconds: 0),
+                                          ),
+                                        },
+                                      );
                                     } else {
                                       await showDialog(
                                         context: context,

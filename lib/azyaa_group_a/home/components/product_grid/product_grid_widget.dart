@@ -749,248 +749,282 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                   ),
                 ),
               ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Column(
+              Container(
+                height: 60.0,
+                decoration: BoxDecoration(),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
                       mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              4.0, 0.0, 0.0, 4.0),
-                          child: Text(
-                            FFLocalizations.of(context).getVariableText(
-                              enText: () {
-                                if (widget!.product?.productInfoTranslate?.name
-                                        ?.en !=
-                                    '') {
-                                  return widget!
-                                      .product?.productInfoTranslate?.name?.en;
-                                } else if (widget!
-                                        .product
-                                        ?.productInfoCustomTranslate
-                                        ?.name
-                                        ?.en !=
-                                    '') {
-                                  return widget!.product
-                                      ?.productInfoCustomTranslate?.name?.en;
-                                } else {
-                                  return widget!.product?.productInfo?.name;
-                                }
-                              }(),
-                              arText: () {
-                                if (widget!.product?.productInfoTranslate?.name
-                                        ?.ar !=
-                                    '') {
-                                  return widget!
-                                      .product?.productInfoTranslate?.name?.ar;
-                                } else if (widget!
-                                        .product
-                                        ?.productInfoCustomTranslate
-                                        ?.name
-                                        ?.ar !=
-                                    '') {
-                                  return widget!.product
-                                      ?.productInfoCustomTranslate?.name?.ar;
-                                } else {
-                                  return widget!.product?.productInfo?.name;
-                                }
-                              }(),
-                            ),
-                            maxLines: 1,
-                            style:
-                                FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Aileron',
-                                      fontSize: 14.0,
-                                      letterSpacing: 0.0,
-                                    ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              4.0, 0.0, 0.0, 4.0),
-                          child: RichText(
-                            textScaler: MediaQuery.of(context).textScaler,
-                            text: TextSpan(
-                              children: [
-                                TextSpan(
-                                  text: FFLocalizations.of(context)
-                                      .getVariableText(
-                                    enText:
-                                        widget!.product?.product?.productType ==
-                                                'ready'
-                                            ? 'Ready made'
-                                            : 'Custom made',
-                                    arText:
-                                        widget!.product?.product?.productType ==
-                                                'ready'
-                                            ? 'جاهز'
-                                            : 'مصنوع بطريقة مخصصة',
+                        Expanded(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    4.0, 0.0, 0.0, 4.0),
+                                child: Text(
+                                  FFLocalizations.of(context).getVariableText(
+                                    enText: () {
+                                      if (widget!.product?.productInfoTranslate
+                                              ?.name?.en !=
+                                          '') {
+                                        return widget!.product
+                                            ?.productInfoTranslate?.name?.en;
+                                      } else if (widget!
+                                              .product
+                                              ?.productInfoCustomTranslate
+                                              ?.name
+                                              ?.en !=
+                                          '') {
+                                        return widget!
+                                            .product
+                                            ?.productInfoCustomTranslate
+                                            ?.name
+                                            ?.en;
+                                      } else {
+                                        return widget!
+                                            .product?.productInfo?.name;
+                                      }
+                                    }(),
+                                    arText: () {
+                                      if (widget!.product?.productInfoTranslate
+                                              ?.name?.ar !=
+                                          '') {
+                                        return widget!.product
+                                            ?.productInfoTranslate?.name?.ar;
+                                      } else if (widget!
+                                              .product
+                                              ?.productInfoCustomTranslate
+                                              ?.name
+                                              ?.ar !=
+                                          '') {
+                                        return widget!
+                                            .product
+                                            ?.productInfoCustomTranslate
+                                            ?.name
+                                            ?.ar;
+                                      } else {
+                                        return widget!
+                                            .product?.productInfo?.name;
+                                      }
+                                    }(),
                                   ),
+                                  maxLines: 1,
                                   style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
+                                      .bodySmall
                                       .override(
                                         fontFamily: 'Aileron',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        fontSize: 10.0,
+                                        fontSize: 14.0,
                                         letterSpacing: 0.0,
                                       ),
-                                )
-                              ],
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Aileron',
-                                    fontSize: 10.0,
-                                    letterSpacing: 0.0,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    4.0, 0.0, 0.0, 4.0),
+                                child: RichText(
+                                  textScaler: MediaQuery.of(context).textScaler,
+                                  text: TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: FFLocalizations.of(context)
+                                            .getVariableText(
+                                          enText: widget!.product?.product
+                                                      ?.productType ==
+                                                  'ready'
+                                              ? 'Ready made'
+                                              : 'Custom made',
+                                          arText: widget!.product?.product
+                                                      ?.productType ==
+                                                  'ready'
+                                              ? 'جاهز'
+                                              : 'مصنوع بطريقة مخصصة',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Aileron',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              fontSize: 10.0,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      )
+                                    ],
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Aileron',
+                                          fontSize: 10.0,
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
-                            ),
+                                ),
+                              ),
+                              if (responsiveVisibility(
+                                context: context,
+                                phone: false,
+                                tablet: false,
+                                tabletLandscape: false,
+                                desktop: false,
+                              ))
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      4.0, 0.0, 0.0, 4.0),
+                                  child: RichText(
+                                    textScaler:
+                                        MediaQuery.of(context).textScaler,
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'kiugng58' /* Ready made  */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Aileron',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                        TextSpan(
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'mxwbgakx' /* |  */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Aileron',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.normal,
+                                              ),
+                                        ),
+                                        TextSpan(
+                                          text: columnInventoryRecord!.stock > 0
+                                              ? '${FFLocalizations.of(context).getVariableText(
+                                                  enText: 'Last ',
+                                                  arText: 'آخر',
+                                                )}${columnInventoryRecord?.stock?.toString()}${FFLocalizations.of(context).getVariableText(
+                                                  enText: ' stocks',
+                                                  arText: 'الأسهم',
+                                                )}'
+                                              : FFLocalizations.of(context)
+                                                  .getVariableText(
+                                                  enText: 'Out of stock',
+                                                  arText: 'إنتهى من المخزن',
+                                                ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Aileron',
+                                                color: columnInventoryRecord!
+                                                            .stock >
+                                                        0
+                                                    ? FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText
+                                                    : FlutterFlowTheme.of(
+                                                            context)
+                                                        .error,
+                                                fontSize: 10.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        )
+                                      ],
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Aileron',
+                                            fontSize: 10.0,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                ),
+                            ],
                           ),
                         ),
-                        if (responsiveVisibility(
-                          context: context,
-                          phone: false,
-                          tablet: false,
-                          tabletLandscape: false,
-                          desktop: false,
-                        ))
+                        if ((columnInventoryRecord!.stock > 0) &&
+                            (widget!.cartButtonStatus == 'show'))
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                4.0, 0.0, 0.0, 4.0),
-                            child: RichText(
-                              textScaler: MediaQuery.of(context).textScaler,
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: FFLocalizations.of(context).getText(
-                                      'kiugng58' /* Ready made  */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Aileron',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                  TextSpan(
-                                    text: FFLocalizations.of(context).getText(
-                                      'mxwbgakx' /* |  */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Aileron',
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                  ),
-                                  TextSpan(
-                                    text: columnInventoryRecord!.stock > 0
-                                        ? '${FFLocalizations.of(context).getVariableText(
-                                            enText: 'Last ',
-                                            arText: 'آخر',
-                                          )}${columnInventoryRecord?.stock?.toString()}${FFLocalizations.of(context).getVariableText(
-                                            enText: ' stocks',
-                                            arText: 'الأسهم',
-                                          )}'
-                                        : FFLocalizations.of(context)
-                                            .getVariableText(
-                                            enText: 'Out of stock',
-                                            arText: 'إنتهى من المخزن',
-                                          ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Aileron',
-                                          color:
-                                              columnInventoryRecord!.stock > 0
-                                                  ? FlutterFlowTheme.of(context)
-                                                      .secondaryText
-                                                  : FlutterFlowTheme.of(context)
-                                                      .error,
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                        ),
-                                  )
-                                ],
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Aileron',
-                                      fontSize: 10.0,
-                                      letterSpacing: 0.0,
-                                    ),
+                                8.0, 0.0, 0.0, 0.0),
+                            child: wrapWithModel(
+                              model: _model.defaultCartButtonModel,
+                              updateCallback: () => safeSetState(() {}),
+                              updateOnChange: true,
+                              child: DefaultCartButtonWidget(
+                                type: 'icon',
+                                product: widget!.product!.reference,
+                                navigation: 'cart',
+                                defaultTerms: FFAppState()
+                                    .UserDataFlow
+                                    .userProductSwatchesList
+                                    .where((e) =>
+                                        e.viewedItemId ==
+                                        widget!.product?.productId)
+                                    .toList()
+                                    .firstOrNull
+                                    ?.productAttribute,
+                                quantity: 1,
                               ),
                             ),
                           ),
                       ],
                     ),
-                  ),
-                  if ((columnInventoryRecord!.stock > 0) &&
-                      (widget!.cartButtonStatus == 'show'))
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
-                      child: wrapWithModel(
-                        model: _model.defaultCartButtonModel,
-                        updateCallback: () => safeSetState(() {}),
-                        updateOnChange: true,
-                        child: DefaultCartButtonWidget(
-                          type: 'icon',
-                          product: widget!.product!.reference,
-                          navigation: 'cart',
-                          defaultTerms: FFAppState()
-                              .UserDataFlow
-                              .userProductSwatchesList
-                              .where((e) =>
-                                  e.viewedItemId == widget!.product?.productId)
-                              .toList()
-                              .firstOrNull
-                              ?.productAttribute,
-                          quantity: 1,
-                        ),
-                      ),
-                    ),
-                ],
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 4.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Text(
-                      '${widget!.product?.product?.productPrice?.toString()} KD',
-                      style: FlutterFlowTheme.of(context).bodySmall.override(
-                            fontFamily: 'Aileron',
-                            fontSize: 12.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.bold,
+                          EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 4.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            '${widget!.product?.product?.productPrice?.toString()} KD',
+                            style:
+                                FlutterFlowTheme.of(context).bodySmall.override(
+                                      fontFamily: 'Aileron',
+                                      fontSize: 12.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                           ),
-                    ),
-                    if (widget!.product?.product?.productRegularPrice !=
-                        widget!.product?.product?.productPrice)
-                      Text(
-                        '${widget!.product?.product?.productRegularPrice?.toString()}',
-                        style: FlutterFlowTheme.of(context).bodySmall.override(
-                              fontFamily: 'Aileron',
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              fontSize: 12.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w300,
-                              decoration: TextDecoration.lineThrough,
+                          if (widget!.product?.product?.productRegularPrice !=
+                              widget!.product?.product?.productPrice)
+                            Text(
+                              '${widget!.product?.product?.productRegularPrice?.toString()}',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodySmall
+                                  .override(
+                                    fontFamily: 'Aileron',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    fontSize: 12.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w300,
+                                    decoration: TextDecoration.lineThrough,
+                                  ),
                             ),
+                        ].divide(SizedBox(width: 4.0)),
                       ),
+                    ),
                     Stack(
                       children: [
                         if (loggedIn && (columnInventoryRecord!.stock <= 0))
@@ -1013,27 +1047,31 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                           ),
                         if ((columnInventoryRecord!.stock > 0) &&
                             (widget!.product?.product?.productType == 'ready'))
-                          Text(
-                            columnInventoryRecord!.stock > 0
-                                ? '${FFLocalizations.of(context).getVariableText(
-                                    enText: 'Last ',
-                                    arText: 'آخر',
-                                  )}${columnInventoryRecord?.stock?.toString()}${FFLocalizations.of(context).getVariableText(
-                                    enText: ' stocks',
-                                    arText: 'الأسهم',
-                                  )}'
-                                : '',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Aileron',
-                                  fontSize: 12.0,
-                                  letterSpacing: 0.0,
-                                ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                4.0, 0.0, 0.0, 0.0),
+                            child: Text(
+                              columnInventoryRecord!.stock > 0
+                                  ? '${FFLocalizations.of(context).getVariableText(
+                                      enText: 'Last ',
+                                      arText: 'آخر',
+                                    )}${columnInventoryRecord?.stock?.toString()}${FFLocalizations.of(context).getVariableText(
+                                      enText: ' stocks',
+                                      arText: 'الأسهم',
+                                    )}'
+                                  : '',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Aileron',
+                                    fontSize: 12.0,
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
                           ),
                       ],
                     ),
-                  ].divide(SizedBox(width: 2.0)),
+                  ],
                 ),
               ),
             ],

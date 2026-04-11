@@ -221,7 +221,7 @@ Map<String, dynamic> getSelectedProductAttrbuitesFirestoreData(
   final firestoreData = mapToFirestore(selectedProductAttrbuites.toMap());
 
   // Add any Firestore field values
-  selectedProductAttrbuites.firestoreUtilData.fieldValues
+  mapToFirestore(selectedProductAttrbuites.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

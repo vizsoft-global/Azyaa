@@ -100,23 +100,19 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                         ),
                         Align(
                           alignment: AlignmentDirectional(0.0, 0.0),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                '2ageag64' /* Recent Transactions */,
-                              ),
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    fontFamily: 'Aileron',
-                                    fontSize: 20.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              '2ageag64' /* Recent Transactions */,
                             ),
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .override(
+                                  fontFamily: 'Aileron',
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
                           ),
                         ),
                         Container(
@@ -124,7 +120,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                           height: 10.0,
                           decoration: BoxDecoration(),
                         ),
-                      ],
+                      ].divide(SizedBox(width: 8.0)),
                     ),
                   ],
                 ),

@@ -318,7 +318,7 @@ Map<String, dynamic> getSettingsAppAccessDataFirestoreData(
   final firestoreData = mapToFirestore(settingsAppAccessData.toMap());
 
   // Add any Firestore field values
-  settingsAppAccessData.firestoreUtilData.fieldValues
+  mapToFirestore(settingsAppAccessData.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

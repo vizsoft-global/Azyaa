@@ -96,23 +96,19 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                           },
                         ),
                         Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                'c8oo55xu' /* Creators Form */,
-                              ),
-                              textAlign: TextAlign.start,
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    fontFamily: 'Aileron',
-                                    fontSize: 18.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'c8oo55xu' /* Creators Form */,
                             ),
+                            textAlign: TextAlign.start,
+                            style: FlutterFlowTheme.of(context)
+                                .titleLarge
+                                .override(
+                                  fontFamily: 'Aileron',
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
                           ),
                         ),
                         if (responsiveVisibility(
@@ -568,6 +564,16 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                                             null;
                                                                         safeSetState(
                                                                             () {});
+                                                                        safeSetState(
+                                                                            () {
+                                                                          _model.isDataUploading_uploadDataYua1 =
+                                                                              false;
+                                                                          _model.uploadedLocalFile_uploadDataYua1 = FFUploadedFile(
+                                                                              bytes: Uint8List.fromList([]),
+                                                                              originalFilename: '');
+                                                                          _model.uploadedFileUrl_uploadDataYua1 =
+                                                                              '';
+                                                                        });
                                                                       },
                                                                       child:
                                                                           Icon(
@@ -1017,69 +1023,104 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                           child: FFButtonWidget(
                             onPressed: () async {
                               var _shouldSetState = false;
-                              if ((currentUserDocument
-                                          ?.creatorRequests?.creatorSelfie !=
-                                      '') &&
-                                  (_model.gvrtImage != null &&
-                                      _model.gvrtImage != '')) {
-                                await currentUserReference!
-                                    .update(createUsersRecordData(
-                                  creatorRequests: createCreatorRequestsStruct(
-                                    formData: createFormListStruct(
-                                      documentUrl: _model.gvrtImage,
+                              if (currentUserDocument
+                                      ?.creatorRequests?.creatorSelfie !=
+                                  '') {
+                                if (_model.gvrtImage != null &&
+                                    _model.gvrtImage != '') {
+                                  await currentUserReference!
+                                      .update(createUsersRecordData(
+                                    creatorRequests:
+                                        createCreatorRequestsStruct(
+                                      formData: createFormListStruct(
+                                        documentUrl: _model.gvrtImage,
+                                        clearUnsetFields: false,
+                                      ),
+                                      status: 'Pending',
                                       clearUnsetFields: false,
                                     ),
-                                    status: 'Pending',
-                                    clearUnsetFields: false,
-                                  ),
-                                ));
-                                _model.adminCount =
-                                    FFAppState().adminUsersRefs.length;
-                                while (_model.adminCount! > 0) {
-                                  _model.idmapresult3 =
-                                      await queryIdMapRecordOnce(
-                                    queryBuilder: (idMapRecord) =>
-                                        idMapRecord.where(
-                                      'type',
-                                      isEqualTo: 'Main',
-                                    ),
-                                    singleRecord: true,
-                                  ).then((s) => s.firstOrNull);
-                                  _shouldSetState = true;
+                                  ));
+                                  _model.adminCount =
+                                      FFAppState().adminUsersRefs.length;
+                                  while (_model.adminCount! > 0) {
+                                    _model.idmapresult3 =
+                                        await queryIdMapRecordOnce(
+                                      queryBuilder: (idMapRecord) =>
+                                          idMapRecord.where(
+                                        'type',
+                                        isEqualTo: 'Main',
+                                      ),
+                                      singleRecord: true,
+                                    ).then((s) => s.firstOrNull);
+                                    _shouldSetState = true;
 
-                                  await NotificationRecord.collection
-                                      .doc()
-                                      .set(createNotificationRecordData(
-                                        notificationId: _model
-                                            .idmapresult3?.notificationId
-                                            ?.toString(),
-                                        createdAt: getCurrentTimestamp,
-                                        updatedAt: getCurrentTimestamp,
-                                        notificationType: 'creatorrequest',
-                                        messageType: 'CREATOR REQUEST',
-                                        message:
-                                            'New Creator request from ${currentUserDocument?.creatorRequests?.formData?.name} || ${currentUserDocument?.creatorRequests?.creatorRequestId}',
-                                        sentFrom: 'system',
-                                        markAsRead: false,
-                                        toUserRef: FFAppState()
-                                            .adminUsersRefs
-                                            .elementAtOrNull(
-                                                (_model.adminCount!) - 1),
-                                      ));
+                                    await NotificationRecord.collection
+                                        .doc()
+                                        .set(createNotificationRecordData(
+                                          notificationId: _model
+                                              .idmapresult3?.notificationId
+                                              ?.toString(),
+                                          createdAt: getCurrentTimestamp,
+                                          updatedAt: getCurrentTimestamp,
+                                          notificationType: 'creatorrequest',
+                                          messageType: 'CREATOR REQUEST',
+                                          message:
+                                              'New Creator request from ${currentUserDocument?.creatorRequests?.formData?.name} || ${currentUserDocument?.creatorRequests?.creatorRequestId}',
+                                          sentFrom: 'system',
+                                          markAsRead: false,
+                                          toUserRef: FFAppState()
+                                              .adminUsersRefs
+                                              .elementAtOrNull(
+                                                  (_model.adminCount!) - 1),
+                                        ));
 
-                                  await _model.idmapresult3!.reference.update({
-                                    ...mapToFirestore(
-                                      {
-                                        'notification_id':
-                                            FieldValue.increment(1),
-                                      },
-                                    ),
-                                  });
-                                  _model.adminCount = _model.adminCount! + -1;
+                                    await _model.idmapresult3!.reference
+                                        .update({
+                                      ...mapToFirestore(
+                                        {
+                                          'notification_id':
+                                              FieldValue.increment(1),
+                                        },
+                                      ),
+                                    });
+                                    _model.adminCount = _model.adminCount! + -1;
+                                  }
+
+                                  context.goNamed(
+                                      CreatorFormSuccessWidget.routeName);
+                                } else {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return WebViewAware(
+                                        child: AlertDialog(
+                                          content: Text(
+                                              FFLocalizations.of(context)
+                                                  .getVariableText(
+                                            enText:
+                                                'Please upload a valid government-issued ID for verification.',
+                                            arText:
+                                                'يرجى تحميل بطاقة هوية سارية صادرة عن جهة حكومية للتحقق.',
+                                          )),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getVariableText(
+                                                enText: 'Ok',
+                                                arText: 'نعم',
+                                              )),
+                                            ),
+                                          ],
+                                        ),
+                                      );
+                                    },
+                                  );
+                                  if (_shouldSetState) safeSetState(() {});
+                                  return;
                                 }
-
-                                context.goNamed(
-                                    CreatorFormSuccessWidget.routeName);
                               } else {
                                 await showDialog(
                                   context: context,
@@ -1089,8 +1130,10 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                         content: Text(
                                             FFLocalizations.of(context)
                                                 .getVariableText(
-                                          enText: 'Kindly upload photo.',
-                                          arText: 'يرجى تحميل الصورة.',
+                                          enText:
+                                              'Kindly upload your selfie to proceed further.',
+                                          arText:
+                                              'يرجى تحميل صورتك الشخصية للمتابعة.',
                                         )),
                                         actions: [
                                           TextButton(

@@ -100,6 +100,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                         navigationIconStatus: true,
                         searchIconStatus: false,
                         wishlistIconStatus: false,
+                        navigationFrom: 'shop',
                         tryonStatus: false,
                         shareIconStatus: false,
                       ),

@@ -1075,6 +1075,17 @@ class _CreatePromotionCustomWidgetState
                                           _model.removeFromPhotoVideoList(_model
                                               .uploadedFileUrl_uploadData5by);
                                           safeSetState(() {});
+                                          safeSetState(() {
+                                            _model.isDataUploading_uploadData5by =
+                                                false;
+                                            _model.uploadedLocalFile_uploadData5by =
+                                                FFUploadedFile(
+                                                    bytes:
+                                                        Uint8List.fromList([]),
+                                                    originalFilename: '');
+                                            _model.uploadedFileUrl_uploadData5by =
+                                                '';
+                                          });
                                         },
                                         child: Container(
                                           decoration: BoxDecoration(
@@ -1639,6 +1650,19 @@ class _CreatePromotionCustomWidgetState
                                                             ),
                                                         );
                                                         safeSetState(() {});
+                                                        safeSetState(() {
+                                                          _model.isDataUploading_uploadData5by1 =
+                                                              false;
+                                                          _model.uploadedLocalFile_uploadData5by1 =
+                                                              FFUploadedFile(
+                                                                  bytes: Uint8List
+                                                                      .fromList(
+                                                                          []),
+                                                                  originalFilename:
+                                                                      '');
+                                                          _model.uploadedFileUrl_uploadData5by1 =
+                                                              '';
+                                                        });
                                                       },
                                                       child: Container(
                                                         decoration:

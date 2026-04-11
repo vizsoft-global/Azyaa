@@ -226,7 +226,7 @@ Map<String, dynamic> getDesignerPaymentInfoFirestoreData(
   );
 
   // Add any Firestore field values
-  designerPaymentInfo.firestoreUtilData.fieldValues
+  mapToFirestore(designerPaymentInfo.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

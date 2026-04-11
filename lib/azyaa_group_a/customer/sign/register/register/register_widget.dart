@@ -801,10 +801,6 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                     List<SettingsRecord>
                                         columnSettingsRecordList =
                                         snapshot.data!;
-                                    // Return an empty Container when the item does not exist.
-                                    if (snapshot.data!.isEmpty) {
-                                      return Container();
-                                    }
                                     final columnSettingsRecord =
                                         columnSettingsRecordList.isNotEmpty
                                             ? columnSettingsRecordList.first
@@ -913,14 +909,18 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                             FormFieldController<
                                                                 String>(
                                                           _model.countryListValue ??=
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                            'f0bhaq3e' /* Kuwait */,
-                                                          ),
+                                                              'Kuwait',
                                                         ),
-                                                        options: functions
-                                                            .getCountrList(),
+                                                        options: List<
+                                                                String>.from(
+                                                            functions
+                                                                .getGCCCountryListWithTranslation(
+                                                                    'en')),
+                                                        optionLabels: functions
+                                                            .getGCCCountryListWithTranslation(
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .languageCode),
                                                         onChanged: (val) async {
                                                           safeSetState(() =>
                                                               _model.countryListValue =
@@ -1172,11 +1172,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                                 'Aileron',
                                                             letterSpacing: 0.0,
                                                           ),
-                                                      maxLength:
-                                                          _model.countryListValue ==
-                                                                  'Kuwait'
-                                                              ? 8
-                                                              : 10,
+                                                      maxLength: functions
+                                                          .getPhoneLength(_model
+                                                              .countryListValue),
                                                       maxLengthEnforcement:
                                                           MaxLengthEnforcement
                                                               .enforced,
@@ -1205,7 +1203,10 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                     padding:
                                                         EdgeInsets.all(16.0),
                                                     child: Text(
-                                                      '+${functions.getDailCode(_model.countryListValue)}',
+                                                      '${FFLocalizations.of(context).getVariableText(
+                                                        enText: '+',
+                                                        arText: '+',
+                                                      )}${functions.getDailCode(_model.countryListValue)}',
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -1287,233 +1288,313 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                               .validate()) {
                                         return;
                                       }
-                                      GoRouter.of(context).prepareAuthEvent();
-                                      if (_model.passwordTextController.text !=
-                                          _model.confirmPasswordTextController
-                                              .text) {
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          SnackBar(
-                                            content: Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'scox9j69' /* Passwords don't match */,
+                                      if (functions.getPhoneLength(
+                                              _model.countryListValue) ==
+                                          functions.getLocalPhoneLengthByInput(
+                                              _model.phonenumberTextController
+                                                  .text)) {
+                                        GoRouter.of(context).prepareAuthEvent();
+                                        if (_model
+                                                .passwordTextController.text !=
+                                            _model.confirmPasswordTextController
+                                                .text) {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'scox9j69' /* Passwords don't match */,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        );
-                                        return;
-                                      }
-
-                                      final user = await authManager
-                                          .createAccountWithEmail(
-                                        context,
-                                        _model.emailTextController.text,
-                                        _model.passwordTextController.text,
-                                      );
-                                      if (user == null) {
-                                        return;
-                                      }
-
-                                      if (FFAppState()
-                                              .UserDataFlow
-                                              .userWaiterStatus ==
-                                          true) {
-                                        if (FFAppState()
-                                                .UserDataFlow
-                                                .userEmail !=
-                                            currentUserEmail) {
-                                          await currentUserReference!
-                                              .update(createUsersRecordData(
-                                            status: 'Secret',
-                                          ));
-                                          await showDialog(
-                                            context: context,
-                                            builder: (alertDialogContext) {
-                                              return WebViewAware(
-                                                child: AlertDialog(
-                                                  content: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getVariableText(
-                                                    enText:
-                                                        'Please contact us as your account has been blocked.',
-                                                    arText:
-                                                        'يرجى الاتصال بنا حيث تم حظر حسابك.',
-                                                  )),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getVariableText(
-                                                        enText: 'Ok',
-                                                        arText: 'نعم',
-                                                      )),
-                                                    ),
-                                                  ],
-                                                ),
-                                              );
-                                            },
                                           );
-                                          GoRouter.of(context)
-                                              .prepareAuthEvent();
-                                          await authManager.signOut();
-                                          GoRouter.of(context)
-                                              .clearRedirectLocation();
-
-                                          context.goNamedAuth(
-                                              LoginWidget.routeName,
-                                              context.mounted);
-
-                                          if (_shouldSetState)
-                                            safeSetState(() {});
                                           return;
                                         }
-                                      }
-                                      FFAppState().updateUserDataFlowStruct(
-                                        (e) =>
-                                            e..userRef = currentUserReference,
-                                      );
 
-                                      await currentUserReference!
-                                          .update(createUsersRecordData(
-                                        userInfo: createUserRelatedInfoStruct(
-                                          userId: currentUserUid,
-                                          firstName: currentUserDisplayName,
-                                          email: currentUserEmail,
-                                          isEmailVerificationStatus: true,
-                                          isPofileCompleteStatus: false,
-                                          isStep1Status: false,
-                                          isStep2Status: false,
-                                          isStep3Status: false,
-                                          isPhoneVerificationStatus: false,
-                                          clearUnsetFields: false,
-                                        ),
-                                        status: 'Published',
-                                        userRole: 'Customer',
-                                        userName: currentUserDisplayName,
-                                        referralCode: random_data.randomString(
-                                          8,
-                                          8,
-                                          false,
-                                          true,
-                                          true,
-                                        ),
-                                      ));
-                                      _model.settingsDoc =
-                                          await querySettingsRecordOnce(
-                                        queryBuilder: (settingsRecord) =>
-                                            settingsRecord.where(
-                                          'type',
-                                          isEqualTo: 'Company',
-                                        ),
-                                        singleRecord: true,
-                                      ).then((s) => s.firstOrNull);
-                                      _shouldSetState = true;
-                                      if (_model.settingsDoc
-                                              ?.settingsPhoneOtpStatus ==
-                                          true) {
-                                        context.goNamedAuth(
-                                            PhoneWidget.routeName,
-                                            context.mounted);
+                                        final user = await authManager
+                                            .createAccountWithEmail(
+                                          context,
+                                          _model.emailTextController.text,
+                                          _model.passwordTextController.text,
+                                        );
+                                        if (user == null) {
+                                          return;
+                                        }
 
-                                        await currentUserReference!
-                                            .update(createUsersRecordData(
-                                          displayName:
-                                              _model.nameTextController.text,
-                                          userInfo: createUserRelatedInfoStruct(
-                                            userId: currentUserUid,
-                                            firstName:
-                                                _model.nameTextController.text,
-                                            email:
-                                                _model.emailTextController.text,
-                                            isEmailVerificationStatus: false,
-                                            isPhoneVerificationStatus: _model
-                                                    .settingsDoc!
-                                                    .settingsPhoneOtpStatus
-                                                ? false
-                                                : true,
-                                            isPofileCompleteStatus: false,
-                                            isStep1Status: false,
-                                            isStep2Status: false,
-                                            isStep3Status: false,
-                                            clearUnsetFields: false,
-                                          ),
-                                          status: 'Published',
-                                          userRole: 'Customer',
-                                          userName:
-                                              _model.nameTextController.text,
-                                          referralCode:
-                                              random_data.randomString(
-                                            8,
-                                            8,
-                                            false,
-                                            true,
-                                            true,
-                                          ),
-                                        ));
-                                        await actions
-                                            .registerFcmTokenIfMissing();
-                                      } else {
-                                        await currentUserReference!
-                                            .update(createUsersRecordData(
-                                          displayName:
-                                              _model.nameTextController.text,
-                                          userInfo: createUserRelatedInfoStruct(
-                                            userId: currentUserUid,
-                                            firstName:
-                                                _model.nameTextController.text,
-                                            email:
-                                                _model.emailTextController.text,
-                                            isEmailVerificationStatus: false,
-                                            isPhoneVerificationStatus: _model
-                                                    .settingsDoc!
-                                                    .settingsPhoneOtpStatus
-                                                ? false
-                                                : true,
-                                            isPofileCompleteStatus: false,
-                                            isStep1Status: false,
-                                            isStep2Status: false,
-                                            isStep3Status: false,
-                                            phoneNumberWithoutDailcode: _model
-                                                .phonenumberTextController.text,
-                                            phoneNumber:
-                                                '${functions.getDailCode(_model.countryListValue)}${_model.phonenumberTextController.text}',
-                                            clearUnsetFields: false,
-                                          ),
-                                          status: 'Published',
-                                          userRole: 'Customer',
-                                          userName:
-                                              _model.nameTextController.text,
-                                          referralCode:
-                                              random_data.randomString(
-                                            8,
-                                            8,
-                                            false,
-                                            true,
-                                            true,
-                                          ),
-                                          phoneNumber:
-                                              '${functions.getDailCode(_model.countryListValue)}${_model.phonenumberTextController.text}',
-                                        ));
-                                        await actions
-                                            .registerFcmTokenIfMissing();
+                                        if (FFAppState()
+                                                .UserDataFlow
+                                                .userWaiterStatus ==
+                                            true) {
+                                          if (FFAppState()
+                                                  .UserDataFlow
+                                                  .userEmail !=
+                                              currentUserEmail) {
+                                            await currentUserReference!
+                                                .update(createUsersRecordData(
+                                              status: 'Secret',
+                                            ));
+                                            await showDialog(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return WebViewAware(
+                                                  child: AlertDialog(
+                                                    content: Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getVariableText(
+                                                      enText:
+                                                          'Please contact us as your account has been blocked.',
+                                                      arText:
+                                                          'يرجى الاتصال بنا حيث تم حظر حسابك.',
+                                                    )),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getVariableText(
+                                                          enText: 'Ok',
+                                                          arText: 'نعم',
+                                                        )),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                );
+                                              },
+                                            );
+                                            GoRouter.of(context)
+                                                .prepareAuthEvent();
+                                            await authManager.signOut();
+                                            GoRouter.of(context)
+                                                .clearRedirectLocation();
+
+                                            context.goNamedAuth(
+                                              LoginWidget.routeName,
+                                              context.mounted,
+                                              extra: <String, dynamic>{
+                                                '__transition_info__':
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                  duration:
+                                                      Duration(milliseconds: 0),
+                                                ),
+                                              },
+                                            );
+
+                                            if (_shouldSetState)
+                                              safeSetState(() {});
+                                            return;
+                                          }
+                                        }
                                         FFAppState().updateUserDataFlowStruct(
-                                          (e) => e
-                                            ..userEmailOtp = random_data
-                                                .randomInteger(100000, 999999)
-                                            ..userEmail = currentUserEmail
-                                            ..userEmailOtpAttempt = 1
-                                            ..userPhoneOtpOrderId = null,
+                                          (e) =>
+                                              e..userRef = currentUserReference,
                                         );
 
-                                        context.goNamedAuth(
+                                        await currentUserReference!
+                                            .update(createUsersRecordData(
+                                          userInfo: createUserRelatedInfoStruct(
+                                            userId: currentUserUid,
+                                            firstName: currentUserDisplayName,
+                                            email: currentUserEmail,
+                                            isEmailVerificationStatus: true,
+                                            isPofileCompleteStatus: false,
+                                            isStep1Status: false,
+                                            isStep2Status: false,
+                                            isStep3Status: false,
+                                            isPhoneVerificationStatus: false,
+                                            clearUnsetFields: false,
+                                          ),
+                                          status: 'Published',
+                                          userRole: 'Customer',
+                                          userName: currentUserDisplayName,
+                                          referralCode:
+                                              random_data.randomString(
+                                            8,
+                                            8,
+                                            false,
+                                            true,
+                                            true,
+                                          ),
+                                        ));
+                                        _model.settingsDoc =
+                                            await querySettingsRecordOnce(
+                                          queryBuilder: (settingsRecord) =>
+                                              settingsRecord.where(
+                                            'type',
+                                            isEqualTo: 'Company',
+                                          ),
+                                          singleRecord: true,
+                                        ).then((s) => s.firstOrNull);
+                                        _shouldSetState = true;
+                                        if (_model.settingsDoc
+                                                ?.settingsPhoneOtpStatus ==
+                                            true) {
+                                          context.goNamedAuth(
+                                            PhoneWidget.routeName,
+                                            context.mounted,
+                                            extra: <String, dynamic>{
+                                              '__transition_info__':
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
+                                          );
+
+                                          await currentUserReference!
+                                              .update(createUsersRecordData(
+                                            displayName:
+                                                _model.nameTextController.text,
+                                            userInfo:
+                                                createUserRelatedInfoStruct(
+                                              userId: currentUserUid,
+                                              firstName: _model
+                                                  .nameTextController.text,
+                                              email: _model
+                                                  .emailTextController.text,
+                                              isEmailVerificationStatus: false,
+                                              isPhoneVerificationStatus: _model
+                                                      .settingsDoc!
+                                                      .settingsPhoneOtpStatus
+                                                  ? false
+                                                  : true,
+                                              isPofileCompleteStatus: false,
+                                              isStep1Status: false,
+                                              isStep2Status: false,
+                                              isStep3Status: false,
+                                              clearUnsetFields: false,
+                                            ),
+                                            status: 'Published',
+                                            userRole: 'Customer',
+                                            userName:
+                                                _model.nameTextController.text,
+                                            referralCode:
+                                                random_data.randomString(
+                                              8,
+                                              8,
+                                              false,
+                                              true,
+                                              true,
+                                            ),
+                                          ));
+                                          await actions
+                                              .registerFcmTokenIfMissing();
+                                        } else {
+                                          await currentUserReference!
+                                              .update(createUsersRecordData(
+                                            displayName:
+                                                _model.nameTextController.text,
+                                            userInfo:
+                                                createUserRelatedInfoStruct(
+                                              userId: currentUserUid,
+                                              firstName: _model
+                                                  .nameTextController.text,
+                                              email: _model
+                                                  .emailTextController.text,
+                                              isEmailVerificationStatus: false,
+                                              isPhoneVerificationStatus: _model
+                                                      .settingsDoc!
+                                                      .settingsPhoneOtpStatus
+                                                  ? false
+                                                  : true,
+                                              isPofileCompleteStatus: false,
+                                              isStep1Status: false,
+                                              isStep2Status: false,
+                                              isStep3Status: false,
+                                              phoneNumberWithoutDailcode: _model
+                                                  .phonenumberTextController
+                                                  .text,
+                                              phoneNumber:
+                                                  '${functions.getDailCode(_model.countryListValue)}${_model.phonenumberTextController.text}',
+                                              phoneNumberCountry:
+                                                  _model.countryListValue,
+                                              clearUnsetFields: false,
+                                            ),
+                                            status: 'Published',
+                                            userRole: 'Customer',
+                                            userName:
+                                                _model.nameTextController.text,
+                                            referralCode:
+                                                random_data.randomString(
+                                              8,
+                                              8,
+                                              false,
+                                              true,
+                                              true,
+                                            ),
+                                            phoneNumber:
+                                                '${functions.getDailCode(_model.countryListValue)}${_model.phonenumberTextController.text}',
+                                          ));
+                                          await actions
+                                              .registerFcmTokenIfMissing();
+                                          FFAppState().updateUserDataFlowStruct(
+                                            (e) => e
+                                              ..userEmailOtp = random_data
+                                                  .randomInteger(100000, 999999)
+                                              ..userEmail = currentUserEmail
+                                              ..userEmailOtpAttempt = 1
+                                              ..userPhoneOtpOrderId = null,
+                                          );
+
+                                          context.goNamedAuth(
                                             Step1PersonalWidget.routeName,
-                                            context.mounted);
+                                            context.mounted,
+                                            extra: <String, dynamic>{
+                                              '__transition_info__':
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
+                                          );
+                                        }
+                                      } else {
+                                        await showDialog(
+                                          context: context,
+                                          builder: (alertDialogContext) {
+                                            return WebViewAware(
+                                              child: AlertDialog(
+                                                content: Text(
+                                                    FFLocalizations.of(context)
+                                                        .getVariableText(
+                                                  enText:
+                                                      'Invalid phone number.',
+                                                  arText: 'رقم هاتف غير صالح.',
+                                                )),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getVariableText(
+                                                      enText: 'Ok',
+                                                      arText: 'نعم',
+                                                    )),
+                                                  ),
+                                                ],
+                                              ),
+                                            );
+                                          },
+                                        );
+                                        if (_shouldSetState)
+                                          safeSetState(() {});
+                                        return;
                                       }
 
                                       if (_shouldSetState) safeSetState(() {});
@@ -1589,7 +1670,19 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                             recognizer: TapGestureRecognizer()
                                               ..onTap = () async {
                                                 context.pushNamed(
-                                                    TermsWidget.routeName);
+                                                  TermsWidget.routeName,
+                                                  extra: <String, dynamic>{
+                                                    '__transition_info__':
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .fade,
+                                                      duration: Duration(
+                                                          milliseconds: 0),
+                                                    ),
+                                                  },
+                                                );
                                               },
                                           ),
                                           TextSpan(
@@ -1623,8 +1716,19 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                             recognizer: TapGestureRecognizer()
                                               ..onTap = () async {
                                                 context.pushNamed(
-                                                    PrivacyPolicyWidget
-                                                        .routeName);
+                                                  PrivacyPolicyWidget.routeName,
+                                                  extra: <String, dynamic>{
+                                                    '__transition_info__':
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .fade,
+                                                      duration: Duration(
+                                                          milliseconds: 0),
+                                                    ),
+                                                  },
+                                                );
                                               },
                                           )
                                         ],
@@ -1654,7 +1758,19 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        context.goNamed(LoginWidget.routeName);
+                                        context.goNamed(
+                                          LoginWidget.routeName,
+                                          extra: <String, dynamic>{
+                                            '__transition_info__':
+                                                TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 0),
+                                            ),
+                                          },
+                                        );
                                       },
                                       child: RichText(
                                         textScaler:

@@ -73,8 +73,6 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
           )
         ],
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0.0),
-          bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -86,8 +84,6 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).primaryBackground,
               borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(0.0),
-                bottomRight: Radius.circular(0.0),
                 topLeft: Radius.circular(16.0),
                 topRight: Radius.circular(16.0),
               ),
@@ -1009,10 +1005,6 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.only(
-                                                      bottomLeft:
-                                                          Radius.circular(0.0),
-                                                      bottomRight:
-                                                          Radius.circular(0.0),
                                                       topLeft:
                                                           Radius.circular(16.0),
                                                       topRight:
@@ -1105,12 +1097,6 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.only(
-                                                        bottomLeft:
-                                                            Radius.circular(
-                                                                0.0),
-                                                        bottomRight:
-                                                            Radius.circular(
-                                                                0.0),
                                                         topLeft:
                                                             Radius.circular(
                                                                 16.0),
@@ -1176,9 +1162,6 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                       Radius.circular(16.0),
                                                   bottomRight:
                                                       Radius.circular(16.0),
-                                                  topLeft: Radius.circular(0.0),
-                                                  topRight:
-                                                      Radius.circular(0.0),
                                                 ),
                                                 border: Border.all(
                                                   color: valueOrDefault<Color>(
@@ -1219,12 +1202,6 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                           bottomRight:
                                                               Radius.circular(
                                                                   16.0),
-                                                          topLeft:
-                                                              Radius.circular(
-                                                                  0.0),
-                                                          topRight:
-                                                              Radius.circular(
-                                                                  0.0),
                                                         ),
                                                       ),
                                                       child: Padding(
@@ -1911,7 +1888,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                                         content: Text('${FFLocalizations.of(context).getVariableText(
                                                                                           enText: 'Total amount should be greater than ',
                                                                                           arText: 'يجب أن يكون المبلغ الإجمالي أكبر من',
-                                                                                        )}${_model.couponResult?.couponMinimumOrderAmount?.toString()}${FFLocalizations.of(context).getVariableText(
+                                                                                        )}${couponsItem.couponMinimumOrderAmount.toString()}${FFLocalizations.of(context).getVariableText(
                                                                                           enText: 'KD',
                                                                                           arText: 'KD',
                                                                                         )}'),

@@ -665,7 +665,7 @@ Map<String, dynamic> getDeliveryInfoFirestoreData(
   );
 
   // Add any Firestore field values
-  deliveryInfo.firestoreUtilData.fieldValues
+  mapToFirestore(deliveryInfo.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

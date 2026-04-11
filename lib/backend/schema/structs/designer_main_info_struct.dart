@@ -585,7 +585,7 @@ Map<String, dynamic> getDesignerMainInfoFirestoreData(
   );
 
   // Add any Firestore field values
-  designerMainInfo.firestoreUtilData.fieldValues
+  mapToFirestore(designerMainInfo.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

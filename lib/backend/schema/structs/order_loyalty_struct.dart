@@ -304,7 +304,7 @@ Map<String, dynamic> getOrderLoyaltyFirestoreData(
   final firestoreData = mapToFirestore(orderLoyalty.toMap());
 
   // Add any Firestore field values
-  orderLoyalty.firestoreUtilData.fieldValues
+  mapToFirestore(orderLoyalty.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

@@ -517,7 +517,7 @@ Map<String, dynamic> getSessionListFirestoreData(
   final firestoreData = mapToFirestore(sessionList.toMap());
 
   // Add any Firestore field values
-  sessionList.firestoreUtilData.fieldValues
+  mapToFirestore(sessionList.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

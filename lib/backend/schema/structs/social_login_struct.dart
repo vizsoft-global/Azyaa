@@ -202,7 +202,7 @@ Map<String, dynamic> getSocialLoginFirestoreData(
   final firestoreData = mapToFirestore(socialLogin.toMap());
 
   // Add any Firestore field values
-  socialLogin.firestoreUtilData.fieldValues
+  mapToFirestore(socialLogin.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

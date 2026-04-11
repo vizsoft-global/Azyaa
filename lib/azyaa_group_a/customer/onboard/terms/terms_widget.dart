@@ -74,24 +74,19 @@ class _TermsWidgetState extends State<TermsWidget> {
                     },
                   ),
                   Expanded(
-                    child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 40.0, 0.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          'dcnov6d9' /* Terms & Conditions */,
-                        ),
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context)
-                            .headlineMedium
-                            .override(
-                              fontFamily: 'Aileron',
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              fontSize: 16.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.bold,
-                            ),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'dcnov6d9' /* Terms & Conditions */,
                       ),
+                      textAlign: TextAlign.start,
+                      style:
+                          FlutterFlowTheme.of(context).headlineMedium.override(
+                                fontFamily: 'Aileron',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                fontSize: 18.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.bold,
+                              ),
                     ),
                   ),
                 ].divide(SizedBox(width: 8.0)),

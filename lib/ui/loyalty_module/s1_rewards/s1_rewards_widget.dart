@@ -1292,12 +1292,6 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.only(
-                                                        bottomLeft:
-                                                            Radius.circular(
-                                                                0.0),
-                                                        bottomRight:
-                                                            Radius.circular(
-                                                                0.0),
                                                         topLeft:
                                                             Radius.circular(
                                                                 8.0),
@@ -1603,12 +1597,6 @@ supply pu... */
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.only(
-                                                        bottomLeft:
-                                                            Radius.circular(
-                                                                0.0),
-                                                        bottomRight:
-                                                            Radius.circular(
-                                                                0.0),
                                                         topLeft:
                                                             Radius.circular(
                                                                 8.0),

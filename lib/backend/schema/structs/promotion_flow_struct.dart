@@ -270,7 +270,7 @@ Map<String, dynamic> getPromotionFlowFirestoreData(
   );
 
   // Add any Firestore field values
-  promotionFlow.firestoreUtilData.fieldValues
+  mapToFirestore(promotionFlow.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

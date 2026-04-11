@@ -237,6 +237,24 @@ class FFAppState extends ChangeNotifier {
   set deeplinkproductRef(DocumentReference? value) {
     _deeplinkproductRef = value;
   }
+
+  LatLng? _defaultLocation = LatLng(29.373751, 47.975931);
+  LatLng? get defaultLocation => _defaultLocation;
+  set defaultLocation(LatLng? value) {
+    _defaultLocation = value;
+  }
+
+  double _pickedLat = 0.0;
+  double get pickedLat => _pickedLat;
+  set pickedLat(double value) {
+    _pickedLat = value;
+  }
+
+  double _pickedLng = 0.0;
+  double get pickedLng => _pickedLng;
+  set pickedLng(double value) {
+    _pickedLng = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

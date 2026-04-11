@@ -245,7 +245,7 @@ Map<String, dynamic> getUserPreferencesFirestoreData(
   final firestoreData = mapToFirestore(userPreferences.toMap());
 
   // Add any Firestore field values
-  userPreferences.firestoreUtilData.fieldValues
+  mapToFirestore(userPreferences.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

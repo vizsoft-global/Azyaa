@@ -264,7 +264,7 @@ Map<String, dynamic> getCreatorApprovalsFirestoreData(
   final firestoreData = mapToFirestore(creatorApprovals.toMap());
 
   // Add any Firestore field values
-  creatorApprovals.firestoreUtilData.fieldValues
+  mapToFirestore(creatorApprovals.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

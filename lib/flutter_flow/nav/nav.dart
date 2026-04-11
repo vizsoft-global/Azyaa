@@ -707,6 +707,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
         builder: (context, params) => HomeSearchWidget(),
       ),
       FFRoute(
+        name: AddresstestWidget.routeName,
+        path: AddresstestWidget.routePath,
+        builder: (context, params) => AddresstestWidget(),
+      ),
+      FFRoute(
+        name: DeleteWidget.routeName,
+        path: DeleteWidget.routePath,
+        builder: (context, params) => DeleteWidget(),
+      ),
+      FFRoute(
         name: $branchio_dynamic_linking_akp5u6.TestHomePageWidget.routeName,
         path: $branchio_dynamic_linking_akp5u6.TestHomePageWidget.routePath,
         builder: (context, params) =>

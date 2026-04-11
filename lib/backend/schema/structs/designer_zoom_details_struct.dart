@@ -345,7 +345,7 @@ Map<String, dynamic> getDesignerZoomDetailsFirestoreData(
   );
 
   // Add any Firestore field values
-  designerZoomDetails.firestoreUtilData.fieldValues
+  mapToFirestore(designerZoomDetails.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

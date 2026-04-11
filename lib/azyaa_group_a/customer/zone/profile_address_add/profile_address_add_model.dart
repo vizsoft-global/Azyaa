@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:async';
 import 'dart:ui';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'profile_address_add_widget.dart' show ProfileAddressAddWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -15,7 +16,6 @@ import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -43,6 +43,31 @@ class ProfileAddressAddModel extends FlutterFlowModel<ProfileAddressAddWidget> {
   FocusNode? regionFocusNode;
   TextEditingController? regionTextController;
   String? Function(BuildContext, String?)? regionTextControllerValidator;
+  String? _regionTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'jp1sezvz' /* Please enter region */,
+      );
+    }
+
+    if (val.length < 2) {
+      return FFLocalizations.of(context).getText(
+        'h074ilwa' /* Minimum 2 characters are requi... */,
+      );
+    }
+    if (val.length > 100) {
+      return FFLocalizations.of(context).getText(
+        's6vunooi' /* Maximum 100 characters are req... */,
+      );
+    }
+    if (!RegExp('^[A-Za-z\\s\\-]+\$').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'f2phudcc' /* Invalid format. */,
+      );
+    }
+    return null;
+  }
+
   // State field(s) for Name widget.
   FocusNode? nameFocusNode;
   TextEditingController? nameTextController;
@@ -147,6 +172,11 @@ class ProfileAddressAddModel extends FlutterFlowModel<ProfileAddressAddWidget> {
       );
     }
 
+    if (!RegExp('^[0-9]{4,6}\$').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'rkfozaot' /* Invalid postal code. */,
+      );
+    }
     return null;
   }
 
@@ -160,6 +190,7 @@ class ProfileAddressAddModel extends FlutterFlowModel<ProfileAddressAddWidget> {
 
   @override
   void initState(BuildContext context) {
+    regionTextControllerValidator = _regionTextControllerValidator;
     nameTextControllerValidator = _nameTextControllerValidator;
     phonenumberTextControllerValidator = _phonenumberTextControllerValidator;
     emailTextControllerValidator = _emailTextControllerValidator;

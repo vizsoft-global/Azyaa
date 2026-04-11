@@ -322,7 +322,7 @@ Map<String, dynamic> getEmailProductDataFirestoreData(
   final firestoreData = mapToFirestore(emailProductData.toMap());
 
   // Add any Firestore field values
-  emailProductData.firestoreUtilData.fieldValues
+  mapToFirestore(emailProductData.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

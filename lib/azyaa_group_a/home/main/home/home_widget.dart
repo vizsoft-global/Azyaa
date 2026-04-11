@@ -32,7 +32,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'home_model.dart';
 export 'home_model.dart';
 
@@ -58,51 +57,10 @@ class _HomeWidgetState extends State<HomeWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await actions.initBranch();
       await branchio_dynamic_linking_akp5u6_actions.handleBranchDeeplink(
         (linkData) async {
-          await showDialog(
-            context: context,
-            builder: (alertDialogContext) {
-              return WebViewAware(
-                child: AlertDialog(
-                  content: Text(getJsonField(
-                    linkData,
-                    r'''$''',
-                  ).toString()),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(alertDialogContext),
-                      child: Text('Ok'),
-                    ),
-                  ],
-                ),
-              );
-            },
-          );
           if (branchio_dynamic_linking_akp5u6_functions.isTargetingPage(
-              getJsonField(
-                linkData,
-                r'''$.page''',
-              ),
-              'Product')) {
-            await showDialog(
-              context: context,
-              builder: (alertDialogContext) {
-                return WebViewAware(
-                  child: AlertDialog(
-                    content: Text('page verified'),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.pop(alertDialogContext),
-                        child: Text('Ok'),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            );
-
+              linkData, 'Product')) {
             context.goNamed(
               ProductWidget.routeName,
               queryParameters: {
@@ -1732,6 +1690,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                         builder: (context) {
                                                           final popularList =
                                                               popularProductsRecordList
+                                                                  .sortedList(
+                                                                      keyOf: (e) =>
+                                                                          e.createdAt!,
+                                                                      desc: true)
                                                                   .toList()
                                                                   .take(20)
                                                                   .toList();

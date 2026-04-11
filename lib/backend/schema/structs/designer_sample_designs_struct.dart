@@ -233,7 +233,7 @@ Map<String, dynamic> getDesignerSampleDesignsFirestoreData(
   final firestoreData = mapToFirestore(designerSampleDesigns.toMap());
 
   // Add any Firestore field values
-  designerSampleDesigns.firestoreUtilData.fieldValues
+  mapToFirestore(designerSampleDesigns.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

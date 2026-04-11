@@ -241,7 +241,16 @@ class _Highlights1WidgetState extends State<Highlights1Widget> {
                               0.0, 0.0, 0.0, 16.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              context.goNamed(Highlights2Widget.routeName);
+                              context.goNamed(
+                                Highlights2Widget.routeName,
+                                extra: <String, dynamic>{
+                                  '__transition_info__': TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
+                              );
                             },
                             text: FFLocalizations.of(context).getText(
                               'y7298xyk' /* Next */,
@@ -278,7 +287,16 @@ class _Highlights1WidgetState extends State<Highlights1Widget> {
                               arText: 'مكتمل',
                             );
 
-                            context.goNamed(HomeWidget.routeName);
+                            context.goNamed(
+                              HomeWidget.routeName,
+                              extra: <String, dynamic>{
+                                '__transition_info__': TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
                           },
                           child: Text(
                             FFLocalizations.of(context).getText(

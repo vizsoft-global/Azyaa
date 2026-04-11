@@ -273,7 +273,7 @@ Map<String, dynamic> getProductAttributesNewFirestoreData(
   final firestoreData = mapToFirestore(productAttributesNew.toMap());
 
   // Add any Firestore field values
-  productAttributesNew.firestoreUtilData.fieldValues
+  mapToFirestore(productAttributesNew.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

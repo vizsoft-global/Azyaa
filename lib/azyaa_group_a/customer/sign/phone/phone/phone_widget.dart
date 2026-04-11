@@ -930,8 +930,22 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                     TapGestureRecognizer()
                                                       ..onTap = () async {
                                                         context.pushNamed(
-                                                            TermsWidget
-                                                                .routeName);
+                                                          TermsWidget.routeName,
+                                                          extra: <String,
+                                                              dynamic>{
+                                                            '__transition_info__':
+                                                                TransitionInfo(
+                                                              hasTransition:
+                                                                  true,
+                                                              transitionType:
+                                                                  PageTransitionType
+                                                                      .fade,
+                                                              duration: Duration(
+                                                                  milliseconds:
+                                                                      0),
+                                                            ),
+                                                          },
+                                                        );
                                                       },
                                               ),
                                               TextSpan(
@@ -971,8 +985,23 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                     TapGestureRecognizer()
                                                       ..onTap = () async {
                                                         context.pushNamed(
-                                                            PrivacyPolicyWidget
-                                                                .routeName);
+                                                          PrivacyPolicyWidget
+                                                              .routeName,
+                                                          extra: <String,
+                                                              dynamic>{
+                                                            '__transition_info__':
+                                                                TransitionInfo(
+                                                              hasTransition:
+                                                                  true,
+                                                              transitionType:
+                                                                  PageTransitionType
+                                                                      .fade,
+                                                              duration: Duration(
+                                                                  milliseconds:
+                                                                      0),
+                                                            ),
+                                                          },
+                                                        );
                                                       },
                                               )
                                             ],
@@ -1011,8 +1040,19 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                 .clearRedirectLocation();
 
                                             context.goNamedAuth(
-                                                LoginWidget.routeName,
-                                                context.mounted);
+                                              LoginWidget.routeName,
+                                              context.mounted,
+                                              extra: <String, dynamic>{
+                                                '__transition_info__':
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                  duration:
+                                                      Duration(milliseconds: 0),
+                                                ),
+                                              },
+                                            );
                                           },
                                           child: RichText(
                                             textScaler: MediaQuery.of(context)

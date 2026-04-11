@@ -312,7 +312,7 @@ Map<String, dynamic> getUserLoyaltyFirestoreData(
   final firestoreData = mapToFirestore(userLoyalty.toMap());
 
   // Add any Firestore field values
-  userLoyalty.firestoreUtilData.fieldValues
+  mapToFirestore(userLoyalty.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

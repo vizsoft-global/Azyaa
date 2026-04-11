@@ -56,12 +56,7 @@ class _UniversalNavigationBarWidgetState
       height: 70.0,
       decoration: BoxDecoration(
         color: Color(0xFFECECEC),
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0.0),
-          bottomRight: Radius.circular(0.0),
-          topLeft: Radius.circular(0.0),
-          topRight: Radius.circular(0.0),
-        ),
+        borderRadius: BorderRadius.only(),
       ),
       child: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),

@@ -356,7 +356,7 @@ Map<String, dynamic> getInventoryRequestInfoFirestoreData(
   final firestoreData = mapToFirestore(inventoryRequestInfo.toMap());
 
   // Add any Firestore field values
-  inventoryRequestInfo.firestoreUtilData.fieldValues
+  mapToFirestore(inventoryRequestInfo.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

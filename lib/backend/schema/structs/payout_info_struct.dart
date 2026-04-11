@@ -538,7 +538,7 @@ Map<String, dynamic> getPayoutInfoFirestoreData(
   final firestoreData = mapToFirestore(payoutInfo.toMap());
 
   // Add any Firestore field values
-  payoutInfo.firestoreUtilData.fieldValues
+  mapToFirestore(payoutInfo.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

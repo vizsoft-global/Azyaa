@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_navigation_bar/universal_navigation_bar_widget.dart';
+import '/azyaa_group_a/home/components/empty/empty_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
@@ -616,7 +617,7 @@ selecting dre... */
                                                                         enText:
                                                                             'All',
                                                                         arText:
-                                                                            'الجميع',
+                                                                            'الكل',
                                                                       )
                                                                   ? true
                                                                   : ((currentUserDocument?.userDesignerFollowing?.toList() ??
@@ -638,6 +639,24 @@ selecting dre... */
                                                                   .createdTime!,
                                                               desc: false)
                                                           .toList();
+                                                  if (storeDesignerList
+                                                      .isEmpty) {
+                                                    return Center(
+                                                      child: EmptyWidget(
+                                                        messageOne:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getVariableText(
+                                                          enText:
+                                                              'No data found!',
+                                                          arText:
+                                                              'لم يتم العثور على بيانات!',
+                                                        ),
+                                                        image: ' ',
+                                                        messageTwo: ' ',
+                                                      ),
+                                                    );
+                                                  }
 
                                                   return ListView.separated(
                                                     padding: EdgeInsets.zero,

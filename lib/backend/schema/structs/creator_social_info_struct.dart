@@ -525,7 +525,7 @@ Map<String, dynamic> getCreatorSocialInfoFirestoreData(
   final firestoreData = mapToFirestore(creatorSocialInfo.toMap());
 
   // Add any Firestore field values
-  creatorSocialInfo.firestoreUtilData.fieldValues
+  mapToFirestore(creatorSocialInfo.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

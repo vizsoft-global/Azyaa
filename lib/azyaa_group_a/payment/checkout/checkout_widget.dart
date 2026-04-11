@@ -187,6 +187,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                 .titleLarge
                                 .override(
                                   fontFamily: 'Aileron',
+                                  fontSize: 18.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -3945,7 +3946,6 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                         }
                                       } else {
                                         await showDialog(
-                                          barrierDismissible: false,
                                           context: context,
                                           builder: (dialogContext) {
                                             return Dialog(
@@ -3967,25 +3967,19 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                         .instance.primaryFocus
                                                         ?.unfocus();
                                                   },
-                                                  child: Container(
-                                                    height: MediaQuery.sizeOf(
-                                                                context)
-                                                            .height *
-                                                        0.4,
-                                                    child:
-                                                        CheckoutPaymentMethodWidget(
-                                                      id: _model
-                                                          .idMapResultOrder1!,
-                                                      setting: _model
-                                                          .forPaymentResult1!,
-                                                      orderInfo: valueOrDefault<
-                                                          String>(
-                                                        _model.orderInfo,
-                                                        'null',
-                                                      ),
-                                                      shippingCharge:
-                                                          _model.shippingCharge,
+                                                  child:
+                                                      CheckoutPaymentMethodWidget(
+                                                    id: _model
+                                                        .idMapResultOrder1!,
+                                                    setting: _model
+                                                        .forPaymentResult1!,
+                                                    orderInfo:
+                                                        valueOrDefault<String>(
+                                                      _model.orderInfo,
+                                                      'null',
                                                     ),
+                                                    shippingCharge:
+                                                        _model.shippingCharge,
                                                   ),
                                                 ),
                                               ),

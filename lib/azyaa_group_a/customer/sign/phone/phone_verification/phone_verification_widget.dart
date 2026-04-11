@@ -1076,8 +1076,19 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                               .clearRedirectLocation();
 
                                           context.goNamedAuth(
-                                              LoginWidget.routeName,
-                                              context.mounted);
+                                            LoginWidget.routeName,
+                                            context.mounted,
+                                            extra: <String, dynamic>{
+                                              '__transition_info__':
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
+                                          );
                                         },
                                         child: RichText(
                                           textScaler:

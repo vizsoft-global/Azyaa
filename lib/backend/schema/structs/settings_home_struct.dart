@@ -500,7 +500,7 @@ Map<String, dynamic> getSettingsHomeFirestoreData(
   final firestoreData = mapToFirestore(settingsHome.toMap());
 
   // Add any Firestore field values
-  settingsHome.firestoreUtilData.fieldValues
+  mapToFirestore(settingsHome.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

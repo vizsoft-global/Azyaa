@@ -366,7 +366,7 @@ Map<String, dynamic> getProductAuthorizeInfoFirestoreData(
   final firestoreData = mapToFirestore(productAuthorizeInfo.toMap());
 
   // Add any Firestore field values
-  productAuthorizeInfo.firestoreUtilData.fieldValues
+  mapToFirestore(productAuthorizeInfo.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

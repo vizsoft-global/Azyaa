@@ -101,6 +101,7 @@ class _FailedWidgetState extends State<FailedWidget> {
                                 .titleLarge
                                 .override(
                                   fontFamily: 'Aileron',
+                                  fontSize: 18.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
                                 ),

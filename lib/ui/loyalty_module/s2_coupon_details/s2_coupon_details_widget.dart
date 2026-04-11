@@ -163,8 +163,6 @@ class _S2CouponDetailsWidgetState extends State<S2CouponDetailsWidget> {
                                       ).image,
                                     ),
                                     borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(0.0),
-                                      bottomRight: Radius.circular(0.0),
                                       topLeft: Radius.circular(8.0),
                                       topRight: Radius.circular(8.0),
                                     ),

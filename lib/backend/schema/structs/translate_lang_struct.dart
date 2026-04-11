@@ -171,7 +171,7 @@ Map<String, dynamic> getTranslateLangFirestoreData(
   final firestoreData = mapToFirestore(translateLang.toMap());
 
   // Add any Firestore field values
-  translateLang.firestoreUtilData.fieldValues
+  mapToFirestore(translateLang.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

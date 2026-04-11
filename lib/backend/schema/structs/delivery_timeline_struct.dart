@@ -174,7 +174,7 @@ Map<String, dynamic> getDeliveryTimelineFirestoreData(
   final firestoreData = mapToFirestore(deliveryTimeline.toMap());
 
   // Add any Firestore field values
-  deliveryTimeline.firestoreUtilData.fieldValues
+  mapToFirestore(deliveryTimeline.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

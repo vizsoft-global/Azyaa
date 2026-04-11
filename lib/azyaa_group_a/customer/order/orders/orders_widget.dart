@@ -1265,99 +1265,97 @@ class _OrdersWidgetState extends State<OrdersWidget>
                                                           context)
                                                       .alternate,
                                                 ),
-                                              Container(
-                                                height:
-                                                    MediaQuery.sizeOf(context)
-                                                            .height *
-                                                        0.8,
-                                                decoration: BoxDecoration(
-                                                  color: containerOrdersRecordList
-                                                              .where((e) =>
-                                                                  (e.orderStatus == 'Cancelled') ||
-                                                                  (e.orderStatus ==
-                                                                      'Failed') ||
-                                                                  (e.orderStatus ==
-                                                                      'CANCELLED') ||
-                                                                  (e.orderStatus ==
-                                                                      'FAILED'))
-                                                              .toList()
-                                                              .length >
-                                                          0
-                                                      ? Color(0xFFF6F6F6)
-                                                      : FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryBackground,
+                                              StreamBuilder<List<OrdersRecord>>(
+                                                stream: queryOrdersRecord(
+                                                  queryBuilder:
+                                                      (ordersRecord) =>
+                                                          ordersRecord.where(
+                                                    'customer_ref',
+                                                    isEqualTo:
+                                                        currentUserReference,
+                                                  ),
                                                 ),
-                                                child: Builder(
-                                                  builder: (context) {
-                                                    final cancelledOrders =
-                                                        containerOrdersRecordList
-                                                            .where((e) =>
-                                                                e.paymentStatus !=
-                                                                'CAPTURED')
-                                                            .toList()
-                                                            .sortedList(
-                                                                keyOf: (e) => e
-                                                                    .updatedAt!,
-                                                                desc: true)
-                                                            .toList();
-                                                    if (cancelledOrders
-                                                        .isEmpty) {
-                                                      return Center(
-                                                        child: EmptyWidget(
-                                                          messageOne:
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                            'nvf79nuv' /* No orders yet? */,
-                                                          ),
-                                                          image:
-                                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/ky2eouxuz129/order222.png',
-                                                          messageTwo:
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                            '4natkksr' /* Your next great find is just a... */,
-                                                          ),
-                                                          buttonText:
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                            'zwoqfkdt' /* let’s go shopping */,
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 10.0,
+                                                        height: 10.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
                                                           ),
                                                         ),
-                                                      );
-                                                    }
+                                                      ),
+                                                    );
+                                                  }
+                                                  List<OrdersRecord>
+                                                      containerOrdersRecordList =
+                                                      snapshot.data!;
 
-                                                    return ListView.separated(
-                                                      padding: EdgeInsets.zero,
-                                                      primary: false,
-                                                      shrinkWrap: true,
-                                                      scrollDirection:
-                                                          Axis.vertical,
-                                                      itemCount: cancelledOrders
-                                                          .length,
-                                                      separatorBuilder: (_,
-                                                              __) =>
-                                                          SizedBox(height: 8.0),
-                                                      itemBuilder: (context,
-                                                          cancelledOrdersIndex) {
-                                                        final cancelledOrdersItem =
-                                                            cancelledOrders[
-                                                                cancelledOrdersIndex];
-                                                        return OrdersCompWidget(
-                                                          key: Key(
-                                                              'Keypwx_${cancelledOrdersIndex}_of_${cancelledOrders.length}'),
-                                                          order:
-                                                              cancelledOrdersItem,
-                                                          orderID:
-                                                              cancelledOrdersItem
-                                                                  .orderId,
+                                                  return Container(
+                                                    height: MediaQuery.sizeOf(
+                                                                context)
+                                                            .height *
+                                                        0.8,
+                                                    decoration: BoxDecoration(
+                                                      color: containerOrdersRecordList
+                                                                  .where((e) =>
+                                                                      e.orderStatus ==
+                                                                      'completed')
+                                                                  .toList()
+                                                                  .length >
+                                                              0
+                                                          ? Color(0xFFF6F6F6)
+                                                          : FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBackground,
+                                                    ),
+                                                    child: Builder(
+                                                      builder: (context) {
+                                                        final canList = containerOrdersRecordList
+                                                            .where((e) =>
+                                                                (e.orderStatus ==
+                                                                    'FAILED') ||
+                                                                (e.orderStatus ==
+                                                                    'Initialzation'))
+                                                            .toList();
+
+                                                        return ListView.builder(
+                                                          padding:
+                                                              EdgeInsets.zero,
+                                                          primary: false,
+                                                          shrinkWrap: true,
+                                                          scrollDirection:
+                                                              Axis.vertical,
+                                                          itemCount:
+                                                              canList.length,
+                                                          itemBuilder: (context,
+                                                              canListIndex) {
+                                                            final canListItem =
+                                                                canList[
+                                                                    canListIndex];
+                                                            return OrdersCompWidget(
+                                                              key: Key(
+                                                                  'Keyg3w_${canListIndex}_of_${canList.length}'),
+                                                              orderID:
+                                                                  canListItem
+                                                                      .orderId,
+                                                              order:
+                                                                  canListItem,
+                                                            );
+                                                          },
                                                         );
                                                       },
-                                                    );
-                                                  },
-                                                ),
+                                                    ),
+                                                  );
+                                                },
                                               ),
                                             ]
                                                 .addToStart(

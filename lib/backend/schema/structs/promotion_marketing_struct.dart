@@ -297,7 +297,7 @@ Map<String, dynamic> getPromotionMarketingFirestoreData(
   final firestoreData = mapToFirestore(promotionMarketing.toMap());
 
   // Add any Firestore field values
-  promotionMarketing.firestoreUtilData.fieldValues
+  mapToFirestore(promotionMarketing.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

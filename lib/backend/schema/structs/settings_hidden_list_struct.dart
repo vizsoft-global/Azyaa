@@ -468,7 +468,7 @@ Map<String, dynamic> getSettingsHiddenListFirestoreData(
   final firestoreData = mapToFirestore(settingsHiddenList.toMap());
 
   // Add any Firestore field values
-  settingsHiddenList.firestoreUtilData.fieldValues
+  mapToFirestore(settingsHiddenList.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

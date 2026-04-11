@@ -321,7 +321,16 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                 ),
                               FFButtonWidget(
                                 onPressed: () async {
-                                  context.goNamed(Highlights1Widget.routeName);
+                                  context.goNamed(
+                                    Highlights1Widget.routeName,
+                                    extra: <String, dynamic>{
+                                      '__transition_info__': TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'f4dt9vw6' /* Let’s Begin */,

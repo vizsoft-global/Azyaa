@@ -781,7 +781,8 @@ Map<String, dynamic> getTimingFirestoreData(
   final firestoreData = mapToFirestore(timing.toMap());
 
   // Add any Firestore field values
-  timing.firestoreUtilData.fieldValues.forEach((k, v) => firestoreData[k] = v);
+  mapToFirestore(timing.firestoreUtilData.fieldValues)
+      .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
 }

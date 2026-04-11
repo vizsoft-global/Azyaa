@@ -127,6 +127,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                   .titleLarge
                                   .override(
                                     fontFamily: 'Aileron',
+                                    fontSize: 18.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),

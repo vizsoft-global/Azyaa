@@ -63,8 +63,6 @@ class _ProductSortWidgetState extends State<ProductSortWidget> {
           )
         ],
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0.0),
-          bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -277,7 +275,7 @@ class _ProductSortWidgetState extends State<ProductSortWidget> {
                             }()
                           : FFLocalizations.of(context).getVariableText(
                               enText: 'Newer',
-                              arText: 'أحدث',
+                              arText: 'الأحدث',
                             )),
               optionHeight: 32.0,
               textStyle: FlutterFlowTheme.of(context).labelMedium.override(

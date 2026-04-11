@@ -630,7 +630,7 @@ Map<String, dynamic> getPaymentProcessingTimeFirestoreData(
   );
 
   // Add any Firestore field values
-  paymentProcessingTime.firestoreUtilData.fieldValues
+  mapToFirestore(paymentProcessingTime.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

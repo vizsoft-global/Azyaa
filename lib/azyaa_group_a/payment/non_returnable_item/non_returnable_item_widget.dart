@@ -56,6 +56,9 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.sizeOf(context).width * 1.0,
+      constraints: BoxConstraints(
+        maxHeight: 700.0,
+      ),
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
         boxShadow: [
@@ -69,8 +72,6 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
           )
         ],
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0.0),
-          bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -163,7 +164,7 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
                   ),
             ),
           ),
-          Flexible(
+          Expanded(
             child: ListView(
               padding: EdgeInsets.zero,
               primary: false,

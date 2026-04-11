@@ -409,7 +409,7 @@ Map<String, dynamic> getCouponCartInfoFirestoreData(
   );
 
   // Add any Firestore field values
-  couponCartInfo.firestoreUtilData.fieldValues
+  mapToFirestore(couponCartInfo.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;

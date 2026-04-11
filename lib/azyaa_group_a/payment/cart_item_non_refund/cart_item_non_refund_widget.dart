@@ -130,8 +130,16 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                                         rowProductsRecord
                                                     ?.product?.productType ==
                                                 'ready'
-                                            ? 'Ready Made'
-                                            : 'Custom Made',
+                                            ? FFLocalizations.of(context)
+                                                .getVariableText(
+                                                enText: 'Ready Made',
+                                                arText: 'جاهز',
+                                              )
+                                            : FFLocalizations.of(context)
+                                                .getVariableText(
+                                                enText: 'Custom Made',
+                                                arText: 'مصنوع بطريقة مخصصة',
+                                              ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(

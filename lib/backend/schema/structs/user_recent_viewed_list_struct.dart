@@ -245,7 +245,7 @@ Map<String, dynamic> getUserRecentViewedListFirestoreData(
   final firestoreData = mapToFirestore(userRecentViewedList.toMap());
 
   // Add any Firestore field values
-  userRecentViewedList.firestoreUtilData.fieldValues
+  mapToFirestore(userRecentViewedList.firestoreUtilData.fieldValues)
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
