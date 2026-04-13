@@ -138,12 +138,12 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                                             : FFLocalizations.of(context)
                                                 .getVariableText(
                                                 enText: 'Custom Made',
-                                                arText: 'مصنوع بطريقة مخصصة',
+                                                arText: 'حسب الطلب',
                                               ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
@@ -180,7 +180,7 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -192,7 +192,7 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -234,7 +234,7 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
                                         letterSpacing: 0.0,
@@ -248,7 +248,7 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.normal,
                                       ),
@@ -375,7 +375,7 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -487,7 +487,7 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
@@ -516,7 +516,7 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
                                         letterSpacing: 0.0,

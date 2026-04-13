@@ -81,7 +81,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                       textAlign: TextAlign.start,
                       style:
                           FlutterFlowTheme.of(context).headlineMedium.override(
-                                fontFamily: 'Aileron',
+                                fontFamily: 'Cairo',
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 fontSize: 18.0,
                                 letterSpacing: 0.0,
@@ -133,18 +133,9 @@ class _TermsWidgetState extends State<TermsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight: FontWeight.w600,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: 'Cairo',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
                                       ),
                                 ),
                                 Padding(
@@ -157,7 +148,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
                                           lineHeight: 1.5,
                                         ),
@@ -170,18 +161,9 @@ class _TermsWidgetState extends State<TermsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight: FontWeight.w600,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: 'Cairo',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
                                       ),
                                 ),
                                 Padding(
@@ -194,25 +176,8 @@ class _TermsWidgetState extends State<TermsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
                                           lineHeight: 1.5,
                                         ),
                                   ),
@@ -224,7 +189,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -236,7 +201,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -250,7 +215,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
                                           lineHeight: 1.5,
                                         ),
@@ -263,7 +228,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -275,7 +240,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         letterSpacing: 0.0,
                                         lineHeight: 1.5,
                                       ),
@@ -290,7 +255,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
                                           lineHeight: 1.5,
                                         ),
@@ -303,7 +268,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -318,7 +283,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
                                           lineHeight: 1.5,
                                         ),
@@ -334,25 +299,8 @@ class _TermsWidgetState extends State<TermsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
                                           lineHeight: 1.5,
                                         ),
                                   ),

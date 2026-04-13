@@ -225,7 +225,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
@@ -247,7 +247,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
@@ -323,7 +323,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                             .of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
@@ -450,7 +450,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                               .titleSmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
@@ -508,7 +508,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleLarge
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
@@ -555,7 +555,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -576,7 +576,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -600,7 +600,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -650,7 +650,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
@@ -678,7 +678,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -708,7 +708,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -740,7 +740,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                       iconColor:
                                           FlutterFlowTheme.of(context).primary,
                                       iconPadding: EdgeInsets.fromLTRB(
-                                          0.0, 0.0, 16.0, 0.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                     ),
                                   ),
                                 ),
@@ -765,7 +765,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
                                               ),
@@ -778,7 +778,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 letterSpacing: 0.0,
                                               ),
                                         )
@@ -786,7 +786,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                           ),
                                     ),

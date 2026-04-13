@@ -112,7 +112,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                         'fqtpef4s' /* Filters */,
                       ),
                       style: FlutterFlowTheme.of(context).titleLarge.override(
-                            fontFamily: 'Aileron',
+                            fontFamily: 'Cairo',
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,
                           ),
@@ -131,7 +131,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).labelSmall.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -271,7 +271,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -352,7 +352,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     fontSize:
                                                                         10.0,
                                                                     letterSpacing:
@@ -430,7 +430,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -464,7 +464,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 fontSize: 10.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -539,7 +539,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -573,7 +573,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 fontSize: 10.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -748,7 +748,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -787,7 +787,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                       .bodySmall
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Aileron',
+                                                                            'Cairo',
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
@@ -890,7 +890,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                           .of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -902,14 +902,15 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                       .getText(
                                                     '5vlmrwrj' /* Search Categories */,
                                                   ),
-                                                  hintStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Aileron',
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  hintStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily: 'Cairo',
+                                                            fontSize: 14.0,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
@@ -970,7 +971,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                                 cursorColor:
@@ -1040,7 +1041,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                           .of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1055,14 +1056,15 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                     arText:
                                                         'يبحث${containerAttributesRecordList.where((e) => e.attributeInfo.name == _model.navigationName).toList().firstOrNull?.attributeInfoTranslate?.name?.ar}',
                                                   ),
-                                                  hintStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Aileron',
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  hintStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily: 'Cairo',
+                                                            fontSize: 14.0,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
@@ -1126,7 +1128,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                                 cursorColor:
@@ -1442,7 +1444,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                         .bodySmall
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Aileron',
+                                                                              'Cairo',
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -1531,7 +1533,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1610,7 +1612,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1709,7 +1711,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   color: FFAppState()
                                                                               .UserFilter
                                                                               .priceRange ==
@@ -1776,7 +1778,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   color: FFAppState()
                                                                               .UserFilter
                                                                               .priceRange ==
@@ -1843,7 +1845,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   color: FFAppState()
                                                                               .UserFilter
                                                                               .priceRange ==
@@ -1910,7 +1912,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   color: FFAppState()
                                                                               .UserFilter
                                                                               .priceRange ==
@@ -1968,8 +1970,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                               .of(context)
                                                           .bodyLarge
                                                           .override(
-                                                            fontFamily:
-                                                                'Aileron',
+                                                            fontFamily: 'Cairo',
                                                             color: FFAppState()
                                                                         .UserFilter
                                                                         .priceRange ==
@@ -2315,7 +2316,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Aileron',
+                                                                            'Cairo',
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -2391,7 +2392,16 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                             onPressed: () async {
                               FFAppState().UserFilter = UserFiltersStruct();
 
-                              context.goNamed(ProductListWidget.routeName);
+                              context.goNamed(
+                                ProductListWidget.routeName,
+                                extra: <String, dynamic>{
+                                  '__transition_info__': TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
+                              );
                             },
                             text: FFLocalizations.of(context).getText(
                               '1pflz26o' /* Reset */,
@@ -2408,7 +2418,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     fontSize: 14.0,
@@ -2631,7 +2641,16 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                 }(),
                               );
 
-                              context.goNamed(ProductListWidget.routeName);
+                              context.goNamed(
+                                ProductListWidget.routeName,
+                                extra: <String, dynamic>{
+                                  '__transition_info__': TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
+                              );
 
                               safeSetState(() {});
                             },
@@ -2649,7 +2668,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: FlutterFlowTheme.of(context).info,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,

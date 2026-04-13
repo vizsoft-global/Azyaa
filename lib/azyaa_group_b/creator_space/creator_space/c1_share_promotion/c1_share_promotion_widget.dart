@@ -108,7 +108,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                       ),
                       maxLines: 1,
                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                            fontFamily: 'Aileron',
+                            fontFamily: 'Cairo',
                             color: FlutterFlowTheme.of(context).primaryText,
                             fontSize: 14.0,
                             letterSpacing: 0.0,
@@ -150,7 +150,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   letterSpacing: 0.0,
                                 ),
                             hintText: FFLocalizations.of(context).getText(
@@ -159,7 +159,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                 ),
@@ -197,7 +197,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                   ),
                           cursorColor: FlutterFlowTheme.of(context).primaryText,
@@ -220,7 +220,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     fontSize: 12.0,
@@ -258,7 +258,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                             : Colors.white,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   color: _model.copyText == 'copied'
                                       ? Colors.white
                                       : FlutterFlowTheme.of(context).primary,
@@ -321,7 +321,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -361,7 +361,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -401,7 +401,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -441,7 +441,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -490,7 +490,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                   iconColor: FlutterFlowTheme.of(context).primaryText,
                   color: FlutterFlowTheme.of(context).primaryBackground,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         color: FlutterFlowTheme.of(context).primaryText,
                         fontSize: 14.0,
                         letterSpacing: 0.0,
@@ -509,7 +509,16 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                 onPressed: () async {
                   Navigator.pop(context);
 
-                  context.goNamed(HomeWidget.routeName);
+                  context.goNamed(
+                    HomeWidget.routeName,
+                    extra: <String, dynamic>{
+                      '__transition_info__': TransitionInfo(
+                        hasTransition: true,
+                        transitionType: PageTransitionType.fade,
+                        duration: Duration(milliseconds: 0),
+                      ),
+                    },
+                  );
                 },
                 text: FFLocalizations.of(context).getText(
                   'sq658ff9' /* Back to Home */,
@@ -522,7 +531,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         color: FlutterFlowTheme.of(context).info,
                         fontSize: 14.0,
                         letterSpacing: 0.0,

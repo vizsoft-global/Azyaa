@@ -152,7 +152,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               fontSize: 24.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
@@ -197,7 +197,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
@@ -282,7 +282,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                             .bodyMedium
                                                             .override(
                                                               fontFamily:
-                                                                  'Aileron',
+                                                                  'Cairo',
                                                               letterSpacing:
                                                                   0.0,
                                                             ),
@@ -372,7 +372,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                           .of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -391,7 +391,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                           .of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -467,7 +467,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                                 maxLength: functions
@@ -500,7 +500,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                         ),
@@ -866,7 +866,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                   context)
                                               .titleSmall
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .info,
@@ -899,7 +899,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -916,7 +916,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.5,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -971,7 +971,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.5,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -1008,7 +1008,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
@@ -1069,7 +1069,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.5,
                                                       ),
                                                 ),
@@ -1083,7 +1083,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.5,
                                                         fontWeight:
                                                             FontWeight.w600,
@@ -1097,7 +1097,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)

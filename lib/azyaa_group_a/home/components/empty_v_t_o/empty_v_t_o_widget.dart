@@ -65,7 +65,7 @@ class _EmptyVTOWidgetState extends State<EmptyVTOWidget> {
                 widget!.messageOne!,
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Aileron',
+                      fontFamily: 'Cairo',
                       fontSize: 16.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w600,
@@ -93,7 +93,7 @@ class _EmptyVTOWidgetState extends State<EmptyVTOWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primaryBackground,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Aileron',
+                      fontFamily: 'Cairo',
                       color: FlutterFlowTheme.of(context).primaryText,
                       letterSpacing: 0.0,
                     ),

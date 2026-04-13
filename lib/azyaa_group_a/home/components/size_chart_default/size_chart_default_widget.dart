@@ -117,7 +117,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -160,7 +160,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                           backgroundColor: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                   ),
@@ -175,7 +175,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                           textStyle: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                fontFamily: 'Aileron',
+                                fontFamily: 'Cairo',
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
@@ -279,7 +279,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -294,7 +294,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -309,7 +309,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -324,7 +324,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -339,7 +339,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -354,7 +354,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -369,7 +369,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -397,7 +397,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -412,7 +412,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -427,7 +427,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -442,7 +442,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -457,7 +457,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -472,7 +472,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -487,7 +487,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -507,7 +507,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -522,7 +522,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -537,7 +537,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -552,7 +552,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -567,7 +567,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -582,7 +582,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -597,7 +597,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -617,7 +617,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -632,7 +632,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -647,7 +647,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -662,7 +662,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -677,7 +677,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -692,7 +692,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -707,7 +707,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -727,7 +727,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -742,7 +742,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -757,7 +757,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -772,7 +772,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -787,7 +787,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -802,7 +802,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -817,7 +817,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -837,7 +837,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -852,7 +852,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -867,7 +867,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -882,7 +882,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -897,7 +897,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -912,7 +912,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -927,7 +927,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -947,7 +947,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -962,7 +962,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -977,7 +977,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -992,7 +992,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -1007,7 +1007,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -1022,7 +1022,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -1037,7 +1037,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -1055,7 +1055,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                       'nqtu66ff' /* All measurements are in inches */,
                     ),
                     style: FlutterFlowTheme.of(context).labelSmall.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           letterSpacing: 0.0,
                         ),
                   ),

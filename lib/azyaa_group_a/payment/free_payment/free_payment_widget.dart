@@ -272,7 +272,16 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
         ),
       ));
 
-      context.goNamed(SuccessWidget.routeName);
+      context.goNamed(
+        SuccessWidget.routeName,
+        extra: <String, dynamic>{
+          '__transition_info__': TransitionInfo(
+            hasTransition: true,
+            transitionType: PageTransitionType.fade,
+            duration: Duration(milliseconds: 0),
+          ),
+        },
+      );
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -436,7 +445,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
@@ -496,7 +505,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               fontSize: 18.0,
                                               letterSpacing: 0.0,
                                             ),

@@ -77,7 +77,7 @@ class _EmptyWidgetState extends State<EmptyWidget> {
               widget!.messageOne!,
               textAlign: TextAlign.center,
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Aileron',
+                    fontFamily: 'Cairo',
                     fontSize: 16.0,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w600,
@@ -89,7 +89,7 @@ class _EmptyWidgetState extends State<EmptyWidget> {
                 widget!.messageTwo!,
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Aileron',
+                      fontFamily: 'Cairo',
                       fontSize: 14.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.normal,
@@ -136,7 +136,7 @@ class _EmptyWidgetState extends State<EmptyWidget> {
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primaryBackground,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         color: FlutterFlowTheme.of(context).primaryText,
                         letterSpacing: 0.0,
                       ),

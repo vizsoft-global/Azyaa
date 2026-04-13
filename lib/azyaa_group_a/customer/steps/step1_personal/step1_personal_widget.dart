@@ -344,7 +344,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               fontSize: 10.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
@@ -386,8 +386,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Aileron',
+                                                            fontFamily: 'Cairo',
                                                             letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w600,
@@ -411,7 +410,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
@@ -442,7 +441,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
@@ -458,7 +457,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                         ),
@@ -524,7 +523,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                                   maxLength: 15,
@@ -595,8 +594,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Aileron',
+                                                            fontFamily: 'Cairo',
                                                             letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w600,
@@ -620,7 +618,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
@@ -651,7 +649,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
@@ -667,7 +665,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                         ),
@@ -733,7 +731,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                                   textAlign: TextAlign.start,
@@ -799,7 +797,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -818,7 +816,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -879,14 +877,14 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               letterSpacing: 0.0,
                                             ),
                                         selectedTextStyle:
                                             FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                 ),
                                         buttonPosition:
@@ -923,7 +921,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -942,7 +940,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -992,7 +990,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .headlineLarge
                                                     .override(
-                                                      fontFamily: 'Aileron',
+                                                      fontFamily: 'Cairo',
                                                       fontSize: 32.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
@@ -1087,7 +1085,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1124,7 +1122,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -1143,7 +1141,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -1169,7 +1167,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                   context)
                                               .labelMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
@@ -1183,7 +1181,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
                                                   .override(
-                                                    fontFamily: 'Aileron',
+                                                    fontFamily: 'Cairo',
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                   ),
@@ -1236,7 +1234,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               letterSpacing: 0.0,
                                             ),
                                         keyboardType:
@@ -1271,7 +1269,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
@@ -1292,7 +1290,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -1323,7 +1321,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Aileron',
+                                                      fontFamily: 'Cairo',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1339,7 +1337,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Aileron',
+                                                      fontFamily: 'Cairo',
                                                       fontSize: 14.0,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -1392,7 +1390,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 letterSpacing: 0.0,
                                               ),
                                           keyboardType: TextInputType.number,
@@ -1429,7 +1427,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                 ),
@@ -1438,7 +1436,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                             ),
@@ -1533,7 +1531,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                             .bodyMedium
                                                             .override(
                                                               fontFamily:
-                                                                  'Aileron',
+                                                                  'Cairo',
                                                               letterSpacing:
                                                                   0.0,
                                                             ),
@@ -1626,7 +1624,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Aileron',
+                                                      fontFamily: 'Cairo',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1642,7 +1640,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Aileron',
+                                                      fontFamily: 'Cairo',
                                                       fontSize: 14.0,
                                                       letterSpacing: 0.0,
                                                     ),
@@ -1695,7 +1693,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 letterSpacing: 0.0,
                                               ),
                                           maxLength: functions.getPhoneLength(
@@ -1746,7 +1744,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
@@ -1769,7 +1767,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
@@ -1862,7 +1860,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1969,7 +1967,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                               .labelMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
@@ -1992,7 +1990,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                               .labelMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
@@ -2068,7 +2066,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     maxLength: functions
@@ -2102,7 +2100,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                         ),
@@ -2238,8 +2236,16 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                 ));
                               }
 
-                              context
-                                  .goNamed(Step2MeasurementsWidget.routeName);
+                              context.goNamed(
+                                Step2MeasurementsWidget.routeName,
+                                extra: <String, dynamic>{
+                                  '__transition_info__': TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
+                              );
                             },
                             text: FFLocalizations.of(context).getText(
                               's3lpd1ct' /* Save */,
@@ -2255,7 +2261,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                   ),

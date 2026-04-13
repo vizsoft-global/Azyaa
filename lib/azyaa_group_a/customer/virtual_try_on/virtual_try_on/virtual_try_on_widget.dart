@@ -213,6 +213,16 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                                               ParamType.DocumentReference,
                                             ),
                                           }.withoutNulls,
+                                          extra: <String, dynamic>{
+                                            '__transition_info__':
+                                                TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 0),
+                                            ),
+                                          },
                                         );
                                       },
                                       child: Column(
@@ -398,7 +408,7 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -410,7 +420,7 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
@@ -523,6 +533,18 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                                                                             .DocumentReference,
                                                                       ),
                                                                     }.withoutNulls,
+                                                                    extra: <String,
+                                                                        dynamic>{
+                                                                      '__transition_info__':
+                                                                          TransitionInfo(
+                                                                        hasTransition:
+                                                                            true,
+                                                                        transitionType:
+                                                                            PageTransitionType.fade,
+                                                                        duration:
+                                                                            Duration(milliseconds: 0),
+                                                                      ),
+                                                                    },
                                                                   );
 
                                                                   return;
@@ -580,6 +602,20 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                                                                     .DocumentReference,
                                                               ),
                                                             }.withoutNulls,
+                                                            extra: <String,
+                                                                dynamic>{
+                                                              '__transition_info__':
+                                                                  TransitionInfo(
+                                                                hasTransition:
+                                                                    true,
+                                                                transitionType:
+                                                                    PageTransitionType
+                                                                        .fade,
+                                                                duration: Duration(
+                                                                    milliseconds:
+                                                                        0),
+                                                              ),
+                                                            },
                                                           );
                                                         },
                                                       ),

@@ -146,7 +146,7 @@ class _AppUpdaterPopupIOSWidgetState extends State<AppUpdaterPopupIOSWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -193,7 +193,7 @@ class _AppUpdaterPopupIOSWidgetState extends State<AppUpdaterPopupIOSWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .titleMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   color: Colors.black,
                                                   fontSize: 22.0,
                                                   letterSpacing: 0.0,
@@ -206,7 +206,7 @@ class _AppUpdaterPopupIOSWidgetState extends State<AppUpdaterPopupIOSWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color: Colors.black,
                                                 letterSpacing: 0.0,
                                               ),
@@ -232,7 +232,7 @@ class _AppUpdaterPopupIOSWidgetState extends State<AppUpdaterPopupIOSWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
                                     letterSpacing: 0.0,
@@ -253,7 +253,7 @@ class _AppUpdaterPopupIOSWidgetState extends State<AppUpdaterPopupIOSWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       color: Colors.black,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
@@ -272,7 +272,7 @@ class _AppUpdaterPopupIOSWidgetState extends State<AppUpdaterPopupIOSWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       fontSize: 12.0,
@@ -314,7 +314,7 @@ class _AppUpdaterPopupIOSWidgetState extends State<AppUpdaterPopupIOSWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       fontSize: 16.0,

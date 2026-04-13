@@ -795,7 +795,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                               : FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                   ),
@@ -853,7 +853,16 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                               );
                             }
                           } else {
-                            context.goNamed(LoginWidget.routeName);
+                            context.goNamed(
+                              LoginWidget.routeName,
+                              extra: <String, dynamic>{
+                                '__transition_info__': TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
                           }
 
                           safeSetState(() {});
@@ -1111,7 +1120,16 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                         }
                       }
 
-                      context.goNamed(SuccessWidget.routeName);
+                      context.goNamed(
+                        SuccessWidget.routeName,
+                        extra: <String, dynamic>{
+                          '__transition_info__': TransitionInfo(
+                            hasTransition: true,
+                            transitionType: PageTransitionType.fade,
+                            duration: Duration(milliseconds: 0),
+                          ),
+                        },
+                      );
 
                       if (_shouldSetState) safeSetState(() {});
                       return;
@@ -1148,7 +1166,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         color: Colors.white,
                         fontSize: 16.0,
                         letterSpacing: 0.0,

@@ -210,7 +210,7 @@ class _PaymentWidgetState extends State<PaymentWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
@@ -260,7 +260,7 @@ class _PaymentWidgetState extends State<PaymentWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,

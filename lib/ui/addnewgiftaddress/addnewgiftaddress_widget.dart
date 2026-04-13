@@ -109,7 +109,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     fontSize: 18.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
@@ -129,7 +129,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                       '41f0dsuw' /* Add New Address */,
                     ),
                     style: FlutterFlowTheme.of(context).titleLarge.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           fontSize: 18.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
@@ -157,7 +157,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                   checkboxBorderColor:
                       FlutterFlowTheme.of(context).secondaryText,
                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         letterSpacing: 0.0,
                       ),
                   checkboxBorderRadius: BorderRadius.circular(4.0),
@@ -191,7 +191,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -203,7 +203,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: FlutterFlowTheme.of(context).error,
                                     letterSpacing: 0.0,
                                   ),
@@ -211,7 +211,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                           ],
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -234,7 +234,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                           labelStyle: FlutterFlowTheme.of(context)
                               .labelMedium
                               .override(
-                                fontFamily: 'Aileron',
+                                fontFamily: 'Cairo',
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 letterSpacing: 0.0,
                               ),
@@ -243,7 +243,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                           ),
                           hintStyle:
                               FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -280,7 +280,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                               FlutterFlowTheme.of(context).primaryBackground,
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Aileron',
+                              fontFamily: 'Cairo',
                               letterSpacing: 0.0,
                             ),
                         cursorColor: FlutterFlowTheme.of(context).primaryText,
@@ -305,7 +305,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -317,7 +317,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: FlutterFlowTheme.of(context).error,
                                     letterSpacing: 0.0,
                                   ),
@@ -325,7 +325,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                           ],
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -349,7 +349,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
@@ -360,7 +360,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                 ),
@@ -398,7 +398,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                   ),
                           maxLines: null,
@@ -425,7 +425,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -437,7 +437,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: FlutterFlowTheme.of(context).error,
                                     letterSpacing: 0.0,
                                   ),
@@ -445,7 +445,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                           ],
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -503,7 +503,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                                   searchTextStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         letterSpacing: 0.0,
                                       ),
                                   textStyle: FlutterFlowTheme.of(context)
@@ -584,7 +584,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         fontSize: 14.0,
                                         letterSpacing: 0.0,
                                       ),
@@ -607,7 +607,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
@@ -622,7 +622,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
@@ -644,7 +644,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                           ),
                                       maxLines: null,
@@ -692,7 +692,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                   checkboxBorderColor:
                       FlutterFlowTheme.of(context).secondaryText,
                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         letterSpacing: 0.0,
                       ),
                   checkboxBorderRadius: BorderRadius.circular(4.0),
@@ -706,7 +706,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                     '54q6t76u' /* if you don’t know the address ... */,
                   ),
                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         color: FlutterFlowTheme.of(context).secondaryText,
                         letterSpacing: 0.0,
                       ),
@@ -730,7 +730,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           color: FlutterFlowTheme.of(context).info,
                           letterSpacing: 0.0,
                         ),

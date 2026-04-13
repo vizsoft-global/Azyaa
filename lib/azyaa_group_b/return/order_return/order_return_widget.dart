@@ -105,6 +105,13 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                   ParamType.DocumentReference,
                                 ),
                               }.withoutNulls,
+                              extra: <String, dynamic>{
+                                '__transition_info__': TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
                             );
                           },
                         ),
@@ -117,7 +124,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   fontSize: 18.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
@@ -191,7 +198,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -208,7 +215,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
@@ -217,7 +224,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -248,7 +255,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
@@ -271,7 +278,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
@@ -283,7 +290,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -313,7 +320,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -544,7 +551,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -564,7 +571,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
@@ -660,7 +667,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: 'Aileron',
+                                                                              fontFamily: 'Cairo',
                                                                               color: FlutterFlowTheme.of(context).secondaryText,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -673,7 +680,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Aileron',
+                                                                              fontFamily: 'Cairo',
                                                                               color: FlutterFlowTheme.of(context).secondaryText,
                                                                               fontSize: 12.0,
                                                                               letterSpacing: 0.0,
@@ -728,7 +735,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                                                 '-',
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Aileron',
+                                                                                    fontFamily: 'Cairo',
                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
                                                                                     fontSize: 12.0,
                                                                                     letterSpacing: 0.0,
@@ -768,7 +775,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -812,7 +819,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -828,7 +835,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -844,7 +851,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -862,7 +869,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -880,7 +887,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -909,7 +916,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
@@ -965,7 +972,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
@@ -1008,7 +1015,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
@@ -1030,7 +1037,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       letterSpacing: 0.0,
@@ -1041,7 +1048,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
                                     ),
@@ -1080,7 +1087,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                   ),
                               maxLines: 5,
@@ -1219,8 +1226,16 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                   ),
                                 });
 
-                                context
-                                    .goNamed(OrderReturnSubmitWidget.routeName);
+                                context.goNamed(
+                                  OrderReturnSubmitWidget.routeName,
+                                  extra: <String, dynamic>{
+                                    '__transition_info__': TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                    ),
+                                  },
+                                );
 
                                 if (_shouldSetState) safeSetState(() {});
                               },
@@ -1238,7 +1253,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       color: FlutterFlowTheme.of(context).info,
                                       letterSpacing: 0.0,
                                     ),

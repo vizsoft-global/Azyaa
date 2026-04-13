@@ -120,7 +120,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -187,7 +187,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                             labelStyle: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.normal,
@@ -195,7 +195,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                             unselectedLabelStyle: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.normal,
@@ -310,7 +310,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -352,7 +352,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -394,7 +394,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -436,7 +436,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -513,7 +513,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .info,
@@ -546,7 +546,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
@@ -629,7 +629,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                             .titleLarge
                                                             .override(
                                                               fontFamily:
-                                                                  'Aileron',
+                                                                  'Cairo',
                                                               color:
                                                                   Colors.black,
                                                               fontSize: 14.0,
@@ -701,7 +701,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                   .titleLarge
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -780,7 +780,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                             .titleLarge
                                                             .override(
                                                               fontFamily:
-                                                                  'Aileron',
+                                                                  'Cairo',
                                                               color:
                                                                   Colors.black,
                                                               fontSize: 14.0,
@@ -852,7 +852,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                   .titleLarge
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -924,7 +924,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                             .titleLarge
                                                             .override(
                                                               fontFamily:
-                                                                  'Aileron',
+                                                                  'Cairo',
                                                               color:
                                                                   Colors.black,
                                                               fontSize: 14.0,
@@ -996,7 +996,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                   .titleLarge
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -1068,7 +1068,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                             .titleLarge
                                                             .override(
                                                               fontFamily:
-                                                                  'Aileron',
+                                                                  'Cairo',
                                                               color:
                                                                   Colors.black,
                                                               fontSize: 14.0,
@@ -1140,7 +1140,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                   .titleLarge
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -1213,7 +1213,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                               .titleLarge
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: Colors
                                                                     .black,
                                                                 fontSize: 14.0,
@@ -1285,7 +1285,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                     .titleLarge
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .secondaryText,
@@ -1360,7 +1360,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                             .titleLarge
                                                             .override(
                                                               fontFamily:
-                                                                  'Aileron',
+                                                                  'Cairo',
                                                               color:
                                                                   Colors.black,
                                                               fontSize: 14.0,
@@ -1432,7 +1432,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                   .titleLarge
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -1505,7 +1505,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                               .titleLarge
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: Colors
                                                                     .black,
                                                                 fontSize: 14.0,
@@ -1577,7 +1577,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                     .titleLarge
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .secondaryText,
@@ -1672,7 +1672,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -1727,7 +1727,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -1782,7 +1782,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),

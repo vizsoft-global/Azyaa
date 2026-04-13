@@ -717,6 +717,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
         builder: (context, params) => DeleteWidget(),
       ),
       FFRoute(
+        name: ProductCopyWidget.routeName,
+        path: ProductCopyWidget.routePath,
+        builder: (context, params) => ProductCopyWidget(
+          productID: params.getParam(
+            'productID',
+            ParamType.String,
+          ),
+        ),
+      ),
+      FFRoute(
         name: $branchio_dynamic_linking_akp5u6.TestHomePageWidget.routeName,
         path: $branchio_dynamic_linking_akp5u6.TestHomePageWidget.routePath,
         builder: (context, params) =>

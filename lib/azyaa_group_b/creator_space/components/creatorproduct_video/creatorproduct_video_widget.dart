@@ -119,7 +119,7 @@ class _CreatorproductVideoWidgetState extends State<CreatorproductVideoWidget> {
             ),
             maxLines: 1,
             style: FlutterFlowTheme.of(context).bodySmall.override(
-                  fontFamily: 'Aileron',
+                  fontFamily: 'Cairo',
                   fontSize: 12.0,
                   letterSpacing: 0.0,
                 ),
@@ -136,7 +136,7 @@ class _CreatorproductVideoWidgetState extends State<CreatorproductVideoWidget> {
                     '7jcuyggh' /* 13.67  */,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         color: FlutterFlowTheme.of(context).secondaryText,
                         fontSize: 10.0,
                         letterSpacing: 0.0,
@@ -147,7 +147,7 @@ class _CreatorproductVideoWidgetState extends State<CreatorproductVideoWidget> {
                     '9knob9gi' /* MB  */,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         color: FlutterFlowTheme.of(context).secondaryText,
                         fontSize: 10.0,
                         letterSpacing: 0.0,
@@ -159,7 +159,7 @@ class _CreatorproductVideoWidgetState extends State<CreatorproductVideoWidget> {
                     '1911undl' /* |  */,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         color: FlutterFlowTheme.of(context).secondaryText,
                         fontSize: 12.0,
                         letterSpacing: 0.0,
@@ -170,7 +170,7 @@ class _CreatorproductVideoWidgetState extends State<CreatorproductVideoWidget> {
                     'sqtrkhby' /* 1800 */,
                   ),
                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         color: FlutterFlowTheme.of(context).secondaryText,
                         fontSize: 10.0,
                         letterSpacing: 0.0,
@@ -181,7 +181,7 @@ class _CreatorproductVideoWidgetState extends State<CreatorproductVideoWidget> {
                     'rr1066lv' /*  x  */,
                   ),
                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         color: FlutterFlowTheme.of(context).secondaryText,
                         letterSpacing: 0.0,
                       ),
@@ -191,7 +191,7 @@ class _CreatorproductVideoWidgetState extends State<CreatorproductVideoWidget> {
                     '6p66rxjk' /* 679 */,
                   ),
                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         color: FlutterFlowTheme.of(context).secondaryText,
                         fontSize: 10.0,
                         letterSpacing: 0.0,
@@ -199,7 +199,7 @@ class _CreatorproductVideoWidgetState extends State<CreatorproductVideoWidget> {
                 )
               ],
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Aileron',
+                    fontFamily: 'Cairo',
                     letterSpacing: 0.0,
                   ),
             ),
@@ -222,7 +222,7 @@ class _CreatorproductVideoWidgetState extends State<CreatorproductVideoWidget> {
                     'pw90ci9d' /* 100 */,
                   ),
                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         color: FlutterFlowTheme.of(context).secondaryText,
                         fontSize: 12.0,
                         letterSpacing: 0.0,
@@ -235,7 +235,7 @@ class _CreatorproductVideoWidgetState extends State<CreatorproductVideoWidget> {
                     '670i1ix8' /* 150 KD */,
                   ),
                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         fontSize: 12.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,

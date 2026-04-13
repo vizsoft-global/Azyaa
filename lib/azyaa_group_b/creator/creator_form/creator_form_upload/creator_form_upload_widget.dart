@@ -104,7 +104,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   fontSize: 18.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
@@ -175,7 +175,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
@@ -192,7 +192,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           fontSize: 12.0,
@@ -239,7 +239,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -250,7 +250,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -271,7 +271,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -410,7 +410,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
@@ -616,7 +616,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -627,7 +627,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -934,7 +934,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                             .of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
@@ -1000,7 +1000,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
@@ -1087,7 +1087,15 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                   }
 
                                   context.goNamed(
-                                      CreatorFormSuccessWidget.routeName);
+                                    CreatorFormSuccessWidget.routeName,
+                                    extra: <String, dynamic>{
+                                      '__transition_info__': TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
                                 } else {
                                   await showDialog(
                                     context: context,
@@ -1171,7 +1179,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                   ),

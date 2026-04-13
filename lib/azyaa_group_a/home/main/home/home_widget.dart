@@ -16,7 +16,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/ui/shortlist_icon/shortlist_icon_widget.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
-import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'dart:async';
 import 'package:branchio_dynamic_linking_akp5u6/custom_code/actions/index.dart'
@@ -60,16 +59,16 @@ class _HomeWidgetState extends State<HomeWidget> {
       await branchio_dynamic_linking_akp5u6_actions.handleBranchDeeplink(
         (linkData) async {
           if (branchio_dynamic_linking_akp5u6_functions.isTargetingPage(
-              linkData, 'Product')) {
+              linkData, 'ProductCopy')) {
             context.goNamed(
-              ProductWidget.routeName,
+              ProductCopyWidget.routeName,
               queryParameters: {
-                'product': serializeParam(
-                  functions.stringToProductDocRef(getJsonField(
+                'productID': serializeParam(
+                  getJsonField(
                     linkData,
                     r'''$.page_parameter''',
-                  ).toString()),
-                  ParamType.DocumentReference,
+                  ).toString(),
+                  ParamType.String,
                 ),
               }.withoutNulls,
             );
@@ -208,7 +207,19 @@ class _HomeWidgetState extends State<HomeWidget> {
                                               Duration(milliseconds: 2000),
                                               () async {
                                                 context.goNamed(
-                                                    HomeSearchWidget.routeName);
+                                                  HomeSearchWidget.routeName,
+                                                  extra: <String, dynamic>{
+                                                    '__transition_info__':
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .fade,
+                                                      duration: Duration(
+                                                          milliseconds: 0),
+                                                    ),
+                                                  },
+                                                );
                                               },
                                             ),
                                             autofocus: false,
@@ -219,7 +230,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -235,7 +246,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -287,7 +298,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                 ),
                                             cursorColor:
@@ -313,7 +324,18 @@ class _HomeWidgetState extends State<HomeWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.goNamed(
-                                                HomeSearchWidget.routeName);
+                                              HomeSearchWidget.routeName,
+                                              extra: <String, dynamic>{
+                                                '__transition_info__':
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                  duration:
+                                                      Duration(milliseconds: 0),
+                                                ),
+                                              },
+                                            );
                                           },
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -341,19 +363,16 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                         '261y1faf' /* Search products here... */,
                                                       ),
                                                       maxLines: 1,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Aileron',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Cairo',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     ),
                                                   ),
                                                   Padding(
@@ -512,9 +531,23 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             .transparent,
                                                                     onTap:
                                                                         () async {
-                                                                      context.pushNamed(
-                                                                          ShopWidget
-                                                                              .routeName);
+                                                                      context
+                                                                          .pushNamed(
+                                                                        ShopWidget
+                                                                            .routeName,
+                                                                        extra: <String,
+                                                                            dynamic>{
+                                                                          '__transition_info__':
+                                                                              TransitionInfo(
+                                                                            hasTransition:
+                                                                                true,
+                                                                            transitionType:
+                                                                                PageTransitionType.fade,
+                                                                            duration:
+                                                                                Duration(milliseconds: 0),
+                                                                          ),
+                                                                        },
+                                                                      );
                                                                     },
                                                                     child:
                                                                         RichText(
@@ -530,7 +563,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               'c63vwxjh' /* Choose   */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                  fontFamily: 'Aileron',
+                                                                                  fontFamily: 'Cairo',
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.bold,
                                                                                 ),
@@ -541,7 +574,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               '1pavrmyc' /* Category */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                  fontFamily: 'Aileron',
+                                                                                  fontFamily: 'Cairo',
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           )
@@ -549,7 +582,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Aileron',
+                                                                              fontFamily: 'Cairo',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -570,9 +603,23 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             .transparent,
                                                                     onTap:
                                                                         () async {
-                                                                      context.pushNamed(
-                                                                          ShopWidget
-                                                                              .routeName);
+                                                                      context
+                                                                          .pushNamed(
+                                                                        ShopWidget
+                                                                            .routeName,
+                                                                        extra: <String,
+                                                                            dynamic>{
+                                                                          '__transition_info__':
+                                                                              TransitionInfo(
+                                                                            hasTransition:
+                                                                                true,
+                                                                            transitionType:
+                                                                                PageTransitionType.fade,
+                                                                            duration:
+                                                                                Duration(milliseconds: 0),
+                                                                          ),
+                                                                        },
+                                                                      );
                                                                     },
                                                                     child:
                                                                         Container(
@@ -795,7 +842,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 arText: sliderListItem.infoCustomTranslate.name.ar,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                    fontFamily: 'Aileron',
+                                                                                    fontFamily: 'Cairo',
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.bold,
@@ -811,7 +858,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                     arText: sliderListItem.infoCustomTranslate.shortDescription.ar,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                        fontFamily: 'Aileron',
+                                                                                        fontFamily: 'Cairo',
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FontWeight.normal,
                                                                                       ),
@@ -843,7 +890,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                     iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                     textStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                          fontFamily: 'Aileron',
+                                                                                          fontFamily: 'Cairo',
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.w600,
                                                                                         ),
@@ -1044,7 +1091,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         .bodyLarge
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Aileron',
+                                                                              'Cairo',
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
@@ -1062,7 +1109,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         .bodyLarge
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Aileron',
+                                                                              'Cairo',
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -1073,7 +1120,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1236,7 +1283,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -1255,7 +1302,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1267,7 +1314,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1284,8 +1331,22 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                            ShopWidget
-                                                                .routeName);
+                                                          ShopWidget.routeName,
+                                                          extra: <String,
+                                                              dynamic>{
+                                                            '__transition_info__':
+                                                                TransitionInfo(
+                                                              hasTransition:
+                                                                  true,
+                                                              transitionType:
+                                                                  PageTransitionType
+                                                                      .fade,
+                                                              duration: Duration(
+                                                                  milliseconds:
+                                                                      0),
+                                                            ),
+                                                          },
+                                                        );
                                                       },
                                                       child: Container(
                                                         decoration:
@@ -1517,9 +1578,23 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         .transparent,
                                                                 onTap:
                                                                     () async {
-                                                                  context.pushNamed(
-                                                                      ShopWidget
-                                                                          .routeName);
+                                                                  context
+                                                                      .pushNamed(
+                                                                    ShopWidget
+                                                                        .routeName,
+                                                                    extra: <String,
+                                                                        dynamic>{
+                                                                      '__transition_info__':
+                                                                          TransitionInfo(
+                                                                        hasTransition:
+                                                                            true,
+                                                                        transitionType:
+                                                                            PageTransitionType.fade,
+                                                                        duration:
+                                                                            Duration(milliseconds: 0),
+                                                                      ),
+                                                                    },
+                                                                  );
                                                                 },
                                                                 child: RichText(
                                                                   textScaler: MediaQuery.of(
@@ -1536,7 +1611,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyLarge
                                                                             .override(
-                                                                              fontFamily: 'Aileron',
+                                                                              fontFamily: 'Cairo',
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.bold,
                                                                             ),
@@ -1549,7 +1624,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyLarge
                                                                             .override(
-                                                                              fontFamily: 'Aileron',
+                                                                              fontFamily: 'Cairo',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       )
@@ -1559,7 +1634,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Aileron',
+                                                                              'Cairo',
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -1578,9 +1653,23 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         .transparent,
                                                                 onTap:
                                                                     () async {
-                                                                  context.pushNamed(
-                                                                      ShopWidget
-                                                                          .routeName);
+                                                                  context
+                                                                      .pushNamed(
+                                                                    ShopWidget
+                                                                        .routeName,
+                                                                    extra: <String,
+                                                                        dynamic>{
+                                                                      '__transition_info__':
+                                                                          TransitionInfo(
+                                                                        hasTransition:
+                                                                            true,
+                                                                        transitionType:
+                                                                            PageTransitionType.fade,
+                                                                        duration:
+                                                                            Duration(milliseconds: 0),
+                                                                      ),
+                                                                    },
+                                                                  );
                                                                 },
                                                                 child:
                                                                     Container(
@@ -1618,7 +1707,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                           padding:
                                                               EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      0.0,
+                                                                      16.0,
                                                                       0.0,
                                                                       16.0,
                                                                       0.0),
@@ -1663,7 +1752,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:

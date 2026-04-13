@@ -70,7 +70,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                         'kppx4joe' /* Search Result */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Aileron',
+                            fontFamily: 'Cairo',
                             fontSize: 16.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
@@ -129,7 +129,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                       return Text(
                         searchResult1Item.productId,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Aileron',
+                              fontFamily: 'Cairo',
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
                             ),

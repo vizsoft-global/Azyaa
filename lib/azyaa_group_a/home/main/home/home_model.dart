@@ -16,7 +16,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/ui/shortlist_icon/shortlist_icon_widget.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
-import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'dart:async';
 import 'home_widget.dart' show HomeWidget;

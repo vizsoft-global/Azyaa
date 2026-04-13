@@ -944,7 +944,16 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                       );
                     }
 
-                    context.goNamed(SuccessWidget.routeName);
+                    context.goNamed(
+                      SuccessWidget.routeName,
+                      extra: <String, dynamic>{
+                        '__transition_info__': TransitionInfo(
+                          hasTransition: true,
+                          transitionType: PageTransitionType.fade,
+                          duration: Duration(milliseconds: 0),
+                        ),
+                      },
+                    );
                   } else {
                     _model.instantTimer?.cancel();
 
@@ -958,7 +967,16 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                       (e) => e..paymentProcessesStatus = 'DONE',
                     );
 
-                    context.goNamed(FailedWidget.routeName);
+                    context.goNamed(
+                      FailedWidget.routeName,
+                      extra: <String, dynamic>{
+                        '__transition_info__': TransitionInfo(
+                          hasTransition: true,
+                          transitionType: PageTransitionType.fade,
+                          duration: Duration(milliseconds: 0),
+                        ),
+                      },
+                    );
 
                     return;
                   }
@@ -1857,7 +1875,16 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                         );
                       }
 
-                      context.goNamed(SuccessWidget.routeName);
+                      context.goNamed(
+                        SuccessWidget.routeName,
+                        extra: <String, dynamic>{
+                          '__transition_info__': TransitionInfo(
+                            hasTransition: true,
+                            transitionType: PageTransitionType.fade,
+                            duration: Duration(milliseconds: 0),
+                          ),
+                        },
+                      );
                     } else {
                       _model.instantTimer?.cancel();
 
@@ -2781,7 +2808,16 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                         );
                       }
 
-                      context.goNamed(SuccessWidget.routeName);
+                      context.goNamed(
+                        SuccessWidget.routeName,
+                        extra: <String, dynamic>{
+                          '__transition_info__': TransitionInfo(
+                            hasTransition: true,
+                            transitionType: PageTransitionType.fade,
+                            duration: Duration(milliseconds: 0),
+                          ),
+                        },
+                      );
 
                       return;
                     } else {
@@ -2827,7 +2863,16 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                         (e) => e..paymentProcessesStatus = 'DONE',
                       );
 
-                      context.goNamed(FailedWidget.routeName);
+                      context.goNamed(
+                        FailedWidget.routeName,
+                        extra: <String, dynamic>{
+                          '__transition_info__': TransitionInfo(
+                            hasTransition: true,
+                            transitionType: PageTransitionType.fade,
+                            duration: Duration(milliseconds: 0),
+                          ),
+                        },
+                      );
 
                       return;
                     }
@@ -2856,7 +2901,16 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                   (e) => e..paymentProcessesStatus = 'DONE',
                 );
 
-                context.goNamed(FailedWidget.routeName);
+                context.goNamed(
+                  FailedWidget.routeName,
+                  extra: <String, dynamic>{
+                    '__transition_info__': TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.fade,
+                      duration: Duration(milliseconds: 0),
+                    ),
+                  },
+                );
 
                 return;
               }

@@ -77,7 +77,7 @@ class _StoresListWidgetState extends State<StoresListWidget> {
                       updateCallback: () => safeSetState(() {}),
                       updateOnChange: true,
                       child: UniversalAppBarWidget(
-                        backButtonStatus: false,
+                        backButtonStatus: true,
                         title: FFLocalizations.of(context).getText(
                           'gxpfxdk5' /* Stores Hub  */,
                         ),
@@ -85,6 +85,8 @@ class _StoresListWidgetState extends State<StoresListWidget> {
                         searchIconStatus: false,
                         wishlistIconStatus: true,
                         navigationFrom: 'productlist',
+                        tryonStatus: false,
+                        shareIconStatus: false,
                       ),
                     ),
                   ],
@@ -147,7 +149,7 @@ dre... */
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             fontSize: 12.0,
@@ -176,7 +178,7 @@ dre... */
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             color: FlutterFlowTheme.of(context)
                                                 .info,
                                             fontSize: 10.0,
@@ -240,8 +242,7 @@ dre... */
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Aileron',
+                                                            fontFamily: 'Cairo',
                                                             fontSize: 16.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -259,8 +260,7 @@ dre... */
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Aileron',
+                                                            fontFamily: 'Cairo',
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryText,
@@ -275,7 +275,7 @@ dre... */
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -293,7 +293,7 @@ dre... */
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -356,7 +356,7 @@ selecting dre... */
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
@@ -408,7 +408,7 @@ selecting dre... */
                                                                     .titleSmall
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .info,
@@ -535,7 +535,7 @@ selecting dre... */
                                                   context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .info,
@@ -557,7 +557,7 @@ selecting dre... */
                                                   context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
@@ -703,6 +703,20 @@ selecting dre... */
                                                                       .DocumentReference,
                                                                 ),
                                                               }.withoutNulls,
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                '__transition_info__':
+                                                                    TransitionInfo(
+                                                                  hasTransition:
+                                                                      true,
+                                                                  transitionType:
+                                                                      PageTransitionType
+                                                                          .fade,
+                                                                  duration: Duration(
+                                                                      milliseconds:
+                                                                          0),
+                                                                ),
+                                                              },
                                                             );
                                                           },
                                                           child: Container(
@@ -795,7 +809,7 @@ selecting dre... */
                                                                                     child: Text(
                                                                                       storeDesignerListItem.designerMainInfo.designerInfo.name != null && storeDesignerListItem.designerMainInfo.designerInfo.name != '' ? storeDesignerListItem.designerMainInfo.designerInfo.name : storeDesignerListItem.displayName,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Aileron',
+                                                                                            fontFamily: 'Cairo',
                                                                                             fontSize: 14.0,
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w600,
@@ -809,7 +823,7 @@ selecting dre... */
                                                                                         maxChars: 20,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Aileron',
+                                                                                            fontFamily: 'Cairo',
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                             fontSize: 10.0,
                                                                                             letterSpacing: 0.0,
@@ -841,7 +855,7 @@ selecting dre... */
                                                                                         '07yicerj' /* Best Rated */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Aileron',
+                                                                                            fontFamily: 'Cairo',
                                                                                             color: FlutterFlowTheme.of(context).info,
                                                                                             fontSize: 10.0,
                                                                                             letterSpacing: 0.0,

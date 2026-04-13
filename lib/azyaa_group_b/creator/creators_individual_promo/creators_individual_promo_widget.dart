@@ -252,7 +252,7 @@ class _CreatorsIndividualPromoWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
@@ -317,7 +317,7 @@ class _CreatorsIndividualPromoWidgetState
                                                           context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -339,7 +339,7 @@ class _CreatorsIndividualPromoWidgetState
                                                           context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -351,7 +351,7 @@ class _CreatorsIndividualPromoWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -371,7 +371,7 @@ class _CreatorsIndividualPromoWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
@@ -398,7 +398,7 @@ class _CreatorsIndividualPromoWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
@@ -419,7 +419,7 @@ class _CreatorsIndividualPromoWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
@@ -446,7 +446,7 @@ class _CreatorsIndividualPromoWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
@@ -472,7 +472,7 @@ class _CreatorsIndividualPromoWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
@@ -1059,7 +1059,7 @@ class _CreatorsIndividualPromoWidgetState
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           color:
                                               FlutterFlowTheme.of(context).info,
                                           letterSpacing: 0.0,

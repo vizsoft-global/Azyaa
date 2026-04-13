@@ -143,7 +143,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
                                           fontSize: 10.0,
@@ -218,7 +218,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -243,19 +243,19 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
                                   Text(
-                                    '${widget!.cartItems?.price?.toString()}${FFLocalizations.of(context).getVariableText(
-                                      enText: 'KWD',
-                                      arText: 'KWD',
+                                    '${widget!.cartItems?.price?.toString()} ${FFLocalizations.of(context).getVariableText(
+                                      enText: 'KD',
+                                      arText: 'KD',
                                     )}',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -299,21 +299,21 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           letterSpacing: 0.0,
                                         ),
                                   ),
                                   Text(
-                                    '${widget!.cartItems?.totalPrice?.toString()}${FFLocalizations.of(context).getVariableText(
-                                      enText: 'KWD',
-                                      arText: 'KWD',
+                                    '${widget!.cartItems?.totalPrice?.toString()} ${FFLocalizations.of(context).getVariableText(
+                                      enText: 'KD',
+                                      arText: 'KD',
                                     )}',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
                                         ),
@@ -443,7 +443,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -556,7 +556,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.normal,
@@ -655,7 +655,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .error,
@@ -673,7 +673,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                               'product')))
                                     Container(
                                       width: 85.0,
-                                      height: 32.0,
+                                      height: 35.0,
                                       decoration: BoxDecoration(
                                         color: Color(0xFFFAFAFA),
                                         borderRadius:
@@ -704,7 +704,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleLarge
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.normal,
@@ -815,7 +815,9 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                         stepSize: 1,
                                         minimum: 1,
                                         maximum: stackInventoryRecord!.stock,
-                                        contentPadding: EdgeInsets.all(4.0),
+                                        contentPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                4.0, 0.0, 4.0, 0.0),
                                       ),
                                     ),
                                 ],
@@ -910,7 +912,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .error,
@@ -959,7 +961,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleLarge
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.normal,
@@ -1116,7 +1118,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                 'dluq1saw' /* * Returns Not Applicable for T... */,
               ),
               style: FlutterFlowTheme.of(context).bodySmall.override(
-                    fontFamily: 'Aileron',
+                    fontFamily: 'Cairo',
                     color: FlutterFlowTheme.of(context).secondaryText,
                     letterSpacing: 0.0,
                   ),

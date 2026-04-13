@@ -104,7 +104,7 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
                       ),
                       maxLines: 1,
                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                            fontFamily: 'Aileron',
+                            fontFamily: 'Cairo',
                             color: FlutterFlowTheme.of(context).primaryText,
                             fontSize: 14.0,
                             letterSpacing: 0.0,
@@ -146,7 +146,7 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   letterSpacing: 0.0,
                                 ),
                             hintText: FFLocalizations.of(context).getText(
@@ -155,7 +155,7 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                 ),
@@ -193,7 +193,7 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                   ),
                           cursorColor: FlutterFlowTheme.of(context).primaryText,
@@ -253,7 +253,7 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
                             : Colors.white,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   color: _model.copyText == 'copy'
                                       ? Colors.white
                                       : FlutterFlowTheme.of(context).primary,
@@ -316,7 +316,7 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -356,7 +356,7 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -396,7 +396,7 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -436,7 +436,7 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -483,7 +483,7 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
                   iconColor: FlutterFlowTheme.of(context).primaryText,
                   color: FlutterFlowTheme.of(context).primaryBackground,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         color: FlutterFlowTheme.of(context).primaryText,
                         fontSize: 14.0,
                         letterSpacing: 0.0,
@@ -502,7 +502,16 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
                 onPressed: () async {
                   Navigator.pop(context);
 
-                  context.goNamed(HomeWidget.routeName);
+                  context.goNamed(
+                    HomeWidget.routeName,
+                    extra: <String, dynamic>{
+                      '__transition_info__': TransitionInfo(
+                        hasTransition: true,
+                        transitionType: PageTransitionType.fade,
+                        duration: Duration(milliseconds: 0),
+                      ),
+                    },
+                  );
                 },
                 text: FFLocalizations.of(context).getText(
                   't4wxh4th' /* Back to Home */,
@@ -515,7 +524,7 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         color: FlutterFlowTheme.of(context).info,
                         fontSize: 14.0,
                         letterSpacing: 0.0,

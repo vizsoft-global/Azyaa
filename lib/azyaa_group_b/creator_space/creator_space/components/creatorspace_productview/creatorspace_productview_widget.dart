@@ -210,7 +210,7 @@ class _CreatorspaceProductviewWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           color:
                                               FlutterFlowTheme.of(context).info,
                                           letterSpacing: 0.0,
@@ -239,7 +239,7 @@ class _CreatorspaceProductviewWidgetState
                     'ycspy4gb' /* ID :  */,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         fontSize: 10.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.normal,
@@ -248,7 +248,7 @@ class _CreatorspaceProductviewWidgetState
                 TextSpan(
                   text: widget!.promotionInfo!.promotionId,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         fontSize: 10.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.normal,
@@ -256,7 +256,7 @@ class _CreatorspaceProductviewWidgetState
                 )
               ],
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Aileron',
+                    fontFamily: 'Cairo',
                     fontSize: 10.0,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.bold,
@@ -270,7 +270,7 @@ class _CreatorspaceProductviewWidgetState
             widget!.promotionInfo!.promotionCaption,
             maxLines: 1,
             style: FlutterFlowTheme.of(context).bodySmall.override(
-                  fontFamily: 'Aileron',
+                  fontFamily: 'Cairo',
                   fontSize: 12.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.w500,
@@ -287,7 +287,7 @@ class _CreatorspaceProductviewWidgetState
                   TextSpan(
                     text: widget!.promotionInfo!.promotionSales.toString(),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           fontSize: 10.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.normal,
@@ -298,7 +298,7 @@ class _CreatorspaceProductviewWidgetState
                       '1ddjksyv' /*  Sold  */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           color: FlutterFlowTheme.of(context).secondaryText,
                           fontSize: 10.0,
                           letterSpacing: 0.0,
@@ -308,7 +308,7 @@ class _CreatorspaceProductviewWidgetState
                   TextSpan(
                     text: widget!.promotionInfo!.promotionEarnings.toString(),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           color: FlutterFlowTheme.of(context).primaryText,
                           fontSize: 10.0,
                           letterSpacing: 0.0,
@@ -320,7 +320,7 @@ class _CreatorspaceProductviewWidgetState
                       '7ibl4mix' /*  KD  */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           fontSize: 10.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.normal,
@@ -331,7 +331,7 @@ class _CreatorspaceProductviewWidgetState
                       'fhe5vo8k' /* Earned */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           color: FlutterFlowTheme.of(context).secondaryText,
                           fontSize: 10.0,
                           letterSpacing: 0.0,
@@ -340,7 +340,7 @@ class _CreatorspaceProductviewWidgetState
                   )
                 ],
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Aileron',
+                      fontFamily: 'Cairo',
                       fontSize: 10.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.bold,

@@ -183,7 +183,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                           }(),
                         )}',
                         style: FlutterFlowTheme.of(context).titleLarge.override(
-                              fontFamily: 'Aileron',
+                              fontFamily: 'Cairo',
                               fontSize: 16.0,
                               letterSpacing: 0.0,
                             ),
@@ -318,7 +318,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -580,8 +580,19 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                               );
                                             }
                                           } else {
-                                            context
-                                                .goNamed(LoginWidget.routeName);
+                                            context.goNamed(
+                                              LoginWidget.routeName,
+                                              extra: <String, dynamic>{
+                                                '__transition_info__':
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                  duration:
+                                                      Duration(milliseconds: 0),
+                                                ),
+                                              },
+                                            );
                                           }
 
                                           safeSetState(() {});

@@ -129,7 +129,17 @@ class _WaitlistMainWidgetState extends State<WaitlistMainWidget> {
                                       FFAppState().UserDataFlow =
                                           UserFlowStruct();
 
-                                      context.pushNamed(LoginWidget.routeName);
+                                      context.pushNamed(
+                                        LoginWidget.routeName,
+                                        extra: <String, dynamic>{
+                                          '__transition_info__': TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                            duration: Duration(milliseconds: 0),
+                                          ),
+                                        },
+                                      );
                                     },
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -138,7 +148,7 @@ class _WaitlistMainWidgetState extends State<WaitlistMainWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
@@ -157,7 +167,7 @@ class _WaitlistMainWidgetState extends State<WaitlistMainWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           fontSize: 14.0,
@@ -173,7 +183,16 @@ class _WaitlistMainWidgetState extends State<WaitlistMainWidget> {
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       context.goNamed(
-                                          WaitlistFormWidget.routeName);
+                                        WaitlistFormWidget.routeName,
+                                        extra: <String, dynamic>{
+                                          '__transition_info__': TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                            duration: Duration(milliseconds: 0),
+                                          ),
+                                        },
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'gfq9x72j' /* Join Waitlist */,
@@ -192,7 +211,7 @@ class _WaitlistMainWidgetState extends State<WaitlistMainWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             color: FlutterFlowTheme.of(context)
                                                 .info,
                                             letterSpacing: 0.0,
@@ -208,7 +227,16 @@ class _WaitlistMainWidgetState extends State<WaitlistMainWidget> {
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       context.goNamed(
-                                          WaitlistSecretWidget.routeName);
+                                        WaitlistSecretWidget.routeName,
+                                        extra: <String, dynamic>{
+                                          '__transition_info__': TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                            duration: Duration(milliseconds: 0),
+                                          ),
+                                        },
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'ql8fzur4' /* Enter Invitation Code */,
@@ -227,7 +255,7 @@ class _WaitlistMainWidgetState extends State<WaitlistMainWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             letterSpacing: 0.0,

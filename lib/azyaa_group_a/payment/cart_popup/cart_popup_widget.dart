@@ -90,7 +90,7 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
                         '0hghnhfp' /* Bag */,
                       ),
                       style: FlutterFlowTheme.of(context).titleLarge.override(
-                            fontFamily: 'Aileron',
+                            fontFamily: 'Cairo',
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,
                           ),
@@ -101,7 +101,7 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
                       'm0v4n6q7' /* 2 Items */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           letterSpacing: 0.0,
                         ),
                   ),
@@ -142,7 +142,7 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
                       'dkk4sdxo' /* Total */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
                         ),
@@ -152,7 +152,7 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
                       '6njws45p' /* 119.9 KD */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
                         ),
@@ -183,7 +183,7 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   color: FlutterFlowTheme.of(context).info,
                                   letterSpacing: 0.0,
                                 ),
@@ -210,7 +210,7 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   color: FlutterFlowTheme.of(context).info,
                                   letterSpacing: 0.0,
                                 ),

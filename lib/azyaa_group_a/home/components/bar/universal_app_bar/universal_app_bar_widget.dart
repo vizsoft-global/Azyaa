@@ -153,6 +153,13 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                             ParamType.DocumentReference,
                           ),
                         }.withoutNulls,
+                        extra: <String, dynamic>{
+                          '__transition_info__': TransitionInfo(
+                            hasTransition: true,
+                            transitionType: PageTransitionType.fade,
+                            duration: Duration(milliseconds: 0),
+                          ),
+                        },
                       );
                     } else {
                       await showDialog(
@@ -197,55 +204,149 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                         if (Navigator.of(context).canPop()) {
                           context.pop();
                         }
-                        context.pushNamed(HomeWidget.routeName);
+                        context.pushNamed(
+                          HomeWidget.routeName,
+                          extra: <String, dynamic>{
+                            '__transition_info__': TransitionInfo(
+                              hasTransition: true,
+                              transitionType: PageTransitionType.fade,
+                              duration: Duration(milliseconds: 0),
+                            ),
+                          },
+                        );
                       } else {
                         if (widget!.navigationFrom == 'productlist') {
                           if (Navigator.of(context).canPop()) {
                             context.pop();
                           }
-                          context.pushNamed(ShopWidget.routeName);
+                          context.pushNamed(
+                            ShopWidget.routeName,
+                            extra: <String, dynamic>{
+                              '__transition_info__': TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
+                          );
                         } else {
                           if (widget!.navigationFrom == 'membership') {
                             if (Navigator.of(context).canPop()) {
                               context.pop();
                             }
-                            context.pushNamed(MembershipWidget.routeName);
+                            context.pushNamed(
+                              MembershipWidget.routeName,
+                              extra: <String, dynamic>{
+                                '__transition_info__': TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
                           } else {
                             if (widget!.navigationFrom == 'profile') {
                               if (Navigator.of(context).canPop()) {
                                 context.pop();
                               }
-                              context.pushNamed(ProfileWidget.routeName);
+                              context.pushNamed(
+                                ProfileWidget.routeName,
+                                extra: <String, dynamic>{
+                                  '__transition_info__': TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
+                              );
                             } else {
                               if (widget!.navigationFrom == 'creator') {
-                                context.goNamed(CreatorsWidget.routeName);
+                                context.goNamed(
+                                  CreatorsWidget.routeName,
+                                  extra: <String, dynamic>{
+                                    '__transition_info__': TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                    ),
+                                  },
+                                );
                               } else {
                                 if ((widget!.navigationFrom == 'designer') &&
                                     (widget!.designerRef != null)) {
-                                  context
-                                      .goNamed(DesignersListWidget.routeName);
+                                  context.goNamed(
+                                    DesignersListWidget.routeName,
+                                    extra: <String, dynamic>{
+                                      '__transition_info__': TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
                                 } else {
                                   if (widget!.navigationFrom == 'account') {
-                                    context.pushNamed(AddressWidget.routeName);
+                                    context.pushNamed(
+                                      AddressWidget.routeName,
+                                      extra: <String, dynamic>{
+                                        '__transition_info__': TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
+                                        ),
+                                      },
+                                    );
                                   } else {
                                     if (widget!.navigationFrom ==
                                         'editprofile') {
-                                      context
-                                          .pushNamed(ProfileWidget.routeName);
+                                      context.pushNamed(
+                                        ProfileWidget.routeName,
+                                        extra: <String, dynamic>{
+                                          '__transition_info__': TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                            duration: Duration(milliseconds: 0),
+                                          ),
+                                        },
+                                      );
                                     } else {
                                       if (widget!.navigationFrom == 'orders') {
                                         if (Navigator.of(context).canPop()) {
                                           context.pop();
                                         }
-                                        context
-                                            .pushNamed(OrdersWidget.routeName);
+                                        context.pushNamed(
+                                          OrdersWidget.routeName,
+                                          extra: <String, dynamic>{
+                                            '__transition_info__':
+                                                TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 0),
+                                            ),
+                                          },
+                                        );
                                       } else {
                                         if (widget!.navigationFrom == 'vto') {
                                           if (Navigator.of(context).canPop()) {
                                             context.pop();
                                           }
                                           context.pushNamed(
-                                              VirtualTryOnWidget.routeName);
+                                            VirtualTryOnWidget.routeName,
+                                            extra: <String, dynamic>{
+                                              '__transition_info__':
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
+                                          );
                                         } else {
                                           if (widget!.navigationFrom ==
                                               'account') {
@@ -254,7 +355,18 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                               context.pop();
                                             }
                                             context.pushNamed(
-                                                ProfileWidget.routeName);
+                                              ProfileWidget.routeName,
+                                              extra: <String, dynamic>{
+                                                '__transition_info__':
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                  duration:
+                                                      Duration(milliseconds: 0),
+                                                ),
+                                              },
+                                            );
                                           } else {
                                             context.safePop();
                                           }
@@ -292,7 +404,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                   ),
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyLarge.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         fontSize: 18.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,
@@ -396,7 +508,16 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                 if (Navigator.of(context).canPop()) {
                   context.pop();
                 }
-                context.pushNamed(WishlistWidget.routeName);
+                context.pushNamed(
+                  WishlistWidget.routeName,
+                  extra: <String, dynamic>{
+                    '__transition_info__': TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.fade,
+                      duration: Duration(milliseconds: 0),
+                    ),
+                  },
+                );
               },
             ),
           ),
@@ -419,7 +540,16 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                         size: 18.0,
                       ),
                       onPressed: () async {
-                        context.goNamed(LoginWidget.routeName);
+                        context.goNamed(
+                          LoginWidget.routeName,
+                          extra: <String, dynamic>{
+                            '__transition_info__': TransitionInfo(
+                              hasTransition: true,
+                              transitionType: PageTransitionType.fade,
+                              duration: Duration(milliseconds: 0),
+                            ),
+                          },
+                        );
                       },
                     ),
                   if (loggedIn == true
@@ -514,7 +644,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           color: valueOrDefault<int>(
                                                     currentUserDocument
                                                         ?.userCart
@@ -656,7 +786,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Aileron',
+                      fontFamily: 'Cairo',
                       color: Colors.white,
                       letterSpacing: 0.0,
                     ),

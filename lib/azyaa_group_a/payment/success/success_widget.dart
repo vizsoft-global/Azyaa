@@ -51,7 +51,16 @@ class _SuccessWidgetState extends State<SuccessWidget> {
         (e) => e..paymentProcessesStatus = 'DONE',
       );
 
-      context.goNamed(HomeWidget.routeName);
+      context.goNamed(
+        HomeWidget.routeName,
+        extra: <String, dynamic>{
+          '__transition_info__': TransitionInfo(
+            hasTransition: true,
+            transitionType: PageTransitionType.fade,
+            duration: Duration(milliseconds: 0),
+          ),
+        },
+      );
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -114,7 +123,16 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                 (e) => e..paymentProcessesStatus = 'DONE',
                               );
 
-                              context.goNamed(HomeWidget.routeName);
+                              context.goNamed(
+                                HomeWidget.routeName,
+                                extra: <String, dynamic>{
+                                  '__transition_info__': TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
+                              );
                             },
                           ),
                           Expanded(
@@ -126,7 +144,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleLarge
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     fontSize: 18.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
@@ -253,7 +271,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                           context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
@@ -272,7 +290,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -293,7 +311,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -323,7 +341,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -352,7 +370,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -462,7 +480,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
@@ -513,7 +531,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                 ),
@@ -553,7 +571,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                             context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -568,7 +586,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                             context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -593,7 +611,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                             context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -622,7 +640,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
@@ -669,8 +687,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                               .of(context)
                                                           .bodySmall
                                                           .override(
-                                                            fontFamily:
-                                                                'Aileron',
+                                                            fontFamily: 'Cairo',
                                                             letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w600,
@@ -694,7 +711,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                             ),
@@ -779,7 +796,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
@@ -812,7 +829,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
@@ -878,7 +895,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
@@ -913,7 +930,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -926,7 +943,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -959,7 +976,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -972,7 +989,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -1005,7 +1022,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -1018,7 +1035,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -1050,7 +1067,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -1066,7 +1083,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -1090,7 +1107,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                 ),
@@ -1103,7 +1120,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
                                                 ),
@@ -1124,7 +1141,17 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                       (e) => e..paymentProcessesStatus = 'DONE',
                                     );
 
-                                    context.goNamed(HomeWidget.routeName);
+                                    context.goNamed(
+                                      HomeWidget.routeName,
+                                      extra: <String, dynamic>{
+                                        '__transition_info__': TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
+                                        ),
+                                      },
+                                    );
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     'x2gdxx0y' /* Back to Shopping */,
@@ -1142,7 +1169,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           color: Color(0xFF344054),
                                           letterSpacing: 0.0,
                                         ),

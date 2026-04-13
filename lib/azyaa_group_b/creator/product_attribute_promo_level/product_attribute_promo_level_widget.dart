@@ -122,7 +122,7 @@ class _ProductAttributePromoLevelWidgetState
                         '09a2x3qy' /* Choose */,
                       ),
                       style: FlutterFlowTheme.of(context).titleLarge.override(
-                            fontFamily: 'Aileron',
+                            fontFamily: 'Cairo',
                             fontSize: 18.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,
@@ -993,7 +993,16 @@ class _ProductAttributePromoLevelWidgetState
                               );
                             }
                           } else {
-                            context.goNamed(LoginWidget.routeName);
+                            context.goNamed(
+                              LoginWidget.routeName,
+                              extra: <String, dynamic>{
+                                '__transition_info__': TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
                           }
 
                           if (_shouldSetState) safeSetState(() {});
@@ -1010,7 +1019,7 @@ class _ProductAttributePromoLevelWidgetState
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: Colors.white,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
@@ -1220,7 +1229,7 @@ class _ProductAttributePromoLevelWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .velvet,
@@ -1652,7 +1661,7 @@ class _ProductAttributePromoLevelWidgetState
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyLarge
                                                                             .override(
-                                                                              fontFamily: 'Aileron',
+                                                                              fontFamily: 'Cairo',
                                                                               color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == widget!.product?.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -1776,7 +1785,7 @@ class _ProductAttributePromoLevelWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -1809,7 +1818,7 @@ class _ProductAttributePromoLevelWidgetState
                                   ).then((value) => safeSetState(() {}));
                                 },
                                 child: Container(
-                                  height: 44.0,
+                                  height: 48.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -1860,7 +1869,7 @@ class _ProductAttributePromoLevelWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -1882,7 +1891,7 @@ class _ProductAttributePromoLevelWidgetState
                                                           context)
                                                       .labelSmall
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
                                                       ),

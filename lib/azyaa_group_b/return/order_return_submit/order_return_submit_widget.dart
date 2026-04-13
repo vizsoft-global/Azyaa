@@ -160,7 +160,7 @@ class _OrderReturnSubmitWidgetState extends State<OrderReturnSubmitWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       fontSize: 24.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
@@ -181,7 +181,7 @@ class _OrderReturnSubmitWidgetState extends State<OrderReturnSubmitWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       fontSize: 14.0,
@@ -223,7 +223,7 @@ class _OrderReturnSubmitWidgetState extends State<OrderReturnSubmitWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
@@ -241,7 +241,16 @@ class _OrderReturnSubmitWidgetState extends State<OrderReturnSubmitWidget> {
                           EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          context.goNamed(HomeWidget.routeName);
+                          context.goNamed(
+                            HomeWidget.routeName,
+                            extra: <String, dynamic>{
+                              '__transition_info__': TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
+                          );
                         },
                         text: FFLocalizations.of(context).getText(
                           'nw0z0hlk' /* Back to Shopping */,
@@ -256,7 +265,7 @@ class _OrderReturnSubmitWidgetState extends State<OrderReturnSubmitWidget> {
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                   ),

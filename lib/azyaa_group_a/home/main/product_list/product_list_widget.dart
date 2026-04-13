@@ -1331,7 +1331,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -1418,7 +1418,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -1480,7 +1480,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryBackground,
@@ -1507,8 +1507,17 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                       FFAppState().UserFilter =
                                           UserFiltersStruct();
 
-                                      context
-                                          .goNamed(ProductListWidget.routeName);
+                                      context.goNamed(
+                                        ProductListWidget.routeName,
+                                        extra: <String, dynamic>{
+                                          '__transition_info__': TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                            duration: Duration(milliseconds: 0),
+                                          ),
+                                        },
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'xoyusk6s' /* Clear */,
@@ -1529,7 +1538,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             color: Colors.white,
                                             fontSize: 12.0,
                                             letterSpacing: 0.0,

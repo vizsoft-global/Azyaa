@@ -163,7 +163,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
                                     ),
@@ -171,7 +171,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                     FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           fontSize: 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
@@ -501,7 +501,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                             .bodyMedium
                                                             .override(
                                                               fontFamily:
-                                                                  'Aileron',
+                                                                  'Cairo',
                                                               fontSize: 10.0,
                                                               letterSpacing:
                                                                   0.0,
@@ -557,7 +557,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Aileron',
+                                                                                'Cairo',
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
@@ -582,7 +582,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Aileron',
+                                                                            'Cairo',
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
@@ -624,7 +624,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                         .labelMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Aileron',
+                                                                              'Cairo',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           letterSpacing:
@@ -640,7 +640,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                         .labelMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Aileron',
+                                                                              'Cairo',
                                                                           fontSize:
                                                                               14.0,
                                                                           letterSpacing:
@@ -709,7 +709,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Aileron',
+                                                                            'Cairo',
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -787,7 +787,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Aileron',
+                                                                                'Cairo',
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
@@ -812,7 +812,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Aileron',
+                                                                            'Cairo',
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
@@ -854,7 +854,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                         .labelMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Aileron',
+                                                                              'Cairo',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           letterSpacing:
@@ -870,7 +870,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                         .labelMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Aileron',
+                                                                              'Cairo',
                                                                           fontSize:
                                                                               14.0,
                                                                           letterSpacing:
@@ -939,7 +939,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Aileron',
+                                                                            'Cairo',
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -1017,7 +1017,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -1044,7 +1044,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -1117,7 +1117,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                   .labelMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -1127,7 +1127,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -1176,7 +1176,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -1201,8 +1201,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Aileron',
+                                                            fontFamily: 'Cairo',
                                                             letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w600,
@@ -1266,7 +1265,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                     .headlineLarge
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       fontSize:
                                                                           32.0,
                                                                       letterSpacing:
@@ -1416,7 +1415,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
@@ -1460,7 +1459,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -1485,8 +1484,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Aileron',
+                                                            fontFamily: 'Cairo',
                                                             letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w600,
@@ -1522,7 +1520,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                   .labelMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
@@ -1541,7 +1539,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                   .labelMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     fontSize:
                                                                         14.0,
                                                                     letterSpacing:
@@ -1614,7 +1612,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1654,7 +1652,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -1679,8 +1677,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Aileron',
+                                                            fontFamily: 'Cairo',
                                                             letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w600,
@@ -1716,7 +1713,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                   .labelMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
@@ -1735,7 +1732,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                   .labelMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     fontSize:
                                                                         14.0,
                                                                     letterSpacing:
@@ -1808,7 +1805,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1847,7 +1844,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -1860,8 +1857,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Aileron',
+                                                            fontFamily: 'Cairo',
                                                             letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w600,
@@ -1896,7 +1892,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                   .labelMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
@@ -1915,7 +1911,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                   .labelMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     fontSize:
                                                                         14.0,
                                                                     letterSpacing:
@@ -1988,7 +1984,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -2125,7 +2121,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Aileron',
+                                                      fontFamily: 'Cairo',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -2163,7 +2159,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -2188,7 +2184,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -2387,7 +2383,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Aileron',
+                                                      fontFamily: 'Cairo',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -2522,7 +2518,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Aileron',
+                                                                            'Cairo',
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -2701,7 +2697,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                               child: Text(
                                                                                 measurementListItem.userName,
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Aileron',
+                                                                                      fontFamily: 'Cairo',
                                                                                       fontSize: 12.0,
                                                                                       letterSpacing: 0.0,
                                                                                       fontWeight: FontWeight.w600,
@@ -2711,7 +2707,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                             Text(
                                                                               '( ${measurementListItem.relationName} )',
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Aileron',
+                                                                                    fontFamily: 'Cairo',
                                                                                     fontSize: 12.0,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.w600,
@@ -2732,7 +2728,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                     'osb3tu8v' /* Height :  */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Aileron',
+                                                                                        fontFamily: 'Cairo',
                                                                                         color: FlutterFlowTheme.of(context).secondaryText,
                                                                                         fontSize: 12.0,
                                                                                         letterSpacing: 0.0,
@@ -2742,7 +2738,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                 TextSpan(
                                                                                   text: '${measurementListItem.bodyInfo.height.toString()}${measurementListItem.bodyInfo.heightUnit}',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Aileron',
+                                                                                        fontFamily: 'Cairo',
                                                                                         color: FlutterFlowTheme.of(context).secondaryText,
                                                                                         fontSize: 12.0,
                                                                                         letterSpacing: 0.0,
@@ -2754,7 +2750,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                     'bndjh2zt' /*  ,  */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Aileron',
+                                                                                        fontFamily: 'Cairo',
                                                                                         color: FlutterFlowTheme.of(context).secondaryText,
                                                                                         fontSize: 12.0,
                                                                                         letterSpacing: 0.0,
@@ -2766,7 +2762,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                     'dfupune3' /* Weight :  */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Aileron',
+                                                                                        fontFamily: 'Cairo',
                                                                                         color: FlutterFlowTheme.of(context).secondaryText,
                                                                                         fontSize: 12.0,
                                                                                         letterSpacing: 0.0,
@@ -2776,7 +2772,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                 TextSpan(
                                                                                   text: '${measurementListItem.bodyInfo.weight.toString()}${measurementListItem.bodyInfo.weightUnit}',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Aileron',
+                                                                                        fontFamily: 'Cairo',
                                                                                         color: FlutterFlowTheme.of(context).secondaryText,
                                                                                         fontSize: 12.0,
                                                                                         letterSpacing: 0.0,
@@ -2785,7 +2781,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                 )
                                                                               ],
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Aileron',
+                                                                                    fontFamily: 'Cairo',
                                                                                     letterSpacing: 0.0,
                                                                                   ),
                                                                             ),
@@ -2832,7 +2828,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                 'ppbeoma7' /* Deafult */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Aileron',
+                                                                                    fontFamily: 'Cairo',
                                                                                     color: FlutterFlowTheme.of(context).info,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
@@ -3034,7 +3030,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Aileron',
+                                                                            'Cairo',
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -3218,7 +3214,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                     TextSpan(
                                                                                       text: adressListItem.userName,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Aileron',
+                                                                                            fontFamily: 'Cairo',
                                                                                             fontSize: 12.0,
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w600,
@@ -3229,7 +3225,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                         '7rnxnwvw' /*  ( */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                            fontFamily: 'Aileron',
+                                                                                            fontFamily: 'Cairo',
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w600,
                                                                                           ),
@@ -3237,7 +3233,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                     TextSpan(
                                                                                       text: adressListItem.relationName,
                                                                                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                            fontFamily: 'Aileron',
+                                                                                            fontFamily: 'Cairo',
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w600,
                                                                                           ),
@@ -3247,7 +3243,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                         'owedi1d5' /* ),  */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                            fontFamily: 'Aileron',
+                                                                                            fontFamily: 'Cairo',
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w600,
                                                                                           ),
@@ -3255,14 +3251,14 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                     TextSpan(
                                                                                       text: adressListItem.shippingAddressInfo.country,
                                                                                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                            fontFamily: 'Aileron',
+                                                                                            fontFamily: 'Cairo',
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w600,
                                                                                           ),
                                                                                     )
                                                                                   ],
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Aileron',
+                                                                                        fontFamily: 'Cairo',
                                                                                         fontSize: 12.0,
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FontWeight.w600,
@@ -3281,7 +3277,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                               TextSpan(
                                                                                 text: adressListItem.shippingAddressInfo.addressLine1,
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Aileron',
+                                                                                      fontFamily: 'Cairo',
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
                                                                                       fontSize: 12.0,
                                                                                       letterSpacing: 0.0,
@@ -3293,7 +3289,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                   'xrcwelty' /* ,  */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Aileron',
+                                                                                      fontFamily: 'Cairo',
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
                                                                                       fontSize: 12.0,
                                                                                       letterSpacing: 0.0,
@@ -3303,7 +3299,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                               TextSpan(
                                                                                 text: adressListItem.shippingAddressInfo.country,
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Aileron',
+                                                                                      fontFamily: 'Cairo',
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
                                                                                       fontSize: 12.0,
                                                                                       letterSpacing: 0.0,
@@ -3315,7 +3311,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                   'x44wy26r' /* ,  */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Aileron',
+                                                                                      fontFamily: 'Cairo',
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
                                                                                       fontSize: 12.0,
                                                                                       letterSpacing: 0.0,
@@ -3325,7 +3321,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                               TextSpan(
                                                                                 text: adressListItem.shippingAddressInfo.postalCode,
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Aileron',
+                                                                                      fontFamily: 'Cairo',
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
                                                                                       fontSize: 12.0,
                                                                                       letterSpacing: 0.0,
@@ -3334,7 +3330,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                               )
                                                                             ],
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Aileron',
+                                                                                  fontFamily: 'Cairo',
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
@@ -3380,7 +3376,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                 '5oblb9nx' /* Deafult */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Aileron',
+                                                                                    fontFamily: 'Cairo',
                                                                                     color: FlutterFlowTheme.of(context).info,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
@@ -3717,19 +3713,16 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                           .getText(
                                                         'jt50gx49' /* Delete my account */,
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Aileron',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .error,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Cairo',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .error,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     ),
                                                   ),
                                                 ),
@@ -3746,7 +3739,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,

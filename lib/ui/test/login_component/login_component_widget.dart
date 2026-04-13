@@ -108,7 +108,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                       'kvv17ohc' /* Login */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           fontSize: 18.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
@@ -355,7 +355,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -609,7 +609,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -669,7 +669,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -702,7 +702,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -714,7 +714,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           color: FlutterFlowTheme.of(context)
                                               .error,
                                           letterSpacing: 0.0,
@@ -724,7 +724,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
                                     ),
@@ -747,7 +747,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       letterSpacing: 0.0,
@@ -758,7 +758,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
                                     ),
@@ -797,7 +797,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                   ),
                               keyboardType: TextInputType.emailAddress,
@@ -822,7 +822,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -839,7 +839,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -861,7 +861,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       letterSpacing: 0.0,
@@ -872,7 +872,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
                                     ),
@@ -925,7 +925,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                   ),
                               maxLength: 25,
@@ -965,7 +965,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                             decoration:
@@ -996,7 +996,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -1154,7 +1154,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                   ),
@@ -1186,7 +1186,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryText,
                                             letterSpacing: 0.0,
@@ -1199,7 +1199,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -1229,7 +1229,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
                                         fontSize: 14.0,
@@ -1261,7 +1261,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -1272,7 +1272,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -1281,7 +1281,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
                                     ),

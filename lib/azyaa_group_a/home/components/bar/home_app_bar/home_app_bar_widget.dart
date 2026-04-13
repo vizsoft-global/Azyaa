@@ -125,7 +125,7 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                fontFamily: 'Aileron',
+                                fontFamily: 'Cairo',
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
@@ -171,7 +171,7 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                             }(),
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -193,7 +193,16 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed(CreatorSpaceWidget.routeName);
+                        context.pushNamed(
+                          CreatorSpaceWidget.routeName,
+                          extra: <String, dynamic>{
+                            '__transition_info__': TransitionInfo(
+                              hasTransition: true,
+                              transitionType: PageTransitionType.fade,
+                              duration: Duration(milliseconds: 0),
+                            ),
+                          },
+                        );
                       },
                       child: Container(
                         width: 80.0,
@@ -215,47 +224,45 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                               8.0, 4.0, 6.0, 4.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    FFLocalizations.of(context).getText(
-                                      'yip4u30a' /* Creator */,
+                              Expanded(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        'yip4u30a' /* Creator */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Cairo',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            fontSize: 10.0,
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Aileron',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                  Text(
-                                    FFLocalizations.of(context).getText(
-                                      'wg9zzf01' /* Space */,
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        'wg9zzf01' /* Space */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Cairo',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            fontSize: 8.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                     ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Aileron',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          fontSize: 12.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                  ),
-                                ].divide(SizedBox(
-                                    height: FFLocalizations.of(context)
-                                                .languageCode ==
-                                            'ar'
-                                        ? 0.0
-                                        : 2.0)),
+                                  ],
+                                ),
                               ),
                               Container(
                                 decoration: BoxDecoration(
@@ -297,7 +304,16 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                               size: 18.0,
                             ),
                             onPressed: () async {
-                              context.goNamed(LoginWidget.routeName);
+                              context.goNamed(
+                                LoginWidget.routeName,
+                                extra: <String, dynamic>{
+                                  '__transition_info__': TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
+                              );
                             },
                           ),
                         ),
@@ -338,7 +354,7 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               color: currentUserDocument
                                                           ?.userCart
                                                           ?.cartItems

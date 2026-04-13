@@ -86,7 +86,7 @@ class _RejectReasonWidgetState extends State<RejectReasonWidget> {
                         '73b3jtx8' /* Reason for Rejection */,
                       ),
                       style: FlutterFlowTheme.of(context).titleLarge.override(
-                            fontFamily: 'Aileron',
+                            fontFamily: 'Cairo',
                             fontSize: 14.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
@@ -102,7 +102,7 @@ class _RejectReasonWidgetState extends State<RejectReasonWidget> {
                       '1t1k7txm' /* Product used or damaged  */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           color: FlutterFlowTheme.of(context).secondaryText,
                           fontSize: 14.0,
                           letterSpacing: 0.0,
@@ -121,7 +121,7 @@ class _RejectReasonWidgetState extends State<RejectReasonWidget> {
                         'm95r8ezw' /* Additional message for Rejecti... */,
                       ),
                       style: FlutterFlowTheme.of(context).titleLarge.override(
-                            fontFamily: 'Aileron',
+                            fontFamily: 'Cairo',
                             fontSize: 14.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
@@ -137,7 +137,7 @@ class _RejectReasonWidgetState extends State<RejectReasonWidget> {
                       'g749i7b8' /* The product did not meet my ex... */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           color: FlutterFlowTheme.of(context).secondaryText,
                           fontSize: 14.0,
                           letterSpacing: 0.0,

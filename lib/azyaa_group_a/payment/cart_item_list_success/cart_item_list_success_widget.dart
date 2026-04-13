@@ -134,7 +134,7 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
                           maxLines: 1,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -145,7 +145,7 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
                           arText: ' KWD',
                         )}',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Aileron',
+                              fontFamily: 'Cairo',
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
@@ -167,7 +167,7 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
                                 arText: 'كمية:',
                               )}${widget!.cartItems?.quantity?.toString()}',
                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                              fontFamily: 'Aileron',
+                              fontFamily: 'Cairo',
                               color: FlutterFlowTheme.of(context).secondaryText,
                               letterSpacing: 0.0,
                             ),
@@ -178,7 +178,7 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
                           arText: ' KWD',
                         )}',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Aileron',
+                              fontFamily: 'Cairo',
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.normal,
                             ),
@@ -298,7 +298,7 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           letterSpacing: 0.0,
@@ -404,7 +404,7 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),

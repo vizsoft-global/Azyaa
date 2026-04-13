@@ -98,7 +98,7 @@ class _ProductSortWidgetState extends State<ProductSortWidget> {
                       '6c92zuam' /* Sort by */,
                     ),
                     style: FlutterFlowTheme.of(context).titleLarge.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
                         ),
@@ -126,7 +126,7 @@ class _ProductSortWidgetState extends State<ProductSortWidget> {
                       backgroundColor: Colors.transparent,
                       textStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Aileron',
+                                fontFamily: 'Cairo',
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 letterSpacing: 0.0,
                               ),
@@ -140,7 +140,7 @@ class _ProductSortWidgetState extends State<ProductSortWidget> {
                       textStyle: FlutterFlowTheme.of(context)
                           .bodyMedium
                           .override(
-                            fontFamily: 'Aileron',
+                            fontFamily: 'Cairo',
                             color: FlutterFlowTheme.of(context).secondaryText,
                             letterSpacing: 0.0,
                           ),
@@ -279,7 +279,7 @@ class _ProductSortWidgetState extends State<ProductSortWidget> {
                             )),
               optionHeight: 32.0,
               textStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                    fontFamily: 'Aileron',
+                    fontFamily: 'Cairo',
                     color: FlutterFlowTheme.of(context).primaryText,
                     letterSpacing: 0.0,
                   ),
@@ -331,7 +331,7 @@ class _ProductSortWidgetState extends State<ProductSortWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -366,7 +366,7 @@ class _ProductSortWidgetState extends State<ProductSortWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -408,7 +408,7 @@ class _ProductSortWidgetState extends State<ProductSortWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -450,7 +450,7 @@ class _ProductSortWidgetState extends State<ProductSortWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -492,7 +492,7 @@ class _ProductSortWidgetState extends State<ProductSortWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                   ),
                             ),

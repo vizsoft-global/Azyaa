@@ -79,7 +79,7 @@ class _WaitListPopupWidgetState extends State<WaitListPopupWidget> {
                 '1eiktun5' /* Thank You! You’ve been added t... */,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Aileron',
+                    fontFamily: 'Cairo',
                     fontSize: 18.0,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w600,
@@ -94,7 +94,7 @@ class _WaitListPopupWidgetState extends State<WaitListPopupWidget> {
                       'o9z4tufy' /* Your Waiting Number:  */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           letterSpacing: 0.0,
                         ),
                   ),
@@ -103,14 +103,14 @@ class _WaitListPopupWidgetState extends State<WaitListPopupWidget> {
                       '0mxuxwso' /*  WL025 */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
                         ),
                   )
                 ],
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Aileron',
+                      fontFamily: 'Cairo',
                       letterSpacing: 0.0,
                     ),
               ),
@@ -120,7 +120,7 @@ class _WaitListPopupWidgetState extends State<WaitListPopupWidget> {
                 'hnl65tp7' /* We’ll notify you via email as ... */,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Aileron',
+                    fontFamily: 'Cairo',
                     color: Color(0xFF475467),
                     letterSpacing: 0.0,
                   ),
@@ -139,7 +139,7 @@ class _WaitListPopupWidgetState extends State<WaitListPopupWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Aileron',
+                      fontFamily: 'Cairo',
                       color: FlutterFlowTheme.of(context).info,
                       letterSpacing: 0.0,
                     ),

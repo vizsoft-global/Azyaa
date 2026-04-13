@@ -111,7 +111,7 @@ class _PromotedProductsListingWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   fontSize: 18.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
@@ -196,7 +196,7 @@ class _PromotedProductsListingWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .titleLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color: Colors.black,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
@@ -211,7 +211,7 @@ class _PromotedProductsListingWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -223,7 +223,7 @@ class _PromotedProductsListingWidgetState
                                           style: FlutterFlowTheme.of(context)
                                               .titleLarge
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color: Colors.black,
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
@@ -274,7 +274,7 @@ class _PromotedProductsListingWidgetState
                                                           context)
                                                       .titleLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -295,7 +295,7 @@ class _PromotedProductsListingWidgetState
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -308,7 +308,7 @@ class _PromotedProductsListingWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .titleLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color: Colors.black,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
@@ -418,6 +418,19 @@ class _PromotedProductsListingWidgetState
                                                                 .DocumentReference,
                                                           ),
                                                         }.withoutNulls,
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          '__transition_info__':
+                                                              TransitionInfo(
+                                                            hasTransition: true,
+                                                            transitionType:
+                                                                PageTransitionType
+                                                                    .fade,
+                                                            duration: Duration(
+                                                                milliseconds:
+                                                                    0),
+                                                          ),
+                                                        },
                                                       );
                                                     },
                                                     child:
@@ -494,7 +507,7 @@ class _PromotedProductsListingWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .titleLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color: Colors.black,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
@@ -509,7 +522,7 @@ class _PromotedProductsListingWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -521,7 +534,7 @@ class _PromotedProductsListingWidgetState
                                           style: FlutterFlowTheme.of(context)
                                               .titleLarge
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color: Colors.black,
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
@@ -572,7 +585,7 @@ class _PromotedProductsListingWidgetState
                                                           context)
                                                       .titleLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -593,7 +606,7 @@ class _PromotedProductsListingWidgetState
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -606,7 +619,7 @@ class _PromotedProductsListingWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .titleLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color: Colors.black,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
@@ -721,6 +734,19 @@ class _PromotedProductsListingWidgetState
                                                                 .DocumentReference,
                                                           ),
                                                         }.withoutNulls,
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          '__transition_info__':
+                                                              TransitionInfo(
+                                                            hasTransition: true,
+                                                            transitionType:
+                                                                PageTransitionType
+                                                                    .fade,
+                                                            duration: Duration(
+                                                                milliseconds:
+                                                                    0),
+                                                          ),
+                                                        },
                                                       );
                                                     },
                                                     child:
@@ -797,7 +823,7 @@ class _PromotedProductsListingWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .titleLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color: Colors.black,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
@@ -812,7 +838,7 @@ class _PromotedProductsListingWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -824,7 +850,7 @@ class _PromotedProductsListingWidgetState
                                           style: FlutterFlowTheme.of(context)
                                               .titleLarge
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color: Colors.black,
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
@@ -875,7 +901,7 @@ class _PromotedProductsListingWidgetState
                                                           context)
                                                       .titleLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -896,7 +922,7 @@ class _PromotedProductsListingWidgetState
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -909,7 +935,7 @@ class _PromotedProductsListingWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .titleLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color: Colors.black,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
@@ -1024,6 +1050,19 @@ class _PromotedProductsListingWidgetState
                                                                 .DocumentReference,
                                                           ),
                                                         }.withoutNulls,
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          '__transition_info__':
+                                                              TransitionInfo(
+                                                            hasTransition: true,
+                                                            transitionType:
+                                                                PageTransitionType
+                                                                    .fade,
+                                                            duration: Duration(
+                                                                milliseconds:
+                                                                    0),
+                                                          ),
+                                                        },
                                                       );
                                                     },
                                                     child:
@@ -1097,7 +1136,7 @@ class _PromotedProductsListingWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .titleLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color: Colors.black,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
@@ -1112,7 +1151,7 @@ class _PromotedProductsListingWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1124,7 +1163,7 @@ class _PromotedProductsListingWidgetState
                                           style: FlutterFlowTheme.of(context)
                                               .titleLarge
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color: Colors.black,
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
@@ -1175,7 +1214,7 @@ class _PromotedProductsListingWidgetState
                                                           context)
                                                       .titleLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1196,7 +1235,7 @@ class _PromotedProductsListingWidgetState
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1209,7 +1248,7 @@ class _PromotedProductsListingWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .titleLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color: Colors.black,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
@@ -1320,6 +1359,19 @@ class _PromotedProductsListingWidgetState
                                                                 .DocumentReference,
                                                           ),
                                                         }.withoutNulls,
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          '__transition_info__':
+                                                              TransitionInfo(
+                                                            hasTransition: true,
+                                                            transitionType:
+                                                                PageTransitionType
+                                                                    .fade,
+                                                            duration: Duration(
+                                                                milliseconds:
+                                                                    0),
+                                                          ),
+                                                        },
                                                       );
                                                     },
                                                     child:

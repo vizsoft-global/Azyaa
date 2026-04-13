@@ -80,7 +80,7 @@ don't cl... */
                         ),
                         textAlign: TextAlign.start,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Aileron',
+                              fontFamily: 'Cairo',
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w500,
                             ),

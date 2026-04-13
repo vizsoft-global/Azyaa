@@ -63,7 +63,7 @@ class _CustomAlertDialogWidgetState extends State<CustomAlertDialogWidget> {
             Text(
               widget!.message!,
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Aileron',
+                    fontFamily: 'Cairo',
                     letterSpacing: 0.0,
                   ),
             ),
@@ -86,7 +86,7 @@ class _CustomAlertDialogWidgetState extends State<CustomAlertDialogWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           color: Colors.white,
                           letterSpacing: 0.0,
                         ),

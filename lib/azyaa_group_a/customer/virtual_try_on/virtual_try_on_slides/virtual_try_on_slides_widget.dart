@@ -496,7 +496,16 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed(VirtualTryOnWidget.routeName);
+                          context.pushNamed(
+                            VirtualTryOnWidget.routeName,
+                            extra: <String, dynamic>{
+                              '__transition_info__': TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
+                          );
                         },
                         child: Wrap(
                           spacing: 0.0,
@@ -520,7 +529,7 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                   ),
                             ),

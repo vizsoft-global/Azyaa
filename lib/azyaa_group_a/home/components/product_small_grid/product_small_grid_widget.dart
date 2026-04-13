@@ -123,6 +123,13 @@ class _ProductSmallGridWidgetState extends State<ProductSmallGridWidget> {
                       ParamType.DocumentReference,
                     ),
                   }.withoutNulls,
+                  extra: <String, dynamic>{
+                    '__transition_info__': TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.fade,
+                      duration: Duration(milliseconds: 0),
+                    ),
+                  },
                 );
 
                 return;
@@ -165,6 +172,13 @@ class _ProductSmallGridWidgetState extends State<ProductSmallGridWidget> {
               ParamType.DocumentReference,
             ),
           }.withoutNulls,
+          extra: <String, dynamic>{
+            '__transition_info__': TransitionInfo(
+              hasTransition: true,
+              transitionType: PageTransitionType.fade,
+              duration: Duration(milliseconds: 0),
+            ),
+          },
         );
       },
       child: Column(
@@ -279,7 +293,7 @@ class _ProductSmallGridWidgetState extends State<ProductSmallGridWidget> {
               ),
               maxLines: 1,
               style: FlutterFlowTheme.of(context).bodySmall.override(
-                    fontFamily: 'Aileron',
+                    fontFamily: 'Cairo',
                     letterSpacing: 0.0,
                   ),
             ),
@@ -293,7 +307,7 @@ class _ProductSmallGridWidgetState extends State<ProductSmallGridWidget> {
                 Text(
                   '${widget!.product?.product?.productPrice?.toString()} KD',
                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         fontSize: 11.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,
@@ -304,7 +318,7 @@ class _ProductSmallGridWidgetState extends State<ProductSmallGridWidget> {
                   Text(
                     '${widget!.product?.product?.productRegularPrice?.toString()}',
                     style: FlutterFlowTheme.of(context).bodySmall.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           color: FlutterFlowTheme.of(context).secondaryText,
                           fontSize: 11.0,
                           letterSpacing: 0.0,

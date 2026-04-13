@@ -174,7 +174,16 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               ),
                             ));
 
-                            context.goNamed(CartWidget.routeName);
+                            context.goNamed(
+                              CartWidget.routeName,
+                              extra: <String, dynamic>{
+                                '__transition_info__': TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
                           },
                         ),
                         Expanded(
@@ -186,7 +195,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   fontSize: 18.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
@@ -281,7 +290,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBackground,
@@ -297,7 +306,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             fontSize: 12.0,
@@ -365,7 +374,16 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             child: AuthUserStreamWidget(
                               builder: (context) => FFButtonWidget(
                                 onPressed: () async {
-                                  context.goNamed(ShopWidget.routeName);
+                                  context.goNamed(
+                                    ShopWidget.routeName,
+                                    extra: <String, dynamic>{
+                                      '__transition_info__': TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'v93kird2' /* add more product */,
@@ -383,7 +401,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -442,7 +460,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -521,7 +539,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: 'Aileron',
+                                                                              fontFamily: 'Cairo',
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
                                                                             ),
@@ -541,7 +559,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: 'Aileron',
+                                                                              fontFamily: 'Cairo',
                                                                               color: FlutterFlowTheme.of(context).secondaryText,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -587,7 +605,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                               '1585wblc' /* Default */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Aileron',
+                                                                                  fontFamily: 'Cairo',
                                                                                   color: FlutterFlowTheme.of(context).info,
                                                                                   fontSize: 8.0,
                                                                                   letterSpacing: 0.0,
@@ -752,7 +770,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                               .bodySmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -762,7 +780,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                               .bodySmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
@@ -865,7 +883,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                   .bodySmall
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
@@ -937,7 +955,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                           context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -979,7 +997,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                     .bodySmall
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
@@ -998,7 +1016,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                     .bodySmall
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1018,7 +1036,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                               .bodySmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -1097,8 +1115,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                               .of(context)
                                                           .bodySmall
                                                           .override(
-                                                            fontFamily:
-                                                                'Aileron',
+                                                            fontFamily: 'Cairo',
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryText,
@@ -1113,20 +1130,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                           .getText(
                                                         'dcljyjxi' /* All transactions are secured a... */,
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodySmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Aileron',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                fontSize: 10.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodySmall
+                                                          .override(
+                                                            fontFamily: 'Cairo',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            fontSize: 10.0,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     ),
                                                   ]
                                                       .divide(
@@ -1190,7 +1204,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                     .bodySmall
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
@@ -1224,7 +1238,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Aileron',
+                                                                            'Cairo',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
@@ -1276,7 +1290,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                               .bodySmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1286,7 +1300,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                               .bodySmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
@@ -1359,7 +1373,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintText:
@@ -1372,7 +1386,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     enabledBorder:
@@ -1437,7 +1451,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                                   cursorColor:
@@ -2328,7 +2342,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
@@ -2546,7 +2560,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                     .bodyLarge
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       fontSize:
                                                                           14.0,
                                                                       letterSpacing:
@@ -2567,7 +2581,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                     .bodyLarge
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       fontSize:
                                                                           14.0,
                                                                       letterSpacing:
@@ -2638,7 +2652,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                     .bodyLarge
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       fontSize:
                                                                           12.0,
                                                                       letterSpacing:
@@ -2659,7 +2673,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                     .bodyLarge
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       fontSize:
                                                                           12.0,
                                                                       letterSpacing:
@@ -2787,8 +2801,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                               .of(context)
                                                           .bodySmall
                                                           .override(
-                                                            fontFamily:
-                                                                'Aileron',
+                                                            fontFamily: 'Cairo',
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryText,
@@ -2823,7 +2836,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
@@ -2858,7 +2871,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                         decoration:
                                                             TextDecoration
@@ -2900,7 +2913,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -2913,7 +2926,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -2936,7 +2949,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -2951,7 +2964,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -2978,7 +2991,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -2999,7 +3012,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -3017,7 +3030,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -3050,7 +3063,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -3113,7 +3126,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
@@ -3190,7 +3203,16 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                     ),
                                   );
 
-                                  context.goNamed(FreePaymentWidget.routeName);
+                                  context.goNamed(
+                                    FreePaymentWidget.routeName,
+                                    extra: <String, dynamic>{
+                                      '__transition_info__': TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
 
                                   if (_shouldSetState) safeSetState(() {});
                                   return;
@@ -3599,8 +3621,19 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                           }(),
                                         );
 
-                                        context
-                                            .goNamed(PaymentWidget.routeName);
+                                        context.goNamed(
+                                          PaymentWidget.routeName,
+                                          extra: <String, dynamic>{
+                                            '__transition_info__':
+                                                TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 0),
+                                            ),
+                                          },
+                                        );
                                       } else {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
@@ -3916,8 +3949,19 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                             ),
                                           });
 
-                                          context
-                                              .goNamed(PaymentWidget.routeName);
+                                          context.goNamed(
+                                            PaymentWidget.routeName,
+                                            extra: <String, dynamic>{
+                                              '__transition_info__':
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
+                                          );
                                         } else {
                                           ScaffoldMessenger.of(context)
                                               .showSnackBar(
@@ -4030,7 +4074,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       color: FlutterFlowTheme.of(context).info,
                                       letterSpacing: 0.0,
                                     ),

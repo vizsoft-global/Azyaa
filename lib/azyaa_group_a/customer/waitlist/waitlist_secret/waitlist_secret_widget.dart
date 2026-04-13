@@ -107,7 +107,16 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                           size: 24.0,
                         ),
                         onPressed: () async {
-                          context.goNamed(WaitlistMainWidget.routeName);
+                          context.goNamed(
+                            WaitlistMainWidget.routeName,
+                            extra: <String, dynamic>{
+                              '__transition_info__': TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
+                          );
                         },
                       ),
                     ],
@@ -236,7 +245,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -252,7 +261,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .error,
@@ -264,7 +273,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -349,7 +358,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -451,7 +460,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                               .labelMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
@@ -474,7 +483,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                               .labelMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
@@ -550,7 +559,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                                     maxLength: functions
@@ -585,7 +594,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                         ),
@@ -617,7 +626,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -633,7 +642,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .error,
@@ -645,7 +654,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -674,7 +683,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
@@ -689,7 +698,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                         ),
@@ -749,7 +758,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                               keyboardType:
@@ -777,7 +786,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
@@ -800,7 +809,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
@@ -818,7 +827,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
                                         ),
                                     mainAxisAlignment:
@@ -983,8 +992,19 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                             (e) => e..userWaiterStatus = false,
                                           );
 
-                                          context
-                                              .goNamed(WelcomeWidget.routeName);
+                                          context.goNamed(
+                                            WelcomeWidget.routeName,
+                                            extra: <String, dynamic>{
+                                              '__transition_info__':
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
+                                          );
                                         } else {
                                           if (_model
                                                   .settingsSecretFeatureResult
@@ -1120,7 +1140,19 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                 ));
 
                                                 context.goNamed(
-                                                    WelcomeWidget.routeName);
+                                                  WelcomeWidget.routeName,
+                                                  extra: <String, dynamic>{
+                                                    '__transition_info__':
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .fade,
+                                                      duration: Duration(
+                                                          milliseconds: 0),
+                                                    ),
+                                                  },
+                                                );
                                               } else {
                                                 await showDialog(
                                                   context: context,
@@ -1244,7 +1276,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .info,

@@ -226,7 +226,16 @@ class _CategoryStyleHomeWidgetState extends State<CategoryStyleHomeWidget> {
               }
             }
 
-            context.goNamed(ProductListWidget.routeName);
+            context.goNamed(
+              ProductListWidget.routeName,
+              extra: <String, dynamic>{
+                '__transition_info__': TransitionInfo(
+                  hasTransition: true,
+                  transitionType: PageTransitionType.fade,
+                  duration: Duration(milliseconds: 0),
+                ),
+              },
+            );
           }
         }
 
@@ -342,7 +351,7 @@ class _CategoryStyleHomeWidgetState extends State<CategoryStyleHomeWidget> {
                   ),
                   maxLines: 1,
                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         letterSpacing: 0.0,
                       ),
                 ),

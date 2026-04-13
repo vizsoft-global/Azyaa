@@ -81,7 +81,16 @@ class _UserInitialWidgetState extends State<UserInitialWidget> {
                 ));
 
             context.goNamedAuth(
-                RegisterVerificationWidget.routeName, context.mounted);
+              RegisterVerificationWidget.routeName,
+              context.mounted,
+              extra: <String, dynamic>{
+                '__transition_info__': TransitionInfo(
+                  hasTransition: true,
+                  transitionType: PageTransitionType.fade,
+                  duration: Duration(milliseconds: 0),
+                ),
+              },
+            );
 
             return;
           } else {
@@ -93,7 +102,17 @@ class _UserInitialWidgetState extends State<UserInitialWidget> {
                 (e) => e..userRef = currentUserReference,
               );
 
-              context.goNamedAuth(PhoneWidget.routeName, context.mounted);
+              context.goNamedAuth(
+                PhoneWidget.routeName,
+                context.mounted,
+                extra: <String, dynamic>{
+                  '__transition_info__': TransitionInfo(
+                    hasTransition: true,
+                    transitionType: PageTransitionType.fade,
+                    duration: Duration(milliseconds: 0),
+                  ),
+                },
+              );
 
               return;
             } else {
