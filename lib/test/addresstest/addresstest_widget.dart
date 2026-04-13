@@ -126,7 +126,7 @@ class _AddresstestWidgetState extends State<AddresstestWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   color: Colors.white,
                                   fontSize: 22.0,
                                   letterSpacing: 0.0,
@@ -186,7 +186,7 @@ class _AddresstestWidgetState extends State<AddresstestWidget> {
                     Text(
                       _model.addresslatlng!.toString(),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Aileron',
+                            fontFamily: 'Cairo',
                             letterSpacing: 0.0,
                           ),
                     ),
@@ -207,7 +207,7 @@ class _AddresstestWidgetState extends State<AddresstestWidget> {
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Aileron',
+                                fontFamily: 'Cairo',
                                 color: Colors.white,
                                 letterSpacing: 0.0,
                               ),

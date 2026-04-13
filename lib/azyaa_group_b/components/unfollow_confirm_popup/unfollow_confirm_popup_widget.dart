@@ -148,7 +148,7 @@ class _UnfollowConfirmPopupWidgetState
                 child: Text(
                   widget!.title!,
                   style: FlutterFlowTheme.of(context).titleLarge.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         fontSize: 18.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,
@@ -161,7 +161,7 @@ class _UnfollowConfirmPopupWidgetState
               child: Text(
                 widget!.description!,
                 style: FlutterFlowTheme.of(context).bodyLarge.override(
-                      fontFamily: 'Aileron',
+                      fontFamily: 'Cairo',
                       color: FlutterFlowTheme.of(context).secondaryText,
                       fontSize: 12.0,
                       letterSpacing: 0.0,
@@ -191,7 +191,7 @@ class _UnfollowConfirmPopupWidgetState
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         color: FlutterFlowTheme.of(context).info,
                         letterSpacing: 0.0,
                       ),
@@ -223,6 +223,13 @@ class _UnfollowConfirmPopupWidgetState
                           ParamType.DocumentReference,
                         ),
                       }.withoutNulls,
+                      extra: <String, dynamic>{
+                        '__transition_info__': TransitionInfo(
+                          hasTransition: true,
+                          transitionType: PageTransitionType.fade,
+                          duration: Duration(milliseconds: 0),
+                        ),
+                      },
                     );
                   } else {
                     await currentUserReference!.update({
@@ -243,6 +250,13 @@ class _UnfollowConfirmPopupWidgetState
                           ParamType.DocumentReference,
                         ),
                       }.withoutNulls,
+                      extra: <String, dynamic>{
+                        '__transition_info__': TransitionInfo(
+                          hasTransition: true,
+                          transitionType: PageTransitionType.fade,
+                          duration: Duration(milliseconds: 0),
+                        ),
+                      },
                     );
                   }
 
@@ -262,7 +276,7 @@ class _UnfollowConfirmPopupWidgetState
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primaryBackground,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         color: FlutterFlowTheme.of(context).primaryText,
                         letterSpacing: 0.0,
                       ),
@@ -319,7 +333,7 @@ class _UnfollowConfirmPopupWidgetState
                         '1tru23t4' /* Don't show again */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Aileron',
+                            fontFamily: 'Cairo',
                             color: FlutterFlowTheme.of(context).primaryText,
                             fontSize: 13.0,
                             letterSpacing: 0.0,

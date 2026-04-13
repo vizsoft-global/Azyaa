@@ -194,7 +194,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                   context)
                                               .labelMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
@@ -208,7 +208,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
                                                   .override(
-                                                    fontFamily: 'Aileron',
+                                                    fontFamily: 'Cairo',
                                                     color: Color(0xFF575454),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
@@ -264,7 +264,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               letterSpacing: 0.0,
                                             ),
                                         cursorColor:
@@ -312,8 +312,23 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                              DesignersListWidget
-                                                                  .routeName);
+                                                            DesignersListWidget
+                                                                .routeName,
+                                                            extra: <String,
+                                                                dynamic>{
+                                                              '__transition_info__':
+                                                                  TransitionInfo(
+                                                                hasTransition:
+                                                                    true,
+                                                                transitionType:
+                                                                    PageTransitionType
+                                                                        .fade,
+                                                                duration: Duration(
+                                                                    milliseconds:
+                                                                        0),
+                                                              ),
+                                                            },
+                                                          );
                                                         },
                                                         child: Container(
                                                           width:
@@ -361,7 +376,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                       .labelSmall
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Aileron',
+                                                                            'Cairo',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .secondaryText,
                                                                         letterSpacing:
@@ -379,7 +394,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                       .headlineMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Aileron',
+                                                                            'Cairo',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .velvet,
                                                                         fontSize:
@@ -457,8 +472,23 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                                CreatorsWidget
-                                                                    .routeName);
+                                                              CreatorsWidget
+                                                                  .routeName,
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                '__transition_info__':
+                                                                    TransitionInfo(
+                                                                  hasTransition:
+                                                                      true,
+                                                                  transitionType:
+                                                                      PageTransitionType
+                                                                          .fade,
+                                                                  duration: Duration(
+                                                                      milliseconds:
+                                                                          0),
+                                                                ),
+                                                              },
+                                                            );
                                                           },
                                                           child: Container(
                                                             width: MediaQuery
@@ -503,7 +533,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                         .labelSmall
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Aileron',
+                                                                              'Cairo',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           letterSpacing:
@@ -521,7 +551,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                         .headlineMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Aileron',
+                                                                              'Cairo',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryText,
                                                                           fontSize:
@@ -671,7 +701,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                         .labelSmall
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Aileron',
+                                                                              'Cairo',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryText,
                                                                           letterSpacing:
@@ -697,7 +727,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                         .headlineMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Aileron',
+                                                                              'Cairo',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).velvet,
                                                                           fontSize:
@@ -866,7 +896,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                         .bodyLarge
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Aileron',
+                                                                              'Cairo',
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
@@ -879,7 +909,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1122,7 +1152,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyLarge
                                                                               .override(
-                                                                                fontFamily: 'Aileron',
+                                                                                fontFamily: 'Cairo',
                                                                                 letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.bold,
                                                                               ),
@@ -1135,7 +1165,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyLarge
                                                                               .override(
-                                                                                fontFamily: 'Aileron',
+                                                                                fontFamily: 'Cairo',
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                         )
@@ -1145,7 +1175,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Aileron',
+                                                                                'Cairo',
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -1256,7 +1286,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
@@ -1411,7 +1441,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -1430,7 +1460,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1442,7 +1472,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1558,8 +1588,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Aileron',
+                                                            fontFamily: 'Cairo',
                                                             letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w600,

@@ -7,7 +7,7 @@ export '/azyaa_group_a/customer/onboard/entry/entry_widget.dart'
     show EntryWidget;
 export '/azyaa_group_a/customer/sign/register/register/register_widget.dart'
     show RegisterWidget;
-export '/azyaa_group_a/home/main/shop/shop_widget.dart' show ShopWidget;
+export '/azyaa_group_a/home/shop/shop_widget.dart' show ShopWidget;
 export '/azyaa_group_a/customer/steps/step1_personal/step1_personal_widget.dart'
     show Step1PersonalWidget;
 export '/azyaa_group_a/home/main/product_list/product_list_widget.dart'
@@ -162,10 +162,11 @@ export '/azyaa_group_a/customer/waitlist/waitlist_success/waitlist_success_widge
     show WaitlistSuccessWidget;
 export '/azyaa_group_b/return/order_return/order_return_widget.dart'
     show OrderReturnWidget;
-export '/t_e_s_theader/t_e_s_theader_widget.dart' show TESTheaderWidget;
+export '/test/t_e_s_theader/t_e_s_theader_widget.dart' show TESTheaderWidget;
 export '/azyaa_group_a/payment/free_payment/free_payment_widget.dart'
     show FreePaymentWidget;
 export '/azyaa_group_a/home/main/home_search/home_search_widget.dart'
     show HomeSearchWidget;
-export '/addresstest/addresstest_widget.dart' show AddresstestWidget;
-export '/delete/delete_widget.dart' show DeleteWidget;
+export '/test/addresstest/addresstest_widget.dart' show AddresstestWidget;
+export '/test/delete/delete_widget.dart' show DeleteWidget;
+export '/product_copy/product_copy_widget.dart' show ProductCopyWidget;

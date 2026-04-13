@@ -212,7 +212,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -233,7 +233,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -289,7 +289,19 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                     safeSetState(() {});
                                                   } else {
                                                     context.pushNamed(
-                                                        LoginWidget.routeName);
+                                                      LoginWidget.routeName,
+                                                      extra: <String, dynamic>{
+                                                        '__transition_info__':
+                                                            TransitionInfo(
+                                                          hasTransition: true,
+                                                          transitionType:
+                                                              PageTransitionType
+                                                                  .fade,
+                                                          duration: Duration(
+                                                              milliseconds: 0),
+                                                        ),
+                                                      },
+                                                    );
                                                   }
                                                 },
                                                 text:
@@ -313,7 +325,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                           .of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -431,7 +443,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                             .of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
@@ -473,7 +485,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                 16.0, 0.0, 0.0, 8.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: 40.0,
+                              height: 48.0,
                               decoration: BoxDecoration(),
                               child: ListView(
                                 padding: EdgeInsets.fromLTRB(
@@ -547,61 +559,44 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                         .primaryText,
                                                 size: 20.0,
                                               ),
-                                              SingleChildScrollView(
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  4.0),
-                                                      child: Text(
-                                                        columnUsersRecord
-                                                            .creatorMainInfo
-                                                            .creatorInfo
-                                                            .instagramProfileFollowers,
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Aileron',
-                                                              fontSize: 10.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                            ),
-                                                      ),
+                                              Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    columnUsersRecord
+                                                        .creatorMainInfo
+                                                        .creatorInfo
+                                                        .instagramProfileFollowers,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Cairo',
+                                                          fontSize: 10.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                                  ),
+                                                  Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'gyl6vmyq' /* Followers */,
                                                     ),
-                                                    Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'gyl6vmyq' /* Followers */,
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Aileron',
-                                                            fontSize: 10.0,
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                    ),
-                                                  ],
-                                                ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Cairo',
+                                                          fontSize: 10.0,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ],
                                               ),
                                             ].divide(SizedBox(width: 8.0)),
                                           ),
@@ -678,33 +673,21 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
                                                   children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  4.0),
-                                                      child: Text(
-                                                        columnUsersRecord
-                                                            .creatorMainInfo
-                                                            .creatorInfo
-                                                            .facebookProfileFollowers,
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Aileron',
-                                                              fontSize: 10.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                            ),
-                                                      ),
+                                                    Text(
+                                                      columnUsersRecord
+                                                          .creatorMainInfo
+                                                          .creatorInfo
+                                                          .facebookProfileFollowers,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Cairo',
+                                                            fontSize: 10.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                          ),
                                                     ),
                                                     Text(
                                                       FFLocalizations.of(
@@ -716,8 +699,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Aileron',
+                                                            fontFamily: 'Cairo',
                                                             fontSize: 10.0,
                                                             letterSpacing: 0.0,
                                                           ),
@@ -796,33 +778,21 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
                                                   children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  4.0),
-                                                      child: Text(
-                                                        columnUsersRecord
-                                                            .creatorMainInfo
-                                                            .creatorInfo
-                                                            .tiktokProfileFollowers,
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Aileron',
-                                                              fontSize: 10.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                            ),
-                                                      ),
+                                                    Text(
+                                                      columnUsersRecord
+                                                          .creatorMainInfo
+                                                          .creatorInfo
+                                                          .tiktokProfileFollowers,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Cairo',
+                                                            fontSize: 10.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                          ),
                                                     ),
                                                     Text(
                                                       FFLocalizations.of(
@@ -834,8 +804,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Aileron',
+                                                            fontFamily: 'Cairo',
                                                             fontSize: 10.0,
                                                             letterSpacing: 0.0,
                                                           ),
@@ -918,33 +887,21 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
                                                   children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  4.0),
-                                                      child: Text(
-                                                        columnUsersRecord
-                                                            .creatorMainInfo
-                                                            .creatorInfo
-                                                            .youtubeProfileFollowers,
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Aileron',
-                                                              fontSize: 10.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                            ),
-                                                      ),
+                                                    Text(
+                                                      columnUsersRecord
+                                                          .creatorMainInfo
+                                                          .creatorInfo
+                                                          .youtubeProfileFollowers,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Cairo',
+                                                            fontSize: 10.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                          ),
                                                     ),
                                                     Text(
                                                       FFLocalizations.of(
@@ -956,8 +913,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Aileron',
+                                                            fontFamily: 'Cairo',
                                                             fontSize: 10.0,
                                                             letterSpacing: 0.0,
                                                           ),
@@ -991,7 +947,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           fontSize: 14.0,
                                           letterSpacing: 0.0,
                                         ),
@@ -999,7 +955,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                         FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,

@@ -97,7 +97,7 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleLarge
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -155,7 +155,7 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
                           labelStyle: FlutterFlowTheme.of(context)
                               .labelMedium
                               .override(
-                                fontFamily: 'Aileron',
+                                fontFamily: 'Cairo',
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 letterSpacing: 0.0,
                               ),
@@ -164,7 +164,7 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
                           ),
                           hintStyle:
                               FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -200,7 +200,7 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
                           fillColor: FlutterFlowTheme.of(context).accent2,
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Aileron',
+                              fontFamily: 'Cairo',
                               letterSpacing: 0.0,
                             ),
                         cursorColor: FlutterFlowTheme.of(context).primaryText,
@@ -329,7 +329,7 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   color: FlutterFlowTheme.of(context).info,
                                   letterSpacing: 0.0,
                                 ),

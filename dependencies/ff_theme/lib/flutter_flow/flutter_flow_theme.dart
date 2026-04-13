@@ -207,122 +207,122 @@ class ThemeTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Aileron';
+  String get displayLargeFamily => 'Cairo';
   bool get displayLargeIsCustom => true;
   TextStyle get displayLarge => TextStyle(
-        fontFamily: 'Aileron',
+        fontFamily: 'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 64.0,
       );
-  String get displayMediumFamily => 'Aileron';
+  String get displayMediumFamily => 'Cairo';
   bool get displayMediumIsCustom => true;
   TextStyle get displayMedium => TextStyle(
-        fontFamily: 'Aileron',
+        fontFamily: 'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 44.0,
       );
-  String get displaySmallFamily => 'Aileron';
+  String get displaySmallFamily => 'Cairo';
   bool get displaySmallIsCustom => true;
   TextStyle get displaySmall => TextStyle(
-        fontFamily: 'Aileron',
+        fontFamily: 'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 36.0,
       );
-  String get headlineLargeFamily => 'Aileron';
+  String get headlineLargeFamily => 'Cairo';
   bool get headlineLargeIsCustom => true;
   TextStyle get headlineLarge => TextStyle(
-        fontFamily: 'Aileron',
+        fontFamily: 'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 32.0,
       );
-  String get headlineMediumFamily => 'Aileron';
+  String get headlineMediumFamily => 'Cairo';
   bool get headlineMediumIsCustom => true;
   TextStyle get headlineMedium => TextStyle(
-        fontFamily: 'Aileron',
+        fontFamily: 'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 28.0,
       );
-  String get headlineSmallFamily => 'Aileron';
+  String get headlineSmallFamily => 'Cairo';
   bool get headlineSmallIsCustom => true;
   TextStyle get headlineSmall => TextStyle(
-        fontFamily: 'Aileron',
+        fontFamily: 'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 24.0,
       );
-  String get titleLargeFamily => 'Aileron';
+  String get titleLargeFamily => 'Cairo';
   bool get titleLargeIsCustom => true;
   TextStyle get titleLarge => TextStyle(
-        fontFamily: 'Aileron',
+        fontFamily: 'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 20.0,
       );
-  String get titleMediumFamily => 'Aileron';
+  String get titleMediumFamily => 'Cairo';
   bool get titleMediumIsCustom => true;
   TextStyle get titleMedium => TextStyle(
-        fontFamily: 'Aileron',
+        fontFamily: 'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Aileron';
+  String get titleSmallFamily => 'Cairo';
   bool get titleSmallIsCustom => true;
   TextStyle get titleSmall => TextStyle(
-        fontFamily: 'Aileron',
+        fontFamily: 'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Aileron';
+  String get labelLargeFamily => 'Cairo';
   bool get labelLargeIsCustom => true;
   TextStyle get labelLarge => TextStyle(
-        fontFamily: 'Aileron',
+        fontFamily: 'Cairo',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Aileron';
+  String get labelMediumFamily => 'Cairo';
   bool get labelMediumIsCustom => true;
   TextStyle get labelMedium => TextStyle(
-        fontFamily: 'Aileron',
+        fontFamily: 'Cairo',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Aileron';
+  String get labelSmallFamily => 'Cairo';
   bool get labelSmallIsCustom => true;
   TextStyle get labelSmall => TextStyle(
-        fontFamily: 'Aileron',
+        fontFamily: 'Cairo',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Aileron';
+  String get bodyLargeFamily => 'Cairo';
   bool get bodyLargeIsCustom => true;
   TextStyle get bodyLarge => TextStyle(
-        fontFamily: 'Aileron',
+        fontFamily: 'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Aileron';
+  String get bodyMediumFamily => 'Cairo';
   bool get bodyMediumIsCustom => true;
   TextStyle get bodyMedium => TextStyle(
-        fontFamily: 'Aileron',
+        fontFamily: 'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Aileron';
+  String get bodySmallFamily => 'Cairo';
   bool get bodySmallIsCustom => true;
   TextStyle get bodySmall => TextStyle(
-        fontFamily: 'Aileron',
+        fontFamily: 'Cairo',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,

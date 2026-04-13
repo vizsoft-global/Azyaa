@@ -280,7 +280,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -292,7 +292,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -773,7 +773,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 fontSize: 16.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -793,7 +793,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 fontSize: 16.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -876,7 +876,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .error,

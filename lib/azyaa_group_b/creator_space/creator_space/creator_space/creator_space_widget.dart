@@ -129,7 +129,19 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                 ),
                                                 onPressed: () async {
                                                   context.pushNamed(
-                                                      HomeWidget.routeName);
+                                                    HomeWidget.routeName,
+                                                    extra: <String, dynamic>{
+                                                      '__transition_info__':
+                                                          TransitionInfo(
+                                                        hasTransition: true,
+                                                        transitionType:
+                                                            PageTransitionType
+                                                                .fade,
+                                                        duration: Duration(
+                                                            milliseconds: 0),
+                                                      ),
+                                                    },
+                                                  );
                                                 },
                                               ),
                                               Expanded(
@@ -154,8 +166,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                               .of(context)
                                                           .titleLarge
                                                           .override(
-                                                            fontFamily:
-                                                                'Aileron',
+                                                            fontFamily: 'Cairo',
                                                             fontSize: 20.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -203,7 +214,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                             .bodyMedium
                                                             .override(
                                                               fontFamily:
-                                                                  'Aileron',
+                                                                  'Cairo',
                                                               color: Color(
                                                                   0xFF5B7700),
                                                               fontSize: 16.0,
@@ -225,7 +236,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                             .bodyMedium
                                                             .override(
                                                               fontFamily:
-                                                                  'Aileron',
+                                                                  'Cairo',
                                                               color: Color(
                                                                   0xFF5B7700),
                                                               fontSize: 12.0,
@@ -269,8 +280,16 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                          CreatePromotionCustomWidget
-                                              .routeName);
+                                        CreatePromotionCustomWidget.routeName,
+                                        extra: <String, dynamic>{
+                                          '__transition_info__': TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                            duration: Duration(milliseconds: 0),
+                                          ),
+                                        },
+                                      );
                                     },
                                     child: Material(
                                       color: Colors.transparent,
@@ -309,7 +328,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -337,8 +356,20 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                        CreatePromotionCustomWidget
-                                                            .routeName);
+                                                      CreatePromotionCustomWidget
+                                                          .routeName,
+                                                      extra: <String, dynamic>{
+                                                        '__transition_info__':
+                                                            TransitionInfo(
+                                                          hasTransition: true,
+                                                          transitionType:
+                                                              PageTransitionType
+                                                                  .fade,
+                                                          duration: Duration(
+                                                              milliseconds: 0),
+                                                        ),
+                                                      },
+                                                    );
                                                   },
                                                   child: Icon(
                                                     Icons.add,
@@ -511,7 +542,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                                             maxLines:
                                                                                 1,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Aileron',
+                                                                                  fontFamily: 'Cairo',
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   fontSize: 16.0,
                                                                                   letterSpacing: 0.0,
@@ -526,7 +557,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                                             maxLines:
                                                                                 2,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Aileron',
+                                                                                  fontFamily: 'Cairo',
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
@@ -653,7 +684,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 24.0, 0.0, 0.0),
                                 child: Container(
-                                  height: 50.0,
+                                  height: 60.0,
                                   decoration: BoxDecoration(),
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
@@ -676,7 +707,18 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                           ),
                                           onPressed: () async {
                                             context.pushNamed(
-                                                HomeWidget.routeName);
+                                              HomeWidget.routeName,
+                                              extra: <String, dynamic>{
+                                                '__transition_info__':
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                  duration:
+                                                      Duration(milliseconds: 0),
+                                                ),
+                                              },
+                                            );
                                           },
                                         ),
                                         Expanded(
@@ -696,7 +738,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .primaryBackground,
@@ -725,7 +767,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
@@ -743,7 +785,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .info,
@@ -753,20 +795,17 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                               ),
                                                         )
                                                       ],
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Aileron',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBackground,
-                                                                fontSize: 12.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Cairo',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            fontSize: 12.0,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     ),
                                                     textAlign: TextAlign.start,
                                                   ),
@@ -867,7 +906,16 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                        CreatePromotionCustomWidget.routeName);
+                                      CreatePromotionCustomWidget.routeName,
+                                      extra: <String, dynamic>{
+                                        '__transition_info__': TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
+                                        ),
+                                      },
+                                    );
                                   },
                                   child: Material(
                                     color: Colors.transparent,
@@ -904,7 +952,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -929,8 +977,20 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                      CreatePromotionCustomWidget
-                                                          .routeName);
+                                                    CreatePromotionCustomWidget
+                                                        .routeName,
+                                                    extra: <String, dynamic>{
+                                                      '__transition_info__':
+                                                          TransitionInfo(
+                                                        hasTransition: true,
+                                                        transitionType:
+                                                            PageTransitionType
+                                                                .fade,
+                                                        duration: Duration(
+                                                            milliseconds: 0),
+                                                      ),
+                                                    },
+                                                  );
                                                 },
                                                 child: Icon(
                                                   Icons.add,
@@ -1002,7 +1062,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               fontSize: 12.0,
                                               letterSpacing: 0.0,
                                             ),
@@ -1021,7 +1081,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 26.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -1037,7 +1097,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1050,7 +1110,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -1133,7 +1193,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -1145,7 +1205,18 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                            S3QuickStatsWidget.routeName);
+                                          S3QuickStatsWidget.routeName,
+                                          extra: <String, dynamic>{
+                                            '__transition_info__':
+                                                TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 0),
+                                            ),
+                                          },
+                                        );
                                       },
                                       child: Container(
                                         decoration: BoxDecoration(
@@ -1203,7 +1274,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 40.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -1215,7 +1286,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -1227,7 +1298,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                 ),
@@ -1266,7 +1337,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 40.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -1278,7 +1349,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -1290,7 +1361,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                 ),
@@ -1326,7 +1397,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 40.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -1343,7 +1414,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1357,7 +1428,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -1369,7 +1440,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                 ),
@@ -1409,7 +1480,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
                                           ),
@@ -1421,7 +1492,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                           ),
                                     )
@@ -1429,7 +1500,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -1441,7 +1512,15 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                      PromotedProductsListingWidget.routeName);
+                                    PromotedProductsListingWidget.routeName,
+                                    extra: <String, dynamic>{
+                                      '__transition_info__': TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
                                 },
                                 child: Container(
                                   decoration: BoxDecoration(
@@ -1458,8 +1537,19 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                            PromotedProductsListingWidget
-                                                .routeName);
+                                          PromotedProductsListingWidget
+                                              .routeName,
+                                          extra: <String, dynamic>{
+                                            '__transition_info__':
+                                                TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 0),
+                                            ),
+                                          },
+                                        );
                                       },
                                       child: Icon(
                                         Icons.navigate_next_rounded,
@@ -1538,6 +1628,16 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                     ParamType.DataStruct,
                                                   ),
                                                 }.withoutNulls,
+                                                extra: <String, dynamic>{
+                                                  '__transition_info__':
+                                                      TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType.fade,
+                                                    duration: Duration(
+                                                        milliseconds: 0),
+                                                  ),
+                                                },
                                               );
                                             },
                                             child:
@@ -1582,7 +1682,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             fontSize: 10.0,
@@ -1632,7 +1732,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
                                           ),
@@ -1644,7 +1744,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                           ),
                                     )
@@ -1652,7 +1752,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         letterSpacing: 0.0,
                                       ),
                                 ),

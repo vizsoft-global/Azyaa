@@ -112,7 +112,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                     ),
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           fontSize: 16.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
@@ -124,7 +124,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                     ),
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Aileron',
+                          fontFamily: 'Cairo',
                           fontSize: 14.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.normal,
@@ -155,14 +155,14 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                         'b9nk7x7y' /* Select a Credit Pack */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Aileron',
+                            fontFamily: 'Cairo',
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,
                           ),
                     ),
                     Container(
                       width: MediaQuery.sizeOf(context).width * 1.0,
-                      height: 105.0,
+                      height: 135.0,
                       decoration: BoxDecoration(),
                       child: StreamBuilder<List<UserVtoPlansRecord>>(
                         stream: queryUserVtoPlansRecord(
@@ -417,7 +417,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -434,7 +434,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -449,7 +449,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -492,7 +492,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                       color: FlutterFlowTheme.of(context).primaryBackground,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Aileron',
+                                fontFamily: 'Cairo',
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 letterSpacing: 0.0,
                               ),
@@ -517,7 +517,16 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                       onPressed: () async {
                         Navigator.pop(context);
 
-                        context.pushNamed(CartWidget.routeName);
+                        context.pushNamed(
+                          CartWidget.routeName,
+                          extra: <String, dynamic>{
+                            '__transition_info__': TransitionInfo(
+                              hasTransition: true,
+                              transitionType: PageTransitionType.fade,
+                              duration: Duration(milliseconds: 0),
+                            ),
+                          },
+                        );
                       },
                       text: FFLocalizations.of(context).getText(
                         'koh2r3am' /* Recharge Now */,
@@ -532,7 +541,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   color: FlutterFlowTheme.of(context).info,
                                   letterSpacing: 0.0,
                                 ),

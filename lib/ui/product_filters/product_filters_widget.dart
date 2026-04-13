@@ -112,7 +112,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).titleLarge.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -125,7 +125,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   letterSpacing: 0.0,
                                 ),
                           ),
@@ -198,7 +198,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -223,7 +223,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -253,7 +253,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -278,7 +278,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -308,7 +308,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -333,7 +333,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -363,7 +363,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -388,7 +388,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -418,7 +418,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -443,7 +443,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -473,7 +473,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -498,7 +498,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -539,7 +539,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
@@ -552,7 +552,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
                                             ),
@@ -603,7 +603,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                           ),
                                       cursorColor: FlutterFlowTheme.of(context)
@@ -646,7 +646,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
                                                   .override(
-                                                    fontFamily: 'Aileron',
+                                                    fontFamily: 'Cairo',
                                                     letterSpacing: 0.0,
                                                   ),
                                           checkboxBorderRadius:
@@ -676,7 +676,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                   context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
@@ -695,7 +695,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                   context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
@@ -1009,7 +1009,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1247,7 +1247,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                                         .labelSmall
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Aileron',
+                                                                              'Cairo',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           letterSpacing:
@@ -1477,7 +1477,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                                     .labelSmall
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .secondary,
@@ -1564,7 +1564,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -1616,7 +1616,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -1679,7 +1679,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -1721,7 +1721,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -1786,7 +1786,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -1848,7 +1848,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -1903,7 +1903,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                 ),
@@ -1920,7 +1920,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                 ),
@@ -1937,7 +1937,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                 ),
@@ -1954,7 +1954,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                 ),
@@ -1979,7 +1979,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
@@ -2051,7 +2051,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
@@ -2082,7 +2082,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
@@ -2152,7 +2152,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     fontSize: 14.0,
@@ -2187,7 +2187,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: FlutterFlowTheme.of(context).info,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,

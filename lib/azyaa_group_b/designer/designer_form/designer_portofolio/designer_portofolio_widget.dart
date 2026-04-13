@@ -102,7 +102,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   fontSize: 18.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
@@ -166,7 +166,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
@@ -183,7 +183,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryText,
                                   fontSize: 12.0,
@@ -223,7 +223,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -232,7 +232,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -249,7 +249,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           fontSize: 12.0,
@@ -429,7 +429,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                           context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -508,7 +508,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
@@ -617,7 +617,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Aileron',
+                                                                            'Cairo',
                                                                         fontSize:
                                                                             13.0,
                                                                         letterSpacing:
@@ -645,7 +645,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Aileron',
+                                                                            'Cairo',
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -866,7 +866,15 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                               ));
 
                               context.pushNamed(
-                                  DesignerFormUploadWidget.routeName);
+                                DesignerFormUploadWidget.routeName,
+                                extra: <String, dynamic>{
+                                  '__transition_info__': TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
+                              );
                             },
                             text: FFLocalizations.of(context).getText(
                               'tzor9aj7' /* Next */,
@@ -882,7 +890,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                   ),

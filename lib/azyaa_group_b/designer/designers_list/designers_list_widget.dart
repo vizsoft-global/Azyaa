@@ -85,7 +85,7 @@ class _DesignersListWidgetState extends State<DesignersListWidget>
                       updateCallback: () => safeSetState(() {}),
                       updateOnChange: true,
                       child: UniversalAppBarWidget(
-                        backButtonStatus: false,
+                        backButtonStatus: true,
                         title: FFLocalizations.of(context).getText(
                           'knh5m8h4' /* Designers Hub  */,
                         ),
@@ -213,7 +213,7 @@ dre... */
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
@@ -249,7 +249,7 @@ dre... */
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .info,
@@ -321,7 +321,7 @@ dre... */
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 fontSize: 16.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -341,7 +341,7 @@ dre... */
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
@@ -358,8 +358,7 @@ dre... */
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Aileron',
+                                                            fontFamily: 'Cairo',
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
@@ -381,7 +380,7 @@ dre... */
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
@@ -447,7 +446,7 @@ selecting dre... */
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
@@ -498,7 +497,7 @@ selecting dre... */
                                                                     .titleSmall
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .info,
@@ -603,7 +602,7 @@ selecting dre... */
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
                                             ),
@@ -611,7 +610,7 @@ selecting dre... */
                                             FlutterFlowTheme.of(context)
                                                 .titleMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
@@ -726,7 +725,7 @@ selecting dre... */
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .info,
@@ -756,7 +755,7 @@ selecting dre... */
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
@@ -909,6 +908,15 @@ selecting dre... */
                                                                               ParamType.DocumentReference,
                                                                             ),
                                                                           }.withoutNulls,
+                                                                          extra: <String,
+                                                                              dynamic>{
+                                                                            '__transition_info__':
+                                                                                TransitionInfo(
+                                                                              hasTransition: true,
+                                                                              transitionType: PageTransitionType.fade,
+                                                                              duration: Duration(milliseconds: 0),
+                                                                            ),
+                                                                          },
                                                                         );
                                                                       },
                                                                       child:
@@ -973,7 +981,7 @@ selecting dre... */
                                                                                                 child: Text(
                                                                                                   allDesignerListItem.designerMainInfo.designerInfo.name != null && allDesignerListItem.designerMainInfo.designerInfo.name != '' ? allDesignerListItem.designerMainInfo.designerInfo.name : allDesignerListItem.displayName,
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Aileron',
+                                                                                                        fontFamily: 'Cairo',
                                                                                                         fontSize: 14.0,
                                                                                                         letterSpacing: 0.0,
                                                                                                         fontWeight: FontWeight.w600,
@@ -988,7 +996,7 @@ selecting dre... */
                                                                                                     replacement: '…',
                                                                                                   ),
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Aileron',
+                                                                                                        fontFamily: 'Cairo',
                                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                                         fontSize: 10.0,
                                                                                                         letterSpacing: 0.0,
@@ -1020,7 +1028,7 @@ selecting dre... */
                                                                                                     'c1slh3i5' /* Best Rated */,
                                                                                                   ),
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Aileron',
+                                                                                                        fontFamily: 'Cairo',
                                                                                                         color: FlutterFlowTheme.of(context).info,
                                                                                                         fontSize: 10.0,
                                                                                                         letterSpacing: 0.0,
@@ -1147,7 +1155,7 @@ selecting dre... */
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .info,
@@ -1177,7 +1185,7 @@ selecting dre... */
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
@@ -1327,6 +1335,15 @@ selecting dre... */
                                                                               ParamType.DocumentReference,
                                                                             ),
                                                                           }.withoutNulls,
+                                                                          extra: <String,
+                                                                              dynamic>{
+                                                                            '__transition_info__':
+                                                                                TransitionInfo(
+                                                                              hasTransition: true,
+                                                                              transitionType: PageTransitionType.fade,
+                                                                              duration: Duration(milliseconds: 0),
+                                                                            ),
+                                                                          },
                                                                         );
                                                                       },
                                                                       child:
@@ -1388,7 +1405,7 @@ selecting dre... */
                                                                                                 child: Text(
                                                                                                   storeDesignerListItem.designerMainInfo.designerInfo.name != null && storeDesignerListItem.designerMainInfo.designerInfo.name != '' ? storeDesignerListItem.designerMainInfo.designerInfo.name : storeDesignerListItem.displayName,
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Aileron',
+                                                                                                        fontFamily: 'Cairo',
                                                                                                         fontSize: 14.0,
                                                                                                         letterSpacing: 0.0,
                                                                                                         fontWeight: FontWeight.w600,
@@ -1402,7 +1419,7 @@ selecting dre... */
                                                                                                     maxChars: 20,
                                                                                                   ),
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Aileron',
+                                                                                                        fontFamily: 'Cairo',
                                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                                         fontSize: 10.0,
                                                                                                         letterSpacing: 0.0,
@@ -1434,7 +1451,7 @@ selecting dre... */
                                                                                                     'pcgm643a' /* Best Rated */,
                                                                                                   ),
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Aileron',
+                                                                                                        fontFamily: 'Cairo',
                                                                                                         color: FlutterFlowTheme.of(context).info,
                                                                                                         fontSize: 10.0,
                                                                                                         letterSpacing: 0.0,
@@ -1561,7 +1578,7 @@ selecting dre... */
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .info,
@@ -1591,7 +1608,7 @@ selecting dre... */
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
@@ -1744,6 +1761,15 @@ selecting dre... */
                                                                               ParamType.DocumentReference,
                                                                             ),
                                                                           }.withoutNulls,
+                                                                          extra: <String,
+                                                                              dynamic>{
+                                                                            '__transition_info__':
+                                                                                TransitionInfo(
+                                                                              hasTransition: true,
+                                                                              transitionType: PageTransitionType.fade,
+                                                                              duration: Duration(milliseconds: 0),
+                                                                            ),
+                                                                          },
                                                                         );
                                                                       },
                                                                       child:
@@ -1805,7 +1831,7 @@ selecting dre... */
                                                                                                 child: Text(
                                                                                                   partyDesignerListItem.designerMainInfo.designerInfo.name != null && partyDesignerListItem.designerMainInfo.designerInfo.name != '' ? partyDesignerListItem.designerMainInfo.designerInfo.name : partyDesignerListItem.displayName,
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Aileron',
+                                                                                                        fontFamily: 'Cairo',
                                                                                                         fontSize: 14.0,
                                                                                                         letterSpacing: 0.0,
                                                                                                         fontWeight: FontWeight.w600,
@@ -1819,7 +1845,7 @@ selecting dre... */
                                                                                                     'xi578rmv' /* Casual Designer  */,
                                                                                                   ),
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Aileron',
+                                                                                                        fontFamily: 'Cairo',
                                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                                         fontSize: 10.0,
                                                                                                         letterSpacing: 0.0,
@@ -1851,7 +1877,7 @@ selecting dre... */
                                                                                                     'whg2jdvd' /* Best Rated */,
                                                                                                   ),
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Aileron',
+                                                                                                        fontFamily: 'Cairo',
                                                                                                         color: FlutterFlowTheme.of(context).info,
                                                                                                         fontSize: 10.0,
                                                                                                         letterSpacing: 0.0,
@@ -1978,7 +2004,7 @@ selecting dre... */
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .info,
@@ -2008,7 +2034,7 @@ selecting dre... */
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
@@ -2161,6 +2187,15 @@ selecting dre... */
                                                                               ParamType.DocumentReference,
                                                                             ),
                                                                           }.withoutNulls,
+                                                                          extra: <String,
+                                                                              dynamic>{
+                                                                            '__transition_info__':
+                                                                                TransitionInfo(
+                                                                              hasTransition: true,
+                                                                              transitionType: PageTransitionType.fade,
+                                                                              duration: Duration(milliseconds: 0),
+                                                                            ),
+                                                                          },
                                                                         );
                                                                       },
                                                                       child:
@@ -2222,7 +2257,7 @@ selecting dre... */
                                                                                                 child: Text(
                                                                                                   partyDesignerListItem.designerMainInfo.designerInfo.name != null && partyDesignerListItem.designerMainInfo.designerInfo.name != '' ? partyDesignerListItem.designerMainInfo.designerInfo.name : partyDesignerListItem.displayName,
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Aileron',
+                                                                                                        fontFamily: 'Cairo',
                                                                                                         fontSize: 14.0,
                                                                                                         letterSpacing: 0.0,
                                                                                                         fontWeight: FontWeight.w600,
@@ -2236,7 +2271,7 @@ selecting dre... */
                                                                                                     'w3y5k180' /* Casual Designer  */,
                                                                                                   ),
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Aileron',
+                                                                                                        fontFamily: 'Cairo',
                                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                                         fontSize: 10.0,
                                                                                                         letterSpacing: 0.0,
@@ -2268,7 +2303,7 @@ selecting dre... */
                                                                                                     'iq2iob1u' /* Best Rated */,
                                                                                                   ),
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Aileron',
+                                                                                                        fontFamily: 'Cairo',
                                                                                                         color: FlutterFlowTheme.of(context).info,
                                                                                                         fontSize: 10.0,
                                                                                                         letterSpacing: 0.0,
@@ -2395,7 +2430,7 @@ selecting dre... */
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .info,
@@ -2425,7 +2460,7 @@ selecting dre... */
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
@@ -2578,6 +2613,15 @@ selecting dre... */
                                                                               ParamType.DocumentReference,
                                                                             ),
                                                                           }.withoutNulls,
+                                                                          extra: <String,
+                                                                              dynamic>{
+                                                                            '__transition_info__':
+                                                                                TransitionInfo(
+                                                                              hasTransition: true,
+                                                                              transitionType: PageTransitionType.fade,
+                                                                              duration: Duration(milliseconds: 0),
+                                                                            ),
+                                                                          },
                                                                         );
                                                                       },
                                                                       child:
@@ -2639,7 +2683,7 @@ selecting dre... */
                                                                                                 child: Text(
                                                                                                   partyDesignerListItem.designerMainInfo.designerInfo.name != null && partyDesignerListItem.designerMainInfo.designerInfo.name != '' ? partyDesignerListItem.designerMainInfo.designerInfo.name : partyDesignerListItem.displayName,
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Aileron',
+                                                                                                        fontFamily: 'Cairo',
                                                                                                         fontSize: 14.0,
                                                                                                         letterSpacing: 0.0,
                                                                                                         fontWeight: FontWeight.w600,
@@ -2653,7 +2697,7 @@ selecting dre... */
                                                                                                     '0ilbyaqs' /* Casual Designer  */,
                                                                                                   ),
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Aileron',
+                                                                                                        fontFamily: 'Cairo',
                                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                                         fontSize: 10.0,
                                                                                                         letterSpacing: 0.0,
@@ -2685,7 +2729,7 @@ selecting dre... */
                                                                                                     'cykz9jxn' /* Best Rated */,
                                                                                                   ),
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Aileron',
+                                                                                                        fontFamily: 'Cairo',
                                                                                                         color: FlutterFlowTheme.of(context).info,
                                                                                                         fontSize: 10.0,
                                                                                                         letterSpacing: 0.0,

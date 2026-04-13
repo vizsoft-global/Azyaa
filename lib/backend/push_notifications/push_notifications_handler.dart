@@ -271,6 +271,11 @@ final parametersBuilderMap =
   'home-search': ParameterData.none(),
   'addresstest': ParameterData.none(),
   'Delete': ParameterData.none(),
+  'ProductCopy': (data) async => ParameterData(
+        allParams: {
+          'productID': getParameter<String>(data, 'productID'),
+        },
+      ),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

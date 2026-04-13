@@ -179,7 +179,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Aileron',
+                                                  fontFamily: 'Cairo',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -394,7 +394,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Aileron',
+                                                                              'Cairo',
                                                                           fontSize:
                                                                               12.0,
                                                                           letterSpacing:
@@ -414,7 +414,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                                                                         .bodySmall
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Aileron',
+                                                                              'Cairo',
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
@@ -430,7 +430,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                                                                         .bodySmall
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Aileron',
+                                                                              'Cairo',
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
@@ -443,7 +443,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       fontSize:
                                                                           12.0,
                                                                       letterSpacing:
@@ -474,7 +474,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -498,7 +498,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -520,7 +520,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -544,7 +544,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -566,7 +566,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Aileron',
+                                                                        'Cairo',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -585,7 +585,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -602,7 +602,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                                                         AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Container(
-                                                      height: 18.0,
+                                                      height: 26.0,
                                                       decoration: BoxDecoration(
                                                         color:
                                                             FlutterFlowTheme.of(
@@ -635,7 +635,7 @@ class _AddressWidgetState extends State<AddressWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .info,

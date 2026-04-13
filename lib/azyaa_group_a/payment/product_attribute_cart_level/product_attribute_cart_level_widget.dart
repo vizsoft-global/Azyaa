@@ -118,7 +118,7 @@ class _ProductAttributeCartLevelWidgetState
                         'chk8ds63' /* Choose */,
                       ),
                       style: FlutterFlowTheme.of(context).titleLarge.override(
-                            fontFamily: 'Aileron',
+                            fontFamily: 'Cairo',
                             fontSize: 18.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,
@@ -910,7 +910,16 @@ class _ProductAttributeCartLevelWidgetState
                                 }(),
                               );
 
-                              context.pushNamed(CartWidget.routeName);
+                              context.pushNamed(
+                                CartWidget.routeName,
+                                extra: <String, dynamic>{
+                                  '__transition_info__': TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
+                              );
                             }
                           } else {
                             context.goNamed(LoginWidget.routeName);
@@ -930,7 +939,7 @@ class _ProductAttributeCartLevelWidgetState
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: Colors.white,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
@@ -1085,9 +1094,9 @@ class _ProductAttributeCartLevelWidgetState
                                             }(),
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyLarge
+                                              .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -1140,7 +1149,7 @@ class _ProductAttributeCartLevelWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .velvet,
@@ -1559,10 +1568,10 @@ class _ProductAttributeCartLevelWidgetState
                                                                             }(),
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
+                                                                              .bodyMedium
                                                                               .override(
-                                                                                fontFamily: 'Aileron',
-                                                                                color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == widget!.product?.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
+                                                                                fontFamily: 'Cairo',
+                                                                                fontSize: 16.0,
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                         ),
@@ -1677,7 +1686,7 @@ class _ProductAttributeCartLevelWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -1766,7 +1775,7 @@ class _ProductAttributeCartLevelWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -1788,7 +1797,7 @@ class _ProductAttributeCartLevelWidgetState
                                                           context)
                                                       .labelSmall
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
                                                       ),

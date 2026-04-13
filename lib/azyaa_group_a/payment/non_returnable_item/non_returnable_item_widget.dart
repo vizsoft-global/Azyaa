@@ -140,7 +140,7 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
                   '1jr0umfn' /* Non-refundable item in your ca... */,
                 ),
                 style: FlutterFlowTheme.of(context).titleLarge.override(
-                      fontFamily: 'Aileron',
+                      fontFamily: 'Cairo',
                       fontSize: 18.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.bold,
@@ -155,7 +155,7 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
                 'dcqh41od' /* This item is non-refundable an... */,
               ),
               style: FlutterFlowTheme.of(context).bodyLarge.override(
-                    fontFamily: 'Aileron',
+                    fontFamily: 'Cairo',
                     color: FlutterFlowTheme.of(context).secondaryText,
                     fontSize: 12.0,
                     letterSpacing: 0.0,
@@ -194,7 +194,16 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
                 if (Navigator.of(context).canPop()) {
                   context.pop();
                 }
-                context.pushNamed(CheckoutWidget.routeName);
+                context.pushNamed(
+                  CheckoutWidget.routeName,
+                  extra: <String, dynamic>{
+                    '__transition_info__': TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.fade,
+                      duration: Duration(milliseconds: 0),
+                    ),
+                  },
+                );
               },
               text: FFLocalizations.of(context).getText(
                 'dadjhsm8' /* Agree & continue */,
@@ -206,7 +215,7 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Aileron',
+                      fontFamily: 'Cairo',
                       color: FlutterFlowTheme.of(context).info,
                       letterSpacing: 0.0,
                     ),
@@ -231,7 +240,7 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primaryBackground,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Aileron',
+                      fontFamily: 'Cairo',
                       color: FlutterFlowTheme.of(context).primaryText,
                       letterSpacing: 0.0,
                     ),

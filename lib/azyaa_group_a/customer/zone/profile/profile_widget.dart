@@ -234,7 +234,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
@@ -298,7 +298,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .info,
@@ -326,7 +326,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -392,7 +392,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   fontSize:
                                                                       10.0,
                                                                   letterSpacing:
@@ -450,7 +450,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   fontSize:
                                                                       10.0,
                                                                   letterSpacing:
@@ -499,7 +499,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'Cairo',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
@@ -611,7 +611,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                             .bodyMedium
                                                             .override(
                                                               fontFamily:
-                                                                  'Aileron',
+                                                                  'Cairo',
                                                               fontSize: 12.0,
                                                               letterSpacing:
                                                                   0.0,
@@ -750,35 +750,34 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                                   CrossAxisAlignment
                                                                       .center,
                                                               children: [
-                                                                Expanded(
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            8.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        '25cnqhhk' /* Become a Designer */,
-                                                                      ),
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Aileron',
-                                                                            fontSize:
-                                                                                10.0,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FontWeight.w600,
-                                                                          ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8.0,
+                                                                          0.0,
+                                                                          8.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      '25cnqhhk' /* Become a 
+Designer */
+                                                                      ,
                                                                     ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Cairo',
+                                                                          fontSize:
+                                                                              10.0,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                        ),
                                                                   ),
                                                                 ),
                                                                 Container(
@@ -857,8 +856,19 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                      CreatorFormWidget
-                                                          .routeName);
+                                                    CreatorFormWidget.routeName,
+                                                    extra: <String, dynamic>{
+                                                      '__transition_info__':
+                                                          TransitionInfo(
+                                                        hasTransition: true,
+                                                        transitionType:
+                                                            PageTransitionType
+                                                                .fade,
+                                                        duration: Duration(
+                                                            milliseconds: 0),
+                                                      ),
+                                                    },
+                                                  );
                                                 },
                                                 child: Container(
                                                   width:
@@ -905,35 +915,34 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                                   CrossAxisAlignment
                                                                       .center,
                                                               children: [
-                                                                Expanded(
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            8.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'nx47r3kc' /* Become a Creator */,
-                                                                      ),
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Aileron',
-                                                                            fontSize:
-                                                                                10.0,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FontWeight.w600,
-                                                                          ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8.0,
+                                                                          0.0,
+                                                                          8.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'nx47r3kc' /* Become a 
+Creator */
+                                                                      ,
                                                                     ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Cairo',
+                                                                          fontSize:
+                                                                              10.0,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                        ),
                                                                   ),
                                                                 ),
                                                                 Container(
@@ -1038,7 +1047,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       fontSize:
                                                                           16.0,
                                                                       letterSpacing:
@@ -1059,7 +1068,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Aileron',
+                                                                          'Cairo',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
@@ -1078,7 +1087,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1095,8 +1104,23 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                                CreatorSpaceWidget
-                                                                    .routeName);
+                                                              CreatorSpaceWidget
+                                                                  .routeName,
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                '__transition_info__':
+                                                                    TransitionInfo(
+                                                                  hasTransition:
+                                                                      true,
+                                                                  transitionType:
+                                                                      PageTransitionType
+                                                                          .fade,
+                                                                  duration: Duration(
+                                                                      milliseconds:
+                                                                          0),
+                                                                ),
+                                                              },
+                                                            );
                                                           },
                                                           child: Container(
                                                             decoration:
@@ -1143,7 +1167,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Aileron',
+                                                                    'Cairo',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
@@ -1197,7 +1221,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1231,7 +1255,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1287,7 +1311,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1374,7 +1398,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
@@ -1420,7 +1444,18 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                              OrdersWidget.routeName);
+                                            OrdersWidget.routeName,
+                                            extra: <String, dynamic>{
+                                              '__transition_info__':
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
+                                          );
                                         },
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1435,7 +1470,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
@@ -1504,7 +1539,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1553,7 +1588,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1609,6 +1644,16 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                 ParamType.String,
                                               ),
                                             }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              '__transition_info__':
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
                                           );
                                         },
                                         child: Row(
@@ -1624,7 +1669,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
@@ -1656,7 +1701,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                           context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -1698,7 +1743,18 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                              MembershipWidget.routeName);
+                                            MembershipWidget.routeName,
+                                            extra: <String, dynamic>{
+                                              '__transition_info__':
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
+                                          );
                                         },
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1713,7 +1769,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
@@ -1823,7 +1879,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                           context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1871,7 +1927,18 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                              DesignerConsultWidget.routeName);
+                                            DesignerConsultWidget.routeName,
+                                            extra: <String, dynamic>{
+                                              '__transition_info__':
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
+                                          );
                                         },
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1886,7 +1953,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Aileron',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
@@ -1918,7 +1985,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                           context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -2236,7 +2303,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
@@ -2289,7 +2356,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -2306,7 +2373,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         color:
                                                             Color(0xFFFF0000),
                                                         fontSize: 13.0,
@@ -2325,7 +2392,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -2361,7 +2428,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),

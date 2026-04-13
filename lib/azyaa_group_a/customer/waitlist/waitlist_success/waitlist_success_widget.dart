@@ -148,7 +148,7 @@ class _WaitlistSuccessWidgetState extends State<WaitlistSuccessWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
@@ -166,7 +166,7 @@ class _WaitlistSuccessWidgetState extends State<WaitlistSuccessWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
@@ -204,7 +204,7 @@ class _WaitlistSuccessWidgetState extends State<WaitlistSuccessWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -216,7 +216,7 @@ class _WaitlistSuccessWidgetState extends State<WaitlistSuccessWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Aileron',
+                                                        fontFamily: 'Cairo',
                                                         fontSize: 20.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -238,7 +238,7 @@ class _WaitlistSuccessWidgetState extends State<WaitlistSuccessWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
@@ -255,7 +255,18 @@ class _WaitlistSuccessWidgetState extends State<WaitlistSuccessWidget> {
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           context.goNamed(
-                                              WaitlistSecretWidget.routeName);
+                                            WaitlistSecretWidget.routeName,
+                                            extra: <String, dynamic>{
+                                              '__transition_info__':
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
+                                          );
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
@@ -278,7 +289,7 @@ class _WaitlistSuccessWidgetState extends State<WaitlistSuccessWidget> {
                                                   context)
                                               .titleSmall
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,

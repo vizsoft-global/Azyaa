@@ -141,7 +141,7 @@ class _CheckoutPaymentMethodWidgetState
                           ),
                           style:
                               FlutterFlowTheme.of(context).titleLarge.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     fontSize: 18.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
@@ -225,7 +225,7 @@ class _CheckoutPaymentMethodWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       color:
                                           FlutterFlowTheme.of(context).primary,
                                       fontSize: 16.0,
@@ -298,7 +298,7 @@ class _CheckoutPaymentMethodWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       color:
                                           FlutterFlowTheme.of(context).primary,
                                       fontSize: 16.0,
@@ -375,7 +375,7 @@ class _CheckoutPaymentMethodWidgetState
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                fontFamily: 'Aileron',
+                                fontFamily: 'Cairo',
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 fontSize: 13.0,
                                 letterSpacing: 0.0,
@@ -431,7 +431,7 @@ class _CheckoutPaymentMethodWidgetState
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         color: _model.selectedMethod ==
                                                 'Google Pay'
                                             ? FlutterFlowTheme.of(context).info
@@ -508,7 +508,7 @@ class _CheckoutPaymentMethodWidgetState
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         color: _model.selectedMethod ==
                                                 'Apple Pay'
                                             ? FlutterFlowTheme.of(context).info
@@ -812,7 +812,16 @@ class _CheckoutPaymentMethodWidgetState
                             }(),
                           );
 
-                          context.goNamed(PaymentWidget.routeName);
+                          context.goNamed(
+                            PaymentWidget.routeName,
+                            extra: <String, dynamic>{
+                              '__transition_info__': TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
+                          );
                         } else {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
@@ -854,7 +863,7 @@ class _CheckoutPaymentMethodWidgetState
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Aileron',
+                                fontFamily: 'Cairo',
                                 color: FlutterFlowTheme.of(context).info,
                                 letterSpacing: 0.0,
                               ),
@@ -878,7 +887,7 @@ class _CheckoutPaymentMethodWidgetState
                         'kx4ptps8' /* Your payment method and type w... */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
-                            fontFamily: 'Aileron',
+                            fontFamily: 'Cairo',
                             color: FlutterFlowTheme.of(context).secondaryText,
                             fontSize: 12.0,
                             letterSpacing: 0.0,

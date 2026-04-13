@@ -995,7 +995,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'yqvkq7vf': {
       'en': 'Recommendations',
-      'ar': 'مخصصة',
+      'ar': 'التوصيات',
     },
     'x5tdjdbx': {
       'en':
@@ -2189,11 +2189,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'تعديل',
     },
     '25cnqhhk': {
-      'en': 'Become a Designer',
+      'en': 'Become a \nDesigner',
       'ar': 'كن مصممًا',
     },
     'nx47r3kc': {
-      'en': 'Become a Creator',
+      'en': 'Become a \nCreator',
       'ar': 'كن مبدعًا',
     },
     'x45fgxa4': {
@@ -2224,23 +2224,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'lzh5teob': {
       'en': 'My Addresses',
-      'ar': 'طلبياتي',
+      'ar': 'عناويني',
     },
     '3vv9j51q': {
       'en': 'My Orders',
-      'ar': 'طلبياتي',
+      'ar': 'طلباتي',
     },
     'e7q8uxgt': {
       'en': 'Virtual Try on',
-      'ar': 'جرب المنتج قبل الشراء بالواقع الافتراضي',
+      'ar': 'تجربة افتراضية',
     },
     'ziyfhbfv': {
       'en': 'Azyaa Rewards & Loyalty Coupons',
-      'ar': 'مكافآت أزيا وقسائم الولاء',
+      'ar': 'مكافآت وكوبونات ولاء أزيا',
     },
     'rq4qnntx': {
       'en': 'Gift Card & Wallet',
-      'ar': 'بطاقة الهدايا والمحفظة',
+      'ar': 'بطاقة هدايا ومحفظة',
     },
     'bvmjlqn7': {
       'en': 'Coming Soon',
@@ -2455,7 +2455,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     't6ybbhtm': {
       'en': 'Save',
-      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'ar': 'يحفظ',
     },
     'evsqz781': {
       'en': 'Measurement',
@@ -8213,6 +8213,153 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '',
     },
   },
+  // ProductCopy
+  {
+    '81tz3gdc': {
+      'en': 'Product',
+      'ar': 'المنتج',
+    },
+    '4ezk3r96': {
+      'en': 'Virtual Try on',
+      'ar': 'التجربة الافتراضية',
+    },
+    'voqpa32h': {
+      'en': 'Delivery charges excluded',
+      'ar': 'لا تشمل رسوم التوصيل.',
+    },
+    '51ssvs2g': {
+      'en': 'Size Chart',
+      'ar': 'جدول المقاسات',
+    },
+    '2c70qs8n': {
+      'en': 'Measurement',
+      'ar': 'القياسات',
+    },
+    '6ef5e5vm': {
+      'en': 'Description',
+      'ar': 'الوصف',
+    },
+    'q375qgg2': {
+      'en': '* Returns Not Applicable for This Item',
+      'ar': 'ا يمكن إرجاع هذا المنتج*',
+    },
+    '4tq6fdad': {
+      'en': 'Tags',
+      'ar': 'الوسوم',
+    },
+    '9vhn6ttq': {
+      'en': 'View All',
+      'ar': 'عرض الكل',
+    },
+    'a0notyzt': {
+      'en': 'Follow',
+      'ar': 'متابعة',
+    },
+    's1k545xj': {
+      'en': 'Follow',
+      'ar': 'متابعة',
+    },
+    'g6kfhewy': {
+      'en': 'Unfollow',
+      'ar': 'إلغاء المتابعة',
+    },
+    'ppv7l1io': {
+      'en': 'Are you sure?',
+      'ar': 'هل أنت متأكد؟',
+    },
+    'rh82yxfw': {
+      'en': 'you want to unfollow this Designer?',
+      'ar': 'هل تريد إلغاء متابعة هذا المصمم؟',
+    },
+    'qq2bz27d': {
+      'en': 'Ratings and reviews',
+      'ar': 'التقييمات والمراجعات',
+    },
+    '306ghz7b': {
+      'en': '5',
+      'ar': '5',
+    },
+    't86zeklm': {
+      'en': '50%',
+      'ar': '',
+    },
+    'zy0sf6mo': {
+      'en': '4',
+      'ar': '4',
+    },
+    'hs4f3frb': {
+      'en': '50%',
+      'ar': '',
+    },
+    'o1zrqylz': {
+      'en': '3',
+      'ar': '3',
+    },
+    'sfmabghd': {
+      'en': '50%',
+      'ar': '',
+    },
+    '00ejlfm5': {
+      'en': '2',
+      'ar': '2',
+    },
+    'xoybkswq': {
+      'en': '50%',
+      'ar': '',
+    },
+    'vbvwoz5w': {
+      'en': '1',
+      'ar': '1',
+    },
+    'c4dy6av9': {
+      'en': '50%',
+      'ar': '',
+    },
+    '05476x55': {
+      'en': 'View More',
+      'ar': 'عرض المزيد',
+    },
+    'jxoob770': {
+      'en': 'Bought ',
+      'ar': 'مُشترى',
+    },
+    'ctl5h74q': {
+      'en': 'With',
+      'ar': 'مع',
+    },
+    '7uwc1273': {
+      'en': 'Recommended for ',
+      'ar': 'تم عرضه',
+    },
+    'qtzdkpi6': {
+      'en': 'You',
+      'ar': ' حديثاً',
+    },
+    '5zbi1ngb': {
+      'en': 'Promote',
+      'ar': 'يرقي',
+    },
+    '92w3hxbp': {
+      'en': 'See Insights',
+      'ar': '',
+    },
+    'oso0nv3r': {
+      'en': 'Notify me!',
+      'ar': 'أبلغني!',
+    },
+    's9db5x3l': {
+      'en': 'Promote',
+      'ar': 'يرقي',
+    },
+    'k8fuo2ue': {
+      'en': 'See Insights',
+      'ar': '',
+    },
+    'iaqkoezd': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
   // Universal_NavigationBar
   {
     'qym5k4mn': {
@@ -11168,6 +11315,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'yelsq8c0': {
       'en': 'Heading2',
+      'ar': '',
+    },
+    'xqvkmqf3': {
+      'en': 'Hello World',
+      'ar': '',
+    },
+    'e4gc5nr5': {
+      'en': 'Hello World',
       'ar': '',
     },
     'ue2dfqjn': {

@@ -135,7 +135,7 @@ class _VTODeleteConfirmWidgetState extends State<VTODeleteConfirmWidget> {
                     'wy85xapy' /* Are you sure? */,
                   ),
                   style: FlutterFlowTheme.of(context).titleLarge.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         fontSize: 18.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,
@@ -150,7 +150,7 @@ class _VTODeleteConfirmWidgetState extends State<VTODeleteConfirmWidget> {
                   '64hz2jt6' /* Are you sure you want to remov... */,
                 ),
                 style: FlutterFlowTheme.of(context).bodyLarge.override(
-                      fontFamily: 'Aileron',
+                      fontFamily: 'Cairo',
                       color: FlutterFlowTheme.of(context).secondaryText,
                       fontSize: 12.0,
                       letterSpacing: 0.0,
@@ -180,7 +180,7 @@ class _VTODeleteConfirmWidgetState extends State<VTODeleteConfirmWidget> {
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         color: FlutterFlowTheme.of(context).info,
                         letterSpacing: 0.0,
                       ),
@@ -213,7 +213,16 @@ class _VTODeleteConfirmWidgetState extends State<VTODeleteConfirmWidget> {
                   );
                   unawaited(
                     () async {
-                      context.goNamed(VirtualTryOnWidget.routeName);
+                      context.goNamed(
+                        VirtualTryOnWidget.routeName,
+                        extra: <String, dynamic>{
+                          '__transition_info__': TransitionInfo(
+                            hasTransition: true,
+                            transitionType: PageTransitionType.fade,
+                            duration: Duration(milliseconds: 0),
+                          ),
+                        },
+                      );
                     }(),
                   );
                 },
@@ -228,7 +237,7 @@ class _VTODeleteConfirmWidgetState extends State<VTODeleteConfirmWidget> {
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primaryBackground,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         color: FlutterFlowTheme.of(context).primaryText,
                         letterSpacing: 0.0,
                       ),
@@ -285,7 +294,7 @@ class _VTODeleteConfirmWidgetState extends State<VTODeleteConfirmWidget> {
                         '9wtgiyfs' /* Don't show again */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Aileron',
+                            fontFamily: 'Cairo',
                             color: FlutterFlowTheme.of(context).primaryText,
                             fontSize: 13.0,
                             letterSpacing: 0.0,

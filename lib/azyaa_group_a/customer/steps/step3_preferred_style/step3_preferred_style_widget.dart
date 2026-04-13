@@ -94,7 +94,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           fontSize: 18.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
@@ -124,7 +124,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                           fontSize: 18.0,
@@ -156,7 +156,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           fontSize: 18.0,
@@ -191,7 +191,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     fontSize: 24.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
@@ -211,7 +211,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                fontFamily: 'Aileron',
+                                fontFamily: 'Cairo',
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 fontSize: 14.0,
@@ -324,7 +324,16 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                             ),
                           ));
 
-                          context.goNamed(Step4ReferralCodeWidget.routeName);
+                          context.goNamed(
+                            Step4ReferralCodeWidget.routeName,
+                            extra: <String, dynamic>{
+                              '__transition_info__': TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
+                          );
                         },
                         text: FFLocalizations.of(context).getText(
                           'r5r9k3tj' /* Save & Continue */,
@@ -339,7 +348,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                   ),
@@ -362,7 +371,16 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                           ),
                         ));
 
-                        context.goNamed(Step4ReferralCodeWidget.routeName);
+                        context.goNamed(
+                          Step4ReferralCodeWidget.routeName,
+                          extra: <String, dynamic>{
+                            '__transition_info__': TransitionInfo(
+                              hasTransition: true,
+                              transitionType: PageTransitionType.fade,
+                              duration: Duration(milliseconds: 0),
+                            ),
+                          },
+                        );
                       },
                       child: Text(
                         FFLocalizations.of(context).getText(
@@ -370,7 +388,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                         ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Aileron',
+                              fontFamily: 'Cairo',
                               color: FlutterFlowTheme.of(context).secondaryText,
                               fontSize: 14.0,
                               letterSpacing: 0.0,

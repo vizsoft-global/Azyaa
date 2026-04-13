@@ -161,7 +161,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Aileron',
+                                          fontFamily: 'Cairo',
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -186,7 +186,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
@@ -436,7 +436,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
@@ -448,7 +448,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -576,7 +576,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Aileron',
+                                                      fontFamily: 'Cairo',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -616,7 +616,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
@@ -656,7 +656,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
                                           ),
@@ -1031,7 +1031,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       color: FlutterFlowTheme.of(context).info,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
@@ -1133,7 +1133,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -1149,7 +1149,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
@@ -1163,7 +1163,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
-                                            fontFamily: 'Aileron',
+                                            fontFamily: 'Cairo',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -1272,7 +1272,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
@@ -1373,7 +1373,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        fontFamily: 'Aileron',
+                                        fontFamily: 'Cairo',
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -1395,7 +1395,19 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                       onPressed: () async {
                                         Navigator.pop(context);
 
-                                        context.pushNamed(ShopWidget.routeName);
+                                        context.pushNamed(
+                                          ShopWidget.routeName,
+                                          extra: <String, dynamic>{
+                                            '__transition_info__':
+                                                TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 0),
+                                            ),
+                                          },
+                                        );
                                       },
                                       text: FFLocalizations.of(context).getText(
                                         'heivs8dv' /* View other dress */,
@@ -1415,7 +1427,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .info,
@@ -1456,7 +1468,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Aileron',
+                                              fontFamily: 'Cairo',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,

@@ -97,7 +97,7 @@ class _SelectedDressComponentWidgetState
                     '2nw6eap5' /* Select Product */,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         fontSize: 18.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,
@@ -138,7 +138,7 @@ class _SelectedDressComponentWidgetState
                                 crossAxisCount: 2,
                                 crossAxisSpacing: 10.0,
                                 mainAxisSpacing: 10.0,
-                                childAspectRatio: 0.65,
+                                childAspectRatio: 0.58,
                               ),
                               primary: false,
                               shrinkWrap: true,
@@ -542,7 +542,7 @@ class _SelectedDressComponentWidgetState
                                                             .bodyMedium
                                                             .override(
                                                               fontFamily:
-                                                                  'Aileron',
+                                                                  'Cairo',
                                                               fontSize: 13.0,
                                                               letterSpacing:
                                                                   0.0,
@@ -570,7 +570,7 @@ class _SelectedDressComponentWidgetState
                                                             .bodyMedium
                                                             .override(
                                                               fontFamily:
-                                                                  'Aileron',
+                                                                  'Cairo',
                                                               fontSize: 12.0,
                                                               letterSpacing:
                                                                   0.0,
@@ -601,7 +601,7 @@ class _SelectedDressComponentWidgetState
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Aileron',
+                                                                      'Cairo',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .error,
@@ -669,7 +669,7 @@ class _SelectedDressComponentWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       color: FlutterFlowTheme.of(context).info,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
@@ -682,7 +682,7 @@ class _SelectedDressComponentWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodySmall
                                     .override(
-                                      fontFamily: 'Aileron',
+                                      fontFamily: 'Cairo',
                                       color: FlutterFlowTheme.of(context).info,
                                       letterSpacing: 0.0,
                                     ),
@@ -691,7 +691,7 @@ class _SelectedDressComponentWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Aileron',
+                                  fontFamily: 'Cairo',
                                   color: FlutterFlowTheme.of(context).info,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
@@ -704,7 +704,7 @@ class _SelectedDressComponentWidgetState
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Aileron',
+                                    fontFamily: 'Cairo',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,

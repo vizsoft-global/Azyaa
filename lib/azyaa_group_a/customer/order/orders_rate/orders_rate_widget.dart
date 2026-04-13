@@ -90,7 +90,7 @@ class _OrdersRateWidgetState extends State<OrdersRateWidget> {
                           '62h6anio' /* How was the dress? */,
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Aileron',
+                              fontFamily: 'Cairo',
                               fontSize: 12.0,
                               letterSpacing: 0.0,
                             ),
@@ -105,7 +105,7 @@ class _OrdersRateWidgetState extends State<OrdersRateWidget> {
                           '1op04c0n' /* Thank You for rating the produ... */,
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Aileron',
+                              fontFamily: 'Cairo',
                               fontSize: 12.0,
                               letterSpacing: 0.0,
                             ),

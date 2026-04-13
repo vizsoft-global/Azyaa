@@ -256,7 +256,16 @@ class _CategorySmallGridWidgetState extends State<CategorySmallGridWidget> {
               }
             }
 
-            context.pushNamed(ProductListWidget.routeName);
+            context.pushNamed(
+              ProductListWidget.routeName,
+              extra: <String, dynamic>{
+                '__transition_info__': TransitionInfo(
+                  hasTransition: true,
+                  transitionType: PageTransitionType.fade,
+                  duration: Duration(milliseconds: 0),
+                ),
+              },
+            );
 
             FFAppState().fromNav = getCurrentRouteStack(context).lastOrNull!;
             safeSetState(() {});
@@ -366,7 +375,7 @@ class _CategorySmallGridWidgetState extends State<CategorySmallGridWidget> {
                   ),
                   maxLines: 1,
                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Aileron',
+                        fontFamily: 'Cairo',
                         letterSpacing: 0.0,
                       ),
                 ),

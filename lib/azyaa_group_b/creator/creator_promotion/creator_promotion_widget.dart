@@ -92,6 +92,13 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
               ParamType.DocumentReference,
             ),
           }.withoutNulls,
+          extra: <String, dynamic>{
+            '__transition_info__': TransitionInfo(
+              hasTransition: true,
+              transitionType: PageTransitionType.fade,
+              duration: Duration(milliseconds: 0),
+            ),
+          },
         );
       },
       child: Container(
@@ -299,7 +306,7 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Aileron',
+                                                fontFamily: 'Cairo',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .info,
@@ -325,7 +332,7 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
                 widget!.promotionInfo!.promotionCaption,
                 maxLines: 1,
                 style: FlutterFlowTheme.of(context).bodySmall.override(
-                      fontFamily: 'Aileron',
+                      fontFamily: 'Cairo',
                       fontSize: 14.0,
                       letterSpacing: 0.0,
                     ),
@@ -340,7 +347,7 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
                     Text(
                       '${_model.total.toString()} KD',
                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                            fontFamily: 'Aileron',
+                            fontFamily: 'Cairo',
                             fontSize: 12.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,
@@ -351,7 +358,7 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
                         'atunifb1' /* Full set */,
                       ),
                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                            fontFamily: 'Aileron',
+                            fontFamily: 'Cairo',
                             color: FlutterFlowTheme.of(context).secondaryText,
                             fontSize: 10.0,
                             letterSpacing: 0.0,
