@@ -32,5 +32,7 @@ import GoogleMaps
       completionHandler(.noData)
       return
     }
+    super.application(application, didReceiveRemoteNotification: notification,
+                      fetchCompletionHandler: completionHandler)
   }
 }

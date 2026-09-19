@@ -145,7 +145,7 @@ class _ChosseoptionPopupWidgetState extends State<ChosseoptionPopupWidget> {
                 child: Text(
                   widget!.title!,
                   style: FlutterFlowTheme.of(context).titleLarge.override(
-                        fontFamily: 'Cairo',
+                        fontFamily: 'almarai',
                         fontSize: 18.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,
@@ -158,7 +158,7 @@ class _ChosseoptionPopupWidgetState extends State<ChosseoptionPopupWidget> {
               child: Text(
                 widget!.description!,
                 style: FlutterFlowTheme.of(context).bodyLarge.override(
-                      fontFamily: 'Cairo',
+                      fontFamily: 'almarai',
                       color: FlutterFlowTheme.of(context).secondaryText,
                       fontSize: 12.0,
                       letterSpacing: 0.0,
@@ -188,7 +188,7 @@ class _ChosseoptionPopupWidgetState extends State<ChosseoptionPopupWidget> {
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Cairo',
+                        fontFamily: 'almarai',
                         color: FlutterFlowTheme.of(context).info,
                         letterSpacing: 0.0,
                       ),
@@ -241,7 +241,7 @@ class _ChosseoptionPopupWidgetState extends State<ChosseoptionPopupWidget> {
                         'wnho0rkb' /* Don't show again */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Cairo',
+                            fontFamily: 'almarai',
                             color: FlutterFlowTheme.of(context).primaryText,
                             fontSize: 13.0,
                             letterSpacing: 0.0,

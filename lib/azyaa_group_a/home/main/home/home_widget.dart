@@ -230,7 +230,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -246,7 +246,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -298,7 +298,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   letterSpacing: 0.0,
                                                 ),
                                             cursorColor:
@@ -363,16 +363,19 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                         '261y1faf' /* Search products here... */,
                                                       ),
                                                       maxLines: 1,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Cairo',
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryText,
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'almarai',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                     ),
                                                   ),
                                                   Padding(
@@ -563,7 +566,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               'c63vwxjh' /* Choose   */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.bold,
                                                                                 ),
@@ -574,7 +577,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               '1pavrmyc' /* Category */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           )
@@ -582,7 +585,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -842,7 +845,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 arText: sliderListItem.infoCustomTranslate.name.ar,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.bold,
@@ -858,7 +861,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                     arText: sliderListItem.infoCustomTranslate.shortDescription.ar,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                        fontFamily: 'Cairo',
+                                                                                        fontFamily: 'almarai',
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FontWeight.normal,
                                                                                       ),
@@ -890,7 +893,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                     iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                     textStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                          fontFamily: 'Cairo',
+                                                                                          fontFamily: 'almarai',
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.w600,
                                                                                         ),
@@ -1091,7 +1094,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         .bodyLarge
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
@@ -1109,7 +1112,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         .bodyLarge
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -1120,7 +1123,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Cairo',
+                                                                          'almarai',
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1283,7 +1286,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -1302,7 +1305,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1314,7 +1317,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1611,7 +1614,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyLarge
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.bold,
                                                                             ),
@@ -1624,7 +1627,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyLarge
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       )
@@ -1634,7 +1637,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -1752,7 +1755,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
@@ -1825,7 +1828,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 mainAxisSpacing:
                                                                     24.0,
                                                                 childAspectRatio:
-                                                                    0.6,
+                                                                    0.55,
                                                               ),
                                                               primary: false,
                                                               shrinkWrap: true,

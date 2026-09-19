@@ -93,7 +93,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           fontSize: 18.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
@@ -123,7 +123,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                           fontSize: 18.0,
@@ -155,7 +155,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           fontSize: 18.0,
@@ -190,7 +190,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 24.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
@@ -210,7 +210,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                fontFamily: 'Cairo',
+                                fontFamily: 'almarai',
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 fontSize: 14.0,
@@ -245,7 +245,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                             ),
@@ -254,7 +254,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -344,7 +344,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             letterSpacing: 0.0,
@@ -356,7 +356,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -403,7 +403,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                         ),
                                     cursorColor: FlutterFlowTheme.of(context)
@@ -431,7 +431,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             color: Color(0xFF2A7803),
                                             fontSize: 12.0,
                                             letterSpacing: 0.5,
@@ -560,7 +560,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   color: FlutterFlowTheme.of(context).info,
                                   letterSpacing: 0.0,
                                 ),
@@ -606,7 +606,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                         ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Cairo',
+                              fontFamily: 'almarai',
                               color: FlutterFlowTheme.of(context).secondaryText,
                               fontSize: 14.0,
                               letterSpacing: 0.0,

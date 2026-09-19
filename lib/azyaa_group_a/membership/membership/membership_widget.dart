@@ -155,7 +155,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
@@ -169,7 +169,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                 ),
@@ -182,7 +182,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
@@ -272,7 +272,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                                             context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.normal,
@@ -288,7 +288,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                                             context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -299,7 +299,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -390,7 +390,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                   ),
@@ -416,7 +416,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
                                           ),
@@ -428,7 +428,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
                                           ),
@@ -437,7 +437,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -480,7 +480,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -492,7 +492,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
@@ -527,7 +527,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -539,7 +539,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
@@ -586,7 +586,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -598,7 +598,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
@@ -633,7 +633,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -645,7 +645,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,

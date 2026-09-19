@@ -113,7 +113,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   fontSize: 18.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
@@ -177,7 +177,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           fontSize: 12.0,
@@ -199,7 +199,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 fontSize: 34.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
@@ -213,7 +213,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 fontSize: 34.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
@@ -223,7 +223,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -303,7 +303,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBackground,
@@ -325,7 +325,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
@@ -360,7 +360,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBackground,
@@ -414,7 +414,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBackground,
@@ -436,7 +436,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
@@ -471,7 +471,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBackground,
@@ -506,7 +506,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
                                           ),
@@ -518,7 +518,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
                                           ),
@@ -527,7 +527,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -569,7 +569,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
@@ -650,7 +650,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .titleLarge
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: Colors.black,
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
@@ -809,7 +809,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -828,7 +828,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                             TextSpan(
                                                                               text: thisWeekOrdersItem.orderItems.cartItems.where((e) => e.creatorRef == currentUserReference).toList().length.toString(),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
                                                                                     fontSize: 14.0,
                                                                                     letterSpacing: 0.0,
@@ -839,7 +839,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                                 '32fcwfc1' /*  Sold */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
                                                                                     fontSize: 12.0,
                                                                                     letterSpacing: 0.0,
@@ -850,7 +850,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                fontFamily: 'Cairo',
+                                                                                fontFamily: 'almarai',
                                                                                 color: FlutterFlowTheme.of(context).secondaryText,
                                                                                 fontSize: 12.0,
                                                                                 letterSpacing: 0.0,
@@ -876,7 +876,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                               Text(
                                                                             thisWeekOrdersItem.orderStatus,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: Color(0xFF1F841A),
                                                                                   fontSize: 10.0,
                                                                                   letterSpacing: 0.0,
@@ -903,7 +903,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                fontFamily: 'Cairo',
+                                                                                fontFamily: 'almarai',
                                                                                 color: FlutterFlowTheme.of(context).secondaryText,
                                                                                 fontSize: 12.0,
                                                                                 letterSpacing: 0.0,
@@ -921,7 +921,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                fontFamily: 'Cairo',
+                                                                                fontFamily: 'almarai',
                                                                                 color: FlutterFlowTheme.of(context).primaryText,
                                                                                 fontSize: 12.0,
                                                                                 letterSpacing: 0.0,
@@ -949,7 +949,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             fontSize:
@@ -988,7 +988,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Cairo',
+                                                                            'almarai',
                                                                         fontSize:
                                                                             14.0,
                                                                         letterSpacing:
@@ -1012,7 +1012,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     fontSize:
                                                                         14.0,
                                                                     letterSpacing:
@@ -1078,7 +1078,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleLarge
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color: Colors.black,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
@@ -1241,7 +1241,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -1263,7 +1263,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                                   '12wqxpsi' /* 02  */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Cairo',
+                                                                                      fontFamily: 'almarai',
                                                                                       color: FlutterFlowTheme.of(context).primaryText,
                                                                                       fontSize: 14.0,
                                                                                       letterSpacing: 0.0,
@@ -1274,7 +1274,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                                   'yraw29qw' /* Sold */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Cairo',
+                                                                                      fontFamily: 'almarai',
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
                                                                                       fontSize: 12.0,
                                                                                       letterSpacing: 0.0,
@@ -1283,7 +1283,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                               )
                                                                             ],
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
@@ -1309,7 +1309,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                                 Text(
                                                                               thisMonthOrdersItem.orderStatus,
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     color: Color(0xFF1F841A),
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
@@ -1333,7 +1333,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                               'mugdzbn8' /* Price :  */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
@@ -1343,7 +1343,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                             text:
                                                                                 thisMonthOrdersItem.orderItems.cartItems.where((e) => e.creatorRef == currentUserReference).toList().firstOrNull!.price.toString(),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
@@ -1362,7 +1362,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               color: FlutterFlowTheme.of(context).secondaryText,
                                                                               fontSize: 12.0,
                                                                               letterSpacing: 0.0,
@@ -1385,7 +1385,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     fontSize:
                                                                         14.0,
                                                                     letterSpacing:
@@ -1450,7 +1450,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleLarge
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color: Colors.black,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
@@ -1615,7 +1615,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -1635,7 +1635,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                               TextSpan(
                                                                                 text: lastMonthOrdersItem.orderItems.cartItems.where((e) => e.creatorRef == currentUserReference).toList().length.toString(),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Cairo',
+                                                                                      fontFamily: 'almarai',
                                                                                       color: FlutterFlowTheme.of(context).primaryText,
                                                                                       fontSize: 14.0,
                                                                                       letterSpacing: 0.0,
@@ -1646,7 +1646,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                                   'enwpdbzt' /*  Sold */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Cairo',
+                                                                                      fontFamily: 'almarai',
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
                                                                                       fontSize: 12.0,
                                                                                       letterSpacing: 0.0,
@@ -1655,7 +1655,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                               )
                                                                             ],
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
@@ -1681,7 +1681,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                                 Text(
                                                                               lastMonthOrdersItem.orderStatus,
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     color: Color(0xFF1F841A),
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
@@ -1705,7 +1705,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                               'aov0vjs2' /* Price :  */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
@@ -1715,7 +1715,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                             text:
                                                                                 lastMonthOrdersItem.orderItems.cartItems.where((e) => e.creatorRef == currentUserReference).toList().firstOrNull!.price.toString(),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
@@ -1738,7 +1738,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               color: FlutterFlowTheme.of(context).secondaryText,
                                                                               fontSize: 12.0,
                                                                               letterSpacing: 0.0,
@@ -1774,7 +1774,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           fontSize:
                                                                               14.0,
                                                                           letterSpacing:
@@ -1798,7 +1798,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Cairo',
+                                                                          'almarai',
                                                                       fontSize:
                                                                           14.0,
                                                                       letterSpacing:

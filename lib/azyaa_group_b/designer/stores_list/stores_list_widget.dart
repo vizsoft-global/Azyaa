@@ -149,7 +149,7 @@ dre... */
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             fontSize: 12.0,
@@ -178,7 +178,7 @@ dre... */
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             color: FlutterFlowTheme.of(context)
                                                 .info,
                                             fontSize: 10.0,
@@ -242,7 +242,8 @@ dre... */
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily: 'Cairo',
+                                                            fontFamily:
+                                                                'almarai',
                                                             fontSize: 16.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -260,7 +261,8 @@ dre... */
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily: 'Cairo',
+                                                            fontFamily:
+                                                                'almarai',
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryText,
@@ -275,7 +277,7 @@ dre... */
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -293,7 +295,7 @@ dre... */
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -356,7 +358,7 @@ selecting dre... */
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
@@ -408,7 +410,7 @@ selecting dre... */
                                                                     .titleSmall
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Cairo',
+                                                                          'almarai',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .info,
@@ -535,7 +537,7 @@ selecting dre... */
                                                   context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .info,
@@ -557,7 +559,7 @@ selecting dre... */
                                                   context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
@@ -695,12 +697,12 @@ selecting dre... */
                                                               DesignerWidget
                                                                   .routeName,
                                                               queryParameters: {
-                                                                'designer':
+                                                                'designerUid':
                                                                     serializeParam(
                                                                   storeDesignerListItem
-                                                                      .reference,
+                                                                      .uid,
                                                                   ParamType
-                                                                      .DocumentReference,
+                                                                      .String,
                                                                 ),
                                                               }.withoutNulls,
                                                               extra: <String,
@@ -809,7 +811,7 @@ selecting dre... */
                                                                                     child: Text(
                                                                                       storeDesignerListItem.designerMainInfo.designerInfo.name != null && storeDesignerListItem.designerMainInfo.designerInfo.name != '' ? storeDesignerListItem.designerMainInfo.designerInfo.name : storeDesignerListItem.displayName,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Cairo',
+                                                                                            fontFamily: 'almarai',
                                                                                             fontSize: 14.0,
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w600,
@@ -823,7 +825,7 @@ selecting dre... */
                                                                                         maxChars: 20,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Cairo',
+                                                                                            fontFamily: 'almarai',
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                             fontSize: 10.0,
                                                                                             letterSpacing: 0.0,
@@ -855,7 +857,7 @@ selecting dre... */
                                                                                         '07yicerj' /* Best Rated */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Cairo',
+                                                                                            fontFamily: 'almarai',
                                                                                             color: FlutterFlowTheme.of(context).info,
                                                                                             fontSize: 10.0,
                                                                                             letterSpacing: 0.0,

@@ -143,7 +143,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
                                           fontSize: 10.0,
@@ -218,7 +218,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -243,7 +243,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -255,7 +255,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -299,7 +299,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           letterSpacing: 0.0,
@@ -313,7 +313,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
                                         ),
@@ -443,7 +443,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -556,7 +556,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.normal,
@@ -655,7 +655,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .error,
@@ -704,7 +704,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleLarge
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.normal,
@@ -912,7 +912,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .error,
@@ -961,7 +961,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleLarge
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.normal,

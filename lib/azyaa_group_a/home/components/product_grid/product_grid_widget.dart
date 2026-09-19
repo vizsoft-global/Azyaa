@@ -424,7 +424,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -464,7 +464,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -764,14 +764,14 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                 ),
               ),
               Container(
-                height: 60.0,
+                height: 90.0,
                 decoration: BoxDecoration(),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
-                      mainAxisSize: MainAxisSize.max,
+                      mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Expanded(
@@ -834,7 +834,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         fontSize: 14.0,
                                         letterSpacing: 0.0,
                                       ),
@@ -864,7 +864,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
@@ -876,7 +876,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           fontSize: 10.0,
                                           letterSpacing: 0.0,
                                         ),
@@ -906,7 +906,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
@@ -922,7 +922,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
@@ -948,7 +948,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color: columnInventoryRecord!
                                                             .stock >
                                                         0
@@ -966,7 +966,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             fontSize: 10.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -1014,7 +1014,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                             '${widget!.product?.product?.productPrice?.toString()} KD',
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
@@ -1027,12 +1027,12 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w300,
+                                    fontWeight: FontWeight.normal,
                                     decoration: TextDecoration.lineThrough,
                                   ),
                             ),
@@ -1052,7 +1052,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context).error,
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
@@ -1077,7 +1077,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                   ),

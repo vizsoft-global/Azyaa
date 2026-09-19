@@ -97,7 +97,7 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleLarge
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 18.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
@@ -177,7 +177,7 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
@@ -197,7 +197,7 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
@@ -228,7 +228,7 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             fontSize: 10.0,
@@ -285,7 +285,7 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -297,7 +297,7 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color: FlutterFlowTheme.of(context)
                                               .error,
                                           letterSpacing: 0.0,
@@ -307,7 +307,7 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
                                     ),
@@ -326,7 +326,7 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       letterSpacing: 0.0,
@@ -337,7 +337,7 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
                                     ),
@@ -376,7 +376,7 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                               maxLines: null,
@@ -411,7 +411,7 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                   ),

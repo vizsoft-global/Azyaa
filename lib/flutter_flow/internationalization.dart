@@ -8113,7 +8113,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Button',
       'ar': '',
     },
-    '0yrvnzkp': {
+    '2i276d2x': {
       'en': 'My address',
       'ar': '',
     },

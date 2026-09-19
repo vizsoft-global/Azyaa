@@ -108,7 +108,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         fontSize: 24.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
@@ -125,7 +125,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
                                         fontSize: 14.0,
@@ -153,7 +153,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -166,7 +166,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .error,
@@ -177,7 +177,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -200,7 +200,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             letterSpacing: 0.0,
@@ -212,7 +212,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -259,7 +259,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                         ),
                                     keyboardType: TextInputType.emailAddress,
@@ -382,7 +382,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color:
                                               FlutterFlowTheme.of(context).info,
                                           letterSpacing: 0.0,

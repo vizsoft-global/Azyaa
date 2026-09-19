@@ -225,7 +225,7 @@ class _CartWidgetState extends State<CartWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -235,7 +235,7 @@ class _CartWidgetState extends State<CartWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
                                           ),
@@ -287,7 +287,7 @@ class _CartWidgetState extends State<CartWidget> {
                                                   context)
                                               .titleSmall
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
@@ -389,7 +389,7 @@ class _CartWidgetState extends State<CartWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Cairo',
+                                                      fontFamily: 'almarai',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)

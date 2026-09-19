@@ -117,7 +117,7 @@ class _CreatePromotionCustomWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .titleLarge
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 18.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
@@ -195,7 +195,7 @@ class _CreatePromotionCustomWidgetState
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                             ),
@@ -214,7 +214,7 @@ class _CreatePromotionCustomWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -238,7 +238,7 @@ class _CreatePromotionCustomWidgetState
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             letterSpacing: 0.0,
@@ -250,7 +250,7 @@ class _CreatePromotionCustomWidgetState
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -297,7 +297,7 @@ class _CreatePromotionCustomWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                           letterSpacing: 0.0,
@@ -325,7 +325,7 @@ class _CreatePromotionCustomWidgetState
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                             ),
@@ -341,7 +341,7 @@ class _CreatePromotionCustomWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -367,7 +367,7 @@ class _CreatePromotionCustomWidgetState
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             letterSpacing: 0.0,
@@ -379,7 +379,7 @@ class _CreatePromotionCustomWidgetState
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -426,7 +426,7 @@ class _CreatePromotionCustomWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                         ),
                                     maxLines: 4,
@@ -468,7 +468,7 @@ class _CreatePromotionCustomWidgetState
                             maxLines: 1,
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
@@ -489,7 +489,7 @@ class _CreatePromotionCustomWidgetState
                             maxLines: 1,
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       fontSize: 12.0,
@@ -512,7 +512,7 @@ class _CreatePromotionCustomWidgetState
                             maxLines: 1,
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       fontSize: 12.0,
@@ -633,7 +633,7 @@ class _CreatePromotionCustomWidgetState
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         fontSize: 10.0,
@@ -674,7 +674,7 @@ class _CreatePromotionCustomWidgetState
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         fontSize: 12.0,
@@ -751,7 +751,7 @@ class _CreatePromotionCustomWidgetState
                             maxLines: 1,
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
@@ -782,7 +782,7 @@ class _CreatePromotionCustomWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           fontSize: 12.0,
@@ -796,7 +796,7 @@ class _CreatePromotionCustomWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color: Color(0xFF0089F2),
                                           fontSize: 12.0,
                                           letterSpacing: 0.0,
@@ -819,7 +819,7 @@ class _CreatePromotionCustomWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color: Color(0xFF0089F2),
                                           fontSize: 12.0,
                                           letterSpacing: 0.0,
@@ -830,7 +830,7 @@ class _CreatePromotionCustomWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       fontSize: 12.0,
@@ -944,7 +944,7 @@ class _CreatePromotionCustomWidgetState
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         fontSize: 10.0,
@@ -998,7 +998,7 @@ class _CreatePromotionCustomWidgetState
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         fontSize: 12.0,
@@ -1250,7 +1250,7 @@ class _CreatePromotionCustomWidgetState
                                                   context)
                                               .titleSmall
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
@@ -1376,7 +1376,7 @@ class _CreatePromotionCustomWidgetState
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
@@ -1438,7 +1438,7 @@ class _CreatePromotionCustomWidgetState
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         fontSize: 12.0,
@@ -1973,7 +1973,7 @@ class _CreatePromotionCustomWidgetState
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                   ),

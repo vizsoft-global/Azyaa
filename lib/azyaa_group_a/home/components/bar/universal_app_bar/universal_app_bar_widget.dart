@@ -148,9 +148,9 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                       context.goNamed(
                         DesignerWidget.routeName,
                         queryParameters: {
-                          'designer': serializeParam(
-                            widget!.designerRef,
-                            ParamType.DocumentReference,
+                          'designerUid': serializeParam(
+                            widget!.designerRef?.id,
+                            ParamType.String,
                           ),
                         }.withoutNulls,
                         extra: <String, dynamic>{
@@ -404,7 +404,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                   ),
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyLarge.override(
-                        fontFamily: 'Cairo',
+                        fontFamily: 'almarai',
                         fontSize: 18.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,
@@ -590,7 +590,17 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                         if (loggedIn == true)
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 12.0, 0.0),
+                                0.0,
+                                0.0,
+                                valueOrDefault<double>(
+                                  currentUserDocument!
+                                              .userCart.cartItems.length >
+                                          0
+                                      ? 12.0
+                                      : 0.0,
+                                  0.0,
+                                ),
+                                0.0),
                             child: AuthUserStreamWidget(
                               builder: (context) => InkWell(
                                 splashColor: Colors.transparent,
@@ -644,7 +654,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color: valueOrDefault<int>(
                                                     currentUserDocument
                                                         ?.userCart
@@ -786,7 +796,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Cairo',
+                      fontFamily: 'almarai',
                       color: Colors.white,
                       letterSpacing: 0.0,
                     ),

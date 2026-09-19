@@ -90,7 +90,7 @@ class _CheckoutPopupWidgetState extends State<CheckoutPopupWidget> {
                         'z45nyqg7' /* Summary */,
                       ),
                       style: FlutterFlowTheme.of(context).titleLarge.override(
-                            fontFamily: 'Cairo',
+                            fontFamily: 'almarai',
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,
                           ),
@@ -101,7 +101,7 @@ class _CheckoutPopupWidgetState extends State<CheckoutPopupWidget> {
                       '7ihma0d3' /* 2 Items */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Cairo',
+                          fontFamily: 'almarai',
                           letterSpacing: 0.0,
                         ),
                   ),
@@ -149,7 +149,7 @@ class _CheckoutPopupWidgetState extends State<CheckoutPopupWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -159,7 +159,7 @@ class _CheckoutPopupWidgetState extends State<CheckoutPopupWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -179,7 +179,7 @@ class _CheckoutPopupWidgetState extends State<CheckoutPopupWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -189,7 +189,7 @@ class _CheckoutPopupWidgetState extends State<CheckoutPopupWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -209,7 +209,7 @@ class _CheckoutPopupWidgetState extends State<CheckoutPopupWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -219,7 +219,7 @@ class _CheckoutPopupWidgetState extends State<CheckoutPopupWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -239,7 +239,7 @@ class _CheckoutPopupWidgetState extends State<CheckoutPopupWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -249,7 +249,7 @@ class _CheckoutPopupWidgetState extends State<CheckoutPopupWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -277,7 +277,7 @@ class _CheckoutPopupWidgetState extends State<CheckoutPopupWidget> {
                       '3q8utx1g' /* Total */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
-                          fontFamily: 'Cairo',
+                          fontFamily: 'almarai',
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
                         ),
@@ -287,7 +287,7 @@ class _CheckoutPopupWidgetState extends State<CheckoutPopupWidget> {
                       '2y4esly7' /* 119.9 KD */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
-                          fontFamily: 'Cairo',
+                          fontFamily: 'almarai',
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
                         ),
@@ -318,7 +318,7 @@ class _CheckoutPopupWidgetState extends State<CheckoutPopupWidget> {
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   color: FlutterFlowTheme.of(context).info,
                                   letterSpacing: 0.0,
                                 ),

@@ -79,13 +79,13 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                               labelStyle: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                               unselectedLabelStyle: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                               indicatorColor:
@@ -165,7 +165,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -192,7 +192,8 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily: 'Cairo',
+                                                            fontFamily:
+                                                                'almarai',
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -216,20 +217,23 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                           .getText(
                                                         'dpjti66c' /* Step into a world of elegance ... */,
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Cairo',
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryText,
-                                                            fontSize: 14.0,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .normal,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'almarai',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
@@ -277,7 +281,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                               .titleSmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .info,
@@ -301,7 +305,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -368,7 +372,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -395,7 +399,8 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily: 'Cairo',
+                                                            fontFamily:
+                                                                'almarai',
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -419,20 +424,23 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                           .getText(
                                                         'tp2qhne5' /* Fashion that truly understands... */,
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Cairo',
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryText,
-                                                            fontSize: 14.0,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .normal,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'almarai',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
@@ -480,7 +488,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                               .titleSmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .info,
@@ -504,7 +512,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -571,7 +579,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -598,7 +606,8 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily: 'Cairo',
+                                                            fontFamily:
+                                                                'almarai',
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -622,20 +631,23 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                           .getText(
                                                         '26sbvfxy' /* Shopping has never been this s... */,
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Cairo',
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryText,
-                                                            fontSize: 14.0,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .normal,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'almarai',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
@@ -683,7 +695,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                               .titleSmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .info,
@@ -707,7 +719,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)

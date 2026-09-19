@@ -159,7 +159,7 @@ class _ShortlistWidgetState extends State<ShortlistWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       color: FlutterFlowTheme.of(context).info,
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
@@ -176,7 +176,7 @@ class _ShortlistWidgetState extends State<ShortlistWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       fontSize: 14.0,

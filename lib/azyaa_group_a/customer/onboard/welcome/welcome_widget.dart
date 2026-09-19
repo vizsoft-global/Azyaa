@@ -95,20 +95,24 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                   ),
                                 ),
                               ),
-                              Text(
-                                FFLocalizations.of(context).getText(
-                                  'zs9ela05' /* Welcome to the shop  */,
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 8.0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'zs9ela05' /* Welcome to the shop  */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'almarai',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 24.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                 ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Cairo',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      fontSize: 24.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w600,
-                                    ),
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -125,7 +129,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
@@ -142,7 +146,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               fontSize: 24.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
@@ -152,7 +156,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -161,7 +165,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 4.0),
+                                    0.0, 0.0, 0.0, 8.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'rokieuvq' /* Let’s get your desired look wi... */,
@@ -169,7 +173,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
                                         fontSize: 14.0,
@@ -180,7 +184,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 28.0),
+                                    0.0, 0.0, 0.0, 24.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'd24l0oui' /* our unique collections. */,
@@ -188,7 +192,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
                                         fontSize: 14.0,
@@ -238,7 +242,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                                     context)
                                                 .titleSmall
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
@@ -290,7 +294,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                                     context)
                                                 .titleSmall
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
@@ -346,7 +350,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color:
                                             FlutterFlowTheme.of(context).info,
                                         letterSpacing: 0.0,

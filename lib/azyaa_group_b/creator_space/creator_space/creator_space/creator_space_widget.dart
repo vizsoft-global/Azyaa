@@ -166,7 +166,8 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                               .of(context)
                                                           .titleLarge
                                                           .override(
-                                                            fontFamily: 'Cairo',
+                                                            fontFamily:
+                                                                'almarai',
                                                             fontSize: 20.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -214,7 +215,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                             .bodyMedium
                                                             .override(
                                                               fontFamily:
-                                                                  'Cairo',
+                                                                  'almarai',
                                                               color: Color(
                                                                   0xFF5B7700),
                                                               fontSize: 16.0,
@@ -236,7 +237,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                             .bodyMedium
                                                             .override(
                                                               fontFamily:
-                                                                  'Cairo',
+                                                                  'almarai',
                                                               color: Color(
                                                                   0xFF5B7700),
                                                               fontSize: 12.0,
@@ -328,7 +329,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -542,7 +543,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                                             maxLines:
                                                                                 1,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   fontSize: 16.0,
                                                                                   letterSpacing: 0.0,
@@ -557,7 +558,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                                             maxLines:
                                                                                 2,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
@@ -738,7 +739,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .primaryBackground,
@@ -767,7 +768,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
@@ -785,7 +786,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .info,
@@ -795,17 +796,20 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                               ),
                                                         )
                                                       ],
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Cairo',
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                            fontSize: 12.0,
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'almarai',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                                fontSize: 12.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                     ),
                                                     textAlign: TextAlign.start,
                                                   ),
@@ -952,7 +956,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -1062,7 +1066,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               fontSize: 12.0,
                                               letterSpacing: 0.0,
                                             ),
@@ -1081,7 +1085,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 26.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -1097,7 +1101,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1110,7 +1114,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -1193,7 +1197,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -1274,7 +1278,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 40.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -1286,7 +1290,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -1298,7 +1302,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                 ),
@@ -1337,7 +1341,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 40.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -1349,7 +1353,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -1361,7 +1365,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                 ),
@@ -1397,7 +1401,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 40.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -1414,7 +1418,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1428,7 +1432,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -1440,7 +1444,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                 ),
@@ -1480,7 +1484,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
                                           ),
@@ -1492,7 +1496,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 0.0,
                                           ),
                                     )
@@ -1500,7 +1504,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -1682,7 +1686,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             fontSize: 10.0,
@@ -1732,7 +1736,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
                                           ),
@@ -1744,7 +1748,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 0.0,
                                           ),
                                     )
@@ -1752,7 +1756,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                       ),
                                 ),

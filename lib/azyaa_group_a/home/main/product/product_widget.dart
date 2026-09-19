@@ -17,6 +17,7 @@ import '/azyaa_group_a/payment/default_cart_button/default_cart_button_widget.da
 import '/azyaa_group_b/components/unfollow_confirm_popup/unfollow_confirm_popup_widget.dart';
 import '/azyaa_group_b/creator_space/creator_space/c1_share_promotion/c1_share_promotion_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
@@ -26,8 +27,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/ui/reviewgrid/reviewgrid_widget.dart';
 import 'dart:async';
+import 'dart:convert';
 import 'dart:ui';
-import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
@@ -678,7 +679,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
@@ -846,7 +847,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryBackground,
@@ -1006,8 +1007,11 @@ class _ProductWidgetState extends State<ProductWidget> {
                                             Builder(
                                               builder: (context) =>
                                                   FlutterFlowIconButton(
-                                                borderRadius: 8.0,
-                                                buttonSize: 40.0,
+                                                borderColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .border,
+                                                borderRadius: 100.0,
+                                                buttonSize: 38.0,
                                                 fillColor:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBackground,
@@ -1015,37 +1019,101 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                   FFIcons.kshare,
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryText,
-                                                  size: 24.0,
+                                                      .primary,
+                                                  size: 16.0,
                                                 ),
                                                 showLoadingIndicator: true,
                                                 onPressed: () async {
-                                                  _model.newlink = await actions
-                                                      .generateLinkNew(
-                                                    context,
-                                                    '/azyaa-producttest',
-                                                    stackProductsRecord
+                                                  _model.idmapDoc =
+                                                      await queryIdMapRecordOnce(
+                                                    queryBuilder:
+                                                        (idMapRecord) =>
+                                                            idMapRecord.where(
+                                                      'type',
+                                                      isEqualTo: 'Main',
+                                                    ),
+                                                    singleRecord: true,
+                                                  ).then((s) => s.firstOrNull);
+                                                  _model.dubshortlink =
+                                                      await DuoDeeplinkGroup
+                                                          .createLinkCall
+                                                          .call(
+                                                    url: 'https://azyaa.ai',
+                                                    title: stackProductsRecord
                                                         .productInfo.name,
-                                                    'Azyaa Product',
-                                                    <String, String>{
-                                                      'page': 'ProductCopy',
-                                                      'page_parameter':
-                                                          stackProductsRecord
-                                                              .productId,
-                                                    },
-                                                    <String, String>{
-                                                      'channel': 'Share',
-                                                      'feature': 'feature',
-                                                      'campaign': 'campaign',
-                                                      'stage': 'stage',
-                                                    },
+                                                    description:
+                                                        'Azyaa Product',
+                                                    image: stackProductsRecord
+                                                        .productInfo
+                                                        .featureImage,
+                                                    ios:
+                                                        'azyaa://azyaa.ai/azyaa-producttest?productID=${stackProductsRecord.productId}',
+                                                    domain: 'azyaa.link',
+                                                    externalID:
+                                                        '${currentUserUid}-${_model.idmapDoc?.shareLinkId?.toString()}',
+                                                    android:
+                                                        'azyaa://azyaa.ai/azyaa-producttest?productID=${stackProductsRecord.productId}',
                                                   );
-                                                  await Share.share(
-                                                    _model.newlink!,
-                                                    sharePositionOrigin:
-                                                        getWidgetBoundingBox(
-                                                            context),
-                                                  );
+
+                                                  if ((_model.dubshortlink
+                                                          ?.succeeded ??
+                                                      true)) {
+                                                    await Share.share(
+                                                      DuoDeeplinkGroup
+                                                          .createLinkCall
+                                                          .shortLink(
+                                                        (_model.dubshortlink
+                                                                ?.jsonBody ??
+                                                            ''),
+                                                      )!,
+                                                      sharePositionOrigin:
+                                                          getWidgetBoundingBox(
+                                                              context),
+                                                    );
+
+                                                    await _model
+                                                        .idmapDoc!.reference
+                                                        .update({
+                                                      ...mapToFirestore(
+                                                        {
+                                                          'share_link_id':
+                                                              FieldValue
+                                                                  .increment(1),
+                                                        },
+                                                      ),
+                                                    });
+                                                  } else {
+                                                    await showDialog(
+                                                      context: context,
+                                                      builder:
+                                                          (alertDialogContext) {
+                                                        return WebViewAware(
+                                                          child: AlertDialog(
+                                                            title: Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              getJsonField(
+                                                                (_model.dubshortlink
+                                                                        ?.jsonBody ??
+                                                                    ''),
+                                                                r'''$''',
+                                                              )?.toString(),
+                                                              '-',
+                                                            )),
+                                                            actions: [
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext),
+                                                                child:
+                                                                    Text('Ok'),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        );
+                                                      },
+                                                    );
+                                                  }
 
                                                   safeSetState(() {});
                                                 },
@@ -1068,7 +1136,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,
@@ -1084,7 +1152,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -1417,7 +1485,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               color: FlutterFlowTheme.of(context).velvet,
                                                                               letterSpacing: 0.0,
                                                                               decoration: TextDecoration.underline,
@@ -1616,7 +1684,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                                     }(),
                                                                                                   ),
                                                                                                   style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                        fontFamily: 'Cairo',
+                                                                                                        fontFamily: 'almarai',
                                                                                                         color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
                                                                                                         letterSpacing: 0.0,
                                                                                                       ),
@@ -1867,7 +1935,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                         .bodySmall
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
@@ -1892,7 +1960,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                         .labelSmall
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
@@ -2304,7 +2372,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -2317,7 +2385,8 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily: 'Cairo',
+                                                            fontFamily:
+                                                                'almarai',
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
@@ -2365,7 +2434,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                               .titleSmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
@@ -2573,7 +2642,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                     Text(
                                                                                       containerUsersRecord!.creatorMainInfo.creatorInfo.name,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Cairo',
+                                                                                            fontFamily: 'almarai',
                                                                                             color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w600,
@@ -2660,12 +2729,10 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                   context.pushNamed(
                                                     DesignerWidget.routeName,
                                                     queryParameters: {
-                                                      'designer':
+                                                      'designerUid':
                                                           serializeParam(
-                                                        designerUsersRecord
-                                                            .reference,
-                                                        ParamType
-                                                            .DocumentReference,
+                                                        designerUsersRecord.uid,
+                                                        ParamType.String,
                                                       ),
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
@@ -2845,7 +2912,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               color: FlutterFlowTheme.of(context).primaryBackground,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
@@ -2899,7 +2966,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                           .titleSmall
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryBackground,
                                                                             fontSize:
@@ -2969,7 +3036,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                   iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                   color: Color(0x34000000),
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: 'Cairo',
+                                                                                        fontFamily: 'almarai',
                                                                                         color: FlutterFlowTheme.of(context).info,
                                                                                         fontSize: 10.0,
                                                                                         letterSpacing: 0.0,
@@ -3035,7 +3102,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                     iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     color: Color(0x34000000),
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          fontFamily: 'Cairo',
+                                                                                          fontFamily: 'almarai',
                                                                                           color: FlutterFlowTheme.of(context).info,
                                                                                           fontSize: 10.0,
                                                                                           letterSpacing: 0.0,
@@ -3124,7 +3191,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -3137,7 +3204,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                           context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -3168,7 +3235,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   fontSize: 8.0,
                                                                   letterSpacing:
                                                                       0.0,
@@ -3220,7 +3287,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   .headlineSmall
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -3252,7 +3319,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   fontSize: 8.0,
                                                                   letterSpacing:
                                                                       0.0,
@@ -3305,7 +3372,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   .headlineSmall
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -3337,7 +3404,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   fontSize: 8.0,
                                                                   letterSpacing:
                                                                       0.0,
@@ -3390,7 +3457,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   .headlineSmall
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -3422,7 +3489,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   fontSize: 8.0,
                                                                   letterSpacing:
                                                                       0.0,
@@ -3475,7 +3542,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   .headlineSmall
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -3507,7 +3574,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   fontSize: 8.0,
                                                                   letterSpacing:
                                                                       0.0,
@@ -3559,7 +3626,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   .headlineSmall
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -3653,7 +3720,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 fontSize: 12.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
@@ -3726,7 +3793,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -3745,7 +3812,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -3757,7 +3824,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -3887,7 +3954,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -3908,7 +3975,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -3918,7 +3985,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -4237,7 +4304,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                 Text(
                                                                               count.toString(),
                                                                               style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     letterSpacing: 0.0,
                                                                                   ),
                                                                             ),
@@ -4513,7 +4580,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryBackground,
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: Color(0xFF344054),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
@@ -4587,7 +4654,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryBackground,
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: Color(0xFF344054),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
@@ -4853,7 +4920,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               color: FlutterFlowTheme.of(context).info,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -5023,7 +5090,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               color: FlutterFlowTheme.of(context).info,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -5151,7 +5218,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).error,
                                                                           fontSize:
@@ -5313,7 +5380,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                               color: FlutterFlowTheme.of(context).primaryBackground,
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     color: FlutterFlowTheme.of(context).error,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.w500,
@@ -5552,7 +5619,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                           textStyle: FlutterFlowTheme.of(context)
                                                                               .titleSmall
                                                                               .override(
-                                                                                fontFamily: 'Cairo',
+                                                                                fontFamily: 'almarai',
                                                                                 color: Color(0xFF344054),
                                                                                 letterSpacing: 0.0,
                                                                               ),
@@ -5642,7 +5709,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                           textStyle: FlutterFlowTheme.of(context)
                                                                               .titleSmall
                                                                               .override(
-                                                                                fontFamily: 'Cairo',
+                                                                                fontFamily: 'almarai',
                                                                                 color: Color(0xFF344054),
                                                                                 letterSpacing: 0.0,
                                                                               ),

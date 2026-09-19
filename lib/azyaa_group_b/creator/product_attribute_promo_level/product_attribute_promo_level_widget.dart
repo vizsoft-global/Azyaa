@@ -122,7 +122,7 @@ class _ProductAttributePromoLevelWidgetState
                         '09a2x3qy' /* Choose */,
                       ),
                       style: FlutterFlowTheme.of(context).titleLarge.override(
-                            fontFamily: 'Cairo',
+                            fontFamily: 'almarai',
                             fontSize: 18.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,
@@ -1019,7 +1019,7 @@ class _ProductAttributePromoLevelWidgetState
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: Colors.white,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
@@ -1229,7 +1229,7 @@ class _ProductAttributePromoLevelWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .velvet,
@@ -1661,7 +1661,7 @@ class _ProductAttributePromoLevelWidgetState
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyLarge
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == widget!.product?.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -1869,7 +1869,7 @@ class _ProductAttributePromoLevelWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -1891,7 +1891,7 @@ class _ProductAttributePromoLevelWidgetState
                                                           context)
                                                       .labelSmall
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
                                                       ),

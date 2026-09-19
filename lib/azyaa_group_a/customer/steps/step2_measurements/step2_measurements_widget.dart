@@ -114,7 +114,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           fontSize: 18.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
@@ -144,7 +144,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           fontSize: 18.0,
@@ -176,7 +176,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           fontSize: 18.0,
@@ -211,7 +211,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 24.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
@@ -231,7 +231,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                fontFamily: 'Cairo',
+                                fontFamily: 'almarai',
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 fontSize: 14.0,
@@ -338,7 +338,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     fontSize:
                                                                         10.0,
                                                                     letterSpacing:
@@ -475,7 +475,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               fontSize: 10.0,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -530,7 +530,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             fontSize:
@@ -631,7 +631,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     fontSize:
                                                                         10.0,
                                                                     letterSpacing:
@@ -768,7 +768,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               fontSize: 10.0,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -823,7 +823,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             fontSize:
@@ -924,7 +924,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     fontSize:
                                                                         10.0,
                                                                     letterSpacing:
@@ -1061,7 +1061,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               fontSize: 10.0,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -1116,7 +1116,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             fontSize:
@@ -1217,7 +1217,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     fontSize:
                                                                         10.0,
                                                                     letterSpacing:
@@ -1354,7 +1354,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               fontSize: 10.0,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -1409,7 +1409,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             fontSize:
@@ -1510,7 +1510,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     fontSize:
                                                                         10.0,
                                                                     letterSpacing:
@@ -1647,7 +1647,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               fontSize: 10.0,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -1702,7 +1702,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             fontSize:
@@ -1803,7 +1803,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     fontSize:
                                                                         10.0,
                                                                     letterSpacing:
@@ -1940,7 +1940,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               fontSize: 10.0,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -1995,7 +1995,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             fontSize:
@@ -2096,7 +2096,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     fontSize:
                                                                         10.0,
                                                                     letterSpacing:
@@ -2233,7 +2233,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               fontSize: 10.0,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -2288,7 +2288,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             fontSize:
@@ -2389,7 +2389,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     fontSize:
                                                                         10.0,
                                                                     letterSpacing:
@@ -2526,7 +2526,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               fontSize: 10.0,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -2581,7 +2581,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             fontSize:
@@ -2984,7 +2984,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       letterSpacing: 0.0,
@@ -3022,7 +3022,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                   ),
@@ -3062,7 +3062,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                         ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Cairo',
+                              fontFamily: 'almarai',
                               color: FlutterFlowTheme.of(context).secondaryText,
                               fontSize: 14.0,
                               letterSpacing: 0.0,

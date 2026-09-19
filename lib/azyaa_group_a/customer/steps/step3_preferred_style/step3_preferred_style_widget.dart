@@ -94,7 +94,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           fontSize: 18.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
@@ -124,7 +124,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                           fontSize: 18.0,
@@ -156,7 +156,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           fontSize: 18.0,
@@ -191,7 +191,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 24.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
@@ -211,7 +211,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                fontFamily: 'Cairo',
+                                fontFamily: 'almarai',
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 fontSize: 14.0,
@@ -348,7 +348,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                   ),
@@ -388,7 +388,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                         ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Cairo',
+                              fontFamily: 'almarai',
                               color: FlutterFlowTheme.of(context).secondaryText,
                               fontSize: 14.0,
                               letterSpacing: 0.0,

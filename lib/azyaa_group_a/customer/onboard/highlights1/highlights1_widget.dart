@@ -78,7 +78,7 @@ class _Highlights1WidgetState extends State<Highlights1Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         fontSize: 18.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
@@ -106,7 +106,7 @@ class _Highlights1WidgetState extends State<Highlights1Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
                                         fontSize: 18.0,
@@ -137,7 +137,7 @@ class _Highlights1WidgetState extends State<Highlights1Widget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
                                         fontSize: 18.0,
@@ -180,25 +180,29 @@ class _Highlights1WidgetState extends State<Highlights1Widget> {
                       children: [
                         Align(
                           alignment: AlignmentDirectional(-1.0, -1.0),
-                          child: Text(
-                            FFLocalizations.of(context).getText(
-                              '8u4huu60' /* Discover Unique */,
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 8.0),
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                '8u4huu60' /* Discover Unique */,
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'almarai',
+                                    fontSize: 24.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                             ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Cairo',
-                                  fontSize: 24.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w600,
-                                ),
                           ),
                         ),
                         Align(
                           alignment: AlignmentDirectional(-1.0, -1.0),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 12.0),
+                                0.0, 0.0, 0.0, 8.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'rrt6tk5u' /* Collections */,
@@ -206,7 +210,7 @@ class _Highlights1WidgetState extends State<Highlights1Widget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 24.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
@@ -226,12 +230,13 @@ class _Highlights1WidgetState extends State<Highlights1Widget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
                                     fontSize: 14.0,
-                                    letterSpacing: 0.5,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
+                                    lineHeight: 1.5,
                                   ),
                             ),
                           ),
@@ -266,7 +271,7 @@ class _Highlights1WidgetState extends State<Highlights1Widget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                   ),
@@ -306,7 +311,7 @@ class _Highlights1WidgetState extends State<Highlights1Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryText,
                                   fontSize: 14.0,

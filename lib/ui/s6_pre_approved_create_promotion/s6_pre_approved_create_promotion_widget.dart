@@ -103,7 +103,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       fontSize: 18.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
@@ -161,7 +161,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                           maxLines: 1,
                           style:
                               FlutterFlowTheme.of(context).bodySmall.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
@@ -181,7 +181,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                fontFamily: 'Cairo',
+                                fontFamily: 'almarai',
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 fontSize: 12.0,
@@ -229,7 +229,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           fontSize: 14.0,
                                           letterSpacing: 0.0,
                                         ),
@@ -519,7 +519,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
                                     ),
@@ -565,7 +565,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     fontSize: 10.0,
@@ -589,7 +589,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                           maxLines: 1,
                           style:
                               FlutterFlowTheme.of(context).bodySmall.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
@@ -898,7 +898,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                           maxLines: 1,
                           style:
                               FlutterFlowTheme.of(context).bodySmall.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
@@ -1212,7 +1212,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                           maxLines: 1,
                           style:
                               FlutterFlowTheme.of(context).bodySmall.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
@@ -1237,7 +1237,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
@@ -1248,7 +1248,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                 ),
@@ -1286,7 +1286,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                           maxLines: 4,
@@ -1329,7 +1329,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                   ),

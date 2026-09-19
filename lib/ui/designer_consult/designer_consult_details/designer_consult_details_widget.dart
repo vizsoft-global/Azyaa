@@ -224,7 +224,7 @@ class _DesignerConsultDetailsWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .titleLarge
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 18.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
@@ -314,7 +314,7 @@ class _DesignerConsultDetailsWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
@@ -337,7 +337,7 @@ class _DesignerConsultDetailsWidgetState
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -348,7 +348,7 @@ class _DesignerConsultDetailsWidgetState
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryText,
                                             letterSpacing: 0.0,
@@ -370,7 +370,7 @@ class _DesignerConsultDetailsWidgetState
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         fontSize: 16.0,
                                         letterSpacing: 0.0,
                                       ),
@@ -417,7 +417,7 @@ class _DesignerConsultDetailsWidgetState
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -440,7 +440,7 @@ class _DesignerConsultDetailsWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -474,7 +474,7 @@ class _DesignerConsultDetailsWidgetState
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -511,7 +511,7 @@ class _DesignerConsultDetailsWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -537,7 +537,7 @@ class _DesignerConsultDetailsWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
@@ -556,7 +556,7 @@ class _DesignerConsultDetailsWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       fontSize: 12.0,
@@ -576,7 +576,7 @@ class _DesignerConsultDetailsWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
@@ -791,7 +791,7 @@ class _DesignerConsultDetailsWidgetState
                               titleStyle: FlutterFlowTheme.of(context)
                                   .titleLarge
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     fontSize: 14.0,
@@ -800,20 +800,20 @@ class _DesignerConsultDetailsWidgetState
                               dayOfWeekStyle: FlutterFlowTheme.of(context)
                                   .bodyLarge
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                   ),
                               dateStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                               selectedDateStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                     fontSize: 14.0,
@@ -822,7 +822,7 @@ class _DesignerConsultDetailsWidgetState
                               inactiveDateStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                               locale: FFLocalizations.of(context).languageCode,
@@ -847,7 +847,7 @@ class _DesignerConsultDetailsWidgetState
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         fontSize: 14.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
@@ -1027,7 +1027,7 @@ class _DesignerConsultDetailsWidgetState
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -1056,7 +1056,7 @@ class _DesignerConsultDetailsWidgetState
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -1238,7 +1238,7 @@ class _DesignerConsultDetailsWidgetState
                                                                         .titleSmall
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           color: slotListItem.slotFromTime == _model.userSlot?.slotFromTime
                                                                               ? FlutterFlowTheme.of(context).secondaryBackground
                                                                               : FlutterFlowTheme.of(context).primary,
@@ -1337,7 +1337,7 @@ class _DesignerConsultDetailsWidgetState
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             fontSize: 14.0,
@@ -1367,7 +1367,7 @@ class _DesignerConsultDetailsWidgetState
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             fontSize: 14.0,
@@ -1397,7 +1397,7 @@ class _DesignerConsultDetailsWidgetState
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             fontSize: 14.0,
@@ -1427,7 +1427,7 @@ class _DesignerConsultDetailsWidgetState
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             color: FlutterFlowTheme.of(context)
                                                 .info,
                                             fontSize: 14.0,
@@ -1453,7 +1453,7 @@ class _DesignerConsultDetailsWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
@@ -1485,7 +1485,7 @@ class _DesignerConsultDetailsWidgetState
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                               hintText: FFLocalizations.of(context).getText(
@@ -1529,7 +1529,7 @@ class _DesignerConsultDetailsWidgetState
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                   ),

@@ -156,7 +156,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             fontSize: 24.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
@@ -201,7 +201,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryText,
                                             fontSize: 14.0,
@@ -222,7 +222,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
@@ -243,7 +243,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 0.0,
                                           ),
                                       mainAxisAlignment:
@@ -662,7 +662,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .info,
@@ -711,7 +711,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -801,7 +801,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -1040,7 +1040,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -1105,7 +1105,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.5,
                                                         ),
                                               ),
@@ -1119,7 +1119,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.5,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -1132,7 +1132,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,

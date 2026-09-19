@@ -1,11 +1,25 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'dart:typed_data';
 import 'package:http/http.dart' as http;
 import '/flutter_flow/flutter_flow_util.dart';
 
-const _kGeminiApiKey = 'AIzaSyBh1gnu-8VAJ7ObaXBw58_b9TDK91qpVFA';
+// API keys can be restricted per platform in the Google Cloud console.
+// Android and iOS use their own keys when configured. All other platforms,
+// including desktop, use the web key.
+const _kGeminiWebApiKey = 'AIzaSyBh1gnu-8VAJ7ObaXBw58_b9TDK91qpVFA';
+const _kGeminiAndroidApiKey = '';
+const _kGeminiIosApiKey = '';
+
+String get _kGeminiApiKey {
+  if (isAndroid && _kGeminiAndroidApiKey.isNotEmpty) {
+    return _kGeminiAndroidApiKey;
+  }
+  if (isiOS && _kGeminiIosApiKey.isNotEmpty) {
+    return _kGeminiIosApiKey;
+  }
+  return _kGeminiWebApiKey;
+}
 
 Future<String?> geminiGenerateText(
   BuildContext context,

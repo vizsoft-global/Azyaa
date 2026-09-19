@@ -140,7 +140,7 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
                   '1jr0umfn' /* Non-refundable item in your ca... */,
                 ),
                 style: FlutterFlowTheme.of(context).titleLarge.override(
-                      fontFamily: 'Cairo',
+                      fontFamily: 'almarai',
                       fontSize: 18.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.bold,
@@ -155,7 +155,7 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
                 'dcqh41od' /* This item is non-refundable an... */,
               ),
               style: FlutterFlowTheme.of(context).bodyLarge.override(
-                    fontFamily: 'Cairo',
+                    fontFamily: 'almarai',
                     color: FlutterFlowTheme.of(context).secondaryText,
                     fontSize: 12.0,
                     letterSpacing: 0.0,
@@ -215,7 +215,7 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Cairo',
+                      fontFamily: 'almarai',
                       color: FlutterFlowTheme.of(context).info,
                       letterSpacing: 0.0,
                     ),
@@ -240,7 +240,7 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primaryBackground,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Cairo',
+                      fontFamily: 'almarai',
                       color: FlutterFlowTheme.of(context).primaryText,
                       letterSpacing: 0.0,
                     ),

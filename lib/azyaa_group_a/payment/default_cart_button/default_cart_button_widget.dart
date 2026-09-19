@@ -795,7 +795,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                               : FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                   ),
@@ -1166,7 +1166,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Cairo',
+                        fontFamily: 'almarai',
                         color: Colors.white,
                         fontSize: 16.0,
                         letterSpacing: 0.0,

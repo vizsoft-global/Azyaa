@@ -7,12 +7,17 @@ import '/azyaa_group_a/home/components/loading_animation/loading_animation_widge
 import '/azyaa_group_a/home/components/product_grid/product_grid_widget.dart';
 import '/azyaa_group_b/components/unfollow_confirm_popup/unfollow_confirm_popup_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:convert';
 import 'dart:ui';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:expandable/expandable.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/gestures.dart';
@@ -20,6 +25,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'designer_model.dart';
 export 'designer_model.dart';
@@ -27,10 +33,10 @@ export 'designer_model.dart';
 class DesignerWidget extends StatefulWidget {
   const DesignerWidget({
     super.key,
-    required this.designer,
+    required this.designerUid,
   });
 
-  final DocumentReference? designer;
+  final String? designerUid;
 
   static String routeName = 'Designer';
   static String routePath = '/azyaa-designer';
@@ -80,27 +86,120 @@ class _DesignerWidgetState extends State<DesignerWidget> {
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
-                title: Column(
+                title: Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    wrapWithModel(
-                      model: _model.universalAppBarModel,
-                      updateCallback: () => safeSetState(() {}),
-                      updateOnChange: true,
-                      child: UniversalAppBarWidget(
-                        backButtonStatus: true,
-                        title: FFLocalizations.of(context).getText(
-                          'drxdtdyq' /* Designers Hub  */,
+                    Expanded(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          wrapWithModel(
+                            model: _model.universalAppBarModel,
+                            updateCallback: () => safeSetState(() {}),
+                            updateOnChange: true,
+                            child: UniversalAppBarWidget(
+                              backButtonStatus: true,
+                              title: FFLocalizations.of(context).getText(
+                                'drxdtdyq' /* Designers Hub  */,
+                              ),
+                              navigationIconStatus: true,
+                              searchIconStatus: false,
+                              wishlistIconStatus: true,
+                              navigationFrom: 'designer',
+                              tryonStatus: false,
+                              shareIconStatus: false,
+                              designerRef: functions
+                                  .getUserReference(widget!.designerUid!),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Builder(
+                      builder: (context) => FlutterFlowIconButton(
+                        borderColor: FlutterFlowTheme.of(context).border,
+                        borderRadius: 100.0,
+                        buttonSize: 42.0,
+                        fillColor:
+                            FlutterFlowTheme.of(context).primaryBackground,
+                        icon: Icon(
+                          FFIcons.kshare,
+                          color: FlutterFlowTheme.of(context).primary,
+                          size: 18.0,
                         ),
-                        navigationIconStatus: true,
-                        searchIconStatus: false,
-                        wishlistIconStatus: true,
-                        navigationFrom: 'designer',
-                        tryonStatus: false,
-                        shareIconStatus: false,
-                        designerRef: widget!.designer,
+                        showLoadingIndicator: true,
+                        onPressed: () async {
+                          _model.idmapDoc = await queryIdMapRecordOnce(
+                            queryBuilder: (idMapRecord) => idMapRecord.where(
+                              'type',
+                              isEqualTo: 'Main',
+                            ),
+                            singleRecord: true,
+                          ).then((s) => s.firstOrNull);
+                          _model.designerDoc = await queryUsersRecordOnce(
+                            queryBuilder: (usersRecord) => usersRecord.where(
+                              'uid',
+                              isEqualTo: widget!.designerUid,
+                            ),
+                            singleRecord: true,
+                          ).then((s) => s.firstOrNull);
+                          _model.dubshortlink =
+                              await DuoDeeplinkGroup.createLinkCall.call(
+                            url: 'https://azyaa.ai',
+                            title: _model.designerDoc?.designerMainInfo
+                                ?.designerInfo?.name,
+                            image: _model.designerDoc?.designerMainInfo
+                                ?.designerInfo?.brandPhoto,
+                            ios:
+                                'https://azyaa.ai/azyaa-designer?designerUid=${widget!.designerUid}',
+                            domain: 'azyaa.link',
+                            externalID:
+                                '${currentUserUid}-DS${_model.idmapDoc?.shareLinkId?.toString()}',
+                            android:
+                                'https://azyaa.ai/azyaa-designer?designerUid=${widget!.designerUid}',
+                          );
+
+                          if ((_model.dubshortlink?.succeeded ?? true)) {
+                            await Share.share(
+                              DuoDeeplinkGroup.createLinkCall.shortLink(
+                                (_model.dubshortlink?.jsonBody ?? ''),
+                              )!,
+                              sharePositionOrigin:
+                                  getWidgetBoundingBox(context),
+                            );
+
+                            await _model.idmapDoc!.reference.update({
+                              ...mapToFirestore(
+                                {
+                                  'share_link_id': FieldValue.increment(1),
+                                },
+                              ),
+                            });
+                          } else {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return WebViewAware(
+                                  child: AlertDialog(
+                                    content:
+                                        Text('Server busy try after sometime.'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
+                            );
+                          }
+
+                          safeSetState(() {});
+                        },
                       ),
                     ),
                   ],
@@ -125,8 +224,14 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                     updateCallback: () => safeSetState(() {}),
                     child: AppUpdateCheckerWidget(),
                   ),
-                  StreamBuilder<UsersRecord>(
-                    stream: UsersRecord.getDocument(widget!.designer!),
+                  StreamBuilder<List<UsersRecord>>(
+                    stream: queryUsersRecord(
+                      queryBuilder: (usersRecord) => usersRecord.where(
+                        'uid',
+                        isEqualTo: widget!.designerUid,
+                      ),
+                      singleRecord: true,
+                    ),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
                       if (!snapshot.hasData) {
@@ -136,8 +241,14 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                           child: LoadingAnimationWidget(),
                         );
                       }
-
-                      final columnUsersRecord = snapshot.data!;
+                      List<UsersRecord> columnUsersRecordList = snapshot.data!;
+                      // Return an empty Container when the item does not exist.
+                      if (snapshot.data!.isEmpty) {
+                        return Container();
+                      }
+                      final columnUsersRecord = columnUsersRecordList.isNotEmpty
+                          ? columnUsersRecordList.first
+                          : null;
 
                       return SingleChildScrollView(
                         child: Column(
@@ -170,20 +281,20 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                         child: Image.network(
                                           valueOrDefault<String>(
                                             columnUsersRecord
-                                                            .designerMainInfo
-                                                            .designerInfo
-                                                            .brandPhoto !=
+                                                            ?.designerMainInfo
+                                                            ?.designerInfo
+                                                            ?.brandPhoto !=
                                                         null &&
                                                     columnUsersRecord
-                                                            .designerMainInfo
-                                                            .designerInfo
-                                                            .brandPhoto !=
+                                                            ?.designerMainInfo
+                                                            ?.designerInfo
+                                                            ?.brandPhoto !=
                                                         ''
                                                 ? columnUsersRecord
-                                                    .designerMainInfo
-                                                    .designerInfo
-                                                    .brandPhoto
-                                                : columnUsersRecord.photoUrl,
+                                                    ?.designerMainInfo
+                                                    ?.designerInfo
+                                                    ?.brandPhoto
+                                                : columnUsersRecord?.photoUrl,
                                             'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/m1a9p5ryq5fw/Azyaa_Designer_Default_Piccture_-_User_App__designerlistpage(1).png',
                                           ),
                                           width: 100.0,
@@ -208,24 +319,25 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                   0.0, 0.0, 0.0, 4.0),
                                           child: Text(
                                             columnUsersRecord
-                                                            .designerMainInfo
-                                                            .designerInfo
-                                                            .name !=
+                                                            ?.designerMainInfo
+                                                            ?.designerInfo
+                                                            ?.name !=
                                                         null &&
                                                     columnUsersRecord
-                                                            .designerMainInfo
-                                                            .designerInfo
-                                                            .name !=
+                                                            ?.designerMainInfo
+                                                            ?.designerInfo
+                                                            ?.name !=
                                                         ''
-                                                ? columnUsersRecord
+                                                ? columnUsersRecord!
                                                     .designerMainInfo
                                                     .designerInfo
                                                     .name
-                                                : columnUsersRecord.displayName,
+                                                : columnUsersRecord!
+                                                    .displayName,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
@@ -240,14 +352,14 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                             '${FFLocalizations.of(context).getVariableText(
                                               enText: 'Experience:',
                                               arText: 'خبرة:',
-                                            )}${columnUsersRecord.designerMainInfo.designerInfo.experienceInYears.toString()}${FFLocalizations.of(context).getVariableText(
+                                            )}${columnUsersRecord?.designerMainInfo?.designerInfo?.experienceInYears?.toString()}${FFLocalizations.of(context).getVariableText(
                                               enText: 'years',
                                               arText: 'سنين',
                                             )}',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
@@ -263,7 +375,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                   Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      if ((columnUsersRecord.reference !=
+                                      if ((columnUsersRecord?.reference !=
                                               currentUserReference) &&
                                           (loggedIn == true))
                                         Stack(
@@ -275,7 +387,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                             ?.toList() ??
                                                         [])
                                                     .contains(columnUsersRecord
-                                                        .reference) ==
+                                                        ?.reference) ==
                                                 false)
                                               AuthUserStreamWidget(
                                                 builder: (context) =>
@@ -289,7 +401,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                               FieldValue
                                                                   .arrayUnion([
                                                             columnUsersRecord
-                                                                .reference
+                                                                ?.reference
                                                           ]),
                                                         },
                                                       ),
@@ -323,7 +435,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                             .of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
@@ -357,7 +469,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                             ?.toList() ??
                                                         [])
                                                     .contains(columnUsersRecord
-                                                        .reference) ==
+                                                        ?.reference) ==
                                                 true)
                                               Builder(
                                                 builder: (context) =>
@@ -408,8 +520,9 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                                             .getText(
                                                                       'h1hkw04g' /* you want to unfollow this Desi... */,
                                                                     ),
-                                                                    userRef: widget!
-                                                                        .designer!,
+                                                                    userRef:
+                                                                        columnUsersRecord!
+                                                                            .reference,
                                                                     type:
                                                                         'Designer',
                                                                   ),
@@ -450,7 +563,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                               .titleSmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
@@ -508,7 +621,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleLarge
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
@@ -555,7 +668,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -568,7 +681,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 12.0),
                                                 child: Text(
-                                                  columnUsersRecord
+                                                  columnUsersRecord!
                                                       .designerMainInfo
                                                       .designerInfo
                                                       .bio,
@@ -576,7 +689,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -600,7 +713,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -616,10 +729,11 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                   builder: (context) {
                                                     final styleList =
                                                         columnUsersRecord
-                                                            .designerMainInfo
-                                                            .designerInfo
-                                                            .contentCategoryList
-                                                            .toList();
+                                                                ?.designerMainInfo
+                                                                ?.designerInfo
+                                                                ?.contentCategoryList
+                                                                ?.toList() ??
+                                                            [];
 
                                                     return Wrap(
                                                       spacing: 4.0,
@@ -644,13 +758,13 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                             styleList[
                                                                 styleListIndex];
                                                         return Text(
-                                                          '${styleListItem}${styleListIndex != (columnUsersRecord.designerMainInfo.designerInfo.contentCategoryList.length - 1) ? ', ' : '. '}',
+                                                          '${styleListItem}${styleListIndex != (columnUsersRecord!.designerMainInfo.designerInfo.contentCategoryList.length - 1) ? ', ' : '. '}',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
@@ -678,7 +792,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -694,13 +808,13 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   await launchURL(
-                                                      columnUsersRecord
+                                                      columnUsersRecord!
                                                           .designerMainInfo
                                                           .designerInfo
                                                           .portfolioLink);
                                                 },
                                                 child: Text(
-                                                  columnUsersRecord
+                                                  columnUsersRecord!
                                                       .designerMainInfo
                                                       .designerInfo
                                                       .portfolioLink,
@@ -708,7 +822,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -765,7 +879,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
                                               ),
@@ -778,7 +892,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                               ),
                                         )
@@ -786,7 +900,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -832,7 +946,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                           .where(
                                             'product_authorizer.product_designer_ref',
                                             isEqualTo:
-                                                columnUsersRecord.reference,
+                                                columnUsersRecord?.reference,
                                           )
                                           .orderBy('created_at',
                                               descending: true),

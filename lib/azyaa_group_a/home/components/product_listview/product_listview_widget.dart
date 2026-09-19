@@ -303,7 +303,7 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             fontSize: 10.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -337,7 +337,7 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             fontSize: 10.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -395,7 +395,7 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                         ),
                         maxLines: 1,
                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                              fontFamily: 'Cairo',
+                              fontFamily: 'almarai',
                               fontSize: 14.0,
                               letterSpacing: 0.0,
                             ),
@@ -415,7 +415,7 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context).primary,
                                     fontSize: 10.0,
                                     letterSpacing: 0.0,
@@ -428,7 +428,7 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
                                     fontSize: 10.0,
@@ -452,7 +452,7 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
                                     fontSize: 10.0,
@@ -462,7 +462,7 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                           ],
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 10.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -479,7 +479,7 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                             '${widget!.product?.product?.productPrice?.toString()} KD',
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
@@ -492,7 +492,7 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
                                     fontSize: 12.0,

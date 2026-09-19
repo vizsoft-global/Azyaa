@@ -192,7 +192,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -208,7 +208,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                       context)
                                                   .bodyMedium
                                                   .override(
-                                                    fontFamily: 'Cairo',
+                                                    fontFamily: 'almarai',
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
@@ -221,7 +221,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -236,7 +236,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
@@ -322,7 +322,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                   context)
                                               .labelMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
@@ -336,7 +336,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
                                                   .override(
-                                                    fontFamily: 'Cairo',
+                                                    fontFamily: 'almarai',
                                                     color: Color(0xFF575454),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
@@ -392,7 +392,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               letterSpacing: 0.0,
                                             ),
                                         cursorColor:
@@ -549,7 +549,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .info,
@@ -573,7 +573,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -635,7 +635,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .info,
@@ -659,7 +659,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -832,12 +832,11 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                           CreatorsIndividualWidget
                                                               .routeName,
                                                           queryParameters: {
-                                                            'creator':
+                                                            'creatorUid':
                                                                 serializeParam(
                                                               allCreatorListItem
-                                                                  .reference,
-                                                              ParamType
-                                                                  .DocumentReference,
+                                                                  .uid,
+                                                              ParamType.String,
                                                             ),
                                                           }.withoutNulls,
                                                           extra: <String,
@@ -947,7 +946,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                               Text(
                                                                                 allCreatorListItem.displayName,
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Cairo',
+                                                                                      fontFamily: 'almarai',
                                                                                       letterSpacing: 0.0,
                                                                                       fontWeight: FontWeight.w600,
                                                                                     ),
@@ -960,7 +959,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                                     replacement: '…',
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Cairo',
+                                                                                        fontFamily: 'almarai',
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                         fontSize: 10.0,
                                                                                         letterSpacing: 0.0,
@@ -997,7 +996,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                                     'wts05ndc' /* Best Rated */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Cairo',
+                                                                                        fontFamily: 'almarai',
                                                                                         color: FlutterFlowTheme.of(context).info,
                                                                                         fontSize: 10.0,
                                                                                         letterSpacing: 0.0,
@@ -1054,7 +1053,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                                     ),
                                                                                   ),
                                                                                   child: ClipRRect(
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(4.0),
                                                                                     child: Image.network(
                                                                                       portfolioImageListItem,
                                                                                       width: 40.0,
@@ -1150,7 +1149,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -1158,7 +1157,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                           FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.normal,
@@ -1244,7 +1243,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .info,
@@ -1276,7 +1275,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -1389,7 +1388,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .info,
@@ -1421,7 +1420,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -1542,12 +1541,12 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                         .routeName,
                                                                     queryParameters:
                                                                         {
-                                                                      'creator':
+                                                                      'creatorUid':
                                                                           serializeParam(
                                                                         allCreatorListItem
-                                                                            .reference,
+                                                                            .uid,
                                                                         ParamType
-                                                                            .DocumentReference,
+                                                                            .String,
                                                                       ),
                                                                     }.withoutNulls,
                                                                     extra: <String,
@@ -1641,7 +1640,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                                         Text(
                                                                                           allCreatorListItem.displayName,
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Cairo',
+                                                                                                fontFamily: 'almarai',
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w600,
                                                                                               ),
@@ -1654,7 +1653,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                                               replacement: '…',
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'Cairo',
+                                                                                                  fontFamily: 'almarai',
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                                   fontSize: 10.0,
                                                                                                   letterSpacing: 0.0,
@@ -1685,7 +1684,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                                               'sjbxzl97' /* Best Rated */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'Cairo',
+                                                                                                  fontFamily: 'almarai',
                                                                                                   color: FlutterFlowTheme.of(context).info,
                                                                                                   fontSize: 10.0,
                                                                                                   letterSpacing: 0.0,

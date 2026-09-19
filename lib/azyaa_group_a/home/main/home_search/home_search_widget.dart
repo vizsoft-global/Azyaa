@@ -113,7 +113,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -201,7 +201,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         letterSpacing: 0.0,
@@ -212,7 +212,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         fontSize: 14.0,
                                         letterSpacing: 0.0,
                                       ),
@@ -257,7 +257,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       letterSpacing: 0.0,
                                     ),
                                 cursorColor:
@@ -397,7 +397,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -418,7 +418,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -428,7 +428,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -600,7 +600,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -616,7 +616,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                         ),
                                               )
@@ -624,7 +624,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -762,7 +762,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,
@@ -777,7 +777,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         letterSpacing: 0.0,
                                                       ),
                                             )
@@ -785,7 +785,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                               ),
                                         ),

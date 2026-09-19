@@ -1093,6 +1093,90 @@ class VTOStatusCall {
 
 /// End VirtualTryOn Group Code
 
+/// Start Duo Deeplink Group Code
+
+class DuoDeeplinkGroup {
+  static String getBaseUrl({
+    String? apiKey = 'dub_YJQ2QiV06sNRaFUtSjOl5TME',
+  }) =>
+      'https://proxy.vizsoft.in/https://api.dub.co/';
+  static Map<String, String> headers = {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer [apiKey]',
+    'x-requested-with': 'https://proxy.vizsoft.in',
+    'origin': 'https://proxy.vizsoft.in',
+  };
+  static CreateLinkCall createLinkCall = CreateLinkCall();
+}
+
+class CreateLinkCall {
+  Future<ApiCallResponse> call({
+    String? url = '',
+    String? domain = '',
+    String? programID = '',
+    String? title = '',
+    String? description = '',
+    String? image = '',
+    String? android = '',
+    String? ios = '',
+    String? externalID = '',
+    String? apiKey = 'dub_YJQ2QiV06sNRaFUtSjOl5TME',
+  }) async {
+    final baseUrl = DuoDeeplinkGroup.getBaseUrl(
+      apiKey: apiKey,
+    );
+
+    final ffApiRequestBody = '''
+{
+  "url": "${url}",
+  "domain": "${domain}",
+  "key": "",
+  "trackConversion": false,
+  "externalId": "${externalID}",
+  "archived": false,
+  "proxy": false,
+  "title": "${title}",
+  "description": "${description}",
+  "image": "${image}",
+  "rewrite": false,
+  "ios": "${ios}",
+  "android": "${android}",
+  "doIndex": false
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Create Link',
+      apiUrl: '${baseUrl}links',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${apiKey}',
+        'x-requested-with': 'https://proxy.vizsoft.in',
+        'origin': 'https://proxy.vizsoft.in',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  String? shortLink(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.shortLink''',
+      ));
+  String? qrcode(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.qrCode''',
+      ));
+}
+
+/// End Duo Deeplink Group Code
+
 class WaterMarkImageCall {
   static Future<ApiCallResponse> call() async {
     return ApiManager.instance.makeApiCall(

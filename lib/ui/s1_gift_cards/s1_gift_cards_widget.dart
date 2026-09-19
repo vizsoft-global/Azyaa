@@ -101,7 +101,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                               style: FlutterFlowTheme.of(context)
                                   .titleLarge
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 18.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
@@ -172,7 +172,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                               labelStyle: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
@@ -180,7 +180,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                               unselectedLabelStyle: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
@@ -289,7 +289,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .bodySmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -305,7 +305,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 fontSize: 12.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -319,7 +319,8 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .of(context)
                                                           .bodySmall
                                                           .override(
-                                                            fontFamily: 'Cairo',
+                                                            fontFamily:
+                                                                'almarai',
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
@@ -334,7 +335,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                             context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -408,7 +409,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .bodySmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -424,7 +425,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 fontSize: 12.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -438,7 +439,8 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .of(context)
                                                           .bodySmall
                                                           .override(
-                                                            fontFamily: 'Cairo',
+                                                            fontFamily:
+                                                                'almarai',
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
@@ -453,7 +455,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                             context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -527,7 +529,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .bodySmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -543,7 +545,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 fontSize: 12.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -557,7 +559,8 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .of(context)
                                                           .bodySmall
                                                           .override(
-                                                            fontFamily: 'Cairo',
+                                                            fontFamily:
+                                                                'almarai',
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
@@ -572,7 +575,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                             context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -646,7 +649,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .bodySmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -662,7 +665,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 fontSize: 12.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -676,7 +679,8 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .of(context)
                                                           .bodySmall
                                                           .override(
-                                                            fontFamily: 'Cairo',
+                                                            fontFamily:
+                                                                'almarai',
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
@@ -691,7 +695,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                             context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -765,7 +769,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .bodySmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -781,7 +785,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 fontSize: 12.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -795,7 +799,8 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .of(context)
                                                           .bodySmall
                                                           .override(
-                                                            fontFamily: 'Cairo',
+                                                            fontFamily:
+                                                                'almarai',
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
@@ -810,7 +815,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                             context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -884,7 +889,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .bodySmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -900,7 +905,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 fontSize: 12.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -914,7 +919,8 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .of(context)
                                                           .bodySmall
                                                           .override(
-                                                            fontFamily: 'Cairo',
+                                                            fontFamily:
+                                                                'almarai',
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
@@ -929,7 +935,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                             context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -993,7 +999,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .info,
@@ -1018,7 +1024,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .info,
@@ -1075,7 +1081,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .titleSmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
@@ -1119,7 +1125,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.normal,
@@ -1135,7 +1141,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -1145,7 +1151,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -1189,7 +1195,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                             .bodyMedium
                                                             .override(
                                                               fontFamily:
-                                                                  'Cairo',
+                                                                  'almarai',
                                                               fontSize: 14.0,
                                                               letterSpacing:
                                                                   0.0,
@@ -1242,7 +1248,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                             .bodyMedium
                                                             .override(
                                                               fontFamily:
-                                                                  'Cairo',
+                                                                  'almarai',
                                                               fontSize: 14.0,
                                                               letterSpacing:
                                                                   0.0,
@@ -1295,7 +1301,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                             .bodyMedium
                                                             .override(
                                                               fontFamily:
-                                                                  'Cairo',
+                                                                  'almarai',
                                                               fontSize: 14.0,
                                                               letterSpacing:
                                                                   0.0,
@@ -1357,7 +1363,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                             .bodyMedium
                                                             .override(
                                                               fontFamily:
-                                                                  'Cairo',
+                                                                  'almarai',
                                                               fontSize: 14.0,
                                                               letterSpacing:
                                                                   0.0,
@@ -1384,7 +1390,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -1405,7 +1411,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -1424,7 +1430,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1448,7 +1454,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -1469,7 +1475,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -1488,7 +1494,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1520,7 +1526,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .success,
@@ -1546,7 +1552,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .success,
@@ -1564,7 +1570,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -1612,7 +1618,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                             .bodyMedium
                                                             .override(
                                                               fontFamily:
-                                                                  'Cairo',
+                                                                  'almarai',
                                                               fontSize: 14.0,
                                                               letterSpacing:
                                                                   0.0,
@@ -1639,7 +1645,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -1660,7 +1666,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -1679,7 +1685,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1703,7 +1709,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -1724,7 +1730,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -1743,7 +1749,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1775,7 +1781,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .error,
@@ -1801,7 +1807,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .error,
@@ -1819,7 +1825,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -1867,7 +1873,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context).info,
                                     letterSpacing: 0.0,
                                   ),

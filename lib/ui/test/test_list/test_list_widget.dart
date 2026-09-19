@@ -101,7 +101,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color: Colors.white,
                                         fontSize: 16.0,
                                         letterSpacing: 0.0,
@@ -121,7 +121,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   color: Colors.white,
                                   fontSize: 22.0,
                                   letterSpacing: 0.0,
@@ -154,7 +154,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -326,7 +326,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 13.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -349,7 +349,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -487,7 +487,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 13.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -510,7 +510,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -648,7 +648,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 13.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -671,7 +671,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -809,7 +809,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 13.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -832,7 +832,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -970,7 +970,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 13.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -993,7 +993,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -1164,7 +1164,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 13.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -1187,7 +1187,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -1325,7 +1325,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 13.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -1348,7 +1348,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -1486,7 +1486,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 13.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -1509,7 +1509,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -1647,7 +1647,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 13.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -1670,7 +1670,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -1808,7 +1808,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 13.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -1831,7 +1831,7 @@ class _TestListWidgetState extends State<TestListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                       ),

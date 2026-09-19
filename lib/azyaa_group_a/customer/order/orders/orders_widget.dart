@@ -165,7 +165,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
@@ -174,7 +174,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                                           FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.normal,
@@ -383,7 +383,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).info,
                                                                             fontSize:
@@ -414,7 +414,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryText,
                                                                             fontSize:
@@ -773,7 +773,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).info,
                                                                             fontSize:
@@ -804,7 +804,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryText,
                                                                             fontSize:
@@ -1159,7 +1159,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).info,
                                                                             fontSize:
@@ -1190,7 +1190,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryText,
                                                                             fontSize:

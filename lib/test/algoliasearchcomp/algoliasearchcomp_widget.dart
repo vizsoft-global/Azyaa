@@ -107,7 +107,7 @@ class _AlgoliasearchcompWidgetState extends State<AlgoliasearchcompWidget> {
                       ),
                       maxLines: 1,
                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                            fontFamily: 'Cairo',
+                            fontFamily: 'almarai',
                             letterSpacing: 0.0,
                           ),
                     ),
@@ -117,7 +117,7 @@ class _AlgoliasearchcompWidgetState extends State<AlgoliasearchcompWidget> {
                     child: Text(
                       widget!.searchlist!.productInfo.shortDescription,
                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                            fontFamily: 'Cairo',
+                            fontFamily: 'almarai',
                             letterSpacing: 0.0,
                           ),
                     ),
@@ -127,7 +127,7 @@ class _AlgoliasearchcompWidgetState extends State<AlgoliasearchcompWidget> {
                     child: Text(
                       '${widget!.searchlist?.product?.productPrice?.toString()} KD',
                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                            fontFamily: 'Cairo',
+                            fontFamily: 'almarai',
                             fontSize: 11.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,

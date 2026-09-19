@@ -105,7 +105,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                               style: FlutterFlowTheme.of(context)
                                   .titleLarge
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -168,7 +168,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
@@ -179,7 +179,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                 ),
@@ -221,7 +221,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                           maxLines: null,
@@ -250,7 +250,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                               labelStyle: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
@@ -258,7 +258,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                               unselectedLabelStyle: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
@@ -445,7 +445,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                fontFamily: 'Cairo',
+                                                                                fontFamily: 'almarai',
                                                                                 fontSize: 14.0,
                                                                                 letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
@@ -470,7 +470,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                fontFamily: 'Cairo',
+                                                                                fontFamily: 'almarai',
                                                                                 color: FlutterFlowTheme.of(context).secondaryText,
                                                                                 fontSize: 10.0,
                                                                                 letterSpacing: 0.0,
@@ -611,7 +611,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           fontSize:
                                                                               14.0,
                                                                           letterSpacing:
@@ -652,7 +652,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                               'llt8mgcj' /* 12:00 PM */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                   fontSize: 10.0,
                                                                                   letterSpacing: 0.0,
@@ -678,7 +678,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                               'nocr2xz4' /* 7th Nov, 2024 */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                   fontSize: 10.0,
                                                                                   letterSpacing: 0.0,
@@ -726,7 +726,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                       .titleSmall
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Cairo',
+                                                                            'almarai',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .info,
                                                                         fontSize:
@@ -859,7 +859,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           fontSize:
                                                                               14.0,
                                                                           letterSpacing:
@@ -900,7 +900,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                               'wultpjbv' /* 12:00 PM */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                   fontSize: 10.0,
                                                                                   letterSpacing: 0.0,
@@ -926,7 +926,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                               '90qur1re' /* 7th Nov, 2024 */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                   fontSize: 10.0,
                                                                                   letterSpacing: 0.0,
@@ -974,7 +974,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                       .titleSmall
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Cairo',
+                                                                            'almarai',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .info,
                                                                         fontSize:
@@ -1107,7 +1107,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           fontSize:
                                                                               14.0,
                                                                           letterSpacing:
@@ -1148,7 +1148,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                               'uo60uicv' /* 12:00 PM */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                   fontSize: 10.0,
                                                                                   letterSpacing: 0.0,
@@ -1174,7 +1174,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                               'ggnwow05' /* 7th Nov, 2024 */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                   fontSize: 10.0,
                                                                                   letterSpacing: 0.0,
@@ -1222,7 +1222,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                       .titleSmall
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Cairo',
+                                                                            'almarai',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .info,
                                                                         fontSize:
@@ -1355,7 +1355,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           fontSize:
                                                                               14.0,
                                                                           letterSpacing:
@@ -1396,7 +1396,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                               '8tekttr9' /* 12:00 PM */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                   fontSize: 10.0,
                                                                                   letterSpacing: 0.0,
@@ -1422,7 +1422,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                               'kyiy9iog' /* 7th Nov, 2024 */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                   fontSize: 10.0,
                                                                                   letterSpacing: 0.0,
@@ -1470,7 +1470,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                       .titleSmall
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Cairo',
+                                                                            'almarai',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .info,
                                                                         fontSize:

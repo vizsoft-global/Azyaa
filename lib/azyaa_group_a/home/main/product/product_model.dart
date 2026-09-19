@@ -17,6 +17,7 @@ import '/azyaa_group_a/payment/default_cart_button/default_cart_button_widget.da
 import '/azyaa_group_b/components/unfollow_confirm_popup/unfollow_confirm_popup_widget.dart';
 import '/azyaa_group_b/creator_space/creator_space/c1_share_promotion/c1_share_promotion_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
@@ -26,8 +27,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/ui/reviewgrid/reviewgrid_widget.dart';
 import 'dart:async';
+import 'dart:convert';
 import 'dart:ui';
-import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
@@ -70,8 +71,10 @@ class ProductModel extends FlutterFlowModel<ProductWidget> {
 
   // Model for User-Wishlist component.
   late UserWishlistModel userWishlistModel;
-  // Stores action output result for [Custom Action - generateLinkNew] action in IconButton widget.
-  String? newlink;
+  // Stores action output result for [Firestore Query - Query a collection] action in shareicon widget.
+  IdMapRecord? idmapDoc;
+  // Stores action output result for [Backend Call - API (Create Link)] action in shareicon widget.
+  ApiCallResponse? dubshortlink;
   // State field(s) for CountController widget.
   int? countControllerValue;
   // Model for DefaultCartButton component.

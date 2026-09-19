@@ -136,6 +136,11 @@ class IdMapRecord extends FirestoreRecord {
   int get notificationId => _notificationId ?? 0;
   bool hasNotificationId() => _notificationId != null;
 
+  // "share_link_id" field.
+  int? _shareLinkId;
+  int get shareLinkId => _shareLinkId ?? 0;
+  bool hasShareLinkId() => _shareLinkId != null;
+
   void _initializeFields() {
     _type = snapshotData['type'] as String?;
     _userId = castToType<int>(snapshotData['user_id']);
@@ -161,6 +166,7 @@ class IdMapRecord extends FirestoreRecord {
     _vtoId = castToType<int>(snapshotData['vto_id']);
     _saleHistoryId = castToType<int>(snapshotData['sale_history_id']);
     _notificationId = castToType<int>(snapshotData['notification_id']);
+    _shareLinkId = castToType<int>(snapshotData['share_link_id']);
   }
 
   static CollectionReference get collection =>
@@ -221,6 +227,7 @@ Map<String, dynamic> createIdMapRecordData({
   int? vtoId,
   int? saleHistoryId,
   int? notificationId,
+  int? shareLinkId,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -248,6 +255,7 @@ Map<String, dynamic> createIdMapRecordData({
       'vto_id': vtoId,
       'sale_history_id': saleHistoryId,
       'notification_id': notificationId,
+      'share_link_id': shareLinkId,
     }.withoutNulls,
   );
 
@@ -282,7 +290,8 @@ class IdMapRecordDocumentEquality implements Equality<IdMapRecord> {
         e1?.returnRequestId == e2?.returnRequestId &&
         e1?.vtoId == e2?.vtoId &&
         e1?.saleHistoryId == e2?.saleHistoryId &&
-        e1?.notificationId == e2?.notificationId;
+        e1?.notificationId == e2?.notificationId &&
+        e1?.shareLinkId == e2?.shareLinkId;
   }
 
   @override
@@ -310,7 +319,8 @@ class IdMapRecordDocumentEquality implements Equality<IdMapRecord> {
         e?.returnRequestId,
         e?.vtoId,
         e?.saleHistoryId,
-        e?.notificationId
+        e?.notificationId,
+        e?.shareLinkId
       ]);
 
   @override

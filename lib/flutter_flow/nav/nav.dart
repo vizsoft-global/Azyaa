@@ -196,11 +196,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
         name: DesignerWidget.routeName,
         path: DesignerWidget.routePath,
         builder: (context, params) => DesignerWidget(
-          designer: params.getParam(
-            'designer',
-            ParamType.DocumentReference,
-            isList: false,
-            collectionNamePath: ['users'],
+          designerUid: params.getParam(
+            'designerUid',
+            ParamType.String,
           ),
         ),
       ),
@@ -237,11 +235,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
         name: CreatorsIndividualWidget.routeName,
         path: CreatorsIndividualWidget.routePath,
         builder: (context, params) => CreatorsIndividualWidget(
-          creator: params.getParam(
-            'creator',
-            ParamType.DocumentReference,
-            isList: false,
-            collectionNamePath: ['users'],
+          creatorUid: params.getParam(
+            'creatorUid',
+            ParamType.String,
           ),
         ),
       ),
@@ -560,11 +556,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
             'promo',
             ParamType.String,
           ),
-          creator: params.getParam(
-            'creator',
-            ParamType.DocumentReference,
-            isList: false,
-            collectionNamePath: ['users'],
+          creatorUid: params.getParam(
+            'creatorUid',
+            ParamType.String,
           ),
         ),
       ),

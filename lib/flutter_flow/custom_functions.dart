@@ -1615,3 +1615,7 @@ List<String> getGccCountriesListPlusIndia() {
 
   return countries;
 }
+
+DocumentReference getUserReference(String uid) {
+  return FirebaseFirestore.instance.collection('users').doc(uid);
+}

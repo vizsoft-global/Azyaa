@@ -6,12 +6,14 @@ import '/azyaa_group_a/home/components/blank_loading/blank_loading_widget.dart';
 import '/azyaa_group_a/home/components/loading_animation/loading_animation_widget.dart';
 import '/azyaa_group_a/home/components/product_grid/product_grid_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:convert';
 import 'dart:ui';
-import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
@@ -20,6 +22,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'creators_individual_promo_model.dart';
 export 'creators_individual_promo_model.dart';
 
@@ -27,11 +31,11 @@ class CreatorsIndividualPromoWidget extends StatefulWidget {
   const CreatorsIndividualPromoWidget({
     super.key,
     required this.promo,
-    required this.creator,
+    required this.creatorUid,
   });
 
   final String? promo;
-  final DocumentReference? creator;
+  final String? creatorUid;
 
   static String routeName = 'Creators-IndividualPromo';
   static String routePath = '/azyaa-creator-promo';
@@ -82,24 +86,137 @@ class _CreatorsIndividualPromoWidgetState
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
-                title: Column(
+                title: Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    wrapWithModel(
-                      model: _model.universalAppBarModel,
-                      updateCallback: () => safeSetState(() {}),
-                      updateOnChange: true,
-                      child: UniversalAppBarWidget(
-                        backButtonStatus: true,
-                        title: FFLocalizations.of(context).getText(
-                          '7l8juwqq' /* Creators Hub  */,
+                    Expanded(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          wrapWithModel(
+                            model: _model.universalAppBarModel,
+                            updateCallback: () => safeSetState(() {}),
+                            updateOnChange: true,
+                            child: UniversalAppBarWidget(
+                              backButtonStatus: true,
+                              title: FFLocalizations.of(context).getText(
+                                '7l8juwqq' /* Creators Hub  */,
+                              ),
+                              navigationIconStatus: true,
+                              searchIconStatus: false,
+                              wishlistIconStatus: true,
+                              navigationFrom: 'default',
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Builder(
+                      builder: (context) => FlutterFlowIconButton(
+                        borderColor: FlutterFlowTheme.of(context).border,
+                        borderRadius: 100.0,
+                        buttonSize: 42.0,
+                        fillColor:
+                            FlutterFlowTheme.of(context).primaryBackground,
+                        icon: Icon(
+                          FFIcons.kshare,
+                          color: FlutterFlowTheme.of(context).primary,
+                          size: 18.0,
                         ),
-                        navigationIconStatus: true,
-                        searchIconStatus: false,
-                        wishlistIconStatus: true,
-                        navigationFrom: 'default',
+                        showLoadingIndicator: true,
+                        onPressed: () async {
+                          _model.idmapDoc = await queryIdMapRecordOnce(
+                            queryBuilder: (idMapRecord) => idMapRecord.where(
+                              'type',
+                              isEqualTo: 'Main',
+                            ),
+                            singleRecord: true,
+                          ).then((s) => s.firstOrNull);
+                          _model.creatorDoc = await queryUsersRecordOnce(
+                            queryBuilder: (usersRecord) => usersRecord.where(
+                              'uid',
+                              isEqualTo: widget!.creatorUid,
+                            ),
+                            singleRecord: true,
+                          ).then((s) => s.firstOrNull);
+                          _model.dubshortlink =
+                              await DuoDeeplinkGroup.createLinkCall.call(
+                            url: 'https://azyaa.ai',
+                            title: valueOrDefault<String>(
+                              _model.creatorDoc?.creatorMainInfo
+                                  ?.creatorPromotions
+                                  ?.where((e) => e.promotionId == widget!.promo)
+                                  .toList()
+                                  ?.firstOrNull
+                                  ?.promotionCaption,
+                              '-',
+                            ),
+                            description: valueOrDefault<String>(
+                              _model.creatorDoc?.creatorMainInfo
+                                  ?.creatorPromotions
+                                  ?.where((e) => e.promotionId == widget!.promo)
+                                  .toList()
+                                  ?.firstOrNull
+                                  ?.promotionDescription,
+                              '-',
+                            ),
+                            image: _model
+                                .creatorDoc?.creatorMainInfo?.creatorPromotions
+                                ?.where((e) => e.promotionId == widget!.promo)
+                                .toList()
+                                ?.firstOrNull
+                                ?.promotionImages
+                                ?.firstOrNull,
+                            ios:
+                                'https://azyaa.ai/azyaa-creator-promo?promo=${widget!.promo}&creatorUid=${widget!.creatorUid}',
+                            domain: 'azyaa.link',
+                            externalID:
+                                '${currentUserUid}-PR${_model.idmapDoc?.shareLinkId?.toString()}',
+                            android:
+                                'https://azyaa.ai/azyaa-creator-promo?promo=${widget!.promo}&creatorUid=${widget!.creatorUid}',
+                          );
+
+                          if ((_model.dubshortlink?.succeeded ?? true)) {
+                            await Share.share(
+                              DuoDeeplinkGroup.createLinkCall.shortLink(
+                                (_model.dubshortlink?.jsonBody ?? ''),
+                              )!,
+                              sharePositionOrigin:
+                                  getWidgetBoundingBox(context),
+                            );
+
+                            await _model.idmapDoc!.reference.update({
+                              ...mapToFirestore(
+                                {
+                                  'share_link_id': FieldValue.increment(1),
+                                },
+                              ),
+                            });
+                          } else {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return WebViewAware(
+                                  child: AlertDialog(
+                                    content:
+                                        Text('Server busy try after sometime.'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
+                            );
+                          }
+
+                          safeSetState(() {});
+                        },
                       ),
                     ),
                   ],
@@ -124,8 +241,14 @@ class _CreatorsIndividualPromoWidgetState
                     updateCallback: () => safeSetState(() {}),
                     child: AppUpdateCheckerWidget(),
                   ),
-                  StreamBuilder<UsersRecord>(
-                    stream: UsersRecord.getDocument(widget!.creator!),
+                  StreamBuilder<List<UsersRecord>>(
+                    stream: queryUsersRecord(
+                      queryBuilder: (usersRecord) => usersRecord.where(
+                        'uid',
+                        isEqualTo: widget!.creatorUid,
+                      ),
+                      singleRecord: true,
+                    ),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
                       if (!snapshot.hasData) {
@@ -135,8 +258,16 @@ class _CreatorsIndividualPromoWidgetState
                           child: LoadingAnimationWidget(),
                         );
                       }
-
-                      final creatorDocumentUsersRecord = snapshot.data!;
+                      List<UsersRecord> creatorDocumentUsersRecordList =
+                          snapshot.data!;
+                      // Return an empty Container when the item does not exist.
+                      if (snapshot.data!.isEmpty) {
+                        return Container();
+                      }
+                      final creatorDocumentUsersRecord =
+                          creatorDocumentUsersRecordList.isNotEmpty
+                              ? creatorDocumentUsersRecordList.first
+                              : null;
 
                       return SingleChildScrollView(
                         child: Column(
@@ -168,28 +299,28 @@ class _CreatorsIndividualPromoWidgetState
                                       child: Image.network(
                                         () {
                                           if (creatorDocumentUsersRecord
-                                                      .creatorMainInfo
-                                                      .creatorPromotions
-                                                      .where((e) =>
+                                                      ?.creatorMainInfo
+                                                      ?.creatorPromotions
+                                                      ?.where((e) =>
                                                           e.promotionId ==
                                                           widget!.promo)
                                                       .toList()
-                                                      .firstOrNull
+                                                      ?.firstOrNull
                                                       ?.promotionInfo
                                                       ?.featureImage !=
                                                   null &&
                                               creatorDocumentUsersRecord
-                                                      .creatorMainInfo
-                                                      .creatorPromotions
-                                                      .where((e) =>
+                                                      ?.creatorMainInfo
+                                                      ?.creatorPromotions
+                                                      ?.where((e) =>
                                                           e.promotionId ==
                                                           widget!.promo)
                                                       .toList()
-                                                      .firstOrNull
+                                                      ?.firstOrNull
                                                       ?.promotionInfo
                                                       ?.featureImage !=
                                                   '') {
-                                            return creatorDocumentUsersRecord
+                                            return creatorDocumentUsersRecord!
                                                 .creatorMainInfo
                                                 .creatorPromotions
                                                 .where((e) =>
@@ -200,16 +331,16 @@ class _CreatorsIndividualPromoWidgetState
                                                 .promotionInfo
                                                 .featureImage;
                                           } else if (creatorDocumentUsersRecord
-                                                      .creatorMainInfo
-                                                      .creatorInfo
-                                                      .brandPhoto !=
+                                                      ?.creatorMainInfo
+                                                      ?.creatorInfo
+                                                      ?.brandPhoto !=
                                                   null &&
                                               creatorDocumentUsersRecord
-                                                      .creatorMainInfo
-                                                      .creatorInfo
-                                                      .brandPhoto !=
+                                                      ?.creatorMainInfo
+                                                      ?.creatorInfo
+                                                      ?.brandPhoto !=
                                                   '') {
-                                            return creatorDocumentUsersRecord
+                                            return creatorDocumentUsersRecord!
                                                 .creatorMainInfo
                                                 .creatorInfo
                                                 .brandPhoto;
@@ -244,7 +375,7 @@ class _CreatorsIndividualPromoWidgetState
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
                                               Text(
-                                                creatorDocumentUsersRecord
+                                                creatorDocumentUsersRecord!
                                                     .creatorMainInfo
                                                     .creatorInfo
                                                     .name,
@@ -252,7 +383,7 @@ class _CreatorsIndividualPromoWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
@@ -317,7 +448,7 @@ class _CreatorsIndividualPromoWidgetState
                                                           context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -326,7 +457,7 @@ class _CreatorsIndividualPromoWidgetState
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      creatorDocumentUsersRecord
+                                                      creatorDocumentUsersRecord!
                                                           .creatorMainInfo
                                                           .creatorPromotions
                                                           .where((e) =>
@@ -339,7 +470,7 @@ class _CreatorsIndividualPromoWidgetState
                                                           context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -351,7 +482,7 @@ class _CreatorsIndividualPromoWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -371,7 +502,7 @@ class _CreatorsIndividualPromoWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
@@ -386,7 +517,7 @@ class _CreatorsIndividualPromoWidgetState
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 4.0),
                                           child: Text(
-                                            creatorDocumentUsersRecord
+                                            creatorDocumentUsersRecord!
                                                 .creatorMainInfo
                                                 .creatorPromotions
                                                 .where((e) =>
@@ -398,7 +529,7 @@ class _CreatorsIndividualPromoWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
@@ -419,7 +550,7 @@ class _CreatorsIndividualPromoWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
@@ -434,7 +565,7 @@ class _CreatorsIndividualPromoWidgetState
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 4.0),
                                           child: Text(
-                                            creatorDocumentUsersRecord
+                                            creatorDocumentUsersRecord!
                                                 .creatorMainInfo
                                                 .creatorPromotions
                                                 .where((e) =>
@@ -446,7 +577,7 @@ class _CreatorsIndividualPromoWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
@@ -472,7 +603,7 @@ class _CreatorsIndividualPromoWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
@@ -486,12 +617,13 @@ class _CreatorsIndividualPromoWidgetState
                                 builder: (context) {
                                   final productLists =
                                       creatorDocumentUsersRecord
-                                              .creatorMainInfo.creatorPromotions
-                                              .where((e) =>
+                                              ?.creatorMainInfo
+                                              ?.creatorPromotions
+                                              ?.where((e) =>
                                                   widget!.promo ==
                                                   e.promotionId)
                                               .toList()
-                                              .firstOrNull
+                                              ?.firstOrNull
                                               ?.productDocReference
                                               ?.toList() ??
                                           [];
@@ -598,446 +730,6 @@ class _CreatorsIndividualPromoWidgetState
                                       singleRecord: true,
                                     ).then((s) => s.firstOrNull);
                                     _shouldSetState = true;
-                                    while (FFAppState()
-                                            .UserDataFlow
-                                            .userSelectedProductCount >
-                                        0) {
-                                      _model.selectedProductResult =
-                                          await ProductsRecord.getDocumentOnce(
-                                              FFAppState()
-                                                  .UserDataFlow
-                                                  .userSelectedProductList
-                                                  .elementAtOrNull(FFAppState()
-                                                          .UserDataFlow
-                                                          .userSelectedProductCount -
-                                                      1)!);
-                                      _shouldSetState = true;
-                                      _model.selectedProductInventoryResult =
-                                          await queryInventoryRecordOnce(
-                                        queryBuilder: (inventoryRecord) =>
-                                            inventoryRecord.where(
-                                          'inventory_id',
-                                          isEqualTo: _model
-                                              .selectedProductResult
-                                              ?.product
-                                              ?.inventoryId,
-                                        ),
-                                        singleRecord: true,
-                                      ).then((s) => s.firstOrNull);
-                                      _shouldSetState = true;
-                                      if (_model.selectedProductInventoryResult!
-                                              .stock >
-                                          0) {
-                                        FFAppState().updateUserDataFlowStruct(
-                                          (e) => e
-                                            ..userCartCount =
-                                                currentUserDocument?.userCart
-                                                    ?.cartItems?.length
-                                            ..userCartItemList =
-                                                currentUserDocument!
-                                                    .userCart.cartItems
-                                                    .toList()
-                                            ..userSelectedProductFoundStatus =
-                                                'notFound',
-                                        );
-                                        while (FFAppState()
-                                                .UserDataFlow
-                                                .userCartCount >
-                                            0) {
-                                          if (FFAppState()
-                                                  .UserDataFlow
-                                                  .userCartItemList
-                                                  .elementAtOrNull(FFAppState()
-                                                          .UserDataFlow
-                                                          .userCartCount -
-                                                      1)
-                                                  ?.productId ==
-                                              _model.selectedProductResult
-                                                  ?.productId) {
-                                            if ((currentUserDocument?.userBody
-                                                            ?.toList() ??
-                                                        [])
-                                                    .where((e) =>
-                                                        e.isDefault == true)
-                                                    .toList()
-                                                    .length >
-                                                0) {
-                                              FFAppState()
-                                                  .updateUserDataFlowStruct(
-                                                (e) => e
-                                                  ..updateUserCartItemList(
-                                                    (e) => e[FFAppState()
-                                                            .UserDataFlow
-                                                            .userCartCount -
-                                                        1]
-                                                      ..productId = _model
-                                                          .selectedProductResult
-                                                          ?.productId
-                                                      ..productType = 'product'
-                                                      ..quantity = 1
-                                                      ..productInfo = _model
-                                                          .selectedProductResult
-                                                          ?.productInfo
-                                                      ..price = _model
-                                                          .selectedProductResult
-                                                          ?.product
-                                                          ?.productPrice
-                                                      ..totalPrice = _model
-                                                          .selectedProductResult
-                                                          ?.product
-                                                          ?.productPrice
-                                                      ..productDesignerRef = _model
-                                                          .selectedProductResult
-                                                          ?.productAuthorizer
-                                                          ?.productDesignerRef
-                                                      ..creatorRef =
-                                                          widget!.creator
-                                                      ..productDesignerId = _model
-                                                          .selectedProductResult
-                                                          ?.productAuthorizer
-                                                          ?.productDesignerId
-                                                      ..creatorId =
-                                                          creatorDocumentUsersRecord
-                                                              .uid
-                                                      ..productMainType = _model
-                                                          .selectedProductResult
-                                                          ?.product
-                                                          ?.productType
-                                                      ..productUserBodyInfo =
-                                                          (currentUserDocument
-                                                                      ?.userBody
-                                                                      ?.toList() ??
-                                                                  [])
-                                                              .where((e) =>
-                                                                  e.isDefault ==
-                                                                  true)
-                                                              .toList()
-                                                              .firstOrNull,
-                                                  )
-                                                  ..userSelectedProductFoundStatus =
-                                                      'Found',
-                                              );
-                                            } else {
-                                              FFAppState()
-                                                  .updateUserDataFlowStruct(
-                                                (e) => e
-                                                  ..updateUserCartItemList(
-                                                    (e) => e[FFAppState()
-                                                            .UserDataFlow
-                                                            .userCartCount -
-                                                        1]
-                                                      ..productId = _model
-                                                          .selectedProductResult
-                                                          ?.productId
-                                                      ..productType = 'product'
-                                                      ..quantity = 1
-                                                      ..productInfo = _model
-                                                          .selectedProductResult
-                                                          ?.productInfo
-                                                      ..price = _model
-                                                          .selectedProductResult
-                                                          ?.product
-                                                          ?.productPrice
-                                                      ..totalPrice = _model
-                                                          .selectedProductResult
-                                                          ?.product
-                                                          ?.productPrice
-                                                      ..productDesignerRef = _model
-                                                          .selectedProductResult
-                                                          ?.productAuthorizer
-                                                          ?.productDesignerRef
-                                                      ..creatorRef =
-                                                          widget!.creator
-                                                      ..productDesignerId = _model
-                                                          .selectedProductResult
-                                                          ?.productAuthorizer
-                                                          ?.productDesignerId
-                                                      ..creatorId =
-                                                          creatorDocumentUsersRecord
-                                                              .uid
-                                                      ..productMainType = _model
-                                                          .selectedProductResult
-                                                          ?.product
-                                                          ?.productType,
-                                                  )
-                                                  ..userSelectedProductFoundStatus =
-                                                      'Found',
-                                              );
-                                            }
-
-                                            await currentUserReference!
-                                                .update(createUsersRecordData(
-                                              userCart: createUserCartStruct(
-                                                updatedAt: getCurrentTimestamp,
-                                                subtotal: functions
-                                                    .newCartTotal(FFAppState()
-                                                        .UserDataFlow
-                                                        .userCartItemList
-                                                        .map(
-                                                            (e) => e.totalPrice)
-                                                        .toList()),
-                                                total: functions.newCartTotal(
-                                                    FFAppState()
-                                                        .UserDataFlow
-                                                        .userCartItemList
-                                                        .map(
-                                                            (e) => e.totalPrice)
-                                                        .toList()),
-                                                fieldValues: {
-                                                  'cart_items':
-                                                      getUserCartItemsListFirestoreData(
-                                                    FFAppState()
-                                                        .UserDataFlow
-                                                        .userCartItemList,
-                                                  ),
-                                                },
-                                                clearUnsetFields: false,
-                                              ),
-                                            ));
-                                            break;
-                                          }
-                                          FFAppState().updateUserDataFlowStruct(
-                                            (e) => e
-                                              ..userCartCount = FFAppState()
-                                                      .UserDataFlow
-                                                      .userCartCount -
-                                                  1,
-                                          );
-                                        }
-                                        if (FFAppState()
-                                                .UserDataFlow
-                                                .userSelectedProductFoundStatus ==
-                                            'notFound') {
-                                          if ((currentUserDocument?.userBody
-                                                          ?.toList() ??
-                                                      [])
-                                                  .where((e) =>
-                                                      e.isDefault == true)
-                                                  .toList()
-                                                  .length >
-                                              0) {
-                                            await currentUserReference!
-                                                .update(createUsersRecordData(
-                                              userCart: createUserCartStruct(
-                                                cartId:
-                                                    _model.idMapResult1?.cartId,
-                                                updatedAt: getCurrentTimestamp,
-                                                fieldValues: {
-                                                  'cart_items':
-                                                      FieldValue.arrayUnion([
-                                                    getUserCartItemsFirestoreData(
-                                                      createUserCartItemsStruct(
-                                                        cartItemId: _model
-                                                            .idMapResult1
-                                                            ?.cartItemId,
-                                                        isProceedStatus: true,
-                                                        productType: 'product',
-                                                        productId: _model
-                                                            .selectedProductResult
-                                                            ?.productId,
-                                                        productInfo:
-                                                            updateInfoStruct(
-                                                          _model
-                                                              .selectedProductResult
-                                                              ?.productInfo,
-                                                          clearUnsetFields:
-                                                              false,
-                                                        ),
-                                                        quantity: 1,
-                                                        price: _model
-                                                            .selectedProductResult
-                                                            ?.product
-                                                            ?.productPrice,
-                                                        totalPrice: _model
-                                                            .selectedProductResult
-                                                            ?.product
-                                                            ?.productPrice,
-                                                        productDesignerRef: _model
-                                                            .selectedProductResult
-                                                            ?.productAuthorizer
-                                                            ?.productDesignerRef,
-                                                        productDesignerId: _model
-                                                            .selectedProductResult
-                                                            ?.productAuthorizer
-                                                            ?.productDesignerId,
-                                                        productRef: _model
-                                                            .selectedProductResult
-                                                            ?.reference,
-                                                        creatorRef:
-                                                            widget!.creator,
-                                                        creatorId:
-                                                            creatorDocumentUsersRecord
-                                                                .uid,
-                                                        promotionId:
-                                                            widget!.promo,
-                                                        promotionUrl:
-                                                            creatorDocumentUsersRecord
-                                                                .creatorMainInfo
-                                                                .creatorPromotions
-                                                                .where((e) =>
-                                                                    e.promotionId ==
-                                                                    widget!
-                                                                        .promo)
-                                                                .toList()
-                                                                .firstOrNull
-                                                                ?.promotionUrl,
-                                                        promotionCommisionRate: _model
-                                                            .selectedProductResult
-                                                            ?.productAuthorizer
-                                                            ?.affiliateCommissionRate,
-                                                        productMainType: _model
-                                                            .selectedProductResult
-                                                            ?.product
-                                                            ?.productType,
-                                                        productUserBodyInfo:
-                                                            updateUserBodyStruct(
-                                                          (currentUserDocument
-                                                                      ?.userBody
-                                                                      ?.toList() ??
-                                                                  [])
-                                                              .where((e) =>
-                                                                  e.isDefault ==
-                                                                  true)
-                                                              .toList()
-                                                              .firstOrNull,
-                                                          clearUnsetFields:
-                                                              false,
-                                                        ),
-                                                        fieldValues: {
-                                                          'cart_item_attribute':
-                                                              getProductAttributesNewListFirestoreData(
-                                                            _model
-                                                                .selectedProductResult
-                                                                ?.productAttribute,
-                                                          ),
-                                                        },
-                                                        clearUnsetFields: false,
-                                                      ),
-                                                      true,
-                                                    )
-                                                  ]),
-                                                },
-                                                clearUnsetFields: false,
-                                              ),
-                                            ));
-                                          } else {
-                                            await currentUserReference!
-                                                .update(createUsersRecordData(
-                                              userCart: createUserCartStruct(
-                                                cartId:
-                                                    _model.idMapResult1?.cartId,
-                                                updatedAt: getCurrentTimestamp,
-                                                fieldValues: {
-                                                  'cart_items':
-                                                      FieldValue.arrayUnion([
-                                                    getUserCartItemsFirestoreData(
-                                                      createUserCartItemsStruct(
-                                                        cartItemId: _model
-                                                            .idMapResult1
-                                                            ?.cartItemId,
-                                                        isProceedStatus: true,
-                                                        productType: 'product',
-                                                        productId: _model
-                                                            .selectedProductResult
-                                                            ?.productId,
-                                                        productInfo:
-                                                            updateInfoStruct(
-                                                          _model
-                                                              .selectedProductResult
-                                                              ?.productInfo,
-                                                          clearUnsetFields:
-                                                              false,
-                                                        ),
-                                                        quantity: 1,
-                                                        price: _model
-                                                            .selectedProductResult
-                                                            ?.product
-                                                            ?.productPrice,
-                                                        totalPrice: _model
-                                                            .selectedProductResult
-                                                            ?.product
-                                                            ?.productPrice,
-                                                        productDesignerRef: _model
-                                                            .selectedProductResult
-                                                            ?.productAuthorizer
-                                                            ?.productDesignerRef,
-                                                        productDesignerId: _model
-                                                            .selectedProductResult
-                                                            ?.productAuthorizer
-                                                            ?.productDesignerId,
-                                                        productRef: _model
-                                                            .selectedProductResult
-                                                            ?.reference,
-                                                        creatorRef:
-                                                            widget!.creator,
-                                                        creatorId:
-                                                            creatorDocumentUsersRecord
-                                                                .uid,
-                                                        promotionId:
-                                                            widget!.promo,
-                                                        promotionUrl:
-                                                            creatorDocumentUsersRecord
-                                                                .creatorMainInfo
-                                                                .creatorPromotions
-                                                                .where((e) =>
-                                                                    e.promotionId ==
-                                                                    widget!
-                                                                        .promo)
-                                                                .toList()
-                                                                .firstOrNull
-                                                                ?.promotionUrl,
-                                                        promotionCommisionRate: _model
-                                                            .selectedProductResult
-                                                            ?.productAuthorizer
-                                                            ?.affiliateCommissionRate,
-                                                        productMainType: _model
-                                                            .selectedProductResult
-                                                            ?.product
-                                                            ?.productType,
-                                                        fieldValues: {
-                                                          'cart_item_attribute':
-                                                              getProductAttributesNewListFirestoreData(
-                                                            _model
-                                                                .selectedProductResult
-                                                                ?.productAttribute,
-                                                          ),
-                                                        },
-                                                        clearUnsetFields: false,
-                                                      ),
-                                                      true,
-                                                    )
-                                                  ]),
-                                                },
-                                                clearUnsetFields: false,
-                                              ),
-                                            ));
-                                          }
-
-                                          await _model.idMapResult1!.reference
-                                              .update({
-                                            ...mapToFirestore(
-                                              {
-                                                'cart_id':
-                                                    FieldValue.increment(1),
-                                              },
-                                            ),
-                                          });
-                                        }
-                                        FFAppState().updateUserDataFlowStruct(
-                                          (e) => e
-                                            ..userSelectedProductFoundStatus =
-                                                'notFound',
-                                        );
-                                      }
-                                      FFAppState().updateUserDataFlowStruct(
-                                        (e) => e
-                                          ..userSelectedProductCount =
-                                              FFAppState()
-                                                      .UserDataFlow
-                                                      .userSelectedProductCount -
-                                                  1,
-                                      );
-                                    }
                                     if (Navigator.of(context).canPop()) {
                                       context.pop();
                                     }
@@ -1059,7 +751,7 @@ class _CreatorsIndividualPromoWidgetState
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color:
                                               FlutterFlowTheme.of(context).info,
                                           letterSpacing: 0.0,

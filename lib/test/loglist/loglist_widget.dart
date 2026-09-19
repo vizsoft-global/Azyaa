@@ -87,7 +87,7 @@ class _LoglistWidgetState extends State<LoglistWidget> {
                         maxLines: 3,
                         minFontSize: 14.0,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Cairo',
+                              fontFamily: 'almarai',
                               letterSpacing: 0.0,
                             ),
                         overflow: TextOverflow.visible,

@@ -108,7 +108,7 @@ class _VTOBeginWidgetState extends State<VTOBeginWidget> {
                         ),
                         style:
                             FlutterFlowTheme.of(context).titleMedium.override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -166,7 +166,7 @@ class _VTOBeginWidgetState extends State<VTOBeginWidget> {
                   'la8dovdl' /* Experience fashion like never ... */,
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Cairo',
+                      fontFamily: 'almarai',
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.bold,
                     ),
@@ -179,7 +179,7 @@ class _VTOBeginWidgetState extends State<VTOBeginWidget> {
                   'kwlngprf' /* No more guessing how a dress w... */,
                 ),
                 style: FlutterFlowTheme.of(context).bodySmall.override(
-                      fontFamily: 'Cairo',
+                      fontFamily: 'almarai',
                       letterSpacing: 0.0,
                     ),
               ),
@@ -257,7 +257,7 @@ class _VTOBeginWidgetState extends State<VTOBeginWidget> {
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Cairo',
+                        fontFamily: 'almarai',
                         color: FlutterFlowTheme.of(context).info,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.normal,

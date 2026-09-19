@@ -104,7 +104,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                               style: FlutterFlowTheme.of(context)
                                   .titleLarge
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 18.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
@@ -161,7 +161,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                               labelStyle: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
@@ -169,7 +169,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                               unselectedLabelStyle: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
@@ -256,7 +256,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                               .headlineSmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -282,7 +282,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -298,7 +298,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
@@ -321,7 +321,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -355,7 +355,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -376,7 +376,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -389,7 +389,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -419,7 +419,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
@@ -464,7 +464,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryText,
                                                                           fontSize:
@@ -484,7 +484,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryText,
                                                                           fontSize:
@@ -506,7 +506,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryText,
                                                                           fontSize:
@@ -521,7 +521,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Cairo',
+                                                                          'almarai',
                                                                       fontSize:
                                                                           12.0,
                                                                       letterSpacing:
@@ -591,7 +591,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
@@ -636,7 +636,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryText,
                                                                           fontSize:
@@ -656,7 +656,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryText,
                                                                           fontSize:
@@ -678,7 +678,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryText,
                                                                           fontSize:
@@ -693,7 +693,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Cairo',
+                                                                          'almarai',
                                                                       fontSize:
                                                                           12.0,
                                                                       letterSpacing:
@@ -763,7 +763,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
@@ -808,7 +808,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryText,
                                                                           fontSize:
@@ -828,7 +828,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryText,
                                                                           fontSize:
@@ -850,7 +850,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryText,
                                                                           fontSize:
@@ -865,7 +865,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Cairo',
+                                                                          'almarai',
                                                                       fontSize:
                                                                           12.0,
                                                                       letterSpacing:
@@ -901,7 +901,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
@@ -936,7 +936,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -957,7 +957,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -970,7 +970,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -1020,7 +1020,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 fontSize: 12.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -1094,7 +1094,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 fontSize: 12.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -1168,7 +1168,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 fontSize: 12.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -1235,7 +1235,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                   context)
                                               .titleSmall
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .info,
@@ -1368,7 +1368,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Cairo',
+                                                                            'almarai',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .info,
                                                                         fontSize:
@@ -1390,7 +1390,7 @@ supply pu... */
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Cairo',
+                                                                            'almarai',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .info,
                                                                         fontSize:
@@ -1449,7 +1449,7 @@ supply pu... */
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).info,
                                                                             fontSize:
@@ -1469,7 +1469,7 @@ supply pu... */
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).info,
                                                                             letterSpacing:
@@ -1482,7 +1482,7 @@ supply pu... */
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Cairo',
+                                                                            'almarai',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .info,
                                                                         fontSize:
@@ -1503,7 +1503,7 @@ supply pu... */
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Cairo',
+                                                                          'almarai',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .info,
@@ -1544,7 +1544,7 @@ supply pu... */
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -1673,7 +1673,7 @@ supply pu... */
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Cairo',
+                                                                            'almarai',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .info,
                                                                         fontSize:
@@ -1695,7 +1695,7 @@ supply pu... */
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Cairo',
+                                                                            'almarai',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .info,
                                                                         fontSize:
@@ -1754,7 +1754,7 @@ supply pu... */
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).info,
                                                                             fontSize:
@@ -1774,7 +1774,7 @@ supply pu... */
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).info,
                                                                             letterSpacing:
@@ -1787,7 +1787,7 @@ supply pu... */
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Cairo',
+                                                                            'almarai',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .info,
                                                                         fontSize:
@@ -1808,7 +1808,7 @@ supply pu... */
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Cairo',
+                                                                          'almarai',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .info,
@@ -1849,7 +1849,7 @@ supply pu... */
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:

@@ -107,7 +107,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   fontSize: 18.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
@@ -150,7 +150,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   letterSpacing: 0.0,
                                 ),
                             hintText: FFLocalizations.of(context).getText(
@@ -159,7 +159,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   letterSpacing: 0.0,
                                 ),
                             enabledBorder: OutlineInputBorder(
@@ -196,7 +196,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                           cursorColor: FlutterFlowTheme.of(context).primaryText,
@@ -841,7 +841,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                     fontSize: 8.0,
@@ -907,7 +907,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -933,7 +933,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color:
                                               FlutterFlowTheme.of(context).info,
                                           fontSize: 12.0,
@@ -1047,7 +1047,8 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily: 'Cairo',
+                                                            fontFamily:
+                                                                'almarai',
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .info,
@@ -1117,7 +1118,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .info,
@@ -1238,7 +1239,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
@@ -1597,7 +1598,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color: couponsItem.couponUsedUserList.where((e) => e.userId == currentUserUid).toList().length > 0
                                                                                 ? Color(0xFFCBCBCB)
                                                                                 : FlutterFlowTheme.of(context).velvet,
@@ -1941,7 +1942,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                         .titleSmall
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).velvet,
                                                                           fontSize:
@@ -1993,7 +1994,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       )
@@ -2003,7 +2004,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -2056,7 +2057,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -2067,7 +2068,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Cairo',
+                                                                          'almarai',
                                                                       letterSpacing:
                                                                           0.0,
                                                                       lineHeight:

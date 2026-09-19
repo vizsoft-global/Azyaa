@@ -121,12 +121,12 @@ class _AddresstestWidgetState extends State<AddresstestWidget> {
                               24.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              '0yrvnzkp' /* My address */,
+                              '2i276d2x' /* My address */,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   color: Colors.white,
                                   fontSize: 22.0,
                                   letterSpacing: 0.0,
@@ -186,7 +186,7 @@ class _AddresstestWidgetState extends State<AddresstestWidget> {
                     Text(
                       _model.addresslatlng!.toString(),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Cairo',
+                            fontFamily: 'almarai',
                             letterSpacing: 0.0,
                           ),
                     ),
@@ -207,7 +207,7 @@ class _AddresstestWidgetState extends State<AddresstestWidget> {
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Cairo',
+                                fontFamily: 'almarai',
                                 color: Colors.white,
                                 letterSpacing: 0.0,
                               ),

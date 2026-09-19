@@ -148,7 +148,7 @@ class _UnfollowConfirmPopupWidgetState
                 child: Text(
                   widget!.title!,
                   style: FlutterFlowTheme.of(context).titleLarge.override(
-                        fontFamily: 'Cairo',
+                        fontFamily: 'almarai',
                         fontSize: 18.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,
@@ -161,7 +161,7 @@ class _UnfollowConfirmPopupWidgetState
               child: Text(
                 widget!.description!,
                 style: FlutterFlowTheme.of(context).bodyLarge.override(
-                      fontFamily: 'Cairo',
+                      fontFamily: 'almarai',
                       color: FlutterFlowTheme.of(context).secondaryText,
                       fontSize: 12.0,
                       letterSpacing: 0.0,
@@ -191,7 +191,7 @@ class _UnfollowConfirmPopupWidgetState
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Cairo',
+                        fontFamily: 'almarai',
                         color: FlutterFlowTheme.of(context).info,
                         letterSpacing: 0.0,
                       ),
@@ -218,9 +218,9 @@ class _UnfollowConfirmPopupWidgetState
                     context.pushNamed(
                       DesignerWidget.routeName,
                       queryParameters: {
-                        'designer': serializeParam(
-                          widget!.userRef,
-                          ParamType.DocumentReference,
+                        'designerUid': serializeParam(
+                          widget!.userRef?.id,
+                          ParamType.String,
                         ),
                       }.withoutNulls,
                       extra: <String, dynamic>{
@@ -245,9 +245,9 @@ class _UnfollowConfirmPopupWidgetState
                     context.pushNamed(
                       CreatorsIndividualWidget.routeName,
                       queryParameters: {
-                        'creator': serializeParam(
-                          widget!.userRef,
-                          ParamType.DocumentReference,
+                        'creatorUid': serializeParam(
+                          widget!.userRef?.id,
+                          ParamType.String,
                         ),
                       }.withoutNulls,
                       extra: <String, dynamic>{
@@ -276,7 +276,7 @@ class _UnfollowConfirmPopupWidgetState
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primaryBackground,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Cairo',
+                        fontFamily: 'almarai',
                         color: FlutterFlowTheme.of(context).primaryText,
                         letterSpacing: 0.0,
                       ),
@@ -333,7 +333,7 @@ class _UnfollowConfirmPopupWidgetState
                         '1tru23t4' /* Don't show again */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Cairo',
+                            fontFamily: 'almarai',
                             color: FlutterFlowTheme.of(context).primaryText,
                             fontSize: 13.0,
                             letterSpacing: 0.0,

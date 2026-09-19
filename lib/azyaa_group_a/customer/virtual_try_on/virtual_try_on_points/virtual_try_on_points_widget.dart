@@ -112,7 +112,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                     ),
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Cairo',
+                          fontFamily: 'almarai',
                           fontSize: 16.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
@@ -124,7 +124,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                     ),
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Cairo',
+                          fontFamily: 'almarai',
                           fontSize: 14.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.normal,
@@ -155,7 +155,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                         'b9nk7x7y' /* Select a Credit Pack */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Cairo',
+                            fontFamily: 'almarai',
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,
                           ),
@@ -417,7 +417,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -434,7 +434,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -449,7 +449,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -492,7 +492,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                       color: FlutterFlowTheme.of(context).primaryBackground,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Cairo',
+                                fontFamily: 'almarai',
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 letterSpacing: 0.0,
                               ),
@@ -541,7 +541,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   color: FlutterFlowTheme.of(context).info,
                                   letterSpacing: 0.0,
                                 ),

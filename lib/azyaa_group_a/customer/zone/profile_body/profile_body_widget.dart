@@ -88,10 +88,11 @@ class _ProfileBodyWidgetState extends State<ProfileBodyWidget> {
                     'o3e4dy0k' /* Hi, for a better fit i need yo... */,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Cairo',
+                        fontFamily: 'almarai',
                         fontSize: 18.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,
+                        lineHeight: 1.5,
                       ),
                 ),
               ),
@@ -112,7 +113,7 @@ class _ProfileBodyWidgetState extends State<ProfileBodyWidget> {
                       '9s8jdlnz' /* Why Add Measurements? */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Cairo',
+                          fontFamily: 'almarai',
                           color: FlutterFlowTheme.of(context).primaryText,
                           fontSize: 14.0,
                           letterSpacing: 0.0,
@@ -137,7 +138,7 @@ class _ProfileBodyWidgetState extends State<ProfileBodyWidget> {
                       'v8010arm' /* Adding your body measurements ... */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Cairo',
+                          fontFamily: 'almarai',
                           color: FlutterFlowTheme.of(context).secondaryText,
                           fontSize: 12.0,
                           letterSpacing: 0.5,
@@ -168,7 +169,7 @@ class _ProfileBodyWidgetState extends State<ProfileBodyWidget> {
                   'mjvn89hq' /* Ready to start? Enter your det... */,
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Cairo',
+                      fontFamily: 'almarai',
                       color: FlutterFlowTheme.of(context).secondaryText,
                       fontSize: 12.0,
                       letterSpacing: 0.0,
@@ -206,7 +207,7 @@ class _ProfileBodyWidgetState extends State<ProfileBodyWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Cairo',
+                      fontFamily: 'almarai',
                       color: FlutterFlowTheme.of(context).info,
                       letterSpacing: 0.0,
                     ),

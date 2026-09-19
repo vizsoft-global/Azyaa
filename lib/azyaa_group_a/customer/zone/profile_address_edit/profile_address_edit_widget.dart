@@ -176,7 +176,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   fontSize: 18.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
@@ -225,7 +225,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -252,7 +252,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -264,7 +264,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color:
                                             FlutterFlowTheme.of(context).error,
                                         letterSpacing: 0.0,
@@ -274,7 +274,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -297,7 +297,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     letterSpacing: 0.0,
@@ -308,7 +308,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -347,7 +347,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   letterSpacing: 0.0,
                                 ),
                             cursorColor:
@@ -384,7 +384,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -396,7 +396,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           color: FlutterFlowTheme.of(context)
                                               .error,
                                           letterSpacing: 0.0,
@@ -406,7 +406,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
                                     ),
@@ -436,7 +436,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       letterSpacing: 0.0,
@@ -447,7 +447,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
                                     ),
@@ -486,7 +486,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                               cursorColor:
@@ -516,7 +516,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -528,7 +528,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color:
                                             FlutterFlowTheme.of(context).error,
                                         letterSpacing: 0.0,
@@ -538,7 +538,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -605,7 +605,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                             FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   letterSpacing: 0.0,
                                                 ),
                                         textStyle: FlutterFlowTheme.of(context)
@@ -692,7 +692,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
                                             ),
@@ -718,7 +718,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                                     context)
                                                 .labelMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
@@ -735,7 +735,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                                     context)
                                                 .labelMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
@@ -759,7 +759,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                               ),
                                           maxLength: functions.getPhoneLength(
@@ -806,7 +806,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -818,7 +818,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color:
                                             FlutterFlowTheme.of(context).error,
                                         letterSpacing: 0.0,
@@ -828,7 +828,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -852,7 +852,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     letterSpacing: 0.0,
@@ -863,7 +863,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -902,7 +902,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   letterSpacing: 0.0,
                                 ),
                             keyboardType: TextInputType.emailAddress,
@@ -929,7 +929,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -941,7 +941,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color:
                                             FlutterFlowTheme.of(context).error,
                                         letterSpacing: 0.0,
@@ -951,7 +951,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -974,7 +974,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     letterSpacing: 0.0,
@@ -985,7 +985,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -1024,7 +1024,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   letterSpacing: 0.0,
                                 ),
                             cursorColor:
@@ -1051,7 +1051,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -1063,7 +1063,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color:
                                             FlutterFlowTheme.of(context).error,
                                         letterSpacing: 0.0,
@@ -1073,7 +1073,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -1096,7 +1096,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     letterSpacing: 0.0,
@@ -1107,7 +1107,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -1146,7 +1146,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   letterSpacing: 0.0,
                                 ),
                             cursorColor:
@@ -1176,7 +1176,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -1188,7 +1188,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color:
                                             FlutterFlowTheme.of(context).error,
                                         letterSpacing: 0.0,
@@ -1198,7 +1198,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -1221,7 +1221,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     letterSpacing: 0.0,
@@ -1232,7 +1232,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -1271,7 +1271,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   letterSpacing: 0.0,
                                 ),
                             maxLines: null,
@@ -1302,7 +1302,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -1314,7 +1314,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color:
                                             FlutterFlowTheme.of(context).error,
                                         letterSpacing: 0.0,
@@ -1324,7 +1324,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -1383,13 +1383,13 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                     FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                         ),
                                 searchTextStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       letterSpacing: 0.0,
                                     ),
                                 textStyle: FlutterFlowTheme.of(context)
@@ -1452,7 +1452,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       letterSpacing: 0.0,
@@ -1463,7 +1463,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
                                     ),
@@ -1502,7 +1502,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                               cursorColor:
@@ -1532,7 +1532,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -1544,7 +1544,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color:
                                             FlutterFlowTheme.of(context).error,
                                         letterSpacing: 0.0,
@@ -1554,7 +1554,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -1577,7 +1577,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     letterSpacing: 0.0,
@@ -1588,7 +1588,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -1627,7 +1627,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   letterSpacing: 0.0,
                                 ),
                             maxLength: 10,
@@ -1664,7 +1664,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -1676,7 +1676,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color:
                                             FlutterFlowTheme.of(context).error,
                                         letterSpacing: 0.0,
@@ -1686,7 +1686,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -1793,7 +1793,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     fontSize: 13.0,
@@ -1964,7 +1964,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         arText: 'تم التحديث بنجاح.',
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Cairo',
+                            fontFamily: 'almarai',
                             color: FlutterFlowTheme.of(context).primaryText,
                             letterSpacing: 0.0,
                           ),
@@ -1989,7 +1989,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Cairo',
+                      fontFamily: 'almarai',
                       color: FlutterFlowTheme.of(context).info,
                       letterSpacing: 0.0,
                     ),

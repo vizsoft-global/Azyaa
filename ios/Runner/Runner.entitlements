@@ -8,18 +8,9 @@
     <array>
       <string>Default</string>
     </array>
-    <!-- Start of branch -->
     <key>com.apple.developer.associated-domains</key>
     <array>
-      <string>applinks:v2qlt.test-app.link</string>
+      <string>applinks:azyaa.ai</string>
     </array>
-    <!-- End of branch -->
-    <!-- Start of Support for Universal Links -->
-    <key>com.apple.developer.associated-domains</key>
-    <array>
-      <string>applinks:v2qlt.test-app.link</string>
-      <string>applinks:v2qlt.test-app.link</string>
-    </array>
-    <!-- End of Support for Universal Links -->
   </dict>
 </plist>

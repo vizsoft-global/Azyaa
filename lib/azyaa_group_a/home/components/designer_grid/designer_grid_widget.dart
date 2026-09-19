@@ -103,7 +103,7 @@ class _DesignerGridWidgetState extends State<DesignerGridWidget> {
             ),
             maxLines: 1,
             style: FlutterFlowTheme.of(context).bodySmall.override(
-                  fontFamily: 'Cairo',
+                  fontFamily: 'almarai',
                   fontSize: 14.0,
                   letterSpacing: 0.0,
                 ),
@@ -116,7 +116,7 @@ class _DesignerGridWidgetState extends State<DesignerGridWidget> {
               '0i7jo3pi' /* Brand name */,
             ),
             style: FlutterFlowTheme.of(context).bodySmall.override(
-                  fontFamily: 'Cairo',
+                  fontFamily: 'almarai',
                   fontSize: 12.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.normal,

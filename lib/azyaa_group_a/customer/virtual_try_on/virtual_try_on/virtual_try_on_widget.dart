@@ -408,7 +408,7 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -420,7 +420,7 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:

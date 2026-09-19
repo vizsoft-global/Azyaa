@@ -293,7 +293,7 @@ class _ProductSmallGridWidgetState extends State<ProductSmallGridWidget> {
               ),
               maxLines: 1,
               style: FlutterFlowTheme.of(context).bodySmall.override(
-                    fontFamily: 'Cairo',
+                    fontFamily: 'almarai',
                     letterSpacing: 0.0,
                   ),
             ),
@@ -307,7 +307,7 @@ class _ProductSmallGridWidgetState extends State<ProductSmallGridWidget> {
                 Text(
                   '${widget!.product?.product?.productPrice?.toString()} KD',
                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Cairo',
+                        fontFamily: 'almarai',
                         fontSize: 11.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,
@@ -318,7 +318,7 @@ class _ProductSmallGridWidgetState extends State<ProductSmallGridWidget> {
                   Text(
                     '${widget!.product?.product?.productRegularPrice?.toString()}',
                     style: FlutterFlowTheme.of(context).bodySmall.override(
-                          fontFamily: 'Cairo',
+                          fontFamily: 'almarai',
                           color: FlutterFlowTheme.of(context).secondaryText,
                           fontSize: 11.0,
                           letterSpacing: 0.0,

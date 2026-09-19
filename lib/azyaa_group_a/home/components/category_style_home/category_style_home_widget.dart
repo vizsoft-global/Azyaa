@@ -351,7 +351,7 @@ class _CategoryStyleHomeWidgetState extends State<CategoryStyleHomeWidget> {
                   ),
                   maxLines: 1,
                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Cairo',
+                        fontFamily: 'almarai',
                         letterSpacing: 0.0,
                       ),
                 ),

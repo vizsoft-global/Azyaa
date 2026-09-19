@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'serialization_util.dart';
+
 import '/backend/backend.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import '../../flutter_flow/flutter_flow_util.dart';
@@ -46,10 +47,14 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
     }
     _handledMessageIds.add(message.messageId);
 
+    await _handlePushNotificationData(message.data);
+  }
+
+  Future _handlePushNotificationData(Map<String, dynamic> messageData) async {
     safeSetState(() => _loading = true);
     try {
-      final initialPageName = message.data['initialPageName'] as String;
-      final initialParameterData = getInitialParameterData(message.data);
+      final initialPageName = messageData['initialPageName'] as String;
+      final initialParameterData = getInitialParameterData(messageData);
       final parametersBuilder = parametersBuilderMap[initialPageName];
       if (parametersBuilder != null) {
         final parameterData = await parametersBuilder(initialParameterData);
@@ -138,7 +143,7 @@ final parametersBuilderMap =
   'Designers-List': ParameterData.none(),
   'Designer': (data) async => ParameterData(
         allParams: {
-          'designer': getParameter<DocumentReference>(data, 'designer'),
+          'designerUid': getParameter<String>(data, 'designerUid'),
         },
       ),
   'DesignerConsult': ParameterData.none(),
@@ -152,7 +157,7 @@ final parametersBuilderMap =
   'Creators': ParameterData.none(),
   'Creators-Individual': (data) async => ParameterData(
         allParams: {
-          'creator': getParameter<DocumentReference>(data, 'creator'),
+          'creatorUid': getParameter<String>(data, 'creatorUid'),
         },
       ),
   'Profile': ParameterData.none(),
@@ -226,7 +231,7 @@ final parametersBuilderMap =
   'Creators-IndividualPromo': (data) async => ParameterData(
         allParams: {
           'promo': getParameter<String>(data, 'promo'),
-          'creator': getParameter<DocumentReference>(data, 'creator'),
+          'creatorUid': getParameter<String>(data, 'creatorUid'),
         },
       ),
   'Profile-EditTEMP': ParameterData.none(),

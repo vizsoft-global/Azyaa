@@ -234,7 +234,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
@@ -298,7 +298,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Cairo',
+                                                                          'almarai',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .info,
@@ -326,7 +326,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -392,7 +392,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   fontSize:
                                                                       10.0,
                                                                   letterSpacing:
@@ -450,7 +450,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   fontSize:
                                                                       10.0,
                                                                   letterSpacing:
@@ -499,7 +499,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
@@ -611,7 +611,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                             .bodyMedium
                                                             .override(
                                                               fontFamily:
-                                                                  'Cairo',
+                                                                  'almarai',
                                                               fontSize: 12.0,
                                                               letterSpacing:
                                                                   0.0,
@@ -770,7 +770,7 @@ Designer */
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
@@ -935,7 +935,7 @@ Creator */
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
@@ -1047,7 +1047,7 @@ Creator */
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Cairo',
+                                                                          'almarai',
                                                                       fontSize:
                                                                           16.0,
                                                                       letterSpacing:
@@ -1068,7 +1068,7 @@ Creator */
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Cairo',
+                                                                          'almarai',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
@@ -1087,7 +1087,7 @@ Creator */
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1167,7 +1167,7 @@ Creator */
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
@@ -1255,7 +1255,7 @@ Creator */
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1311,7 +1311,7 @@ Creator */
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1701,7 +1701,7 @@ Creator */
                                                           context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -1985,7 +1985,7 @@ Creator */
                                                           context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -2303,7 +2303,7 @@ Creator */
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
@@ -2356,7 +2356,7 @@ Creator */
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -2373,7 +2373,7 @@ Creator */
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             Color(0xFFFF0000),
                                                         fontSize: 13.0,
@@ -2392,7 +2392,7 @@ Creator */
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -2428,7 +2428,7 @@ Creator */
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),

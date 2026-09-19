@@ -86,7 +86,7 @@ Sale Now */
                   ),
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyLarge.override(
-                        fontFamily: 'Cairo',
+                        fontFamily: 'almarai',
                         color: FlutterFlowTheme.of(context).primaryBackground,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,

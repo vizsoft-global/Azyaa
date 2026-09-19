@@ -167,7 +167,7 @@ class _CreatorproductImgWidgetState extends State<CreatorproductImgWidget> {
             ),
             maxLines: 1,
             style: FlutterFlowTheme.of(context).bodySmall.override(
-                  fontFamily: 'Cairo',
+                  fontFamily: 'almarai',
                   fontSize: 14.0,
                   letterSpacing: 0.0,
                 ),
@@ -190,7 +190,7 @@ class _CreatorproductImgWidgetState extends State<CreatorproductImgWidget> {
                     'l51fkrjz' /* 100 */,
                   ),
                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Cairo',
+                        fontFamily: 'almarai',
                         color: FlutterFlowTheme.of(context).secondaryText,
                         fontSize: 12.0,
                         letterSpacing: 0.0,
@@ -203,7 +203,7 @@ class _CreatorproductImgWidgetState extends State<CreatorproductImgWidget> {
                     'ochzch1r' /* 150 KD */,
                   ),
                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Cairo',
+                        fontFamily: 'almarai',
                         fontSize: 12.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,

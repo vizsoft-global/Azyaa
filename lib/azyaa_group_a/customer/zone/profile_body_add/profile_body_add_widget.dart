@@ -130,7 +130,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                   'k014uaz5' /* Add Your Body Measurements */,
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Cairo',
+                      fontFamily: 'almarai',
                       fontSize: 18.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.bold,
@@ -145,11 +145,12 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                 '6visnkd7' /* Accurate measurements help us ... */,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Cairo',
+                    fontFamily: 'almarai',
                     color: FlutterFlowTheme.of(context).secondaryText,
                     fontSize: 12.0,
                     letterSpacing: 0.5,
                     fontWeight: FontWeight.normal,
+                    lineHeight: 1.5,
                   ),
             ),
           ),
@@ -178,7 +179,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   fontSize: 12.0,
@@ -190,7 +191,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   fontSize: 12.0,
                                   letterSpacing: 0.0,
                                 ),
@@ -228,7 +229,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -264,7 +265,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     fontSize: 12.0,
@@ -276,7 +277,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                   ),
@@ -315,7 +316,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   fontSize: 12.0,
                                   letterSpacing: 0.0,
                                 ),
@@ -400,7 +401,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -543,7 +544,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 fontSize: 11.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -596,7 +597,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                             safeSetState(() =>
                                                                 _model.unitHieghtValue =
                                                                     val),
-                                                        width: 40.0,
+                                                        width: 45.0,
                                                         height: 30.0,
                                                         textStyle:
                                                             FlutterFlowTheme.of(
@@ -604,7 +605,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
@@ -689,7 +690,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -832,7 +833,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 fontSize: 10.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -893,7 +894,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
@@ -978,7 +979,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1121,7 +1122,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 fontSize: 10.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -1182,7 +1183,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
@@ -1267,7 +1268,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1410,7 +1411,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 fontSize: 10.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -1476,7 +1477,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
@@ -1561,7 +1562,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1704,7 +1705,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 fontSize: 10.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -1770,7 +1771,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
@@ -1855,7 +1856,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -1998,7 +1999,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 fontSize: 10.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -2064,7 +2065,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
@@ -2149,7 +2150,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -2292,7 +2293,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 fontSize: 10.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -2358,7 +2359,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
@@ -2443,7 +2444,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -2586,7 +2587,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 fontSize: 10.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -2652,7 +2653,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
@@ -2759,7 +2760,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   fontSize: 13.0,
@@ -3186,7 +3187,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Cairo',
+                      fontFamily: 'almarai',
                       color: FlutterFlowTheme.of(context).info,
                       letterSpacing: 0.0,
                     ),

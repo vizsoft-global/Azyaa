@@ -132,1055 +132,1080 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Stack(
-                          children: [
-                            StreamBuilder<List<ProductsRecord>>(
-                              stream: queryProductsRecord(
-                                queryBuilder: (productsRecord) => productsRecord
-                                    .where(
-                                      'status',
-                                      isEqualTo: 'active',
-                                    )
-                                    .orderBy('created_at', descending: true),
-                              ),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 24.0),
+                          child: Stack(
+                            children: [
+                              StreamBuilder<List<ProductsRecord>>(
+                                stream: queryProductsRecord(
+                                  queryBuilder: (productsRecord) =>
+                                      productsRecord
+                                          .where(
+                                            'status',
+                                            isEqualTo: 'active',
+                                          )
+                                          .orderBy('created_at',
+                                              descending: true),
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Container(
+                                      width: MediaQuery.sizeOf(context).width *
+                                          1.0,
+                                      height: 150.0,
+                                      child: LoadingAnimationWidget(),
+                                    );
+                                  }
+                                  List<ProductsRecord>
+                                      productList1ProductsRecordList =
+                                      snapshot.data!;
+
                                   return Container(
-                                    width:
-                                        MediaQuery.sizeOf(context).width * 1.0,
-                                    height: 150.0,
-                                    child: LoadingAnimationWidget(),
-                                  );
-                                }
-                                List<ProductsRecord>
-                                    productList1ProductsRecordList =
-                                    snapshot.data!;
-
-                                return Container(
-                                  decoration: BoxDecoration(),
-                                  child: Visibility(
-                                    visible:
-                                        productList1ProductsRecordList.length >
-                                            0,
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        if (_model.defaultView == 'grid')
-                                          Container(
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                1.0,
-                                            decoration: BoxDecoration(),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                if (FFAppState()
-                                                        .UserFilter
-                                                        .sortStatus !=
-                                                    'set')
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 0.0),
-                                                    child: Builder(
-                                                      builder: (context) {
-                                                        final allProductList = productList1ProductsRecordList
-                                                            .where((e) => (FFAppState()
-                                                                            .UserFilter
-                                                                            .filterStatus ==
-                                                                        'set') &&
-                                                                    (FFAppState()
-                                                                            .UserFilter
-                                                                            .productId
-                                                                            .length >
-                                                                        0)
-                                                                ? (FFAppState()
-                                                                        .UserFilter
-                                                                        .productId
-                                                                        .contains(e
-                                                                            .productId) ==
-                                                                    true)
-                                                                : true)
-                                                            .toList()
-                                                            .sortedList(
-                                                                keyOf: (e) => e
-                                                                    .createdAt!,
-                                                                desc: true)
-                                                            .toList();
-                                                        if (allProductList
-                                                            .isEmpty) {
-                                                          return Center(
-                                                            child: EmptyWidget(
-                                                              messageOne:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                '7jsyr0pw' /* Nothing here just yet… */,
-                                                              ),
-                                                              image: '',
-                                                              messageTwo:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                '62dsuzl5' /* Looks like we haven’t stocked ... */,
-                                                              ),
-                                                              buttonText:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                'n0wbtc4t' /* Go to Shop */,
-                                                              ),
-                                                            ),
-                                                          );
-                                                        }
-
-                                                        return Wrap(
-                                                          spacing: 8.0,
-                                                          runSpacing: 24.0,
-                                                          alignment:
-                                                              WrapAlignment
-                                                                  .start,
-                                                          crossAxisAlignment:
-                                                              WrapCrossAlignment
-                                                                  .start,
-                                                          direction:
-                                                              Axis.horizontal,
-                                                          runAlignment:
-                                                              WrapAlignment
-                                                                  .start,
-                                                          verticalDirection:
-                                                              VerticalDirection
-                                                                  .down,
-                                                          clipBehavior:
-                                                              Clip.none,
-                                                          children: List.generate(
-                                                              allProductList
-                                                                  .length,
-                                                              (allProductListIndex) {
-                                                            final allProductListItem =
-                                                                allProductList[
-                                                                    allProductListIndex];
-                                                            return Visibility(
-                                                              visible: FFAppState()
-                                                                          .UserFilter
-                                                                          .filterStatus ==
-                                                                      'set'
+                                    decoration: BoxDecoration(),
+                                    child: Visibility(
+                                      visible: productList1ProductsRecordList
+                                              .length >
+                                          0,
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          if (_model.defaultView == 'grid')
+                                            Container(
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width *
+                                                  1.0,
+                                              decoration: BoxDecoration(),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  if (FFAppState()
+                                                          .UserFilter
+                                                          .sortStatus !=
+                                                      'set')
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
+                                                      child: Builder(
+                                                        builder: (context) {
+                                                          final allProductList = productList1ProductsRecordList
+                                                              .where((e) => (FFAppState().UserFilter.filterStatus ==
+                                                                          'set') &&
+                                                                      (FFAppState()
+                                                                              .UserFilter
+                                                                              .productId
+                                                                              .length >
+                                                                          0)
                                                                   ? (FFAppState()
                                                                           .UserFilter
                                                                           .productId
-                                                                          .contains(
-                                                                              allProductListItem.productId) ==
+                                                                          .contains(e
+                                                                              .productId) ==
                                                                       true)
-                                                                  : true,
-                                                              child: Container(
-                                                                width: _model
-                                                                    .gridWidth,
-                                                                height: 280.0,
-                                                                decoration:
-                                                                    BoxDecoration(),
-                                                                child:
-                                                                    ProductGridWidget(
-                                                                  key: Key(
-                                                                      'Keydxq_${allProductListIndex}_of_${allProductList.length}'),
-                                                                  product:
-                                                                      allProductListItem,
+                                                                  : true)
+                                                              .toList()
+                                                              .sortedList(
+                                                                  keyOf: (e) =>
+                                                                      e.createdAt!,
+                                                                  desc: true)
+                                                              .toList();
+                                                          if (allProductList
+                                                              .isEmpty) {
+                                                            return Center(
+                                                              child:
+                                                                  EmptyWidget(
+                                                                messageOne:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  '7jsyr0pw' /* Nothing here just yet… */,
+                                                                ),
+                                                                image: '',
+                                                                messageTwo:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  '62dsuzl5' /* Looks like we haven’t stocked ... */,
+                                                                ),
+                                                                buttonText:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  'n0wbtc4t' /* Go to Shop */,
                                                                 ),
                                                               ),
                                                             );
-                                                          }),
-                                                        );
-                                                      },
-                                                    ),
-                                                  ),
-                                                if (((FFAppState()
-                                                                .UserFilter
-                                                                .isSortPopular ==
-                                                            true) ||
-                                                        (FFAppState()
-                                                                .UserFilter
-                                                                .isSortRecommended ==
-                                                            true)) &&
-                                                    (FFAppState()
-                                                            .UserFilter
-                                                            .sortStatus ==
-                                                        'set'))
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 0.0),
-                                                    child: Builder(
-                                                      builder: (context) {
-                                                        final allProductList = productList1ProductsRecordList
-                                                            .where((e) => (FFAppState()
+                                                          }
+
+                                                          return Wrap(
+                                                            spacing: 8.0,
+                                                            runSpacing: 24.0,
+                                                            alignment:
+                                                                WrapAlignment
+                                                                    .start,
+                                                            crossAxisAlignment:
+                                                                WrapCrossAlignment
+                                                                    .start,
+                                                            direction:
+                                                                Axis.horizontal,
+                                                            runAlignment:
+                                                                WrapAlignment
+                                                                    .start,
+                                                            verticalDirection:
+                                                                VerticalDirection
+                                                                    .down,
+                                                            clipBehavior:
+                                                                Clip.none,
+                                                            children: List.generate(
+                                                                allProductList
+                                                                    .length,
+                                                                (allProductListIndex) {
+                                                              final allProductListItem =
+                                                                  allProductList[
+                                                                      allProductListIndex];
+                                                              return Visibility(
+                                                                visible: FFAppState()
                                                                             .UserFilter
                                                                             .filterStatus ==
-                                                                        'set') &&
-                                                                    (FFAppState()
+                                                                        'set'
+                                                                    ? (FFAppState()
                                                                             .UserFilter
                                                                             .productId
-                                                                            .length >
-                                                                        0)
-                                                                ? (FFAppState().UserFilter.productId.contains(e.productId) ==
-                                                                    true)
-                                                                : true)
-                                                            .toList()
-                                                            .sortedList(
-                                                                keyOf: (e) => FFAppState()
-                                                                            .UserFilter
-                                                                            .isSortPopular ==
-                                                                        true
-                                                                    ? e.productMarketing
-                                                                        .isPopularProduct
-                                                                        .toString()
-                                                                    : e.productMarketing
-                                                                        .isRecommendedProduct
-                                                                        .toString(),
-                                                                desc: false)
-                                                            .toList();
-                                                        if (allProductList
-                                                            .isEmpty) {
-                                                          return Center(
-                                                            child: EmptyWidget(
-                                                              messageOne:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                'mjllv998' /* Nothing here just yet… */,
-                                                              ),
-                                                              image: '',
-                                                              messageTwo:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                '8vybhunz' /* Looks like we haven’t stocked ... */,
-                                                              ),
-                                                              buttonText:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                'mf59fwjk' /* Go to Shop */,
-                                                              ),
-                                                            ),
+                                                                            .contains(allProductListItem.productId) ==
+                                                                        true)
+                                                                    : true,
+                                                                child:
+                                                                    Container(
+                                                                  width: _model
+                                                                      .gridWidth,
+                                                                  height: 290.0,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      ProductGridWidget(
+                                                                    key: Key(
+                                                                        'Keydxq_${allProductListIndex}_of_${allProductList.length}'),
+                                                                    product:
+                                                                        allProductListItem,
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            }),
                                                           );
-                                                        }
-
-                                                        return Wrap(
-                                                          spacing: 8.0,
-                                                          runSpacing: 24.0,
-                                                          alignment:
-                                                              WrapAlignment
-                                                                  .start,
-                                                          crossAxisAlignment:
-                                                              WrapCrossAlignment
-                                                                  .start,
-                                                          direction:
-                                                              Axis.horizontal,
-                                                          runAlignment:
-                                                              WrapAlignment
-                                                                  .start,
-                                                          verticalDirection:
-                                                              VerticalDirection
-                                                                  .down,
-                                                          clipBehavior:
-                                                              Clip.none,
-                                                          children: List.generate(
-                                                              allProductList
-                                                                  .length,
-                                                              (allProductListIndex) {
-                                                            final allProductListItem =
-                                                                allProductList[
-                                                                    allProductListIndex];
-                                                            return Visibility(
-                                                              visible: FFAppState()
-                                                                          .UserFilter
-                                                                          .filterStatus ==
-                                                                      'set'
+                                                        },
+                                                      ),
+                                                    ),
+                                                  if (((FFAppState()
+                                                                  .UserFilter
+                                                                  .isSortPopular ==
+                                                              true) ||
+                                                          (FFAppState()
+                                                                  .UserFilter
+                                                                  .isSortRecommended ==
+                                                              true)) &&
+                                                      (FFAppState()
+                                                              .UserFilter
+                                                              .sortStatus ==
+                                                          'set'))
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
+                                                      child: Builder(
+                                                        builder: (context) {
+                                                          final allProductList = productList1ProductsRecordList
+                                                              .where((e) => (FFAppState().UserFilter.filterStatus == 'set') &&
+                                                                      (FFAppState().UserFilter.productId.length >
+                                                                          0)
                                                                   ? (FFAppState()
                                                                           .UserFilter
                                                                           .productId
-                                                                          .contains(
-                                                                              allProductListItem.productId) ==
+                                                                          .contains(e
+                                                                              .productId) ==
                                                                       true)
-                                                                  : true,
-                                                              child: Container(
-                                                                width: _model
-                                                                    .gridWidth,
-                                                                height: 280.0,
-                                                                decoration:
-                                                                    BoxDecoration(),
-                                                                child:
-                                                                    ProductGridWidget(
-                                                                  key: Key(
-                                                                      'Keyw0i_${allProductListIndex}_of_${allProductList.length}'),
-                                                                  product:
-                                                                      allProductListItem,
+                                                                  : true)
+                                                              .toList()
+                                                              .sortedList(
+                                                                  keyOf: (e) => FFAppState()
+                                                                              .UserFilter
+                                                                              .isSortPopular ==
+                                                                          true
+                                                                      ? e.productMarketing
+                                                                          .isPopularProduct
+                                                                          .toString()
+                                                                      : e.productMarketing
+                                                                          .isRecommendedProduct
+                                                                          .toString(),
+                                                                  desc: false)
+                                                              .toList();
+                                                          if (allProductList
+                                                              .isEmpty) {
+                                                            return Center(
+                                                              child:
+                                                                  EmptyWidget(
+                                                                messageOne:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  'mjllv998' /* Nothing here just yet… */,
+                                                                ),
+                                                                image: '',
+                                                                messageTwo:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  '8vybhunz' /* Looks like we haven’t stocked ... */,
+                                                                ),
+                                                                buttonText:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  'mf59fwjk' /* Go to Shop */,
                                                                 ),
                                                               ),
                                                             );
-                                                          }),
-                                                        );
-                                                      },
-                                                    ),
-                                                  ),
-                                                if ((FFAppState()
-                                                            .UserFilter
-                                                            .isSortLtoH ==
-                                                        true) &&
-                                                    (FFAppState()
-                                                            .UserFilter
-                                                            .sortStatus ==
-                                                        'set'))
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 0.0),
-                                                    child: Builder(
-                                                      builder: (context) {
-                                                        final allProductList = productList1ProductsRecordList
-                                                            .where((e) => (FFAppState()
+                                                          }
+
+                                                          return Wrap(
+                                                            spacing: 8.0,
+                                                            runSpacing: 24.0,
+                                                            alignment:
+                                                                WrapAlignment
+                                                                    .start,
+                                                            crossAxisAlignment:
+                                                                WrapCrossAlignment
+                                                                    .start,
+                                                            direction:
+                                                                Axis.horizontal,
+                                                            runAlignment:
+                                                                WrapAlignment
+                                                                    .start,
+                                                            verticalDirection:
+                                                                VerticalDirection
+                                                                    .down,
+                                                            clipBehavior:
+                                                                Clip.none,
+                                                            children: List.generate(
+                                                                allProductList
+                                                                    .length,
+                                                                (allProductListIndex) {
+                                                              final allProductListItem =
+                                                                  allProductList[
+                                                                      allProductListIndex];
+                                                              return Visibility(
+                                                                visible: FFAppState()
                                                                             .UserFilter
                                                                             .filterStatus ==
-                                                                        'set') &&
-                                                                    (FFAppState()
+                                                                        'set'
+                                                                    ? (FFAppState()
                                                                             .UserFilter
                                                                             .productId
-                                                                            .length >
-                                                                        0)
-                                                                ? (FFAppState()
-                                                                        .UserFilter
-                                                                        .productId
-                                                                        .contains(e
-                                                                            .productId) ==
-                                                                    true)
-                                                                : true)
-                                                            .toList()
-                                                            .sortedList(
-                                                                keyOf: (e) => e
-                                                                    .product
-                                                                    .productPrice,
-                                                                desc: false)
-                                                            .toList();
-                                                        if (allProductList
-                                                            .isEmpty) {
-                                                          return Center(
-                                                            child: EmptyWidget(
-                                                              messageOne:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                'y6cn22dp' /* Nothing here just yet…  */,
-                                                              ),
-                                                              image: '',
-                                                              messageTwo:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                'opzbkv9r' /* Looks like we haven’t stocked ... */,
-                                                              ),
-                                                              buttonText:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                'go9cb3mx' /* Go to Shop */,
-                                                              ),
-                                                            ),
+                                                                            .contains(allProductListItem.productId) ==
+                                                                        true)
+                                                                    : true,
+                                                                child:
+                                                                    Container(
+                                                                  width: _model
+                                                                      .gridWidth,
+                                                                  height: 290.0,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      ProductGridWidget(
+                                                                    key: Key(
+                                                                        'Keyw0i_${allProductListIndex}_of_${allProductList.length}'),
+                                                                    product:
+                                                                        allProductListItem,
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            }),
                                                           );
-                                                        }
-
-                                                        return Wrap(
-                                                          spacing: 8.0,
-                                                          runSpacing: 24.0,
-                                                          alignment:
-                                                              WrapAlignment
-                                                                  .start,
-                                                          crossAxisAlignment:
-                                                              WrapCrossAlignment
-                                                                  .start,
-                                                          direction:
-                                                              Axis.horizontal,
-                                                          runAlignment:
-                                                              WrapAlignment
-                                                                  .start,
-                                                          verticalDirection:
-                                                              VerticalDirection
-                                                                  .down,
-                                                          clipBehavior:
-                                                              Clip.none,
-                                                          children: List.generate(
-                                                              allProductList
-                                                                  .length,
-                                                              (allProductListIndex) {
-                                                            final allProductListItem =
-                                                                allProductList[
-                                                                    allProductListIndex];
-                                                            return Visibility(
-                                                              visible: FFAppState()
-                                                                          .UserFilter
-                                                                          .filterStatus ==
-                                                                      'set'
+                                                        },
+                                                      ),
+                                                    ),
+                                                  if ((FFAppState()
+                                                              .UserFilter
+                                                              .isSortLtoH ==
+                                                          true) &&
+                                                      (FFAppState()
+                                                              .UserFilter
+                                                              .sortStatus ==
+                                                          'set'))
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
+                                                      child: Builder(
+                                                        builder: (context) {
+                                                          final allProductList = productList1ProductsRecordList
+                                                              .where((e) => (FFAppState().UserFilter.filterStatus ==
+                                                                          'set') &&
+                                                                      (FFAppState()
+                                                                              .UserFilter
+                                                                              .productId
+                                                                              .length >
+                                                                          0)
                                                                   ? (FFAppState()
                                                                           .UserFilter
                                                                           .productId
-                                                                          .contains(
-                                                                              allProductListItem.productId) ==
+                                                                          .contains(e
+                                                                              .productId) ==
                                                                       true)
-                                                                  : true,
-                                                              child: Container(
-                                                                width: _model
-                                                                    .gridWidth,
-                                                                height: 280.0,
-                                                                decoration:
-                                                                    BoxDecoration(),
-                                                                child:
-                                                                    ProductGridWidget(
-                                                                  key: Key(
-                                                                      'Keykr4_${allProductListIndex}_of_${allProductList.length}'),
-                                                                  product:
-                                                                      allProductListItem,
+                                                                  : true)
+                                                              .toList()
+                                                              .sortedList(
+                                                                  keyOf: (e) => e
+                                                                      .product
+                                                                      .productPrice,
+                                                                  desc: false)
+                                                              .toList();
+                                                          if (allProductList
+                                                              .isEmpty) {
+                                                            return Center(
+                                                              child:
+                                                                  EmptyWidget(
+                                                                messageOne:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  'y6cn22dp' /* Nothing here just yet…  */,
+                                                                ),
+                                                                image: '',
+                                                                messageTwo:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  'opzbkv9r' /* Looks like we haven’t stocked ... */,
+                                                                ),
+                                                                buttonText:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  'go9cb3mx' /* Go to Shop */,
                                                                 ),
                                                               ),
                                                             );
-                                                          }),
-                                                        );
-                                                      },
-                                                    ),
-                                                  ),
-                                                if ((FFAppState()
-                                                            .UserFilter
-                                                            .isSortHtoL ==
-                                                        true) &&
-                                                    (FFAppState()
-                                                            .UserFilter
-                                                            .sortStatus ==
-                                                        'set'))
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 0.0),
-                                                    child: Builder(
-                                                      builder: (context) {
-                                                        final allProductList = productList1ProductsRecordList
-                                                            .where((e) => (FFAppState()
+                                                          }
+
+                                                          return Wrap(
+                                                            spacing: 8.0,
+                                                            runSpacing: 24.0,
+                                                            alignment:
+                                                                WrapAlignment
+                                                                    .start,
+                                                            crossAxisAlignment:
+                                                                WrapCrossAlignment
+                                                                    .start,
+                                                            direction:
+                                                                Axis.horizontal,
+                                                            runAlignment:
+                                                                WrapAlignment
+                                                                    .start,
+                                                            verticalDirection:
+                                                                VerticalDirection
+                                                                    .down,
+                                                            clipBehavior:
+                                                                Clip.none,
+                                                            children: List.generate(
+                                                                allProductList
+                                                                    .length,
+                                                                (allProductListIndex) {
+                                                              final allProductListItem =
+                                                                  allProductList[
+                                                                      allProductListIndex];
+                                                              return Visibility(
+                                                                visible: FFAppState()
                                                                             .UserFilter
                                                                             .filterStatus ==
-                                                                        'set') &&
-                                                                    (FFAppState()
+                                                                        'set'
+                                                                    ? (FFAppState()
                                                                             .UserFilter
                                                                             .productId
-                                                                            .length >
-                                                                        0)
-                                                                ? (FFAppState()
-                                                                        .UserFilter
-                                                                        .productId
-                                                                        .contains(e
-                                                                            .productId) ==
-                                                                    true)
-                                                                : true)
-                                                            .toList()
-                                                            .sortedList(
-                                                                keyOf: (e) => e
-                                                                    .product
-                                                                    .productPrice,
-                                                                desc: true)
-                                                            .toList();
-                                                        if (allProductList
-                                                            .isEmpty) {
-                                                          return Center(
-                                                            child: EmptyWidget(
-                                                              messageOne:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                'el76x0pb' /* Nothing here just yet…  */,
-                                                              ),
-                                                              image: '',
-                                                              messageTwo:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                'no8qkuw2' /* Looks like we haven’t stocked ... */,
-                                                              ),
-                                                              buttonText:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                'amr0a0nw' /* Back to Shop */,
-                                                              ),
-                                                            ),
+                                                                            .contains(allProductListItem.productId) ==
+                                                                        true)
+                                                                    : true,
+                                                                child:
+                                                                    Container(
+                                                                  width: _model
+                                                                      .gridWidth,
+                                                                  height: 290.0,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      ProductGridWidget(
+                                                                    key: Key(
+                                                                        'Keykr4_${allProductListIndex}_of_${allProductList.length}'),
+                                                                    product:
+                                                                        allProductListItem,
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            }),
                                                           );
-                                                        }
-
-                                                        return Wrap(
-                                                          spacing: 8.0,
-                                                          runSpacing: 24.0,
-                                                          alignment:
-                                                              WrapAlignment
-                                                                  .start,
-                                                          crossAxisAlignment:
-                                                              WrapCrossAlignment
-                                                                  .start,
-                                                          direction:
-                                                              Axis.horizontal,
-                                                          runAlignment:
-                                                              WrapAlignment
-                                                                  .start,
-                                                          verticalDirection:
-                                                              VerticalDirection
-                                                                  .down,
-                                                          clipBehavior:
-                                                              Clip.none,
-                                                          children: List.generate(
-                                                              allProductList
-                                                                  .length,
-                                                              (allProductListIndex) {
-                                                            final allProductListItem =
-                                                                allProductList[
-                                                                    allProductListIndex];
-                                                            return Visibility(
-                                                              visible: FFAppState()
-                                                                          .UserFilter
-                                                                          .filterStatus ==
-                                                                      'set'
+                                                        },
+                                                      ),
+                                                    ),
+                                                  if ((FFAppState()
+                                                              .UserFilter
+                                                              .isSortHtoL ==
+                                                          true) &&
+                                                      (FFAppState()
+                                                              .UserFilter
+                                                              .sortStatus ==
+                                                          'set'))
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
+                                                      child: Builder(
+                                                        builder: (context) {
+                                                          final allProductList = productList1ProductsRecordList
+                                                              .where((e) => (FFAppState().UserFilter.filterStatus ==
+                                                                          'set') &&
+                                                                      (FFAppState()
+                                                                              .UserFilter
+                                                                              .productId
+                                                                              .length >
+                                                                          0)
                                                                   ? (FFAppState()
                                                                           .UserFilter
                                                                           .productId
-                                                                          .contains(
-                                                                              allProductListItem.productId) ==
+                                                                          .contains(e
+                                                                              .productId) ==
                                                                       true)
-                                                                  : true,
-                                                              child: Container(
-                                                                width: _model
-                                                                    .gridWidth,
-                                                                height: 280.0,
-                                                                decoration:
-                                                                    BoxDecoration(),
-                                                                child:
-                                                                    ProductGridWidget(
-                                                                  key: Key(
-                                                                      'Keyrcg_${allProductListIndex}_of_${allProductList.length}'),
-                                                                  product:
-                                                                      allProductListItem,
+                                                                  : true)
+                                                              .toList()
+                                                              .sortedList(
+                                                                  keyOf: (e) => e
+                                                                      .product
+                                                                      .productPrice,
+                                                                  desc: true)
+                                                              .toList();
+                                                          if (allProductList
+                                                              .isEmpty) {
+                                                            return Center(
+                                                              child:
+                                                                  EmptyWidget(
+                                                                messageOne:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  'el76x0pb' /* Nothing here just yet…  */,
+                                                                ),
+                                                                image: '',
+                                                                messageTwo:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  'no8qkuw2' /* Looks like we haven’t stocked ... */,
+                                                                ),
+                                                                buttonText:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  'amr0a0nw' /* Back to Shop */,
                                                                 ),
                                                               ),
                                                             );
-                                                          }),
-                                                        );
-                                                      },
+                                                          }
+
+                                                          return Wrap(
+                                                            spacing: 8.0,
+                                                            runSpacing: 24.0,
+                                                            alignment:
+                                                                WrapAlignment
+                                                                    .start,
+                                                            crossAxisAlignment:
+                                                                WrapCrossAlignment
+                                                                    .start,
+                                                            direction:
+                                                                Axis.horizontal,
+                                                            runAlignment:
+                                                                WrapAlignment
+                                                                    .start,
+                                                            verticalDirection:
+                                                                VerticalDirection
+                                                                    .down,
+                                                            clipBehavior:
+                                                                Clip.none,
+                                                            children: List.generate(
+                                                                allProductList
+                                                                    .length,
+                                                                (allProductListIndex) {
+                                                              final allProductListItem =
+                                                                  allProductList[
+                                                                      allProductListIndex];
+                                                              return Visibility(
+                                                                visible: FFAppState()
+                                                                            .UserFilter
+                                                                            .filterStatus ==
+                                                                        'set'
+                                                                    ? (FFAppState()
+                                                                            .UserFilter
+                                                                            .productId
+                                                                            .contains(allProductListItem.productId) ==
+                                                                        true)
+                                                                    : true,
+                                                                child:
+                                                                    Container(
+                                                                  width: _model
+                                                                      .gridWidth,
+                                                                  height: 290.0,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      ProductGridWidget(
+                                                                    key: Key(
+                                                                        'Keyrcg_${allProductListIndex}_of_${allProductList.length}'),
+                                                                    product:
+                                                                        allProductListItem,
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            }),
+                                                          );
+                                                        },
+                                                      ),
                                                     ),
-                                                  ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
-                                          ),
-                                        if (_model.defaultView == 'list')
-                                          Container(
-                                            decoration: BoxDecoration(),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                if (FFAppState()
-                                                        .UserFilter
-                                                        .sortStatus !=
-                                                    'set')
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 16.0),
-                                                    child: Builder(
-                                                      builder: (context) {
-                                                        final productList = productList1ProductsRecordList
-                                                            .where((e) => (FFAppState()
+                                          if (_model.defaultView == 'list')
+                                            Container(
+                                              decoration: BoxDecoration(),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  if (FFAppState()
+                                                          .UserFilter
+                                                          .sortStatus !=
+                                                      'set')
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  16.0),
+                                                      child: Builder(
+                                                        builder: (context) {
+                                                          final productList = productList1ProductsRecordList
+                                                              .where((e) => (FFAppState().UserFilter.filterStatus ==
+                                                                          'set') &&
+                                                                      (FFAppState()
+                                                                              .UserFilter
+                                                                              .productId
+                                                                              .length >
+                                                                          0)
+                                                                  ? (FFAppState()
+                                                                          .UserFilter
+                                                                          .productId
+                                                                          .contains(e
+                                                                              .productId) ==
+                                                                      true)
+                                                                  : true)
+                                                              .toList()
+                                                              .sortedList(
+                                                                  keyOf: (e) =>
+                                                                      e.createdAt!,
+                                                                  desc: true)
+                                                              .toList();
+                                                          if (productList
+                                                              .isEmpty) {
+                                                            return Center(
+                                                              child:
+                                                                  EmptyWidget(
+                                                                messageOne:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  'xxkh5mj9' /* Nothing here just yet…  */,
+                                                                ),
+                                                                image:
+                                                                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/9dcoihm1bunh/cart.png',
+                                                                messageTwo:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  '4m18fxc3' /* Looks like we haven’t stocked ... */,
+                                                                ),
+                                                                buttonText:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  '51830y3u' /* Go to Shop */,
+                                                                ),
+                                                              ),
+                                                            );
+                                                          }
+
+                                                          return ListView
+                                                              .builder(
+                                                            padding:
+                                                                EdgeInsets.zero,
+                                                            primary: false,
+                                                            shrinkWrap: true,
+                                                            scrollDirection:
+                                                                Axis.vertical,
+                                                            itemCount:
+                                                                productList
+                                                                    .length,
+                                                            itemBuilder: (context,
+                                                                productListIndex) {
+                                                              final productListItem =
+                                                                  productList[
+                                                                      productListIndex];
+                                                              return Visibility(
+                                                                visible: FFAppState()
                                                                             .UserFilter
                                                                             .filterStatus ==
-                                                                        'set') &&
-                                                                    (FFAppState()
+                                                                        'set'
+                                                                    ? (FFAppState()
                                                                             .UserFilter
                                                                             .productId
-                                                                            .length >
-                                                                        0)
-                                                                ? (FFAppState()
-                                                                        .UserFilter
-                                                                        .productId
-                                                                        .contains(e
-                                                                            .productId) ==
-                                                                    true)
-                                                                : true)
-                                                            .toList()
-                                                            .sortedList(
-                                                                keyOf: (e) => e
-                                                                    .createdAt!,
-                                                                desc: true)
-                                                            .toList();
-                                                        if (productList
-                                                            .isEmpty) {
-                                                          return Center(
-                                                            child: EmptyWidget(
+                                                                            .contains(productListItem.productId) ==
+                                                                        true)
+                                                                    : true,
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          16.0),
+                                                                  child:
+                                                                      Container(
+                                                                    height:
+                                                                        100.0,
+                                                                    decoration:
+                                                                        BoxDecoration(),
+                                                                    child:
+                                                                        ProductListviewWidget(
+                                                                      key: Key(
+                                                                          'Keyhvq_${productListIndex}_of_${productList.length}'),
+                                                                      product:
+                                                                          productListItem,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            },
+                                                          );
+                                                        },
+                                                      ),
+                                                    ),
+                                                  if (((FFAppState()
+                                                                  .UserFilter
+                                                                  .isSortPopular ==
+                                                              true) ||
+                                                          (FFAppState()
+                                                                  .UserFilter
+                                                                  .isSortRecommended ==
+                                                              true)) &&
+                                                      (FFAppState()
+                                                              .UserFilter
+                                                              .sortStatus ==
+                                                          'set'))
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  16.0),
+                                                      child: Builder(
+                                                        builder: (context) {
+                                                          final productList = productList1ProductsRecordList
+                                                              .where((e) => (FFAppState().UserFilter.filterStatus == 'set') &&
+                                                                      (FFAppState().UserFilter.productId.length >
+                                                                          0)
+                                                                  ? (FFAppState()
+                                                                          .UserFilter
+                                                                          .productId
+                                                                          .contains(e
+                                                                              .productId) ==
+                                                                      true)
+                                                                  : true)
+                                                              .toList()
+                                                              .sortedList(
+                                                                  keyOf: (e) => FFAppState()
+                                                                              .UserFilter
+                                                                              .isSortPopular ==
+                                                                          true
+                                                                      ? e.productMarketing
+                                                                          .isPopularProduct
+                                                                          .toString()
+                                                                      : e.productMarketing
+                                                                          .isRecommendedProduct
+                                                                          .toString(),
+                                                                  desc: false)
+                                                              .toList();
+                                                          if (productList
+                                                              .isEmpty) {
+                                                            return EmptyWidget(
                                                               messageOne:
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                'xxkh5mj9' /* Nothing here just yet…  */,
-                                                              ),
-                                                              image:
-                                                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/9dcoihm1bunh/cart.png',
-                                                              messageTwo:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                '4m18fxc3' /* Looks like we haven’t stocked ... */,
-                                                              ),
-                                                              buttonText:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                '51830y3u' /* Go to Shop */,
-                                                              ),
-                                                            ),
-                                                          );
-                                                        }
-
-                                                        return ListView.builder(
-                                                          padding:
-                                                              EdgeInsets.zero,
-                                                          primary: false,
-                                                          shrinkWrap: true,
-                                                          scrollDirection:
-                                                              Axis.vertical,
-                                                          itemCount: productList
-                                                              .length,
-                                                          itemBuilder: (context,
-                                                              productListIndex) {
-                                                            final productListItem =
-                                                                productList[
-                                                                    productListIndex];
-                                                            return Visibility(
-                                                              visible: FFAppState()
-                                                                          .UserFilter
-                                                                          .filterStatus ==
-                                                                      'set'
-                                                                  ? (FFAppState()
-                                                                          .UserFilter
-                                                                          .productId
-                                                                          .contains(
-                                                                              productListItem.productId) ==
-                                                                      true)
-                                                                  : true,
-                                                              child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            16.0),
-                                                                child:
-                                                                    Container(
-                                                                  height: 100.0,
-                                                                  decoration:
-                                                                      BoxDecoration(),
-                                                                  child:
-                                                                      ProductListviewWidget(
-                                                                    key: Key(
-                                                                        'Keyhvq_${productListIndex}_of_${productList.length}'),
-                                                                    product:
-                                                                        productListItem,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          },
-                                                        );
-                                                      },
-                                                    ),
-                                                  ),
-                                                if (((FFAppState()
-                                                                .UserFilter
-                                                                .isSortPopular ==
-                                                            true) ||
-                                                        (FFAppState()
-                                                                .UserFilter
-                                                                .isSortRecommended ==
-                                                            true)) &&
-                                                    (FFAppState()
-                                                            .UserFilter
-                                                            .sortStatus ==
-                                                        'set'))
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 16.0),
-                                                    child: Builder(
-                                                      builder: (context) {
-                                                        final productList = productList1ProductsRecordList
-                                                            .where((e) => (FFAppState()
-                                                                            .UserFilter
-                                                                            .filterStatus ==
-                                                                        'set') &&
-                                                                    (FFAppState()
-                                                                            .UserFilter
-                                                                            .productId
-                                                                            .length >
-                                                                        0)
-                                                                ? (FFAppState().UserFilter.productId.contains(e.productId) ==
-                                                                    true)
-                                                                : true)
-                                                            .toList()
-                                                            .sortedList(
-                                                                keyOf: (e) => FFAppState()
-                                                                            .UserFilter
-                                                                            .isSortPopular ==
-                                                                        true
-                                                                    ? e.productMarketing
-                                                                        .isPopularProduct
-                                                                        .toString()
-                                                                    : e.productMarketing
-                                                                        .isRecommendedProduct
-                                                                        .toString(),
-                                                                desc: false)
-                                                            .toList();
-                                                        if (productList
-                                                            .isEmpty) {
-                                                          return EmptyWidget(
-                                                            messageOne:
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                              'u0qvqq8l' /* Nothing here just yet…  */,
-                                                            ),
-                                                            image: '',
-                                                            messageTwo:
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                              'lnzvudpl' /* Looks like we haven’t stocked ... */,
-                                                            ),
-                                                            buttonText:
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                              '96x42ez3' /* Go to Shop */,
-                                                            ),
-                                                          );
-                                                        }
-
-                                                        return ListView.builder(
-                                                          padding:
-                                                              EdgeInsets.zero,
-                                                          primary: false,
-                                                          shrinkWrap: true,
-                                                          scrollDirection:
-                                                              Axis.vertical,
-                                                          itemCount: productList
-                                                              .length,
-                                                          itemBuilder: (context,
-                                                              productListIndex) {
-                                                            final productListItem =
-                                                                productList[
-                                                                    productListIndex];
-                                                            return Visibility(
-                                                              visible: FFAppState()
-                                                                          .UserFilter
-                                                                          .filterStatus ==
-                                                                      'set'
-                                                                  ? (FFAppState()
-                                                                          .UserFilter
-                                                                          .productId
-                                                                          .contains(
-                                                                              productListItem.productId) ==
-                                                                      true)
-                                                                  : true,
-                                                              child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            16.0),
-                                                                child:
-                                                                    Container(
-                                                                  height: 100.0,
-                                                                  decoration:
-                                                                      BoxDecoration(),
-                                                                  child:
-                                                                      ProductListviewWidget(
-                                                                    key: Key(
-                                                                        'Key4i0_${productListIndex}_of_${productList.length}'),
-                                                                    product:
-                                                                        productListItem,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          },
-                                                        );
-                                                      },
-                                                    ),
-                                                  ),
-                                                if ((FFAppState()
-                                                            .UserFilter
-                                                            .isSortLtoH ==
-                                                        true) &&
-                                                    (FFAppState()
-                                                            .UserFilter
-                                                            .sortStatus ==
-                                                        'set'))
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 16.0),
-                                                    child: Builder(
-                                                      builder: (context) {
-                                                        final productList = productList1ProductsRecordList
-                                                            .where((e) => (FFAppState()
-                                                                            .UserFilter
-                                                                            .filterStatus ==
-                                                                        'set') &&
-                                                                    (FFAppState()
-                                                                            .UserFilter
-                                                                            .productId
-                                                                            .length >
-                                                                        0)
-                                                                ? (FFAppState()
-                                                                        .UserFilter
-                                                                        .productId
-                                                                        .contains(e
-                                                                            .productId) ==
-                                                                    true)
-                                                                : true)
-                                                            .toList()
-                                                            .sortedList(
-                                                                keyOf: (e) => e
-                                                                    .product
-                                                                    .productPrice,
-                                                                desc: false)
-                                                            .toList();
-                                                        if (productList
-                                                            .isEmpty) {
-                                                          return Center(
-                                                            child: EmptyWidget(
-                                                              messageOne:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                'e5fkoc3o' /* Nothing here just yet…  */,
+                                                                'u0qvqq8l' /* Nothing here just yet…  */,
                                                               ),
                                                               image: '',
                                                               messageTwo:
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                'ibnlwmmi' /* Looks like we haven’t stocked ... */,
+                                                                'lnzvudpl' /* Looks like we haven’t stocked ... */,
                                                               ),
                                                               buttonText:
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                '9tvh3354' /* Go to Shop */,
-                                                              ),
-                                                            ),
-                                                          );
-                                                        }
-
-                                                        return ListView.builder(
-                                                          padding:
-                                                              EdgeInsets.zero,
-                                                          primary: false,
-                                                          shrinkWrap: true,
-                                                          scrollDirection:
-                                                              Axis.vertical,
-                                                          itemCount: productList
-                                                              .length,
-                                                          itemBuilder: (context,
-                                                              productListIndex) {
-                                                            final productListItem =
-                                                                productList[
-                                                                    productListIndex];
-                                                            return Visibility(
-                                                              visible: FFAppState()
-                                                                          .UserFilter
-                                                                          .filterStatus ==
-                                                                      'set'
-                                                                  ? (FFAppState()
-                                                                          .UserFilter
-                                                                          .productId
-                                                                          .contains(
-                                                                              productListItem.productId) ==
-                                                                      true)
-                                                                  : true,
-                                                              child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            16.0),
-                                                                child:
-                                                                    Container(
-                                                                  height: 100.0,
-                                                                  decoration:
-                                                                      BoxDecoration(),
-                                                                  child:
-                                                                      ProductListviewWidget(
-                                                                    key: Key(
-                                                                        'Key0xt_${productListIndex}_of_${productList.length}'),
-                                                                    product:
-                                                                        productListItem,
-                                                                  ),
-                                                                ),
+                                                                '96x42ez3' /* Go to Shop */,
                                                               ),
                                                             );
-                                                          },
-                                                        );
-                                                      },
-                                                    ),
-                                                  ),
-                                                if ((FFAppState()
-                                                            .UserFilter
-                                                            .isSortHtoL ==
-                                                        true) &&
-                                                    (FFAppState()
-                                                            .UserFilter
-                                                            .sortStatus ==
-                                                        'set'))
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 16.0),
-                                                    child: Builder(
-                                                      builder: (context) {
-                                                        final productList = productList1ProductsRecordList
-                                                            .where((e) => (FFAppState()
+                                                          }
+
+                                                          return ListView
+                                                              .builder(
+                                                            padding:
+                                                                EdgeInsets.zero,
+                                                            primary: false,
+                                                            shrinkWrap: true,
+                                                            scrollDirection:
+                                                                Axis.vertical,
+                                                            itemCount:
+                                                                productList
+                                                                    .length,
+                                                            itemBuilder: (context,
+                                                                productListIndex) {
+                                                              final productListItem =
+                                                                  productList[
+                                                                      productListIndex];
+                                                              return Visibility(
+                                                                visible: FFAppState()
                                                                             .UserFilter
                                                                             .filterStatus ==
-                                                                        'set') &&
-                                                                    (FFAppState()
+                                                                        'set'
+                                                                    ? (FFAppState()
                                                                             .UserFilter
                                                                             .productId
-                                                                            .length >
-                                                                        0)
-                                                                ? (FFAppState()
-                                                                        .UserFilter
-                                                                        .productId
-                                                                        .contains(e
-                                                                            .productId) ==
-                                                                    true)
-                                                                : true)
-                                                            .toList()
-                                                            .sortedList(
-                                                                keyOf: (e) => e
-                                                                    .product
-                                                                    .productPrice,
-                                                                desc: true)
-                                                            .toList();
-                                                        if (productList
-                                                            .isEmpty) {
-                                                          return Center(
-                                                            child: EmptyWidget(
-                                                              messageOne:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                'fhecz59f' /* Nothing here just yet…  */,
-                                                              ),
-                                                              image: '',
-                                                              messageTwo:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                '99r8wxux' /* Looks like we haven’t stocked ... */,
-                                                              ),
-                                                              buttonText:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                'orai85xs' /* Go to Shop */,
-                                                              ),
-                                                            ),
+                                                                            .contains(productListItem.productId) ==
+                                                                        true)
+                                                                    : true,
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          16.0),
+                                                                  child:
+                                                                      Container(
+                                                                    height:
+                                                                        100.0,
+                                                                    decoration:
+                                                                        BoxDecoration(),
+                                                                    child:
+                                                                        ProductListviewWidget(
+                                                                      key: Key(
+                                                                          'Key4i0_${productListIndex}_of_${productList.length}'),
+                                                                      product:
+                                                                          productListItem,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            },
                                                           );
-                                                        }
-
-                                                        return ListView.builder(
-                                                          padding:
-                                                              EdgeInsets.zero,
-                                                          primary: false,
-                                                          shrinkWrap: true,
-                                                          scrollDirection:
-                                                              Axis.vertical,
-                                                          itemCount: productList
-                                                              .length,
-                                                          itemBuilder: (context,
-                                                              productListIndex) {
-                                                            final productListItem =
-                                                                productList[
-                                                                    productListIndex];
-                                                            return Visibility(
-                                                              visible: FFAppState()
-                                                                          .UserFilter
-                                                                          .filterStatus ==
-                                                                      'set'
+                                                        },
+                                                      ),
+                                                    ),
+                                                  if ((FFAppState()
+                                                              .UserFilter
+                                                              .isSortLtoH ==
+                                                          true) &&
+                                                      (FFAppState()
+                                                              .UserFilter
+                                                              .sortStatus ==
+                                                          'set'))
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  16.0),
+                                                      child: Builder(
+                                                        builder: (context) {
+                                                          final productList = productList1ProductsRecordList
+                                                              .where((e) => (FFAppState().UserFilter.filterStatus ==
+                                                                          'set') &&
+                                                                      (FFAppState()
+                                                                              .UserFilter
+                                                                              .productId
+                                                                              .length >
+                                                                          0)
                                                                   ? (FFAppState()
                                                                           .UserFilter
                                                                           .productId
-                                                                          .contains(
-                                                                              productListItem.productId) ==
+                                                                          .contains(e
+                                                                              .productId) ==
                                                                       true)
-                                                                  : true,
-                                                              child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            16.0),
-                                                                child:
-                                                                    Container(
-                                                                  height: 100.0,
-                                                                  decoration:
-                                                                      BoxDecoration(),
-                                                                  child:
-                                                                      ProductListviewWidget(
-                                                                    key: Key(
-                                                                        'Keyjty_${productListIndex}_of_${productList.length}'),
-                                                                    product:
-                                                                        productListItem,
-                                                                  ),
+                                                                  : true)
+                                                              .toList()
+                                                              .sortedList(
+                                                                  keyOf: (e) => e
+                                                                      .product
+                                                                      .productPrice,
+                                                                  desc: false)
+                                                              .toList();
+                                                          if (productList
+                                                              .isEmpty) {
+                                                            return Center(
+                                                              child:
+                                                                  EmptyWidget(
+                                                                messageOne:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  'e5fkoc3o' /* Nothing here just yet…  */,
+                                                                ),
+                                                                image: '',
+                                                                messageTwo:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  'ibnlwmmi' /* Looks like we haven’t stocked ... */,
+                                                                ),
+                                                                buttonText:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  '9tvh3354' /* Go to Shop */,
                                                                 ),
                                                               ),
                                                             );
-                                                          },
-                                                        );
-                                                      },
+                                                          }
+
+                                                          return ListView
+                                                              .builder(
+                                                            padding:
+                                                                EdgeInsets.zero,
+                                                            primary: false,
+                                                            shrinkWrap: true,
+                                                            scrollDirection:
+                                                                Axis.vertical,
+                                                            itemCount:
+                                                                productList
+                                                                    .length,
+                                                            itemBuilder: (context,
+                                                                productListIndex) {
+                                                              final productListItem =
+                                                                  productList[
+                                                                      productListIndex];
+                                                              return Visibility(
+                                                                visible: FFAppState()
+                                                                            .UserFilter
+                                                                            .filterStatus ==
+                                                                        'set'
+                                                                    ? (FFAppState()
+                                                                            .UserFilter
+                                                                            .productId
+                                                                            .contains(productListItem.productId) ==
+                                                                        true)
+                                                                    : true,
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          16.0),
+                                                                  child:
+                                                                      Container(
+                                                                    height:
+                                                                        100.0,
+                                                                    decoration:
+                                                                        BoxDecoration(),
+                                                                    child:
+                                                                        ProductListviewWidget(
+                                                                      key: Key(
+                                                                          'Key0xt_${productListIndex}_of_${productList.length}'),
+                                                                      product:
+                                                                          productListItem,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            },
+                                                          );
+                                                        },
+                                                      ),
                                                     ),
-                                                  ),
-                                              ],
+                                                  if ((FFAppState()
+                                                              .UserFilter
+                                                              .isSortHtoL ==
+                                                          true) &&
+                                                      (FFAppState()
+                                                              .UserFilter
+                                                              .sortStatus ==
+                                                          'set'))
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  16.0),
+                                                      child: Builder(
+                                                        builder: (context) {
+                                                          final productList = productList1ProductsRecordList
+                                                              .where((e) => (FFAppState().UserFilter.filterStatus ==
+                                                                          'set') &&
+                                                                      (FFAppState()
+                                                                              .UserFilter
+                                                                              .productId
+                                                                              .length >
+                                                                          0)
+                                                                  ? (FFAppState()
+                                                                          .UserFilter
+                                                                          .productId
+                                                                          .contains(e
+                                                                              .productId) ==
+                                                                      true)
+                                                                  : true)
+                                                              .toList()
+                                                              .sortedList(
+                                                                  keyOf: (e) => e
+                                                                      .product
+                                                                      .productPrice,
+                                                                  desc: true)
+                                                              .toList();
+                                                          if (productList
+                                                              .isEmpty) {
+                                                            return Center(
+                                                              child:
+                                                                  EmptyWidget(
+                                                                messageOne:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  'fhecz59f' /* Nothing here just yet…  */,
+                                                                ),
+                                                                image: '',
+                                                                messageTwo:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  '99r8wxux' /* Looks like we haven’t stocked ... */,
+                                                                ),
+                                                                buttonText:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                  'orai85xs' /* Go to Shop */,
+                                                                ),
+                                                              ),
+                                                            );
+                                                          }
+
+                                                          return ListView
+                                                              .builder(
+                                                            padding:
+                                                                EdgeInsets.zero,
+                                                            primary: false,
+                                                            shrinkWrap: true,
+                                                            scrollDirection:
+                                                                Axis.vertical,
+                                                            itemCount:
+                                                                productList
+                                                                    .length,
+                                                            itemBuilder: (context,
+                                                                productListIndex) {
+                                                              final productListItem =
+                                                                  productList[
+                                                                      productListIndex];
+                                                              return Visibility(
+                                                                visible: FFAppState()
+                                                                            .UserFilter
+                                                                            .filterStatus ==
+                                                                        'set'
+                                                                    ? (FFAppState()
+                                                                            .UserFilter
+                                                                            .productId
+                                                                            .contains(productListItem.productId) ==
+                                                                        true)
+                                                                    : true,
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          16.0),
+                                                                  child:
+                                                                      Container(
+                                                                    height:
+                                                                        100.0,
+                                                                    decoration:
+                                                                        BoxDecoration(),
+                                                                    child:
+                                                                        ProductListviewWidget(
+                                                                      key: Key(
+                                                                          'Keyjty_${productListIndex}_of_${productList.length}'),
+                                                                      product:
+                                                                          productListItem,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            },
+                                                          );
+                                                        },
+                                                      ),
+                                                    ),
+                                                ],
+                                              ),
                                             ),
-                                          ),
-                                      ].addToEnd(SizedBox(height: 24.0)),
+                                        ].addToEnd(SizedBox(height: 24.0)),
+                                      ),
                                     ),
-                                  ),
-                                );
-                              },
-                            ),
-                          ],
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
                         ),
                         Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: 75.0,
+                          height: 95.0,
                           decoration: BoxDecoration(),
                         ),
                       ]
@@ -1331,7 +1356,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -1418,7 +1443,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -1480,7 +1505,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryBackground,
@@ -1538,7 +1563,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             color: Colors.white,
                                             fontSize: 12.0,
                                             letterSpacing: 0.0,

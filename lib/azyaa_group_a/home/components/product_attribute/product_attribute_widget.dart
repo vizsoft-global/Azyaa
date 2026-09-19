@@ -183,7 +183,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                           }(),
                         )}',
                         style: FlutterFlowTheme.of(context).titleLarge.override(
-                              fontFamily: 'Cairo',
+                              fontFamily: 'almarai',
                               fontSize: 16.0,
                               letterSpacing: 0.0,
                             ),
@@ -318,7 +318,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                         ),

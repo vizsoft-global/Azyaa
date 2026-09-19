@@ -53,70 +53,73 @@ Future<List<SelectedFile>?> selectMediaWithSourceBottomSheet({
       context: context,
       backgroundColor: backgroundColor,
       builder: (context) {
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            if (!kIsWeb) ...[
-              Padding(
-                padding: EdgeInsets.fromLTRB(0, 8, 0, 0),
-                child: ListTile(
-                  title: Text(
-                    FFLocalizations.of(context).getText(
-                      'fh5g9dzb' /* Choose Source */,
+        return SafeArea(
+          top: false,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (!kIsWeb) ...[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+                  child: ListTile(
+                    title: Text(
+                      FFLocalizations.of(context).getText(
+                        'fh5g9dzb' /* Choose Source */,
+                      ),
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.getFont(
+                        pickerFontFamily,
+                        color: textColor.applyAlpha(0.65),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
+                      ),
                     ),
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.getFont(
-                      pickerFontFamily,
-                      color: textColor.applyAlpha(0.65),
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20,
-                    ),
+                    tileColor: backgroundColor,
+                    dense: false,
                   ),
-                  tileColor: backgroundColor,
-                  dense: false,
                 ),
-              ),
-              const Divider(),
-            ],
-            if (allowPhoto && allowVideo) ...[
-              createUploadMediaListTile(
-                FFLocalizations.of(context).getText(
-                  'zquteuws' /* Gallery(Photo) */,
-                ),
-                MediaSource.photoGallery,
-              ),
-              const Divider(),
-              createUploadMediaListTile(
-                FFLocalizations.of(context).getText(
-                  'tagqb307' /* Gallery(Video) */,
-                ),
-                MediaSource.videoGallery,
-              ),
-            ] else if (allowPhoto)
-              createUploadMediaListTile(
-                FFLocalizations.of(context).getText(
-                  '65i3pu9i' /* Gallery */,
-                ),
-                MediaSource.photoGallery,
-              )
-            else
-              createUploadMediaListTile(
-                FFLocalizations.of(context).getText(
-                  '65i3pu9i' /* Gallery */,
-                ),
-                MediaSource.videoGallery,
-              ),
-            if (!kIsWeb) ...[
-              const Divider(),
-              createUploadMediaListTile(
+                const Divider(),
+              ],
+              if (allowPhoto && allowVideo) ...[
+                createUploadMediaListTile(
                   FFLocalizations.of(context).getText(
-                    'jz6cydv9' /* Camera */,
+                    'zquteuws' /* Gallery(Photo) */,
                   ),
-                  MediaSource.camera),
-              const Divider(),
+                  MediaSource.photoGallery,
+                ),
+                const Divider(),
+                createUploadMediaListTile(
+                  FFLocalizations.of(context).getText(
+                    'tagqb307' /* Gallery(Video) */,
+                  ),
+                  MediaSource.videoGallery,
+                ),
+              ] else if (allowPhoto)
+                createUploadMediaListTile(
+                  FFLocalizations.of(context).getText(
+                    '65i3pu9i' /* Gallery */,
+                  ),
+                  MediaSource.photoGallery,
+                )
+              else
+                createUploadMediaListTile(
+                  FFLocalizations.of(context).getText(
+                    '65i3pu9i' /* Gallery */,
+                  ),
+                  MediaSource.videoGallery,
+                ),
+              if (!kIsWeb) ...[
+                const Divider(),
+                createUploadMediaListTile(
+                    FFLocalizations.of(context).getText(
+                      'jz6cydv9' /* Camera */,
+                    ),
+                    MediaSource.camera),
+                const Divider(),
+              ],
+              const SizedBox(height: 10),
             ],
-            const SizedBox(height: 10),
-          ],
+          ),
         );
       });
   if (mediaSource == null) {

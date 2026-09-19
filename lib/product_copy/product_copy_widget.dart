@@ -725,7 +725,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
@@ -893,7 +893,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryBackground,
@@ -1124,7 +1124,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,
@@ -1140,7 +1140,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -1474,7 +1474,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               color: FlutterFlowTheme.of(context).velvet,
                                                                               letterSpacing: 0.0,
                                                                               decoration: TextDecoration.underline,
@@ -1673,7 +1673,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                                     }(),
                                                                                                   ),
                                                                                                   style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                        fontFamily: 'Cairo',
+                                                                                                        fontFamily: 'almarai',
                                                                                                         color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord?.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
                                                                                                         letterSpacing: 0.0,
                                                                                                       ),
@@ -1924,7 +1924,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                         .bodySmall
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
@@ -1949,7 +1949,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                         .labelSmall
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
@@ -2361,7 +2361,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -2374,7 +2374,8 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily: 'Cairo',
+                                                            fontFamily:
+                                                                'almarai',
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
@@ -2422,7 +2423,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                               .titleSmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Cairo',
+                                                                    'almarai',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
@@ -2631,7 +2632,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                     Text(
                                                                                       containerUsersRecord!.creatorMainInfo.creatorInfo.name,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Cairo',
+                                                                                            fontFamily: 'almarai',
                                                                                             color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w600,
@@ -2718,12 +2719,10 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                   context.pushNamed(
                                                     DesignerWidget.routeName,
                                                     queryParameters: {
-                                                      'designer':
+                                                      'designerUid':
                                                           serializeParam(
-                                                        designerUsersRecord
-                                                            .reference,
-                                                        ParamType
-                                                            .DocumentReference,
+                                                        designerUsersRecord.uid,
+                                                        ParamType.String,
                                                       ),
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
@@ -2903,7 +2902,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               color: FlutterFlowTheme.of(context).primaryBackground,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
@@ -2957,7 +2956,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                           .titleSmall
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryBackground,
                                                                             fontSize:
@@ -3027,7 +3026,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                   iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                   color: Color(0x34000000),
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: 'Cairo',
+                                                                                        fontFamily: 'almarai',
                                                                                         color: FlutterFlowTheme.of(context).info,
                                                                                         fontSize: 10.0,
                                                                                         letterSpacing: 0.0,
@@ -3093,7 +3092,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                     iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     color: Color(0x34000000),
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          fontFamily: 'Cairo',
+                                                                                          fontFamily: 'almarai',
                                                                                           color: FlutterFlowTheme.of(context).info,
                                                                                           fontSize: 10.0,
                                                                                           letterSpacing: 0.0,
@@ -3182,7 +3181,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -3195,7 +3194,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                           context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -3226,7 +3225,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   fontSize: 8.0,
                                                                   letterSpacing:
                                                                       0.0,
@@ -3278,7 +3277,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   .headlineSmall
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -3310,7 +3309,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   fontSize: 8.0,
                                                                   letterSpacing:
                                                                       0.0,
@@ -3363,7 +3362,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   .headlineSmall
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -3395,7 +3394,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   fontSize: 8.0,
                                                                   letterSpacing:
                                                                       0.0,
@@ -3448,7 +3447,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   .headlineSmall
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -3480,7 +3479,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   fontSize: 8.0,
                                                                   letterSpacing:
                                                                       0.0,
@@ -3533,7 +3532,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   .headlineSmall
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -3565,7 +3564,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                 .bodySmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   fontSize: 8.0,
                                                                   letterSpacing:
                                                                       0.0,
@@ -3617,7 +3616,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   .headlineSmall
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -3713,7 +3712,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 fontSize: 12.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
@@ -3786,7 +3785,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -3805,7 +3804,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -3817,7 +3816,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -3947,7 +3946,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -3968,7 +3967,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -3978,7 +3977,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -4297,7 +4296,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                 Text(
                                                                               count.toString(),
                                                                               style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     letterSpacing: 0.0,
                                                                                   ),
                                                                             ),
@@ -4573,7 +4572,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryBackground,
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: Color(0xFF344054),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
@@ -4647,7 +4646,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryBackground,
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: Color(0xFF344054),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
@@ -4913,7 +4912,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               color: FlutterFlowTheme.of(context).info,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -5083,7 +5082,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               color: FlutterFlowTheme.of(context).info,
                                                                               letterSpacing: 0.0,
                                                                             ),
@@ -5211,7 +5210,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).error,
                                                                           fontSize:
@@ -5373,7 +5372,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                               iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                               color: FlutterFlowTheme.of(context).primaryBackground,
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     color: FlutterFlowTheme.of(context).error,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.w500,
@@ -5612,7 +5611,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                           textStyle: FlutterFlowTheme.of(context)
                                                                               .titleSmall
                                                                               .override(
-                                                                                fontFamily: 'Cairo',
+                                                                                fontFamily: 'almarai',
                                                                                 color: Color(0xFF344054),
                                                                                 letterSpacing: 0.0,
                                                                               ),
@@ -5702,7 +5701,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                           textStyle: FlutterFlowTheme.of(context)
                                                                               .titleSmall
                                                                               .override(
-                                                                                fontFamily: 'Cairo',
+                                                                                fontFamily: 'almarai',
                                                                                 color: Color(0xFF344054),
                                                                                 letterSpacing: 0.0,
                                                                               ),

@@ -96,7 +96,7 @@ class _ComingSoonCompWidgetState extends State<ComingSoonCompWidget> {
               'Coming Soon...',
             ),
             style: FlutterFlowTheme.of(context).bodyLarge.override(
-                  fontFamily: 'Cairo',
+                  fontFamily: 'almarai',
                   letterSpacing: 0.0,
                 ),
           ),

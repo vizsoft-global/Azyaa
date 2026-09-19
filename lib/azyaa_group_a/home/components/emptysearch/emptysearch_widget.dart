@@ -76,7 +76,7 @@ class _EmptysearchWidgetState extends State<EmptysearchWidget> {
               widget!.messageOne!,
               textAlign: TextAlign.center,
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Cairo',
+                    fontFamily: 'almarai',
                     fontSize: 16.0,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w600,
@@ -88,7 +88,7 @@ class _EmptysearchWidgetState extends State<EmptysearchWidget> {
                 widget!.messageTwo!,
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Cairo',
+                      fontFamily: 'almarai',
                       fontSize: 14.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.normal,

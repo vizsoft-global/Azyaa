@@ -101,7 +101,7 @@ class _UniversalNavigationBarWidgetState
                           'qym5k4mn' /* Home */,
                         ),
                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                              fontFamily: 'Cairo',
+                              fontFamily: 'almarai',
                               color: widget!.navigation == 'home'
                                   ? FlutterFlowTheme.of(context).primary
                                   : FlutterFlowTheme.of(context).navbaricon,
@@ -160,7 +160,7 @@ class _UniversalNavigationBarWidgetState
                           style: FlutterFlowTheme.of(context)
                               .bodySmall
                               .override(
-                                fontFamily: 'Cairo',
+                                fontFamily: 'almarai',
                                 color: widget!.navigation == 'designer'
                                     ? FlutterFlowTheme.of(context).primary
                                     : FlutterFlowTheme.of(context).navbaricon,
@@ -211,7 +211,7 @@ class _UniversalNavigationBarWidgetState
                         ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                              fontFamily: 'Cairo',
+                              fontFamily: 'almarai',
                               color: widget!.navigation == 'shop'
                                   ? FlutterFlowTheme.of(context).primary
                                   : FlutterFlowTheme.of(context).navbaricon,
@@ -261,7 +261,7 @@ class _UniversalNavigationBarWidgetState
                           '4tvho7in' /* Creator */,
                         ),
                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                              fontFamily: 'Cairo',
+                              fontFamily: 'almarai',
                               color: widget!.navigation == 'creator'
                                   ? FlutterFlowTheme.of(context).primary
                                   : FlutterFlowTheme.of(context).navbaricon,
@@ -315,7 +315,7 @@ class _UniversalNavigationBarWidgetState
                           style: FlutterFlowTheme.of(context)
                               .bodySmall
                               .override(
-                                fontFamily: 'Cairo',
+                                fontFamily: 'almarai',
                                 color: widget!.navigation == 'profile'
                                     ? FlutterFlowTheme.of(context).primary
                                     : FlutterFlowTheme.of(context).navbaricon,

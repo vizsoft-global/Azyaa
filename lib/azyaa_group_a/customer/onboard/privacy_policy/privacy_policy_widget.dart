@@ -82,7 +82,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                       textAlign: TextAlign.start,
                       style:
                           FlutterFlowTheme.of(context).headlineMedium.override(
-                                fontFamily: 'Cairo',
+                                fontFamily: 'almarai',
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 fontSize: 18.0,
                                 letterSpacing: 0.0,
@@ -134,7 +134,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -149,7 +149,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
                                           lineHeight: 1.5,
@@ -163,7 +163,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -178,7 +178,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                           lineHeight: 1.5,
                                         ),
@@ -200,7 +200,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
@@ -217,7 +217,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                                 lineHeight: 1.5,
                                               ),
@@ -226,7 +226,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -248,7 +248,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
@@ -265,7 +265,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                                 lineHeight: 1.5,
                                               ),
@@ -274,7 +274,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 1.0,
                                           ),
                                     ),
@@ -296,7 +296,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
@@ -313,7 +313,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                                 lineHeight: 1.5,
                                               ),
@@ -322,7 +322,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 1.0,
                                           ),
                                     ),
@@ -344,7 +344,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
                                                 lineHeight: 1.5,
@@ -358,7 +358,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                                 lineHeight: 1.5,
                                               ),
@@ -367,7 +367,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 1.0,
                                           ),
                                     ),
@@ -389,7 +389,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
@@ -406,7 +406,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                                 lineHeight: 1.5,
                                               ),
@@ -415,7 +415,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 1.0,
                                           ),
                                     ),
@@ -428,7 +428,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                         lineHeight: 1.5,
@@ -441,7 +441,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         lineHeight: 1.5,
                                       ),
@@ -456,7 +456,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                           lineHeight: 1.5,
                                         ),
@@ -469,7 +469,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                         lineHeight: 1.5,
@@ -482,7 +482,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         lineHeight: 1.5,
                                       ),
@@ -499,7 +499,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
@@ -516,7 +516,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               letterSpacing: 0.0,
                                               lineHeight: 1.5,
                                             ),
@@ -525,7 +525,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 1.0,
                                         ),
                                   ),
@@ -542,7 +542,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
@@ -558,7 +558,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               letterSpacing: 0.0,
                                               lineHeight: 1.5,
                                             ),
@@ -567,7 +567,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 1.0,
                                           lineHeight: 1.5,
                                         ),
@@ -585,7 +585,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
@@ -602,7 +602,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               letterSpacing: 0.0,
                                               lineHeight: 1.5,
                                             ),
@@ -611,7 +611,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 1.0,
                                           lineHeight: 1.5,
                                         ),
@@ -629,7 +629,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
@@ -646,7 +646,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               letterSpacing: 0.0,
                                               lineHeight: 1.5,
                                             ),
@@ -655,7 +655,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 1.0,
                                           lineHeight: 1.5,
                                         ),
@@ -673,7 +673,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
@@ -690,7 +690,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               letterSpacing: 0.0,
                                               lineHeight: 1.5,
                                             ),
@@ -699,7 +699,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 1.0,
                                           lineHeight: 1.5,
                                         ),
@@ -717,7 +717,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
@@ -734,7 +734,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               letterSpacing: 0.0,
                                               lineHeight: 1.5,
                                             ),
@@ -743,7 +743,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 1.0,
                                           lineHeight: 1.5,
                                         ),
@@ -765,7 +765,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
@@ -782,7 +782,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                                 lineHeight: 1.5,
                                               ),
@@ -791,7 +791,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             letterSpacing: 1.0,
                                             lineHeight: 1.5,
                                           ),
@@ -805,7 +805,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                         lineHeight: 1.5,
@@ -821,7 +821,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                           lineHeight: 1.5,
                                         ),
@@ -834,7 +834,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -849,7 +849,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                           lineHeight: 1.5,
                                         ),
@@ -862,7 +862,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -877,7 +877,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                           lineHeight: 1.5,
                                         ),
@@ -890,7 +890,7 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                         lineHeight: 1.5,
@@ -906,35 +906,41 @@ class _PrivacyPolicyWidgetState extends State<PrivacyPolicyWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Cairo',
+                                          fontFamily: 'almarai',
                                           letterSpacing: 0.0,
                                           lineHeight: 1.5,
                                         ),
                                   ),
                                 ),
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'jmlbrcfv' /* Azyaa */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Cairo',
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w600,
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        'jmlbrcfv' /* Azyaa */,
                                       ),
-                                ),
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'hpgemgwj' /* team@azyaakw.com */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Cairo',
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w500,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'almarai',
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                    ),
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        'hpgemgwj' /* team@azyaakw.com */,
                                       ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'almarai',
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                    ),
+                                  ],
                                 ),
                               ].divide(SizedBox(height: 8.0)),
                             ),

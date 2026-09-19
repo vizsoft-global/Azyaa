@@ -104,7 +104,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).titleLarge.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 18.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
@@ -312,7 +312,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .info,
@@ -351,7 +351,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
-                                            fontFamily: 'Cairo',
+                                            fontFamily: 'almarai',
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
@@ -377,7 +377,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   fontSize: 12.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
@@ -389,7 +389,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   fontSize: 12.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
@@ -399,7 +399,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               fontSize: 10.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
@@ -438,7 +438,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         fontSize: 12.0,
                                         letterSpacing: 0.0,
                                       ),
@@ -462,7 +462,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                             maxLines: 1,
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
@@ -482,7 +482,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryText,
                                   fontSize: 10.0,
@@ -505,7 +505,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                           maxLines: 1,
                           style:
                               FlutterFlowTheme.of(context).bodySmall.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
@@ -539,7 +539,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -585,7 +585,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       color: Colors.white,
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
@@ -664,7 +664,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
@@ -689,7 +689,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 34.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -706,7 +706,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -717,7 +717,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -768,7 +768,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
@@ -794,7 +794,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 34.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -811,7 +811,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -822,7 +822,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -852,7 +852,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
                                     ),
@@ -864,7 +864,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -873,7 +873,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   letterSpacing: 0.0,
                                 ),
                           ),
@@ -943,7 +943,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleLarge
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               color: Colors.black,
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
@@ -1115,7 +1115,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -1134,7 +1134,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                                             TextSpan(
                                                                               text: last10transactionListItem.orderItems.cartItems.where((e) => (e.creatorRef == currentUserReference) && (e.promotionUrl == widget!.promotionInfo?.promotionUrl)).toList().length.toString(),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
                                                                                     fontSize: 14.0,
                                                                                     letterSpacing: 0.0,
@@ -1145,7 +1145,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                                                 '26r2n4iv' /*  Sold */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
                                                                                     fontSize: 12.0,
                                                                                     letterSpacing: 0.0,
@@ -1156,7 +1156,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                fontFamily: 'Cairo',
+                                                                                fontFamily: 'almarai',
                                                                                 color: FlutterFlowTheme.of(context).secondaryText,
                                                                                 fontSize: 12.0,
                                                                                 letterSpacing: 0.0,
@@ -1182,7 +1182,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                                               Text(
                                                                             last10transactionListItem.orderStatus,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: Color(0xFF1F841A),
                                                                                   fontSize: 10.0,
                                                                                   letterSpacing: 0.0,
@@ -1219,7 +1219,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                                               'pfr3ata3' /* Price :  */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
@@ -1231,7 +1231,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                                               '4v99p9op' /* 119.9 KD  */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
@@ -1242,7 +1242,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               color: FlutterFlowTheme.of(context).secondaryText,
                                                                               fontSize: 12.0,
                                                                               letterSpacing: 0.0,
@@ -1264,7 +1264,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Cairo',
+                                                                      'almarai',
                                                                   fontSize:
                                                                       14.0,
                                                                   letterSpacing:

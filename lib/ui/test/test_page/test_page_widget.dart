@@ -68,7 +68,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                   'jh4dyiy9' /* Page Title */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      fontFamily: 'Cairo',
+                      fontFamily: 'almarai',
                       color: Colors.white,
                       fontSize: 22.0,
                       letterSpacing: 0.0,
@@ -103,7 +103,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   color: Colors.white,
                                   letterSpacing: 0.0,
                                 ),
@@ -128,7 +128,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                         color: FlutterFlowTheme.of(context).secondary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   color: FlutterFlowTheme.of(context).primary,
                                   letterSpacing: 0.0,
                                 ),
@@ -144,7 +144,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                         'gx21u9ii' /* Discover Unique Collections */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Cairo',
+                            fontFamily: 'almarai',
                             fontSize: 24.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
@@ -155,7 +155,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                         'sqacgs2f' /* Discover Unique Collections */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Cairo',
+                            fontFamily: 'almarai',
                             color: FlutterFlowTheme.of(context).secondaryText,
                             fontSize: 14.0,
                             letterSpacing: 0.2,
@@ -183,7 +183,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
@@ -207,7 +207,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                               hintText: FFLocalizations.of(context).getText(
@@ -244,7 +244,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
@@ -253,7 +253,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Cairo',
+                                        fontFamily: 'almarai',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         letterSpacing: 0.0,
@@ -296,7 +296,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Cairo',
+                                      fontFamily: 'almarai',
                                       letterSpacing: 0.0,
                                     ),
                                 cursorColor:
@@ -326,7 +326,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   color: FlutterFlowTheme.of(context).info,
                                   letterSpacing: 0.0,
                                 ),
@@ -360,7 +360,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                       length: 4,
                       textStyle:
                           FlutterFlowTheme.of(context).bodyLarge.override(
-                                fontFamily: 'Cairo',
+                                fontFamily: 'almarai',
                                 letterSpacing: 0.0,
                               ),
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

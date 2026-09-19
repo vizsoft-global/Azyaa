@@ -108,7 +108,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'almarai',
                                   fontSize: 18.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
@@ -250,7 +250,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 34.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -262,7 +262,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -274,7 +274,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
@@ -344,7 +344,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 34.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -356,7 +356,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -368,7 +368,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
@@ -438,7 +438,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 34.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -450,7 +450,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -462,7 +462,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
@@ -532,7 +532,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 34.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -544,7 +544,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -556,7 +556,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
@@ -598,7 +598,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
@@ -611,7 +611,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
                                                 ),
@@ -620,7 +620,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -670,7 +670,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Cairo',
+                                              fontFamily: 'almarai',
                                               letterSpacing: 0.0,
                                             ),
                                         hintText:
@@ -727,7 +727,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .titleLarge
                                                 .override(
-                                                  fontFamily: 'Cairo',
+                                                  fontFamily: 'almarai',
                                                   color: Colors.black,
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
@@ -887,7 +887,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -909,7 +909,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                                 '0',
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
                                                                                     fontSize: 14.0,
                                                                                     letterSpacing: 0.0,
@@ -920,7 +920,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                                 '9uru58by' /*  Sold */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
                                                                                     fontSize: 12.0,
                                                                                     letterSpacing: 0.0,
@@ -931,7 +931,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                fontFamily: 'Cairo',
+                                                                                fontFamily: 'almarai',
                                                                                 color: FlutterFlowTheme.of(context).secondaryText,
                                                                                 fontSize: 12.0,
                                                                                 letterSpacing: 0.0,
@@ -957,7 +957,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                               Text(
                                                                             thisWeekOrdersItem.orderStatus,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: Color(0xFF1F841A),
                                                                                   fontSize: 10.0,
                                                                                   letterSpacing: 0.0,
@@ -994,7 +994,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                               'f7ssah3m' /* Price :  */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
@@ -1004,7 +1004,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                             text:
                                                                                 thisWeekOrdersItem.orderItems.cartItems.where((e) => e.creatorRef == currentUserReference).toList().firstOrNull!.price.toString(),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
@@ -1027,7 +1027,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Cairo',
+                                                                              fontFamily: 'almarai',
                                                                               color: FlutterFlowTheme.of(context).secondaryText,
                                                                               fontSize: 12.0,
                                                                               letterSpacing: 0.0,
@@ -1058,7 +1058,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Cairo',
+                                                                        'almarai',
                                                                     fontSize:
                                                                         14.0,
                                                                     letterSpacing:
@@ -1121,7 +1121,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleLarge
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color: Colors.black,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
@@ -1285,7 +1285,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -1305,7 +1305,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                               TextSpan(
                                                                                 text: thisMonthOrdersItem.orderItems.cartItems.where((e) => e.creatorRef == currentUserReference).toList().length.toString(),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Cairo',
+                                                                                      fontFamily: 'almarai',
                                                                                       color: FlutterFlowTheme.of(context).primaryText,
                                                                                       fontSize: 14.0,
                                                                                       letterSpacing: 0.0,
@@ -1316,7 +1316,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                                   'eqyf8se3' /*  Sold */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Cairo',
+                                                                                      fontFamily: 'almarai',
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
                                                                                       fontSize: 12.0,
                                                                                       letterSpacing: 0.0,
@@ -1325,7 +1325,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                               )
                                                                             ],
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
@@ -1351,7 +1351,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                                 Text(
                                                                               thisMonthOrdersItem.orderStatus,
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     color: Color(0xFF1F841A),
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
@@ -1385,7 +1385,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                                 'izp9zqhr' /* Price :  */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
                                                                                     fontSize: 12.0,
                                                                                     letterSpacing: 0.0,
@@ -1394,7 +1394,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                             TextSpan(
                                                                               text: thisMonthOrdersItem.orderItems.cartItems.where((e) => e.creatorRef == currentUserReference).toList().firstOrNull!.price.toString(),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
                                                                                     fontSize: 12.0,
                                                                                     letterSpacing: 0.0,
@@ -1415,7 +1415,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                fontFamily: 'Cairo',
+                                                                                fontFamily: 'almarai',
                                                                                 color: FlutterFlowTheme.of(context).secondaryText,
                                                                                 fontSize: 12.0,
                                                                                 letterSpacing: 0.0,
@@ -1458,7 +1458,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             fontSize:
                                                                                 14.0,
                                                                             letterSpacing:
@@ -1489,7 +1489,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Cairo',
+                                                                            'almarai',
                                                                         fontSize:
                                                                             14.0,
                                                                         letterSpacing:
@@ -1557,7 +1557,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleLarge
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         color: Colors.black,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
@@ -1720,7 +1720,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Cairo',
+                                                                                'almarai',
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -1740,7 +1740,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                               TextSpan(
                                                                                 text: lastMonthOrdersItem.orderItems.cartItems.where((e) => e.creatorRef == currentUserReference).toList().length.toString(),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Cairo',
+                                                                                      fontFamily: 'almarai',
                                                                                       color: FlutterFlowTheme.of(context).primaryText,
                                                                                       fontSize: 14.0,
                                                                                       letterSpacing: 0.0,
@@ -1751,7 +1751,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                                   '3gpfy7jb' /* Sold */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Cairo',
+                                                                                      fontFamily: 'almarai',
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
                                                                                       fontSize: 12.0,
                                                                                       letterSpacing: 0.0,
@@ -1760,7 +1760,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                               )
                                                                             ],
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Cairo',
+                                                                                  fontFamily: 'almarai',
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
@@ -1786,7 +1786,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                                 Text(
                                                                               lastMonthOrdersItem.orderStatus,
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     color: Color(0xFF1F841A),
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
@@ -1820,7 +1820,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                                 '2e6vedt1' /* Price :  */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
                                                                                     fontSize: 12.0,
                                                                                     letterSpacing: 0.0,
@@ -1829,7 +1829,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                             TextSpan(
                                                                               text: lastMonthOrdersItem.orderItems.cartItems.where((e) => e.creatorRef == currentUserReference).toList().firstOrNull!.price.toString(),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Cairo',
+                                                                                    fontFamily: 'almarai',
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
                                                                                     fontSize: 12.0,
                                                                                     letterSpacing: 0.0,
@@ -1850,7 +1850,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                fontFamily: 'Cairo',
+                                                                                fontFamily: 'almarai',
                                                                                 color: FlutterFlowTheme.of(context).secondaryText,
                                                                                 fontSize: 12.0,
                                                                                 letterSpacing: 0.0,
@@ -1886,7 +1886,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Cairo',
+                                                                              'almarai',
                                                                           fontSize:
                                                                               14.0,
                                                                           letterSpacing:
@@ -1919,7 +1919,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Cairo',
+                                                                          'almarai',
                                                                       fontSize:
                                                                           14.0,
                                                                       letterSpacing:

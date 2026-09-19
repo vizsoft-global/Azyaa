@@ -96,7 +96,7 @@ class _RatethecallWidgetState extends State<RatethecallWidget> {
                     '5itgnbrp' /* How’s your call? */,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Cairo',
+                        fontFamily: 'almarai',
                         fontSize: 20.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,
@@ -113,7 +113,7 @@ class _RatethecallWidgetState extends State<RatethecallWidget> {
                     'o8697bf7' /* Rate your call out of 5 */,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Cairo',
+                        fontFamily: 'almarai',
                         color: FlutterFlowTheme.of(context).primaryText,
                         fontSize: 14.0,
                         letterSpacing: 0.0,
@@ -157,7 +157,7 @@ class _RatethecallWidgetState extends State<RatethecallWidget> {
                       isDense: true,
                       labelStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Cairo',
+                                fontFamily: 'almarai',
                                 letterSpacing: 0.0,
                               ),
                       hintText: FFLocalizations.of(context).getText(
@@ -165,7 +165,7 @@ class _RatethecallWidgetState extends State<RatethecallWidget> {
                       ),
                       hintStyle:
                           FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Cairo',
+                                fontFamily: 'almarai',
                                 letterSpacing: 0.0,
                               ),
                       enabledBorder: OutlineInputBorder(
@@ -200,7 +200,7 @@ class _RatethecallWidgetState extends State<RatethecallWidget> {
                       fillColor: FlutterFlowTheme.of(context).primaryBackground,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Cairo',
+                          fontFamily: 'almarai',
                           letterSpacing: 0.0,
                         ),
                     maxLines: 4,
@@ -248,7 +248,7 @@ class _RatethecallWidgetState extends State<RatethecallWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Cairo',
+                      fontFamily: 'almarai',
                       color: FlutterFlowTheme.of(context).info,
                       letterSpacing: 0.0,
                     ),

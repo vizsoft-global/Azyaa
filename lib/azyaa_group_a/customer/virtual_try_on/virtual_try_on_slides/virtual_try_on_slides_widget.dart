@@ -529,7 +529,7 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     letterSpacing: 0.0,
                                   ),
                             ),

@@ -72,7 +72,7 @@ class _ReviewgridWidgetState extends State<ReviewgridWidget> {
               Text(
                 widget!.review!.reviewComments,
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Cairo',
+                      fontFamily: 'almarai',
                       fontSize: 10.0,
                       letterSpacing: 0.0,
                     ),
@@ -115,7 +115,7 @@ class _ReviewgridWidgetState extends State<ReviewgridWidget> {
                       locale: FFLocalizations.of(context).languageCode,
                     )}',
                     style: FlutterFlowTheme.of(context).bodySmall.override(
-                          fontFamily: 'Cairo',
+                          fontFamily: 'almarai',
                           color: FlutterFlowTheme.of(context).secondaryText,
                           fontSize: 10.0,
                           letterSpacing: 0.0,

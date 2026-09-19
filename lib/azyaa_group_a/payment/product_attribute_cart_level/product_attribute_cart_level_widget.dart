@@ -118,7 +118,7 @@ class _ProductAttributeCartLevelWidgetState
                         'chk8ds63' /* Choose */,
                       ),
                       style: FlutterFlowTheme.of(context).titleLarge.override(
-                            fontFamily: 'Cairo',
+                            fontFamily: 'almarai',
                             fontSize: 18.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,
@@ -939,7 +939,7 @@ class _ProductAttributeCartLevelWidgetState
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Cairo',
+                                    fontFamily: 'almarai',
                                     color: Colors.white,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
@@ -1096,7 +1096,7 @@ class _ProductAttributeCartLevelWidgetState
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Cairo',
+                                                fontFamily: 'almarai',
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -1149,7 +1149,7 @@ class _ProductAttributeCartLevelWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .velvet,
@@ -1570,7 +1570,7 @@ class _ProductAttributeCartLevelWidgetState
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                fontFamily: 'Cairo',
+                                                                                fontFamily: 'almarai',
                                                                                 fontSize: 16.0,
                                                                                 letterSpacing: 0.0,
                                                                               ),
@@ -1775,7 +1775,7 @@ class _ProductAttributeCartLevelWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily: 'Cairo',
+                                                          fontFamily: 'almarai',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -1797,7 +1797,7 @@ class _ProductAttributeCartLevelWidgetState
                                                           context)
                                                       .labelSmall
                                                       .override(
-                                                        fontFamily: 'Cairo',
+                                                        fontFamily: 'almarai',
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
                                                       ),
