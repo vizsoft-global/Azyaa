@@ -475,8 +475,6 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                               );
                                             },
                                           );
-                                          if (_shouldSetState)
-                                            safeSetState(() {});
                                           return;
                                         }
 

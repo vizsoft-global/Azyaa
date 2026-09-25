@@ -60,7 +60,6 @@ class _CategorySmallGridWidgetState extends State<CategorySmallGridWidget> {
       hoverColor: Colors.transparent,
       highlightColor: Colors.transparent,
       onTap: () async {
-        var _shouldSetState = false;
         if (widget.componentType == 'profile') {
           if (currentUserDocument?.userPreferences.categories.length == 0) {
             _model.idMapResult1 = await queryIdMapRecordOnce(
@@ -70,7 +69,6 @@ class _CategorySmallGridWidgetState extends State<CategorySmallGridWidget> {
               ),
               singleRecord: true,
             ).then((s) => s.firstOrNull);
-            _shouldSetState = true;
 
             await currentUserReference!.update(createUsersRecordData(
               userPreferences: createUserPreferencesStruct(
@@ -165,7 +163,6 @@ class _CategorySmallGridWidgetState extends State<CategorySmallGridWidget> {
                       );
                     },
                   );
-                  if (_shouldSetState) safeSetState(() {});
                   return;
                 }
               }
@@ -268,7 +265,6 @@ class _CategorySmallGridWidgetState extends State<CategorySmallGridWidget> {
           }
         }
 
-        if (_shouldSetState) safeSetState(() {});
       },
       child: Container(
         width: 100.0,

@@ -15,7 +15,6 @@ class FFIcons {
   static const String _azyaaTryonNewFamily = 'AzyaaTryonNew';
   static const String _azyaaShortlistIconFamily = 'AzyaaShortlistIcon';
   static const String _azyaaNewnavIconsFamily = 'AzyaaNewnavIcons';
-  static const String _creatorIconorignalFamily = 'CreatorIconorignal';
   static const String _creatornewFamily = 'Creatornew';
   static const String _nowCreatorFamily = 'NowCreator';
   static const String _icomooncollabFamily = 'Icomooncollab';

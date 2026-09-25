@@ -332,9 +332,6 @@ flutter:
     - family: AzyaaNewnavIcons
       fonts:
         - asset: assets/fonts/AzyaaNewnavIcons.ttf
-    - family: CreatorIconorignal
-      fonts:
-        - asset: assets/fonts/creatorIconorignal.ttf
     - family: Creatornew
       fonts:
         - asset: assets/fonts/creatornew.ttf

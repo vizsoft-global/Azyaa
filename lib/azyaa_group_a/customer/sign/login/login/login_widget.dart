@@ -566,7 +566,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     0.0, 0.0, 0.0, 12.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    var _shouldSetState = false;
                                     if (_model.formKey.currentState == null ||
                                         !_model.formKey.currentState!
                                             .validate()) {
@@ -641,8 +640,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                           },
                                         );
 
-                                        if (_shouldSetState)
-                                          safeSetState(() {});
                                         return;
                                       }
                                     }
@@ -677,7 +674,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         ),
                                         singleRecord: true,
                                       ).then((s) => s.firstOrNull);
-                                      _shouldSetState = true;
                                       if (currentUserDocument?.userInfo
                                               .isPofileCompleteStatus ==
                                           true) {
@@ -892,7 +888,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       );
                                     }
 
-                                    if (_shouldSetState) safeSetState(() {});
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     '2h7fm9lb' /* Sign in */,

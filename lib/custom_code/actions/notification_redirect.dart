@@ -12,8 +12,6 @@ Future notificationRedirect(BuildContext context) async {
 
   FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
     final page = message.data['initialPage'];
-    final params = message.data;
-
     if (page == null) return;
 
     // Add routing logic for supported pages

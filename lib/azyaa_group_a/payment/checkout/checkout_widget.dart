@@ -3176,7 +3176,6 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                         duration: const Duration(milliseconds: 1500),
                                       ),
                                     );
-                                    if (_shouldSetState) safeSetState(() {});
                                     return;
                                   }
                                 }
@@ -3212,7 +3211,6 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                     },
                                   );
 
-                                  if (_shouldSetState) safeSetState(() {});
                                   return;
                                 }
                                 ScaffoldMessenger.of(context).showSnackBar(
@@ -4048,15 +4046,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                         duration: const Duration(milliseconds: 4000),
                                       ),
                                     );
-                                    if (_shouldSetState) safeSetState(() {});
                                     return;
                                   }
                                 } else {
-                                  if (_shouldSetState) safeSetState(() {});
                                   return;
                                 }
 
-                                if (_shouldSetState) safeSetState(() {});
                               },
                               text: FFLocalizations.of(context).getText(
                                 'vfygyvwx' /* Proceed to Pay */,

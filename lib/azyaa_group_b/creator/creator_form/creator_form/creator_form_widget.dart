@@ -5569,7 +5569,6 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                 16.0, 0.0, 16.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                var _shouldSetState = false;
                                 if (_model.formKey.currentState == null ||
                                     !_model.formKey.currentState!.validate()) {
                                   return;
@@ -5585,7 +5584,6 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                       ),
                                       singleRecord: true,
                                     ).then((s) => s.firstOrNull);
-                                    _shouldSetState = true;
 
                                     await currentUserReference!
                                         .update(createUsersRecordData(
@@ -5721,7 +5719,6 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                         );
                                       },
                                     );
-                                    if (_shouldSetState) safeSetState(() {});
                                     return;
                                   }
                                 } else {
@@ -5755,7 +5752,6 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                   );
                                 }
 
-                                if (_shouldSetState) safeSetState(() {});
                               },
                               text: FFLocalizations.of(context).getText(
                                 'q4l2ixnn' /* Next */,

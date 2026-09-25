@@ -226,7 +226,6 @@ class _RegisterVerificationWidgetState
                                     0.0, 0.0, 0.0, 12.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    var _shouldSetState = false;
                                     if (_model.formKey.currentState == null ||
                                         !_model.formKey.currentState!
                                             .validate()) {
@@ -241,7 +240,6 @@ class _RegisterVerificationWidgetState
                                       ),
                                       singleRecord: true,
                                     ).then((s) => s.firstOrNull);
-                                    _shouldSetState = true;
                                     if (FFAppState()
                                             .UserDataFlow
                                             .userEmailOtp ==
@@ -342,11 +340,9 @@ class _RegisterVerificationWidgetState
                                           );
                                         },
                                       );
-                                      if (_shouldSetState) safeSetState(() {});
                                       return;
                                     }
 
-                                    if (_shouldSetState) safeSetState(() {});
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     '8vgrr7go' /* Verify and Continue */,

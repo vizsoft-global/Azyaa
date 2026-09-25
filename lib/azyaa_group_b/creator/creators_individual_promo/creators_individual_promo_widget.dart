@@ -693,11 +693,9 @@ class _CreatorsIndividualPromoWidgetState
                                     16.0, 0.0, 16.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    var _shouldSetState = false;
                                     if (loggedIn != true) {
                                       context.goNamed(LoginWidget.routeName);
 
-                                      if (_shouldSetState) safeSetState(() {});
                                       return;
                                     }
                                     FFAppState().updateUserDataFlowStruct(
@@ -723,13 +721,11 @@ class _CreatorsIndividualPromoWidgetState
                                       ),
                                       singleRecord: true,
                                     ).then((s) => s.firstOrNull);
-                                    _shouldSetState = true;
                                     if (Navigator.of(context).canPop()) {
                                       context.pop();
                                     }
                                     context.pushNamed(CartWidget.routeName);
 
-                                    if (_shouldSetState) safeSetState(() {});
                                   },
                                   text:
                                       '${FFAppState().UserDataFlow.userSelectedProductList.length.toString()} Items selected, Add to Bag',

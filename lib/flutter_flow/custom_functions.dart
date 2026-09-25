@@ -1481,11 +1481,6 @@ bool daysFilter(
     return today.add(Duration(days: daysToAdd));
   }
 
-  // Calculates the start date of the current month.
-  DateTime calculateStartOfMonth() {
-    return DateTime(now.year, now.month, 1);
-  }
-
   // Calculates the start date of the last month.
   DateTime calculateStartOfLastMonth() {
     return DateTime(now.year, now.month - 1, 1);

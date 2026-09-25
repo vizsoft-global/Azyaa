@@ -440,8 +440,6 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                           itemCount: searchList.length,
                                           itemBuilder:
                                               (context, searchListIndex) {
-                                            final searchListItem =
-                                                searchList[searchListIndex];
                                             return Container(
                                                 width: 100,
                                                 height: 100,

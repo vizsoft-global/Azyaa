@@ -1212,11 +1212,9 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                           );
                                         },
                                       );
-                                      if (_shouldSetState) safeSetState(() {});
                                       return;
                                     }
 
-                                    if (_shouldSetState) safeSetState(() {});
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     'u0zrje54' /* Join Now & Get Your Spot */,

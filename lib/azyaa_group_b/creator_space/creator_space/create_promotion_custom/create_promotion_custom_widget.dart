@@ -1714,7 +1714,6 @@ class _CreatePromotionCustomWidgetState
                               16.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              var _shouldSetState = false;
                               if (FFAppState()
                                       .promotionflow
                                       .productDetails
@@ -1739,7 +1738,6 @@ class _CreatePromotionCustomWidgetState
                                     ),
                                     singleRecord: true,
                                   ).then((s) => s.firstOrNull);
-                                  _shouldSetState = true;
 
                                   await currentUserReference!
                                       .update(createUsersRecordData(
@@ -1818,7 +1816,6 @@ class _CreatePromotionCustomWidgetState
                                       ),
                                       singleRecord: true,
                                     ).then((s) => s.firstOrNull);
-                                    _shouldSetState = true;
 
                                     await NotificationRecord.collection
                                         .doc()
@@ -1904,7 +1901,6 @@ class _CreatePromotionCustomWidgetState
                                       );
                                     },
                                   );
-                                  if (_shouldSetState) safeSetState(() {});
                                   return;
                                 }
                               } else {
@@ -1937,11 +1933,9 @@ class _CreatePromotionCustomWidgetState
                                     );
                                   },
                                 );
-                                if (_shouldSetState) safeSetState(() {});
                                 return;
                               }
 
-                              if (_shouldSetState) safeSetState(() {});
                             },
                             text: FFLocalizations.of(context).getText(
                               'wte8nw4b' /* Submit for Review */,

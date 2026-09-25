@@ -723,9 +723,6 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                               child: const BlankLoadingWidget(),
                             );
                           }
-                          List<ProductsRecord> afterinputProductsRecordList =
-                              snapshot.data!;
-
                           return Container(
                             decoration: const BoxDecoration(),
                             child: Visibility(

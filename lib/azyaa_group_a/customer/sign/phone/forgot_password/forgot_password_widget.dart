@@ -270,7 +270,6 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                     0.0, 0.0, 0.0, 12.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    var _shouldSetState = false;
                                     if (_model.formKey.currentState == null ||
                                         !_model.formKey.currentState!
                                             .validate()) {
@@ -285,7 +284,6 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                             _model.emailTextController.text,
                                       ),
                                     );
-                                    _shouldSetState = true;
                                     if (_model.usercount! > 0) {
                                       if (_model
                                           .emailTextController.text.isEmpty) {
@@ -355,11 +353,9 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                           );
                                         },
                                       );
-                                      if (_shouldSetState) safeSetState(() {});
                                       return;
                                     }
 
-                                    if (_shouldSetState) safeSetState(() {});
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     'g84emnx3' /* Send */,

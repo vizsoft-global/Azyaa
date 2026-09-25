@@ -1017,7 +1017,6 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                               16.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              var _shouldSetState = false;
                               if (currentUserDocument
                                       ?.creatorRequests.creatorSelfie !=
                                   '') {
@@ -1047,7 +1046,6 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                       ),
                                       singleRecord: true,
                                     ).then((s) => s.firstOrNull);
-                                    _shouldSetState = true;
 
                                     await NotificationRecord.collection
                                         .doc()
@@ -1121,7 +1119,6 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                       );
                                     },
                                   );
-                                  if (_shouldSetState) safeSetState(() {});
                                   return;
                                 }
                               } else {
@@ -1154,11 +1151,9 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                     );
                                   },
                                 );
-                                if (_shouldSetState) safeSetState(() {});
                                 return;
                               }
 
-                              if (_shouldSetState) safeSetState(() {});
                             },
                             text: FFLocalizations.of(context).getText(
                               'p4m59cah' /* Upload and Submit */,

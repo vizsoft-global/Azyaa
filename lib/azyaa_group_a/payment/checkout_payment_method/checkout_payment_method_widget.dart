@@ -538,7 +538,6 @@ class _CheckoutPaymentMethodWidgetState
                       const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      var _shouldSetState = false;
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(
@@ -620,7 +619,6 @@ class _CheckoutPaymentMethodWidgetState
                               : 'https://hook.us1.make.com/p7og7qm3g9v7amn2rdx6odh24brwvypj?project=azyaa&&paymenttype=myfatoorah&&paytype=test',
                         );
 
-                        _shouldSetState = true;
                         if ((_model.myfatoorahPaymentResult1?.succeeded ??
                             true)) {
                           FFAppState().updatePaymentFlowStruct(
@@ -741,7 +739,6 @@ class _CheckoutPaymentMethodWidgetState
                                     shippingPrice: widget.shippingCharge,
                                   ),
                                   ordersRecordReference);
-                          _shouldSetState = true;
                           if (currentUserDocument!.userCart.cartItems
                                   .where((e) => e.productType == 'product')
                                   .toList()
@@ -835,15 +832,12 @@ class _CheckoutPaymentMethodWidgetState
                               duration: const Duration(milliseconds: 4000),
                             ),
                           );
-                          if (_shouldSetState) safeSetState(() {});
                           return;
                         }
                       } else {
-                        if (_shouldSetState) safeSetState(() {});
                         return;
                       }
 
-                      if (_shouldSetState) safeSetState(() {});
                     },
                     text: FFLocalizations.of(context).getText(
                       'x2mcjqyu' /* Proceed to Pay */,

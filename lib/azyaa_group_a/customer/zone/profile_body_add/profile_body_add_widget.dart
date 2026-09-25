@@ -2777,7 +2777,6 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
             padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
-                var _shouldSetState = false;
                 if (_model.formKey.currentState == null ||
                     !_model.formKey.currentState!.validate()) {
                   return;
@@ -2808,7 +2807,6 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                       );
                     },
                   );
-                  if (_shouldSetState) safeSetState(() {});
                   return;
                 } else if (_model.weightTextController.text == '') {
                   await showDialog(
@@ -2836,7 +2834,6 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                       );
                     },
                   );
-                  if (_shouldSetState) safeSetState(() {});
                   return;
                 } else if (_model.chestTextController.text == '') {
                   await showDialog(
@@ -2864,7 +2861,6 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                       );
                     },
                   );
-                  if (_shouldSetState) safeSetState(() {});
                   return;
                 } else if (_model.waistTextController.text == '') {
                   await showDialog(
@@ -2892,7 +2888,6 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                       );
                     },
                   );
-                  if (_shouldSetState) safeSetState(() {});
                   return;
                 } else if (_model.hipTextController.text == '') {
                   await showDialog(
@@ -2920,7 +2915,6 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                       );
                     },
                   );
-                  if (_shouldSetState) safeSetState(() {});
                   return;
                 } else if (_model.inseamTextController.text == '') {
                   await showDialog(
@@ -2948,7 +2942,6 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                       );
                     },
                   );
-                  if (_shouldSetState) safeSetState(() {});
                   return;
                 } else if (_model.shoulderTextController.text == '') {
                   await showDialog(
@@ -2976,7 +2969,6 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                       );
                     },
                   );
-                  if (_shouldSetState) safeSetState(() {});
                   return;
                 } else if (_model.armTextController.text == '') {
                   await showDialog(
@@ -3004,7 +2996,6 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                       );
                     },
                   );
-                  if (_shouldSetState) safeSetState(() {});
                   return;
                 } else if (_model.nameTextController.text == '') {
                   await showDialog(
@@ -3032,7 +3023,6 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                       );
                     },
                   );
-                  if (_shouldSetState) safeSetState(() {});
                   return;
                 }
 
@@ -3074,7 +3064,6 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                   ),
                   singleRecord: true,
                 ).then((s) => s.firstOrNull);
-                _shouldSetState = true;
 
                 await currentUserReference!.update({
                   ...mapToFirestore(
@@ -3161,7 +3150,6 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                   ),
                 );
                 Navigator.pop(context);
-                if (_shouldSetState) safeSetState(() {});
               },
               text: FFLocalizations.of(context).getText(
                 '7ecuymi0' /* Add Measurement */,

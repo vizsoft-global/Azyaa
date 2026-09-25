@@ -124,18 +124,15 @@ class _ProductAttributeCartLevelWidgetState
                     Builder(
                       builder: (context) => FFButtonWidget(
                         onPressed: () async {
-                          var _shouldSetState = false;
                           if (loggedIn) {
                             _model.normalProductResult =
                                 await ProductsRecord.getDocumentOnce(
                                     widget.product!.reference);
-                            _shouldSetState = true;
                             _model.normalInventoryResult =
                                 await InventoryRecord.getDocumentOnce(_model
                                     .normalProductResult!
                                     .product
                                     .inventoryRef!);
-                            _shouldSetState = true;
                             if (_model.normalInventoryResult!.stock > 0) {
                               if (FFAppState()
                                       .UserDataFlow
@@ -212,7 +209,6 @@ class _ProductAttributeCartLevelWidgetState
                                       },
                                     );
 
-                                    if (_shouldSetState) safeSetState(() {});
                                     return;
                                   }
                                   FFAppState().updateUserDataFlowStruct(
@@ -256,7 +252,6 @@ class _ProductAttributeCartLevelWidgetState
                                   },
                                 );
 
-                                if (_shouldSetState) safeSetState(() {});
                                 return;
                               }
 
@@ -269,7 +264,6 @@ class _ProductAttributeCartLevelWidgetState
                                 ),
                                 singleRecord: true,
                               ).then((s) => s.firstOrNull);
-                              _shouldSetState = true;
                               if (FFAppState()
                                       .UserDataFlow
                                       .userProductSwatchesList
@@ -596,7 +590,6 @@ class _ProductAttributeCartLevelWidgetState
                                           );
                                         },
                                       );
-                                      if (_shouldSetState) safeSetState(() {});
                                       return;
                                     } else {
                                       FFAppState().updateUserDataFlowStruct(
@@ -800,7 +793,6 @@ class _ProductAttributeCartLevelWidgetState
                                         );
                                       },
                                     );
-                                    if (_shouldSetState) safeSetState(() {});
                                     return;
                                   } else {
                                     FFAppState().updateUserDataFlowStruct(
@@ -920,7 +912,6 @@ class _ProductAttributeCartLevelWidgetState
                             context.goNamed(LoginWidget.routeName);
                           }
 
-                          if (_shouldSetState) safeSetState(() {});
                         },
                         text: FFLocalizations.of(context).getText(
                           'gcn1cgz9' /* Add to bag */,

@@ -430,8 +430,6 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                   );
                 }
 
-                final shareconProductsRecord = snapshot.data!;
-
                 return FlutterFlowIconButton(
                   borderColor: FlutterFlowTheme.of(context).border,
                   borderRadius: 100.0,

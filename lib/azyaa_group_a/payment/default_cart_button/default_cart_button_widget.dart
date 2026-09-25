@@ -225,7 +225,6 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                         },
                                       );
 
-                                      if (_shouldSetState) safeSetState(() {});
                                       return;
                                     }
                                     FFAppState().updateUserDataFlowStruct(
@@ -267,7 +266,6 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                     },
                                   );
 
-                                  if (_shouldSetState) safeSetState(() {});
                                   return;
                                 }
 
@@ -622,7 +620,6 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                           );
                                         },
                                       );
-                                      if (_shouldSetState) safeSetState(() {});
                                       return;
                                     } else {
                                       FFAppState().updateUserDataFlowStruct(
@@ -747,7 +744,6 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                             context.goNamed(LoginWidget.routeName);
                           }
 
-                          if (_shouldSetState) safeSetState(() {});
                         },
                         text: loggedIn
                             ? (currentUserDocument!.userCart.cartItems
@@ -1127,7 +1123,6 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                         },
                       );
 
-                      if (_shouldSetState) safeSetState(() {});
                       return;
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -1149,7 +1144,6 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                     }
                   }
 
-                  if (_shouldSetState) safeSetState(() {});
                 },
                 text: FFLocalizations.of(context).getText(
                   'wj0v0g4o' /* Purchase  */,

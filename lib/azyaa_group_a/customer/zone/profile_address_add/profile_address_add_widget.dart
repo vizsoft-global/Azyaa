@@ -1924,7 +1924,6 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
             padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
-                var _shouldSetState = false;
                 if (_model.formKey.currentState == null ||
                     !_model.formKey.currentState!.validate()) {
                   return;
@@ -1983,7 +1982,6 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                       );
                     },
                   );
-                  if (_shouldSetState) safeSetState(() {});
                   return;
                 }
                 if (_model.checkboxValue != false) {
@@ -2026,7 +2024,6 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                   ),
                   singleRecord: true,
                 ).then((s) => s.firstOrNull);
-                _shouldSetState = true;
 
                 await currentUserReference!.update({
                   ...mapToFirestore(
@@ -2097,7 +2094,6 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                     Navigator.pop(context);
                   }(),
                 );
-                if (_shouldSetState) safeSetState(() {});
               },
               text: FFLocalizations.of(context).getText(
                 'nahhdrqt' /* Save */,

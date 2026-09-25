@@ -1101,7 +1101,6 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                 16.0, 24.0, 16.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                var _shouldSetState = false;
                                 if (_model.reasonforReturnFieldValue ==
                                     'Others') {
                                   if (!(_model.textController.text != '')) {
@@ -1123,7 +1122,6 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                         );
                                       },
                                     );
-                                    if (_shouldSetState) safeSetState(() {});
                                     return;
                                   }
                                 }
@@ -1135,7 +1133,6 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                   ),
                                   singleRecord: true,
                                 ).then((s) => s.firstOrNull);
-                                _shouldSetState = true;
 
                                 var returnRequestsRecordReference =
                                     ReturnRequestsRecord.collection.doc();
@@ -1200,7 +1197,6 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                     },
                                   ),
                                 }, returnRequestsRecordReference);
-                                _shouldSetState = true;
 
                                 await widget.order!
                                     .update(createOrdersRecordData(
@@ -1228,7 +1224,6 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                   },
                                 );
 
-                                if (_shouldSetState) safeSetState(() {});
                               },
                               text: FFLocalizations.of(context).getText(
                                 'f5kksy09' /* Raise Return Request */,

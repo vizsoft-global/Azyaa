@@ -204,7 +204,6 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                               16.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              var _shouldSetState = false;
                               _model.couponResult = await queryCouponRecordOnce(
                                 queryBuilder: (couponRecord) =>
                                     couponRecord.where(
@@ -213,7 +212,6 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                 ),
                                 singleRecord: true,
                               ).then((s) => s.firstOrNull);
-                              _shouldSetState = true;
                               if ((_model.couponResult != null) == false) {
                                 await showDialog(
                                   context: context,
@@ -245,7 +243,6 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                 safeSetState(() {
                                   _model.couponTextController?.clear();
                                 });
-                                if (_shouldSetState) safeSetState(() {});
                                 return;
                               } else if (_model.couponResult?.couponStatus !=
                                   'active') {
@@ -279,7 +276,6 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                 safeSetState(() {
                                   _model.couponTextController?.clear();
                                 });
-                                if (_shouldSetState) safeSetState(() {});
                                 return;
                               } else if (_model.couponResult!.couponStartDate! >
                                   functions.presentDateFromZerotime()) {
@@ -313,7 +309,6 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                 safeSetState(() {
                                   _model.couponTextController?.clear();
                                 });
-                                if (_shouldSetState) safeSetState(() {});
                                 return;
                               } else if (_model.couponResult!.couponEndDate! <
                                   functions.presentDateFromZerotime()) {
@@ -347,7 +342,6 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                 safeSetState(() {
                                   _model.couponTextController?.clear();
                                 });
-                                if (_shouldSetState) safeSetState(() {});
                                 return;
                               } else if (_model.couponResult!.couponUsedUserList
                                       .where((e) => e.userId == currentUserUid)
@@ -386,7 +380,6 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                 safeSetState(() {
                                   _model.couponTextController?.clear();
                                 });
-                                if (_shouldSetState) safeSetState(() {});
                                 return;
                               } else if (_model.couponResult!.couponLimit <=
                                   0) {
@@ -421,7 +414,6 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                 safeSetState(() {
                                   _model.couponTextController?.clear();
                                 });
-                                if (_shouldSetState) safeSetState(() {});
                                 return;
                               } else if (_model.couponResult?.couponFor !=
                                   valueOrDefault(
@@ -458,7 +450,6 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                 safeSetState(() {
                                   _model.couponTextController?.clear();
                                 });
-                                if (_shouldSetState) safeSetState(() {});
                                 return;
                               } else if (currentUserDocument
                                       ?.userCart.cartItems.length !=
@@ -498,7 +489,6 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                 safeSetState(() {
                                   _model.couponTextController?.clear();
                                 });
-                                if (_shouldSetState) safeSetState(() {});
                                 return;
                               } else if (_model.couponResult?.couponFor ==
                                   'Creator') {
@@ -814,12 +804,10 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                   safeSetState(() {
                                     _model.couponTextController?.clear();
                                   });
-                                  if (_shouldSetState) safeSetState(() {});
                                   return;
                                 }
                               }
 
-                              if (_shouldSetState) safeSetState(() {});
                             },
                             text: FFLocalizations.of(context).getText(
                               'ep1lpnyz' /* Apply */,

@@ -1413,7 +1413,6 @@ class _DesignerFormUploadWidgetState extends State<DesignerFormUploadWidget> {
                               16.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              var _shouldSetState = false;
                               if ((_model.storeIDimage != null &&
                                       _model.storeIDimage != '') ||
                                   (_model.indIDimage != null &&
@@ -1450,7 +1449,6 @@ class _DesignerFormUploadWidgetState extends State<DesignerFormUploadWidget> {
                                     ),
                                     singleRecord: true,
                                   ).then((s) => s.firstOrNull);
-                                  _shouldSetState = true;
 
                                   await NotificationRecord.collection
                                       .doc()
@@ -1521,11 +1519,9 @@ class _DesignerFormUploadWidgetState extends State<DesignerFormUploadWidget> {
                                     );
                                   },
                                 );
-                                if (_shouldSetState) safeSetState(() {});
                                 return;
                               }
 
-                              if (_shouldSetState) safeSetState(() {});
                             },
                             text: FFLocalizations.of(context).getText(
                               'sfcy749c' /* Upload and Submit */,

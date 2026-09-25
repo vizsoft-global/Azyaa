@@ -1279,7 +1279,6 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                       0.0, 0.0, 0.0, 12.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      var _shouldSetState = false;
                                       if (_model.formKey.currentState == null ||
                                           !_model.formKey.currentState!
                                               .validate()) {
@@ -1384,8 +1383,6 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                               },
                                             );
 
-                                            if (_shouldSetState)
-                                              safeSetState(() {});
                                             return;
                                           }
                                         }
@@ -1429,7 +1426,6 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                           ),
                                           singleRecord: true,
                                         ).then((s) => s.firstOrNull);
-                                        _shouldSetState = true;
                                         if (_model.settingsDoc
                                                 ?.settingsPhoneOtpStatus ==
                                             true) {
@@ -1589,12 +1585,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                             );
                                           },
                                         );
-                                        if (_shouldSetState)
-                                          safeSetState(() {});
                                         return;
                                       }
 
-                                      if (_shouldSetState) safeSetState(() {});
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'snd7grb8' /* Confirm */,

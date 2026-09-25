@@ -611,8 +611,6 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                               },
                                             );
 
-                                            if (_shouldSetState)
-                                              safeSetState(() {});
                                             return;
                                           }
                                           FFAppState().updateUserDataFlowStruct(

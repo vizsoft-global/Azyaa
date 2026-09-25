@@ -2661,7 +2661,6 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          var _shouldSetState = false;
                           if (_model.hieghtTextController.text == '') {
                             await showDialog(
                               context: context,
@@ -2688,7 +2687,6 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                 );
                               },
                             );
-                            if (_shouldSetState) safeSetState(() {});
                             return;
                           } else if (_model.weightTextController.text == '') {
                             await showDialog(
@@ -2716,7 +2714,6 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                 );
                               },
                             );
-                            if (_shouldSetState) safeSetState(() {});
                             return;
                           } else if (_model.chestTextController.text == '') {
                             await showDialog(
@@ -2744,7 +2741,6 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                 );
                               },
                             );
-                            if (_shouldSetState) safeSetState(() {});
                             return;
                           } else if (_model.waistTextController.text == '') {
                             await showDialog(
@@ -2772,7 +2768,6 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                 );
                               },
                             );
-                            if (_shouldSetState) safeSetState(() {});
                             return;
                           } else if (_model.hipTextController.text == '') {
                             await showDialog(
@@ -2800,7 +2795,6 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                 );
                               },
                             );
-                            if (_shouldSetState) safeSetState(() {});
                             return;
                           } else if (_model.inseamTextController.text == '') {
                             await showDialog(
@@ -2828,7 +2822,6 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                 );
                               },
                             );
-                            if (_shouldSetState) safeSetState(() {});
                             return;
                           } else if (_model.shoulderTextController.text == '') {
                             await showDialog(
@@ -2856,7 +2849,6 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                 );
                               },
                             );
-                            if (_shouldSetState) safeSetState(() {});
                             return;
                           } else if (_model.armTextController.text == '') {
                             await showDialog(
@@ -2884,7 +2876,6 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                 );
                               },
                             );
-                            if (_shouldSetState) safeSetState(() {});
                             return;
                           }
 
@@ -2895,7 +2886,6 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                             ),
                             singleRecord: true,
                           ).then((s) => s.firstOrNull);
-                          _shouldSetState = true;
 
                           await currentUserReference!.update({
                             ...createUsersRecordData(
@@ -2994,7 +2984,6 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                             },
                           );
 
-                          if (_shouldSetState) safeSetState(() {});
                         },
                         text: FFLocalizations.of(context).getText(
                           'gcz0jz3y' /* Save & Continue */,
