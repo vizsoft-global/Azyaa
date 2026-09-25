@@ -1,21 +1,16 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'waitlist_form_model.dart';
@@ -76,7 +71,7 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -97,7 +92,7 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                         context.goNamed(
                           WaitlistMainWidget.routeName,
                           extra: <String, dynamic>{
-                            '__transition_info__': TransitionInfo(
+                            '__transition_info__': const TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                               duration: Duration(milliseconds: 0),
@@ -108,7 +103,7 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -129,15 +124,15 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.none,
-                            alignment: AlignmentDirectional(1.0, -1.0),
+                            alignment: const AlignmentDirectional(1.0, -1.0),
                             image: Image.asset(
                               'assets/images/Vector_(3).png',
                             ).image,
                           ),
                         ),
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -145,7 +140,7 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 16.0),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
@@ -158,7 +153,7 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 16.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -175,7 +170,7 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 24.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -195,9 +190,9 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-1.0, -1.0),
+                                alignment: const AlignmentDirectional(-1.0, -1.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 8.0),
                                   child: RichText(
                                     textScaler:
@@ -245,7 +240,7 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 24.0),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
@@ -331,9 +326,9 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-1.0, -1.0),
+                                alignment: const AlignmentDirectional(-1.0, -1.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 8.0),
                                   child: RichText(
                                     textScaler:
@@ -381,9 +376,9 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 12.0),
                                   child: Container(
                                     width:
@@ -399,14 +394,14 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                         width: 1.0,
                                       ),
                                     ),
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Stack(
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
-                                            padding: EdgeInsets.all(2.0),
+                                            padding: const EdgeInsets.all(2.0),
                                             child: FlutterFlowDropDown<String>(
                                               controller: _model
                                                       .countryListValueController ??=
@@ -469,7 +464,7 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                               borderColor: Colors.transparent,
                                               borderWidth: 0.0,
                                               borderRadius: 0.0,
-                                              margin: EdgeInsetsDirectional
+                                              margin: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       65.0, 4.0, 12.0, 4.0),
                                               hidesUnderline: true,
@@ -481,11 +476,11 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
+                                              const AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
-                                            padding: EdgeInsets.all(8.0),
-                                            child: Image.network(
-                                              functions.getCountryFlag(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: CachedNetworkImage(
+                                              imageUrl: functions.getCountryFlag(
                                                   _model.countryListValue)!,
                                               width: 35.0,
                                               fit: BoxFit.cover,
@@ -498,13 +493,13 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 12.0),
                                 child: Stack(
                                   children: [
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, -1.0),
+                                          const AlignmentDirectional(-1.0, -1.0),
                                       child: Container(
                                         width:
                                             MediaQuery.sizeOf(context).width *
@@ -593,7 +588,7 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .primaryBackground,
                                             contentPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     68.0, 0.0, 0.0, 8.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
@@ -621,9 +616,9 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, -1.0),
+                                          const AlignmentDirectional(-1.0, -1.0),
                                       child: Padding(
-                                        padding: EdgeInsets.all(16.0),
+                                        padding: const EdgeInsets.all(16.0),
                                         child: Text(
                                           functions.getDailCode(
                                               _model.countryListValue)!,
@@ -641,9 +636,9 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-1.0, -1.0),
+                                alignment: const AlignmentDirectional(-1.0, -1.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 8.0),
                                   child: RichText(
                                     textScaler:
@@ -691,7 +686,7 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 24.0),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
@@ -777,7 +772,7 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 12.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -853,7 +848,7 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                           }.withoutNulls,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -906,7 +901,7 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                             }.withoutNulls,
                                             extra: <String, dynamic>{
                                               '__transition_info__':
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -956,7 +951,7 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                               }.withoutNulls,
                                               extra: <String, dynamic>{
                                                 '__transition_info__':
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -1006,7 +1001,7 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                                 }.withoutNulls,
                                                 extra: <String, dynamic>{
                                                   '__transition_info__':
-                                                      TransitionInfo(
+                                                      const TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType.fade,
@@ -1134,14 +1129,14 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                                 notificationId: _model
                                                     .idmapresult3
                                                     ?.notificationId
-                                                    ?.toString(),
+                                                    .toString(),
                                                 createdAt: getCurrentTimestamp,
                                                 updatedAt: getCurrentTimestamp,
                                                 notificationType:
                                                     'waitlistrequest',
                                                 messageType: 'WAITLIST REQUEST',
                                                 message:
-                                                    'New User Waiting to Register requested from ${_model.newUserWaiterResult?.userInfo?.name} || ${_model.newUserWaiterResult?.userWaitlistId?.toString()}',
+                                                    'New User Waiting to Register requested from ${_model.newUserWaiterResult?.userInfo.name} || ${_model.newUserWaiterResult?.userWaitlistId.toString()}',
                                                 sentFrom: 'system',
                                                 markAsRead: false,
                                                 toUserRef: FFAppState()
@@ -1175,7 +1170,7 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                           }.withoutNulls,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -1230,9 +1225,9 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                     width:
                                         MediaQuery.sizeOf(context).width * 1.0,
                                     height: 48.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -1249,14 +1244,14 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 12.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
                                     context.goNamed(
                                       WaitlistSecretWidget.routeName,
                                       extra: <String, dynamic>{
-                                        '__transition_info__': TransitionInfo(
+                                        '__transition_info__': const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -1272,9 +1267,9 @@ class _WaitlistFormWidgetState extends State<WaitlistFormWidget> {
                                     width:
                                         MediaQuery.sizeOf(context).width * 1.0,
                                     height: 48.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,

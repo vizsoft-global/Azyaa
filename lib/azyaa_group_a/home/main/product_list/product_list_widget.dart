@@ -8,17 +8,13 @@ import '/azyaa_group_a/home/components/product_listview/product_listview_widget.
 import '/azyaa_group_a/home/components/product_sort/product_sort_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
-import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'product_list_model.dart';
@@ -79,7 +75,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -107,7 +103,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -120,12 +116,12 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   wrapWithModel(
                     model: _model.appUpdateCheckerModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: AppUpdateCheckerWidget(),
+                    child: const AppUpdateCheckerWidget(),
                   ),
                   SingleChildScrollView(
                     child: Column(
@@ -133,7 +129,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 24.0),
                           child: Stack(
                             children: [
@@ -155,7 +151,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       height: 150.0,
-                                      child: LoadingAnimationWidget(),
+                                      child: const LoadingAnimationWidget(),
                                     );
                                   }
                                   List<ProductsRecord>
@@ -163,7 +159,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                       snapshot.data!;
 
                                   return Container(
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: Visibility(
                                       visible: productList1ProductsRecordList
                                               .length >
@@ -178,7 +174,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   1.0,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
@@ -190,7 +186,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                       'set')
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -290,7 +286,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                       .gridWidth,
                                                                   height: 290.0,
                                                                   decoration:
-                                                                      BoxDecoration(),
+                                                                      const BoxDecoration(),
                                                                   child:
                                                                       ProductGridWidget(
                                                                     key: Key(
@@ -319,7 +315,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                           'set'))
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -423,7 +419,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                       .gridWidth,
                                                                   height: 290.0,
                                                                   decoration:
-                                                                      BoxDecoration(),
+                                                                      const BoxDecoration(),
                                                                   child:
                                                                       ProductGridWidget(
                                                                     key: Key(
@@ -448,7 +444,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                           'set'))
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -549,7 +545,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                       .gridWidth,
                                                                   height: 290.0,
                                                                   decoration:
-                                                                      BoxDecoration(),
+                                                                      const BoxDecoration(),
                                                                   child:
                                                                       ProductGridWidget(
                                                                     key: Key(
@@ -574,7 +570,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                           'set'))
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -675,7 +671,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                       .gridWidth,
                                                                   height: 290.0,
                                                                   decoration:
-                                                                      BoxDecoration(),
+                                                                      const BoxDecoration(),
                                                                   child:
                                                                       ProductGridWidget(
                                                                     key: Key(
@@ -695,7 +691,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                             ),
                                           if (_model.defaultView == 'list')
                                             Container(
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -705,7 +701,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                       'set')
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -791,7 +787,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                         true)
                                                                     : true,
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -802,7 +798,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                     height:
                                                                         100.0,
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     child:
                                                                         ProductListviewWidget(
                                                                       key: Key(
@@ -832,7 +828,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                           'set'))
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -918,7 +914,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                         true)
                                                                     : true,
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -929,7 +925,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                     height:
                                                                         100.0,
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     child:
                                                                         ProductListviewWidget(
                                                                       key: Key(
@@ -955,7 +951,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                           'set'))
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -1041,7 +1037,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                         true)
                                                                     : true,
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1052,7 +1048,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                     height:
                                                                         100.0,
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     child:
                                                                         ProductListviewWidget(
                                                                       key: Key(
@@ -1078,7 +1074,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                           'set'))
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -1164,7 +1160,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                         true)
                                                                     : true,
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1175,7 +1171,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                     height:
                                                                         100.0,
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     child:
                                                                         ProductListviewWidget(
                                                                       key: Key(
@@ -1194,7 +1190,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                 ],
                                               ),
                                             ),
-                                        ].addToEnd(SizedBox(height: 24.0)),
+                                        ].addToEnd(const SizedBox(height: 24.0)),
                                       ),
                                     ),
                                   );
@@ -1206,15 +1202,15 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                         Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 95.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                         ),
                       ]
-                          .divide(SizedBox(height: 8.0))
-                          .addToStart(SizedBox(height: 16.0)),
+                          .divide(const SizedBox(height: 8.0))
+                          .addToStart(const SizedBox(height: 16.0)),
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 1.0),
+                    alignment: const AlignmentDirectional(0.0, 1.0),
                     child: Container(
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primaryBackground,
@@ -1228,7 +1224,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                             color: FlutterFlowTheme.of(context).alternate,
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 12.0, 16.0, 16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1262,7 +1258,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                         if (_model.defaultView == 'grid')
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 4.0, 12.0, 4.0),
                                             child: Icon(
                                               Icons.list,
@@ -1275,7 +1271,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                         if (_model.defaultView == 'list')
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 4.0, 8.0, 4.0),
                                             child: Icon(
                                               Icons.grid_view_outlined,
@@ -1316,7 +1312,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                 padding:
                                                     MediaQuery.viewInsetsOf(
                                                         context),
-                                                child: ProductSortWidget(),
+                                                child: const ProductSortWidget(),
                                               ),
                                             ),
                                           );
@@ -1333,7 +1329,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(8.0),
+                                        padding: const EdgeInsets.all(8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -1361,7 +1357,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                         ),
                                               ),
                                             ),
-                                          ].divide(SizedBox(width: 7.0)),
+                                          ].divide(const SizedBox(width: 7.0)),
                                         ),
                                       ),
                                     ),
@@ -1400,7 +1396,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                               .height *
                                                           0.85,
                                                   child:
-                                                      ProductFilterPopupWidget(),
+                                                      const ProductFilterPopupWidget(),
                                                 ),
                                               ),
                                             ),
@@ -1418,7 +1414,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(8.0),
+                                        padding: const EdgeInsets.all(8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -1465,7 +1461,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                       ))
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1484,7 +1480,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       4.0,
                                                                       2.0,
@@ -1519,7 +1515,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                 ],
                                               ),
                                             ),
-                                          ].divide(SizedBox(width: 7.0)),
+                                          ].divide(const SizedBox(width: 7.0)),
                                         ),
                                       ),
                                     ),
@@ -1535,7 +1531,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                       context.goNamed(
                                         ProductListWidget.routeName,
                                         extra: <String, dynamic>{
-                                          '__transition_info__': TransitionInfo(
+                                          '__transition_info__': const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -1547,16 +1543,16 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                     text: FFLocalizations.of(context).getText(
                                       'xoyusk6s' /* Clear */,
                                     ),
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.restart_alt,
                                       size: 14.0,
                                     ),
                                     options: FFButtonOptions(
                                       height: 35.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -1573,7 +1569,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                   ),
-                              ].divide(SizedBox(width: 8.0)),
+                              ].divide(const SizedBox(width: 8.0)),
                             ),
                           ),
                         ],

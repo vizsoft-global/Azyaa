@@ -1,4 +1,3 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/virtual_try_on/v_t_o_begin/v_t_o_begin_widget.dart';
 import '/azyaa_group_a/customer/virtual_try_on/v_t_o_final/v_t_o_final_widget.dart';
@@ -18,7 +17,6 @@ import '/azyaa_group_b/components/unfollow_confirm_popup/unfollow_confirm_popup_
 import '/azyaa_group_b/creator_space/creator_space/c1_share_promotion/c1_share_promotion_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -26,20 +24,16 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/ui/reviewgrid/reviewgrid_widget.dart';
 import 'dart:async';
-import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
@@ -98,7 +92,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -106,7 +100,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                   stream: queryProductsRecord(
                     queryBuilder: (productsRecord) => productsRecord.where(
                       'product_id',
-                      isEqualTo: widget!.productID,
+                      isEqualTo: widget.productID,
                     ),
                     singleRecord: true,
                   ),
@@ -152,7 +146,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                     );
                   },
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -165,18 +159,18 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   wrapWithModel(
                     model: _model.appUpdateCheckerModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: AppUpdateCheckerWidget(),
+                    child: const AppUpdateCheckerWidget(),
                   ),
                   StreamBuilder<List<ProductsRecord>>(
                     stream: queryProductsRecord(
                       queryBuilder: (productsRecord) => productsRecord.where(
                         'product_id',
-                        isEqualTo: widget!.productID,
+                        isEqualTo: widget.productID,
                       ),
                       singleRecord: true,
                     ),
@@ -187,7 +181,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 150.0,
-                            child: LoadingAnimationWidget(),
+                            child: const LoadingAnimationWidget(),
                           ),
                         );
                       }
@@ -224,9 +218,9 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                         Builder(
                                           builder: (context) {
                                             final imageList =
-                                                stackProductsRecord?.productInfo
-                                                        ?.galleryImage
-                                                        ?.toList() ??
+                                                stackProductsRecord.productInfo
+                                                        .galleryImage
+                                                        .toList() ??
                                                     [];
 
                                             return Container(
@@ -263,8 +257,8 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                           child:
                                                               FlutterFlowExpandedImageView(
                                                             image:
-                                                                Image.network(
-                                                              imageListItem,
+                                                                CachedNetworkImage(
+                                                              imageUrl: imageListItem,
                                                               fit: BoxFit
                                                                   .contain,
                                                             ),
@@ -285,8 +279,8 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(8.0),
-                                                        child: Image.network(
-                                                          imageListItem,
+                                                        child: CachedNetworkImage(
+                                                          imageUrl: imageListItem,
                                                           fit: BoxFit.contain,
                                                         ),
                                                       ),
@@ -319,15 +313,15 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                             );
                                           },
                                         ),
-                                      if (stackProductsRecord?.productInfo
-                                              ?.galleryImage?.length ==
+                                      if (stackProductsRecord.productInfo
+                                              .galleryImage.length ==
                                           0)
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -343,36 +337,28 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                         PageTransitionType.fade,
                                                     child:
                                                         FlutterFlowExpandedImageView(
-                                                      image: Image.network(
-                                                        () {
+                                                      image: CachedNetworkImage(
+                                                        imageUrl: () {
                                                           if (stackProductsRecord
-                                                                      ?.productInfo
-                                                                      ?.featureImage !=
-                                                                  null &&
-                                                              stackProductsRecord
-                                                                      ?.productInfo
-                                                                      ?.featureImage !=
+                                                                      .productInfo
+                                                                      .featureImage !=
                                                                   '') {
-                                                            return stackProductsRecord!
+                                                            return stackProductsRecord
                                                                 .productInfo
                                                                 .featureImage;
                                                           } else if (stackProductsRecord
-                                                                      ?.productInfo
-                                                                      ?.iconImage !=
-                                                                  null &&
-                                                              stackProductsRecord
-                                                                      ?.productInfo
-                                                                      ?.iconImage !=
+                                                                      .productInfo
+                                                                      .iconImage !=
                                                                   '') {
-                                                            return stackProductsRecord!
+                                                            return stackProductsRecord
                                                                 .productInfo
                                                                 .iconImage;
-                                                          } else if (stackProductsRecord!
+                                                          } else if (stackProductsRecord
                                                                   .productInfo
                                                                   .galleryImage
                                                                   .length >
                                                               0) {
-                                                            return stackProductsRecord!
+                                                            return stackProductsRecord
                                                                 .productInfo
                                                                 .galleryImage
                                                                 .firstOrNull!;
@@ -381,39 +367,31 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                           }
                                                         }(),
                                                         fit: BoxFit.contain,
-                                                        alignment: Alignment(
+                                                        alignment: const Alignment(
                                                             0.0, -1.0),
                                                       ),
                                                       allowRotation: false,
                                                       tag: () {
                                                         if (stackProductsRecord
-                                                                    ?.productInfo
-                                                                    ?.featureImage !=
-                                                                null &&
-                                                            stackProductsRecord
-                                                                    ?.productInfo
-                                                                    ?.featureImage !=
+                                                                    .productInfo
+                                                                    .featureImage !=
                                                                 '') {
-                                                          return stackProductsRecord!
+                                                          return stackProductsRecord
                                                               .productInfo
                                                               .featureImage;
                                                         } else if (stackProductsRecord
-                                                                    ?.productInfo
-                                                                    ?.iconImage !=
-                                                                null &&
-                                                            stackProductsRecord
-                                                                    ?.productInfo
-                                                                    ?.iconImage !=
+                                                                    .productInfo
+                                                                    .iconImage !=
                                                                 '') {
-                                                          return stackProductsRecord!
+                                                          return stackProductsRecord
                                                               .productInfo
                                                               .iconImage;
-                                                        } else if (stackProductsRecord!
+                                                        } else if (stackProductsRecord
                                                                 .productInfo
                                                                 .galleryImage
                                                                 .length >
                                                             0) {
-                                                          return stackProductsRecord!
+                                                          return stackProductsRecord
                                                               .productInfo
                                                               .galleryImage
                                                               .firstOrNull!;
@@ -429,32 +407,24 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                               child: Hero(
                                                 tag: () {
                                                   if (stackProductsRecord
-                                                              ?.productInfo
-                                                              ?.featureImage !=
-                                                          null &&
-                                                      stackProductsRecord
-                                                              ?.productInfo
-                                                              ?.featureImage !=
+                                                              .productInfo
+                                                              .featureImage !=
                                                           '') {
-                                                    return stackProductsRecord!
+                                                    return stackProductsRecord
                                                         .productInfo
                                                         .featureImage;
                                                   } else if (stackProductsRecord
-                                                              ?.productInfo
-                                                              ?.iconImage !=
-                                                          null &&
-                                                      stackProductsRecord
-                                                              ?.productInfo
-                                                              ?.iconImage !=
+                                                              .productInfo
+                                                              .iconImage !=
                                                           '') {
-                                                    return stackProductsRecord!
+                                                    return stackProductsRecord
                                                         .productInfo.iconImage;
-                                                  } else if (stackProductsRecord!
+                                                  } else if (stackProductsRecord
                                                           .productInfo
                                                           .galleryImage
                                                           .length >
                                                       0) {
-                                                    return stackProductsRecord!
+                                                    return stackProductsRecord
                                                         .productInfo
                                                         .galleryImage
                                                         .firstOrNull!;
@@ -467,36 +437,28 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           8.0),
-                                                  child: Image.network(
-                                                    () {
+                                                  child: CachedNetworkImage(
+                                                    imageUrl: () {
                                                       if (stackProductsRecord
-                                                                  ?.productInfo
-                                                                  ?.featureImage !=
-                                                              null &&
-                                                          stackProductsRecord
-                                                                  ?.productInfo
-                                                                  ?.featureImage !=
+                                                                  .productInfo
+                                                                  .featureImage !=
                                                               '') {
-                                                        return stackProductsRecord!
+                                                        return stackProductsRecord
                                                             .productInfo
                                                             .featureImage;
                                                       } else if (stackProductsRecord
-                                                                  ?.productInfo
-                                                                  ?.iconImage !=
-                                                              null &&
-                                                          stackProductsRecord
-                                                                  ?.productInfo
-                                                                  ?.iconImage !=
+                                                                  .productInfo
+                                                                  .iconImage !=
                                                               '') {
-                                                        return stackProductsRecord!
+                                                        return stackProductsRecord
                                                             .productInfo
                                                             .iconImage;
-                                                      } else if (stackProductsRecord!
+                                                      } else if (stackProductsRecord
                                                               .productInfo
                                                               .galleryImage
                                                               .length >
                                                           0) {
-                                                        return stackProductsRecord!
+                                                        return stackProductsRecord
                                                             .productInfo
                                                             .galleryImage
                                                             .firstOrNull!;
@@ -517,21 +479,21 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                         .toDouble(),
                                                     fit: BoxFit.cover,
                                                     alignment:
-                                                        Alignment(0.0, -1.0),
+                                                        const Alignment(0.0, -1.0),
                                                   ),
                                                 ),
                                               ),
                                             ),
                                           ),
                                         ),
-                                      if (stackProductsRecord?.productAuthorizer
-                                              ?.isVirtualtryonStatus ==
+                                      if (stackProductsRecord.productAuthorizer
+                                              .isVirtualtryonStatus ==
                                           true)
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 1.0),
+                                              const AlignmentDirectional(0.0, 1.0),
                                           child: Padding(
-                                            padding: EdgeInsets.all(24.0),
+                                            padding: const EdgeInsets.all(24.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
                                                 if (loggedIn) {
@@ -578,7 +540,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   child:
                                                                       VTOFinalWidget(
                                                                     product:
-                                                                        stackProductsRecord!,
+                                                                        stackProductsRecord,
                                                                   ),
                                                                 ),
                                                               ),
@@ -620,7 +582,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                           .height *
                                                                       0.76,
                                                                   child:
-                                                                      VirtualTryOnPointsWidget(),
+                                                                      const VirtualTryOnPointsWidget(),
                                                                 ),
                                                               ),
                                                             ),
@@ -656,7 +618,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                               child:
                                                                   VTOBeginWidget(
                                                                 product:
-                                                                    stackProductsRecord!,
+                                                                    stackProductsRecord,
                                                               ),
                                                             ),
                                                           ),
@@ -691,7 +653,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                             child:
                                                                 VTOBeginWidget(
                                                               product:
-                                                                  stackProductsRecord!,
+                                                                  stackProductsRecord,
                                                             ),
                                                           ),
                                                         ),
@@ -705,17 +667,17 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                   .getText(
                                                 '4ezk3r96' /* Virtual Try on */,
                                               ),
-                                              icon: Icon(
+                                              icon: const Icon(
                                                 FFIcons.kvector29,
                                                 size: 15.0,
                                               ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 8.0, 0.0),
                                                 color:
@@ -747,7 +709,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 8.0, 16.0, 8.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -755,7 +717,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -782,52 +744,52 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                               .getVariableText(
                                                             enText: () {
                                                               if (stackProductsRecord
-                                                                      ?.productInfoCustomTranslate
-                                                                      ?.name
-                                                                      ?.en !=
+                                                                      .productInfoCustomTranslate
+                                                                      .name
+                                                                      .en !=
                                                                   '') {
                                                                 return stackProductsRecord
-                                                                    ?.productInfoCustomTranslate
-                                                                    ?.name
-                                                                    ?.en;
+                                                                    .productInfoCustomTranslate
+                                                                    .name
+                                                                    .en;
                                                               } else if (stackProductsRecord
-                                                                      ?.productInfoTranslate
-                                                                      ?.name
-                                                                      ?.en !=
+                                                                      .productInfoTranslate
+                                                                      .name
+                                                                      .en !=
                                                                   '') {
                                                                 return stackProductsRecord
-                                                                    ?.productInfoTranslate
-                                                                    ?.name
-                                                                    ?.en;
+                                                                    .productInfoTranslate
+                                                                    .name
+                                                                    .en;
                                                               } else {
                                                                 return stackProductsRecord
-                                                                    ?.productInfo
-                                                                    ?.name;
+                                                                    .productInfo
+                                                                    .name;
                                                               }
                                                             }(),
                                                             arText: () {
                                                               if (stackProductsRecord
-                                                                      ?.productInfoCustomTranslate
-                                                                      ?.name
-                                                                      ?.ar !=
+                                                                      .productInfoCustomTranslate
+                                                                      .name
+                                                                      .ar !=
                                                                   '') {
                                                                 return stackProductsRecord
-                                                                    ?.productInfoCustomTranslate
-                                                                    ?.name
-                                                                    ?.ar;
+                                                                    .productInfoCustomTranslate
+                                                                    .name
+                                                                    .ar;
                                                               } else if (stackProductsRecord
-                                                                      ?.productInfoTranslate
-                                                                      ?.name
-                                                                      ?.ar !=
+                                                                      .productInfoTranslate
+                                                                      .name
+                                                                      .ar !=
                                                                   '') {
                                                                 return stackProductsRecord
-                                                                    ?.productInfoTranslate
-                                                                    ?.name
-                                                                    ?.ar;
+                                                                    .productInfoTranslate
+                                                                    .name
+                                                                    .ar;
                                                               } else {
                                                                 return stackProductsRecord
-                                                                    ?.productInfo
-                                                                    ?.name;
+                                                                    .productInfo
+                                                                    .name;
                                                               }
                                                             }(),
                                                           ),
@@ -857,11 +819,11 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                       8.0),
                                                         ),
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       6.0,
                                                                       2.0,
@@ -869,8 +831,8 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                       4.0),
                                                           child: Text(
                                                             stackProductsRecord
-                                                                        ?.product
-                                                                        ?.productType ==
+                                                                        .product
+                                                                        .productType ==
                                                                     'ready'
                                                                 ? FFLocalizations.of(
                                                                         context)
@@ -906,59 +868,59 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 8.0)),
+                                                        const SizedBox(width: 8.0)),
                                                   ),
                                                   Text(
                                                     FFLocalizations.of(context)
                                                         .getVariableText(
                                                       enText: () {
                                                         if (stackProductsRecord
-                                                                ?.productInfoCustomTranslate
-                                                                ?.shortDescription
-                                                                ?.en !=
+                                                                .productInfoCustomTranslate
+                                                                .shortDescription
+                                                                .en !=
                                                             '') {
                                                           return stackProductsRecord
-                                                              ?.productInfoCustomTranslate
-                                                              ?.shortDescription
-                                                              ?.en;
+                                                              .productInfoCustomTranslate
+                                                              .shortDescription
+                                                              .en;
                                                         } else if (stackProductsRecord
-                                                                ?.productInfoTranslate
-                                                                ?.shortDescription
-                                                                ?.en !=
+                                                                .productInfoTranslate
+                                                                .shortDescription
+                                                                .en !=
                                                             '') {
                                                           return stackProductsRecord
-                                                              ?.productInfoTranslate
-                                                              ?.shortDescription
-                                                              ?.en;
+                                                              .productInfoTranslate
+                                                              .shortDescription
+                                                              .en;
                                                         } else {
                                                           return stackProductsRecord
-                                                              ?.productInfo
-                                                              ?.shortDescription;
+                                                              .productInfo
+                                                              .shortDescription;
                                                         }
                                                       }(),
                                                       arText: () {
                                                         if (stackProductsRecord
-                                                                ?.productInfoCustomTranslate
-                                                                ?.shortDescription
-                                                                ?.ar !=
+                                                                .productInfoCustomTranslate
+                                                                .shortDescription
+                                                                .ar !=
                                                             '') {
                                                           return stackProductsRecord
-                                                              ?.productInfoCustomTranslate
-                                                              ?.shortDescription
-                                                              ?.ar;
+                                                              .productInfoCustomTranslate
+                                                              .shortDescription
+                                                              .ar;
                                                         } else if (stackProductsRecord
-                                                                ?.productInfoTranslate
-                                                                ?.shortDescription
-                                                                ?.ar !=
+                                                                .productInfoTranslate
+                                                                .shortDescription
+                                                                .ar !=
                                                             '') {
                                                           return stackProductsRecord
-                                                              ?.productInfoTranslate
-                                                              ?.shortDescription
-                                                              ?.ar;
+                                                              .productInfoTranslate
+                                                              .shortDescription
+                                                              .ar;
                                                         } else {
                                                           return stackProductsRecord
-                                                              ?.productInfo
-                                                              ?.shortDescription;
+                                                              .productInfo
+                                                              .shortDescription;
                                                         }
                                                       }(),
                                                     ),
@@ -973,7 +935,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                               FontWeight.normal,
                                                         ),
                                                   ),
-                                                  if (stackProductsRecord!
+                                                  if (stackProductsRecord
                                                           .productReview
                                                           .length >
                                                       0)
@@ -998,12 +960,12 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                           rating:
                                                               valueOrDefault<
                                                                   double>(
-                                                            (functions.newCartTotal(stackProductsRecord!
+                                                            (functions.newCartTotal(stackProductsRecord
                                                                     .productReview
                                                                     .map((e) => e
                                                                         .reviewRate)
                                                                     .toList()) /
-                                                                stackProductsRecord!
+                                                                stackProductsRecord
                                                                     .productReview
                                                                     .length),
                                                             0.0,
@@ -1016,7 +978,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                           itemSize: 18.0,
                                                         ),
                                                         Text(
-                                                          '${stackProductsRecord?.productReview?.length?.toString()}${FFLocalizations.of(context).getVariableText(
+                                                          '${stackProductsRecord.productReview.length.toString()}${FFLocalizations.of(context).getVariableText(
                                                             enText: ' ratings',
                                                             arText: 'التقييمات',
                                                           )}',
@@ -1031,9 +993,9 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                               ),
                                                         ),
                                                       ].divide(
-                                                          SizedBox(width: 8.0)),
+                                                          const SizedBox(width: 8.0)),
                                                     ),
-                                                ].divide(SizedBox(height: 8.0)),
+                                                ].divide(const SizedBox(height: 8.0)),
                                               ),
                                             ),
                                             wrapWithModel(
@@ -1043,7 +1005,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                               updateOnChange: true,
                                               child: UserWishlistWidget(
                                                 type: 'product',
-                                                itemID: stackProductsRecord!
+                                                itemID: stackProductsRecord
                                                     .productId,
                                                 iconSize: 16.0,
                                                 containersize: 38,
@@ -1080,13 +1042,13 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                             .generateLinkNew(
                                                       context,
                                                       '/azyaa-product',
-                                                      stackProductsRecord!
+                                                      stackProductsRecord
                                                           .productInfo.name,
                                                       'Azyaa Product',
                                                       <String, String>{
                                                         'page_name': 'Product',
                                                         'page_parameter':
-                                                            stackProductsRecord!
+                                                            stackProductsRecord
                                                                 .reference.id,
                                                       },
                                                       <String, String>{
@@ -1107,11 +1069,11 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                   },
                                                 ),
                                               ),
-                                          ].divide(SizedBox(width: 8.0)),
+                                          ].divide(const SizedBox(width: 8.0)),
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1119,7 +1081,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                               CrossAxisAlignment.center,
                                           children: [
                                             Text(
-                                              '${stackProductsRecord?.product?.productPrice?.toString()} KD',
+                                              '${stackProductsRecord.product.productPrice.toString()} KD',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyLarge
@@ -1130,12 +1092,12 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                             FontWeight.bold,
                                                       ),
                                             ),
-                                            if (stackProductsRecord?.product
-                                                    ?.productRegularPrice !=
+                                            if (stackProductsRecord.product
+                                                    .productRegularPrice !=
                                                 stackProductsRecord
-                                                    ?.product?.productPrice)
+                                                    .product.productPrice)
                                               Text(
-                                                '${stackProductsRecord?.product?.productRegularPrice?.toString()}',
+                                                '${stackProductsRecord.product.productRegularPrice.toString()}',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
@@ -1153,7 +1115,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   .lineThrough,
                                                         ),
                                               ),
-                                          ].divide(SizedBox(width: 2.0)),
+                                          ].divide(const SizedBox(width: 2.0)),
                                         ),
                                       ),
                                       Text(
@@ -1184,12 +1146,12 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                       builder: (context) {
                                         final attributeList =
                                             stackProductsRecord
-                                                    ?.productAttribute
-                                                    ?.sortedList(
+                                                    .productAttribute
+                                                    .sortedList(
                                                         keyOf: (e) =>
                                                             e.attributesId,
                                                         desc: false)
-                                                    ?.toList() ??
+                                                    .toList() ??
                                                 [];
 
                                         return ListView.builder(
@@ -1204,7 +1166,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                 attributeList[
                                                     attributeListIndex];
                                             return Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
                                               child: StreamBuilder<
@@ -1229,7 +1191,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
                                                   if (!snapshot.hasData) {
-                                                    return Center(
+                                                    return const Center(
                                                       child: SizedBox(
                                                         width: 2.0,
                                                         height: 2.0,
@@ -1273,7 +1235,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                       Container(
                                                         height: 50.0,
                                                         decoration:
-                                                            BoxDecoration(),
+                                                            const BoxDecoration(),
                                                         child: Builder(
                                                           builder: (context) =>
                                                               InkWell(
@@ -1301,7 +1263,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                     backgroundColor:
                                                                         Colors
                                                                             .transparent,
-                                                                    alignment: AlignmentDirectional(
+                                                                    alignment: const AlignmentDirectional(
                                                                             0.0,
                                                                             1.0)
                                                                         .resolve(
@@ -1326,7 +1288,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                           attribute:
                                                                               attributeListItem,
                                                                           productID:
-                                                                              stackProductsRecord!.productId,
+                                                                              stackProductsRecord.productId,
                                                                           navigation:
                                                                               FFLocalizations.of(context).getVariableText(
                                                                             enText:
@@ -1356,51 +1318,51 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                     enText: () {
                                                                       if (variationAttributesRecord
                                                                               ?.attributeInfoCustomTranslate
-                                                                              ?.name
-                                                                              ?.en !=
+                                                                              .name
+                                                                              .en !=
                                                                           '') {
                                                                         return variationAttributesRecord
                                                                             ?.attributeInfoCustomTranslate
-                                                                            ?.name
-                                                                            ?.en;
+                                                                            .name
+                                                                            .en;
                                                                       } else if (variationAttributesRecord
                                                                               ?.attributeInfoTranslate
-                                                                              ?.name
-                                                                              ?.en !=
+                                                                              .name
+                                                                              .en !=
                                                                           '') {
                                                                         return variationAttributesRecord
                                                                             ?.attributeInfoTranslate
-                                                                            ?.name
-                                                                            ?.en;
+                                                                            .name
+                                                                            .en;
                                                                       } else {
                                                                         return variationAttributesRecord
                                                                             ?.attributeInfo
-                                                                            ?.name;
+                                                                            .name;
                                                                       }
                                                                     }(),
                                                                     arText: () {
                                                                       if (variationAttributesRecord
                                                                               ?.attributeInfoCustomTranslate
-                                                                              ?.name
-                                                                              ?.ar !=
+                                                                              .name
+                                                                              .ar !=
                                                                           '') {
                                                                         return variationAttributesRecord
                                                                             ?.attributeInfoCustomTranslate
-                                                                            ?.name
-                                                                            ?.ar;
+                                                                            .name
+                                                                            .ar;
                                                                       } else if (variationAttributesRecord
                                                                               ?.attributeInfoTranslate
-                                                                              ?.name
-                                                                              ?.ar !=
+                                                                              .name
+                                                                              .ar !=
                                                                           '') {
                                                                         return variationAttributesRecord
                                                                             ?.attributeInfoTranslate
-                                                                            ?.name
-                                                                            ?.ar;
+                                                                            .name
+                                                                            .ar;
                                                                       } else {
                                                                         return variationAttributesRecord
                                                                             ?.attributeInfo
-                                                                            ?.name;
+                                                                            .name;
                                                                       }
                                                                     }(),
                                                                   ),
@@ -1444,7 +1406,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                               elevation: 0,
                                                                               insetPadding: EdgeInsets.zero,
                                                                               backgroundColor: Colors.transparent,
-                                                                              alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                              alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                               child: WebViewAware(
                                                                                 child: GestureDetector(
                                                                                   onTap: () {
@@ -1454,7 +1416,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                   child: Container(
                                                                                     width: 600.0,
                                                                                     child: SizeChartDefaultWidget(
-                                                                                      product: stackProductsRecord!,
+                                                                                      product: stackProductsRecord,
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -1488,9 +1450,9 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                     height:
                                                                         50.0,
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             1.0,
                                                                             0.0),
                                                                     child:
@@ -1533,7 +1495,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                               builder: (context, snapshot) {
                                                                                 // Customize what your widget looks like when it's loading.
                                                                                 if (!snapshot.hasData) {
-                                                                                  return Center(
+                                                                                  return const Center(
                                                                                     child: SizedBox(
                                                                                       width: 2.0,
                                                                                       height: 2.0,
@@ -1558,11 +1520,11 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                   hoverColor: Colors.transparent,
                                                                                   highlightColor: Colors.transparent,
                                                                                   onTap: () async {
-                                                                                    if (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord?.productId).toList().length == 0) {
+                                                                                    if (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().length == 0) {
                                                                                       FFAppState().updateUserDataFlowStruct(
                                                                                         (e) => e
-                                                                                          ..count = stackProductsRecord?.productAttribute?.length
-                                                                                          ..userSwatchesProductAttribute = stackProductsRecord!.productAttribute.toList(),
+                                                                                          ..count = stackProductsRecord.productAttribute.length
+                                                                                          ..userSwatchesProductAttribute = stackProductsRecord.productAttribute.toList(),
                                                                                       );
                                                                                       while (FFAppState().UserDataFlow.count > 0) {
                                                                                         FFAppState().updateUserDataFlowStruct(
@@ -1580,7 +1542,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                           ..updateUserProductSwatchesList(
                                                                                             (e) => e.add(UserRecentViewedListStruct(
                                                                                               createdAt: getCurrentTimestamp,
-                                                                                              viewedItemId: stackProductsRecord?.productId,
+                                                                                              viewedItemId: stackProductsRecord.productId,
                                                                                               productAttribute: FFAppState().UserDataFlow.userSwatchesProductAttribute,
                                                                                               viewedEntityType: 'product',
                                                                                             )),
@@ -1591,7 +1553,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                       (e) => e..count = FFAppState().UserDataFlow.userProductSwatchesList.length,
                                                                                     );
                                                                                     while (FFAppState().UserDataFlow.count > 0) {
-                                                                                      if (FFAppState().UserDataFlow.userProductSwatchesList.elementAtOrNull(FFAppState().UserDataFlow.count - 1)?.viewedItemId == stackProductsRecord?.productId) {
+                                                                                      if (FFAppState().UserDataFlow.userProductSwatchesList.elementAtOrNull(FFAppState().UserDataFlow.count - 1)?.viewedItemId == stackProductsRecord.productId) {
                                                                                         FFAppState().updateUserDataFlowStruct(
                                                                                           (e) => e
                                                                                             ..updateUserProductSwatchesList(
@@ -1611,70 +1573,70 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                   },
                                                                                   child: Stack(
                                                                                     children: [
-                                                                                      if ((variationAttributesRecord?.attributeId == '1001') && (stackBrandsRecord?.brandInfo?.color != null))
+                                                                                      if ((variationAttributesRecord?.attributeId == '1001') && (stackBrandsRecord?.brandInfo.color != null))
                                                                                         Align(
-                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                          alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                           child: Container(
                                                                                             decoration: BoxDecoration(
                                                                                               shape: BoxShape.circle,
                                                                                               border: Border.all(
-                                                                                                color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord?.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).primaryBackground,
+                                                                                                color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).primaryBackground,
                                                                                               ),
                                                                                             ),
                                                                                             child: Padding(
-                                                                                              padding: EdgeInsets.all(2.0),
+                                                                                              padding: const EdgeInsets.all(2.0),
                                                                                               child: Container(
                                                                                                 width: 40.0,
                                                                                                 height: 40.0,
                                                                                                 decoration: BoxDecoration(
-                                                                                                  color: stackBrandsRecord?.brandInfo?.color,
+                                                                                                  color: stackBrandsRecord?.brandInfo.color,
                                                                                                   borderRadius: BorderRadius.circular(100.0),
                                                                                                   border: Border.all(
-                                                                                                    color: Color(0x27000000),
+                                                                                                    color: const Color(0x27000000),
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
                                                                                           ),
                                                                                         ),
-                                                                                      if (!((variationAttributesRecord?.attributeId == '1001') && (stackBrandsRecord?.brandInfo?.color != null)))
+                                                                                      if (!((variationAttributesRecord?.attributeId == '1001') && (stackBrandsRecord?.brandInfo.color != null)))
                                                                                         Align(
-                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                          alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                           child: Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
                                                                                             child: Container(
                                                                                               decoration: BoxDecoration(
                                                                                                 borderRadius: BorderRadius.circular(4.0),
                                                                                                 border: Border.all(
-                                                                                                  color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord?.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
+                                                                                                  color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
                                                                                                 ),
                                                                                               ),
                                                                                               child: Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
+                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
                                                                                                 child: Text(
                                                                                                   FFLocalizations.of(context).getVariableText(
                                                                                                     enText: () {
-                                                                                                      if (stackBrandsRecord?.brandInfoCustomTranslate?.name?.en != '') {
-                                                                                                        return stackBrandsRecord?.brandInfoCustomTranslate?.name?.en;
-                                                                                                      } else if (stackBrandsRecord?.brandInfoTranslate?.name?.en != '') {
-                                                                                                        return stackBrandsRecord?.brandInfoTranslate?.name?.en;
+                                                                                                      if (stackBrandsRecord?.brandInfoCustomTranslate.name.en != '') {
+                                                                                                        return stackBrandsRecord?.brandInfoCustomTranslate.name.en;
+                                                                                                      } else if (stackBrandsRecord?.brandInfoTranslate.name.en != '') {
+                                                                                                        return stackBrandsRecord?.brandInfoTranslate.name.en;
                                                                                                       } else {
-                                                                                                        return stackBrandsRecord?.brandInfo?.name;
+                                                                                                        return stackBrandsRecord?.brandInfo.name;
                                                                                                       }
                                                                                                     }(),
                                                                                                     arText: () {
-                                                                                                      if (stackBrandsRecord?.brandInfoCustomTranslate?.name?.ar != '') {
-                                                                                                        return stackBrandsRecord?.brandInfoCustomTranslate?.name?.ar;
-                                                                                                      } else if (stackBrandsRecord?.brandInfoTranslate?.name?.ar != '') {
-                                                                                                        return stackBrandsRecord?.brandInfoTranslate?.name?.ar;
+                                                                                                      if (stackBrandsRecord?.brandInfoCustomTranslate.name.ar != '') {
+                                                                                                        return stackBrandsRecord?.brandInfoCustomTranslate.name.ar;
+                                                                                                      } else if (stackBrandsRecord?.brandInfoTranslate.name.ar != '') {
+                                                                                                        return stackBrandsRecord?.brandInfoTranslate.name.ar;
                                                                                                       } else {
-                                                                                                        return stackBrandsRecord?.brandInfo?.name;
+                                                                                                        return stackBrandsRecord?.brandInfo.name;
                                                                                                       }
                                                                                                     }(),
                                                                                                   ),
                                                                                                   style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                                         fontFamily: 'almarai',
-                                                                                                        color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord?.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
+                                                                                                        color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
                                                                                                         letterSpacing: 0.0,
                                                                                                       ),
                                                                                                 ),
@@ -1724,7 +1686,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             backgroundColor:
                                                                                 Colors.transparent,
                                                                             alignment:
-                                                                                AlignmentDirectional(0.0, 1.0).resolve(Directionality.of(context)),
+                                                                                const AlignmentDirectional(0.0, 1.0).resolve(Directionality.of(context)),
                                                                             child:
                                                                                 WebViewAware(
                                                                               child: GestureDetector(
@@ -1735,7 +1697,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                 child: ProductAttributeWidget(
                                                                                   index: attributeListIndex,
                                                                                   attribute: attributeListItem,
-                                                                                  productID: stackProductsRecord!.productId,
+                                                                                  productID: stackProductsRecord.productId,
                                                                                   navigation: 'default',
                                                                                 ),
                                                                               ),
@@ -1755,7 +1717,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                     ),
                                                                   ),
                                                                 ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   width: 8.0)),
                                                             ),
                                                           ),
@@ -1782,15 +1744,15 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                               .alternate,
                                         ),
                                         if (stackProductsRecord
-                                                ?.product?.productType !=
+                                                .product.productType !=
                                             'ready')
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Container(
                                               height: 50.0,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -1851,7 +1813,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                           .height *
                                                                       0.6,
                                                                   child:
-                                                                      ProductMeasurementPopupWidget(),
+                                                                      const ProductMeasurementPopupWidget(),
                                                                 ),
                                                               ),
                                                             ),
@@ -1872,7 +1834,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     0.0,
@@ -1900,9 +1862,9 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    ((currentUserDocument?.userBody?.toList() ?? []).length ==
+                                                                    ((currentUserDocument?.userBody.toList() ?? []).length ==
                                                                                 0) ||
-                                                                            ((currentUserDocument?.userBody?.toList() ?? []).where((e) => e.isDefault == true).toList().length ==
+                                                                            ((currentUserDocument?.userBody.toList() ?? []).where((e) => e.isDefault == true).toList().length ==
                                                                                 0)
                                                                         ? FFLocalizations.of(context)
                                                                             .getVariableText(
@@ -1911,7 +1873,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             arText:
                                                                                 'اختر هنا ..',
                                                                           )
-                                                                        : (currentUserDocument?.userBody?.toList() ??
+                                                                        : (currentUserDocument?.userBody.toList() ??
                                                                                 [])
                                                                             .where((e) =>
                                                                                 e.isDefault ==
@@ -1936,11 +1898,6 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             .UserDataFlow
                                                                             .userSelectedBody
                                                                             .userName !=
-                                                                        null &&
-                                                                    FFAppState()
-                                                                            .UserDataFlow
-                                                                            .userSelectedBody
-                                                                            .userName !=
                                                                         '')
                                                                   Text(
                                                                     'H: ${'${FFAppState().UserDataFlow.userSelectedBody.bodyInfo.height.toString()} ${FFAppState().UserDataFlow.userSelectedBody.bodyInfo.heightUnit}'} W: ${'${FFAppState().UserDataFlow.userSelectedBody.bodyInfo.weight.toString()} ${FFAppState().UserDataFlow.userSelectedBody.bodyInfo.weightUnit}'}',
@@ -1956,7 +1913,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                               0.0,
                                                                         ),
                                                                   ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   height: 4.0)),
                                                             ),
                                                             Icon(
@@ -1966,18 +1923,18 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   .primaryText,
                                                               size: 14.0,
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               width: 8.0)),
                                                         ),
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(width: 8.0)),
+                                                ].divide(const SizedBox(width: 8.0)),
                                               ),
                                             ),
                                           ),
                                         if (stackProductsRecord
-                                                ?.product?.productType !=
+                                                .product.productType !=
                                             'ready')
                                           Divider(
                                             height: 4.0,
@@ -1992,7 +1949,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                   ],
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -2016,50 +1973,50 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                             .getVariableText(
                                           enText: () {
                                             if (stackProductsRecord
-                                                    ?.productInfoCustomTranslate
-                                                    ?.description
-                                                    ?.en !=
+                                                    .productInfoCustomTranslate
+                                                    .description
+                                                    .en !=
                                                 '') {
                                               return stackProductsRecord
-                                                  ?.productInfoCustomTranslate
-                                                  ?.description
-                                                  ?.en;
+                                                  .productInfoCustomTranslate
+                                                  .description
+                                                  .en;
                                             } else if (stackProductsRecord
-                                                    ?.productInfoTranslate
-                                                    ?.description
-                                                    ?.en !=
+                                                    .productInfoTranslate
+                                                    .description
+                                                    .en !=
                                                 '') {
                                               return stackProductsRecord
-                                                  ?.productInfoTranslate
-                                                  ?.description
-                                                  ?.en;
+                                                  .productInfoTranslate
+                                                  .description
+                                                  .en;
                                             } else {
                                               return stackProductsRecord
-                                                  ?.productInfo?.description;
+                                                  .productInfo.description;
                                             }
                                           }(),
                                           arText: () {
                                             if (stackProductsRecord
-                                                    ?.productInfoCustomTranslate
-                                                    ?.description
-                                                    ?.ar !=
+                                                    .productInfoCustomTranslate
+                                                    .description
+                                                    .ar !=
                                                 '') {
                                               return stackProductsRecord
-                                                  ?.productInfoCustomTranslate
-                                                  ?.description
-                                                  ?.ar;
+                                                  .productInfoCustomTranslate
+                                                  .description
+                                                  .ar;
                                             } else if (stackProductsRecord
-                                                    ?.productInfoTranslate
-                                                    ?.description
-                                                    ?.ar !=
+                                                    .productInfoTranslate
+                                                    .description
+                                                    .ar !=
                                                 '') {
                                               return stackProductsRecord
-                                                  ?.productInfoTranslate
-                                                  ?.description
-                                                  ?.ar;
+                                                  .productInfoTranslate
+                                                  .description
+                                                  .ar;
                                             } else {
                                               return stackProductsRecord
-                                                  ?.productInfo?.description;
+                                                  .productInfo.description;
                                             }
                                           }(),
                                         ),
@@ -2070,14 +2027,14 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                               letterSpacing: 0.0,
                                             ),
                                       ),
-                                    ].divide(SizedBox(height: 4.0)),
+                                    ].divide(const SizedBox(height: 4.0)),
                                   ),
                                 ),
                                 if (stackProductsRecord
-                                        ?.product?.isProductReturn ==
+                                        .product.isProductReturn ==
                                     false)
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -2103,7 +2060,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                         .where(
                                           'tag_product_id',
                                           arrayContains:
-                                              stackProductsRecord?.productId,
+                                              stackProductsRecord.productId,
                                         ),
                                   ),
                                   builder: (context, snapshot) {
@@ -2112,19 +2069,19 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                       return Container(
                                         width: 0.0,
                                         height: 0.0,
-                                        child: BlankLoadingWidget(),
+                                        child: const BlankLoadingWidget(),
                                       );
                                     }
                                     List<TagsRecord> tagsTagsRecordList =
                                         snapshot.data!;
 
                                     return Container(
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: Visibility(
                                         visible: tagsTagsRecordList.length > 0,
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -2231,7 +2188,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                             extra: <String,
                                                                 dynamic>{
                                                               '__transition_info__':
-                                                                  TransitionInfo(
+                                                                  const TransitionInfo(
                                                                 hasTransition:
                                                                     true,
                                                                 transitionType:
@@ -2312,27 +2269,27 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                   );
                                                 },
                                               ),
-                                            ].divide(SizedBox(height: 4.0)),
+                                            ].divide(const SizedBox(height: 4.0)),
                                           ),
                                         ),
                                       ),
                                     );
                                   },
                                 ),
-                                if (stackProductsRecord!.productAuthorizer
+                                if (stackProductsRecord.productAuthorizer
                                         .creatorIdList.length >
                                     0)
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 8.0),
                                     child: Container(
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 8.0, 16.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -2350,7 +2307,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                             enText:
                                                                 'More than ',
                                                             arText: 'أكثر من',
-                                                          )}${stackProductsRecord?.productAuthorizer?.creatorIdList?.length?.toString()}${FFLocalizations.of(context).getVariableText(
+                                                          )}${stackProductsRecord.productAuthorizer.creatorIdList.length.toString()}${FFLocalizations.of(context).getVariableText(
                                                             enText:
                                                                 ' creators are using this product, why not you?',
                                                             arText:
@@ -2401,14 +2358,14 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                     options: FFButtonOptions(
                                                       height: 28.0,
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
                                                                   0.0,
                                                                   12.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -2455,26 +2412,26 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                               .info,
                                                     ),
                                                   ),
-                                              ].divide(SizedBox(width: 8.0)),
+                                              ].divide(const SizedBox(width: 8.0)),
                                             ),
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 0.0, 0.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   1.0,
                                               height: 180.0,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: Builder(
                                                 builder: (context) {
                                                   final creatorList =
                                                       stackProductsRecord
-                                                              ?.productAuthorizer
-                                                              ?.creatorIdList
-                                                              ?.toList() ??
+                                                              .productAuthorizer
+                                                              .creatorIdList
+                                                              .toList() ??
                                                           [];
 
                                                   return ListView.separated(
@@ -2486,7 +2443,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                     itemCount:
                                                         creatorList.length,
                                                     separatorBuilder: (_, __) =>
-                                                        SizedBox(width: 8.0),
+                                                        const SizedBox(width: 8.0),
                                                     itemBuilder: (context,
                                                         creatorListIndex) {
                                                       final creatorListItem =
@@ -2515,7 +2472,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                               width: 0.0,
                                                               height: 0.0,
                                                               child:
-                                                                  BlankLoadingWidget(),
+                                                                  const BlankLoadingWidget(),
                                                             );
                                                           }
                                                           List<UsersRecord>
@@ -2562,8 +2519,8 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                               8.0),
                                                                       child: Image
                                                                           .network(
-                                                                        containerUsersRecord?.creatorMainInfo?.creatorInfo?.brandPhoto != null &&
-                                                                                containerUsersRecord?.creatorMainInfo?.creatorInfo?.brandPhoto != ''
+                                                                        containerUsersRecord?.creatorMainInfo.creatorInfo.brandPhoto != null &&
+                                                                                containerUsersRecord?.creatorMainInfo.creatorInfo.brandPhoto != ''
                                                                             ? containerUsersRecord!.creatorMainInfo.creatorInfo.brandPhoto
                                                                             : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/i9u1ra67p2p4/Azyaa-logo_(2).jpg',
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -2572,20 +2529,20 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             500.0,
                                                                         fit: BoxFit
                                                                             .cover,
-                                                                        alignment: Alignment(
+                                                                        alignment: const Alignment(
                                                                             0.0,
                                                                             -1.0),
                                                                       ),
                                                                     ),
                                                                     Align(
                                                                       alignment:
-                                                                          AlignmentDirectional(
+                                                                          const AlignmentDirectional(
                                                                               0.0,
                                                                               1.0),
                                                                       child:
                                                                           Container(
                                                                         decoration:
-                                                                            BoxDecoration(
+                                                                            const BoxDecoration(
                                                                           gradient:
                                                                               LinearGradient(
                                                                             colors: [
@@ -2612,7 +2569,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              EdgeInsets.all(12.0),
+                                                                              const EdgeInsets.all(12.0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -2638,10 +2595,10 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                             fontWeight: FontWeight.w600,
                                                                                           ),
                                                                                     ),
-                                                                                  ].divide(SizedBox(height: 4.0)),
+                                                                                  ].divide(const SizedBox(height: 4.0)),
                                                                                 ),
                                                                               ),
-                                                                            ].divide(SizedBox(width: 8.0)),
+                                                                            ].divide(const SizedBox(width: 8.0)),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -2659,18 +2616,15 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                               ),
                                             ),
                                           ),
-                                        ].divide(SizedBox(height: 12.0)),
+                                        ].divide(const SizedBox(height: 12.0)),
                                       ),
                                     ),
                                   ),
-                                if (stackProductsRecord?.productAuthorizer
-                                            ?.productDesignerId !=
-                                        null &&
-                                    stackProductsRecord?.productAuthorizer
-                                            ?.productDesignerId !=
+                                if (stackProductsRecord.productAuthorizer
+                                            .productDesignerId !=
                                         '')
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 8.0),
                                     child: Wrap(
                                       spacing: 0.0,
@@ -2685,11 +2639,11 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: StreamBuilder<UsersRecord>(
                                             stream: UsersRecord.getDocument(
-                                                stackProductsRecord!
+                                                stackProductsRecord
                                                     .productAuthorizer
                                                     .productDesignerRef!),
                                             builder: (context, snapshot) {
@@ -2698,7 +2652,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                 return Container(
                                                   width: 0.0,
                                                   height: 0.0,
-                                                  child: BlankLoadingWidget(),
+                                                  child: const BlankLoadingWidget(),
                                                 );
                                               }
 
@@ -2727,7 +2681,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       '__transition_info__':
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -2769,15 +2723,13 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                 DecorationImage(
                                                               fit: BoxFit.cover,
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               image:
-                                                                  Image.network(
+                                                                  CachedNetworkImageProvider(
                                                                 valueOrDefault<
                                                                     String>(
                                                                   designerUsersRecord.designerMainInfo.designerInfo.brandPhoto !=
-                                                                              null &&
-                                                                          designerUsersRecord.designerMainInfo.designerInfo.brandPhoto !=
                                                                               ''
                                                                       ? designerUsersRecord
                                                                           .designerMainInfo
@@ -2787,7 +2739,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                           .photoUrl,
                                                                   'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/kwcb1kmteqoh/Frame_2087324774.png',
                                                                 ),
-                                                              ).image,
+                                                              ),
                                                             ),
                                                             borderRadius:
                                                                 BorderRadius
@@ -2799,15 +2751,10 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(16.0),
-                                                        child: Image.network(
-                                                          valueOrDefault<
+                                                        child: CachedNetworkImage(
+                                                          imageUrl: valueOrDefault<
                                                               String>(
                                                             designerUsersRecord
-                                                                            .designerMainInfo
-                                                                            .designerInfo
-                                                                            .brandPhoto !=
-                                                                        null &&
-                                                                    designerUsersRecord
                                                                             .designerMainInfo
                                                                             .designerInfo
                                                                             .brandPhoto !=
@@ -2827,17 +2774,17 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   1.0,
                                                           height: 500.0,
                                                           fit: BoxFit.cover,
-                                                          alignment: Alignment(
+                                                          alignment: const Alignment(
                                                               0.0, 0.0),
                                                         ),
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 1.0),
                                                         child: Container(
                                                           decoration:
-                                                              BoxDecoration(
+                                                              const BoxDecoration(
                                                             gradient:
                                                                 LinearGradient(
                                                               colors: [
@@ -2869,7 +2816,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     16.0),
                                                             child: Row(
                                                               mainAxisSize:
@@ -2895,8 +2842,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             .start,
                                                                     children: [
                                                                       Text(
-                                                                        designerUsersRecord.designerMainInfo.designerInfo.name != null &&
-                                                                                designerUsersRecord.designerMainInfo.designerInfo.name != ''
+                                                                        designerUsersRecord.designerMainInfo.designerInfo.name != ''
                                                                             ? designerUsersRecord.designerMainInfo.designerInfo.name
                                                                             : designerUsersRecord.displayName,
                                                                         style: FlutterFlowTheme.of(context)
@@ -2908,7 +2854,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                               fontWeight: FontWeight.w600,
                                                                             ),
                                                                       ),
-                                                                    ].divide(SizedBox(
+                                                                    ].divide(const SizedBox(
                                                                         height:
                                                                             8.0)),
                                                                   ),
@@ -2938,12 +2884,12 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                         FFButtonOptions(
                                                                       height:
                                                                           28.0,
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           12.0,
                                                                           0.0,
                                                                           12.0,
                                                                           0.0),
-                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -2969,7 +2915,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                       elevation:
                                                                           0.0,
                                                                       borderSide:
-                                                                          BorderSide(
+                                                                          const BorderSide(
                                                                         width:
                                                                             1.0,
                                                                       ),
@@ -2994,11 +2940,11 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                         (loggedIn ==
                                                                             true))
                                                                       Stack(
-                                                                        alignment: AlignmentDirectional(
+                                                                        alignment: const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                         children: [
-                                                                          if ((currentUserDocument?.userDesignerFollowing?.toList() ?? []).contains(designerUsersRecord.reference) ==
+                                                                          if ((currentUserDocument?.userDesignerFollowing.toList() ?? []).contains(designerUsersRecord.reference) ==
                                                                               false)
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => FFButtonWidget(
@@ -3022,9 +2968,9 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   height: 28.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  color: Color(0x34000000),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  color: const Color(0x34000000),
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: 'almarai',
                                                                                         color: FlutterFlowTheme.of(context).info,
@@ -3033,7 +2979,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                         fontWeight: FontWeight.normal,
                                                                                       ),
                                                                                   elevation: 0.0,
-                                                                                  borderSide: BorderSide(
+                                                                                  borderSide: const BorderSide(
                                                                                     color: Colors.transparent,
                                                                                     width: 0.0,
                                                                                   ),
@@ -3043,7 +2989,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                 ),
                                                                               ),
                                                                             ),
-                                                                          if ((currentUserDocument?.userDesignerFollowing?.toList() ?? []).contains(designerUsersRecord.reference) ==
+                                                                          if ((currentUserDocument?.userDesignerFollowing.toList() ?? []).contains(designerUsersRecord.reference) ==
                                                                               true)
                                                                             Builder(
                                                                               builder: (context) => AuthUserStreamWidget(
@@ -3057,7 +3003,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                           elevation: 0,
                                                                                           insetPadding: EdgeInsets.zero,
                                                                                           backgroundColor: Colors.transparent,
-                                                                                          alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                           child: WebViewAware(
                                                                                             child: GestureDetector(
                                                                                               onTap: () {
@@ -3088,9 +3034,9 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     height: 28.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    color: Color(0x34000000),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    color: const Color(0x34000000),
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: 'almarai',
                                                                                           color: FlutterFlowTheme.of(context).info,
@@ -3098,7 +3044,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                     elevation: 0.0,
-                                                                                    borderSide: BorderSide(
+                                                                                    borderSide: const BorderSide(
                                                                                       color: Colors.transparent,
                                                                                       width: 0.0,
                                                                                     ),
@@ -3113,7 +3059,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                       ),
                                                                   ],
                                                                 ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   width: 8.0)),
                                                             ),
                                                           ),
@@ -3129,7 +3075,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                       ],
                                     ),
                                   ),
-                                if (stackProductsRecord!.productReview.length >
+                                if (stackProductsRecord.productReview.length >
                                     0)
                                   Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -3137,7 +3083,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -3153,7 +3099,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -3166,12 +3112,12 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                 Text(
                                                   '${valueOrDefault<String>(
                                                     ((functions.newCartTotal(
-                                                                stackProductsRecord!
+                                                                stackProductsRecord
                                                                     .productReview
                                                                     .map((e) => e
                                                                         .reviewRate)
                                                                     .toList()) /
-                                                            stackProductsRecord!
+                                                            stackProductsRecord
                                                                 .productReview
                                                                 .length))
                                                         .toString(),
@@ -3186,7 +3132,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                       ),
                                                 ),
                                                 Text(
-                                                  '${stackProductsRecord?.productReview?.length?.toString()}${FFLocalizations.of(context).getVariableText(
+                                                  '${stackProductsRecord.productReview.length.toString()}${FFLocalizations.of(context).getVariableText(
                                                     enText: ' ratings',
                                                     arText: 'التقييمات',
                                                   )}',
@@ -3203,7 +3149,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(SizedBox(height: 4.0)),
+                                              ].divide(const SizedBox(height: 4.0)),
                                             ),
                                             Expanded(
                                               child: Column(
@@ -3234,13 +3180,13 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                       Expanded(
                                                         child: Container(
                                                           decoration:
-                                                              BoxDecoration(),
+                                                              const BoxDecoration(),
                                                           child:
                                                               LinearPercentIndicator(
                                                             percent:
                                                                 valueOrDefault<
                                                                     double>(
-                                                              (stackProductsRecord!
+                                                              (stackProductsRecord
                                                                           .productReview
                                                                           .where((e) =>
                                                                               e.reviewRate >=
@@ -3248,7 +3194,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                           .toList()
                                                                           .length
                                                                           .toDouble() /
-                                                                      stackProductsRecord!
+                                                                      stackProductsRecord
                                                                           .productReview
                                                                           .length) /
                                                                   100,
@@ -3283,7 +3229,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   ),
                                                             ),
                                                             barRadius:
-                                                                Radius.circular(
+                                                                const Radius.circular(
                                                                     8.0),
                                                             padding:
                                                                 EdgeInsets.zero,
@@ -3291,7 +3237,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 4.0)),
+                                                        const SizedBox(width: 4.0)),
                                                   ),
                                                   Row(
                                                     mainAxisSize:
@@ -3318,13 +3264,13 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                       Expanded(
                                                         child: Container(
                                                           decoration:
-                                                              BoxDecoration(),
+                                                              const BoxDecoration(),
                                                           child:
                                                               LinearPercentIndicator(
                                                             percent:
                                                                 valueOrDefault<
                                                                     double>(
-                                                              (stackProductsRecord!
+                                                              (stackProductsRecord
                                                                           .productReview
                                                                           .where((e) =>
                                                                               (e.reviewRate < 5.0) &&
@@ -3333,7 +3279,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                           .toList()
                                                                           .length
                                                                           .toDouble() /
-                                                                      stackProductsRecord!
+                                                                      stackProductsRecord
                                                                           .productReview
                                                                           .length) /
                                                                   100,
@@ -3368,7 +3314,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   ),
                                                             ),
                                                             barRadius:
-                                                                Radius.circular(
+                                                                const Radius.circular(
                                                                     8.0),
                                                             padding:
                                                                 EdgeInsets.zero,
@@ -3376,7 +3322,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 4.0)),
+                                                        const SizedBox(width: 4.0)),
                                                   ),
                                                   Row(
                                                     mainAxisSize:
@@ -3403,13 +3349,13 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                       Expanded(
                                                         child: Container(
                                                           decoration:
-                                                              BoxDecoration(),
+                                                              const BoxDecoration(),
                                                           child:
                                                               LinearPercentIndicator(
                                                             percent:
                                                                 valueOrDefault<
                                                                     double>(
-                                                              (stackProductsRecord!
+                                                              (stackProductsRecord
                                                                           .productReview
                                                                           .where((e) =>
                                                                               (e.reviewRate < 4.0) &&
@@ -3418,7 +3364,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                           .toList()
                                                                           .length
                                                                           .toDouble() /
-                                                                      stackProductsRecord!
+                                                                      stackProductsRecord
                                                                           .productReview
                                                                           .length) /
                                                                   100,
@@ -3453,7 +3399,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   ),
                                                             ),
                                                             barRadius:
-                                                                Radius.circular(
+                                                                const Radius.circular(
                                                                     8.0),
                                                             padding:
                                                                 EdgeInsets.zero,
@@ -3461,7 +3407,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 4.0)),
+                                                        const SizedBox(width: 4.0)),
                                                   ),
                                                   Row(
                                                     mainAxisSize:
@@ -3488,13 +3434,13 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                       Expanded(
                                                         child: Container(
                                                           decoration:
-                                                              BoxDecoration(),
+                                                              const BoxDecoration(),
                                                           child:
                                                               LinearPercentIndicator(
                                                             percent:
                                                                 valueOrDefault<
                                                                     double>(
-                                                              (stackProductsRecord!
+                                                              (stackProductsRecord
                                                                           .productReview
                                                                           .where((e) =>
                                                                               (e.reviewRate < 3.0) &&
@@ -3503,7 +3449,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                           .toList()
                                                                           .length
                                                                           .toDouble() /
-                                                                      stackProductsRecord!
+                                                                      stackProductsRecord
                                                                           .productReview
                                                                           .length) /
                                                                   100,
@@ -3538,7 +3484,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   ),
                                                             ),
                                                             barRadius:
-                                                                Radius.circular(
+                                                                const Radius.circular(
                                                                     8.0),
                                                             padding:
                                                                 EdgeInsets.zero,
@@ -3546,7 +3492,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 4.0)),
+                                                        const SizedBox(width: 4.0)),
                                                   ),
                                                   Row(
                                                     mainAxisSize:
@@ -3573,13 +3519,13 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                       Expanded(
                                                         child: Container(
                                                           decoration:
-                                                              BoxDecoration(),
+                                                              const BoxDecoration(),
                                                           child:
                                                               LinearPercentIndicator(
                                                             percent:
                                                                 valueOrDefault<
                                                                     double>(
-                                                              (stackProductsRecord!
+                                                              (stackProductsRecord
                                                                           .productReview
                                                                           .where((e) =>
                                                                               e.reviewRate <=
@@ -3587,7 +3533,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                           .toList()
                                                                           .length
                                                                           .toDouble() /
-                                                                      stackProductsRecord!
+                                                                      stackProductsRecord
                                                                           .productReview
                                                                           .length) /
                                                                   100,
@@ -3622,7 +3568,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   ),
                                                             ),
                                                             barRadius:
-                                                                Radius.circular(
+                                                                const Radius.circular(
                                                                     8.0),
                                                             padding:
                                                                 EdgeInsets.zero,
@@ -3630,15 +3576,15 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 4.0)),
+                                                        const SizedBox(width: 4.0)),
                                                   ),
-                                                ].divide(SizedBox(height: 1.0)),
+                                                ].divide(const SizedBox(height: 1.0)),
                                               ),
                                             ),
-                                          ].divide(SizedBox(width: 24.0)),
+                                          ].divide(const SizedBox(width: 24.0)),
                                         ),
                                       ),
-                                      if (stackProductsRecord!.productReview
+                                      if (stackProductsRecord.productReview
                                               .where(
                                                   (e) => e.reviewComments != '')
                                               .toList()
@@ -3646,31 +3592,31 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                           0)
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 0.0, 0.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
                                             height: 120.0,
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                             child: Padding(
-                                              padding: EdgeInsets.all(2.0),
+                                              padding: const EdgeInsets.all(2.0),
                                               child: Builder(
                                                 builder: (context) {
                                                   final reviewList =
                                                       stackProductsRecord
-                                                              ?.productReview
-                                                              ?.where((e) =>
+                                                              .productReview
+                                                              .where((e) =>
                                                                   e.reviewComments !=
                                                                   '')
                                                               .toList()
-                                                              ?.toList() ??
+                                                              .toList() ??
                                                           [];
 
                                                   return ListView.separated(
                                                     padding:
-                                                        EdgeInsets.fromLTRB(
+                                                        const EdgeInsets.fromLTRB(
                                                       0,
                                                       0,
                                                       16.0,
@@ -3683,7 +3629,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                     itemCount:
                                                         reviewList.length,
                                                     separatorBuilder: (_, __) =>
-                                                        SizedBox(width: 8.0),
+                                                        const SizedBox(width: 8.0),
                                                     itemBuilder: (context,
                                                         reviewListIndex) {
                                                       final reviewListItem =
@@ -3703,7 +3649,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                         ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, -1.0),
+                                            const AlignmentDirectional(0.0, -1.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
                                             '05476x55' /* View More */,
@@ -3719,7 +3665,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                               ),
                                         ),
                                       ),
-                                    ].divide(SizedBox(height: 16.0)),
+                                    ].divide(const SizedBox(height: 16.0)),
                                   ),
                                 if (true /* Warning: Trying to access variable not yet defined. */)
                                   FutureBuilder<List<ProductsRecord>>(
@@ -3744,7 +3690,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                         return Container(
                                           width: 0.0,
                                           height: 0.0,
-                                          child: BlankLoadingWidget(),
+                                          child: const BlankLoadingWidget(),
                                         );
                                       }
                                       List<ProductsRecord>
@@ -3752,7 +3698,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                           snapshot.data!;
 
                                       return Container(
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: Visibility(
                                           visible:
                                               popularProductsRecordList.length >
@@ -3761,7 +3707,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 8.0, 16.0, 0.0),
                                                 child: Row(
@@ -3835,7 +3781,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsets.all(4.0),
+                                                            const EdgeInsets.all(4.0),
                                                         child: Icon(
                                                           Icons
                                                               .navigate_next_rounded,
@@ -3847,11 +3793,11 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(width: 8.0)),
+                                                      const SizedBox(width: 8.0)),
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: Builder(
@@ -3861,7 +3807,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                             .where((e) =>
                                                                 e.productId !=
                                                                 stackProductsRecord
-                                                                    ?.productId)
+                                                                    .productId)
                                                             .toList();
 
                                                     return GridView.builder(
@@ -3901,20 +3847,20 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                   },
                                                 ),
                                               ),
-                                            ].divide(SizedBox(height: 12.0)),
+                                            ].divide(const SizedBox(height: 12.0)),
                                           ),
                                         ),
                                       );
                                     },
                                   ),
                                 if (((currentUserDocument?.userRecentViews
-                                                    ?.toList() ??
+                                                    .toList() ??
                                                 [])
                                             .length >
                                         0) &&
                                     loggedIn)
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 12.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Column(
@@ -3922,7 +3868,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 8.0, 16.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -4001,7 +3947,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(4.0),
+                                                          const EdgeInsets.all(4.0),
                                                       child: Icon(
                                                         Icons
                                                             .navigate_next_rounded,
@@ -4013,19 +3959,19 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                              ].divide(SizedBox(width: 8.0)),
+                                              ].divide(const SizedBox(width: 8.0)),
                                             ),
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 0.0, 8.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   1.0,
                                               height: 165.0,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: StreamBuilder<
                                                   List<ProductsRecord>>(
                                                 stream: queryProductsRecord(
@@ -4045,7 +3991,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
                                                   if (!snapshot.hasData) {
-                                                    return Center(
+                                                    return const Center(
                                                       child: SizedBox(
                                                         width: 2.0,
                                                         height: 2.0,
@@ -4066,7 +4012,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
 
                                                   return ListView.separated(
                                                     padding:
-                                                        EdgeInsets.fromLTRB(
+                                                        const EdgeInsets.fromLTRB(
                                                       0,
                                                       0,
                                                       16.0,
@@ -4080,7 +4026,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                         listViewProductsRecordList
                                                             .length,
                                                     separatorBuilder: (_, __) =>
-                                                        SizedBox(width: 8.0),
+                                                        const SizedBox(width: 8.0),
                                                     itemBuilder: (context,
                                                         listViewIndex) {
                                                       final listViewProductsRecord =
@@ -4098,18 +4044,18 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                               ),
                                             ),
                                           ),
-                                        ].divide(SizedBox(height: 12.0)),
+                                        ].divide(const SizedBox(height: 12.0)),
                                       ),
                                     ),
                                   ),
                               ]
-                                  .divide(SizedBox(height: 12.0))
-                                  .addToStart(SizedBox(height: 16.0))
-                                  .addToEnd(SizedBox(height: 100.0)),
+                                  .divide(const SizedBox(height: 12.0))
+                                  .addToStart(const SizedBox(height: 16.0))
+                                  .addToEnd(const SizedBox(height: 100.0)),
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(0.0, 1.0),
+                            alignment: const AlignmentDirectional(0.0, 1.0),
                             child: StreamBuilder<List<SettingsRecord>>(
                               stream: querySettingsRecord(
                                 queryBuilder: (settingsRecord) => settingsRecord
@@ -4130,7 +4076,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                     child: Container(
                                       width: 0.0,
                                       height: 0.0,
-                                      child: BlankLoadingWidget(),
+                                      child: const BlankLoadingWidget(),
                                     ),
                                   );
                                 }
@@ -4147,17 +4093,17 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                         : null;
 
                                 return Container(
-                                  decoration: BoxDecoration(),
+                                  decoration: const BoxDecoration(),
                                   child: Stack(
                                     children: [
                                       if (stackProductsRecord
-                                              ?.product?.productType ==
+                                              .product.productType ==
                                           'ready')
                                         AuthUserStreamWidget(
                                           builder: (context) =>
                                               StreamBuilder<InventoryRecord>(
                                             stream: InventoryRecord.getDocument(
-                                                stackProductsRecord!
+                                                stackProductsRecord
                                                     .product.inventoryRef!),
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
@@ -4166,7 +4112,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                   child: Container(
                                                     width: 0.0,
                                                     height: 0.0,
-                                                    child: BlankLoadingWidget(),
+                                                    child: const BlankLoadingWidget(),
                                                   ),
                                                 );
                                               }
@@ -4183,8 +4129,8 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   '') ==
                                                               'Creator') &&
                                                           (stackProductsRecord
-                                                                  ?.productAuthorizer
-                                                                  ?.isAffiliateProduct ==
+                                                                  .productAuthorizer
+                                                                  .isAffiliateProduct ==
                                                               true)
                                                       ? 135.0
                                                       : 75.0,
@@ -4196,7 +4142,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                       .primaryBackground,
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 4.0),
                                                   child: Stack(
@@ -4205,16 +4151,16 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                         if (!loggedIn) {
                                                           return true;
                                                         } else if ((stackProductsRecord
-                                                                    ?.product
-                                                                    ?.productType ==
+                                                                    .product
+                                                                    .productType ==
                                                                 'ready') &&
                                                             (readymadeInventoryRecord
                                                                     .stock >
                                                                 0)) {
                                                           return true;
                                                         } else if (stackProductsRecord
-                                                                ?.product
-                                                                ?.productType ==
+                                                                .product
+                                                                .productType ==
                                                             'custom') {
                                                           return true;
                                                         } else {
@@ -4223,7 +4169,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                       }())
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       8.0,
@@ -4236,7 +4182,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -4251,12 +4197,12 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                           .start,
                                                                   children: [
                                                                     if (loggedIn &&
-                                                                        (stackProductsRecord?.product?.productType ==
+                                                                        (stackProductsRecord.product.productType ==
                                                                             'ready') &&
                                                                         (readymadeInventoryRecord.stock >
                                                                             0))
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             8.0,
                                                                             0.0,
                                                                             8.0,
@@ -4315,7 +4261,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                 1,
                                                                             maximum:
                                                                                 readymadeInventoryRecord.stock,
-                                                                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 12.0,
                                                                                 0.0,
                                                                                 12.0,
@@ -4326,14 +4272,14 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                     if (() {
                                                                       if (!loggedIn) {
                                                                         return true;
-                                                                      } else if ((stackProductsRecord?.product?.productType ==
+                                                                      } else if ((stackProductsRecord.product.productType ==
                                                                               'ready') &&
                                                                           (readymadeInventoryRecord.stock >
                                                                               0)) {
                                                                         return true;
                                                                       } else if (stackProductsRecord
-                                                                              ?.product
-                                                                              ?.productType ==
+                                                                              .product
+                                                                              .productType ==
                                                                           'custom') {
                                                                         return true;
                                                                       } else {
@@ -4343,7 +4289,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                       Expanded(
                                                                         child:
                                                                             Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               0.0,
                                                                               -1.0),
                                                                           child:
@@ -4357,10 +4303,10 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             child:
                                                                                 DefaultCartButtonWidget(
                                                                               type: 'button',
-                                                                              product: stackProductsRecord!.reference,
+                                                                              product: stackProductsRecord.reference,
                                                                               navigation: 'cart',
-                                                                              defaultTerms: FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord?.productId).toList().firstOrNull?.productAttribute,
-                                                                              quantity: stackProductsRecord?.product?.productType == 'ready' ? _model.countControllerValue : 1,
+                                                                              defaultTerms: FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute,
+                                                                              quantity: stackProductsRecord.product.productType == 'ready' ? _model.countControllerValue : 1,
                                                                             ),
                                                                           ),
                                                                         ),
@@ -4376,24 +4322,24 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                           '') ==
                                                                       'Creator') &&
                                                                   (stackProductsRecord
-                                                                          ?.productAuthorizer
-                                                                          ?.isAffiliateProduct ==
+                                                                          .productAuthorizer
+                                                                          .isAffiliateProduct ==
                                                                       true))
                                                                 Stack(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   children: [
                                                                     if (loggedIn &&
                                                                         (valueOrDefault(currentUserDocument?.userRole, '') ==
                                                                             'Creator') &&
-                                                                        (stackProductsRecord?.productAuthorizer?.isAffiliateProduct ==
+                                                                        (stackProductsRecord.productAuthorizer.isAffiliateProduct ==
                                                                             true) &&
-                                                                        (stackProductsRecord?.productAuthorizer?.creatorIdList?.where((e) => e == currentUserUid).toList()?.length ==
+                                                                        (stackProductsRecord.productAuthorizer.creatorIdList.where((e) => e == currentUserUid).toList().length ==
                                                                             0))
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             8.0,
                                                                             0.0,
                                                                             8.0,
@@ -4405,7 +4351,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             var _shouldSetState =
                                                                                 false;
                                                                             if ((valueOrDefault(currentUserDocument?.userRole, '') == 'Creator') &&
-                                                                                (stackProductsRecord?.productAuthorizer?.creatorIdList?.contains(currentUserDocument?.creatorMainInfo?.creatorMainId) == false)) {
+                                                                                (stackProductsRecord.productAuthorizer.creatorIdList.contains(currentUserDocument?.creatorMainInfo.creatorMainId) == false)) {
                                                                               _model.iDMapResultOne = await queryIdMapRecordOnce(
                                                                                 queryBuilder: (idMapRecord) => idMapRecord.where(
                                                                                   'type',
@@ -4421,19 +4367,19 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                 (e) => e
                                                                                   ..promotionType = 'preapproved'
                                                                                   ..updateProductDocReference(
-                                                                                    (e) => e.add(stackProductsRecord!.reference),
+                                                                                    (e) => e.add(stackProductsRecord.reference),
                                                                                   )
                                                                                   ..promotionInfo = InfoStruct(
-                                                                                    name: stackProductsRecord?.productInfo?.name,
-                                                                                    featureImage: stackProductsRecord?.productInfo?.featureImage,
-                                                                                    galleryImage: stackProductsRecord?.productInfo?.galleryImage,
-                                                                                    shortDescription: stackProductsRecord?.productInfo?.shortDescription,
+                                                                                    name: stackProductsRecord.productInfo.name,
+                                                                                    featureImage: stackProductsRecord.productInfo.featureImage,
+                                                                                    galleryImage: stackProductsRecord.productInfo.galleryImage,
+                                                                                    shortDescription: stackProductsRecord.productInfo.shortDescription,
                                                                                   )
                                                                                   ..promotionCreatedAt = getCurrentTimestamp
                                                                                   ..promotionStatus = 'active'
-                                                                                  ..promotionId = 'PROMP${_model.iDMapResultOne?.promotionId?.toString()}'
-                                                                                  ..promotionCaption = stackProductsRecord?.productInfo?.name
-                                                                                  ..promotionDescription = stackProductsRecord?.productInfo?.description
+                                                                                  ..promotionId = 'PROMP${_model.iDMapResultOne?.promotionId.toString()}'
+                                                                                  ..promotionCaption = stackProductsRecord.productInfo.name
+                                                                                  ..promotionDescription = stackProductsRecord.productInfo.description
                                                                                   ..promotionCode = 'PROMP${random_data.randomString(
                                                                                     4,
                                                                                     5,
@@ -4442,11 +4388,11 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                     true,
                                                                                   )}'
                                                                                   ..updateProductDetails(
-                                                                                    (e) => e.add(stackProductsRecord!.productInfo),
+                                                                                    (e) => e.add(stackProductsRecord.productInfo),
                                                                                   )
                                                                                   ..promotionUserRef = currentUserReference
                                                                                   ..promotionStartDate = functions.presentDateFromZerotime()
-                                                                                  ..promotionEndDate = stackProductsRecord?.productAuthorizer?.affiliateEndDate,
+                                                                                  ..promotionEndDate = stackProductsRecord.productAuthorizer.affiliateEndDate,
                                                                               );
                                                                               _model.productUrl = 'https://azyaa.kw${_model.promotion?.promotionCode}';
                                                                               _model.updatePromotionStruct(
@@ -4478,7 +4424,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                 ),
                                                                               });
 
-                                                                              await stackProductsRecord!.reference.update(createProductsRecordData(
+                                                                              await stackProductsRecord.reference.update(createProductsRecordData(
                                                                                 productAuthorizer: createProductAuthorizeInfoStruct(
                                                                                   fieldValues: {
                                                                                     'creator_id_list': FieldValue.arrayUnion([
@@ -4523,7 +4469,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                           height: MediaQuery.sizeOf(context).height * 0.5,
                                                                                           child: C1SharePromotionWidget(
                                                                                             promotionURL: _model.productUrl,
-                                                                                            productDetails: stackProductsRecord!.reference,
+                                                                                            productDetails: stackProductsRecord.reference,
                                                                                             promotionImages: _model.promotion?.promotionImages,
                                                                                           ),
                                                                                         ),
@@ -4546,7 +4492,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             '5zbi1ngb' /* Promote */,
                                                                           ),
                                                                           icon:
-                                                                              Icon(
+                                                                              const Icon(
                                                                             FFIcons.kstar,
                                                                             size:
                                                                                 24.0,
@@ -4557,12 +4503,12 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                 MediaQuery.sizeOf(context).width * 1.0,
                                                                             height:
                                                                                 48.0,
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 16.0,
                                                                                 0.0,
                                                                                 16.0,
                                                                                 0.0),
-                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -4573,7 +4519,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                 FlutterFlowTheme.of(context).primaryBackground,
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: 'almarai',
-                                                                                  color: Color(0xFF344054),
+                                                                                  color: const Color(0xFF344054),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                             elevation:
@@ -4590,12 +4536,12 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                     if (loggedIn &&
                                                                         (valueOrDefault(currentUserDocument?.userRole, '') ==
                                                                             'Creator') &&
-                                                                        (stackProductsRecord?.productAuthorizer?.isAffiliateProduct ==
+                                                                        (stackProductsRecord.productAuthorizer.isAffiliateProduct ==
                                                                             true) &&
-                                                                        (stackProductsRecord!.productAuthorizer.creatorIdList.where((e) => e == currentUserUid).toList().length >
+                                                                        (stackProductsRecord.productAuthorizer.creatorIdList.where((e) => e == currentUserUid).toList().length >
                                                                             0))
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             8.0,
                                                                             0.0,
                                                                             8.0,
@@ -4607,7 +4553,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             context.pushNamed(
                                                                               CreatorSpaceWidget.routeName,
                                                                               extra: <String, dynamic>{
-                                                                                '__transition_info__': TransitionInfo(
+                                                                                '__transition_info__': const TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                   duration: Duration(milliseconds: 0),
@@ -4620,7 +4566,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             '92w3hxbp' /* See Insights */,
                                                                           ),
                                                                           icon:
-                                                                              Icon(
+                                                                              const Icon(
                                                                             FFIcons.kicon10,
                                                                             size:
                                                                                 21.0,
@@ -4631,12 +4577,12 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                 MediaQuery.sizeOf(context).width * 1.0,
                                                                             height:
                                                                                 48.0,
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 16.0,
                                                                                 0.0,
                                                                                 16.0,
                                                                                 0.0),
-                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -4647,7 +4593,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                 FlutterFlowTheme.of(context).primaryBackground,
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: 'almarai',
-                                                                                  color: Color(0xFF344054),
+                                                                                  color: const Color(0xFF344054),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                             elevation:
@@ -4681,7 +4627,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -4697,7 +4643,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                           if (readymadeInventoryRecord.stock >
                                                                               0) {
                                                                             FFAppState().updateUserDataFlowStruct(
-                                                                              (e) => e..userCartCount = currentUserDocument?.userCart?.cartItems?.where((e) => e.productType != 'membership').toList()?.length,
+                                                                              (e) => e..userCartCount = currentUserDocument?.userCart.cartItems.where((e) => e.productType != 'membership').toList().length,
                                                                             );
                                                                             _model.idMapResult =
                                                                                 await queryIdMapRecordOnce(
@@ -4723,21 +4669,21 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                       getUserCartItemsFirestoreData(
                                                                                         createUserCartItemsStruct(
                                                                                           cartItemId: _model.idMapResult?.cartItemId,
-                                                                                          productId: stackProductsRecord?.productId,
+                                                                                          productId: stackProductsRecord.productId,
                                                                                           productInfo: updateInfoStruct(
-                                                                                            stackProductsRecord?.productInfo,
+                                                                                            stackProductsRecord.productInfo,
                                                                                             clearUnsetFields: false,
                                                                                           ),
                                                                                           quantity: 1,
-                                                                                          price: stackProductsRecord?.product?.productPrice,
-                                                                                          totalPrice: stackProductsRecord?.product?.productPrice,
+                                                                                          price: stackProductsRecord.product.productPrice,
+                                                                                          totalPrice: stackProductsRecord.product.productPrice,
                                                                                           productType: 'product',
-                                                                                          productDesignerRef: stackProductsRecord?.productAuthorizer?.productDesignerRef,
-                                                                                          productDesignerId: stackProductsRecord?.productAuthorizer?.productDesignerId,
-                                                                                          productRef: stackProductsRecord?.reference,
+                                                                                          productDesignerRef: stackProductsRecord.productAuthorizer.productDesignerRef,
+                                                                                          productDesignerId: stackProductsRecord.productAuthorizer.productDesignerId,
+                                                                                          productRef: stackProductsRecord.reference,
                                                                                           fieldValues: {
                                                                                             'cart_item_attribute': getProductAttributesNewListFirestoreData(
-                                                                                              (currentUserDocument?.userRecentViews?.toList() ?? []).where((e) => stackProductsRecord?.productId == e.viewedItemId).toList().firstOrNull?.productAttribute,
+                                                                                              (currentUserDocument?.userRecentViews.toList() ?? []).where((e) => stackProductsRecord.productId == e.viewedItemId).toList().firstOrNull?.productAttribute,
                                                                                             ),
                                                                                           },
                                                                                           clearUnsetFields: false,
@@ -4761,25 +4707,25 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             } else {
                                                                               FFAppState().updateUserDataFlowStruct(
                                                                                 (e) => e
-                                                                                  ..userCartCount = currentUserDocument?.userCart?.cartItems?.length
+                                                                                  ..userCartCount = currentUserDocument?.userCart.cartItems.length
                                                                                   ..userCartItemList = currentUserDocument!.userCart.cartItems.toList(),
                                                                               );
                                                                               while (FFAppState().UserDataFlow.userCartCount > 0) {
-                                                                                if (FFAppState().UserDataFlow.userCartItemList.elementAtOrNull(FFAppState().UserDataFlow.userCartCount - 1)?.productId == stackProductsRecord?.productId) {
+                                                                                if (FFAppState().UserDataFlow.userCartItemList.elementAtOrNull(FFAppState().UserDataFlow.userCartCount - 1)?.productId == stackProductsRecord.productId) {
                                                                                   FFAppState().updateUserDataFlowStruct(
                                                                                     (e) => e
                                                                                       ..updateUserCartItemList(
                                                                                         (e) => e[FFAppState().UserDataFlow.userCartCount - 1]
-                                                                                          ..productId = stackProductsRecord?.productId
+                                                                                          ..productId = stackProductsRecord.productId
                                                                                           ..productType = 'product'
-                                                                                          ..productInfo = stackProductsRecord?.productInfo
+                                                                                          ..productInfo = stackProductsRecord.productInfo
                                                                                           ..quantity = 1
-                                                                                          ..price = stackProductsRecord?.product?.productPrice
-                                                                                          ..totalPrice = stackProductsRecord?.product?.productPrice
-                                                                                          ..cartItemAttribute = (currentUserDocument?.userRecentViews?.toList() ?? []).where((e) => stackProductsRecord?.productId == e.viewedItemId).toList().firstOrNull!.productAttribute.toList()
-                                                                                          ..productDesignerRef = stackProductsRecord?.productAuthorizer?.productDesignerRef
-                                                                                          ..productDesignerId = stackProductsRecord?.productAuthorizer?.productDesignerId
-                                                                                          ..productRef = stackProductsRecord?.reference,
+                                                                                          ..price = stackProductsRecord.product.productPrice
+                                                                                          ..totalPrice = stackProductsRecord.product.productPrice
+                                                                                          ..cartItemAttribute = (currentUserDocument?.userRecentViews.toList() ?? []).where((e) => stackProductsRecord.productId == e.viewedItemId).toList().firstOrNull!.productAttribute.toList()
+                                                                                          ..productDesignerRef = stackProductsRecord.productAuthorizer.productDesignerRef
+                                                                                          ..productDesignerId = stackProductsRecord.productAuthorizer.productDesignerId
+                                                                                          ..productRef = stackProductsRecord.reference,
                                                                                       ),
                                                                                   );
 
@@ -4802,7 +4748,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                   context.pushNamed(
                                                                                     CartWidget.routeName,
                                                                                     extra: <String, dynamic>{
-                                                                                      '__transition_info__': TransitionInfo(
+                                                                                      '__transition_info__': const TransitionInfo(
                                                                                         hasTransition: true,
                                                                                         transitionType: PageTransitionType.fade,
                                                                                         duration: Duration(milliseconds: 0),
@@ -4823,15 +4769,15 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                     (e) => e.add(UserCartItemsStruct(
                                                                                       cartItemId: _model.idMapResult?.cartItemId,
                                                                                       productType: 'product',
-                                                                                      productId: stackProductsRecord?.productId,
-                                                                                      productInfo: stackProductsRecord?.productInfo,
+                                                                                      productId: stackProductsRecord.productId,
+                                                                                      productInfo: stackProductsRecord.productInfo,
                                                                                       quantity: 1,
-                                                                                      price: stackProductsRecord?.product?.productPrice,
-                                                                                      totalPrice: stackProductsRecord?.product?.productPrice,
-                                                                                      cartItemAttribute: (currentUserDocument?.userRecentViews?.toList() ?? []).where((e) => stackProductsRecord?.productId == e.viewedItemId).toList().firstOrNull?.productAttribute,
-                                                                                      productDesignerRef: stackProductsRecord?.productAuthorizer?.productDesignerRef,
-                                                                                      productDesignerId: stackProductsRecord?.productAuthorizer?.productDesignerId,
-                                                                                      productRef: stackProductsRecord?.reference,
+                                                                                      price: stackProductsRecord.product.productPrice,
+                                                                                      totalPrice: stackProductsRecord.product.productPrice,
+                                                                                      cartItemAttribute: (currentUserDocument?.userRecentViews.toList() ?? []).where((e) => stackProductsRecord.productId == e.viewedItemId).toList().firstOrNull?.productAttribute,
+                                                                                      productDesignerRef: stackProductsRecord.productAuthorizer.productDesignerRef,
+                                                                                      productDesignerId: stackProductsRecord.productAuthorizer.productDesignerId,
+                                                                                      productRef: stackProductsRecord.reference,
                                                                                     )),
                                                                                   ),
                                                                               );
@@ -4854,7 +4800,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             context.pushNamed(
                                                                               CartWidget.routeName,
                                                                               extra: <String, dynamic>{
-                                                                                '__transition_info__': TransitionInfo(
+                                                                                '__transition_info__': const TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                   duration: Duration(milliseconds: 0),
@@ -4868,7 +4814,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             LoginWidget.routeName,
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              '__transition_info__': TransitionInfo(
+                                                                              '__transition_info__': const TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.fade,
                                                                                 duration: Duration(milliseconds: 0),
@@ -4882,7 +4828,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                               () {});
                                                                       },
                                                                       text: loggedIn
-                                                                          ? (currentUserDocument!.userCart.cartItems.where((e) => (e.productId == stackProductsRecord?.productId) && (e.productType == 'product')).toList().length > 0
+                                                                          ? (currentUserDocument!.userCart.cartItems.where((e) => (e.productId == stackProductsRecord.productId) && (e.productType == 'product')).toList().length > 0
                                                                               ? 'Update Bag'
                                                                               : 'Add to Bag')
                                                                           : 'Login',
@@ -4892,20 +4838,20 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             1.0,
                                                                         height:
                                                                             48.0,
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             16.0,
                                                                             0.0,
                                                                             16.0,
                                                                             0.0),
                                                                         iconAlignment:
                                                                             IconAlignment.end,
-                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
                                                                         color: loggedIn
-                                                                            ? (currentUserDocument!.userCart.cartItems.where((e) => (e.productId == stackProductsRecord?.productId) && (e.productType == 'product')).toList().length > 0
+                                                                            ? (currentUserDocument!.userCart.cartItems.where((e) => (e.productId == stackProductsRecord.productId) && (e.productType == 'product')).toList().length > 0
                                                                                 ? FlutterFlowTheme.of(context).success
                                                                                 : FlutterFlowTheme.of(context).primary)
                                                                             : FlutterFlowTheme.of(context).primary,
@@ -4942,7 +4888,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -4972,15 +4918,15 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                   (e) => e.add(UserCartItemsStruct(
                                                                                     cartItemId: _model.idMapResult?.cartItemId,
                                                                                     productType: 'product',
-                                                                                    cartItemAttribute: stackProductsRecord?.productAttribute,
-                                                                                    productId: stackProductsRecord?.productId,
-                                                                                    productInfo: stackProductsRecord?.productInfo,
+                                                                                    cartItemAttribute: stackProductsRecord.productAttribute,
+                                                                                    productId: stackProductsRecord.productId,
+                                                                                    productInfo: stackProductsRecord.productInfo,
                                                                                     quantity: 1,
-                                                                                    price: stackProductsRecord?.product?.productPrice,
-                                                                                    totalPrice: stackProductsRecord?.product?.productPrice,
-                                                                                    productDesignerRef: stackProductsRecord?.productAuthorizer?.productDesignerRef,
-                                                                                    productDesignerId: stackProductsRecord?.productAuthorizer?.productDesignerId,
-                                                                                    productRef: stackProductsRecord?.reference,
+                                                                                    price: stackProductsRecord.product.productPrice,
+                                                                                    totalPrice: stackProductsRecord.product.productPrice,
+                                                                                    productDesignerRef: stackProductsRecord.productAuthorizer.productDesignerRef,
+                                                                                    productDesignerId: stackProductsRecord.productAuthorizer.productDesignerId,
+                                                                                    productRef: stackProductsRecord.reference,
                                                                                   )),
                                                                                 ),
                                                                             );
@@ -5016,7 +4962,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             context.pushNamed(
                                                                               CartWidget.routeName,
                                                                               extra: <String, dynamic>{
-                                                                                '__transition_info__': TransitionInfo(
+                                                                                '__transition_info__': const TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                   duration: Duration(milliseconds: 0),
@@ -5030,7 +4976,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             LoginWidget.routeName,
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              '__transition_info__': TransitionInfo(
+                                                                              '__transition_info__': const TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.fade,
                                                                                 duration: Duration(milliseconds: 0),
@@ -5043,7 +4989,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             () {});
                                                                       },
                                                                       text: loggedIn
-                                                                          ? (currentUserDocument!.userCart.cartItems.where((e) => (e.productId == stackProductsRecord?.productId) && (e.productType == 'product')).toList().length > 0
+                                                                          ? (currentUserDocument!.userCart.cartItems.where((e) => (e.productId == stackProductsRecord.productId) && (e.productType == 'product')).toList().length > 0
                                                                               ? FFLocalizations.of(context).getVariableText(
                                                                                   enText: 'Add to Bag',
                                                                                   arText: 'أضف إلى الحقيبة',
@@ -5062,20 +5008,20 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             1.0,
                                                                         height:
                                                                             48.0,
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             16.0,
                                                                             0.0,
                                                                             16.0,
                                                                             0.0),
                                                                         iconAlignment:
                                                                             IconAlignment.end,
-                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
                                                                         color: loggedIn
-                                                                            ? (currentUserDocument!.userCart.cartItems.where((e) => (e.productId == stackProductsRecord?.productId) && (e.productType == 'product')).toList().length > 0
+                                                                            ? (currentUserDocument!.userCart.cartItems.where((e) => (e.productId == stackProductsRecord.productId) && (e.productType == 'product')).toList().length > 0
                                                                                 ? FlutterFlowTheme.of(context).success
                                                                                 : FlutterFlowTheme.of(context).primary)
                                                                             : FlutterFlowTheme.of(context).primary,
@@ -5103,7 +5049,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                               0))
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: InkWell(
                                                             splashColor: Colors
@@ -5117,7 +5063,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                     .transparent,
                                                             onTap: () async {
                                                               if (loggedIn) {
-                                                                await stackProductsRecord!
+                                                                await stackProductsRecord
                                                                     .reference
                                                                     .update({
                                                                   ...mapToFirestore(
@@ -5152,7 +5098,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             .primaryText,
                                                                       ),
                                                                     ),
-                                                                    duration: Duration(
+                                                                    duration: const Duration(
                                                                         milliseconds:
                                                                             3000),
                                                                     backgroundColor:
@@ -5190,7 +5136,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             .stock <=
                                                                         0,
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           16.0,
@@ -5234,13 +5180,13 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                           ),
                                         ),
                                       if (stackProductsRecord
-                                              ?.product?.productType ==
+                                              .product.productType ==
                                           'custom')
                                         AuthUserStreamWidget(
                                           builder: (context) =>
                                               StreamBuilder<InventoryRecord>(
                                             stream: InventoryRecord.getDocument(
-                                                stackProductsRecord!
+                                                stackProductsRecord
                                                     .product.inventoryRef!),
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
@@ -5249,7 +5195,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                   child: Container(
                                                     width: 0.0,
                                                     height: 0.0,
-                                                    child: BlankLoadingWidget(),
+                                                    child: const BlankLoadingWidget(),
                                                   ),
                                                 );
                                               }
@@ -5266,8 +5212,8 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   '') ==
                                                               'Creator') &&
                                                           (stackProductsRecord
-                                                                  ?.productAuthorizer
-                                                                  ?.isAffiliateProduct ==
+                                                                  .productAuthorizer
+                                                                  .isAffiliateProduct ==
                                                               true)
                                                       ? 135.0
                                                       : 75.0,
@@ -5279,14 +5225,14 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                       .primaryBackground,
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 4.0),
                                                   child: Stack(
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     8.0,
@@ -5298,7 +5244,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -5320,7 +5266,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             0)
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.0, -1.0),
+                                                                                const AlignmentDirectional(0.0, -1.0),
                                                                             child:
                                                                                 wrapWithModel(
                                                                               model: _model.defaultCartButtonModel2,
@@ -5328,9 +5274,9 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                               updateOnChange: true,
                                                                               child: DefaultCartButtonWidget(
                                                                                 type: 'button',
-                                                                                product: stackProductsRecord!.reference,
+                                                                                product: stackProductsRecord.reference,
                                                                                 navigation: 'cart',
-                                                                                defaultTerms: FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord?.productId).toList().firstOrNull?.productAttribute,
+                                                                                defaultTerms: FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute,
                                                                                 quantity: 1,
                                                                               ),
                                                                             ),
@@ -5343,7 +5289,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             onPressed:
                                                                                 () async {
                                                                               if (loggedIn) {
-                                                                                await stackProductsRecord!.reference.update({
+                                                                                await stackProductsRecord.reference.update({
                                                                                   ...mapToFirestore(
                                                                                     {
                                                                                       'product_notify_list': FieldValue.arrayUnion([
@@ -5367,9 +5313,9 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                 FFButtonOptions(
                                                                               width: MediaQuery.sizeOf(context).width * 1.0,
                                                                               height: 48.0,
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                               iconAlignment: IconAlignment.end,
-                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                               color: FlutterFlowTheme.of(context).primaryBackground,
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: 'almarai',
@@ -5398,12 +5344,12 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                         '') ==
                                                                     'Creator') &&
                                                                 (stackProductsRecord
-                                                                        ?.productAuthorizer
-                                                                        ?.isAffiliateProduct ==
+                                                                        .productAuthorizer
+                                                                        .isAffiliateProduct ==
                                                                     true))
                                                               Stack(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 children: [
@@ -5414,18 +5360,18 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                               '') ==
                                                                           'Creator') &&
                                                                       (stackProductsRecord
-                                                                              ?.productAuthorizer
-                                                                              ?.isAffiliateProduct ==
+                                                                              .productAuthorizer
+                                                                              .isAffiliateProduct ==
                                                                           true) &&
                                                                       (stackProductsRecord
-                                                                              ?.productAuthorizer
-                                                                              ?.creatorIdList
-                                                                              ?.where((e) => e == currentUserUid)
+                                                                              .productAuthorizer
+                                                                              .creatorIdList
+                                                                              .where((e) => e == currentUserUid)
                                                                               .toList()
-                                                                              ?.length ==
+                                                                              .length ==
                                                                           0))
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           8.0,
                                                                           0.0,
                                                                           8.0,
@@ -5437,7 +5383,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                           var _shouldSetState =
                                                                               false;
                                                                           if ((valueOrDefault(currentUserDocument?.userRole, '') == 'Creator') &&
-                                                                              (stackProductsRecord?.productAuthorizer?.creatorIdList?.contains(currentUserDocument?.creatorMainInfo?.creatorMainId) == false)) {
+                                                                              (stackProductsRecord.productAuthorizer.creatorIdList.contains(currentUserDocument?.creatorMainInfo.creatorMainId) == false)) {
                                                                             _model.iDMapResultCustomOne =
                                                                                 await queryIdMapRecordOnce(
                                                                               queryBuilder: (idMapRecord) => idMapRecord.where(
@@ -5455,19 +5401,19 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                               (e) => e
                                                                                 ..promotionType = 'preapproved'
                                                                                 ..updateProductDocReference(
-                                                                                  (e) => e.add(stackProductsRecord!.reference),
+                                                                                  (e) => e.add(stackProductsRecord.reference),
                                                                                 )
                                                                                 ..promotionInfo = InfoStruct(
-                                                                                  name: stackProductsRecord?.productInfo?.name,
-                                                                                  featureImage: stackProductsRecord?.productInfo?.featureImage,
-                                                                                  galleryImage: stackProductsRecord?.productInfo?.galleryImage,
-                                                                                  shortDescription: stackProductsRecord?.productInfo?.shortDescription,
+                                                                                  name: stackProductsRecord.productInfo.name,
+                                                                                  featureImage: stackProductsRecord.productInfo.featureImage,
+                                                                                  galleryImage: stackProductsRecord.productInfo.galleryImage,
+                                                                                  shortDescription: stackProductsRecord.productInfo.shortDescription,
                                                                                 )
                                                                                 ..promotionCreatedAt = getCurrentTimestamp
                                                                                 ..promotionStatus = 'active'
-                                                                                ..promotionId = 'PROMP${_model.iDMapResultCustomOne?.promotionId?.toString()}'
-                                                                                ..promotionCaption = stackProductsRecord?.productInfo?.name
-                                                                                ..promotionDescription = stackProductsRecord?.productInfo?.description
+                                                                                ..promotionId = 'PROMP${_model.iDMapResultCustomOne?.promotionId.toString()}'
+                                                                                ..promotionCaption = stackProductsRecord.productInfo.name
+                                                                                ..promotionDescription = stackProductsRecord.productInfo.description
                                                                                 ..promotionCode = 'PROMP${random_data.randomString(
                                                                                   4,
                                                                                   5,
@@ -5476,11 +5422,11 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                   true,
                                                                                 )}'
                                                                                 ..updateProductDetails(
-                                                                                  (e) => e.add(stackProductsRecord!.productInfo),
+                                                                                  (e) => e.add(stackProductsRecord.productInfo),
                                                                                 )
                                                                                 ..promotionUserRef = currentUserReference
                                                                                 ..promotionStartDate = functions.presentDateFromZerotime()
-                                                                                ..promotionEndDate = stackProductsRecord?.productAuthorizer?.affiliateEndDate,
+                                                                                ..promotionEndDate = stackProductsRecord.productAuthorizer.affiliateEndDate,
                                                                             );
                                                                             _model.productUrl =
                                                                                 'https://azyaa.kw${_model.promotion?.promotionCode}';
@@ -5513,7 +5459,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                               ),
                                                                             });
 
-                                                                            await stackProductsRecord!.reference.update(createProductsRecordData(
+                                                                            await stackProductsRecord.reference.update(createProductsRecordData(
                                                                               productAuthorizer: createProductAuthorizeInfoStruct(
                                                                                 fieldValues: {
                                                                                   'creator_id_list': FieldValue.arrayUnion([
@@ -5558,7 +5504,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                         height: MediaQuery.sizeOf(context).height * 0.5,
                                                                                         child: C1SharePromotionWidget(
                                                                                           promotionURL: _model.productUrl,
-                                                                                          productDetails: stackProductsRecord!.reference,
+                                                                                          productDetails: stackProductsRecord.reference,
                                                                                           promotionImages: _model.promotion?.promotionImages,
                                                                                         ),
                                                                                       ),
@@ -5582,7 +5528,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                           's9db5x3l' /* Promote */,
                                                                         ),
                                                                         icon:
-                                                                            Icon(
+                                                                            const Icon(
                                                                           FFIcons
                                                                               .kstar,
                                                                           size:
@@ -5594,12 +5540,12 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                               MediaQuery.sizeOf(context).width * 1.0,
                                                                           height:
                                                                               48.0,
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               16.0,
                                                                               0.0,
                                                                               16.0,
                                                                               0.0),
-                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               0.0,
@@ -5612,7 +5558,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                               .titleSmall
                                                                               .override(
                                                                                 fontFamily: 'almarai',
-                                                                                color: Color(0xFF344054),
+                                                                                color: const Color(0xFF344054),
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                           elevation:
@@ -5634,10 +5580,10 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                               '') ==
                                                                           'Creator') &&
                                                                       (stackProductsRecord
-                                                                              ?.productAuthorizer
-                                                                              ?.isAffiliateProduct ==
+                                                                              .productAuthorizer
+                                                                              .isAffiliateProduct ==
                                                                           true) &&
-                                                                      (stackProductsRecord!
+                                                                      (stackProductsRecord
                                                                               .productAuthorizer
                                                                               .creatorIdList
                                                                               .where((e) => e == currentUserUid)
@@ -5645,7 +5591,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                               .length >
                                                                           0))
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           8.0,
                                                                           0.0,
                                                                           8.0,
@@ -5659,7 +5605,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                             CreatorSpaceWidget.routeName,
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              '__transition_info__': TransitionInfo(
+                                                                              '__transition_info__': const TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.fade,
                                                                                 duration: Duration(milliseconds: 0),
@@ -5672,7 +5618,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                           'k8fuo2ue' /* See Insights */,
                                                                         ),
                                                                         icon:
-                                                                            Icon(
+                                                                            const Icon(
                                                                           FFIcons
                                                                               .kicon10,
                                                                           size:
@@ -5684,12 +5630,12 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                               MediaQuery.sizeOf(context).width * 1.0,
                                                                           height:
                                                                               48.0,
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               16.0,
                                                                               0.0,
                                                                               16.0,
                                                                               0.0),
-                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               0.0,
@@ -5702,7 +5648,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                               .titleSmall
                                                                               .override(
                                                                                 fontFamily: 'almarai',
-                                                                                color: Color(0xFF344054),
+                                                                                color: const Color(0xFF344054),
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                           elevation:

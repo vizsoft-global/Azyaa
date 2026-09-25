@@ -6,14 +6,11 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -67,7 +64,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -133,11 +130,11 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                               print('IconButton pressed ...');
                             },
                           ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -150,7 +147,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   Form(
                     key: _model.formKey,
@@ -166,7 +163,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 16.0, 4.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -183,7 +180,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 16.0, 24.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -202,7 +199,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 16.0),
                                   child: Container(
                                     decoration: BoxDecoration(
@@ -222,7 +219,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 12.0, 4.0),
                                             child: RichText(
                                               textScaler: MediaQuery.of(context)
@@ -260,7 +257,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 12.0, 16.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -285,7 +282,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 12.0, 16.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -390,17 +387,17 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                       enText: 'Upload Image',
                                                       arText: 'تحميل الصورة',
                                                     ),
-                                              icon: Icon(
+                                              icon: const Icon(
                                                 Icons.add,
                                                 size: 14.0,
                                               ),
                                               options: FFButtonOptions(
                                                 height: 30.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -437,7 +434,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 12.0, 16.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -446,7 +443,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                     _model.gvrtImage != '')
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
@@ -473,8 +470,8 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                                     .circular(
                                                                         8.0),
                                                             child:
-                                                                Image.network(
-                                                              _model.gvrtImage!,
+                                                                CachedNetworkImage(
+                                                              imageUrl: _model.gvrtImage!,
                                                               width: MediaQuery
                                                                           .sizeOf(
                                                                               context)
@@ -483,17 +480,17 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                               height: 100.0,
                                                               fit: BoxFit.cover,
                                                               alignment:
-                                                                  Alignment(
+                                                                  const Alignment(
                                                                       0.0, 0.0),
                                                             ),
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     1.0, -1.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           6.0,
@@ -542,7 +539,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                                   child:
                                                                       Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
+                                                                        const EdgeInsets.all(
                                                                             4.0),
                                                                     child:
                                                                         InkWell(
@@ -594,12 +591,12 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                              ].divide(SizedBox(height: 8.0)),
+                                              ].divide(const SizedBox(height: 8.0)),
                                             ),
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 12.0, 16.0),
                                             child: RichText(
                                               textScaler: MediaQuery.of(context)
@@ -637,14 +634,14 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 12.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Container(
                                                     width: 80.0,
@@ -653,7 +650,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                       image: DecorationImage(
                                                         fit: BoxFit.contain,
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         image: Image.asset(
                                                           'assets/images/backgrounfprofile.png',
@@ -662,7 +659,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                     ),
                                                     child: Stack(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               0.0, 0.0),
                                                       children: [
                                                         if ((_model.uploadedFileUrl_uploadPhotoSelfie !=
@@ -671,7 +668,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                                 false))
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: ClipRRect(
                                                               borderRadius:
@@ -679,15 +676,15 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                                       .circular(
                                                                           100.0),
                                                               child:
-                                                                  Image.network(
-                                                                _model
+                                                                  CachedNetworkImage(
+                                                                imageUrl: _model
                                                                     .uploadedFileUrl_uploadPhotoSelfie,
                                                                 width: 80.0,
                                                                 height: 80.0,
                                                                 fit: BoxFit
                                                                     .cover,
                                                                 alignment:
-                                                                    Alignment(
+                                                                    const Alignment(
                                                                         0.0,
                                                                         0.0),
                                                               ),
@@ -699,7 +696,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                                 false))
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Icon(
                                                               Icons
@@ -720,11 +717,11 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                         ))
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     1.0, -1.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           2.0,
@@ -761,7 +758,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                                   child:
                                                                       Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
+                                                                        const EdgeInsets.all(
                                                                             2.0),
                                                                     child: Icon(
                                                                       Icons
@@ -781,7 +778,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                             .isDataUploading_uploadPhotoSelfie)
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Lottie.asset(
                                                               'assets/jsons/upload.json',
@@ -894,8 +891,6 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                     ));
                                                   },
                                                   text: _model.uploadedFileUrl_uploadPhotoSelfie !=
-                                                              null &&
-                                                          _model.uploadedFileUrl_uploadPhotoSelfie !=
                                                               ''
                                                       ? FFLocalizations.of(
                                                               context)
@@ -913,18 +908,18 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                           arText:
                                                               'تحميل الصورة',
                                                         ),
-                                                  icon: Icon(
+                                                  icon: const Icon(
                                                     Icons.add,
                                                     size: 14.0,
                                                   ),
                                                   options: FFButtonOptions(
                                                     height: 30.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 0.0,
                                                                 8.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -962,24 +957,24 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                                             .info,
                                                   ),
                                                 ),
-                                              ].divide(SizedBox(width: 24.0)),
+                                              ].divide(const SizedBox(width: 24.0)),
                                             ),
                                           ),
                                         ]
-                                            .addToStart(SizedBox(height: 16.0))
-                                            .addToEnd(SizedBox(height: 16.0)),
+                                            .addToStart(const SizedBox(height: 16.0))
+                                            .addToEnd(const SizedBox(height: 16.0)),
                                       ),
                                     ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 24.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 0.0, 0.0),
                                         child: Icon(
                                           Icons.check_sharp,
@@ -991,7 +986,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 8.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -1010,7 +1005,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                           ),
                                         ),
                                       ),
-                                    ].divide(SizedBox(width: 12.0)),
+                                    ].divide(const SizedBox(width: 12.0)),
                                   ),
                                 ),
                               ],
@@ -1018,13 +1013,13 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               var _shouldSetState = false;
                               if (currentUserDocument
-                                      ?.creatorRequests?.creatorSelfie !=
+                                      ?.creatorRequests.creatorSelfie !=
                                   '') {
                                 if (_model.gvrtImage != null &&
                                     _model.gvrtImage != '') {
@@ -1059,13 +1054,13 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                         .set(createNotificationRecordData(
                                           notificationId: _model
                                               .idmapresult3?.notificationId
-                                              ?.toString(),
+                                              .toString(),
                                           createdAt: getCurrentTimestamp,
                                           updatedAt: getCurrentTimestamp,
                                           notificationType: 'creatorrequest',
                                           messageType: 'CREATOR REQUEST',
                                           message:
-                                              'New Creator request from ${currentUserDocument?.creatorRequests?.formData?.name} || ${currentUserDocument?.creatorRequests?.creatorRequestId}',
+                                              'New Creator request from ${currentUserDocument?.creatorRequests.formData.name} || ${currentUserDocument?.creatorRequests.creatorRequestId}',
                                           sentFrom: 'system',
                                           markAsRead: false,
                                           toUserRef: FFAppState()
@@ -1089,7 +1084,7 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                                   context.goNamed(
                                     CreatorFormSuccessWidget.routeName,
                                     extra: <String, dynamic>{
-                                      '__transition_info__': TransitionInfo(
+                                      '__transition_info__': const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -1171,9 +1166,9 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 48.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -1189,8 +1184,8 @@ class _CreatorFormUploadWidgetState extends State<CreatorFormUploadWidget> {
                           ),
                         ),
                       ]
-                          .addToStart(SizedBox(height: 16.0))
-                          .addToEnd(SizedBox(height: 16.0)),
+                          .addToStart(const SizedBox(height: 16.0))
+                          .addToEnd(const SizedBox(height: 16.0)),
                     ),
                   ),
                 ],

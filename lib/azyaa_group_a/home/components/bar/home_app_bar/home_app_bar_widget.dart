@@ -1,17 +1,13 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'home_app_bar_model.dart';
 export 'home_app_bar_model.dart';
 
@@ -59,7 +55,7 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
-          return Center(
+          return const Center(
             child: SizedBox(
               width: 2.0,
               height: 2.0,
@@ -90,18 +86,16 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                     width: 50.0,
                     height: 50.0,
                     clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                     ),
-                    child: Image.network(
-                      () {
+                    child: CachedNetworkImage(
+                      imageUrl: () {
                         if ((loggedIn == true) &&
-                            (currentUserPhoto != null &&
-                                currentUserPhoto != '')) {
+                            (currentUserPhoto != '')) {
                           return currentUserPhoto;
                         } else if ((loggedIn == true) &&
-                            (currentUserPhoto == null ||
-                                currentUserPhoto == '')) {
+                            (currentUserPhoto == '')) {
                           return 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/i9u1ra67p2p4/Azyaa-logo_(2).jpg';
                         } else {
                           return 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/i9u1ra67p2p4/Azyaa-logo_(2).jpg';
@@ -196,7 +190,7 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                         context.pushNamed(
                           CreatorSpaceWidget.routeName,
                           extra: <String, dynamic>{
-                            '__transition_info__': TransitionInfo(
+                            '__transition_info__': const TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                               duration: Duration(milliseconds: 0),
@@ -211,16 +205,16 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                           gradient: LinearGradient(
                             colors: [
                               FlutterFlowTheme.of(context).purple,
-                              Color(0xFFC78CC7)
+                              const Color(0xFFC78CC7)
                             ],
-                            stops: [0.0, 1.0],
-                            begin: AlignmentDirectional(0.0, -1.0),
-                            end: AlignmentDirectional(0, 1.0),
+                            stops: const [0.0, 1.0],
+                            begin: const AlignmentDirectional(0.0, -1.0),
+                            end: const AlignmentDirectional(0, 1.0),
                           ),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 4.0, 6.0, 4.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -266,11 +260,11 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                               ),
                               Container(
                                 decoration: BoxDecoration(
-                                  color: Color(0xFFAC7BAC),
+                                  color: const Color(0xFFAC7BAC),
                                   borderRadius: BorderRadius.circular(100.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(2.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   child: Icon(
                                     Icons.navigate_next_rounded,
                                     color: FlutterFlowTheme.of(context)
@@ -279,7 +273,7 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                                   ),
                                 ),
                               ),
-                            ].divide(SizedBox(width: 8.0)),
+                            ].divide(const SizedBox(width: 8.0)),
                           ),
                         ),
                       ),
@@ -291,7 +285,7 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                     children: [
                       if (!loggedIn)
                         Align(
-                          alignment: AlignmentDirectional(1.0, 0.0),
+                          alignment: const AlignmentDirectional(1.0, 0.0),
                           child: FlutterFlowIconButton(
                             borderColor: FlutterFlowTheme.of(context).border,
                             borderRadius: 100.0,
@@ -307,7 +301,7 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                               context.goNamed(
                                 LoginWidget.routeName,
                                 extra: <String, dynamic>{
-                                  '__transition_info__': TransitionInfo(
+                                  '__transition_info__': const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 0),
@@ -322,7 +316,7 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                           children: [
                             if (loggedIn == true)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 12.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => InkWell(
@@ -337,7 +331,7 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                                       context.pushNamed(
                                         CartWidget.routeName,
                                         extra: <String, dynamic>{
-                                          '__transition_info__': TransitionInfo(
+                                          '__transition_info__': const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -357,8 +351,8 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                                               fontFamily: 'almarai',
                                               color: currentUserDocument
                                                           ?.userCart
-                                                          ?.cartItems
-                                                          ?.length ==
+                                                          .cartItems
+                                                          .length ==
                                                       0
                                                   ? FlutterFlowTheme.of(context)
                                                       .primary
@@ -374,7 +368,7 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                                       badgeColor: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                       elevation: 4.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 8.0, 8.0, 8.0),
                                       position: badges.BadgePosition.topEnd(),
                                       animationType:
@@ -383,13 +377,13 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                                       child: Visibility(
                                         visible: (loggedIn == true) &&
                                             (columnSettingsRecord?.settingsHome
-                                                    ?.settingsIsBagStatus ==
+                                                    .settingsIsBagStatus ==
                                                 true),
                                         child: FlutterFlowIconButton(
                                           borderColor: currentUserDocument
                                                       ?.userCart
-                                                      ?.cartItems
-                                                      ?.length ==
+                                                      .cartItems
+                                                      .length ==
                                                   0
                                               ? FlutterFlowTheme.of(context)
                                                   .primaryBackground
@@ -399,8 +393,8 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                                           buttonSize: 42.0,
                                           fillColor: currentUserDocument
                                                       ?.userCart
-                                                      ?.cartItems
-                                                      ?.length ==
+                                                      .cartItems
+                                                      .length ==
                                                   0
                                               ? FlutterFlowTheme.of(context)
                                                   .primaryBackground
@@ -409,7 +403,7 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                                           icon: Icon(
                                             FFIcons.kvector1,
                                             color: currentUserDocument?.userCart
-                                                        ?.cartItems?.length ==
+                                                        .cartItems.length ==
                                                     0
                                                 ? FlutterFlowTheme.of(context)
                                                     .primary
@@ -426,7 +420,7 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                                               CartWidget.routeName,
                                               extra: <String, dynamic>{
                                                 '__transition_info__':
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -447,7 +441,7 @@ class _HomeAppBarWidgetState extends State<HomeAppBarWidget> {
                     ],
                   ),
                 ),
-              ].divide(SizedBox(width: 8.0)),
+              ].divide(const SizedBox(width: 8.0)),
             ),
           ],
         );

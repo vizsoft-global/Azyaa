@@ -1,10 +1,8 @@
 import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'creatorproduct_img_model.dart';
 export 'creatorproduct_img_model.dart';
@@ -72,17 +70,17 @@ class _CreatorproductImgWidgetState extends State<CreatorproductImgWidget> {
                   ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
-                    child: Image.network(
-                      widget!.productInfo!.featureImage,
+                    child: CachedNetworkImage(
+                      imageUrl: widget.productInfo!.featureImage,
                       fit: BoxFit.cover,
-                      alignment: Alignment(0.0, -1.0),
+                      alignment: const Alignment(0.0, -1.0),
                     ),
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional(1.0, -1.0),
+                  alignment: const AlignmentDirectional(1.0, -1.0),
                   child: Padding(
-                    padding: EdgeInsets.all(4.0),
+                    padding: const EdgeInsets.all(4.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -125,7 +123,7 @@ class _CreatorproductImgWidgetState extends State<CreatorproductImgWidget> {
                           borderRadius: BorderRadius.circular(100.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(4.0),
+                          padding: const EdgeInsets.all(4.0),
                           child: Icon(
                             Icons.close,
                             color: FlutterFlowTheme.of(context).secondaryText,
@@ -141,27 +139,27 @@ class _CreatorproductImgWidgetState extends State<CreatorproductImgWidget> {
           ),
         ),
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
           child: Text(
             FFLocalizations.of(context).getVariableText(
               enText: () {
-                if (widget!.productInfo?.infoTranslate?.name?.en != '') {
-                  return widget!.productInfo?.infoTranslate?.name?.en;
-                } else if (widget!.productInfo?.infoCustomTranslate?.name?.en !=
+                if (widget.productInfo?.infoTranslate.name.en != '') {
+                  return widget.productInfo?.infoTranslate.name.en;
+                } else if (widget.productInfo?.infoCustomTranslate.name.en !=
                     '') {
-                  return widget!.productInfo?.infoCustomTranslate?.name?.en;
+                  return widget.productInfo?.infoCustomTranslate.name.en;
                 } else {
-                  return widget!.productInfo?.name;
+                  return widget.productInfo?.name;
                 }
               }(),
               arText: () {
-                if (widget!.productInfo?.infoTranslate?.name?.ar != '') {
-                  return widget!.productInfo?.infoTranslate?.name?.ar;
-                } else if (widget!.productInfo?.infoCustomTranslate?.name?.ar !=
+                if (widget.productInfo?.infoTranslate.name.ar != '') {
+                  return widget.productInfo?.infoTranslate.name.ar;
+                } else if (widget.productInfo?.infoCustomTranslate.name.ar !=
                     '') {
-                  return widget!.productInfo?.infoCustomTranslate?.name?.ar;
+                  return widget.productInfo?.infoCustomTranslate.name.ar;
                 } else {
-                  return widget!.productInfo?.name;
+                  return widget.productInfo?.name;
                 }
               }(),
             ),
@@ -181,7 +179,7 @@ class _CreatorproductImgWidgetState extends State<CreatorproductImgWidget> {
           desktop: false,
         ))
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 8.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 8.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -209,10 +207,10 @@ class _CreatorproductImgWidgetState extends State<CreatorproductImgWidget> {
                         fontWeight: FontWeight.bold,
                       ),
                 ),
-              ].divide(SizedBox(width: 2.0)),
+              ].divide(const SizedBox(width: 2.0)),
             ),
           ),
-      ].divide(SizedBox(height: 4.0)),
+      ].divide(const SizedBox(height: 4.0)),
     );
   }
 }

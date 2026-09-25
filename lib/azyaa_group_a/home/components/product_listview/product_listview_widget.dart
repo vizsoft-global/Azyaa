@@ -1,22 +1,16 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_wishlist/user_wishlist_widget.dart';
 import '/azyaa_group_a/payment/default_cart_button/default_cart_button_widget.dart';
 import '/azyaa_group_a/payment/product_attribute_cart_level/product_attribute_cart_level_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'product_listview_model.dart';
@@ -66,14 +60,14 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
       stream: queryInventoryRecord(
         queryBuilder: (inventoryRecord) => inventoryRecord.where(
           'inventory_id',
-          isEqualTo: widget!.product?.product?.inventoryId,
+          isEqualTo: widget.product?.product.inventoryId,
         ),
         singleRecord: true,
       ),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
-          return Center(
+          return const Center(
             child: SizedBox(
               width: 2.0,
               height: 2.0,
@@ -101,16 +95,16 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
           highlightColor: Colors.transparent,
           onTap: () async {
             if (loggedIn) {
-              if ((currentUserDocument?.userRecentViews?.toList() ?? [])
+              if ((currentUserDocument?.userRecentViews.toList() ?? [])
                       .length !=
                   0) {
                 FFAppState().updateUserDataFlowStruct(
                   (e) => e
                     ..count =
-                        (currentUserDocument?.userRecentViews?.toList() ?? [])
+                        (currentUserDocument?.userRecentViews.toList() ?? [])
                             .length
                     ..userRecentView =
-                        (currentUserDocument?.userRecentViews?.toList() ?? [])
+                        (currentUserDocument?.userRecentViews.toList() ?? [])
                             .toList(),
                 );
                 while (FFAppState().UserDataFlow.count > 0) {
@@ -120,7 +114,7 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                               .elementAtOrNull(
                                   FFAppState().UserDataFlow.count - 1)
                               ?.viewedItemId ==
-                          widget!.product?.productId) &&
+                          widget.product?.productId) &&
                       (FFAppState()
                               .UserDataFlow
                               .userRecentView
@@ -134,14 +128,14 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                             .elementAtOrNull(
                                 FFAppState().UserDataFlow.count - 1)
                             ?.productAttribute
-                            ?.length !=
-                        widget!.product?.productAttribute?.length) {
+                            .length !=
+                        widget.product?.productAttribute.length) {
                       FFAppState().updateUserDataFlowStruct(
                         (e) => e
                           ..updateUserRecentView(
                             (e) => e[FFAppState().UserDataFlow.count - 1]
                               ..productAttribute =
-                                  widget!.product!.productAttribute.toList(),
+                                  widget.product!.productAttribute.toList(),
                           ),
                       );
 
@@ -161,12 +155,12 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                       ProductWidget.routeName,
                       queryParameters: {
                         'product': serializeParam(
-                          widget!.product?.reference,
+                          widget.product?.reference,
                           ParamType.DocumentReference,
                         ),
                       }.withoutNulls,
                       extra: <String, dynamic>{
-                        '__transition_info__': TransitionInfo(
+                        '__transition_info__': const TransitionInfo(
                           hasTransition: true,
                           transitionType: PageTransitionType.fade,
                           duration: Duration(milliseconds: 0),
@@ -190,8 +184,8 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                         updateUserRecentViewedListStruct(
                           UserRecentViewedListStruct(
                             createdAt: getCurrentTimestamp,
-                            viewedItemId: widget!.product?.productId,
-                            productAttribute: widget!.product?.productAttribute,
+                            viewedItemId: widget.product?.productId,
+                            productAttribute: widget.product?.productAttribute,
                             viewedEntityType: 'product',
                           ),
                           clearUnsetFields: false,
@@ -208,12 +202,12 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
               ProductWidget.routeName,
               queryParameters: {
                 'product': serializeParam(
-                  widget!.product?.reference,
+                  widget.product?.reference,
                   ParamType.DocumentReference,
                 ),
               }.withoutNulls,
               extra: <String, dynamic>{
-                '__transition_info__': TransitionInfo(
+                '__transition_info__': const TransitionInfo(
                   hasTransition: true,
                   transitionType: PageTransitionType.fade,
                   duration: Duration(milliseconds: 0),
@@ -228,7 +222,7 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
               Container(
                 width: 75.0,
                 child: Stack(
-                  alignment: AlignmentDirectional(1.0, -1.0),
+                  alignment: const AlignmentDirectional(1.0, -1.0),
                   children: [
                     Container(
                       width: 100.0,
@@ -242,37 +236,37 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          () {
-                            if (widget!.product?.productInfo?.featureImage !=
+                        child: CachedNetworkImage(
+                          imageUrl: () {
+                            if (widget.product?.productInfo.featureImage !=
                                     null &&
-                                widget!.product?.productInfo?.featureImage !=
+                                widget.product?.productInfo.featureImage !=
                                     '') {
-                              return widget!.product!.productInfo.featureImage;
-                            } else if (widget!
-                                        .product?.productInfo?.iconImage !=
+                              return widget.product!.productInfo.featureImage;
+                            } else if (widget
+                                        .product?.productInfo.iconImage !=
                                     null &&
-                                widget!.product?.productInfo?.iconImage != '') {
-                              return widget!.product!.productInfo.iconImage;
-                            } else if (widget!
+                                widget.product?.productInfo.iconImage != '') {
+                              return widget.product!.productInfo.iconImage;
+                            } else if (widget
                                     .product!.productInfo.galleryImage.length >
                                 0) {
-                              return widget!.product!.productInfo.galleryImage
+                              return widget.product!.productInfo.galleryImage
                                   .firstOrNull!;
                             } else {
                               return 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/i9u1ra67p2p4/Azyaa-logo_(2).jpg';
                             }
                           }(),
                           fit: BoxFit.cover,
-                          alignment: Alignment(0.0, -1.0),
+                          alignment: const Alignment(0.0, -1.0),
                         ),
                       ),
                     ),
-                    if (widget!.product!.productReview.length > 0)
+                    if (widget.product!.productReview.length > 0)
                       Align(
-                        alignment: AlignmentDirectional(-1.0, 1.0),
+                        alignment: const AlignmentDirectional(-1.0, 1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 0.0, 8.0),
                           child: Container(
                             decoration: BoxDecoration(
@@ -284,20 +278,20 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   4.0, 2.0, 4.0, 2.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 2.0, 0.0),
                                     child: Text(
-                                      (functions.newCartTotal(widget!
+                                      (functions.newCartTotal(widget
                                                   .product!.productReview
                                                   .map((e) => e.reviewRate)
                                                   .toList()) /
-                                              widget!.product!.productReview
+                                              widget.product!.productReview
                                                   .length)
                                           .toString(),
                                       style: FlutterFlowTheme.of(context)
@@ -310,7 +304,7 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 4.0, 0.0),
                                     child: Icon(
                                       Icons.star_rounded,
@@ -329,10 +323,10 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         4.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      widget!.product!.productReview.length
+                                      widget.product!.productReview.length
                                           .toString(),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -359,37 +353,37 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getVariableText(
                           enText: () {
-                            if (widget!
-                                    .product?.productInfoTranslate?.name?.en !=
+                            if (widget
+                                    .product?.productInfoTranslate.name.en !=
                                 '') {
-                              return widget!
-                                  .product?.productInfoTranslate?.name?.en;
-                            } else if (widget!.product
-                                    ?.productInfoCustomTranslate?.name?.en !=
+                              return widget
+                                  .product?.productInfoTranslate.name.en;
+                            } else if (widget.product
+                                    ?.productInfoCustomTranslate.name.en !=
                                 '') {
-                              return widget!.product?.productInfoCustomTranslate
-                                  ?.name?.en;
+                              return widget.product?.productInfoCustomTranslate
+                                  .name.en;
                             } else {
-                              return widget!.product?.productInfo?.name;
+                              return widget.product?.productInfo.name;
                             }
                           }(),
                           arText: () {
-                            if (widget!
-                                    .product?.productInfoTranslate?.name?.ar !=
+                            if (widget
+                                    .product?.productInfoTranslate.name.ar !=
                                 '') {
-                              return widget!
-                                  .product?.productInfoTranslate?.name?.ar;
-                            } else if (widget!.product
-                                    ?.productInfoCustomTranslate?.name?.ar !=
+                              return widget
+                                  .product?.productInfoTranslate.name.ar;
+                            } else if (widget.product
+                                    ?.productInfoCustomTranslate.name.ar !=
                                 '') {
-                              return widget!.product?.productInfoCustomTranslate
-                                  ?.name?.ar;
+                              return widget.product?.productInfoCustomTranslate
+                                  .name.ar;
                             } else {
-                              return widget!.product?.productInfo?.name;
+                              return widget.product?.productInfo.name;
                             }
                           }(),
                         ),
@@ -403,7 +397,7 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                       child: RichText(
                         textScaler: MediaQuery.of(context).textScaler,
                         text: TextSpan(
@@ -445,7 +439,7 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                                   : '${FFLocalizations.of(context).getVariableText(
                                       enText: 'Last ',
                                       arText: 'آخر',
-                                    )}${rowInventoryRecord?.stock?.toString()}${FFLocalizations.of(context).getVariableText(
+                                    )}${rowInventoryRecord.stock.toString()}${FFLocalizations.of(context).getVariableText(
                                       enText: ' stocks',
                                       arText: 'الأسهم',
                                     )}',
@@ -471,12 +465,12 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            '${widget!.product?.product?.productPrice?.toString()} KD',
+                            '${widget.product?.product.productPrice.toString()} KD',
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'almarai',
@@ -485,10 +479,10 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                                       fontWeight: FontWeight.bold,
                                     ),
                           ),
-                          if (widget!.product?.product?.productRegularPrice !=
-                              widget!.product?.product?.productPrice)
+                          if (widget.product?.product.productRegularPrice !=
+                              widget.product?.product.productPrice)
                             Text(
-                              '${widget!.product?.product?.productRegularPrice?.toString()}',
+                              '${widget.product?.product.productRegularPrice.toString()}',
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
@@ -501,20 +495,20 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                                     decoration: TextDecoration.lineThrough,
                                   ),
                             ),
-                        ].divide(SizedBox(width: 2.0)),
+                        ].divide(const SizedBox(width: 2.0)),
                       ),
                     ),
-                  ].divide(SizedBox(height: 4.0)),
+                  ].divide(const SizedBox(height: 4.0)),
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(1.0, 0.0),
+                alignment: const AlignmentDirectional(1.0, 0.0),
                 child: wrapWithModel(
                   model: _model.userWishlistModel,
                   updateCallback: () => safeSetState(() {}),
                   child: UserWishlistWidget(
                     type: 'product',
-                    itemID: widget!.product!.productId,
+                    itemID: widget.product!.productId,
                     iconSize: 16.0,
                     containersize: 40,
                     iconsize: 16,
@@ -529,7 +523,7 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     if (loggedIn) {
-                      if (rowInventoryRecord!.stock > 0) {
+                      if (rowInventoryRecord.stock > 0) {
                         _model.idMapResultNew = await queryIdMapRecordOnce(
                           queryBuilder: (idMapRecord) => idMapRecord.where(
                             'type',
@@ -539,7 +533,7 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                         ).then((s) => s.firstOrNull);
                         _model.iconProductResult =
                             await ProductsRecord.getDocumentOnce(
-                                widget!.product!.reference);
+                                widget.product!.reference);
                         unawaited(
                           () async {}(),
                         );
@@ -550,7 +544,7 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                               elevation: 0,
                               insetPadding: EdgeInsets.zero,
                               backgroundColor: Colors.transparent,
-                              alignment: AlignmentDirectional(0.0, 1.0)
+                              alignment: const AlignmentDirectional(0.0, 1.0)
                                   .resolve(Directionality.of(context)),
                               child: WebViewAware(
                                 child: ProductAttributeCartLevelWidget(
@@ -570,7 +564,7 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                       context.goNamed(
                         LoginWidget.routeName,
                         extra: <String, dynamic>{
-                          '__transition_info__': TransitionInfo(
+                          '__transition_info__': const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -592,9 +586,9 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                         color: FlutterFlowTheme.of(context).buttonBorder,
                       ),
                     ),
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Icon(
                         Icons.add_rounded,
                         color: FlutterFlowTheme.of(context).velvet,
@@ -617,20 +611,20 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                   updateOnChange: true,
                   child: DefaultCartButtonWidget(
                     type: 'icon',
-                    product: widget!.product!.reference,
+                    product: widget.product!.reference,
                     navigation: 'cart',
                     quantity: 1,
                     defaultTerms: FFAppState()
                         .UserDataFlow
                         .userProductSwatchesList
                         .where(
-                            (e) => e.viewedItemId == widget!.product?.productId)
+                            (e) => e.viewedItemId == widget.product?.productId)
                         .toList()
                         .firstOrNull
                         ?.productAttribute,
                   ),
                 ),
-            ].divide(SizedBox(width: 8.0)),
+            ].divide(const SizedBox(width: 8.0)),
           ),
         );
       },

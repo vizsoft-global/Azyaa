@@ -1,11 +1,8 @@
 import '/azyaa_group_a/payment/cart_item_list/cart_item_list_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'cart_popup_model.dart';
 export 'cart_popup_model.dart';
 
@@ -46,7 +43,7 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
       width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 5.0,
             color: Color(0x3B1D2429),
@@ -56,7 +53,7 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
             ),
           )
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -67,7 +64,7 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
               child: Container(
                 width: 35.0,
                 height: 3.0,
@@ -78,13 +75,13 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(-1.0, -1.0),
+                    alignment: const AlignmentDirectional(-1.0, -1.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         '0hghnhfp' /* Bag */,
@@ -109,7 +106,7 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
               child: ListView(
                 padding: EdgeInsets.zero,
                 primary: false,
@@ -119,9 +116,9 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
                   wrapWithModel(
                     model: _model.cartItemListModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: CartItemListWidget(),
+                    child: const CartItemListWidget(),
                   ),
-                ].divide(SizedBox(height: 16.0)),
+                ].divide(const SizedBox(height: 16.0)),
               ),
             ),
             Divider(
@@ -132,7 +129,7 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
               color: FlutterFlowTheme.of(context).alternate,
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -157,11 +154,11 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
                           fontWeight: FontWeight.bold,
                         ),
                   ),
-                ].divide(SizedBox(width: 8.0)),
+                ].divide(const SizedBox(width: 8.0)),
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -176,10 +173,10 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 48.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -203,10 +200,10 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 48.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -219,13 +216,13 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
                       ),
                     ),
                   ),
-                ].divide(SizedBox(width: 8.0)),
+                ].divide(const SizedBox(width: 8.0)),
               ),
             ),
           ]
-              .divide(SizedBox(height: 16.0))
-              .addToStart(SizedBox(height: 16.0))
-              .addToEnd(SizedBox(height: 16.0)),
+              .divide(const SizedBox(height: 16.0))
+              .addToStart(const SizedBox(height: 16.0))
+              .addToEnd(const SizedBox(height: 16.0)),
         ),
       ),
     );

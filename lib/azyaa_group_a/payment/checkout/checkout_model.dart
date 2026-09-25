@@ -1,34 +1,12 @@
-import '/auth/firebase_auth/auth_util.dart';
-import '/azyaa_group_a/customer/zone/profile_address_add/profile_address_add_widget.dart';
-import '/azyaa_group_a/customer/zone/profile_address_edit/profile_address_edit_widget.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
-import '/azyaa_group_a/payment/apply_coupon/apply_coupon_widget.dart';
-import '/azyaa_group_a/payment/cart_item_list/cart_item_list_widget.dart';
-import '/azyaa_group_a/payment/checkout_payment_method/checkout_payment_method_widget.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
-import '/flutter_flow/flutter_flow_checkbox_group.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:async';
-import 'dart:convert';
-import 'dart:ui';
-import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'checkout_widget.dart' show CheckoutWidget;
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:collection/collection.dart';
 import 'package:expandable/expandable.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 
 class CheckoutModel extends FlutterFlowModel<CheckoutWidget> {
   ///  Local state fields for this page.

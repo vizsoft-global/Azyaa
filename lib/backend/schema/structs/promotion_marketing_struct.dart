@@ -195,7 +195,7 @@ class PromotionMarketingStruct extends FFFirebaseStruct {
           ParamType.DocumentReference,
           true,
         ),
-        firestoreUtilData: FirestoreUtilData(
+        firestoreUtilData: const FirestoreUtilData(
           clearUnsetFields: false,
           create: true,
         ),

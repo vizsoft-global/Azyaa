@@ -1,25 +1,19 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:convert';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/services.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'waitlist_secret_model.dart';
@@ -29,7 +23,7 @@ class WaitlistSecretWidget extends StatefulWidget {
   const WaitlistSecretWidget({
     super.key,
     String? navigation,
-  }) : this.navigation = navigation ?? 'default';
+  }) : navigation = navigation ?? 'default';
 
   final String navigation;
 
@@ -86,12 +80,12 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
                 title: Visibility(
-                  visible: widget!.navigation != 'secreat',
+                  visible: widget.navigation != 'secreat',
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -110,7 +104,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                           context.goNamed(
                             WaitlistMainWidget.routeName,
                             extra: <String, dynamic>{
-                              '__transition_info__': TransitionInfo(
+                              '__transition_info__': const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                                 duration: Duration(milliseconds: 0),
@@ -122,7 +116,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                     ],
                   ),
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -140,7 +134,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                 builder: (context, snapshot) {
                   // Customize what your widget looks like when it's loading.
                   if (!snapshot.hasData) {
-                    return Center(
+                    return const Center(
                       child: SizedBox(
                         width: 2.0,
                         height: 2.0,
@@ -177,24 +171,24 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.none,
-                                alignment: AlignmentDirectional(1.0, -1.0),
+                                alignment: const AlignmentDirectional(1.0, -1.0),
                                 image: Image.asset(
                                   'assets/images/Vector_(3).png',
                                 ).image,
                               ),
                             ),
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 32.0),
                                       child: ClipRRect(
                                         borderRadius:
@@ -210,7 +204,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                   ),
                                   if (columnSettingsRecord
                                           ?.settingsSecretFeature
-                                          ?.settingsWaitlistFeature ==
+                                          .settingsWaitlistFeature ==
                                       true)
                                     Wrap(
                                       spacing: 0.0,
@@ -225,10 +219,10 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(-1.0, -1.0),
+                                              const AlignmentDirectional(-1.0, -1.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 8.0),
                                             child: RichText(
                                               textScaler: MediaQuery.of(context)
@@ -284,10 +278,10 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 12.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
@@ -307,17 +301,17 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                   width: 1.0,
                                                 ),
                                               ),
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Stack(
                                                 children: [
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(2.0),
+                                                          const EdgeInsets.all(2.0),
                                                       child:
                                                           FlutterFlowDropDown<
                                                               String>(
@@ -397,7 +391,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                         borderWidth: 0.0,
                                                         borderRadius: 0.0,
                                                         margin:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     65.0,
                                                                     4.0,
@@ -412,13 +406,13 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(8.0),
-                                                      child: Image.network(
-                                                        functions.getCountryFlag(
+                                                          const EdgeInsets.all(8.0),
+                                                      child: CachedNetworkImage(
+                                                        imageUrl: functions.getCountryFlag(
                                                             _model
                                                                 .countryListValue)!,
                                                         width: 35.0,
@@ -433,12 +427,12 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 12.0),
                                           child: Stack(
                                             children: [
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -1.0, -1.0),
                                                 child: Container(
                                                   width:
@@ -548,7 +542,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                                   context)
                                                               .primaryBackground,
                                                       contentPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   68.0,
                                                                   0.0,
@@ -583,10 +577,10 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -1.0, -1.0),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(16.0),
+                                                  padding: const EdgeInsets.all(16.0),
                                                   child: Text(
                                                     functions.getDailCode(_model
                                                         .countryListValue)!,
@@ -606,10 +600,10 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(-1.0, -1.0),
+                                              const AlignmentDirectional(-1.0, -1.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 8.0),
                                             child: RichText(
                                               textScaler: MediaQuery.of(context)
@@ -665,7 +659,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 12.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -775,9 +769,9 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                       ],
                                     ),
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 12.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -798,9 +792,9 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 12.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -850,7 +844,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                       fieldHeight: 44.0,
                                       fieldWidth: 44.0,
                                       borderWidth: 2.0,
-                                      borderRadius: BorderRadius.only(
+                                      borderRadius: const BorderRadius.only(
                                         bottomLeft: Radius.circular(12.0),
                                         bottomRight: Radius.circular(12.0),
                                         topLeft: Radius.circular(12.0),
@@ -872,7 +866,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                         .asValidator(context),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 12.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -910,26 +904,26 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                             (_model
                                                     .settingsSecretFeatureResult
                                                     ?.settingsSecretFeature
-                                                    ?.settingsAppAccessList
-                                                    ?.where((e) =>
+                                                    .settingsAppAccessList
+                                                    .where((e) =>
                                                         e.code ==
                                                         _model
                                                             .pinCodeController!
                                                             .text)
                                                     .toList()
-                                                    ?.firstOrNull
+                                                    .firstOrNull
                                                     ?.status ==
                                                 'Pending') &&
                                             (_model
                                                     .settingsSecretFeatureResult
                                                     ?.settingsSecretFeature
-                                                    ?.settingsSecretFeature ==
+                                                    .settingsSecretFeature ==
                                                 true)) {
                                           _model.count = _model
                                               .settingsSecretFeatureResult
                                               ?.settingsSecretFeature
-                                              ?.settingsAppAccessList
-                                              ?.length;
+                                              .settingsAppAccessList
+                                              .length;
                                           _model.accessList = _model
                                               .settingsSecretFeatureResult!
                                               .settingsSecretFeature
@@ -941,8 +935,8 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                             if (((_model
                                                             .settingsSecretFeatureResult
                                                             ?.settingsSecretFeature
-                                                            ?.settingsAppAccessList
-                                                            ?.elementAtOrNull(
+                                                            .settingsAppAccessList
+                                                            .elementAtOrNull(
                                                                 (_model.count!) -
                                                                     1))
                                                         ?.code ==
@@ -960,8 +954,8 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                 ((_model
                                                             .settingsSecretFeatureResult
                                                             ?.settingsSecretFeature
-                                                            ?.settingsAppAccessList
-                                                            ?.elementAtOrNull(
+                                                            .settingsAppAccessList
+                                                            .elementAtOrNull(
                                                                 (_model.count!) - 1))
                                                         ?.status ==
                                                     'Pending')) {
@@ -996,7 +990,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                             WelcomeWidget.routeName,
                                             extra: <String, dynamic>{
                                               '__transition_info__':
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -1009,7 +1003,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                           if (_model
                                                   .settingsSecretFeatureResult
                                                   ?.settingsSecretFeature
-                                                  ?.settingsWaitlistFeature ==
+                                                  .settingsWaitlistFeature ==
                                               true) {
                                             _model.userWaiterResult1 =
                                                 await queryUserWaitlistRecordOnce(
@@ -1044,7 +1038,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                 requestId: _model
                                                     .userWaiterResult1
                                                     ?.userAppAccessData
-                                                    ?.requestId,
+                                                    .requestId,
                                                 otp: _model
                                                     .pinCodeController!.text,
                                                 url:
@@ -1115,14 +1109,14 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                     ..userEmail = _model
                                                         .userWaiterResult1
                                                         ?.userInfo
-                                                        ?.email
+                                                        .email
                                                     ..phoneNumberCountry =
                                                         _model.userWaiterResult1
-                                                            ?.userInfo?.country
+                                                            ?.userInfo.country
                                                     ..userPhoneNumber = _model
                                                         .userWaiterResult1
                                                         ?.userInfo
-                                                        ?.phoneNumberWithoutDailcode,
+                                                        .phoneNumberWithoutDailcode,
                                                 );
 
                                                 await _model.userWaiterResult1!
@@ -1143,7 +1137,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                   WelcomeWidget.routeName,
                                                   extra: <String, dynamic>{
                                                     '__transition_info__':
-                                                        TransitionInfo(
+                                                        const TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -1211,7 +1205,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                           onPressed: () =>
                                                               Navigator.pop(
                                                                   alertDialogContext),
-                                                          child: Text('Ok'),
+                                                          child: const Text('Ok'),
                                                         ),
                                                       ],
                                                     ),
@@ -1242,7 +1236,7 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext),
-                                                        child: Text('Ok'),
+                                                        child: const Text('Ok'),
                                                       ),
                                                     ],
                                                   ),
@@ -1266,10 +1260,10 @@ class _WaitlistSecretWidgetState extends State<WaitlistSecretWidget> {
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         height: 48.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,

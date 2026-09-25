@@ -1,13 +1,8 @@
 import '/auth/base_auth_user_provider.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'universal_navigation_bar_model.dart';
 export 'universal_navigation_bar_model.dart';
 
@@ -54,12 +49,12 @@ class _UniversalNavigationBarWidgetState
     return Container(
       width: MediaQuery.sizeOf(context).width * 1.0,
       height: 70.0,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color(0xFFECECEC),
         borderRadius: BorderRadius.only(),
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -67,7 +62,7 @@ class _UniversalNavigationBarWidgetState
           children: [
             Expanded(
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -77,7 +72,7 @@ class _UniversalNavigationBarWidgetState
                     context.pushNamed(
                       HomeWidget.routeName,
                       extra: <String, dynamic>{
-                        '__transition_info__': TransitionInfo(
+                        '__transition_info__': const TransitionInfo(
                           hasTransition: true,
                           transitionType: PageTransitionType.fade,
                           duration: Duration(milliseconds: 0),
@@ -91,7 +86,7 @@ class _UniversalNavigationBarWidgetState
                     children: [
                       Icon(
                         FFIcons.kazyaaactive,
-                        color: widget!.navigation == 'home'
+                        color: widget.navigation == 'home'
                             ? FlutterFlowTheme.of(context).primary
                             : FlutterFlowTheme.of(context).navbaricon,
                         size: 24.0,
@@ -102,7 +97,7 @@ class _UniversalNavigationBarWidgetState
                         ),
                         style: FlutterFlowTheme.of(context).bodySmall.override(
                               fontFamily: 'almarai',
-                              color: widget!.navigation == 'home'
+                              color: widget.navigation == 'home'
                                   ? FlutterFlowTheme.of(context).primary
                                   : FlutterFlowTheme.of(context).navbaricon,
                               fontSize: 12.0,
@@ -110,7 +105,7 @@ class _UniversalNavigationBarWidgetState
                               fontWeight: FontWeight.w500,
                             ),
                       ),
-                    ].divide(SizedBox(height: 4.0)),
+                    ].divide(const SizedBox(height: 4.0)),
                   ),
                 ),
               ),
@@ -124,7 +119,7 @@ class _UniversalNavigationBarWidgetState
             ))
               Expanded(
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -134,7 +129,7 @@ class _UniversalNavigationBarWidgetState
                       context.pushNamed(
                         DesignersListWidget.routeName,
                         extra: <String, dynamic>{
-                          '__transition_info__': TransitionInfo(
+                          '__transition_info__': const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -148,7 +143,7 @@ class _UniversalNavigationBarWidgetState
                       children: [
                         Icon(
                           FFIcons.kdesigner,
-                          color: widget!.navigation == 'designer'
+                          color: widget.navigation == 'designer'
                               ? FlutterFlowTheme.of(context).primary
                               : FlutterFlowTheme.of(context).navbaricon,
                           size: 24.0,
@@ -161,7 +156,7 @@ class _UniversalNavigationBarWidgetState
                               .bodySmall
                               .override(
                                 fontFamily: 'almarai',
-                                color: widget!.navigation == 'designer'
+                                color: widget.navigation == 'designer'
                                     ? FlutterFlowTheme.of(context).primary
                                     : FlutterFlowTheme.of(context).navbaricon,
                                 fontSize: 12.0,
@@ -169,14 +164,14 @@ class _UniversalNavigationBarWidgetState
                                 fontWeight: FontWeight.w500,
                               ),
                         ),
-                      ].divide(SizedBox(height: 4.0)),
+                      ].divide(const SizedBox(height: 4.0)),
                     ),
                   ),
                 ),
               ),
             Expanded(
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -186,7 +181,7 @@ class _UniversalNavigationBarWidgetState
                     context.pushNamed(
                       ShopWidget.routeName,
                       extra: <String, dynamic>{
-                        '__transition_info__': TransitionInfo(
+                        '__transition_info__': const TransitionInfo(
                           hasTransition: true,
                           transitionType: PageTransitionType.fade,
                           duration: Duration(milliseconds: 0),
@@ -200,7 +195,7 @@ class _UniversalNavigationBarWidgetState
                     children: [
                       Icon(
                         FFIcons.kshopactive,
-                        color: widget!.navigation == 'shop'
+                        color: widget.navigation == 'shop'
                             ? FlutterFlowTheme.of(context).primary
                             : FlutterFlowTheme.of(context).navbaricon,
                         size: 24.0,
@@ -212,7 +207,7 @@ class _UniversalNavigationBarWidgetState
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodySmall.override(
                               fontFamily: 'almarai',
-                              color: widget!.navigation == 'shop'
+                              color: widget.navigation == 'shop'
                                   ? FlutterFlowTheme.of(context).primary
                                   : FlutterFlowTheme.of(context).navbaricon,
                               fontSize: 12.0,
@@ -220,14 +215,14 @@ class _UniversalNavigationBarWidgetState
                               fontWeight: FontWeight.w500,
                             ),
                       ),
-                    ].divide(SizedBox(height: 4.0)),
+                    ].divide(const SizedBox(height: 4.0)),
                   ),
                 ),
               ),
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -237,7 +232,7 @@ class _UniversalNavigationBarWidgetState
                     context.pushNamed(
                       CreatorsWidget.routeName,
                       extra: <String, dynamic>{
-                        '__transition_info__': TransitionInfo(
+                        '__transition_info__': const TransitionInfo(
                           hasTransition: true,
                           transitionType: PageTransitionType.fade,
                           duration: Duration(milliseconds: 0),
@@ -251,7 +246,7 @@ class _UniversalNavigationBarWidgetState
                     children: [
                       Icon(
                         FFIcons.knowcreator,
-                        color: widget!.navigation == 'creator'
+                        color: widget.navigation == 'creator'
                             ? FlutterFlowTheme.of(context).primary
                             : FlutterFlowTheme.of(context).navbaricon,
                         size: 24.0,
@@ -262,7 +257,7 @@ class _UniversalNavigationBarWidgetState
                         ),
                         style: FlutterFlowTheme.of(context).bodySmall.override(
                               fontFamily: 'almarai',
-                              color: widget!.navigation == 'creator'
+                              color: widget.navigation == 'creator'
                                   ? FlutterFlowTheme.of(context).primary
                                   : FlutterFlowTheme.of(context).navbaricon,
                               fontSize: 12.0,
@@ -270,7 +265,7 @@ class _UniversalNavigationBarWidgetState
                               fontWeight: FontWeight.w500,
                             ),
                       ),
-                    ].divide(SizedBox(height: 4.0)),
+                    ].divide(const SizedBox(height: 4.0)),
                   ),
                 ),
               ),
@@ -278,7 +273,7 @@ class _UniversalNavigationBarWidgetState
             if (loggedIn)
               Expanded(
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -288,7 +283,7 @@ class _UniversalNavigationBarWidgetState
                       context.pushNamed(
                         ProfileWidget.routeName,
                         extra: <String, dynamic>{
-                          '__transition_info__': TransitionInfo(
+                          '__transition_info__': const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -302,7 +297,7 @@ class _UniversalNavigationBarWidgetState
                       children: [
                         Icon(
                           FFIcons.kuseractive,
-                          color: widget!.navigation == 'profile'
+                          color: widget.navigation == 'profile'
                               ? FlutterFlowTheme.of(context).primary
                               : FlutterFlowTheme.of(context).navbaricon,
                           size: 24.0,
@@ -316,7 +311,7 @@ class _UniversalNavigationBarWidgetState
                               .bodySmall
                               .override(
                                 fontFamily: 'almarai',
-                                color: widget!.navigation == 'profile'
+                                color: widget.navigation == 'profile'
                                     ? FlutterFlowTheme.of(context).primary
                                     : FlutterFlowTheme.of(context).navbaricon,
                                 fontSize: 12.0,
@@ -324,12 +319,12 @@ class _UniversalNavigationBarWidgetState
                                 fontWeight: FontWeight.w500,
                               ),
                         ),
-                      ].divide(SizedBox(height: 4.0)),
+                      ].divide(const SizedBox(height: 4.0)),
                     ),
                   ),
                 ),
               ),
-          ].divide(SizedBox(width: 8.0)).around(SizedBox(width: 8.0)),
+          ].divide(const SizedBox(width: 8.0)).around(const SizedBox(width: 8.0)),
         ),
       ),
     );

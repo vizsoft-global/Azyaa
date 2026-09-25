@@ -6,12 +6,9 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
-import 'dart:ui';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'non_returnable_item_model.dart';
 export 'non_returnable_item_model.dart';
 
@@ -56,12 +53,12 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.sizeOf(context).width * 1.0,
-      constraints: BoxConstraints(
+      constraints: const BoxConstraints(
         maxHeight: 700.0,
       ),
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 5.0,
             color: Color(0x3B1D2429),
@@ -71,7 +68,7 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
             ),
           )
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -82,23 +79,23 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFFF7F7F7),
                     shape: BoxShape.circle,
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: FlutterFlowIconButton(
                       borderRadius: 100.0,
                       buttonSize: 40.0,
-                      fillColor: Color(0xFFE9E9E9),
+                      fillColor: const Color(0xFFE9E9E9),
                       icon: Icon(
                         Icons.money_off,
                         color: FlutterFlowTheme.of(context).primaryText,
@@ -132,9 +129,9 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
             ),
           ),
           Align(
-            alignment: AlignmentDirectional(-1.0, -1.0),
+            alignment: const AlignmentDirectional(-1.0, -1.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
               child: Text(
                 FFLocalizations.of(context).getText(
                   '1jr0umfn' /* Non-refundable item in your ca... */,
@@ -149,7 +146,7 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 24.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 24.0),
             child: Text(
               FFLocalizations.of(context).getText(
                 'dcqh41od' /* This item is non-refundable an... */,
@@ -173,22 +170,22 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
               children: [
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                   child: AuthUserStreamWidget(
                     builder: (context) => wrapWithModel(
                       model: _model.cartItemNonRefundModel,
                       updateCallback: () => safeSetState(() {}),
                       child: CartItemNonRefundWidget(
-                        cartItems: currentUserDocument?.userCart?.cartItems,
+                        cartItems: currentUserDocument?.userCart.cartItems,
                       ),
                     ),
                   ),
                 ),
-              ].divide(SizedBox(height: 16.0)),
+              ].divide(const SizedBox(height: 16.0)),
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
             child: FFButtonWidget(
               onPressed: () async {
                 if (Navigator.of(context).canPop()) {
@@ -197,7 +194,7 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
                 context.pushNamed(
                   CheckoutWidget.routeName,
                   extra: <String, dynamic>{
-                    '__transition_info__': TransitionInfo(
+                    '__transition_info__': const TransitionInfo(
                       hasTransition: true,
                       transitionType: PageTransitionType.fade,
                       duration: Duration(milliseconds: 0),
@@ -211,8 +208,8 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
               options: FFButtonOptions(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: 48.0,
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'almarai',
@@ -225,7 +222,7 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
                 Navigator.pop(context);
@@ -236,8 +233,8 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
               options: FFButtonOptions(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: 48.0,
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primaryBackground,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'almarai',
@@ -252,7 +249,7 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
               ),
             ),
           ),
-        ].addToStart(SizedBox(height: 16.0)).addToEnd(SizedBox(height: 16.0)),
+        ].addToStart(const SizedBox(height: 16.0)).addToEnd(const SizedBox(height: 16.0)),
       ),
     );
   }

@@ -1,17 +1,12 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'entry_model.dart';
 export 'entry_model.dart';
@@ -52,7 +47,7 @@ class _EntryWidgetState extends State<EntryWidget> {
           singleRecord: true,
         ).then((s) => s.firstOrNull);
         if (_model.settingsSecretFeatureResult?.settingsSecretFeature
-                ?.settingsSecretFeature ==
+                .settingsSecretFeature ==
             true) {
           context.goNamed(
             WaitlistSecretWidget.routeName,
@@ -63,7 +58,7 @@ class _EntryWidgetState extends State<EntryWidget> {
               ),
             }.withoutNulls,
             extra: <String, dynamic>{
-              '__transition_info__': TransitionInfo(
+              '__transition_info__': const TransitionInfo(
                 hasTransition: true,
                 transitionType: PageTransitionType.fade,
                 duration: Duration(milliseconds: 0),
@@ -72,12 +67,12 @@ class _EntryWidgetState extends State<EntryWidget> {
           );
         } else {
           if (_model.settingsSecretFeatureResult?.settingsSecretFeature
-                  ?.settingsWaitlistFeature ==
+                  .settingsWaitlistFeature ==
               true) {
             context.goNamed(
               WaitlistMainWidget.routeName,
               extra: <String, dynamic>{
-                '__transition_info__': TransitionInfo(
+                '__transition_info__': const TransitionInfo(
                   hasTransition: true,
                   transitionType: PageTransitionType.fade,
                   duration: Duration(milliseconds: 0),
@@ -88,7 +83,7 @@ class _EntryWidgetState extends State<EntryWidget> {
             context.goNamed(
               WelcomeWidget.routeName,
               extra: <String, dynamic>{
-                '__transition_info__': TransitionInfo(
+                '__transition_info__': const TransitionInfo(
                   hasTransition: true,
                   transitionType: PageTransitionType.fade,
                   duration: Duration(milliseconds: 0),
@@ -101,7 +96,7 @@ class _EntryWidgetState extends State<EntryWidget> {
         context.goNamed(
           HomeWidget.routeName,
           extra: <String, dynamic>{
-            '__transition_info__': TransitionInfo(
+            '__transition_info__': const TransitionInfo(
               hasTransition: true,
               transitionType: PageTransitionType.fade,
               duration: Duration(milliseconds: 0),
@@ -148,7 +143,7 @@ class _EntryWidgetState extends State<EntryWidget> {
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primaryBackground,
                     ),
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -158,7 +153,7 @@ class _EntryWidgetState extends State<EntryWidget> {
                           child: SvgPicture.asset(
                             'assets/images/azyaa-logo-text.svg',
                             fit: BoxFit.none,
-                            alignment: Alignment(0.0, 0.0),
+                            alignment: const Alignment(0.0, 0.0),
                           ),
                         ),
                       ],

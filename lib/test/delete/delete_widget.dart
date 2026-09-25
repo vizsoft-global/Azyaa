@@ -1,16 +1,12 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'delete_model.dart';
@@ -80,10 +76,10 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: MediaQuery.sizeOf(context).height * 1.0,
-                        decoration: BoxDecoration(),
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        decoration: const BoxDecoration(),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -91,7 +87,7 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 16.0),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
@@ -104,7 +100,7 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 16.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -121,7 +117,7 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 24.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -147,9 +143,9 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, -1.0),
+                                alignment: const AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 8.0),
                                   child: RichText(
                                     textScaler:
@@ -198,7 +194,7 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 24.0),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 0.5,
@@ -294,7 +290,7 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                                 desktop: false,
                               ))
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 8.0),
                                   child: RichText(
                                     textScaler:
@@ -343,7 +339,7 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                                 desktop: false,
                               ))
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 16.0),
                                   child: Container(
                                     width:
@@ -460,9 +456,9 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                                 desktop: false,
                               ))
                                 Align(
-                                  alignment: AlignmentDirectional(1.0, -1.0),
+                                  alignment: const AlignmentDirectional(1.0, -1.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 16.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -474,7 +470,7 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                                           ForgotPasswordWidget.routeName,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -517,7 +513,7 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                                                         .routeName,
                                                     extra: <String, dynamic>{
                                                       '__transition_info__':
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -543,7 +539,7 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                                   ),
                                 ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 12.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -571,7 +567,7 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                                                 builder: (alertDialogContext) {
                                                   return WebViewAware(
                                                     child: AlertDialog(
-                                                      content: Text(
+                                                      content: const Text(
                                                           'Are you sure you want to delete account?'),
                                                       actions: [
                                                         TextButton(
@@ -579,7 +575,7 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                                                               Navigator.pop(
                                                                   alertDialogContext,
                                                                   false),
-                                                          child: Text('Cancel'),
+                                                          child: const Text('Cancel'),
                                                         ),
                                                         TextButton(
                                                           onPressed: () =>
@@ -587,7 +583,7 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                                                                   alertDialogContext,
                                                                   true),
                                                           child:
-                                                              Text('Confirm'),
+                                                              const Text('Confirm'),
                                                         ),
                                                       ],
                                                     ),
@@ -603,14 +599,14 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                                           builder: (alertDialogContext) {
                                             return WebViewAware(
                                               child: AlertDialog(
-                                                content: Text(
+                                                content: const Text(
                                                     'Account has been deleted with information relating to it.'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: Text('Ok'),
+                                                    child: const Text('Ok'),
                                                   ),
                                                 ],
                                               ),
@@ -627,14 +623,14 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                                         builder: (alertDialogContext) {
                                           return WebViewAware(
                                             child: AlertDialog(
-                                              content: Text(
+                                              content: const Text(
                                                   'There is no account associated with this email id'),
                                               actions: [
                                                 TextButton(
                                                   onPressed: () =>
                                                       Navigator.pop(
                                                           alertDialogContext),
-                                                  child: Text('Ok'),
+                                                  child: const Text('Ok'),
                                                 ),
                                               ],
                                             ),
@@ -654,9 +650,9 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                                     width:
                                         MediaQuery.sizeOf(context).width * 0.5,
                                     height: 48.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -680,9 +676,9 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                                 desktop: false,
                               ))
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, -1.0),
+                                  alignment: const AlignmentDirectional(0.0, -1.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 24.0),
                                     child: RichText(
                                       textScaler:

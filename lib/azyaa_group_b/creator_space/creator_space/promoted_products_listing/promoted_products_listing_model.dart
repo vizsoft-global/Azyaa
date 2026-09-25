@@ -1,20 +1,9 @@
-import '/auth/firebase_auth/auth_util.dart';
-import '/azyaa_group_b/creator_space/creator_space/components/creatorspace_productview/creatorspace_productview_widget.dart';
-import '/backend/schema/structs/index.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
-import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'promoted_products_listing_widget.dart'
     show PromotedProductsListingWidget;
 import 'package:expandable/expandable.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class PromotedProductsListingModel
     extends FlutterFlowModel<PromotedProductsListingWidget> {

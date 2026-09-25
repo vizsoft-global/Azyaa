@@ -1,18 +1,14 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:expandable/expandable.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 's5_promotiondetails_model.dart';
 export 's5_promotiondetails_model.dart';
 
@@ -69,7 +65,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -132,11 +128,11 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                               print('IconButton pressed ...');
                             },
                           ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -147,19 +143,19 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    if (widget!.promotionInfo?.promotionType == 'custom')
+                    if (widget.promotionInfo?.promotionType == 'custom')
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 16.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            if (widget!.promotionInfo?.promotionInfo
-                                        ?.featureImage !=
+                            if (widget.promotionInfo?.promotionInfo
+                                        .featureImage !=
                                     null &&
-                                widget!.promotionInfo?.promotionInfo
-                                        ?.featureImage !=
+                                widget.promotionInfo?.promotionInfo
+                                        .featureImage !=
                                     '')
                               Expanded(
                                 child: Container(
@@ -175,8 +171,8 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                   ),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
-                                    child: Image.network(
-                                      widget!.promotionInfo!.promotionInfo
+                                    child: CachedNetworkImage(
+                                      imageUrl: widget.promotionInfo!.promotionInfo
                                           .featureImage,
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
@@ -184,26 +180,26 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                           MediaQuery.sizeOf(context).height *
                                               1.0,
                                       fit: BoxFit.cover,
-                                      alignment: Alignment(0.0, -1.0),
+                                      alignment: const Alignment(0.0, -1.0),
                                     ),
                                   ),
                                 ),
                               ),
                             Expanded(
                               child: Stack(
-                                alignment: AlignmentDirectional(1.0, 1.0),
+                                alignment: const AlignmentDirectional(1.0, 1.0),
                                 children: [
                                   Container(
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: Builder(
                                       builder: (context) {
-                                        final galleryList = (widget!
+                                        final galleryList = (widget
                                                     .promotionInfo
                                                     ?.promotionInfo
-                                                    ?.galleryImage
-                                                    ?.map((e) => e)
+                                                    .galleryImage
+                                                    .map((e) => e)
                                                     .toList()
-                                                    ?.toList() ??
+                                                    .toList() ??
                                                 [])
                                             .take(4)
                                             .toList();
@@ -211,7 +207,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                         return GridView.builder(
                                           padding: EdgeInsets.zero,
                                           gridDelegate:
-                                              SliverGridDelegateWithFixedCrossAxisCount(
+                                              const SliverGridDelegateWithFixedCrossAxisCount(
                                             crossAxisCount: 2,
                                             crossAxisSpacing: 10.0,
                                             mainAxisSpacing: 10.0,
@@ -241,14 +237,13 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                               ),
                                               child: Visibility(
                                                 visible:
-                                                    galleryListItem != null &&
-                                                        galleryListItem != '',
+                                                    galleryListItem != '',
                                                 child: ClipRRect(
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           8.0),
-                                                  child: Image.network(
-                                                    galleryListItem,
+                                                  child: CachedNetworkImage(
+                                                    imageUrl: galleryListItem,
                                                     width: MediaQuery.sizeOf(
                                                                 context)
                                                             .width *
@@ -259,7 +254,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                         1.0,
                                                     fit: BoxFit.cover,
                                                     alignment:
-                                                        Alignment(0.0, -1.0),
+                                                        const Alignment(0.0, -1.0),
                                                   ),
                                                 ),
                                               ),
@@ -269,11 +264,11 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                       },
                                     ),
                                   ),
-                                  if (widget!.promotionInfo!.promotionInfo
+                                  if (widget.promotionInfo!.promotionInfo
                                           .galleryImage.length >
                                       3)
                                     Stack(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       children: [
                                         Container(
                                           width: 70.0,
@@ -292,8 +287,8 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
-                                            child: Image.network(
-                                              widget!.promotionInfo!
+                                            child: CachedNetworkImage(
+                                              imageUrl: widget.promotionInfo!
                                                   .promotionInfo.galleryImage
                                                   .elementAtOrNull(3)!,
                                               width: MediaQuery.sizeOf(context)
@@ -303,12 +298,12 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                       .height *
                                                   1.0,
                                               fit: BoxFit.cover,
-                                              alignment: Alignment(0.0, -1.0),
+                                              alignment: const Alignment(0.0, -1.0),
                                             ),
                                           ),
                                         ),
                                         Text(
-                                          '+${(widget!.promotionInfo!.promotionInfo.galleryImage.length - 3).toString()}',
+                                          '+${(widget.promotionInfo!.promotionInfo.galleryImage.length - 3).toString()}',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -325,12 +320,12 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                 ],
                               ),
                             ),
-                          ].divide(SizedBox(width: 16.0)),
+                          ].divide(const SizedBox(width: 16.0)),
                         ),
                       ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -341,12 +336,12 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(-1.0, -1.0),
+                                  alignment: const AlignmentDirectional(-1.0, -1.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 8.0),
                                     child: Text(
-                                      widget!.promotionInfo!.promotionCaption,
+                                      widget.promotionInfo!.promotionCaption,
                                       maxLines: 1,
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
@@ -360,9 +355,9 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  alignment: const AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -384,7 +379,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                 ),
                                           ),
                                           TextSpan(
-                                            text: widget!
+                                            text: widget
                                                 .promotionInfo!.promotionId,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -411,7 +406,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                               ],
                             ),
                           ),
-                          if ((widget!.promotionInfo?.promotionType !=
+                          if ((widget.promotionInfo?.promotionType !=
                                   'preapproved') &&
                               responsiveVisibility(
                                 context: context,
@@ -430,7 +425,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                 ),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(8.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'gylio5op' /* Edit Promotion */,
@@ -448,12 +443,12 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                         ],
                       ),
                     ),
-                    if (widget!.promotionInfo?.promotionDescription != null &&
-                        widget!.promotionInfo?.promotionDescription != '')
+                    if (widget.promotionInfo?.promotionDescription != null &&
+                        widget.promotionInfo?.promotionDescription != '')
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 4.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -470,15 +465,15 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                           ),
                         ),
                       ),
-                    if (widget!.promotionInfo?.promotionDescription != null &&
-                        widget!.promotionInfo?.promotionDescription != '')
+                    if (widget.promotionInfo?.promotionDescription != null &&
+                        widget.promotionInfo?.promotionDescription != '')
                       Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 16.0),
                           child: Text(
-                            widget!.promotionInfo!.promotionInfo.description,
+                            widget.promotionInfo!.promotionInfo.description,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -494,9 +489,9 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                         ),
                       ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, -1.0),
+                      alignment: const AlignmentDirectional(-1.0, -1.0),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 4.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
@@ -515,11 +510,11 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                       child: Container(
                         height: 40.0,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(8.0),
                             bottomLeft: Radius.circular(8.0),
                           ),
@@ -532,10 +527,10 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     6.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  widget!.promotionInfo!.promotionUrl,
+                                  widget.promotionInfo!.promotionUrl,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -548,7 +543,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                             FFButtonWidget(
                               onPressed: () async {
                                 await Clipboard.setData(ClipboardData(
-                                    text: widget!.promotionInfo!.promotionUrl));
+                                    text: widget.promotionInfo!.promotionUrl));
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                     content: Text(
@@ -562,7 +557,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: Duration(milliseconds: 4000),
+                                    duration: const Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -571,15 +566,15 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                               text: FFLocalizations.of(context).getText(
                                 'k8io9svj' /* Copy */,
                               ),
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.content_copy,
                                 size: 15.0,
                               ),
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -592,7 +587,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                       fontWeight: FontWeight.normal,
                                     ),
                                 elevation: 0.0,
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(8.0),
                                   topRight: Radius.circular(8.0),
                                   bottomLeft: Radius.circular(8.0),
@@ -604,9 +599,9 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                         ),
                       ),
                     ),
-                    if (widget!.promotionInfo!.promotionSales > 0)
+                    if (widget.promotionInfo!.promotionSales > 0)
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 24.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -618,7 +613,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(12.0),
+                            padding: const EdgeInsets.all(12.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -632,15 +627,15 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
                                         border: Border.all(
-                                          color: Color(0x26000000),
+                                          color: const Color(0x26000000),
                                           width: 1.0,
                                         ),
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
-                                          padding: EdgeInsets.all(4.0),
+                                          padding: const EdgeInsets.all(4.0),
                                           child: Icon(
                                             Icons.arrow_outward,
                                             color: FlutterFlowTheme.of(context)
@@ -680,9 +675,9 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                             children: [
                                               TextSpan(
                                                 text: valueOrDefault<String>(
-                                                  widget!.promotionInfo
+                                                  widget.promotionInfo
                                                       ?.promotionSales
-                                                      ?.toString(),
+                                                      .toString(),
                                                   '0',
                                                 ),
                                                 style:
@@ -724,7 +719,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                         ),
                                       ],
                                     ),
-                                  ].divide(SizedBox(width: 8.0)),
+                                  ].divide(const SizedBox(width: 8.0)),
                                 ),
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -735,15 +730,15 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
                                         border: Border.all(
-                                          color: Color(0x26000000),
+                                          color: const Color(0x26000000),
                                           width: 1.0,
                                         ),
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
-                                          padding: EdgeInsets.all(4.0),
+                                          padding: const EdgeInsets.all(4.0),
                                           child: Icon(
                                             Icons.arrow_outward_sharp,
                                             color: FlutterFlowTheme.of(context)
@@ -785,9 +780,9 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                             children: [
                                               TextSpan(
                                                 text: valueOrDefault<String>(
-                                                  widget!.promotionInfo
+                                                  widget.promotionInfo
                                                       ?.promotionEarnings
-                                                      ?.toString(),
+                                                      .toString(),
                                                   '0',
                                                 ),
                                                 style:
@@ -829,7 +824,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                         ),
                                       ],
                                     ),
-                                  ].divide(SizedBox(width: 8.0)),
+                                  ].divide(const SizedBox(width: 8.0)),
                                 ),
                               ],
                             ),
@@ -837,9 +832,9 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                         ),
                       ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, -1.0),
+                      alignment: const AlignmentDirectional(-1.0, -1.0),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 8.0),
                         child: RichText(
                           textScaler: MediaQuery.of(context).textScaler,
@@ -906,7 +901,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                             snapshot.data!;
 
                         return Container(
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                           child: Visibility(
                             visible: mainQueryOrderOrdersRecordList
                                     .where((e) =>
@@ -915,7 +910,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                 (e.creatorRef ==
                                                     currentUserReference) &&
                                                 (e.promotionId ==
-                                                    widget!.promotionInfo
+                                                    widget.promotionInfo
                                                         ?.promotionId))
                                             .toList()
                                             .length >
@@ -924,17 +919,17 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                     .length >
                                 0,
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 16.0),
                               child: Container(
                                 width: double.infinity,
-                                color: Color(0x00000000),
+                                color: const Color(0x00000000),
                                 child: ExpandableNotifier(
                                   controller:
                                       _model.expandableExpandableController,
                                   child: ExpandablePanel(
                                     header: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -982,7 +977,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                                 (e.creatorRef ==
                                                                     currentUserReference) &&
                                                                 (e.promotionId ==
-                                                                    widget!
+                                                                    widget
                                                                         .promotionInfo
                                                                         ?.promotionId))
                                                             .toList()
@@ -1019,7 +1014,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   16.0,
@@ -1051,15 +1046,15 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                                       .circular(
                                                                           8.0),
                                                               child:
-                                                                  Image.network(
-                                                                last10transactionListItem
+                                                                  CachedNetworkImage(
+                                                                imageUrl: last10transactionListItem
                                                                     .orderItems
                                                                     .cartItems
                                                                     .where((e) =>
                                                                         (e.creatorRef ==
                                                                             currentUserReference) &&
                                                                         (e.promotionId ==
-                                                                            widget!.promotionInfo?.promotionId))
+                                                                            widget.promotionInfo?.promotionId))
                                                                     .toList()
                                                                     .firstOrNull!
                                                                     .productInfo
@@ -1080,7 +1075,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                           Expanded(
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -1105,7 +1100,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                                             (e.creatorRef ==
                                                                                 currentUserReference) &&
                                                                             (e.promotionId ==
-                                                                                widget!.promotionInfo?.promotionId))
+                                                                                widget.promotionInfo?.promotionId))
                                                                         .toList()
                                                                         .firstOrNull!
                                                                         .productInfo
@@ -1132,7 +1127,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                                             TextSpan(
                                                                           children: [
                                                                             TextSpan(
-                                                                              text: last10transactionListItem.orderItems.cartItems.where((e) => (e.creatorRef == currentUserReference) && (e.promotionUrl == widget!.promotionInfo?.promotionUrl)).toList().length.toString(),
+                                                                              text: last10transactionListItem.orderItems.cartItems.where((e) => (e.creatorRef == currentUserReference) && (e.promotionUrl == widget.promotionInfo?.promotionUrl)).toList().length.toString(),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'almarai',
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
@@ -1167,13 +1162,13 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                                         decoration:
                                                                             BoxDecoration(
                                                                           color:
-                                                                              Color(0xFFF6F6F6),
+                                                                              const Color(0xFFF6F6F6),
                                                                           borderRadius:
                                                                               BorderRadius.circular(4.0),
                                                                         ),
                                                                         child:
                                                                             Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               6.0,
                                                                               2.0,
                                                                               6.0,
@@ -1183,14 +1178,14 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                                             last10transactionListItem.orderStatus,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'almarai',
-                                                                                  color: Color(0xFF1F841A),
+                                                                                  color: const Color(0xFF1F841A),
                                                                                   fontSize: 10.0,
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
                                                                         ),
                                                                       ),
-                                                                    ].divide(SizedBox(
+                                                                    ].divide(const SizedBox(
                                                                         width:
                                                                             8.0)),
                                                                   ),
@@ -1249,14 +1244,14 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                                             ),
                                                                       ),
                                                                     ),
-                                                                ].divide(SizedBox(
+                                                                ].divide(const SizedBox(
                                                                     height:
                                                                         8.0)),
                                                               ),
                                                             ),
                                                           ),
                                                           Text(
-                                                            '${last10transactionListItem.orderItems.cartItems.where((e) => e.creatorRef == currentUserReference).toList().firstOrNull?.promotionCommisionRate?.toString()} KD',
+                                                            '${last10transactionListItem.orderItems.cartItems.where((e) => e.creatorRef == currentUserReference).toList().firstOrNull?.promotionCommisionRate.toString()} KD',
                                                             textAlign:
                                                                 TextAlign.start,
                                                             style: FlutterFlowTheme
@@ -1274,7 +1269,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                                                           .w600,
                                                                 ),
                                                           ),
-                                                        ].divide(SizedBox(
+                                                        ].divide(const SizedBox(
                                                             width: 12.0)),
                                                       ),
                                                     ),
@@ -1307,7 +1302,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                         );
                       },
                     ),
-                  ].addToStart(SizedBox(height: 12.0)),
+                  ].addToStart(const SizedBox(height: 12.0)),
                 ),
               ),
             ),

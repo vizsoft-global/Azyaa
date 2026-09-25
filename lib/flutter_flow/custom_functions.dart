@@ -1,19 +1,6 @@
-import 'dart:convert';
-import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
-import 'package:timeago/timeago.dart' as timeago;
-import 'package:ff_commons/flutter_flow/lat_lng.dart';
-import 'package:ff_commons/flutter_flow/place.dart';
-import 'package:ff_commons/flutter_flow/uploaded_file.dart';
 import '/backend/backend.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import '/backend/schema/structs/index.dart';
-import '/auth/firebase_auth/auth_util.dart';
-import 'package:branchio_dynamic_linking_akp5u6/flutter_flow/custom_functions.dart'
-    as branchio_dynamic_linking_akp5u6_functions;
 
 DateTime addTimetoCalenderDate(
   DateTime slotTime,
@@ -1036,7 +1023,7 @@ int? calculateAge(DateTime dob) {
     if (days <= 0) {
       // Calculate the number of days in the previous month
       int daysInPreviousMonth =
-          DateTime(now.year, now.month - 1, 1).add(Duration(days: -1)).day;
+          DateTime(now.year, now.month - 1, 1).add(const Duration(days: -1)).day;
       days += daysInPreviousMonth;
     }
   }

@@ -5,31 +5,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'auth/firebase_auth/firebase_user_provider.dart';
-import 'auth/firebase_auth/auth_util.dart';
-
-import 'backend/push_notifications/push_notifications_util.dart';
-import 'backend/firebase/firebase_config.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'flutter_flow/flutter_flow_util.dart';
-import 'flutter_flow/internationalization.dart';
-import 'flutter_flow/nav/nav.dart';
-import 'index.dart';
-import 'flutter_flow/revenue_cat_util.dart' as revenue_cat;
-
-import 'package:branchio_dynamic_linking_akp5u6/library_values.dart'
-    as branchio_dynamic_linking_akp5u6_library_values;
-import 'package:azyaa/backend/schema/structs/index.dart';
-import 'package:azyaa/app_constants.dart';
-
-import '/custom_code/actions/index.dart' as actions;
-import 'package:provider/provider.dart';
-import 'package:flutter/gestures.dart';
-
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_web_plugins/url_strategy.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'auth/firebase_auth/firebase_user_provider.dart';
 import 'auth/firebase_auth/auth_util.dart';
 
@@ -37,9 +12,11 @@ import 'backend/push_notifications/push_notifications_util.dart';
 import 'backend/firebase/firebase_config.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
-import 'flutter_flow/nav/nav.dart';
-import 'index.dart';
 import 'flutter_flow/revenue_cat_util.dart' as revenue_cat;
+
+
+
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -137,7 +114,7 @@ class _MyAppState extends State<MyApp> {
       });
     jwtTokenStream.listen((_) {});
     Future.delayed(
-      Duration(milliseconds: 2000),
+      const Duration(milliseconds: 2000),
       () => _appStateNotifier.stopShowingSplashImage(),
     );
   }
@@ -164,7 +141,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Azyaa',
       scrollBehavior: MyAppScrollBehavior(),
-      localizationsDelegates: [
+      localizationsDelegates: const [
         FFLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

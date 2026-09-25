@@ -3,12 +3,9 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'test_page_model.dart';
 export 'test_page_model.dart';
 
@@ -74,14 +71,14 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: [],
+              actions: const [],
               centerTitle: false,
               elevation: 2.0,
             ),
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,10 +93,10 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 50.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -121,10 +118,10 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 50.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).secondary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -133,7 +130,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 0.0,
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
@@ -171,7 +168,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             12.0, 12.0, 12.0, 12.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -225,7 +222,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                               borderColor: Colors.transparent,
                               borderWidth: 1.0,
                               borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
+                              margin: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 12.0, 0.0),
                               hidesUnderline: true,
                               isOverButton: false,
@@ -259,14 +256,14 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Color(0x00000000),
                                       width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Color(0x00000000),
                                       width: 1.0,
                                     ),
@@ -289,7 +286,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .primaryBackground,
-                                  suffixIcon: Icon(
+                                  suffixIcon: const Icon(
                                     Icons.keyboard_arrow_down,
                                   ),
                                 ),
@@ -305,7 +302,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                                     .asValidator(context),
                               ),
                             ),
-                          ].divide(SizedBox(height: 8.0)),
+                          ].divide(const SizedBox(height: 8.0)),
                         ),
                       ),
                     ),
@@ -319,10 +316,10 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 50.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -378,7 +375,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                         fieldHeight: 44.0,
                         fieldWidth: 60.0,
                         borderWidth: 1.0,
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           bottomLeft: Radius.circular(8.0),
                           bottomRight: Radius.circular(8.0),
                           topLeft: Radius.circular(8.0),
@@ -397,7 +394,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                     ),
                     Container(
                       width: MediaQuery.sizeOf(context).width * 1.0,
-                      decoration: BoxDecoration(),
+                      decoration: const BoxDecoration(),
                       child: Wrap(
                         spacing: 0.0,
                         runSpacing: 0.0,
@@ -419,7 +416,7 @@ class _TestPageWidgetState extends State<TestPageWidget> {
                         ],
                       ),
                     ),
-                  ].divide(SizedBox(height: 12.0)),
+                  ].divide(const SizedBox(height: 12.0)),
                 ),
               ),
             ),

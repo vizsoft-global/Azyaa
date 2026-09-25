@@ -8,19 +8,14 @@ import '/azyaa_group_a/home/components/loading_animation/loading_animation_widge
 import '/azyaa_group_a/home/components/product_grid/product_grid_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/ui/salebanner/salebanner_widget.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'shop_model.dart';
 export 'shop_model.dart';
@@ -79,7 +74,7 @@ class _ShopWidgetState extends State<ShopWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -107,7 +102,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -115,37 +110,37 @@ class _ShopWidgetState extends State<ShopWidget> {
             body: SafeArea(
               top: true,
               child: Stack(
-                alignment: AlignmentDirectional(0.0, 1.0),
+                alignment: const AlignmentDirectional(0.0, 1.0),
                 children: [
                   wrapWithModel(
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   wrapWithModel(
                     model: _model.appUpdateCheckerModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: AppUpdateCheckerWidget(),
+                    child: const AppUpdateCheckerWidget(),
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 70.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 70.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 12.0),
                           child: Container(
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 if (loggedIn)
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
@@ -156,7 +151,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                         focusNode: _model.searchFiledsFocusNode,
                                         onChanged: (_) => EasyDebounce.debounce(
                                           '_model.searchFiledsTextController',
-                                          Duration(milliseconds: 2000),
+                                          const Duration(milliseconds: 2000),
                                           () async {
                                             if (_model
                                                     .searchFiledsTextController
@@ -209,12 +204,12 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                   .labelMedium
                                                   .override(
                                                     fontFamily: 'almarai',
-                                                    color: Color(0xFF575454),
+                                                    color: const Color(0xFF575454),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                   ),
                                           enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -222,7 +217,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                 BorderRadius.circular(4.0),
                                           ),
                                           focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -291,7 +286,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                       if (_model.searchStatus == false)
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 24.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -317,7 +312,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                             extra: <String,
                                                                 dynamic>{
                                                               '__transition_info__':
-                                                                  TransitionInfo(
+                                                                  const TransitionInfo(
                                                                 hasTransition:
                                                                     true,
                                                                 transitionType:
@@ -348,7 +343,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         16.0,
@@ -433,13 +428,13 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                       fit: BoxFit
                                                                           .contain,
                                                                       alignment:
-                                                                          Alignment(
+                                                                          const Alignment(
                                                                               0.0,
                                                                               1.0),
                                                                     ),
                                                                   ),
                                                                 ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   height: 8.0)),
                                                             ),
                                                           ),
@@ -477,7 +472,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 '__transition_info__':
-                                                                    TransitionInfo(
+                                                                    const TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -508,7 +503,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(
                                                                           16.0),
                                                               child: Column(
@@ -575,7 +570,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                               FontWeight.bold,
                                                                         ),
                                                                   ),
-                                                                ].divide(SizedBox(
+                                                                ].divide(const SizedBox(
                                                                     height:
                                                                         8.0)),
                                                               ),
@@ -584,7 +579,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       45.0,
@@ -605,7 +600,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                               fit: BoxFit
                                                                   .contain,
                                                               alignment:
-                                                                  Alignment(
+                                                                  const Alignment(
                                                                       0.0, 1.0),
                                                             ),
                                                           ),
@@ -635,7 +630,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                             extra: <String,
                                                                 dynamic>{
                                                               '__transition_info__':
-                                                                  TransitionInfo(
+                                                                  const TransitionInfo(
                                                                 hasTransition:
                                                                     true,
                                                                 transitionType:
@@ -666,7 +661,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         16.0,
@@ -684,7 +679,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                       .center,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -710,7 +705,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -777,7 +772,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                     ),
                                                                   ),
                                                                 ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   height: 8.0)),
                                                             ),
                                                           ),
@@ -787,7 +782,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ].divide(SizedBox(width: 16.0)),
+                                            ].divide(const SizedBox(width: 16.0)),
                                           ),
                                         ),
                                       if (responsiveVisibility(
@@ -801,12 +796,12 @@ class _ShopWidgetState extends State<ShopWidget> {
                                           model: _model.salebannerModel,
                                           updateCallback: () =>
                                               safeSetState(() {}),
-                                          child: SalebannerWidget(),
+                                          child: const SalebannerWidget(),
                                         ),
                                       if (_model.searchStatus == false)
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 24.0),
                                           child: FutureBuilder<
                                               List<CategoryRecord>>(
@@ -845,7 +840,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                         1.0,
                                                     height: 150.0,
                                                     child:
-                                                        LoadingAnimationWidget(),
+                                                        const LoadingAnimationWidget(),
                                                   ),
                                                 );
                                               }
@@ -854,7 +849,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                   snapshot.data!;
 
                                               return Container(
-                                                decoration: BoxDecoration(),
+                                                decoration: const BoxDecoration(),
                                                 child: Visibility(
                                                   visible: (_model
                                                               .searchStatus ==
@@ -868,7 +863,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -933,7 +928,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     '__transition_info__':
-                                                                        TransitionInfo(
+                                                                        const TransitionInfo(
                                                                       hasTransition:
                                                                           true,
                                                                       transitionType:
@@ -959,7 +954,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                 ),
                                                                 child: Padding(
                                                                   padding:
-                                                                      EdgeInsets
+                                                                      const EdgeInsets
                                                                           .all(
                                                                               4.0),
                                                                   child: Icon(
@@ -973,13 +968,13 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                 ),
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               width: 8.0)),
                                                         ),
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -992,7 +987,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                     .toList();
 
                                                             return RefreshIndicator(
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFF7F56D9),
                                                               onRefresh:
                                                                   () async {
@@ -1052,11 +1047,11 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                         ),
                                                       ),
                                                     ]
-                                                        .divide(SizedBox(
+                                                        .divide(const SizedBox(
                                                             height: 12.0))
-                                                        .addToStart(SizedBox(
+                                                        .addToStart(const SizedBox(
                                                             height: 8.0))
-                                                        .addToEnd(SizedBox(
+                                                        .addToEnd(const SizedBox(
                                                             height: 8.0)),
                                                   ),
                                                 ),
@@ -1067,7 +1062,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                       if (_model.searchStatus == false)
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 24.0),
                                           child: FutureBuilder<
                                               List<ProductsRecord>>(
@@ -1101,7 +1096,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                 return Container(
                                                   width: 0.0,
                                                   height: 0.0,
-                                                  child: BlankLoadingWidget(),
+                                                  child: const BlankLoadingWidget(),
                                                 );
                                               }
                                               List<ProductsRecord>
@@ -1109,7 +1104,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                   snapshot.data!;
 
                                               return Container(
-                                                decoration: BoxDecoration(),
+                                                decoration: const BoxDecoration(),
                                                 child: Visibility(
                                                   visible:
                                                       popularProductListProductsRecordList
@@ -1121,7 +1116,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -1203,7 +1198,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                         extra: <String,
                                                                             dynamic>{
                                                                           '__transition_info__':
-                                                                              TransitionInfo(
+                                                                              const TransitionInfo(
                                                                             hasTransition:
                                                                                 true,
                                                                             transitionType:
@@ -1226,7 +1221,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            EdgeInsets.all(4.0),
+                                                                            const EdgeInsets.all(4.0),
                                                                         child:
                                                                             Icon(
                                                                           Icons
@@ -1239,7 +1234,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                       ),
                                                                     ),
                                                                   ),
-                                                                ].divide(SizedBox(
+                                                                ].divide(const SizedBox(
                                                                     width:
                                                                         8.0)),
                                                               ),
@@ -1262,7 +1257,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     '__transition_info__':
-                                                                        TransitionInfo(
+                                                                        const TransitionInfo(
                                                                       hasTransition:
                                                                           true,
                                                                       transitionType:
@@ -1298,7 +1293,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                     ),
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               width: 8.0)),
                                                         ),
                                                       ),
@@ -1306,7 +1301,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                         flex: 1,
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -1319,7 +1314,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                       .toList();
 
                                                               return RefreshIndicator(
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF7F56D9),
                                                                 onRefresh:
                                                                     () async {
@@ -1380,11 +1375,11 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                         ),
                                                       ),
                                                     ]
-                                                        .divide(SizedBox(
+                                                        .divide(const SizedBox(
                                                             height: 12.0))
-                                                        .addToStart(SizedBox(
+                                                        .addToStart(const SizedBox(
                                                             height: 8.0))
-                                                        .addToEnd(SizedBox(
+                                                        .addToEnd(const SizedBox(
                                                             height: 8.0)),
                                                   ),
                                                 ),
@@ -1397,17 +1392,17 @@ class _ShopWidgetState extends State<ShopWidget> {
                                 ),
                               if (_model.searchStatus == true)
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 12.0),
                                   child: Container(
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: SingleChildScrollView(
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -1432,8 +1427,8 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                       e.status ==
                                                                       'active')
                                                                   .toList()
-                                                                  ?.length
-                                                                  ?.toString(),
+                                                                  .length
+                                                                  .toString(),
                                                               '0',
                                                             ),
                                                             style: FlutterFlowTheme
@@ -1501,7 +1496,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                             extra: <String,
                                                                 dynamic>{
                                                               '__transition_info__':
-                                                                  TransitionInfo(
+                                                                  const TransitionInfo(
                                                                 hasTransition:
                                                                     true,
                                                                 transitionType:
@@ -1527,7 +1522,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     4.0),
                                                             child: Icon(
                                                               Icons
@@ -1541,7 +1536,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                         ),
                                                       ),
                                                   ].divide(
-                                                      SizedBox(width: 8.0)),
+                                                      const SizedBox(width: 8.0)),
                                                 ),
                                                 if (responsiveVisibility(
                                                   context: context,
@@ -1566,7 +1561,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                         extra: <String,
                                                             dynamic>{
                                                           '__transition_info__':
-                                                              TransitionInfo(
+                                                              const TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -1599,12 +1594,12 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                           ),
                                                     ),
                                                   ),
-                                              ].divide(SizedBox(width: 8.0)),
+                                              ].divide(const SizedBox(width: 8.0)),
                                             ),
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Builder(
                                               builder: (context) {
@@ -1637,7 +1632,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                             e.status ==
                                                             'active')
                                                         .toList()
-                                                        ?.toList() ??
+                                                        .toList() ??
                                                     [];
 
                                                 return GridView.builder(
@@ -1676,9 +1671,9 @@ class _ShopWidgetState extends State<ShopWidget> {
                                             ),
                                           ),
                                         ]
-                                            .divide(SizedBox(height: 12.0))
-                                            .addToStart(SizedBox(height: 8.0))
-                                            .addToEnd(SizedBox(height: 8.0)),
+                                            .divide(const SizedBox(height: 12.0))
+                                            .addToStart(const SizedBox(height: 8.0))
+                                            .addToEnd(const SizedBox(height: 8.0)),
                                       ),
                                     ),
                                   ),
@@ -1686,13 +1681,13 @@ class _ShopWidgetState extends State<ShopWidget> {
                             ],
                           ),
                         ),
-                      ].addToStart(SizedBox(height: 16.0)),
+                      ].addToStart(const SizedBox(height: 16.0)),
                     ),
                   ),
                   wrapWithModel(
                     model: _model.universalNavigationBarModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: UniversalNavigationBarWidget(
+                    child: const UniversalNavigationBarWidget(
                       navigation: 'shop',
                     ),
                   ),

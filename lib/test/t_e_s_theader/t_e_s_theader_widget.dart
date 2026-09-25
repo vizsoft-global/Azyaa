@@ -1,12 +1,8 @@
 import '/azyaa_group_a/home/components/bar/home_app_bar/home_app_bar_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 't_e_s_theader_model.dart';
 export 't_e_s_theader_model.dart';
 
@@ -61,7 +57,7 @@ class _TESTheaderWidgetState extends State<TESTheaderWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 0.0, 0.0),
                     child: FlutterFlowIconButton(
                       borderRadius: 8.0,
                       buttonSize: 40.0,
@@ -79,11 +75,11 @@ class _TESTheaderWidgetState extends State<TESTheaderWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 400.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 400.0),
                       child: wrapWithModel(
                         model: _model.homeAppBarModel,
                         updateCallback: () => safeSetState(() {}),
-                        child: HomeAppBarWidget(),
+                        child: const HomeAppBarWidget(),
                       ),
                     ),
                   ),

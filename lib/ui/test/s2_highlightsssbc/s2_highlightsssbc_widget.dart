@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 's2_highlightsssbc_model.dart';
 export 's2_highlightsssbc_model.dart';
 
@@ -61,7 +58,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -70,7 +67,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                       child: Column(
                         children: [
                           Align(
-                            alignment: Alignment(0.0, 0),
+                            alignment: const Alignment(0.0, 0),
                             child: TabBar(
                               labelColor:
                                   FlutterFlowTheme.of(context).primaryText,
@@ -119,7 +116,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                               children: [
                                 KeepAliveWidgetWrapper(
                                   builder: (context) => Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
                                     child: SingleChildScrollView(
                                       child: Column(
@@ -129,7 +126,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                         children: [
                                           Expanded(
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 24.0),
                                               child: ClipRRect(
@@ -154,7 +151,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, -1.0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
@@ -175,11 +172,11 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, -1.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 12.0),
                                                     child: Text(
@@ -204,11 +201,11 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, -1.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 24.0),
                                                     child: Text(
@@ -238,7 +235,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
                                                   child: FFButtonWidget(
@@ -258,14 +255,14 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                           1.0,
                                                       height: 48.0,
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
                                                                   16.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -326,7 +323,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                 ),
                                 KeepAliveWidgetWrapper(
                                   builder: (context) => Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
                                     child: SingleChildScrollView(
                                       child: Column(
@@ -336,7 +333,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                         children: [
                                           Expanded(
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 24.0),
                                               child: ClipRRect(
@@ -361,7 +358,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, -1.0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
@@ -382,11 +379,11 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, -1.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 12.0),
                                                     child: Text(
@@ -411,11 +408,11 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, -1.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 24.0),
                                                     child: Text(
@@ -445,7 +442,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
                                                   child: FFButtonWidget(
@@ -465,14 +462,14 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                           1.0,
                                                       height: 48.0,
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
                                                                   16.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -533,7 +530,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                 ),
                                 KeepAliveWidgetWrapper(
                                   builder: (context) => Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
                                     child: SingleChildScrollView(
                                       child: Column(
@@ -543,7 +540,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                         children: [
                                           Expanded(
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 24.0),
                                               child: ClipRRect(
@@ -568,7 +565,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, -1.0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
@@ -589,11 +586,11 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, -1.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 12.0),
                                                     child: Text(
@@ -618,11 +615,11 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, -1.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 24.0),
                                                     child: Text(
@@ -652,7 +649,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
                                                   child: FFButtonWidget(
@@ -672,14 +669,14 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                                                           1.0,
                                                       height: 48.0,
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
                                                                   16.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -744,7 +741,7 @@ class _S2HighlightsssbcWidgetState extends State<S2HighlightsssbcWidget>
                         ],
                       ),
                     ),
-                  ].addToEnd(SizedBox(height: 24.0)),
+                  ].addToEnd(const SizedBox(height: 24.0)),
                 ),
               ),
             ),

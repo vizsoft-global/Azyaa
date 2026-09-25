@@ -1,11 +1,8 @@
 import '/azyaa_group_a/customer/zone/profile_body_add/profile_body_add_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'profile_body_model.dart';
 export 'profile_body_model.dart';
@@ -47,7 +44,7 @@ class _ProfileBodyWidgetState extends State<ProfileBodyWidget> {
       width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 5.0,
             color: Color(0x3B1D2429),
@@ -57,19 +54,19 @@ class _ProfileBodyWidgetState extends State<ProfileBodyWidget> {
             ),
           )
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
               child: Container(
                 width: 35.0,
                 height: 3.0,
@@ -80,9 +77,9 @@ class _ProfileBodyWidgetState extends State<ProfileBodyWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(-1.0, -1.0),
+              alignment: const AlignmentDirectional(-1.0, -1.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     'o3e4dy0k' /* Hi, for a better fit i need yo... */,
@@ -105,9 +102,9 @@ class _ProfileBodyWidgetState extends State<ProfileBodyWidget> {
               desktop: false,
             ))
               Align(
-                alignment: AlignmentDirectional(-1.0, -1.0),
+                alignment: const AlignmentDirectional(-1.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       '9s8jdlnz' /* Why Add Measurements? */,
@@ -130,9 +127,9 @@ class _ProfileBodyWidgetState extends State<ProfileBodyWidget> {
               desktop: false,
             ))
               Align(
-                alignment: AlignmentDirectional(-1.0, -1.0),
+                alignment: const AlignmentDirectional(-1.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'v8010arm' /* Adding your body measurements ... */,
@@ -149,7 +146,7 @@ class _ProfileBodyWidgetState extends State<ProfileBodyWidget> {
               ),
             Expanded(
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.asset(
@@ -157,13 +154,13 @@ class _ProfileBodyWidgetState extends State<ProfileBodyWidget> {
                     width: MediaQuery.sizeOf(context).width * 1.0,
                     height: MediaQuery.sizeOf(context).height * 1.0,
                     fit: BoxFit.contain,
-                    alignment: Alignment(0.0, 0.0),
+                    alignment: const Alignment(0.0, 0.0),
                   ),
                 ),
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 24.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 24.0),
               child: Text(
                 FFLocalizations.of(context).getText(
                   'mjvn89hq' /* Ready to start? Enter your det... */,
@@ -190,7 +187,7 @@ class _ProfileBodyWidgetState extends State<ProfileBodyWidget> {
                         padding: MediaQuery.viewInsetsOf(context),
                         child: Container(
                           height: MediaQuery.sizeOf(context).height * 0.8,
-                          child: ProfileBodyAddWidget(),
+                          child: const ProfileBodyAddWidget(),
                         ),
                       ),
                     );
@@ -203,8 +200,8 @@ class _ProfileBodyWidgetState extends State<ProfileBodyWidget> {
               options: FFButtonOptions(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: 48.0,
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'almarai',
@@ -215,7 +212,7 @@ class _ProfileBodyWidgetState extends State<ProfileBodyWidget> {
                 borderRadius: BorderRadius.circular(8.0),
               ),
             ),
-          ].addToStart(SizedBox(height: 16.0)).addToEnd(SizedBox(height: 16.0)),
+          ].addToStart(const SizedBox(height: 16.0)).addToEnd(const SizedBox(height: 16.0)),
         ),
       ),
     );

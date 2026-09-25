@@ -1,14 +1,8 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'user_wishlist_model.dart';
 export 'user_wishlist_model.dart';
 
@@ -20,7 +14,7 @@ class UserWishlistWidget extends StatefulWidget {
     double? iconSize,
     this.containersize,
     required this.iconsize,
-  }) : this.iconSize = iconSize ?? 18.0;
+  }) : iconSize = iconSize ?? 18.0;
 
   final String? type;
   final String? itemID;
@@ -61,8 +55,8 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
     return Visibility(
       visible: loggedIn == true,
       child: Container(
-        width: widget!.containersize?.toDouble(),
-        height: widget!.containersize?.toDouble(),
+        width: widget.containersize?.toDouble(),
+        height: widget.containersize?.toDouble(),
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
           borderRadius: BorderRadius.circular(100.0),
@@ -71,19 +65,19 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
             color: FlutterFlowTheme.of(context).buttonBorder,
           ),
         ),
-        alignment: AlignmentDirectional(0.0, 0.0),
+        alignment: const AlignmentDirectional(0.0, 0.0),
         child: Stack(
-          alignment: AlignmentDirectional(0.0, 0.0),
+          alignment: const AlignmentDirectional(0.0, 0.0),
           children: [
-            if ((currentUserDocument?.userWishlistItem?.toList() ?? [])
+            if ((currentUserDocument?.userWishlistItem.toList() ?? [])
                     .where((e) =>
-                        (e.entityType == widget!.type) &&
-                        (e.wishlistItemId == widget!.itemID))
+                        (e.entityType == widget.type) &&
+                        (e.wishlistItemId == widget.itemID))
                     .toList()
                     .length ==
                 0)
               Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: AuthUserStreamWidget(
                   builder: (context) => InkWell(
                     splashColor: Colors.transparent,
@@ -91,22 +85,22 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      if (widget!.type == 'product') {
-                        if ((currentUserDocument?.userWishlistItem?.toList() ??
+                      if (widget.type == 'product') {
+                        if ((currentUserDocument?.userWishlistItem.toList() ??
                                     [])
                                 .where((e) =>
-                                    (e.entityType == widget!.type) &&
-                                    (e.wishlistItemId == widget!.itemID))
+                                    (e.entityType == widget.type) &&
+                                    (e.wishlistItemId == widget.itemID))
                                 .toList()
                                 .length >
                             0) {
                           _model.count = (currentUserDocument?.userWishlistItem
-                                      ?.toList() ??
+                                      .toList() ??
                                   [])
                               .length;
                           _model.wishlistItems = (currentUserDocument
                                       ?.userWishlistItem
-                                      ?.toList() ??
+                                      .toList() ??
                                   [])
                               .toList()
                               .cast<UserWishlistItemStruct>();
@@ -114,11 +108,11 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                             if ((_model.wishlistItems
                                         .elementAtOrNull((_model.count!) - 1)
                                         ?.wishlistItemId ==
-                                    widget!.itemID) &&
+                                    widget.itemID) &&
                                 (_model.wishlistItems
                                         .elementAtOrNull((_model.count!) - 1)
                                         ?.entityType ==
-                                    widget!.type)) {
+                                    widget.type)) {
                               _model.removeAtIndexFromWishlistItems(
                                   (_model.count!) - 1);
 
@@ -143,8 +137,8 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                                 'user_wishlist_item': FieldValue.arrayUnion([
                                   getUserWishlistItemFirestoreData(
                                     createUserWishlistItemStruct(
-                                      wishlistItemId: widget!.itemID,
-                                      entityType: widget!.type,
+                                      wishlistItemId: widget.itemID,
+                                      entityType: widget.type,
                                       addedAt: getCurrentTimestamp,
                                       clearUnsetFields: false,
                                     ),
@@ -160,8 +154,8 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                       _model.updatePage(() {});
                     },
                     child: Container(
-                      width: widget!.containersize?.toDouble(),
-                      height: widget!.containersize?.toDouble(),
+                      width: widget.containersize?.toDouble(),
+                      height: widget.containersize?.toDouble(),
                       decoration: BoxDecoration(
                         color: Colors.transparent,
                         border: Border.all(
@@ -170,16 +164,16 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                       ),
                       child: Visibility(
                         visible:
-                            (currentUserDocument?.userWishlistItem?.toList() ??
+                            (currentUserDocument?.userWishlistItem.toList() ??
                                         [])
                                     .where((e) =>
-                                        (e.entityType == widget!.type) &&
-                                        (e.wishlistItemId == widget!.itemID))
+                                        (e.entityType == widget.type) &&
+                                        (e.wishlistItemId == widget.itemID))
                                     .toList()
                                     .length ==
                                 0,
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 2.0, 0.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -187,25 +181,25 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              if (widget!.type == 'product') {
+                              if (widget.type == 'product') {
                                 if ((currentUserDocument?.userWishlistItem
-                                                ?.toList() ??
+                                                .toList() ??
                                             [])
                                         .where((e) =>
-                                            (e.entityType == widget!.type) &&
+                                            (e.entityType == widget.type) &&
                                             (e.wishlistItemId ==
-                                                widget!.itemID))
+                                                widget.itemID))
                                         .toList()
                                         .length >
                                     0) {
                                   _model.count = (currentUserDocument
                                               ?.userWishlistItem
-                                              ?.toList() ??
+                                              .toList() ??
                                           [])
                                       .length;
                                   _model.wishlistItems = (currentUserDocument
                                               ?.userWishlistItem
-                                              ?.toList() ??
+                                              .toList() ??
                                           [])
                                       .toList()
                                       .cast<UserWishlistItemStruct>();
@@ -214,12 +208,12 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                                                 .elementAtOrNull(
                                                     (_model.count!) - 1)
                                                 ?.wishlistItemId ==
-                                            widget!.itemID) &&
+                                            widget.itemID) &&
                                         (_model.wishlistItems
                                                 .elementAtOrNull(
                                                     (_model.count!) - 1)
                                                 ?.entityType ==
-                                            widget!.type)) {
+                                            widget.type)) {
                                       _model.removeAtIndexFromWishlistItems(
                                           (_model.count!) - 1);
 
@@ -245,8 +239,8 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                                             FieldValue.arrayUnion([
                                           getUserWishlistItemFirestoreData(
                                             createUserWishlistItemStruct(
-                                              wishlistItemId: widget!.itemID,
-                                              entityType: widget!.type,
+                                              wishlistItemId: widget.itemID,
+                                              entityType: widget.type,
                                               addedAt: getCurrentTimestamp,
                                               clearUnsetFields: false,
                                             ),
@@ -264,7 +258,7 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                             child: Icon(
                               FFIcons.kvector2,
                               color: FlutterFlowTheme.of(context).secondaryText,
-                              size: widget!.iconSize,
+                              size: widget.iconSize,
                             ),
                           ),
                         ),
@@ -273,15 +267,15 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                   ),
                 ),
               ),
-            if ((currentUserDocument?.userWishlistItem?.toList() ?? [])
+            if ((currentUserDocument?.userWishlistItem.toList() ?? [])
                     .where((e) =>
-                        (e.entityType == widget!.type) &&
-                        (e.wishlistItemId == widget!.itemID))
+                        (e.entityType == widget.type) &&
+                        (e.wishlistItemId == widget.itemID))
                     .toList()
                     .length >
                 0)
               Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: AuthUserStreamWidget(
                   builder: (context) => InkWell(
                     splashColor: Colors.transparent,
@@ -289,22 +283,22 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      if (widget!.type == 'product') {
-                        if ((currentUserDocument?.userWishlistItem?.toList() ??
+                      if (widget.type == 'product') {
+                        if ((currentUserDocument?.userWishlistItem.toList() ??
                                     [])
                                 .where((e) =>
-                                    (e.entityType == widget!.type) &&
-                                    (e.wishlistItemId == widget!.itemID))
+                                    (e.entityType == widget.type) &&
+                                    (e.wishlistItemId == widget.itemID))
                                 .toList()
                                 .length >
                             0) {
                           _model.count = (currentUserDocument?.userWishlistItem
-                                      ?.toList() ??
+                                      .toList() ??
                                   [])
                               .length;
                           _model.wishlistItems = (currentUserDocument
                                       ?.userWishlistItem
-                                      ?.toList() ??
+                                      .toList() ??
                                   [])
                               .toList()
                               .cast<UserWishlistItemStruct>();
@@ -312,11 +306,11 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                             if ((_model.wishlistItems
                                         .elementAtOrNull((_model.count!) - 1)
                                         ?.wishlistItemId ==
-                                    widget!.itemID) &&
+                                    widget.itemID) &&
                                 (_model.wishlistItems
                                         .elementAtOrNull((_model.count!) - 1)
                                         ?.entityType ==
-                                    widget!.type)) {
+                                    widget.type)) {
                               _model.removeAtIndexFromWishlistItems(
                                   (_model.count!) - 1);
 
@@ -341,8 +335,8 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                                 'user_wishlist_item': FieldValue.arrayUnion([
                                   getUserWishlistItemFirestoreData(
                                     createUserWishlistItemStruct(
-                                      wishlistItemId: widget!.itemID,
-                                      entityType: widget!.type,
+                                      wishlistItemId: widget.itemID,
+                                      entityType: widget.type,
                                       addedAt: getCurrentTimestamp,
                                       clearUnsetFields: false,
                                     ),
@@ -358,8 +352,8 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                       _model.updatePage(() {});
                     },
                     child: Container(
-                      width: widget!.containersize?.toDouble(),
-                      height: widget!.containersize?.toDouble(),
+                      width: widget.containersize?.toDouble(),
+                      height: widget.containersize?.toDouble(),
                       decoration: BoxDecoration(
                         color: Colors.transparent,
                         border: Border.all(
@@ -368,16 +362,16 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                       ),
                       child: Visibility(
                         visible:
-                            (currentUserDocument?.userWishlistItem?.toList() ??
+                            (currentUserDocument?.userWishlistItem.toList() ??
                                         [])
                                     .where((e) =>
-                                        (e.entityType == widget!.type) &&
-                                        (e.wishlistItemId == widget!.itemID))
+                                        (e.entityType == widget.type) &&
+                                        (e.wishlistItemId == widget.itemID))
                                     .toList()
                                     .length >
                                 0,
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 2.0, 0.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -385,25 +379,25 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              if (widget!.type == 'product') {
+                              if (widget.type == 'product') {
                                 if ((currentUserDocument?.userWishlistItem
-                                                ?.toList() ??
+                                                .toList() ??
                                             [])
                                         .where((e) =>
-                                            (e.entityType == widget!.type) &&
+                                            (e.entityType == widget.type) &&
                                             (e.wishlistItemId ==
-                                                widget!.itemID))
+                                                widget.itemID))
                                         .toList()
                                         .length >
                                     0) {
                                   _model.count = (currentUserDocument
                                               ?.userWishlistItem
-                                              ?.toList() ??
+                                              .toList() ??
                                           [])
                                       .length;
                                   _model.wishlistItems = (currentUserDocument
                                               ?.userWishlistItem
-                                              ?.toList() ??
+                                              .toList() ??
                                           [])
                                       .toList()
                                       .cast<UserWishlistItemStruct>();
@@ -412,12 +406,12 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                                                 .elementAtOrNull(
                                                     (_model.count!) - 1)
                                                 ?.wishlistItemId ==
-                                            widget!.itemID) &&
+                                            widget.itemID) &&
                                         (_model.wishlistItems
                                                 .elementAtOrNull(
                                                     (_model.count!) - 1)
                                                 ?.entityType ==
-                                            widget!.type)) {
+                                            widget.type)) {
                                       _model.removeAtIndexFromWishlistItems(
                                           (_model.count!) - 1);
 
@@ -443,8 +437,8 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                                             FieldValue.arrayUnion([
                                           getUserWishlistItemFirestoreData(
                                             createUserWishlistItemStruct(
-                                              wishlistItemId: widget!.itemID,
-                                              entityType: widget!.type,
+                                              wishlistItemId: widget.itemID,
+                                              entityType: widget.type,
                                               addedAt: getCurrentTimestamp,
                                               clearUnsetFields: false,
                                             ),
@@ -462,7 +456,7 @@ class _UserWishlistWidgetState extends State<UserWishlistWidget> {
                             child: Icon(
                               FFIcons.kvector3,
                               color: FlutterFlowTheme.of(context).secondaryText,
-                              size: widget!.iconSize,
+                              size: widget.iconSize,
                             ),
                           ),
                         ),

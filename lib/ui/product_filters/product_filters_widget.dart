@@ -1,18 +1,16 @@
 import '/azyaa_group_a/home/components/blank_loading/blank_loading_widget.dart';
 import '/azyaa_group_a/home/components/loading_animation/loading_animation_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_checkbox_group.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
 import '/index.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'product_filters_model.dart';
 export 'product_filters_model.dart';
@@ -59,7 +57,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
       width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 5.0,
             color: Color(0x3B1D2429),
@@ -69,7 +67,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
             ),
           )
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -77,7 +75,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
       child: Stack(
         children: [
           Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -85,10 +83,10 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(0.0, -1.0),
+                    alignment: const AlignmentDirectional(0.0, -1.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                       child: Container(
                         width: 35.0,
                         height: 3.0,
@@ -101,7 +99,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -144,11 +142,11 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                             size: 24.0,
                           ),
                         ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, -1.0),
+                    alignment: const AlignmentDirectional(0.0, -1.0),
                     child: Container(
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 1.0,
@@ -169,7 +167,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -185,7 +183,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 12.0, 16.0, 12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -212,7 +210,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 2.0, 4.0, 2.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -230,7 +228,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                             ),
                                           ),
                                         ),
-                                      ].divide(SizedBox(width: 4.0)),
+                                      ].divide(const SizedBox(width: 4.0)),
                                     ),
                                   ),
                                 ),
@@ -240,7 +238,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 12.0, 16.0, 12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -267,7 +265,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 2.0, 4.0, 2.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -285,7 +283,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                             ),
                                           ),
                                         ),
-                                      ].divide(SizedBox(width: 4.0)),
+                                      ].divide(const SizedBox(width: 4.0)),
                                     ),
                                   ),
                                 ),
@@ -295,7 +293,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 12.0, 16.0, 12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -322,7 +320,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 2.0, 4.0, 2.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -340,7 +338,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                             ),
                                           ),
                                         ),
-                                      ].divide(SizedBox(width: 4.0)),
+                                      ].divide(const SizedBox(width: 4.0)),
                                     ),
                                   ),
                                 ),
@@ -350,7 +348,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 12.0, 16.0, 12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -377,7 +375,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 2.0, 4.0, 2.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -395,7 +393,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                             ),
                                           ),
                                         ),
-                                      ].divide(SizedBox(width: 4.0)),
+                                      ].divide(const SizedBox(width: 4.0)),
                                     ),
                                   ),
                                 ),
@@ -405,7 +403,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 12.0, 16.0, 12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -432,7 +430,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 2.0, 4.0, 2.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -450,7 +448,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                             ),
                                           ),
                                         ),
-                                      ].divide(SizedBox(width: 4.0)),
+                                      ].divide(const SizedBox(width: 4.0)),
                                     ),
                                   ),
                                 ),
@@ -460,7 +458,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 12.0, 16.0, 12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -487,7 +485,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 2.0, 4.0, 2.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -505,11 +503,11 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                             ),
                                           ),
                                         ),
-                                      ].divide(SizedBox(width: 4.0)),
+                                      ].divide(const SizedBox(width: 4.0)),
                                     ),
                                   ),
                                 ),
-                              ].divide(SizedBox(height: 8.0)),
+                              ].divide(const SizedBox(height: 8.0)),
                             ),
                           ),
                         ),
@@ -524,7 +522,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: Container(
                                     width:
@@ -557,7 +555,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Color(0x00000000),
                                             width: 1.0,
                                           ),
@@ -565,7 +563,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                               BorderRadius.circular(8.0),
                                         ),
                                         focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Color(0x00000000),
                                             width: 1.0,
                                           ),
@@ -615,7 +613,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 8.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -719,11 +717,11 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                         ),
                                         wrapped: true,
                                       ),
-                                    ].divide(SizedBox(width: 8.0)),
+                                    ].divide(const SizedBox(width: 8.0)),
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 8.0),
                                   child: StreamBuilder<List<CategoryRecord>>(
                                     stream: queryCategoryRecord(
@@ -739,7 +737,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                         return Container(
                                           width: 0.0,
                                           height: 0.0,
-                                          child: BlankLoadingWidget(),
+                                          child: const BlankLoadingWidget(),
                                         );
                                       }
                                       List<CategoryRecord>
@@ -831,7 +829,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                     BorderRadius.circular(8.0),
                                               ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Column(
                                                   mainAxisSize:
@@ -865,13 +863,13 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                                 ? FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary
-                                                                : Color(
+                                                                : const Color(
                                                                     0x0A000000),
                                                           ),
                                                         ),
                                                         child: Stack(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 1.0),
                                                           children: [
                                                             ClipRRect(
@@ -887,7 +885,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                                 fit: BoxFit
                                                                     .contain,
                                                                 alignment:
-                                                                    Alignment(
+                                                                    const Alignment(
                                                                         0.0,
                                                                         1.0),
                                                               ),
@@ -898,13 +896,9 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                                       .circular(
                                                                           8.0),
                                                               child:
-                                                                  Image.network(
-                                                                () {
+                                                                  CachedNetworkImage(
+                                                                imageUrl: () {
                                                                   if (filtersStyleGridCategoryRecord
-                                                                              .categoryInfo
-                                                                              .featureImage !=
-                                                                          null &&
-                                                                      filtersStyleGridCategoryRecord
                                                                               .categoryInfo
                                                                               .featureImage !=
                                                                           '') {
@@ -912,10 +906,6 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                                         .categoryInfo
                                                                         .featureImage;
                                                                   } else if (filtersStyleGridCategoryRecord
-                                                                              .categoryInfo
-                                                                              .iconImage !=
-                                                                          null &&
-                                                                      filtersStyleGridCategoryRecord
                                                                               .categoryInfo
                                                                               .iconImage !=
                                                                           '') {
@@ -930,7 +920,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                                 fit: BoxFit
                                                                     .cover,
                                                                 alignment:
-                                                                    Alignment(
+                                                                    const Alignment(
                                                                         0.0,
                                                                         -1.0),
                                                               ),
@@ -941,7 +931,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   4.0,
                                                                   0.0,
@@ -1016,7 +1006,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(height: 4.0)),
+                                                      const SizedBox(height: 4.0)),
                                                 ),
                                               ),
                                             ),
@@ -1048,7 +1038,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                         return Container(
                                           width: 0.0,
                                           height: 0.0,
-                                          child: BlankLoadingWidget(),
+                                          child: const BlankLoadingWidget(),
                                         );
                                       }
                                       List<AttributesRecord>
@@ -1079,7 +1069,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 8.0),
                                             child: Wrap(
                                               spacing: 8.0,
@@ -1098,7 +1088,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                     final brandList =
                                                         filtersColorListAttributesRecord
                                                                 ?.attributeBrandId
-                                                                ?.toList() ??
+                                                                .toList() ??
                                                             [];
 
                                                     return Row(
@@ -1233,7 +1223,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                                           .circle_rounded,
                                                                       color: columnBrandsRecord
                                                                           ?.brandInfo
-                                                                          ?.color,
+                                                                          .color,
                                                                       size:
                                                                           30.0,
                                                                     ),
@@ -1260,11 +1250,11 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                           },
                                                         );
                                                       })
-                                                          .divide(SizedBox(
+                                                          .divide(const SizedBox(
                                                               width: 14.0))
-                                                          .addToStart(SizedBox(
+                                                          .addToStart(const SizedBox(
                                                               width: 4.0))
-                                                          .addToEnd(SizedBox(
+                                                          .addToEnd(const SizedBox(
                                                               width: 4.0)),
                                                     );
                                                   },
@@ -1300,7 +1290,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                               MediaQuery.sizeOf(context).width *
                                                   1.0,
                                           height: 150.0,
-                                          child: LoadingAnimationWidget(),
+                                          child: const LoadingAnimationWidget(),
                                         );
                                       }
                                       List<AttributesRecord>
@@ -1331,7 +1321,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 8.0),
                                             child: Wrap(
                                               spacing: 8.0,
@@ -1350,7 +1340,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                     final brandList =
                                                         filtersSizeListAttributesRecord
                                                                 ?.attributeBrandId
-                                                                ?.toList() ??
+                                                                .toList() ??
                                                             [];
 
                                                     return Row(
@@ -1456,14 +1446,14 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                               options:
                                                                   FFButtonOptions(
                                                                 height: 30.0,
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
                                                                         16.0,
                                                                         0.0),
                                                                 iconPadding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1496,11 +1486,11 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                           },
                                                         );
                                                       })
-                                                          .divide(SizedBox(
+                                                          .divide(const SizedBox(
                                                               width: 14.0))
-                                                          .addToStart(SizedBox(
+                                                          .addToStart(const SizedBox(
                                                               width: 4.0))
-                                                          .addToEnd(SizedBox(
+                                                          .addToEnd(const SizedBox(
                                                               width: 4.0)),
                                                     );
                                                   },
@@ -1523,7 +1513,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                   clipBehavior: Clip.none,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: Container(
                                         decoration: BoxDecoration(
@@ -1534,7 +1524,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 10.0, 12.0, 10.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1576,13 +1566,13 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                         .primaryText,
                                                 size: 24.0,
                                               ),
-                                            ].divide(SizedBox(width: 8.0)),
+                                            ].divide(const SizedBox(width: 8.0)),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: Container(
                                         decoration: BoxDecoration(
@@ -1591,7 +1581,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 10.0, 12.0, 10.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1635,7 +1625,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                       .primaryText,
                                                   size: 24.0,
                                                 ),
-                                            ].divide(SizedBox(width: 8.0)),
+                                            ].divide(const SizedBox(width: 8.0)),
                                           ),
                                         ),
                                       ),
@@ -1653,7 +1643,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                   clipBehavior: Clip.none,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: Container(
                                         decoration: BoxDecoration(
@@ -1664,7 +1654,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 10.0, 12.0, 10.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1691,13 +1681,13 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                         .primaryText,
                                                 size: 24.0,
                                               ),
-                                            ].divide(SizedBox(width: 8.0)),
+                                            ].divide(const SizedBox(width: 8.0)),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: Container(
                                         decoration: BoxDecoration(
@@ -1706,7 +1696,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 10.0, 12.0, 10.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1733,7 +1723,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                         .primaryText,
                                                 size: 24.0,
                                               ),
-                                            ].divide(SizedBox(width: 8.0)),
+                                            ].divide(const SizedBox(width: 8.0)),
                                           ),
                                         ),
                                       ),
@@ -1755,7 +1745,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: Container(
                                             decoration: BoxDecoration(
@@ -1769,8 +1759,8 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           8.0),
-                                                  child: Image.network(
-                                                    'https://picsum.photos/seed/144/600',
+                                                  child: CachedNetworkImage(
+                                                    imageUrl: 'https://picsum.photos/seed/144/600',
                                                     width: 36.0,
                                                     height: 36.0,
                                                     fit: BoxFit.cover,
@@ -1798,7 +1788,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                       .primaryText,
                                                   size: 24.0,
                                                 ),
-                                              ].divide(SizedBox(width: 8.0)),
+                                              ].divide(const SizedBox(width: 8.0)),
                                             ),
                                           ),
                                         ),
@@ -1810,14 +1800,14 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                           color: FlutterFlowTheme.of(context)
                                               .border,
                                         ),
-                                      ].divide(SizedBox(height: 8.0)),
+                                      ].divide(const SizedBox(height: 8.0)),
                                     ),
                                     Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: Container(
                                             decoration: BoxDecoration(
@@ -1831,8 +1821,8 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           8.0),
-                                                  child: Image.network(
-                                                    'https://picsum.photos/seed/144/600',
+                                                  child: CachedNetworkImage(
+                                                    imageUrl: 'https://picsum.photos/seed/144/600',
                                                     width: 36.0,
                                                     height: 36.0,
                                                     fit: BoxFit.cover,
@@ -1860,7 +1850,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                                       .primaryText,
                                                   size: 24.0,
                                                 ),
-                                              ].divide(SizedBox(width: 8.0)),
+                                              ].divide(const SizedBox(width: 8.0)),
                                             ),
                                           ),
                                         ),
@@ -1872,14 +1862,14 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                           color: FlutterFlowTheme.of(context)
                                               .border,
                                         ),
-                                      ].divide(SizedBox(height: 8.0)),
+                                      ].divide(const SizedBox(height: 8.0)),
                                     ),
                                   ],
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  alignment: const AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Wrap(
                                       spacing: 8.0,
@@ -1894,7 +1884,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 8.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -1911,7 +1901,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 8.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -1928,7 +1918,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 8.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -1945,7 +1935,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 8.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -1965,7 +1955,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 8.0, 16.0, 8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -2012,9 +2002,9 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                   },
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  alignment: const AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Wrap(
                                       spacing: 8.0,
@@ -2039,7 +2029,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 16.0, 24.0, 16.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -2071,7 +2061,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 16.0, 24.0, 16.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -2095,9 +2085,9 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                                   ),
                                 ),
                               ]
-                                  .divide(SizedBox(height: 8.0))
-                                  .addToStart(SizedBox(height: 8.0))
-                                  .addToEnd(SizedBox(height: 64.0)),
+                                  .divide(const SizedBox(height: 8.0))
+                                  .addToStart(const SizedBox(height: 8.0))
+                                  .addToEnd(const SizedBox(height: 64.0)),
                             ),
                           ),
                         ),
@@ -2105,13 +2095,13 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                     ),
                   ),
                 ]
-                    .addToStart(SizedBox(height: 24.0))
-                    .addToEnd(SizedBox(height: 24.0)),
+                    .addToStart(const SizedBox(height: 24.0))
+                    .addToEnd(const SizedBox(height: 24.0)),
               ),
             ),
           ),
           Align(
-            alignment: AlignmentDirectional(0.0, 1.0),
+            alignment: const AlignmentDirectional(0.0, 1.0),
             child: Container(
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).primaryBackground,
@@ -2126,7 +2116,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 16.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -2143,9 +2133,9 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
@@ -2179,9 +2169,9 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -2197,7 +2187,7 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                             ),
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                   ),
                 ],

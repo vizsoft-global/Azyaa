@@ -1,11 +1,8 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'designer_grid_model.dart';
 export 'designer_grid_model.dart';
 
@@ -67,27 +64,27 @@ class _DesignerGridWidgetState extends State<DesignerGridWidget> {
                   ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
-                    child: Image.network(
-                      () {
-                        if (widget!.product?.productInfo?.featureImage !=
+                    child: CachedNetworkImage(
+                      imageUrl: () {
+                        if (widget.product?.productInfo.featureImage !=
                                 null &&
-                            widget!.product?.productInfo?.featureImage != '') {
-                          return widget!.product!.productInfo.featureImage;
-                        } else if (widget!.product?.productInfo?.iconImage !=
+                            widget.product?.productInfo.featureImage != '') {
+                          return widget.product!.productInfo.featureImage;
+                        } else if (widget.product?.productInfo.iconImage !=
                                 null &&
-                            widget!.product?.productInfo?.iconImage != '') {
-                          return widget!.product!.productInfo.iconImage;
-                        } else if (widget!
+                            widget.product?.productInfo.iconImage != '') {
+                          return widget.product!.productInfo.iconImage;
+                        } else if (widget
                                 .product!.productInfo.galleryImage.length >
                             0) {
-                          return widget!
+                          return widget
                               .product!.productInfo.galleryImage.firstOrNull!;
                         } else {
                           return 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/i9u1ra67p2p4/Azyaa-logo_(2).jpg';
                         }
                       }(),
                       fit: BoxFit.cover,
-                      alignment: Alignment(0.0, 0.0),
+                      alignment: const Alignment(0.0, 0.0),
                     ),
                   ),
                 ),
@@ -96,7 +93,7 @@ class _DesignerGridWidgetState extends State<DesignerGridWidget> {
           ),
         ),
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
           child: Text(
             FFLocalizations.of(context).getText(
               '2rtkyofo' /* Designer Name */,
@@ -110,7 +107,7 @@ class _DesignerGridWidgetState extends State<DesignerGridWidget> {
           ),
         ),
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 8.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 8.0),
           child: Text(
             FFLocalizations.of(context).getText(
               '0i7jo3pi' /* Brand name */,
@@ -123,7 +120,7 @@ class _DesignerGridWidgetState extends State<DesignerGridWidget> {
                 ),
           ),
         ),
-      ].divide(SizedBox(height: 4.0)),
+      ].divide(const SizedBox(height: 4.0)),
     );
   }
 }

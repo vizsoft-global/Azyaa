@@ -2,12 +2,9 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'designer_consult_model.dart';
 export 'designer_consult_model.dart';
 
@@ -65,7 +62,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -95,7 +92,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                         ),
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -127,11 +124,11 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                             print('IconButton pressed ...');
                           },
                         ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -145,7 +142,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: Container(
                       height: 52.0,
                       decoration: BoxDecoration(
@@ -184,14 +181,14 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                   letterSpacing: 0.0,
                                 ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0x00000000),
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0x00000000),
                                 width: 1.0,
                               ),
@@ -235,17 +232,17 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                   Expanded(
                     child: Container(
                       height: 200.0,
-                      decoration: BoxDecoration(),
+                      decoration: const BoxDecoration(),
                       child: Column(
                         children: [
                           Align(
-                            alignment: Alignment(0.0, 0),
+                            alignment: const Alignment(0.0, 0),
                             child: TabBar(
                               labelColor:
                                   FlutterFlowTheme.of(context).primaryText,
                               unselectedLabelColor:
                                   FlutterFlowTheme.of(context).primaryText,
-                              labelPadding: EdgeInsetsDirectional.fromSTEB(
+                              labelPadding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .titleMedium
@@ -328,7 +325,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                   columnIndex];
                                           return Expanded(
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
                                               child: InkWell(
@@ -375,7 +372,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(8.0),
+                                                        const EdgeInsets.all(8.0),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -411,7 +408,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                   fit: BoxFit
                                                                       .cover,
                                                                   alignment:
-                                                                      Alignment(
+                                                                      const Alignment(
                                                                           0.0,
                                                                           0.0),
                                                                 ),
@@ -431,7 +428,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -456,7 +453,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -482,7 +479,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                   ],
                                                                 ),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 width: 12.0)),
                                                           ),
                                                         ),
@@ -505,7 +502,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                           },
                                                         ),
                                                       ].divide(
-                                                          SizedBox(width: 8.0)),
+                                                          const SizedBox(width: 8.0)),
                                                     ),
                                                   ),
                                                 ),
@@ -513,9 +510,9 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                             ),
                                           );
                                         })
-                                            .divide(SizedBox(height: 12.0))
-                                            .addToStart(SizedBox(height: 12.0))
-                                            .addToEnd(SizedBox(height: 12.0)),
+                                            .divide(const SizedBox(height: 12.0))
+                                            .addToStart(const SizedBox(height: 12.0))
+                                            .addToEnd(const SizedBox(height: 12.0)),
                                       ),
                                     );
                                   },
@@ -529,7 +526,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -548,7 +545,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(8.0),
+                                              padding: const EdgeInsets.all(8.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -576,7 +573,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                             height: 100.0,
                                                             fit: BoxFit.cover,
                                                             alignment:
-                                                                Alignment(
+                                                                const Alignment(
                                                                     0.0, 0.0),
                                                           ),
                                                         ),
@@ -594,7 +591,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                             children: [
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -624,7 +621,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                               ),
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -659,7 +656,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                                   fontWeight: FontWeight.normal,
                                                                                 ),
                                                                           ),
-                                                                        ].divide(SizedBox(width: 4.0)),
+                                                                        ].divide(const SizedBox(width: 4.0)),
                                                                       ),
                                                                       Row(
                                                                         mainAxisSize:
@@ -685,9 +682,9 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                                   fontWeight: FontWeight.normal,
                                                                                 ),
                                                                           ),
-                                                                        ].divide(SizedBox(width: 4.0)),
+                                                                        ].divide(const SizedBox(width: 4.0)),
                                                                       ),
-                                                                    ].divide(SizedBox(
+                                                                    ].divide(const SizedBox(
                                                                         width:
                                                                             8.0)),
                                                                   ),
@@ -706,13 +703,13 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                 options:
                                                                     FFButtonOptions(
                                                                   height: 35.0,
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                  iconPadding: EdgeInsetsDirectional
+                                                                  iconPadding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -745,7 +742,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                             ],
                                                           ),
                                                         ),
-                                                      ].divide(SizedBox(
+                                                      ].divide(const SizedBox(
                                                           width: 12.0)),
                                                     ),
                                                   ),
@@ -768,7 +765,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                           'IconButton pressed ...');
                                                     },
                                                   ),
-                                                ].divide(SizedBox(width: 8.0)),
+                                                ].divide(const SizedBox(width: 8.0)),
                                               ),
                                             ),
                                           ),
@@ -777,7 +774,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -796,7 +793,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(8.0),
+                                              padding: const EdgeInsets.all(8.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -824,7 +821,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                             height: 100.0,
                                                             fit: BoxFit.cover,
                                                             alignment:
-                                                                Alignment(
+                                                                const Alignment(
                                                                     0.0, 0.0),
                                                           ),
                                                         ),
@@ -842,7 +839,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                             children: [
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -872,7 +869,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                               ),
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -907,7 +904,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                                   fontWeight: FontWeight.normal,
                                                                                 ),
                                                                           ),
-                                                                        ].divide(SizedBox(width: 4.0)),
+                                                                        ].divide(const SizedBox(width: 4.0)),
                                                                       ),
                                                                       Row(
                                                                         mainAxisSize:
@@ -933,9 +930,9 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                                   fontWeight: FontWeight.normal,
                                                                                 ),
                                                                           ),
-                                                                        ].divide(SizedBox(width: 4.0)),
+                                                                        ].divide(const SizedBox(width: 4.0)),
                                                                       ),
-                                                                    ].divide(SizedBox(
+                                                                    ].divide(const SizedBox(
                                                                         width:
                                                                             8.0)),
                                                                   ),
@@ -954,13 +951,13 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                 options:
                                                                     FFButtonOptions(
                                                                   height: 35.0,
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                  iconPadding: EdgeInsetsDirectional
+                                                                  iconPadding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -993,7 +990,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                             ],
                                                           ),
                                                         ),
-                                                      ].divide(SizedBox(
+                                                      ].divide(const SizedBox(
                                                           width: 12.0)),
                                                     ),
                                                   ),
@@ -1016,7 +1013,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                           'IconButton pressed ...');
                                                     },
                                                   ),
-                                                ].divide(SizedBox(width: 8.0)),
+                                                ].divide(const SizedBox(width: 8.0)),
                                               ),
                                             ),
                                           ),
@@ -1025,7 +1022,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -1044,7 +1041,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(8.0),
+                                              padding: const EdgeInsets.all(8.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -1072,7 +1069,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                             height: 100.0,
                                                             fit: BoxFit.cover,
                                                             alignment:
-                                                                Alignment(
+                                                                const Alignment(
                                                                     0.0, 0.0),
                                                           ),
                                                         ),
@@ -1090,7 +1087,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                             children: [
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1120,7 +1117,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                               ),
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1155,7 +1152,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                                   fontWeight: FontWeight.normal,
                                                                                 ),
                                                                           ),
-                                                                        ].divide(SizedBox(width: 4.0)),
+                                                                        ].divide(const SizedBox(width: 4.0)),
                                                                       ),
                                                                       Row(
                                                                         mainAxisSize:
@@ -1181,9 +1178,9 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                                   fontWeight: FontWeight.normal,
                                                                                 ),
                                                                           ),
-                                                                        ].divide(SizedBox(width: 4.0)),
+                                                                        ].divide(const SizedBox(width: 4.0)),
                                                                       ),
-                                                                    ].divide(SizedBox(
+                                                                    ].divide(const SizedBox(
                                                                         width:
                                                                             8.0)),
                                                                   ),
@@ -1202,13 +1199,13 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                 options:
                                                                     FFButtonOptions(
                                                                   height: 35.0,
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                  iconPadding: EdgeInsetsDirectional
+                                                                  iconPadding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1241,7 +1238,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                             ],
                                                           ),
                                                         ),
-                                                      ].divide(SizedBox(
+                                                      ].divide(const SizedBox(
                                                           width: 12.0)),
                                                     ),
                                                   ),
@@ -1264,7 +1261,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                           'IconButton pressed ...');
                                                     },
                                                   ),
-                                                ].divide(SizedBox(width: 8.0)),
+                                                ].divide(const SizedBox(width: 8.0)),
                                               ),
                                             ),
                                           ),
@@ -1273,7 +1270,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -1292,7 +1289,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(8.0),
+                                              padding: const EdgeInsets.all(8.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -1320,7 +1317,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                             height: 100.0,
                                                             fit: BoxFit.cover,
                                                             alignment:
-                                                                Alignment(
+                                                                const Alignment(
                                                                     0.0, 0.0),
                                                           ),
                                                         ),
@@ -1338,7 +1335,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                             children: [
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1368,7 +1365,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                               ),
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1403,7 +1400,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                                   fontWeight: FontWeight.normal,
                                                                                 ),
                                                                           ),
-                                                                        ].divide(SizedBox(width: 4.0)),
+                                                                        ].divide(const SizedBox(width: 4.0)),
                                                                       ),
                                                                       Row(
                                                                         mainAxisSize:
@@ -1429,9 +1426,9 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                                   fontWeight: FontWeight.normal,
                                                                                 ),
                                                                           ),
-                                                                        ].divide(SizedBox(width: 4.0)),
+                                                                        ].divide(const SizedBox(width: 4.0)),
                                                                       ),
-                                                                    ].divide(SizedBox(
+                                                                    ].divide(const SizedBox(
                                                                         width:
                                                                             8.0)),
                                                                   ),
@@ -1450,13 +1447,13 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                                 options:
                                                                     FFButtonOptions(
                                                                   height: 35.0,
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                  iconPadding: EdgeInsetsDirectional
+                                                                  iconPadding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1489,7 +1486,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                             ],
                                                           ),
                                                         ),
-                                                      ].divide(SizedBox(
+                                                      ].divide(const SizedBox(
                                                           width: 12.0)),
                                                     ),
                                                   ),
@@ -1512,16 +1509,16 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                           'IconButton pressed ...');
                                                     },
                                                   ),
-                                                ].divide(SizedBox(width: 8.0)),
+                                                ].divide(const SizedBox(width: 8.0)),
                                               ),
                                             ),
                                           ),
                                         ),
                                       ),
                                     ]
-                                        .divide(SizedBox(height: 12.0))
-                                        .addToStart(SizedBox(height: 12.0))
-                                        .addToEnd(SizedBox(height: 12.0)),
+                                        .divide(const SizedBox(height: 12.0))
+                                        .addToStart(const SizedBox(height: 12.0))
+                                        .addToEnd(const SizedBox(height: 12.0)),
                                   ),
                                 ),
                               ],
@@ -1531,7 +1528,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                       ),
                     ),
                   ),
-                ].addToEnd(SizedBox(height: 16.0)),
+                ].addToEnd(const SizedBox(height: 16.0)),
               ),
             ),
           ),

@@ -1,4 +1,3 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/profile_address_add/profile_address_add_widget.dart';
 import '/azyaa_group_a/customer/zone/profile_address_edit/profile_address_edit_widget.dart';
@@ -9,25 +8,18 @@ import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_w
 import '/azyaa_group_a/home/components/category_small_grid/category_small_grid_widget.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'profile_edit_t_e_m_p_model.dart';
 export 'profile_edit_t_e_m_p_model.dart';
@@ -60,23 +52,23 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
     )..addListener(() => safeSetState(() {}));
 
     _model.firstTextController ??=
-        TextEditingController(text: currentUserDocument?.userInfo?.firstName);
+        TextEditingController(text: currentUserDocument?.userInfo.firstName);
     _model.firstFocusNode ??= FocusNode();
 
     _model.lastTextController ??=
-        TextEditingController(text: currentUserDocument?.userInfo?.lastName);
+        TextEditingController(text: currentUserDocument?.userInfo.lastName);
     _model.lastFocusNode ??= FocusNode();
 
     _model.emailTextController ??=
-        TextEditingController(text: currentUserDocument?.userInfo?.email);
+        TextEditingController(text: currentUserDocument?.userInfo.email);
     _model.emailFocusNode ??= FocusNode();
 
     _model.phone1TextController ??=
-        TextEditingController(text: currentUserDocument?.userInfo?.phoneNumber);
+        TextEditingController(text: currentUserDocument?.userInfo.phoneNumber);
     _model.phone1FocusNode ??= FocusNode();
 
     _model.alternativephoneTextController ??= TextEditingController(
-        text: currentUserDocument?.userInfo?.alternatePhoneNumber);
+        text: currentUserDocument?.userInfo.alternatePhoneNumber);
     _model.alternativephoneFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -103,7 +95,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -129,7 +121,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -142,7 +134,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
@@ -151,14 +143,14 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                         child: Column(
                           children: [
                             Align(
-                              alignment: Alignment(0.0, 0),
+                              alignment: const Alignment(0.0, 0),
                               child: TabBar(
                                 isScrollable: true,
                                 labelColor:
                                     FlutterFlowTheme.of(context).primaryText,
                                 unselectedLabelColor:
                                     FlutterFlowTheme.of(context).primaryText,
-                                labelPadding: EdgeInsetsDirectional.fromSTEB(
+                                labelPadding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .titleMedium
@@ -241,11 +233,11 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, -1.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 8.0),
                                                     child: Container(
@@ -258,7 +250,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                               false)
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0,
                                                                       -1.0),
                                                               child:
@@ -274,21 +266,17 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                       .network(
                                                                     () {
                                                                       if (_model.uploadedFileUrl_userPhotoUpload21 !=
-                                                                              null &&
-                                                                          _model.uploadedFileUrl_userPhotoUpload21 !=
                                                                               '') {
                                                                         return _model
                                                                             .uploadedFileUrl_userPhotoUpload21;
                                                                       } else if ((loggedIn ==
                                                                               true) &&
-                                                                          (currentUserPhoto != null &&
-                                                                              currentUserPhoto !=
+                                                                          (currentUserPhoto !=
                                                                                   '')) {
                                                                         return currentUserPhoto;
                                                                       } else if ((loggedIn ==
                                                                               true) &&
-                                                                          (currentUserPhoto == null ||
-                                                                              currentUserPhoto == '')) {
+                                                                          (currentUserPhoto == '')) {
                                                                         return 'https://ui-avatars.com/api/?name=${currentUserDisplayName}&background=random&bold=true';
                                                                       } else {
                                                                         return 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/kwcb1kmteqoh/Frame_2087324774.png';
@@ -300,7 +288,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                     fit: BoxFit
                                                                         .cover,
                                                                     alignment:
-                                                                        Alignment(
+                                                                        const Alignment(
                                                                             0.0,
                                                                             0.0),
                                                                   ),
@@ -311,7 +299,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                               .isDataUploading_userPhotoUpload21)
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child:
                                                                   Lottie.asset(
@@ -330,11 +318,11 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, -1.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 24.0),
                                                     child: InkWell(
@@ -470,7 +458,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                       .primaryText,
                                                                 ),
                                                               ),
-                                                              duration: Duration(
+                                                              duration: const Duration(
                                                                   milliseconds:
                                                                       3000),
                                                               backgroundColor:
@@ -514,7 +502,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 0.0, 16.0,
                                                           24.0),
                                                   child: Row(
@@ -534,7 +522,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -764,7 +752,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -985,7 +973,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 12.0)),
+                                                        const SizedBox(width: 12.0)),
                                                   ),
                                                 ),
                                                 if (responsiveVisibility(
@@ -997,7 +985,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                 ))
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 8.0),
                                                     child: RichText(
@@ -1063,7 +1051,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                 ))
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 24.0),
                                                     child: Container(
@@ -1083,7 +1071,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                         ),
                                                       ),
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child:
                                                           AuthUserStreamWidget(
@@ -1107,7 +1095,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                       String>(
                                                             currentUserDocument
                                                                 ?.userInfo
-                                                                ?.gender,
+                                                                .gender,
                                                             'Female',
                                                           )),
                                                           optionHeight: 32.0,
@@ -1156,7 +1144,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                     ),
                                                   ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 8.0),
                                                   child: RichText(
@@ -1211,7 +1199,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 0.0, 16.0,
                                                           24.0),
                                                   child: InkWell(
@@ -1229,22 +1217,22 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                         context: context,
                                                         initialDate: ((currentUserDocument
                                                                         ?.userInfo
-                                                                        ?.dateOfBirth !=
+                                                                        .dateOfBirth !=
                                                                     null
                                                                 ? currentUserDocument
                                                                     ?.userInfo
-                                                                    ?.dateOfBirth
+                                                                    .dateOfBirth
                                                                 : getCurrentTimestamp) ??
                                                             DateTime.now()),
                                                         firstDate:
                                                             DateTime(1900),
                                                         lastDate: ((currentUserDocument
                                                                         ?.userInfo
-                                                                        ?.dateOfBirth !=
+                                                                        .dateOfBirth !=
                                                                     null
                                                                 ? currentUserDocument
                                                                     ?.userInfo
-                                                                    ?.dateOfBirth
+                                                                    .dateOfBirth
                                                                 : getCurrentTimestamp) ??
                                                             DateTime.now()),
                                                         builder:
@@ -1319,11 +1307,11 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                           _model
                                                               .datePicked = (currentUserDocument
                                                                       ?.userInfo
-                                                                      ?.dateOfBirth !=
+                                                                      .dateOfBirth !=
                                                                   null
                                                               ? currentUserDocument
                                                                   ?.userInfo
-                                                                  ?.dateOfBirth
+                                                                  .dateOfBirth
                                                               : getCurrentTimestamp);
                                                         });
                                                       }
@@ -1349,11 +1337,11 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                         ),
                                                       ),
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     0.0,
@@ -1389,7 +1377,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                     )}';
                                                                   } else if (currentUserDocument
                                                                           ?.userInfo
-                                                                          ?.dateOfBirth !=
+                                                                          .dateOfBirth !=
                                                                       null) {
                                                                     return dateTimeFormat(
                                                                       "yMMMd",
@@ -1440,7 +1428,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 8.0),
                                                   child: RichText(
@@ -1495,7 +1483,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 0.0, 16.0,
                                                           24.0),
                                                   child: AuthUserStreamWidget(
@@ -1634,7 +1622,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 8.0),
                                                   child: RichText(
@@ -1689,7 +1677,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 0.0, 16.0,
                                                           24.0),
                                                   child: AuthUserStreamWidget(
@@ -1827,7 +1815,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 8.0),
                                                   child: RichText(
@@ -1870,7 +1858,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 0.0, 16.0,
                                                           24.0),
                                                   child: AuthUserStreamWidget(
@@ -2008,15 +1996,15 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                 ),
                                               ]
                                                   .addToStart(
-                                                      SizedBox(height: 12.0))
+                                                      const SizedBox(height: 12.0))
                                                   .addToEnd(
-                                                      SizedBox(height: 12.0)),
+                                                      const SizedBox(height: 12.0)),
                                             ),
                                           ),
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -2032,14 +2020,14 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                 builder: (alertDialogContext) {
                                                   return WebViewAware(
                                                     child: AlertDialog(
-                                                      content: Text(
+                                                      content: const Text(
                                                           'please select gender'),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>
                                                               Navigator.pop(
                                                                   alertDialogContext),
-                                                          child: Text('Ok'),
+                                                          child: const Text('Ok'),
                                                         ),
                                                       ],
                                                     ),
@@ -2061,7 +2049,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                           ? _model.datePicked
                                                           : currentUserDocument
                                                               ?.userInfo
-                                                              ?.dateOfBirth,
+                                                              .dateOfBirth,
                                                   alternatePhoneNumber: _model
                                                       .alternativephoneTextController
                                                       .text,
@@ -2096,7 +2084,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                         .primaryText,
                                                   ),
                                                 ),
-                                                duration: Duration(
+                                                duration: const Duration(
                                                     milliseconds: 1000),
                                                 backgroundColor:
                                                     FlutterFlowTheme.of(context)
@@ -2114,10 +2102,10 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                 1.0,
                                             height: 48.0,
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
@@ -2148,10 +2136,10 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   -1.0, -1.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 8.0),
                                                 child: Text(
@@ -2173,10 +2161,10 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                               ),
                                             ),
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   -1.0, -1.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 24.0),
                                                 child: Text(
@@ -2203,7 +2191,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 12.0),
                                               child: FutureBuilder<
@@ -2251,7 +2239,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                       snapshot.data!;
 
                                                   return Container(
-                                                    decoration: BoxDecoration(),
+                                                    decoration: const BoxDecoration(),
                                                     child: Visibility(
                                                       visible:
                                                           categoryCategoryRecordList
@@ -2259,7 +2247,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                               0,
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -2322,7 +2310,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                 );
                                                               },
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               height: 12.0)),
                                                         ),
                                                       ),
@@ -2333,12 +2321,12 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                             ),
                                           ]
                                               .addToStart(
-                                                  SizedBox(height: 12.0))
-                                              .addToEnd(SizedBox(height: 12.0)),
+                                                  const SizedBox(height: 12.0))
+                                              .addToEnd(const SizedBox(height: 12.0)),
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -2358,7 +2346,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                         .primaryText,
                                                   ),
                                                 ),
-                                                duration: Duration(
+                                                duration: const Duration(
                                                     milliseconds: 1000),
                                                 backgroundColor:
                                                     FlutterFlowTheme.of(context)
@@ -2376,10 +2364,10 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                 1.0,
                                             height: 48.0,
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
@@ -2412,7 +2400,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                             children: [
                                               Builder(
                                                 builder: (context) => Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   child: InkWell(
@@ -2436,7 +2424,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                             backgroundColor:
                                                                 Colors
                                                                     .transparent,
-                                                            alignment: AlignmentDirectional(
+                                                            alignment: const AlignmentDirectional(
                                                                     0.0, 1.0)
                                                                 .resolve(
                                                                     Directionality.of(
@@ -2460,7 +2448,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                           .height *
                                                                       0.8,
                                                                   child:
-                                                                      ProfileBodyAddWidget(),
+                                                                      const ProfileBodyAddWidget(),
                                                                 ),
                                                               ),
                                                             ),
@@ -2485,7 +2473,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     8.0,
@@ -2508,7 +2496,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                             Expanded(
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Text(
@@ -2531,7 +2519,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                             ),
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       1.0, 0.0),
                                                               child: Icon(
                                                                 Icons
@@ -2542,7 +2530,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                 size: 24.0,
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               width: 8.0)),
                                                         ),
                                                       ),
@@ -2551,7 +2539,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: AuthUserStreamWidget(
@@ -2560,7 +2548,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                       final measurementList =
                                                           (currentUserDocument
                                                                       ?.userBody
-                                                                      ?.toList() ??
+                                                                      .toList() ??
                                                                   [])
                                                               .toList();
 
@@ -2611,11 +2599,11 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                               ),
                                                             ),
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(4.0),
                                                               child: Row(
                                                                 mainAxisSize:
@@ -2627,7 +2615,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                 children: [
                                                                   Align(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child:
@@ -2664,7 +2652,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                 null)
                                                                             ? BorderSide(
                                                                                 width: 2,
-                                                                                color: FlutterFlowTheme.of(context).alternate!,
+                                                                                color: FlutterFlowTheme.of(context).alternate,
                                                                               )
                                                                             : null,
                                                                         activeColor:
@@ -2717,7 +2705,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                     fontWeight: FontWeight.w600,
                                                                                   ),
                                                                             ),
-                                                                          ].divide(SizedBox(width: 6.0)),
+                                                                          ].divide(const SizedBox(width: 6.0)),
                                                                         ),
                                                                         Flexible(
                                                                           child:
@@ -2791,7 +2779,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                             ),
                                                                           ),
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               height: 2.0)),
                                                                     ),
                                                                   ),
@@ -2800,7 +2788,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                       true)
                                                                     Align(
                                                                       alignment:
-                                                                          AlignmentDirectional(
+                                                                          const AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                       child:
@@ -2816,12 +2804,12 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                         ),
                                                                         child:
                                                                             Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 6.0,
                                                                                 2.0,
                                                                                 6.0,
@@ -2870,7 +2858,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                               elevation: 0,
                                                                               insetPadding: EdgeInsets.zero,
                                                                               backgroundColor: Colors.transparent,
-                                                                              alignment: AlignmentDirectional(0.0, 1.0).resolve(Directionality.of(context)),
+                                                                              alignment: const AlignmentDirectional(0.0, 1.0).resolve(Directionality.of(context)),
                                                                               child: WebViewAware(
                                                                                 child: GestureDetector(
                                                                                   onTap: () {
@@ -2891,7 +2879,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                       },
                                                                     ),
                                                                   ),
-                                                                ].divide(SizedBox(
+                                                                ].divide(const SizedBox(
                                                                     width:
                                                                         4.0)),
                                                               ),
@@ -2904,11 +2892,11 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                 ),
                                               ),
                                             ]
-                                                .divide(SizedBox(height: 12.0))
+                                                .divide(const SizedBox(height: 12.0))
                                                 .addToStart(
-                                                    SizedBox(height: 12.0))
+                                                    const SizedBox(height: 12.0))
                                                 .addToEnd(
-                                                    SizedBox(height: 12.0)),
+                                                    const SizedBox(height: 12.0)),
                                           ),
                                         ),
                                       ),
@@ -2924,7 +2912,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                             children: [
                                               Builder(
                                                 builder: (context) => Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   child: InkWell(
@@ -2948,7 +2936,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                             backgroundColor:
                                                                 Colors
                                                                     .transparent,
-                                                            alignment: AlignmentDirectional(
+                                                            alignment: const AlignmentDirectional(
                                                                     0.0, 1.0)
                                                                 .resolve(
                                                                     Directionality.of(
@@ -2972,7 +2960,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                           .height *
                                                                       0.8,
                                                                   child:
-                                                                      ProfileAddressAddWidget(),
+                                                                      const ProfileAddressAddWidget(),
                                                                 ),
                                                               ),
                                                             ),
@@ -2997,7 +2985,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     8.0,
@@ -3020,7 +3008,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                             Expanded(
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Text(
@@ -3043,7 +3031,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                             ),
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       1.0, 0.0),
                                                               child: Icon(
                                                                 Icons
@@ -3054,7 +3042,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                 size: 24.0,
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               width: 8.0)),
                                                         ),
                                                       ),
@@ -3068,7 +3056,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                     final adressList =
                                                         (currentUserDocument
                                                                     ?.userShippingaddress
-                                                                    ?.toList() ??
+                                                                    .toList() ??
                                                                 [])
                                                             .toList();
 
@@ -3096,7 +3084,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                 adressListIndex];
                                                         return Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -3126,11 +3114,11 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                               ),
                                                             ),
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(4.0),
                                                               child: Row(
                                                                 mainAxisSize:
@@ -3142,7 +3130,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                 children: [
                                                                   Align(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child:
@@ -3179,7 +3167,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                 null)
                                                                             ? BorderSide(
                                                                                 width: 2,
-                                                                                color: FlutterFlowTheme.of(context).alternate!,
+                                                                                color: FlutterFlowTheme.of(context).alternate,
                                                                               )
                                                                             : null,
                                                                         activeColor:
@@ -3270,7 +3258,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                 ),
                                                                               ),
                                                                             ),
-                                                                          ].divide(SizedBox(width: 6.0)),
+                                                                          ].divide(const SizedBox(width: 6.0)),
                                                                         ),
                                                                         RichText(
                                                                           textScaler:
@@ -3339,7 +3327,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                 ),
                                                                           ),
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               height: 2.0)),
                                                                     ),
                                                                   ),
@@ -3348,7 +3336,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                       true)
                                                                     Align(
                                                                       alignment:
-                                                                          AlignmentDirectional(
+                                                                          const AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                       child:
@@ -3364,12 +3352,12 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                         ),
                                                                         child:
                                                                             Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 6.0,
                                                                                 2.0,
                                                                                 6.0,
@@ -3392,7 +3380,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                     ),
                                                                   Align(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child:
@@ -3424,7 +3412,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                                 elevation: 0,
                                                                                 insetPadding: EdgeInsets.zero,
                                                                                 backgroundColor: Colors.transparent,
-                                                                                alignment: AlignmentDirectional(0.0, 1.0).resolve(Directionality.of(context)),
+                                                                                alignment: const AlignmentDirectional(0.0, 1.0).resolve(Directionality.of(context)),
                                                                                 child: WebViewAware(
                                                                                   child: GestureDetector(
                                                                                     onTap: () {
@@ -3446,7 +3434,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                                       ),
                                                                     ),
                                                                   ),
-                                                                ].divide(SizedBox(
+                                                                ].divide(const SizedBox(
                                                                     width:
                                                                         4.0)),
                                                               ),
@@ -3459,11 +3447,11 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                 ),
                                               ),
                                             ]
-                                                .divide(SizedBox(height: 12.0))
+                                                .divide(const SizedBox(height: 12.0))
                                                 .addToStart(
-                                                    SizedBox(height: 12.0))
+                                                    const SizedBox(height: 12.0))
                                                 .addToEnd(
-                                                    SizedBox(height: 12.0)),
+                                                    const SizedBox(height: 12.0)),
                                           ),
                                         ),
                                       ),
@@ -3482,7 +3470,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 24.0, 16.0, 0.0),
                                                 child: InkWell(
@@ -3621,7 +3609,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                       if (isiOS)
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -3704,11 +3692,11 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 4.0),
                                                     child: Text(
@@ -3734,7 +3722,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 24.0),
                                                   child: Text(
@@ -3768,7 +3756,7 @@ class _ProfileEditTEMPWidgetState extends State<ProfileEditTEMPWidget>
                           ],
                         ),
                       ),
-                    ].addToEnd(SizedBox(height: 16.0)),
+                    ].addToEnd(const SizedBox(height: 16.0)),
                   ),
                 ],
               ),

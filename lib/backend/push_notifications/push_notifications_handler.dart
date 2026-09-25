@@ -1,17 +1,13 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'serialization_util.dart';
 
 import '/backend/backend.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import '../../flutter_flow/flutter_flow_util.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
-import '../../index.dart';
-import '../../main.dart';
 
 final _handledMessageIds = <String?>{};
 
@@ -115,7 +111,7 @@ class ParameterData {
       );
 
   static Future<ParameterData> Function(Map<String, dynamic>) none() =>
-      (data) async => ParameterData();
+      (data) async => const ParameterData();
 }
 
 final parametersBuilderMap =
@@ -206,12 +202,12 @@ final parametersBuilderMap =
   's4-ChooseRefundMethod': ParameterData.none(),
   'OrderReturnSubmit': ParameterData.none(),
   'CreatorSpace': ParameterData.none(),
-  's2-CreatorWallet': (data) async => ParameterData(
+  's2-CreatorWallet': (data) async => const ParameterData(
         allParams: <String, dynamic>{},
       ),
   's3-QuickStats': ParameterData.none(),
   'PromotedProductsListing': ParameterData.none(),
-  's5-Promotiondetails': (data) async => ParameterData(
+  's5-Promotiondetails': (data) async => const ParameterData(
         allParams: <String, dynamic>{},
       ),
   's6-Pre-ApprovedCreatePromotion': ParameterData.none(),

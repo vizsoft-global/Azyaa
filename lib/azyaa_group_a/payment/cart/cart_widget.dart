@@ -6,17 +6,12 @@ import '/azyaa_group_a/payment/cart_item_list/cart_item_list_widget.dart';
 import '/azyaa_group_a/payment/cart_status/cart_status_widget.dart';
 import '/azyaa_group_a/payment/non_returnable_item/non_returnable_item_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'cart_model.dart';
 export 'cart_model.dart';
@@ -70,7 +65,7 @@ class _CartWidgetState extends State<CartWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -94,12 +89,12 @@ class _CartWidgetState extends State<CartWidget> {
                         navigationFrom: 'default',
                         tryonStatus: false,
                         shareIconStatus: false,
-                        designerRef: widget!.designerRef,
+                        designerRef: widget.designerRef,
                       ),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -112,17 +107,17 @@ class _CartWidgetState extends State<CartWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   wrapWithModel(
                     model: _model.cartStatusModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: CartStatusWidget(),
+                    child: const CartStatusWidget(),
                   ),
                   wrapWithModel(
                     model: _model.appUpdateCheckerModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: AppUpdateCheckerWidget(),
+                    child: const AppUpdateCheckerWidget(),
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
@@ -133,8 +128,8 @@ class _CartWidgetState extends State<CartWidget> {
                           builder: (context) => Builder(
                             builder: (context) {
                               final cartItemList = currentUserDocument
-                                      ?.userCart?.cartItems
-                                      ?.toList() ??
+                                      ?.userCart.cartItems
+                                      .toList() ??
                                   [];
                               if (cartItemList.isEmpty) {
                                 return Center(
@@ -169,12 +164,12 @@ class _CartWidgetState extends State<CartWidget> {
                                 scrollDirection: Axis.vertical,
                                 itemCount: cartItemList.length,
                                 separatorBuilder: (_, __) =>
-                                    SizedBox(height: 16.0),
+                                    const SizedBox(height: 16.0),
                                 itemBuilder: (context, cartItemListIndex) {
                                   final cartItemListItem =
                                       cartItemList[cartItemListIndex];
                                   return Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: CartItemListWidget(
                                       key: Key(
@@ -211,7 +206,7 @@ class _CartWidgetState extends State<CartWidget> {
                             clipBehavior: Clip.none,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 24.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -240,11 +235,11 @@ class _CartWidgetState extends State<CartWidget> {
                                             fontWeight: FontWeight.bold,
                                           ),
                                     ),
-                                  ].divide(SizedBox(width: 8.0)),
+                                  ].divide(const SizedBox(width: 8.0)),
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -256,7 +251,7 @@ class _CartWidgetState extends State<CartWidget> {
                                             ShopWidget.routeName,
                                             extra: <String, dynamic>{
                                               '__transition_info__':
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -276,10 +271,10 @@ class _CartWidgetState extends State<CartWidget> {
                                                   1.0,
                                           height: 48.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
@@ -322,7 +317,7 @@ class _CartWidgetState extends State<CartWidget> {
                                                 isScrollControlled: true,
                                                 backgroundColor:
                                                     Colors.transparent,
-                                                barrierColor: Color(0x7B000000),
+                                                barrierColor: const Color(0x7B000000),
                                                 enableDrag: false,
                                                 context: context,
                                                 builder: (context) {
@@ -357,7 +352,7 @@ class _CartWidgetState extends State<CartWidget> {
                                                 CheckoutWidget.routeName,
                                                 extra: <String, dynamic>{
                                                   '__transition_info__':
-                                                      TransitionInfo(
+                                                      const TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType.fade,
@@ -378,10 +373,10 @@ class _CartWidgetState extends State<CartWidget> {
                                                 1.0,
                                             height: 48.0,
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
@@ -402,16 +397,16 @@ class _CartWidgetState extends State<CartWidget> {
                                           ),
                                         ),
                                       ),
-                                  ].divide(SizedBox(width: 16.0)),
+                                  ].divide(const SizedBox(width: 16.0)),
                                 ),
                               ),
                             ],
                           ),
                         ),
                     ]
-                        .divide(SizedBox(height: 12.0))
-                        .addToStart(SizedBox(height: 16.0))
-                        .addToEnd(SizedBox(height: 16.0)),
+                        .divide(const SizedBox(height: 12.0))
+                        .addToStart(const SizedBox(height: 16.0))
+                        .addToEnd(const SizedBox(height: 16.0)),
                   ),
                 ],
               ),

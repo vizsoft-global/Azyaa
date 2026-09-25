@@ -3,12 +3,9 @@ import '/azyaa_group_a/home/components/category_small_grid/category_small_grid_w
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'step3_preferred_style_model.dart';
 export 'step3_preferred_style_model.dart';
@@ -67,17 +64,17 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(0.0, -1.0),
+                      alignment: const AlignmentDirectional(0.0, -1.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -109,7 +106,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                                           FlutterFlowTheme.of(context).primary,
                                     ),
                                   ),
-                                ].divide(SizedBox(height: 24.0)),
+                                ].divide(const SizedBox(height: 24.0)),
                               ),
                             ),
                             Expanded(
@@ -141,7 +138,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                ].divide(SizedBox(height: 24.0)),
+                                ].divide(const SizedBox(height: 24.0)),
                               ),
                             ),
                             Expanded(
@@ -173,7 +170,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                                           .primaryBackground,
                                     ),
                                   ),
-                                ].divide(SizedBox(height: 24.0)),
+                                ].divide(const SizedBox(height: 24.0)),
                               ),
                             ),
                           ],
@@ -181,10 +178,10 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, -1.0),
+                      alignment: const AlignmentDirectional(-1.0, -1.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             '6zy1at7f' /* Choose your preferred style */,
@@ -200,10 +197,10 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, -1.0),
+                      alignment: const AlignmentDirectional(-1.0, -1.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'ysszwr0q' /* Select one or more styles you ... */,
@@ -224,7 +221,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                       child: FutureBuilder<List<CategoryRecord>>(
                         future: queryCategoryRecordOnce(
                           queryBuilder: (categoryRecord) => categoryRecord
@@ -257,11 +254,11 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                               snapshot.data!;
 
                           return Container(
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: Visibility(
                               visible: categoryCategoryRecordList.length > 0,
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 12.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -303,7 +300,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                                         );
                                       },
                                     ),
-                                  ].divide(SizedBox(height: 12.0)),
+                                  ].divide(const SizedBox(height: 12.0)),
                                 ),
                               ),
                             ),
@@ -313,7 +310,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           await currentUserReference!
@@ -327,7 +324,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                           context.goNamed(
                             Step4ReferralCodeWidget.routeName,
                             extra: <String, dynamic>{
-                              '__transition_info__': TransitionInfo(
+                              '__transition_info__': const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                                 duration: Duration(milliseconds: 0),
@@ -341,9 +338,9 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 48.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -374,7 +371,7 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                         context.goNamed(
                           Step4ReferralCodeWidget.routeName,
                           extra: <String, dynamic>{
-                            '__transition_info__': TransitionInfo(
+                            '__transition_info__': const TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                               duration: Duration(milliseconds: 0),
@@ -398,8 +395,8 @@ class _Step3PreferredStyleWidgetState extends State<Step3PreferredStyleWidget> {
                       ),
                     ),
                   ]
-                      .addToStart(SizedBox(height: 16.0))
-                      .addToEnd(SizedBox(height: 32.0)),
+                      .addToStart(const SizedBox(height: 16.0))
+                      .addToEnd(const SizedBox(height: 32.0)),
                 ),
               ),
             ),

@@ -7,19 +7,14 @@ import '/azyaa_group_a/home/components/loading_animation/loading_animation_widge
 import '/azyaa_group_a/home/components/product_grid/product_grid_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'shortlist_model.dart';
 export 'shortlist_model.dart';
 
@@ -77,7 +72,7 @@ class _ShortlistWidgetState extends State<ShortlistWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -104,7 +99,7 @@ class _ShortlistWidgetState extends State<ShortlistWidget> {
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -117,12 +112,12 @@ class _ShortlistWidgetState extends State<ShortlistWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   wrapWithModel(
                     model: _model.appUpdateCheckerModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: AppUpdateCheckerWidget(),
+                    child: const AppUpdateCheckerWidget(),
                   ),
                   SingleChildScrollView(
                     child: Column(
@@ -130,12 +125,12 @@ class _ShortlistWidgetState extends State<ShortlistWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 0.0, 12.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 30.0,
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: FlutterFlowChoiceChips(
                               options: [
                                 ChipData(FFLocalizations.of(context).getText(
@@ -210,18 +205,18 @@ class _ShortlistWidgetState extends State<ShortlistWidget> {
                         ),
                         Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                           child: Align(
-                            alignment: AlignmentDirectional(0.0, -1.0),
+                            alignment: const AlignmentDirectional(0.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => Builder(
                                   builder: (context) {
                                     final allWishlist1 = (currentUserDocument
                                                 ?.userWishlistItem
-                                                ?.toList() ??
+                                                .toList() ??
                                             [])
                                         .where((e) => valueOrDefault<bool>(
                                               () {
@@ -290,7 +285,7 @@ class _ShortlistWidgetState extends State<ShortlistWidget> {
                                             if (allWishlist1Item.entityType ==
                                                 'product')
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 8.0, 24.0),
                                                 child: Container(
@@ -302,7 +297,7 @@ class _ShortlistWidgetState extends State<ShortlistWidget> {
                                                           : 180)
                                                       .toDouble(),
                                                   height: 280.0,
-                                                  decoration: BoxDecoration(),
+                                                  decoration: const BoxDecoration(),
                                                   child: StreamBuilder<
                                                       List<ProductsRecord>>(
                                                     stream: queryProductsRecord(
@@ -334,7 +329,7 @@ class _ShortlistWidgetState extends State<ShortlistWidget> {
                                                                   1.0,
                                                           height: 150.0,
                                                           child:
-                                                              LoadingAnimationWidget(),
+                                                              const LoadingAnimationWidget(),
                                                         );
                                                       }
                                                       List<ProductsRecord>
@@ -372,7 +367,7 @@ class _ShortlistWidgetState extends State<ShortlistWidget> {
                                                 (allWishlist1Item.entityType ==
                                                     'creator'))
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 8.0, 16.0),
                                                 child: Container(
@@ -384,7 +379,7 @@ class _ShortlistWidgetState extends State<ShortlistWidget> {
                                                           : 180)
                                                       .toDouble(),
                                                   height: 280.0,
-                                                  decoration: BoxDecoration(),
+                                                  decoration: const BoxDecoration(),
                                                   child: DesignerGridWidget(
                                                     key: Key(
                                                         'Keypza_${allWishlist1Index}_of_${allWishlist1.length}'),
@@ -402,9 +397,9 @@ class _ShortlistWidgetState extends State<ShortlistWidget> {
                           ),
                         ),
                       ]
-                          .divide(SizedBox(height: 12.0))
-                          .addToStart(SizedBox(height: 12.0))
-                          .addToEnd(SizedBox(height: 12.0)),
+                          .divide(const SizedBox(height: 12.0))
+                          .addToStart(const SizedBox(height: 12.0))
+                          .addToEnd(const SizedBox(height: 12.0)),
                     ),
                   ),
                 ],

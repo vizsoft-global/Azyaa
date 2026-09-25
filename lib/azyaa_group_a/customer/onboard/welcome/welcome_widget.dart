@@ -1,13 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'welcome_model.dart';
 export 'welcome_model.dart';
 
@@ -66,15 +62,15 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           fit: BoxFit.none,
-                          alignment: AlignmentDirectional(1.0, -1.0),
+                          alignment: const AlignmentDirectional(1.0, -1.0),
                           image: Image.asset(
                             'assets/images/Vector_(3).png',
                           ).image,
                         ),
                       ),
-                      alignment: AlignmentDirectional(-1.0, 1.0),
+                      alignment: const AlignmentDirectional(-1.0, 1.0),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: SingleChildScrollView(
                           child: Column(
@@ -83,7 +79,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 8.0),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
@@ -96,7 +92,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 8.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -115,7 +111,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 8.0),
                                 child: RichText(
                                   textScaler: MediaQuery.of(context).textScaler,
@@ -164,7 +160,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 8.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -183,7 +179,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 24.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -209,7 +205,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                 desktop: false,
                               ))
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 28.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -231,10 +227,10 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                                 1.0,
                                             height: 40.0,
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 12.0, 0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
@@ -283,10 +279,10 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                                 1.0,
                                             height: 40.0,
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 12.0, 0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
@@ -320,7 +316,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                           ),
                                         ),
                                       ),
-                                    ].divide(SizedBox(width: 12.0)),
+                                    ].divide(const SizedBox(width: 12.0)),
                                   ),
                                 ),
                               FFButtonWidget(
@@ -328,7 +324,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                   context.goNamed(
                                     Highlights1Widget.routeName,
                                     extra: <String, dynamic>{
-                                      '__transition_info__': TransitionInfo(
+                                      '__transition_info__': const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -342,9 +338,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                 options: FFButtonOptions(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   height: 48.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -365,7 +361,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                       ),
                     ),
                   ),
-                ].addToEnd(SizedBox(height: 32.0)),
+                ].addToEnd(const SizedBox(height: 32.0)),
               ),
             ),
           ),

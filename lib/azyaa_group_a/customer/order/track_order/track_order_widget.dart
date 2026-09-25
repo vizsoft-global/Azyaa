@@ -1,13 +1,7 @@
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'track_order_model.dart';
 export 'track_order_model.dart';
 
@@ -53,7 +47,7 @@ class _TrackOrderWidgetState extends State<TrackOrderWidget> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Padding(
-          padding: EdgeInsets.all(6.0),
+          padding: const EdgeInsets.all(6.0),
           child: Container(
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -62,9 +56,9 @@ class _TrackOrderWidgetState extends State<TrackOrderWidget> {
                 color: FlutterFlowTheme.of(context).border,
               ),
             ),
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,14 +69,14 @@ class _TrackOrderWidgetState extends State<TrackOrderWidget> {
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   4.0, 0.0, 0.0, 4.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -203,7 +197,7 @@ class _TrackOrderWidgetState extends State<TrackOrderWidget> {
                                             ),
                                       ),
                                     ),
-                                  ].divide(SizedBox(height: 4.0)),
+                                  ].divide(const SizedBox(height: 4.0)),
                                 ),
                               ),
                             InkWell(
@@ -220,13 +214,13 @@ class _TrackOrderWidgetState extends State<TrackOrderWidget> {
                                 size: 20.0,
                               ),
                             ),
-                          ].divide(SizedBox(width: 8.0)),
+                          ].divide(const SizedBox(width: 8.0)),
                         ),
                       ),
                       Builder(
                         builder: (context) {
                           final timelines =
-                              widget!.logisticsDoc?.timeLines?.toList() ?? [];
+                              widget.logisticsDoc?.timeLines.toList() ?? [];
 
                           return ListView.builder(
                             padding: EdgeInsets.zero,
@@ -240,7 +234,7 @@ class _TrackOrderWidgetState extends State<TrackOrderWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -266,7 +260,7 @@ class _TrackOrderWidgetState extends State<TrackOrderWidget> {
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(2.0),
+                                            padding: const EdgeInsets.all(2.0),
                                             child: Container(
                                               width: 10.0,
                                               height: 10.0,
@@ -292,7 +286,7 @@ class _TrackOrderWidgetState extends State<TrackOrderWidget> {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -301,7 +295,7 @@ class _TrackOrderWidgetState extends State<TrackOrderWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 8.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -355,7 +349,7 @@ class _TrackOrderWidgetState extends State<TrackOrderWidget> {
                       ),
                     ],
                   ),
-                ].divide(SizedBox(height: 12.0)),
+                ].divide(const SizedBox(height: 12.0)),
               ),
             ),
           ),

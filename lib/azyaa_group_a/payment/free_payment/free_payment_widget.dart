@@ -1,19 +1,14 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'free_payment_model.dart';
@@ -51,7 +46,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
 
       var ordersRecordReference = OrdersRecord.collection.doc();
       await ordersRecordReference.set(createOrdersRecordData(
-        orderId: 'ORDAZYA${_model.idmapResult?.orderId?.toString()}',
+        orderId: 'ORDAZYA${_model.idmapResult?.orderId.toString()}',
         customerId: currentUserUid,
         customerRef: currentUserReference,
         orderItems: updateUserCartStruct(
@@ -69,7 +64,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
         shippingPrice: 0.0,
         paymentType: 'COUPON',
         shippingAddress: updateUserShippingaddressInfoStruct(
-          (currentUserDocument?.userShippingaddress?.toList() ?? [])
+          (currentUserDocument?.userShippingaddress.toList() ?? [])
               .where((e) => e.isDefault == true)
               .toList()
               .firstOrNull
@@ -78,7 +73,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
           create: true,
         ),
         shippingInfo: updateUserShippingaddressStruct(
-          (currentUserDocument?.userShippingaddress?.toList() ?? [])
+          (currentUserDocument?.userShippingaddress.toList() ?? [])
               .where((e) => e.isDefault == true)
               .toList()
               .firstOrNull,
@@ -88,7 +83,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
       ));
       _model.freeOrderDocument = OrdersRecord.getDocumentFromData(
           createOrdersRecordData(
-            orderId: 'ORDAZYA${_model.idmapResult?.orderId?.toString()}',
+            orderId: 'ORDAZYA${_model.idmapResult?.orderId.toString()}',
             customerId: currentUserUid,
             customerRef: currentUserReference,
             orderItems: updateUserCartStruct(
@@ -106,7 +101,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
             shippingPrice: 0.0,
             paymentType: 'COUPON',
             shippingAddress: updateUserShippingaddressInfoStruct(
-              (currentUserDocument?.userShippingaddress?.toList() ?? [])
+              (currentUserDocument?.userShippingaddress.toList() ?? [])
                   .where((e) => e.isDefault == true)
                   .toList()
                   .firstOrNull
@@ -115,7 +110,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
               create: true,
             ),
             shippingInfo: updateUserShippingaddressStruct(
-              (currentUserDocument?.userShippingaddress?.toList() ?? [])
+              (currentUserDocument?.userShippingaddress.toList() ?? [])
                   .where((e) => e.isDefault == true)
                   .toList()
                   .firstOrNull,
@@ -135,7 +130,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
         (e) => e
           ..paymentCart = currentUserDocument?.userCart
           ..paymentCartBackup = currentUserDocument?.userCart
-          ..paymentCartCount = currentUserDocument?.userCart?.cartItems?.length
+          ..paymentCartCount = currentUserDocument?.userCart.cartItems.length
           ..orderId = _model.freeOrderDocument?.orderId,
       );
       while (FFAppState().PaymentFlow.paymentCartCount > 0) {
@@ -202,11 +197,11 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
                               FFAppState().PaymentFlow.paymentCartCount - 1)
                           ?.quantity,
                       salesUserInfo: createSalesUserInfoStruct(
-                        customerId: currentUserDocument?.userInfo?.userId,
+                        customerId: currentUserDocument?.userInfo.userId,
                         customerRef: currentUserReference,
                         customerName: currentUserDisplayName,
                         email: currentUserEmail,
-                        phoneNumber: currentUserDocument?.userInfo?.phoneNumber,
+                        phoneNumber: currentUserDocument?.userInfo.phoneNumber,
                         shippingAddress: updateUserShippingaddressStruct(
                           _model.freeOrderDocument?.shippingInfo,
                           clearUnsetFields: false,
@@ -275,7 +270,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
       context.goNamed(
         SuccessWidget.routeName,
         extra: <String, dynamic>{
-          '__transition_info__': TransitionInfo(
+          '__transition_info__': const TransitionInfo(
             hasTransition: true,
             transitionType: PageTransitionType.fade,
             duration: Duration(milliseconds: 0),
@@ -312,7 +307,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
               key: scaffoldKey,
               backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
               appBar: PreferredSize(
-                preferredSize: Size.fromHeight(60.0),
+                preferredSize: const Size.fromHeight(60.0),
                 child: AppBar(
                   backgroundColor:
                       FlutterFlowTheme.of(context).primaryBackground,
@@ -333,7 +328,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
                             desktop: false,
                           ))
                             Align(
-                              alignment: AlignmentDirectional(-1.0, -1.0),
+                              alignment: const AlignmentDirectional(-1.0, -1.0),
                               child: FlutterFlowIconButton(
                                 borderColor:
                                     FlutterFlowTheme.of(context).border,
@@ -353,7 +348,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
                                   context.pushNamed(
                                     CartWidget.routeName,
                                     extra: <String, dynamic>{
-                                      '__transition_info__': TransitionInfo(
+                                      '__transition_info__': const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -367,7 +362,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
                             model: _model.userInitialModel,
                             updateCallback: () => safeSetState(() {}),
                             updateOnChange: true,
-                            child: UserInitialWidget(),
+                            child: const UserInitialWidget(),
                           ),
                           if (responsiveVisibility(
                             context: context,
@@ -377,7 +372,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
                             desktop: false,
                           ))
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -408,7 +403,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
                                   context.goNamed(
                                     CartWidget.routeName,
                                     extra: <String, dynamic>{
-                                      '__transition_info__': TransitionInfo(
+                                      '__transition_info__': const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -436,7 +431,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
                                         size: 26.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 4.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -464,7 +459,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
                       ),
                     ],
                   ),
-                  actions: [],
+                  actions: const [],
                   centerTitle: true,
                   elevation: 0.0,
                 ),
@@ -474,7 +469,7 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
                 child: Stack(
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -482,14 +477,14 @@ class _FreePaymentWidgetState extends State<FreePaymentWidget> {
                             child: Stack(
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Lottie.asset(
                                           'assets/jsons/debit-card.json',
                                           width: 150.0,

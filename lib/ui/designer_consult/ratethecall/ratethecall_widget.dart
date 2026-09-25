@@ -1,16 +1,11 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/profile_body_add/profile_body_add_widget.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'ratethecall_model.dart';
 export 'ratethecall_model.dart';
@@ -55,7 +50,7 @@ class _RatethecallWidgetState extends State<RatethecallWidget> {
       width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 5.0,
             color: Color(0x3B1D2429),
@@ -65,19 +60,19 @@ class _RatethecallWidgetState extends State<RatethecallWidget> {
             ),
           )
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
               child: Container(
                 width: 35.0,
                 height: 3.0,
@@ -88,9 +83,9 @@ class _RatethecallWidgetState extends State<RatethecallWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(-1.0, -1.0),
+              alignment: const AlignmentDirectional(-1.0, -1.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     '5itgnbrp' /* How’s your call? */,
@@ -105,9 +100,9 @@ class _RatethecallWidgetState extends State<RatethecallWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(-1.0, -1.0),
+              alignment: const AlignmentDirectional(-1.0, -1.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     'o8697bf7' /* Rate your call out of 5 */,
@@ -123,9 +118,9 @@ class _RatethecallWidgetState extends State<RatethecallWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(-1.0, 0.0),
+              alignment: const AlignmentDirectional(-1.0, 0.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                 child: RatingBar.builder(
                   onRatingUpdate: (newValue) =>
                       safeSetState(() => _model.ratingBarValue = newValue),
@@ -143,9 +138,9 @@ class _RatethecallWidgetState extends State<RatethecallWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(-1.0, 0.0),
+              alignment: const AlignmentDirectional(-1.0, 0.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   child: TextFormField(
@@ -231,7 +226,7 @@ class _RatethecallWidgetState extends State<RatethecallWidget> {
                         padding: MediaQuery.viewInsetsOf(context),
                         child: Container(
                           height: MediaQuery.sizeOf(context).height * 0.8,
-                          child: ProfileBodyAddWidget(),
+                          child: const ProfileBodyAddWidget(),
                         ),
                       ),
                     );
@@ -244,8 +239,8 @@ class _RatethecallWidgetState extends State<RatethecallWidget> {
               options: FFButtonOptions(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: 48.0,
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'almarai',
@@ -256,7 +251,7 @@ class _RatethecallWidgetState extends State<RatethecallWidget> {
                 borderRadius: BorderRadius.circular(8.0),
               ),
             ),
-          ].addToStart(SizedBox(height: 16.0)).addToEnd(SizedBox(height: 16.0)),
+          ].addToStart(const SizedBox(height: 16.0)).addToEnd(const SizedBox(height: 16.0)),
         ),
       ),
     );

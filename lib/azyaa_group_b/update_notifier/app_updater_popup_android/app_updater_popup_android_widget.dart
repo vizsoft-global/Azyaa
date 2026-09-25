@@ -1,11 +1,8 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'app_updater_popup_android_model.dart';
 export 'app_updater_popup_android_model.dart';
 
@@ -45,7 +42,7 @@ class _AppUpdaterPopupAndroidWidgetState
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(24.0),
+      padding: const EdgeInsets.all(24.0),
       child: StreamBuilder<List<SettingsRecord>>(
         stream: querySettingsRecord(
           queryBuilder: (settingsRecord) => settingsRecord.where(
@@ -81,7 +78,7 @@ class _AppUpdaterPopupAndroidWidgetState
           return ClipRRect(
             borderRadius: BorderRadius.circular(8.0),
             child: Container(
-              constraints: BoxConstraints(
+              constraints: const BoxConstraints(
                 maxWidth: 400.0,
               ),
               decoration: BoxDecoration(
@@ -89,7 +86,7 @@ class _AppUpdaterPopupAndroidWidgetState
                 borderRadius: BorderRadius.circular(8.0),
               ),
               child: Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,7 +96,7 @@ class _AppUpdaterPopupAndroidWidgetState
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         if (containerSettingsRecord
-                                ?.settingsAppVersionInfo?.dismissibleStatus ==
+                                ?.settingsAppVersionInfo.dismissibleStatus ==
                             true)
                           Wrap(
                             spacing: 0.0,
@@ -112,9 +109,9 @@ class _AppUpdaterPopupAndroidWidgetState
                             clipBehavior: Clip.none,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(1.0, -1.0),
+                                alignment: const AlignmentDirectional(1.0, -1.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -136,7 +133,7 @@ class _AppUpdaterPopupAndroidWidgetState
                             ],
                           ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -152,9 +149,9 @@ class _AppUpdaterPopupAndroidWidgetState
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 12.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -164,9 +161,9 @@ class _AppUpdaterPopupAndroidWidgetState
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                               child: Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsets.all(12.0),
+                                  padding: const EdgeInsets.all(12.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -220,7 +217,7 @@ class _AppUpdaterPopupAndroidWidgetState
                                           ),
                                         ],
                                       ),
-                                    ].divide(SizedBox(width: 16.0)),
+                                    ].divide(const SizedBox(width: 16.0)),
                                   ),
                                 ),
                               ),
@@ -228,7 +225,7 @@ class _AppUpdaterPopupAndroidWidgetState
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 14.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -266,7 +263,7 @@ class _AppUpdaterPopupAndroidWidgetState
                             Text(
                               valueOrDefault<String>(
                                 containerSettingsRecord
-                                    ?.settingsAppVersionInfo?.changelog,
+                                    ?.settingsAppVersionInfo.changelog,
                                 'Minor Changes and improvments.',
                               ),
                               textAlign: TextAlign.center,
@@ -280,12 +277,12 @@ class _AppUpdaterPopupAndroidWidgetState
                                     letterSpacing: 0.0,
                                   ),
                             ),
-                          ].divide(SizedBox(height: 4.0)),
+                          ].divide(const SizedBox(height: 4.0)),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 0.4,
@@ -295,7 +292,7 @@ class _AppUpdaterPopupAndroidWidgetState
                                 borderRadius: BorderRadius.circular(100.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -307,9 +304,9 @@ class _AppUpdaterPopupAndroidWidgetState
                                   ),
                                   options: FFButtonOptions(
                                     height: 45.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         32.0, 0.0, 32.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -322,7 +319,7 @@ class _AppUpdaterPopupAndroidWidgetState
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 0.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -338,7 +335,7 @@ class _AppUpdaterPopupAndroidWidgetState
                           color: FlutterFlowTheme.of(context).tertiary,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 16.0),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
@@ -348,9 +345,9 @@ class _AppUpdaterPopupAndroidWidgetState
                             ),
                           ),
                         ),
-                      ].divide(SizedBox(height: 8.0)),
+                      ].divide(const SizedBox(height: 8.0)),
                     ),
-                  ].divide(SizedBox(height: 8.0)),
+                  ].divide(const SizedBox(height: 8.0)),
                 ),
               ),
             ),

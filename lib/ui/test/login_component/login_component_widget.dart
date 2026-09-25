@@ -1,16 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -62,7 +58,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
       width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 5.0,
             color: Color(0x3B1D2429),
@@ -72,7 +68,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
             ),
           )
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -84,25 +80,25 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                   child: Container(
                     width: 35.0,
                     height: 3.0,
                     decoration: BoxDecoration(
-                      color: Color(0xFFCCBBCC),
+                      color: const Color(0xFFCCBBCC),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(-1.0, -1.0),
+                alignment: const AlignmentDirectional(-1.0, -1.0),
                 child: Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'kvv17ohc' /* Login */,
@@ -120,7 +116,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -128,7 +124,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -191,27 +187,27 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                         FFAppState().updateUserDataFlowStruct(
                                           (e) => e
                                             ..userEmail = currentUserDocument
-                                                ?.userInfo?.email
+                                                ?.userInfo.email
                                             ..phoneNumberCountry =
                                                 currentUserDocument?.userInfo
-                                                    ?.phoneNumberCountry
+                                                    .phoneNumberCountry
                                             ..userPhoneNumber =
                                                 currentUserDocument
-                                                    ?.userInfo?.phoneNumber
+                                                    ?.userInfo.phoneNumber
                                             ..phoneNumberDailcode =
                                                 currentUserDocument?.userInfo
-                                                    ?.phoneNumberDailCode
+                                                    .phoneNumberDailCode
                                             ..userRef = currentUserReference,
                                         );
                                         if (currentUserDocument?.userInfo
-                                                ?.isPofileCompleteStatus ==
+                                                .isPofileCompleteStatus ==
                                             true) {
                                           context.goNamedAuth(
                                               HomeWidget.routeName,
                                               context.mounted);
                                         } else {
                                           if (currentUserDocument?.userInfo
-                                                  ?.isEmailVerificationStatus ==
+                                                  .isEmailVerificationStatus ==
                                               false) {
                                             FFAppState()
                                                 .updateUserDataFlowStruct(
@@ -243,14 +239,14 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                                 context.mounted);
                                           } else {
                                             if (currentUserDocument?.userInfo
-                                                    ?.isPhoneVerificationStatus ==
+                                                    .isPhoneVerificationStatus ==
                                                 false) {
                                               context.goNamedAuth(
                                                   PhoneWidget.routeName,
                                                   context.mounted);
                                             } else {
                                               if (currentUserDocument?.userInfo
-                                                      ?.isStep1Status ==
+                                                      .isStep1Status ==
                                                   false) {
                                                 context.goNamedAuth(
                                                     Step1PersonalWidget
@@ -259,7 +255,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                               } else {
                                                 if (currentUserDocument
                                                         ?.userInfo
-                                                        ?.isStep2Status ==
+                                                        .isStep2Status ==
                                                     false) {
                                                   context.goNamedAuth(
                                                       Step2MeasurementsWidget
@@ -268,7 +264,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                                 } else {
                                                   if (currentUserDocument
                                                           ?.userInfo
-                                                          ?.isStep3Status ==
+                                                          .isStep3Status ==
                                                       false) {
                                                     context.goNamedAuth(
                                                         Step3PreferredStyleWidget
@@ -291,14 +287,14 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                           builder: (alertDialogContext) {
                                             return WebViewAware(
                                               child: AlertDialog(
-                                                content: Text(
+                                                content: const Text(
                                                     'Please contact us as your account has been blocked.'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: Text('Ok'),
+                                                    child: const Text('Ok'),
                                                   ),
                                                 ],
                                               ),
@@ -330,7 +326,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                     child: Stack(
                                       children: [
                                         Padding(
-                                          padding: EdgeInsets.all(12.0),
+                                          padding: const EdgeInsets.all(12.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -362,7 +358,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                                               FontWeight.w600,
                                                         ),
                                               ),
-                                            ].divide(SizedBox(width: 12.0)),
+                                            ].divide(const SizedBox(width: 12.0)),
                                           ),
                                         ),
                                         if (responsiveVisibility(
@@ -374,7 +370,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                         ))
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Lottie.asset(
                                               'assets/jsons/google-login.json',
                                               width: 50.0,
@@ -445,27 +441,27 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                         FFAppState().updateUserDataFlowStruct(
                                           (e) => e
                                             ..userEmail = currentUserDocument
-                                                ?.userInfo?.email
+                                                ?.userInfo.email
                                             ..phoneNumberCountry =
                                                 currentUserDocument?.userInfo
-                                                    ?.phoneNumberCountry
+                                                    .phoneNumberCountry
                                             ..userPhoneNumber =
                                                 currentUserDocument
-                                                    ?.userInfo?.phoneNumber
+                                                    ?.userInfo.phoneNumber
                                             ..phoneNumberDailcode =
                                                 currentUserDocument?.userInfo
-                                                    ?.phoneNumberDailCode
+                                                    .phoneNumberDailCode
                                             ..userRef = currentUserReference,
                                         );
                                         if (currentUserDocument?.userInfo
-                                                ?.isPofileCompleteStatus ==
+                                                .isPofileCompleteStatus ==
                                             true) {
                                           context.goNamedAuth(
                                               HomeWidget.routeName,
                                               context.mounted);
                                         } else {
                                           if (currentUserDocument?.userInfo
-                                                  ?.isEmailVerificationStatus ==
+                                                  .isEmailVerificationStatus ==
                                               false) {
                                             FFAppState()
                                                 .updateUserDataFlowStruct(
@@ -497,14 +493,14 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                                 context.mounted);
                                           } else {
                                             if (currentUserDocument?.userInfo
-                                                    ?.isPhoneVerificationStatus ==
+                                                    .isPhoneVerificationStatus ==
                                                 false) {
                                               context.goNamedAuth(
                                                   PhoneWidget.routeName,
                                                   context.mounted);
                                             } else {
                                               if (currentUserDocument?.userInfo
-                                                      ?.isStep1Status ==
+                                                      .isStep1Status ==
                                                   false) {
                                                 context.goNamedAuth(
                                                     Step1PersonalWidget
@@ -513,7 +509,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                               } else {
                                                 if (currentUserDocument
                                                         ?.userInfo
-                                                        ?.isStep2Status ==
+                                                        .isStep2Status ==
                                                     false) {
                                                   context.goNamedAuth(
                                                       Step2MeasurementsWidget
@@ -522,7 +518,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                                 } else {
                                                   if (currentUserDocument
                                                           ?.userInfo
-                                                          ?.isStep3Status ==
+                                                          .isStep3Status ==
                                                       false) {
                                                     context.goNamedAuth(
                                                         Step3PreferredStyleWidget
@@ -545,14 +541,14 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                           builder: (alertDialogContext) {
                                             return WebViewAware(
                                               child: AlertDialog(
-                                                content: Text(
+                                                content: const Text(
                                                     'Please contact us as your account has been blocked.'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: Text('Ok'),
+                                                    child: const Text('Ok'),
                                                   ),
                                                 ],
                                               ),
@@ -584,7 +580,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                     child: Stack(
                                       children: [
                                         Padding(
-                                          padding: EdgeInsets.all(12.0),
+                                          padding: const EdgeInsets.all(12.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -616,7 +612,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                                               FontWeight.w600,
                                                         ),
                                               ),
-                                            ].divide(SizedBox(width: 12.0)),
+                                            ].divide(const SizedBox(width: 12.0)),
                                           ),
                                         ),
                                         if (responsiveVisibility(
@@ -628,7 +624,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                         ))
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Lottie.asset(
                                               'assets/jsons/apple_login.json',
                                               width: 50.0,
@@ -642,11 +638,11 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                   ),
                                 ),
                               ),
-                            ].divide(SizedBox(width: 16.0)),
+                            ].divide(const SizedBox(width: 16.0)),
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 16.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -683,13 +679,13 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                   ),
                                 ),
                               ),
-                            ].divide(SizedBox(width: 8.0)),
+                            ].divide(const SizedBox(width: 8.0)),
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, -1.0),
+                          alignment: const AlignmentDirectional(-1.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 8.0),
                             child: RichText(
                               textScaler: MediaQuery.of(context).textScaler,
@@ -733,7 +729,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 24.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -809,7 +805,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -847,7 +843,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 16.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -942,9 +938,9 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(1.0, -1.0),
+                          alignment: const AlignmentDirectional(1.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -981,7 +977,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                             ForgotPasswordWidget.routeName,
                                             extra: <String, dynamic>{
                                               '__transition_info__':
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -1006,7 +1002,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 12.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -1031,23 +1027,23 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                 FFAppState().updateUserDataFlowStruct(
                                   (e) => e
                                     ..userEmail =
-                                        currentUserDocument?.userInfo?.email
+                                        currentUserDocument?.userInfo.email
                                     ..phoneNumberCountry = currentUserDocument
-                                        ?.userInfo?.phoneNumberCountry
+                                        ?.userInfo.phoneNumberCountry
                                     ..userPhoneNumber = currentUserDocument
-                                        ?.userInfo?.phoneNumber
+                                        ?.userInfo.phoneNumber
                                     ..phoneNumberDailcode = currentUserDocument
-                                        ?.userInfo?.phoneNumberDailCode
+                                        ?.userInfo.phoneNumberDailCode
                                     ..userRef = currentUserReference,
                                 );
                                 if (currentUserDocument
-                                        ?.userInfo?.isPofileCompleteStatus ==
+                                        ?.userInfo.isPofileCompleteStatus ==
                                     true) {
                                   context.goNamedAuth(
                                       HomeWidget.routeName, context.mounted);
                                 } else {
                                   if (currentUserDocument?.userInfo
-                                          ?.isEmailVerificationStatus ==
+                                          .isEmailVerificationStatus ==
                                       false) {
                                     FFAppState().updateUserDataFlowStruct(
                                       (e) => e
@@ -1076,27 +1072,27 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                         context.mounted);
                                   } else {
                                     if (currentUserDocument?.userInfo
-                                            ?.isPhoneVerificationStatus ==
+                                            .isPhoneVerificationStatus ==
                                         false) {
                                       context.goNamedAuth(PhoneWidget.routeName,
                                           context.mounted);
                                     } else {
                                       if (currentUserDocument
-                                              ?.userInfo?.isStep1Status ==
+                                              ?.userInfo.isStep1Status ==
                                           false) {
                                         context.goNamedAuth(
                                             Step1PersonalWidget.routeName,
                                             context.mounted);
                                       } else {
                                         if (currentUserDocument
-                                                ?.userInfo?.isStep2Status ==
+                                                ?.userInfo.isStep2Status ==
                                             false) {
                                           context.goNamedAuth(
                                               Step2MeasurementsWidget.routeName,
                                               context.mounted);
                                         } else {
                                           if (currentUserDocument
-                                                  ?.userInfo?.isStep3Status ==
+                                                  ?.userInfo.isStep3Status ==
                                               false) {
                                             context.goNamedAuth(
                                                 Step3PreferredStyleWidget
@@ -1119,13 +1115,13 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                                   builder: (alertDialogContext) {
                                     return WebViewAware(
                                       child: AlertDialog(
-                                        content: Text(
+                                        content: const Text(
                                             'Please contact us as your account has been blocked.'),
                                         actions: [
                                           TextButton(
                                             onPressed: () => Navigator.pop(
                                                 alertDialogContext),
-                                            child: Text('Ok'),
+                                            child: const Text('Ok'),
                                           ),
                                         ],
                                       ),
@@ -1146,9 +1142,9 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 48.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -1171,9 +1167,9 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                           desktop: false,
                         ))
                           Align(
-                            alignment: AlignmentDirectional(0.0, -1.0),
+                            alignment: const AlignmentDirectional(0.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 24.0),
                               child: RichText(
                                 textScaler: MediaQuery.of(context).textScaler,
@@ -1241,7 +1237,7 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                             ),
                           ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -1295,8 +1291,8 @@ class _LoginComponentWidgetState extends State<LoginComponentWidget> {
                 ),
               ),
             ]
-                .addToStart(SizedBox(height: 16.0))
-                .addToEnd(SizedBox(height: 16.0)),
+                .addToStart(const SizedBox(height: 16.0))
+                .addToEnd(const SizedBox(height: 16.0)),
           ),
         ],
       ),

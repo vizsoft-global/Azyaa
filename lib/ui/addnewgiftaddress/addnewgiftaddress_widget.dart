@@ -4,14 +4,10 @@ import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'addnewgiftaddress_model.dart';
 export 'addnewgiftaddress_model.dart';
 
@@ -63,7 +59,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
       width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 5.0,
             color: Color(0x3B1D2429),
@@ -73,7 +69,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
             ),
           )
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -88,20 +84,20 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
                   child: Container(
                     width: 35.0,
                     height: 3.0,
                     decoration: BoxDecoration(
-                      color: Color(0xFFCCBBCC),
+                      color: const Color(0xFFCCBBCC),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     child: Align(
-                      alignment: AlignmentDirectional(-1.0, -1.0),
+                      alignment: const AlignmentDirectional(-1.0, -1.0),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 8.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
@@ -121,9 +117,9 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(-1.0, -1.0),
+                alignment: const AlignmentDirectional(-1.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       '41f0dsuw' /* Add New Address */,
@@ -138,7 +134,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 16.0, 0.0),
                 child: FlutterFlowCheckboxGroup(
                   options: [
                     FFLocalizations.of(context).getText(
@@ -152,7 +148,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                           FormFieldController<List<String>>(
                     [],
                   ),
-                  activeColor: Color(0xFF7F56D9),
+                  activeColor: const Color(0xFF7F56D9),
                   checkColor: FlutterFlowTheme.of(context).info,
                   checkboxBorderColor:
                       FlutterFlowTheme.of(context).secondaryText,
@@ -176,10 +172,10 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                 clipBehavior: Clip.none,
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(-1.0, -1.0),
+                    alignment: const AlignmentDirectional(-1.0, -1.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: RichText(
                         textScaler: MediaQuery.of(context).textScaler,
                         text: TextSpan(
@@ -221,7 +217,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
                     child: Container(
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       child: TextFormField(
@@ -290,10 +286,10 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, -1.0),
+                    alignment: const AlignmentDirectional(-1.0, -1.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: RichText(
                         textScaler: MediaQuery.of(context).textScaler,
                         text: TextSpan(
@@ -335,7 +331,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
@@ -410,10 +406,10 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, -1.0),
+                    alignment: const AlignmentDirectional(-1.0, -1.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: RichText(
                         textScaler: MediaQuery.of(context).textScaler,
                         text: TextSpan(
@@ -454,10 +450,10 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 50.0,
@@ -469,13 +465,13 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                             width: 1.0,
                           ),
                         ),
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Stack(
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsets.all(2.0),
+                                padding: const EdgeInsets.all(2.0),
                                 child: FlutterFlowDropDown<String>(
                                   controller:
                                       _model.countryListValueController ??=
@@ -527,7 +523,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                                   borderColor: Colors.transparent,
                                   borderWidth: 0.0,
                                   borderRadius: 0.0,
-                                  margin: EdgeInsetsDirectional.fromSTEB(
+                                  margin: const EdgeInsetsDirectional.fromSTEB(
                                       65.0, 4.0, 12.0, 4.0),
                                   hidesUnderline: true,
                                   isOverButton: true,
@@ -537,11 +533,11 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Image.network(
-                                  functions
+                                padding: const EdgeInsets.all(8.0),
+                                child: CachedNetworkImage(
+                                  imageUrl: functions
                                       .getCountryFlag(_model.countryListValue)!,
                                   width: 35.0,
                                   fit: BoxFit.cover,
@@ -554,10 +550,10 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 50.0,
@@ -569,15 +565,15 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                             width: 1.0,
                           ),
                         ),
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsets.all(4.0),
+                          padding: const EdgeInsets.all(4.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: EdgeInsets.all(12.0),
+                                padding: const EdgeInsets.all(12.0),
                                 child: Text(
                                   functions
                                       .getDailCode(_model.countryListValue)!,
@@ -592,7 +588,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                               ),
                               Expanded(
                                 child: Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Container(
                                     width:
                                         MediaQuery.sizeOf(context).width * 1.0,
@@ -638,7 +634,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                                         fillColor: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                         contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 8.0, 0.0, 0.0, 8.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -674,7 +670,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                 ],
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 16.0, 0.0),
                 child: FlutterFlowCheckboxGroup(
                   options: [
                     FFLocalizations.of(context).getText(
@@ -700,7 +696,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     '54q6t76u' /* if you don’t know the address ... */,
@@ -713,7 +709,7 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () {
                     print('save pressed ...');
@@ -725,9 +721,9 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                     width: MediaQuery.sizeOf(context).width * 1.0,
                     height: 48.0,
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'almarai',
@@ -740,9 +736,9 @@ class _AddnewgiftaddressWidgetState extends State<AddnewgiftaddressWidget> {
                 ),
               ),
             ]
-                .divide(SizedBox(height: 16.0))
-                .addToStart(SizedBox(height: 24.0))
-                .addToEnd(SizedBox(height: 24.0)),
+                .divide(const SizedBox(height: 16.0))
+                .addToStart(const SizedBox(height: 24.0))
+                .addToEnd(const SizedBox(height: 24.0)),
           ),
         ),
       ),

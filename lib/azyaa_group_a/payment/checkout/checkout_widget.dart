@@ -7,26 +7,19 @@ import '/azyaa_group_a/payment/cart_item_list/cart_item_list_widget.dart';
 import '/azyaa_group_a/payment/checkout_payment_method/checkout_payment_method_widget.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_checkbox_group.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:async';
-import 'dart:convert';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:expandable/expandable.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'checkout_model.dart';
 export 'checkout_model.dart';
@@ -53,7 +46,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if ((currentUserDocument?.userShippingaddress?.toList() ?? [])
+      if ((currentUserDocument?.userShippingaddress.toList() ?? [])
               .where((e) => e.isDefault == true)
               .toList()
               .length >
@@ -65,24 +58,24 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
           ),
           singleRecord: true,
         ).then((s) => s.firstOrNull);
-        if (((currentUserDocument?.userShippingaddress?.toList() ?? [])
+        if (((currentUserDocument?.userShippingaddress.toList() ?? [])
                     .where((e) => e.isDefault == true)
                     .toList()
                     .firstOrNull
                     ?.shippingAddressInfo
-                    ?.country ==
+                    .country ==
                 'Kuwait') ||
-            ((currentUserDocument?.userShippingaddress?.toList() ?? [])
+            ((currentUserDocument?.userShippingaddress.toList() ?? [])
                     .where((e) => e.isDefault == true)
                     .toList()
                     .firstOrNull
                     ?.shippingAddressInfo
-                    ?.country ==
+                    .country ==
                 'الكويت')) {
           _model.shippingCharge = _model
               .settingsDocResult1!.settingsLogisticsInfo.shippingChargeKuwait;
         } else {
-          _model.orderCount = currentUserDocument?.userCart?.cartItems?.length;
+          _model.orderCount = currentUserDocument?.userCart.cartItems.length;
           while (_model.orderCount! > 0) {
             _model.weight = _model.weight +
                 currentUserDocument!.userCart.cartItems
@@ -139,7 +132,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -169,7 +162,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               userCart: createUserCartStruct(
                                 couponInfo:
                                     createCouponCartInfoStruct(delete: true),
-                                total: currentUserDocument?.userCart?.subtotal,
+                                total: currentUserDocument?.userCart.subtotal,
                                 clearUnsetFields: false,
                               ),
                             ));
@@ -177,7 +170,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             context.goNamed(
                               CartWidget.routeName,
                               extra: <String, dynamic>{
-                                '__transition_info__': TransitionInfo(
+                                '__transition_info__': const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -205,13 +198,13 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                         Container(
                           width: 42.0,
                           height: 42.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                         ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -224,7 +217,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   SingleChildScrollView(
                     child: Column(
@@ -240,7 +233,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                           desktop: false,
                         ))
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -249,7 +242,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(16.0),
+                                padding: const EdgeInsets.all(16.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -268,14 +261,14 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                   .getText(
                                                 'w0kp1et9' /* You’re just */,
                                               ),
-                                              style: TextStyle(),
+                                              style: const TextStyle(),
                                             ),
                                             TextSpan(
                                               text: FFLocalizations.of(context)
                                                   .getText(
                                                 'vxnsc3py' /*  2 KD  */,
                                               ),
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 fontWeight: FontWeight.bold,
                                               ),
                                             ),
@@ -284,7 +277,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                   .getText(
                                                 '5rxdgsyh' /* away from */,
                                               ),
-                                              style: TextStyle(),
+                                              style: const TextStyle(),
                                             )
                                           ],
                                           style: FlutterFlowTheme.of(context)
@@ -314,7 +307,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                             fontWeight: FontWeight.bold,
                                           ),
                                     ),
-                                  ].divide(SizedBox(height: 4.0)),
+                                  ].divide(const SizedBox(height: 4.0)),
                                 ),
                               ),
                             ),
@@ -324,8 +317,8 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                             builder: (context) => Builder(
                               builder: (context) {
                                 final cartItemList = currentUserDocument
-                                        ?.userCart?.cartItems
-                                        ?.toList() ??
+                                        ?.userCart.cartItems
+                                        .toList() ??
                                     [];
 
                                 return ListView.separated(
@@ -335,12 +328,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                   scrollDirection: Axis.vertical,
                                   itemCount: cartItemList.length,
                                   separatorBuilder: (_, __) =>
-                                      SizedBox(height: 16.0),
+                                      const SizedBox(height: 16.0),
                                   itemBuilder: (context, cartItemListIndex) {
                                     final cartItemListItem =
                                         cartItemList[cartItemListIndex];
                                     return Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: CartItemListWidget(
                                         key: Key(
@@ -369,7 +362,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               desktop: false,
                             ))
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: AuthUserStreamWidget(
                               builder: (context) => FFButtonWidget(
@@ -377,7 +370,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                   context.goNamed(
                                     ShopWidget.routeName,
                                     extra: <String, dynamic>{
-                                      '__transition_info__': TransitionInfo(
+                                      '__transition_info__': const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -388,14 +381,14 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                 text: FFLocalizations.of(context).getText(
                                   'v93kird2' /* add more product */,
                                 ),
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.add_rounded,
                                   size: 15.0,
                                 ),
                                 options: FFButtonOptions(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: Colors.transparent,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -417,7 +410,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                 .length >
                             0)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: AuthUserStreamWidget(
                               builder: (context) => Wrap(
@@ -442,11 +435,11 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                             .alternate,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 8.0, 0.0, 8.0),
                                         child: Container(
                                           width: double.infinity,
-                                          color: Color(0x00000000),
+                                          color: const Color(0x00000000),
                                           child: ExpandableNotifier(
                                             controller: _model
                                                 .addressExpandableController,
@@ -478,7 +471,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                       final addressList1 =
                                                           (currentUserDocument
                                                                       ?.userShippingaddress
-                                                                      ?.toList() ??
+                                                                      .toList() ??
                                                                   [])
                                                               .toList();
 
@@ -492,7 +485,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                         itemCount:
                                                             addressList1.length,
                                                         separatorBuilder:
-                                                            (_, __) => SizedBox(
+                                                            (_, __) => const SizedBox(
                                                                 height: 8.0),
                                                         itemBuilder: (context,
                                                             addressList1Index) {
@@ -501,7 +494,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                   addressList1Index];
                                                           return Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         8.0,
@@ -525,12 +518,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                             .start,
                                                                     children: [
                                                                       Text(
-                                                                        '${addressList1Item.userName}${addressList1Item.relationName != null && addressList1Item.relationName != '' ? FFLocalizations.of(context).getVariableText(
+                                                                        '${addressList1Item.userName}${addressList1Item.relationName != '' ? FFLocalizations.of(context).getVariableText(
                                                                             enText:
                                                                                 '(',
                                                                             arText:
                                                                                 '(',
-                                                                          ) : ''}${addressList1Item.relationName}${addressList1Item.relationName != null && addressList1Item.relationName != '' ? FFLocalizations.of(context).getVariableText(
+                                                                          ) : ''}${addressList1Item.relationName}${addressList1Item.relationName != '' ? FFLocalizations.of(context).getVariableText(
                                                                             enText:
                                                                                 '),',
                                                                             arText:
@@ -564,7 +557,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
-                                                                    ].divide(SizedBox(
+                                                                    ].divide(const SizedBox(
                                                                         height:
                                                                             4.0)),
                                                                   ),
@@ -585,7 +578,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                     child:
                                                                         Padding(
                                                                       padding:
-                                                                          EdgeInsets.all(
+                                                                          const EdgeInsets.all(
                                                                               4.0),
                                                                       child:
                                                                           Row(
@@ -611,7 +604,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
-                                                                        ].divide(SizedBox(width: 2.0)),
+                                                                        ].divide(const SizedBox(width: 2.0)),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -645,7 +638,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                               elevation: 0,
                                                                               insetPadding: EdgeInsets.zero,
                                                                               backgroundColor: Colors.transparent,
-                                                                              alignment: AlignmentDirectional(0.0, 1.0).resolve(Directionality.of(context)),
+                                                                              alignment: const AlignmentDirectional(0.0, 1.0).resolve(Directionality.of(context)),
                                                                               child: WebViewAware(
                                                                                 child: GestureDetector(
                                                                                   onTap: () {
@@ -664,7 +657,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                           },
                                                                         );
 
-                                                                        if ((currentUserDocument?.userShippingaddress?.toList() ?? []).where((e) => e.isDefault == true).toList().length >
+                                                                        if ((currentUserDocument?.userShippingaddress.toList() ?? []).where((e) => e.isDefault == true).toList().length >
                                                                             0) {
                                                                           _model.settingsDocResult2 =
                                                                               await querySettingsRecordOnce(
@@ -676,13 +669,13 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                             singleRecord:
                                                                                 true,
                                                                           ).then((s) => s.firstOrNull);
-                                                                          if (((currentUserDocument?.userShippingaddress?.toList() ?? []).where((e) => e.isDefault == true).toList().firstOrNull?.shippingAddressInfo?.country == 'Kuwait') ||
-                                                                              ((currentUserDocument?.userShippingaddress?.toList() ?? []).where((e) => e.isDefault == true).toList().firstOrNull?.shippingAddressInfo?.country == 'الكويت')) {
+                                                                          if (((currentUserDocument?.userShippingaddress.toList() ?? []).where((e) => e.isDefault == true).toList().firstOrNull?.shippingAddressInfo.country == 'Kuwait') ||
+                                                                              ((currentUserDocument?.userShippingaddress.toList() ?? []).where((e) => e.isDefault == true).toList().firstOrNull?.shippingAddressInfo.country == 'الكويت')) {
                                                                             _model.shippingCharge =
                                                                                 _model.settingsDocResult2!.settingsLogisticsInfo.shippingChargeKuwait;
                                                                           } else {
                                                                             _model.orderCount =
-                                                                                currentUserDocument?.userCart?.cartItems?.length;
+                                                                                currentUserDocument?.userCart.cartItems.length;
                                                                             while (_model.orderCount! >
                                                                                 0) {
                                                                               _model.weight = _model.weight + currentUserDocument!.userCart.cartItems.elementAtOrNull((_model.orderCount!) - 1)!.productStockInfo.weightGm;
@@ -712,7 +705,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                       ),
                                                                     ),
                                                                   ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   width: 8.0)),
                                                             ),
                                                           );
@@ -796,7 +789,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                     ),
                                                   if ((currentUserDocument
                                                                   ?.userShippingaddress
-                                                                  ?.toList() ??
+                                                                  .toList() ??
                                                               [])
                                                           .length ==
                                                       0)
@@ -816,7 +809,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                 backgroundColor:
                                                                     Colors
                                                                         .transparent,
-                                                                alignment: AlignmentDirectional(
+                                                                alignment: const AlignmentDirectional(
                                                                         0.0,
                                                                         1.0)
                                                                     .resolve(
@@ -841,7 +834,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                           MediaQuery.sizeOf(context).height *
                                                                               0.8,
                                                                       child:
-                                                                          ProfileAddressAddWidget(),
+                                                                          const ProfileAddressAddWidget(),
                                                                     ),
                                                                   ),
                                                                 ),
@@ -855,21 +848,21 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                 .getText(
                                                           'k2geadvd' /* add new address */,
                                                         ),
-                                                        icon: Icon(
+                                                        icon: const Icon(
                                                           Icons.add_rounded,
                                                           size: 15.0,
                                                         ),
                                                         options:
                                                             FFButtonOptions(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -898,9 +891,9 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                         ),
                                                       ),
                                                     ),
-                                                ].divide(SizedBox(height: 8.0)),
+                                                ].divide(const SizedBox(height: 8.0)),
                                               ),
-                                              theme: ExpandableThemeData(
+                                              theme: const ExpandableThemeData(
                                                 tapHeaderToExpand: true,
                                                 tapBodyToExpand: true,
                                                 tapBodyToCollapse: true,
@@ -937,11 +930,11 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                       ))
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: Container(
                                             width: double.infinity,
-                                            color: Color(0x00000000),
+                                            color: const Color(0x00000000),
                                             child: ExpandableNotifier(
                                               controller: _model
                                                   .deliveryMethodExpandableController,
@@ -1021,7 +1014,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                           0.0,
                                                                     ),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 height: 4.0)),
                                                           ),
                                                         ),
@@ -1045,15 +1038,15 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                               ),
                                                         ),
                                                       ].divide(
-                                                          SizedBox(width: 8.0)),
+                                                          const SizedBox(width: 8.0)),
                                                     ),
                                                   ]
                                                       .divide(
-                                                          SizedBox(height: 8.0))
-                                                      .addToStart(SizedBox(
+                                                          const SizedBox(height: 8.0))
+                                                      .addToStart(const SizedBox(
                                                           height: 8.0)),
                                                 ),
-                                                theme: ExpandableThemeData(
+                                                theme: const ExpandableThemeData(
                                                   tapHeaderToExpand: true,
                                                   tapBodyToExpand: false,
                                                   tapBodyToCollapse: false,
@@ -1090,11 +1083,11 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                       ))
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 8.0),
                                           child: Container(
                                             width: double.infinity,
-                                            color: Color(0x00000000),
+                                            color: const Color(0x00000000),
                                             child: ExpandableNotifier(
                                               controller: _model
                                                   .paymentMethodExpandableController,
@@ -1148,10 +1141,10 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                     ),
                                                   ]
                                                       .divide(
-                                                          SizedBox(height: 2.0))
+                                                          const SizedBox(height: 2.0))
                                                       .addToStart(
-                                                          SizedBox(height: 8.0))
-                                                      .addToEnd(SizedBox(
+                                                          const SizedBox(height: 8.0))
+                                                      .addToEnd(const SizedBox(
                                                           height: 8.0)),
                                                 ),
                                                 collapsed: Container(),
@@ -1163,7 +1156,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1187,7 +1180,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   16.0),
                                                           child: Column(
                                                             mainAxisSize:
@@ -1234,7 +1227,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                         'ef891ajw' /*  Credit/Debit Card, Gpay, Appl... */,
                                                                       ),
                                                                       style:
-                                                                          TextStyle(),
+                                                                          const TextStyle(),
                                                                     )
                                                                   ],
                                                                   style: FlutterFlowTheme.of(
@@ -1252,7 +1245,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                       ),
                                                                 ),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 height: 8.0)),
                                                           ),
                                                         ),
@@ -1320,7 +1313,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                     ),
                                                   ],
                                                 ),
-                                                theme: ExpandableThemeData(
+                                                theme: const ExpandableThemeData(
                                                   tapHeaderToExpand: true,
                                                   tapBodyToExpand: false,
                                                   tapBodyToCollapse: false,
@@ -1353,11 +1346,11 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                           ))
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 16.0),
                                           child: Stack(
                                             alignment:
-                                                AlignmentDirectional(1.0, 0.0),
+                                                const AlignmentDirectional(1.0, 0.0),
                                             children: [
                                               Container(
                                                 width:
@@ -1468,10 +1461,10 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 16.0, 0.0),
                                                   child: FFButtonWidget(
@@ -1821,12 +1814,12 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                         return;
                                                       } else if (currentUserDocument
                                                               ?.userCart
-                                                              ?.cartItems
-                                                              ?.length !=
-                                                          currentUserDocument?.userCart?.cartItems
-                                                              ?.where((e) => e.productType == 'product')
+                                                              .cartItems
+                                                              .length !=
+                                                          currentUserDocument?.userCart.cartItems
+                                                              .where((e) => e.productType == 'product')
                                                               .toList()
-                                                              ?.length) {
+                                                              .length) {
                                                         await showDialog(
                                                           context: context,
                                                           builder:
@@ -2276,7 +2269,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                         'Total amount should be greater than ',
                                                                     arText:
                                                                         'يجب أن يكون المبلغ الإجمالي أكبر من',
-                                                                  )}${_model.couponResult?.couponMinimumOrderAmount?.toString()}${FFLocalizations.of(context).getVariableText(
+                                                                  )}${_model.couponResult?.couponMinimumOrderAmount.toString()}${FFLocalizations.of(context).getVariableText(
                                                                     enText:
                                                                         'KD',
                                                                     arText:
@@ -2323,14 +2316,14 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                     options: FFButtonOptions(
                                                       height: 30.0,
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
                                                                   16.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -2372,10 +2365,10 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                         children: [
                                           if ((_model.shippingCharge > 0.0) &&
                                               (currentUserDocument?.userCart
-                                                      ?.couponInfo?.couponRef ==
+                                                      .couponInfo.couponRef ==
                                                   null))
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 8.0, 0.0, 0.0),
                                               child: InkWell(
                                                 splashColor: Colors.transparent,
@@ -2387,7 +2380,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                   await showModalBottomSheet(
                                                     isScrollControlled: true,
                                                     backgroundColor:
-                                                        Color(0x7B000000),
+                                                        const Color(0x7B000000),
                                                     context: context,
                                                     builder: (context) {
                                                       return WebViewAware(
@@ -2437,8 +2430,8 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                       borderRadius: 6.0,
                                                       buttonSize: 40.0,
                                                       fillColor:
-                                                          Color(0x25A2609C),
-                                                      icon: Icon(
+                                                          const Color(0x25A2609C),
+                                                      icon: const Icon(
                                                         FFIcons.kcoupon,
                                                         color:
                                                             Color(0xFFA2609C),
@@ -2485,15 +2478,15 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                       size: 24.0,
                                                     ),
                                                   ].divide(
-                                                      SizedBox(width: 8.0)),
+                                                      const SizedBox(width: 8.0)),
                                                 ),
                                               ),
                                             ),
                                           if (currentUserDocument?.userCart
-                                                  ?.couponInfo?.couponRef !=
+                                                  .couponInfo.couponRef !=
                                               null)
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 8.0, 0.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -2502,8 +2495,8 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                     borderRadius: 6.0,
                                                     buttonSize: 40.0,
                                                     fillColor:
-                                                        Color(0x25A2609C),
-                                                    icon: Icon(
+                                                        const Color(0x25A2609C),
+                                                    icon: const Icon(
                                                       FFIcons.kcoupon,
                                                       color: Color(0xFFA2609C),
                                                       size: 18.0,
@@ -2704,7 +2697,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                 ),
                                                           ),
                                                         ),
-                                                      ].divide(SizedBox(
+                                                      ].divide(const SizedBox(
                                                           height: 4.0)),
                                                     ),
                                                   ),
@@ -2741,7 +2734,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                       size: 18.0,
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(width: 8.0)),
+                                                ].divide(const SizedBox(width: 8.0)),
                                               ),
                                             ),
                                         ],
@@ -2774,7 +2767,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                           ))
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 8.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2832,7 +2825,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                   ' applied',
                                                               arText: 'مُطبَّق',
                                                             )}',
-                                                            style: TextStyle(),
+                                                            style: const TextStyle(),
                                                           )
                                                         ],
                                                         style:
@@ -2853,7 +2846,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(height: 4.0)),
+                                                      const SizedBox(height: 4.0)),
                                                 ),
                                               InkWell(
                                                 splashColor: Colors.transparent,
@@ -2904,7 +2897,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -2936,11 +2929,11 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                           ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -2973,14 +2966,14 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ),
                             if (currentUserDocument
-                                    ?.userCart?.couponInfo?.couponRef !=
+                                    ?.userCart.couponInfo.couponRef !=
                                 null)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 12.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Row(
@@ -2992,7 +2985,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                         '${FFLocalizations.of(context).getVariableText(
                                           enText: 'Coupon :',
                                           arText: 'القسيمة :',
-                                        )}${currentUserDocument?.userCart?.couponInfo?.couponValue}',
+                                        )}${currentUserDocument?.userCart.couponInfo.couponValue}',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -3003,7 +2996,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                       Stack(
                                         children: [
                                           if (currentUserDocument?.userCart
-                                                  ?.couponInfo?.couponFor !=
+                                                  .couponInfo.couponFor !=
                                               'Creator')
                                             Text(
                                               '${FFLocalizations.of(context).getVariableText(
@@ -3041,7 +3034,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                             ),
                                         ],
                                       ),
-                                    ].divide(SizedBox(width: 8.0)),
+                                    ].divide(const SizedBox(width: 8.0)),
                                   ),
                                 ),
                               ),
@@ -3053,7 +3046,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               color: FlutterFlowTheme.of(context).alternate,
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 8.0, 16.0, 16.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -3075,38 +3068,38 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 4.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Text(
                                         '${() {
                                           if ((currentUserDocument
                                                           ?.userCart
-                                                          ?.couponInfo
-                                                          ?.couponId !=
+                                                          .couponInfo
+                                                          .couponId !=
                                                       null &&
                                                   currentUserDocument
                                                           ?.userCart
-                                                          ?.couponInfo
-                                                          ?.couponId !=
+                                                          .couponInfo
+                                                          .couponId !=
                                                       '') &&
                                               (currentUserDocument
                                                       ?.userCart
-                                                      ?.couponInfo
-                                                      ?.couponDiscountedPrice ==
+                                                      .couponInfo
+                                                      .couponDiscountedPrice ==
                                                   0.0)) {
                                             return currentUserDocument
                                                 ?.userCart
-                                                ?.couponInfo
-                                                ?.couponDiscountedPrice
-                                                ?.toString();
+                                                .couponInfo
+                                                .couponDiscountedPrice
+                                                .toString();
                                           } else if (currentUserDocument
                                                       ?.userCart
-                                                      ?.couponInfo
-                                                      ?.couponId !=
+                                                      .couponInfo
+                                                      .couponId !=
                                                   null &&
                                               currentUserDocument?.userCart
-                                                      ?.couponInfo?.couponId !=
+                                                      .couponInfo.couponId !=
                                                   '') {
                                             return (currentUserDocument!
                                                         .userCart
@@ -3138,14 +3131,14 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                       ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ),
-                          ].divide(SizedBox(height: 4.0)),
+                          ].divide(const SizedBox(height: 4.0)),
                         ),
                         Builder(
                           builder: (context) => Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -3157,7 +3150,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                         .length >
                                     0) {
                                   if ((currentUserDocument?.userShippingaddress
-                                                  ?.toList() ??
+                                                  .toList() ??
                                               [])
                                           .where((e) => e.isDefault == true)
                                           .toList()
@@ -3180,7 +3173,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                 .secondaryBackground,
                                           ),
                                         ),
-                                        duration: Duration(milliseconds: 1500),
+                                        duration: const Duration(milliseconds: 1500),
                                       ),
                                     );
                                     if (_shouldSetState) safeSetState(() {});
@@ -3204,14 +3197,14 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                               .secondaryBackground,
                                         ),
                                       ),
-                                      duration: Duration(milliseconds: 1500),
+                                      duration: const Duration(milliseconds: 1500),
                                     ),
                                   );
 
                                   context.goNamed(
                                     FreePaymentWidget.routeName,
                                     extra: <String, dynamic>{
-                                      '__transition_info__': TransitionInfo(
+                                      '__transition_info__': const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -3235,18 +3228,18 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                             .secondaryBackground,
                                       ),
                                     ),
-                                    duration: Duration(milliseconds: 1500),
+                                    duration: const Duration(milliseconds: 1500),
                                   ),
                                 );
                                 if (_model.payClickStatus == 'clickable') {
                                   _model.payClickStatus = 'hide';
                                   _model.orderInfo = null;
                                   _model.orderCount = currentUserDocument
-                                      ?.userCart?.cartItems?.length;
+                                      ?.userCart.cartItems.length;
                                   while (_model.orderCount! > 0) {
                                     if ((currentUserDocument
-                                                ?.userCart?.cartItems
-                                                ?.elementAtOrNull(
+                                                ?.userCart.cartItems
+                                                .elementAtOrNull(
                                                     (_model.orderCount!) - 1))
                                             ?.productType ==
                                         'membership') {
@@ -3257,8 +3250,8 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                 userMembershipPlansRecord.where(
                                           'membership_plan_id',
                                           isEqualTo: (currentUserDocument
-                                                  ?.userCart?.cartItems
-                                                  ?.elementAtOrNull(
+                                                  ?.userCart.cartItems
+                                                  .elementAtOrNull(
                                                       (_model.orderCount!) - 1))
                                               ?.cartItemId,
                                         ),
@@ -3266,11 +3259,11 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                       ).then((s) => s.firstOrNull);
                                       _shouldSetState = true;
                                       _model.orderInfo =
-                                          '${_model.orderInfo}${_model.orderInfo != '' ? ', ' : ' '}${_model.membershipPlanResult?.planInfo?.name} (${_model.membershipPlanResult?.duration}) : ${_model.membershipPlanResult?.price?.toString()} KWD';
+                                          '${_model.orderInfo}${_model.orderInfo != '' ? ', ' : ' '}${_model.membershipPlanResult?.planInfo.name} (${_model.membershipPlanResult?.duration}) : ${_model.membershipPlanResult?.price.toString()} KWD';
                                     } else {
                                       if ((currentUserDocument
-                                                  ?.userCart?.cartItems
-                                                  ?.elementAtOrNull(
+                                                  ?.userCart.cartItems
+                                                  .elementAtOrNull(
                                                       (_model.orderCount!) - 1))
                                               ?.productType ==
                                           'product') {
@@ -3280,18 +3273,18 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                               productsRecord.where(
                                             'product_id',
                                             isEqualTo: (currentUserDocument
-                                                    ?.userCart?.cartItems
-                                                    ?.elementAtOrNull(
+                                                    ?.userCart.cartItems
+                                                    .elementAtOrNull(
                                                         (_model.orderCount!) -
                                                             1))
                                                 ?.cartItemId
-                                                ?.toString(),
+                                                .toString(),
                                           ),
                                           singleRecord: true,
                                         ).then((s) => s.firstOrNull);
                                         _shouldSetState = true;
                                         _model.orderInfo =
-                                            '${_model.orderInfo}${_model.orderInfo != '' ? ', ' : ' '}${_model.productResult?.productInfo?.name} (${_model.productResult?.productId}) : ${_model.productResult?.product?.productPrice?.toString()} KWD ${_model.productResult?.productAuthorizer?.productDesignerId}';
+                                            '${_model.orderInfo}${_model.orderInfo != '' ? ', ' : ' '}${_model.productResult?.productInfo.name} (${_model.productResult?.productId}) : ${_model.productResult?.product.productPrice.toString()} KWD ${_model.productResult?.productAuthorizer.productDesignerId}';
                                       }
                                     }
 
@@ -3327,36 +3320,36 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                     _shouldSetState = true;
                                     if (_model.forPaymentResult1
                                             ?.settingsPaymentInfo
-                                            ?.where((e) =>
+                                            .where((e) =>
                                                 e.isPrimaryStatus == true)
                                             .toList()
-                                            ?.firstOrNull
+                                            .firstOrNull
                                             ?.paymentName ==
                                         'upayment') {
                                       _model.paymentUpaymentResult1 =
                                           await UpaymentGroup.chargeCall.call(
                                         url: _model.forPaymentResult1
                                                     ?.settingsPaymentInfo
-                                                    ?.where((e) =>
+                                                    .where((e) =>
                                                         e.isPrimaryStatus ==
                                                         true)
                                                     .toList()
-                                                    ?.firstOrNull
+                                                    .firstOrNull
                                                     ?.isProductionStatus ==
                                                 true
                                             ? 'uapi'
                                             : 'sandboxapi',
                                         orderId:
-                                            'ORDAZYA${_model.idMapResultOrder1?.orderId?.toString()}',
+                                            'ORDAZYA${_model.idMapResultOrder1?.orderId.toString()}',
                                         programPrice: (currentUserDocument
                                                             ?.userCart
-                                                            ?.couponInfo
-                                                            ?.couponId !=
+                                                            .couponInfo
+                                                            .couponId !=
                                                         null &&
                                                     currentUserDocument
                                                             ?.userCart
-                                                            ?.couponInfo
-                                                            ?.couponId !=
+                                                            .couponInfo
+                                                            .couponId !=
                                                         ''
                                                 ? (currentUserDocument!
                                                         .userCart
@@ -3377,35 +3370,35 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                         customerEmail: currentUserEmail,
                                         customerPhone: currentPhoneNumber,
                                         programRef:
-                                            'ORDAZYA${_model.idMapResultOrder1?.orderId?.toString()}',
+                                            'ORDAZYA${_model.idMapResultOrder1?.orderId.toString()}',
                                         returnURL:
-                                            'https://azyaa.flutterflow.app/azyaa-verify?orderid=${'ORDAZYA${_model.idMapResultOrder1?.orderId?.toString()}'}',
+                                            'https://azyaa.flutterflow.app/azyaa-verify?orderid=${'ORDAZYA${_model.idMapResultOrder1?.orderId.toString()}'}',
                                         cancelURL:
-                                            'https://azyaa.flutterflow.app/azyaa-verify?orderid=${'ORDAZYA${_model.idMapResultOrder1?.orderId?.toString()}'}',
+                                            'https://azyaa.flutterflow.app/azyaa-verify?orderid=${'ORDAZYA${_model.idMapResultOrder1?.orderId.toString()}'}',
                                         notificationURL:
                                             'https://hook.us1.make.com/p7og7qm3g9v7amn2rdx6odh24brwvypj?project=azyaa&&paymenttype=upayment',
                                         aPIkey: _model.forPaymentResult1
                                                     ?.settingsPaymentInfo
-                                                    ?.where((e) =>
+                                                    .where((e) =>
                                                         e.isPrimaryStatus ==
                                                         true)
                                                     .toList()
-                                                    ?.firstOrNull
+                                                    .firstOrNull
                                                     ?.isProductionStatus ==
                                                 true
                                             ? _model.forPaymentResult1
                                                 ?.settingsPaymentInfo
-                                                ?.where((e) =>
+                                                .where((e) =>
                                                     e.isPrimaryStatus == true)
                                                 .toList()
-                                                ?.firstOrNull
+                                                .firstOrNull
                                                 ?.productionSecretKey
                                             : _model.forPaymentResult1
                                                 ?.settingsPaymentInfo
-                                                ?.where((e) =>
+                                                .where((e) =>
                                                     e.isPrimaryStatus == true)
                                                 .toList()
-                                                ?.firstOrNull
+                                                .firstOrNull
                                                 ?.testSecretKey,
                                       );
 
@@ -3418,9 +3411,9 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                             ..paymentProcessesStatus =
                                                 'initialize'
                                             ..paymentId =
-                                                'ORDAZYA${_model.idMapResultOrder1?.orderId?.toString()}'
+                                                'ORDAZYA${_model.idMapResultOrder1?.orderId.toString()}'
                                             ..orderId =
-                                                'ORDAZYA${_model.idMapResultOrder1?.orderId?.toString()}'
+                                                'ORDAZYA${_model.idMapResultOrder1?.orderId.toString()}'
                                             ..mainPaymentUrl = UpaymentGroup
                                                 .chargeCall
                                                 .chargeLink(
@@ -3438,28 +3431,28 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                             ..secretKey = _model
                                                         .forPaymentResult1
                                                         ?.settingsPaymentInfo
-                                                        ?.where((e) =>
+                                                        .where((e) =>
                                                             e.isPrimaryStatus ==
                                                             true)
                                                         .toList()
-                                                        ?.firstOrNull
+                                                        .firstOrNull
                                                         ?.isProductionStatus ==
                                                     true
                                                 ? _model.forPaymentResult1
                                                     ?.settingsPaymentInfo
-                                                    ?.where((e) =>
+                                                    .where((e) =>
                                                         e.isPrimaryStatus ==
                                                         true)
                                                     .toList()
-                                                    ?.firstOrNull
+                                                    .firstOrNull
                                                     ?.productionSecretKey
                                                 : _model.forPaymentResult1
                                                     ?.settingsPaymentInfo
-                                                    ?.where((e) =>
+                                                    .where((e) =>
                                                         e.isPrimaryStatus ==
                                                         true)
                                                     .toList()
-                                                    ?.firstOrNull
+                                                    .firstOrNull
                                                     ?.testSecretKey
                                             ..paymentCart = _model
                                                 .orderUpaymentNew?.orderItems
@@ -3468,17 +3461,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                             ..paymentCartCount = _model
                                                 .orderUpaymentNew
                                                 ?.orderItems
-                                                ?.cartItems
-                                                ?.length
+                                                .cartItems
+                                                .length
                                             ..paymentType = 'upayment'
                                             ..paymentBaseUrl = _model
                                                         .forPaymentResult1
                                                         ?.settingsPaymentInfo
-                                                        ?.where((e) =>
+                                                        .where((e) =>
                                                             e.isPrimaryStatus ==
                                                             true)
                                                         .toList()
-                                                        ?.firstOrNull
+                                                        .firstOrNull
                                                         ?.isProductionStatus ==
                                                     true
                                                 ? 'uapi'
@@ -3494,17 +3487,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                           orderStatus: 'Initialization',
                                           createdAt: getCurrentTimestamp,
                                           orderId:
-                                              'ORDAZYA${_model.idMapResultOrder1?.orderId?.toString()}',
+                                              'ORDAZYA${_model.idMapResultOrder1?.orderId.toString()}',
                                           customerRef: currentUserReference,
                                           totalPrice: currentUserDocument
                                                           ?.userCart
-                                                          ?.couponInfo
-                                                          ?.couponId !=
+                                                          .couponInfo
+                                                          .couponId !=
                                                       null &&
                                                   currentUserDocument
                                                           ?.userCart
-                                                          ?.couponInfo
-                                                          ?.couponId !=
+                                                          .couponInfo
+                                                          .couponId !=
                                                       ''
                                               ? (currentUserDocument!
                                                       .userCart
@@ -3533,18 +3526,18 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                   createdAt:
                                                       getCurrentTimestamp,
                                                   orderId:
-                                                      'ORDAZYA${_model.idMapResultOrder1?.orderId?.toString()}',
+                                                      'ORDAZYA${_model.idMapResultOrder1?.orderId.toString()}',
                                                   customerRef:
                                                       currentUserReference,
                                                   totalPrice: currentUserDocument
                                                                   ?.userCart
-                                                                  ?.couponInfo
-                                                                  ?.couponId !=
+                                                                  .couponInfo
+                                                                  .couponId !=
                                                               null &&
                                                           currentUserDocument
                                                                   ?.userCart
-                                                                  ?.couponInfo
-                                                                  ?.couponId !=
+                                                                  .couponInfo
+                                                                  .couponId !=
                                                               ''
                                                       ? (currentUserDocument!
                                                               .userCart
@@ -3586,7 +3579,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                 updateUserShippingaddressInfoStruct(
                                               (currentUserDocument
                                                           ?.userShippingaddress
-                                                          ?.toList() ??
+                                                          .toList() ??
                                                       [])
                                                   .where((e) =>
                                                       e.isDefault == true)
@@ -3599,7 +3592,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                 updateUserShippingaddressStruct(
                                               (currentUserDocument
                                                           ?.userShippingaddress
-                                                          ?.toList() ??
+                                                          .toList() ??
                                                       [])
                                                   .where((e) =>
                                                       e.isDefault == true)
@@ -3630,7 +3623,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                           PaymentWidget.routeName,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -3658,7 +3651,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                               ),
                                             ),
                                             duration:
-                                                Duration(milliseconds: 4000),
+                                                const Duration(milliseconds: 4000),
                                           ),
                                         );
                                         if (_shouldSetState)
@@ -3668,23 +3661,23 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                     } else {
                                       if (_model.forPaymentResult1
                                               ?.settingsPaymentInfo
-                                              ?.where((e) =>
+                                              .where((e) =>
                                                   e.isPrimaryStatus == true)
                                               .toList()
-                                              ?.firstOrNull
+                                              .firstOrNull
                                               ?.paymentName ==
                                           'tap') {
                                         _model.tapPaymentResult1 =
                                             await TapGroup.chargeAPICall.call(
                                           amount: currentUserDocument
                                                           ?.userCart
-                                                          ?.couponInfo
-                                                          ?.couponId !=
+                                                          .couponInfo
+                                                          .couponId !=
                                                       null &&
                                                   currentUserDocument
                                                           ?.userCart
-                                                          ?.couponInfo
-                                                          ?.couponId !=
+                                                          .couponInfo
+                                                          .couponId !=
                                                       ''
                                               ? (currentUserDocument!
                                                       .userCart
@@ -3701,45 +3694,45 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                           productList: _model.orderInfo,
                                           clientname: currentUserDisplayName,
                                           orderID:
-                                              'ORDAZYA${_model.idMapResultOrder1?.orderId?.toString()}',
+                                              'ORDAZYA${_model.idMapResultOrder1?.orderId.toString()}',
                                           clientemail: currentUserEmail,
                                           clientphone: currentPhoneNumber,
                                           merchantid: _model.forPaymentResult1
                                               ?.settingsPaymentInfo
-                                              ?.where((e) =>
+                                              .where((e) =>
                                                   e.isPrimaryStatus == true)
                                               .toList()
-                                              ?.firstOrNull
+                                              .firstOrNull
                                               ?.merchentId,
                                           postURL:
                                               'https://hook.us1.make.com/p7og7qm3g9v7amn2rdx6odh24brwvypj?project=azyaa&&paymenttype=tap',
                                           redirectURL:
-                                              'https://azyaa.flutterflow.app/azyaa-verify?orderid=${'ORDAZYA${_model.idMapResultOrder1?.orderId?.toString()}'}',
+                                              'https://azyaa.flutterflow.app/azyaa-verify?orderid=${'ORDAZYA${_model.idMapResultOrder1?.orderId.toString()}'}',
                                           url: isWeb
                                               ? 'https://proxy.vizsoft.in/https://api.tap.company/'
                                               : 'https://api.tap.company/',
                                           secreatKey: _model.forPaymentResult1
                                                       ?.settingsPaymentInfo
-                                                      ?.where((e) =>
+                                                      .where((e) =>
                                                           e.isPrimaryStatus ==
                                                           true)
                                                       .toList()
-                                                      ?.firstOrNull
+                                                      .firstOrNull
                                                       ?.isProductionStatus ==
                                                   true
                                               ? _model.forPaymentResult1
                                                   ?.settingsPaymentInfo
-                                                  ?.where((e) =>
+                                                  .where((e) =>
                                                       e.isPrimaryStatus == true)
                                                   .toList()
-                                                  ?.firstOrNull
+                                                  .firstOrNull
                                                   ?.productionSecretKey
                                               : _model.forPaymentResult1
                                                   ?.settingsPaymentInfo
-                                                  ?.where((e) =>
+                                                  .where((e) =>
                                                       e.isPrimaryStatus == true)
                                                   .toList()
-                                                  ?.firstOrNull
+                                                  .firstOrNull
                                                   ?.testSecretKey,
                                         );
 
@@ -3759,7 +3752,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                     ''),
                                               )
                                               ..orderId =
-                                                  'ORDAZYA${_model.idMapResultOrder1?.orderId?.toString()}'
+                                                  'ORDAZYA${_model.idMapResultOrder1?.orderId.toString()}'
                                               ..mainPaymentUrl = TapGroup
                                                   .chargeAPICall
                                                   .chargeUrl(
@@ -3777,28 +3770,28 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                               ..secretKey = _model
                                                           .forPaymentResult1
                                                           ?.settingsPaymentInfo
-                                                          ?.where((e) =>
+                                                          .where((e) =>
                                                               e.isPrimaryStatus ==
                                                               true)
                                                           .toList()
-                                                          ?.firstOrNull
+                                                          .firstOrNull
                                                           ?.isProductionStatus ==
                                                       true
                                                   ? _model.forPaymentResult1
                                                       ?.settingsPaymentInfo
-                                                      ?.where((e) =>
+                                                      .where((e) =>
                                                           e.isPrimaryStatus ==
                                                           true)
                                                       .toList()
-                                                      ?.firstOrNull
+                                                      .firstOrNull
                                                       ?.productionSecretKey
                                                   : _model.forPaymentResult1
                                                       ?.settingsPaymentInfo
-                                                      ?.where((e) =>
+                                                      .where((e) =>
                                                           e.isPrimaryStatus ==
                                                           true)
                                                       .toList()
-                                                      ?.firstOrNull
+                                                      .firstOrNull
                                                       ?.testSecretKey
                                               ..paymentCart = _model
                                                   .orderTappaymentNew
@@ -3809,8 +3802,8 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                               ..paymentCartCount = _model
                                                   .orderTappaymentNew
                                                   ?.orderItems
-                                                  ?.cartItems
-                                                  ?.length
+                                                  .cartItems
+                                                  .length
                                               ..paymentType = 'tap'
                                               ..presentUserRef =
                                                   currentUserReference,
@@ -3823,17 +3816,17 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                             orderStatus: 'Initialization',
                                             createdAt: getCurrentTimestamp,
                                             orderId:
-                                                'ORDAZYA${_model.idMapResultOrder1?.orderId?.toString()}',
+                                                'ORDAZYA${_model.idMapResultOrder1?.orderId.toString()}',
                                             customerRef: currentUserReference,
                                             totalPrice: currentUserDocument
                                                             ?.userCart
-                                                            ?.couponInfo
-                                                            ?.couponId !=
+                                                            .couponInfo
+                                                            .couponId !=
                                                         null &&
                                                     currentUserDocument
                                                             ?.userCart
-                                                            ?.couponInfo
-                                                            ?.couponId !=
+                                                            .couponInfo
+                                                            .couponId !=
                                                         ''
                                                 ? (currentUserDocument!
                                                         .userCart
@@ -3864,18 +3857,18 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                     createdAt:
                                                         getCurrentTimestamp,
                                                     orderId:
-                                                        'ORDAZYA${_model.idMapResultOrder1?.orderId?.toString()}',
+                                                        'ORDAZYA${_model.idMapResultOrder1?.orderId.toString()}',
                                                     customerRef:
                                                         currentUserReference,
                                                     totalPrice: currentUserDocument
                                                                     ?.userCart
-                                                                    ?.couponInfo
-                                                                    ?.couponId !=
+                                                                    .couponInfo
+                                                                    .couponId !=
                                                                 null &&
                                                             currentUserDocument
                                                                     ?.userCart
-                                                                    ?.couponInfo
-                                                                    ?.couponId !=
+                                                                    .couponInfo
+                                                                    .couponId !=
                                                                 ''
                                                         ? (currentUserDocument!
                                                                 .userCart
@@ -3919,7 +3912,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                   updateUserShippingaddressInfoStruct(
                                                 (currentUserDocument
                                                             ?.userShippingaddress
-                                                            ?.toList() ??
+                                                            .toList() ??
                                                         [])
                                                     .where((e) =>
                                                         e.isDefault == true)
@@ -3932,7 +3925,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                   updateUserShippingaddressStruct(
                                                 (currentUserDocument
                                                             ?.userShippingaddress
-                                                            ?.toList() ??
+                                                            .toList() ??
                                                         [])
                                                     .where((e) =>
                                                         e.isDefault == true)
@@ -3958,7 +3951,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                             PaymentWidget.routeName,
                                             extra: <String, dynamic>{
                                               '__transition_info__':
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -3986,7 +3979,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                 ),
                                               ),
                                               duration:
-                                                  Duration(milliseconds: 4000),
+                                                  const Duration(milliseconds: 4000),
                                             ),
                                           );
                                           if (_shouldSetState)
@@ -4003,7 +3996,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                               backgroundColor:
                                                   Colors.transparent,
                                               alignment:
-                                                  AlignmentDirectional(0.0, 1.0)
+                                                  const AlignmentDirectional(0.0, 1.0)
                                                       .resolve(
                                                           Directionality.of(
                                                               context)),
@@ -4052,7 +4045,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                 .secondaryBackground,
                                           ),
                                         ),
-                                        duration: Duration(milliseconds: 4000),
+                                        duration: const Duration(milliseconds: 4000),
                                       ),
                                     );
                                     if (_shouldSetState) safeSetState(() {});
@@ -4071,9 +4064,9 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                               options: FFButtonOptions(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 48.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -4090,8 +4083,8 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                           ),
                         ),
                       ]
-                          .divide(SizedBox(height: 12.0))
-                          .addToEnd(SizedBox(height: 52.0)),
+                          .divide(const SizedBox(height: 12.0))
+                          .addToEnd(const SizedBox(height: 52.0)),
                     ),
                   ),
                 ],

@@ -1,12 +1,8 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 's4_redeem_gift_card_model.dart';
 export 's4_redeem_gift_card_model.dart';
 
@@ -57,7 +53,7 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -87,7 +83,7 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -135,11 +131,11 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                             print('IconButton pressed ...');
                           },
                         ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -154,9 +150,9 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Stack(
-                        alignment: AlignmentDirectional(1.0, 1.0),
+                        alignment: const AlignmentDirectional(1.0, 1.0),
                         children: [
                           Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -165,7 +161,7 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                               borderRadius: BorderRadius.circular(16.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(12.0),
+                              padding: const EdgeInsets.all(12.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -185,11 +181,11 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: Container(
                                         width: 180.0,
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
                                             '1s106zkm' /* Use your wallet balance to buy... */,
@@ -218,10 +214,10 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                                     ),
                                     options: FFButtonOptions(
                                       height: 28.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
@@ -247,7 +243,7 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                                           FlutterFlowTheme.of(context).info,
                                     ),
                                   ),
-                                ].divide(SizedBox(height: 8.0)),
+                                ].divide(const SizedBox(height: 8.0)),
                               ),
                             ),
                           ),
@@ -258,7 +254,7 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                               width: 150.0,
                               height: 130.0,
                               fit: BoxFit.contain,
-                              alignment: Alignment(0.0, 0.0),
+                              alignment: const Alignment(0.0, 0.0),
                             ),
                           ),
                         ],
@@ -266,13 +262,13 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 8.0),
                             child: RichText(
                               textScaler: MediaQuery.of(context).textScaler,
@@ -349,7 +345,7 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
@@ -387,13 +383,13 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                             ),
                           ),
                         ]
-                            .addToStart(SizedBox(height: 24.0))
-                            .addToEnd(SizedBox(height: 24.0)),
+                            .addToStart(const SizedBox(height: 24.0))
+                            .addToEnd(const SizedBox(height: 24.0)),
                       ),
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () {
                           print('Button pressed ...');
@@ -404,9 +400,9 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 48.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -421,8 +417,8 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                       ),
                     ),
                   ]
-                      .divide(SizedBox(height: 16.0))
-                      .addToEnd(SizedBox(height: 16.0)),
+                      .divide(const SizedBox(height: 16.0))
+                      .addToEnd(const SizedBox(height: 16.0)),
                 ),
               ),
             ),

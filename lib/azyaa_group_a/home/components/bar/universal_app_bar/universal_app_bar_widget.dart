@@ -1,18 +1,13 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/ui/search/search_widget.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:badges/badges.dart' as badges;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'universal_app_bar_model.dart';
 export 'universal_app_bar_model.dart';
@@ -31,13 +26,13 @@ class UniversalAppBarWidget extends StatefulWidget {
     this.productRef,
     this.designerRef,
     this.creatorRef,
-  })  : this.backButtonStatus = backButtonStatus ?? true,
-        this.title = title ?? ' ',
-        this.navigationIconStatus = navigationIconStatus ?? true,
-        this.searchIconStatus = searchIconStatus ?? false,
-        this.wishlistIconStatus = wishlistIconStatus ?? false,
-        this.navigationFrom = navigationFrom ?? 'default',
-        this.shareIconStatus = shareIconStatus ?? false;
+  })  : backButtonStatus = backButtonStatus ?? true,
+        title = title ?? ' ',
+        navigationIconStatus = navigationIconStatus ?? true,
+        searchIconStatus = searchIconStatus ?? false,
+        wishlistIconStatus = wishlistIconStatus ?? false,
+        navigationFrom = navigationFrom ?? 'default',
+        shareIconStatus = shareIconStatus ?? false;
 
   final bool backButtonStatus;
   final String title;
@@ -87,7 +82,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
       children: [
         Stack(
           children: [
-            if ((widget!.backButtonStatus == true) &&
+            if ((widget.backButtonStatus == true) &&
                 responsiveVisibility(
                   context: context,
                   phone: false,
@@ -96,7 +91,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                   desktop: false,
                 ))
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                 child: FlutterFlowIconButton(
                   borderColor: FlutterFlowTheme.of(context).border,
                   borderRadius: 100.0,
@@ -113,31 +108,31 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                       builder: (alertDialogContext) {
                         return WebViewAware(
                           child: AlertDialog(
-                            content: Text(widget!.navigationFrom),
+                            content: Text(widget.navigationFrom),
                             actions: [
                               TextButton(
                                 onPressed: () =>
                                     Navigator.pop(alertDialogContext),
-                                child: Text('Ok'),
+                                child: const Text('Ok'),
                               ),
                             ],
                           ),
                         );
                       },
                     );
-                    if ((widget!.designerRef != null) &&
-                        (widget!.navigationFrom == 'designer')) {
+                    if ((widget.designerRef != null) &&
+                        (widget.navigationFrom == 'designer')) {
                       await showDialog(
                         context: context,
                         builder: (alertDialogContext) {
                           return WebViewAware(
                             child: AlertDialog(
-                              content: Text('yes'),
+                              content: const Text('yes'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: Text('Ok'),
+                                  child: const Text('Ok'),
                                 ),
                               ],
                             ),
@@ -149,12 +144,12 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                         DesignerWidget.routeName,
                         queryParameters: {
                           'designerUid': serializeParam(
-                            widget!.designerRef?.id,
+                            widget.designerRef?.id,
                             ParamType.String,
                           ),
                         }.withoutNulls,
                         extra: <String, dynamic>{
-                          '__transition_info__': TransitionInfo(
+                          '__transition_info__': const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -167,12 +162,12 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                         builder: (alertDialogContext) {
                           return WebViewAware(
                             child: AlertDialog(
-                              content: Text('no'),
+                              content: const Text('no'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: Text('Ok'),
+                                  child: const Text('Ok'),
                                 ),
                               ],
                             ),
@@ -183,9 +178,9 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                   },
                 ),
               ),
-            if (widget!.backButtonStatus == true)
+            if (widget.backButtonStatus == true)
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                 child: FlutterFlowIconButton(
                   borderColor: FlutterFlowTheme.of(context).border,
                   borderRadius: 100.0,
@@ -197,17 +192,17 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                     size: 24.0,
                   ),
                   onPressed: () async {
-                    if (widget!.navigationFrom == 'default') {
+                    if (widget.navigationFrom == 'default') {
                       context.safePop();
                     } else {
-                      if (widget!.navigationFrom == 'shop') {
+                      if (widget.navigationFrom == 'shop') {
                         if (Navigator.of(context).canPop()) {
                           context.pop();
                         }
                         context.pushNamed(
                           HomeWidget.routeName,
                           extra: <String, dynamic>{
-                            '__transition_info__': TransitionInfo(
+                            '__transition_info__': const TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                               duration: Duration(milliseconds: 0),
@@ -215,14 +210,14 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                           },
                         );
                       } else {
-                        if (widget!.navigationFrom == 'productlist') {
+                        if (widget.navigationFrom == 'productlist') {
                           if (Navigator.of(context).canPop()) {
                             context.pop();
                           }
                           context.pushNamed(
                             ShopWidget.routeName,
                             extra: <String, dynamic>{
-                              '__transition_info__': TransitionInfo(
+                              '__transition_info__': const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                                 duration: Duration(milliseconds: 0),
@@ -230,14 +225,14 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                             },
                           );
                         } else {
-                          if (widget!.navigationFrom == 'membership') {
+                          if (widget.navigationFrom == 'membership') {
                             if (Navigator.of(context).canPop()) {
                               context.pop();
                             }
                             context.pushNamed(
                               MembershipWidget.routeName,
                               extra: <String, dynamic>{
-                                '__transition_info__': TransitionInfo(
+                                '__transition_info__': const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -245,14 +240,14 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                               },
                             );
                           } else {
-                            if (widget!.navigationFrom == 'profile') {
+                            if (widget.navigationFrom == 'profile') {
                               if (Navigator.of(context).canPop()) {
                                 context.pop();
                               }
                               context.pushNamed(
                                 ProfileWidget.routeName,
                                 extra: <String, dynamic>{
-                                  '__transition_info__': TransitionInfo(
+                                  '__transition_info__': const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 0),
@@ -260,11 +255,11 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                 },
                               );
                             } else {
-                              if (widget!.navigationFrom == 'creator') {
+                              if (widget.navigationFrom == 'creator') {
                                 context.goNamed(
                                   CreatorsWidget.routeName,
                                   extra: <String, dynamic>{
-                                    '__transition_info__': TransitionInfo(
+                                    '__transition_info__': const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -272,12 +267,12 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                   },
                                 );
                               } else {
-                                if ((widget!.navigationFrom == 'designer') &&
-                                    (widget!.designerRef != null)) {
+                                if ((widget.navigationFrom == 'designer') &&
+                                    (widget.designerRef != null)) {
                                   context.goNamed(
                                     DesignersListWidget.routeName,
                                     extra: <String, dynamic>{
-                                      '__transition_info__': TransitionInfo(
+                                      '__transition_info__': const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -285,11 +280,11 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                     },
                                   );
                                 } else {
-                                  if (widget!.navigationFrom == 'account') {
+                                  if (widget.navigationFrom == 'account') {
                                     context.pushNamed(
                                       AddressWidget.routeName,
                                       extra: <String, dynamic>{
-                                        '__transition_info__': TransitionInfo(
+                                        '__transition_info__': const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -298,12 +293,12 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                       },
                                     );
                                   } else {
-                                    if (widget!.navigationFrom ==
+                                    if (widget.navigationFrom ==
                                         'editprofile') {
                                       context.pushNamed(
                                         ProfileWidget.routeName,
                                         extra: <String, dynamic>{
-                                          '__transition_info__': TransitionInfo(
+                                          '__transition_info__': const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -312,7 +307,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                         },
                                       );
                                     } else {
-                                      if (widget!.navigationFrom == 'orders') {
+                                      if (widget.navigationFrom == 'orders') {
                                         if (Navigator.of(context).canPop()) {
                                           context.pop();
                                         }
@@ -320,7 +315,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                           OrdersWidget.routeName,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -330,7 +325,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                           },
                                         );
                                       } else {
-                                        if (widget!.navigationFrom == 'vto') {
+                                        if (widget.navigationFrom == 'vto') {
                                           if (Navigator.of(context).canPop()) {
                                             context.pop();
                                           }
@@ -338,7 +333,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                             VirtualTryOnWidget.routeName,
                                             extra: <String, dynamic>{
                                               '__transition_info__':
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -348,7 +343,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                             },
                                           );
                                         } else {
-                                          if (widget!.navigationFrom ==
+                                          if (widget.navigationFrom ==
                                               'account') {
                                             if (Navigator.of(context)
                                                 .canPop()) {
@@ -358,7 +353,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                               ProfileWidget.routeName,
                                               extra: <String, dynamic>{
                                                 '__transition_info__':
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -388,9 +383,9 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
         ),
         Expanded(
           child: Align(
-            alignment: AlignmentDirectional(-1.0, 0.0),
+            alignment: const AlignmentDirectional(-1.0, 0.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
               child: InkWell(
                 splashColor: Colors.transparent,
                 focusColor: Colors.transparent,
@@ -398,7 +393,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                 highlightColor: Colors.transparent,
                 onTap: () async {},
                 child: Text(
-                  widget!.title.maybeHandleOverflow(
+                  widget.title.maybeHandleOverflow(
                     maxChars: 40,
                     replacement: '…',
                   ),
@@ -414,11 +409,11 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
             ),
           ),
         ),
-        if (widget!.shareIconStatus == true)
+        if (widget.shareIconStatus == true)
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
             child: StreamBuilder<ProductsRecord>(
-              stream: ProductsRecord.getDocument(widget!.productRef!),
+              stream: ProductsRecord.getDocument(widget.productRef!),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {
@@ -454,10 +449,10 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
               },
             ),
           ),
-        if (widget!.searchIconStatus == true)
+        if (widget.searchIconStatus == true)
           Builder(
             builder: (context) => Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
               child: FlutterFlowIconButton(
                 borderColor: FlutterFlowTheme.of(context).border,
                 borderRadius: 100.0,
@@ -476,12 +471,12 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                         elevation: 0,
                         insetPadding: EdgeInsets.zero,
                         backgroundColor: Colors.transparent,
-                        alignment: AlignmentDirectional(0.0, 0.0)
+                        alignment: const AlignmentDirectional(0.0, 0.0)
                             .resolve(Directionality.of(context)),
                         child: WebViewAware(
                           child: Container(
                             width: 500.0,
-                            child: SearchWidget(),
+                            child: const SearchWidget(),
                           ),
                         ),
                       );
@@ -491,9 +486,9 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
               ),
             ),
           ),
-        if ((loggedIn == true) && (widget!.wishlistIconStatus == true))
+        if ((loggedIn == true) && (widget.wishlistIconStatus == true))
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
             child: FlutterFlowIconButton(
               borderColor: FlutterFlowTheme.of(context).border,
               borderRadius: 100.0,
@@ -511,7 +506,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                 context.pushNamed(
                   WishlistWidget.routeName,
                   extra: <String, dynamic>{
-                    '__transition_info__': TransitionInfo(
+                    '__transition_info__': const TransitionInfo(
                       hasTransition: true,
                       transitionType: PageTransitionType.fade,
                       duration: Duration(milliseconds: 0),
@@ -521,9 +516,9 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
               },
             ),
           ),
-        if (widget!.navigationIconStatus == true)
+        if (widget.navigationIconStatus == true)
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
             child: Container(
               height: 42.0,
               child: Stack(
@@ -543,7 +538,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                         context.goNamed(
                           LoginWidget.routeName,
                           extra: <String, dynamic>{
-                            '__transition_info__': TransitionInfo(
+                            '__transition_info__': const TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                               duration: Duration(milliseconds: 0),
@@ -574,7 +569,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                           context.pushNamed(
                             CartWidget.routeName,
                             extra: <String, dynamic>{
-                              '__transition_info__': TransitionInfo(
+                              '__transition_info__': const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                                 duration: Duration(milliseconds: 0),
@@ -608,7 +603,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  if (widget!.navigationFrom == 'designer') {
+                                  if (widget.navigationFrom == 'designer') {
                                     if (Navigator.of(context).canPop()) {
                                       context.pop();
                                     }
@@ -616,12 +611,12 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                       CartWidget.routeName,
                                       queryParameters: {
                                         'designerRef': serializeParam(
-                                          widget!.designerRef,
+                                          widget.designerRef,
                                           ParamType.DocumentReference,
                                         ),
                                       }.withoutNulls,
                                       extra: <String, dynamic>{
-                                        '__transition_info__': TransitionInfo(
+                                        '__transition_info__': const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -636,7 +631,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                     context.pushNamed(
                                       CartWidget.routeName,
                                       extra: <String, dynamic>{
-                                        '__transition_info__': TransitionInfo(
+                                        '__transition_info__': const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -658,8 +653,8 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                           color: valueOrDefault<int>(
                                                     currentUserDocument
                                                         ?.userCart
-                                                        ?.cartItems
-                                                        ?.length,
+                                                        .cartItems
+                                                        .length,
                                                     0,
                                                   ) ==
                                                   0
@@ -677,7 +672,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                   badgeColor: FlutterFlowTheme.of(context)
                                       .primaryBackground,
                                   elevation: 4.0,
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(8.0),
                                   position: badges.BadgePosition.topEnd(),
                                   animationType:
                                       badges.BadgeAnimationType.scale,
@@ -685,7 +680,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                   child: FlutterFlowIconButton(
                                     borderColor: valueOrDefault<int>(
                                               currentUserDocument
-                                                  ?.userCart?.cartItems?.length,
+                                                  ?.userCart.cartItems.length,
                                               0,
                                             ) ==
                                             0
@@ -696,7 +691,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                     buttonSize: 42.0,
                                     fillColor: valueOrDefault<int>(
                                               currentUserDocument
-                                                  ?.userCart?.cartItems?.length,
+                                                  ?.userCart.cartItems.length,
                                               0,
                                             ) ==
                                             0
@@ -707,7 +702,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                       FFIcons.kvector1,
                                       color: valueOrDefault<int>(
                                                 currentUserDocument?.userCart
-                                                    ?.cartItems?.length,
+                                                    .cartItems.length,
                                                 0,
                                               ) ==
                                               0
@@ -717,7 +712,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                       size: 18.0,
                                     ),
                                     onPressed: () async {
-                                      if (widget!.navigationFrom ==
+                                      if (widget.navigationFrom ==
                                           'designer') {
                                         if (Navigator.of(context).canPop()) {
                                           context.pop();
@@ -726,13 +721,13 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                           CartWidget.routeName,
                                           queryParameters: {
                                             'designerRef': serializeParam(
-                                              widget!.designerRef,
+                                              widget.designerRef,
                                               ParamType.DocumentReference,
                                             ),
                                           }.withoutNulls,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -749,7 +744,7 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
                                           CartWidget.routeName,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -771,15 +766,15 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
               ),
             ),
           ),
-        if (widget!.tryonStatus == true)
+        if (widget.tryonStatus == true)
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
                 context.pushNamed(
                   ShopWidget.routeName,
                   extra: <String, dynamic>{
-                    '__transition_info__': TransitionInfo(
+                    '__transition_info__': const TransitionInfo(
                       hasTransition: true,
                       transitionType: PageTransitionType.fade,
                       duration: Duration(milliseconds: 0),
@@ -792,8 +787,8 @@ class _UniversalAppBarWidgetState extends State<UniversalAppBarWidget> {
               ),
               options: FFButtonOptions(
                 height: 40.0,
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'almarai',

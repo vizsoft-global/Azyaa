@@ -1,4 +1,3 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/virtual_try_on/v_t_o_begin/v_t_o_begin_widget.dart';
 import '/azyaa_group_a/customer/virtual_try_on/v_t_o_final/v_t_o_final_widget.dart';
@@ -19,7 +18,6 @@ import '/azyaa_group_b/creator_space/creator_space/c1_share_promotion/c1_share_p
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -27,20 +25,15 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/ui/reviewgrid/reviewgrid_widget.dart';
 import 'dart:async';
-import 'dart:convert';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
@@ -99,7 +92,7 @@ class _ProductWidgetState extends State<ProductWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -118,10 +111,10 @@ class _ProductWidgetState extends State<ProductWidget> {
                     navigationFrom: 'productDetails',
                     tryonStatus: false,
                     shareIconStatus: false,
-                    productRef: widget!.product,
+                    productRef: widget.product,
                   ),
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -134,15 +127,15 @@ class _ProductWidgetState extends State<ProductWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   wrapWithModel(
                     model: _model.appUpdateCheckerModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: AppUpdateCheckerWidget(),
+                    child: const AppUpdateCheckerWidget(),
                   ),
                   StreamBuilder<ProductsRecord>(
-                    stream: ProductsRecord.getDocument(widget!.product!),
+                    stream: ProductsRecord.getDocument(widget.product!),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
                       if (!snapshot.hasData) {
@@ -150,7 +143,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 150.0,
-                            child: LoadingAnimationWidget(),
+                            child: const LoadingAnimationWidget(),
                           ),
                         );
                       }
@@ -217,8 +210,8 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                           child:
                                                               FlutterFlowExpandedImageView(
                                                             image:
-                                                                Image.network(
-                                                              imageListItem,
+                                                                CachedNetworkImage(
+                                                              imageUrl: imageListItem,
                                                               fit: BoxFit
                                                                   .contain,
                                                             ),
@@ -239,8 +232,8 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(8.0),
-                                                        child: Image.network(
-                                                          imageListItem,
+                                                        child: CachedNetworkImage(
+                                                          imageUrl: imageListItem,
                                                           fit: BoxFit.contain,
                                                         ),
                                                       ),
@@ -278,10 +271,10 @@ class _ProductWidgetState extends State<ProductWidget> {
                                           0)
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -297,13 +290,9 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                         PageTransitionType.fade,
                                                     child:
                                                         FlutterFlowExpandedImageView(
-                                                      image: Image.network(
-                                                        () {
+                                                      image: CachedNetworkImage(
+                                                        imageUrl: () {
                                                           if (stackProductsRecord
-                                                                      .productInfo
-                                                                      .featureImage !=
-                                                                  null &&
-                                                              stackProductsRecord
                                                                       .productInfo
                                                                       .featureImage !=
                                                                   '') {
@@ -311,10 +300,6 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                 .productInfo
                                                                 .featureImage;
                                                           } else if (stackProductsRecord
-                                                                      .productInfo
-                                                                      .iconImage !=
-                                                                  null &&
-                                                              stackProductsRecord
                                                                       .productInfo
                                                                       .iconImage !=
                                                                   '') {
@@ -335,7 +320,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                           }
                                                         }(),
                                                         fit: BoxFit.contain,
-                                                        alignment: Alignment(
+                                                        alignment: const Alignment(
                                                             0.0, -1.0),
                                                       ),
                                                       allowRotation: false,
@@ -343,19 +328,11 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                         if (stackProductsRecord
                                                                     .productInfo
                                                                     .featureImage !=
-                                                                null &&
-                                                            stackProductsRecord
-                                                                    .productInfo
-                                                                    .featureImage !=
                                                                 '') {
                                                           return stackProductsRecord
                                                               .productInfo
                                                               .featureImage;
                                                         } else if (stackProductsRecord
-                                                                    .productInfo
-                                                                    .iconImage !=
-                                                                null &&
-                                                            stackProductsRecord
                                                                     .productInfo
                                                                     .iconImage !=
                                                                 '') {
@@ -385,19 +362,11 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                   if (stackProductsRecord
                                                               .productInfo
                                                               .featureImage !=
-                                                          null &&
-                                                      stackProductsRecord
-                                                              .productInfo
-                                                              .featureImage !=
                                                           '') {
                                                     return stackProductsRecord
                                                         .productInfo
                                                         .featureImage;
                                                   } else if (stackProductsRecord
-                                                              .productInfo
-                                                              .iconImage !=
-                                                          null &&
-                                                      stackProductsRecord
                                                               .productInfo
                                                               .iconImage !=
                                                           '') {
@@ -421,13 +390,9 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           8.0),
-                                                  child: Image.network(
-                                                    () {
+                                                  child: CachedNetworkImage(
+                                                    imageUrl: () {
                                                       if (stackProductsRecord
-                                                                  .productInfo
-                                                                  .featureImage !=
-                                                              null &&
-                                                          stackProductsRecord
                                                                   .productInfo
                                                                   .featureImage !=
                                                               '') {
@@ -435,10 +400,6 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                             .productInfo
                                                             .featureImage;
                                                       } else if (stackProductsRecord
-                                                                  .productInfo
-                                                                  .iconImage !=
-                                                              null &&
-                                                          stackProductsRecord
                                                                   .productInfo
                                                                   .iconImage !=
                                                               '') {
@@ -471,7 +432,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                         .toDouble(),
                                                     fit: BoxFit.cover,
                                                     alignment:
-                                                        Alignment(0.0, -1.0),
+                                                        const Alignment(0.0, -1.0),
                                                   ),
                                                 ),
                                               ),
@@ -483,9 +444,9 @@ class _ProductWidgetState extends State<ProductWidget> {
                                           true)
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 1.0),
+                                              const AlignmentDirectional(0.0, 1.0),
                                           child: Padding(
-                                            padding: EdgeInsets.all(24.0),
+                                            padding: const EdgeInsets.all(24.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
                                                 if (loggedIn) {
@@ -574,7 +535,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                           .height *
                                                                       0.76,
                                                                   child:
-                                                                      VirtualTryOnPointsWidget(),
+                                                                      const VirtualTryOnPointsWidget(),
                                                                 ),
                                                               ),
                                                             ),
@@ -659,17 +620,17 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                   .getText(
                                                 '86m6pgqo' /* Virtual Try on */,
                                               ),
-                                              icon: Icon(
+                                              icon: const Icon(
                                                 FFIcons.kvector29,
                                                 size: 15.0,
                                               ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 8.0, 0.0),
                                                 color:
@@ -701,7 +662,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 8.0, 16.0, 8.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -709,7 +670,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -811,11 +772,11 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                       8.0),
                                                         ),
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       6.0,
                                                                       2.0,
@@ -860,7 +821,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 8.0)),
+                                                        const SizedBox(width: 8.0)),
                                                   ),
                                                   Text(
                                                     FFLocalizations.of(context)
@@ -985,9 +946,9 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                               ),
                                                         ),
                                                       ].divide(
-                                                          SizedBox(width: 8.0)),
+                                                          const SizedBox(width: 8.0)),
                                                     ),
-                                                ].divide(SizedBox(height: 8.0)),
+                                                ].divide(const SizedBox(height: 8.0)),
                                               ),
                                             ),
                                             wrapWithModel(
@@ -1050,7 +1011,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                         'azyaa://azyaa.ai/azyaa-producttest?productID=${stackProductsRecord.productId}',
                                                     domain: 'azyaa.link',
                                                     externalID:
-                                                        '${currentUserUid}-${_model.idmapDoc?.shareLinkId?.toString()}',
+                                                        '${currentUserUid}-${_model.idmapDoc?.shareLinkId.toString()}',
                                                     android:
                                                         'azyaa://azyaa.ai/azyaa-producttest?productID=${stackProductsRecord.productId}',
                                                   );
@@ -1106,7 +1067,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                     Navigator.pop(
                                                                         alertDialogContext),
                                                                 child:
-                                                                    Text('Ok'),
+                                                                    const Text('Ok'),
                                                               ),
                                                             ],
                                                           ),
@@ -1119,11 +1080,11 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                 },
                                               ),
                                             ),
-                                          ].divide(SizedBox(width: 8.0)),
+                                          ].divide(const SizedBox(width: 8.0)),
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1165,7 +1126,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   .lineThrough,
                                                         ),
                                               ),
-                                          ].divide(SizedBox(width: 2.0)),
+                                          ].divide(const SizedBox(width: 2.0)),
                                         ),
                                       ),
                                       Text(
@@ -1215,7 +1176,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                 attributeList[
                                                     attributeListIndex];
                                             return Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
                                               child: StreamBuilder<
@@ -1240,7 +1201,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
                                                   if (!snapshot.hasData) {
-                                                    return Center(
+                                                    return const Center(
                                                       child: SizedBox(
                                                         width: 2.0,
                                                         height: 2.0,
@@ -1284,7 +1245,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                       Container(
                                                         height: 50.0,
                                                         decoration:
-                                                            BoxDecoration(),
+                                                            const BoxDecoration(),
                                                         child: Builder(
                                                           builder: (context) =>
                                                               InkWell(
@@ -1312,7 +1273,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                     backgroundColor:
                                                                         Colors
                                                                             .transparent,
-                                                                    alignment: AlignmentDirectional(
+                                                                    alignment: const AlignmentDirectional(
                                                                             0.0,
                                                                             1.0)
                                                                         .resolve(
@@ -1367,51 +1328,51 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                     enText: () {
                                                                       if (variationAttributesRecord
                                                                               ?.attributeInfoCustomTranslate
-                                                                              ?.name
-                                                                              ?.en !=
+                                                                              .name
+                                                                              .en !=
                                                                           '') {
                                                                         return variationAttributesRecord
                                                                             ?.attributeInfoCustomTranslate
-                                                                            ?.name
-                                                                            ?.en;
+                                                                            .name
+                                                                            .en;
                                                                       } else if (variationAttributesRecord
                                                                               ?.attributeInfoTranslate
-                                                                              ?.name
-                                                                              ?.en !=
+                                                                              .name
+                                                                              .en !=
                                                                           '') {
                                                                         return variationAttributesRecord
                                                                             ?.attributeInfoTranslate
-                                                                            ?.name
-                                                                            ?.en;
+                                                                            .name
+                                                                            .en;
                                                                       } else {
                                                                         return variationAttributesRecord
                                                                             ?.attributeInfo
-                                                                            ?.name;
+                                                                            .name;
                                                                       }
                                                                     }(),
                                                                     arText: () {
                                                                       if (variationAttributesRecord
                                                                               ?.attributeInfoCustomTranslate
-                                                                              ?.name
-                                                                              ?.ar !=
+                                                                              .name
+                                                                              .ar !=
                                                                           '') {
                                                                         return variationAttributesRecord
                                                                             ?.attributeInfoCustomTranslate
-                                                                            ?.name
-                                                                            ?.ar;
+                                                                            .name
+                                                                            .ar;
                                                                       } else if (variationAttributesRecord
                                                                               ?.attributeInfoTranslate
-                                                                              ?.name
-                                                                              ?.ar !=
+                                                                              .name
+                                                                              .ar !=
                                                                           '') {
                                                                         return variationAttributesRecord
                                                                             ?.attributeInfoTranslate
-                                                                            ?.name
-                                                                            ?.ar;
+                                                                            .name
+                                                                            .ar;
                                                                       } else {
                                                                         return variationAttributesRecord
                                                                             ?.attributeInfo
-                                                                            ?.name;
+                                                                            .name;
                                                                       }
                                                                     }(),
                                                                   ),
@@ -1455,7 +1416,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               elevation: 0,
                                                                               insetPadding: EdgeInsets.zero,
                                                                               backgroundColor: Colors.transparent,
-                                                                              alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                              alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                               child: WebViewAware(
                                                                                 child: GestureDetector(
                                                                                   onTap: () {
@@ -1499,9 +1460,9 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                     height:
                                                                         50.0,
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             1.0,
                                                                             0.0),
                                                                     child:
@@ -1544,7 +1505,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               builder: (context, snapshot) {
                                                                                 // Customize what your widget looks like when it's loading.
                                                                                 if (!snapshot.hasData) {
-                                                                                  return Center(
+                                                                                  return const Center(
                                                                                     child: SizedBox(
                                                                                       width: 2.0,
                                                                                       height: 2.0,
@@ -1622,70 +1583,70 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                   },
                                                                                   child: Stack(
                                                                                     children: [
-                                                                                      if ((variationAttributesRecord?.attributeId == '1001') && (stackBrandsRecord?.brandInfo?.color != null))
+                                                                                      if ((variationAttributesRecord?.attributeId == '1001') && (stackBrandsRecord?.brandInfo.color != null))
                                                                                         Align(
-                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                          alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                           child: Container(
                                                                                             decoration: BoxDecoration(
                                                                                               shape: BoxShape.circle,
                                                                                               border: Border.all(
-                                                                                                color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).primaryBackground,
+                                                                                                color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).primaryBackground,
                                                                                               ),
                                                                                             ),
                                                                                             child: Padding(
-                                                                                              padding: EdgeInsets.all(2.0),
+                                                                                              padding: const EdgeInsets.all(2.0),
                                                                                               child: Container(
                                                                                                 width: 40.0,
                                                                                                 height: 40.0,
                                                                                                 decoration: BoxDecoration(
-                                                                                                  color: stackBrandsRecord?.brandInfo?.color,
+                                                                                                  color: stackBrandsRecord?.brandInfo.color,
                                                                                                   borderRadius: BorderRadius.circular(100.0),
                                                                                                   border: Border.all(
-                                                                                                    color: Color(0x27000000),
+                                                                                                    color: const Color(0x27000000),
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
                                                                                           ),
                                                                                         ),
-                                                                                      if (!((variationAttributesRecord?.attributeId == '1001') && (stackBrandsRecord?.brandInfo?.color != null)))
+                                                                                      if (!((variationAttributesRecord?.attributeId == '1001') && (stackBrandsRecord?.brandInfo.color != null)))
                                                                                         Align(
-                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                          alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                           child: Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
                                                                                             child: Container(
                                                                                               decoration: BoxDecoration(
                                                                                                 borderRadius: BorderRadius.circular(4.0),
                                                                                                 border: Border.all(
-                                                                                                  color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
+                                                                                                  color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
                                                                                                 ),
                                                                                               ),
                                                                                               child: Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
+                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
                                                                                                 child: Text(
                                                                                                   FFLocalizations.of(context).getVariableText(
                                                                                                     enText: () {
-                                                                                                      if (stackBrandsRecord?.brandInfoCustomTranslate?.name?.en != '') {
-                                                                                                        return stackBrandsRecord?.brandInfoCustomTranslate?.name?.en;
-                                                                                                      } else if (stackBrandsRecord?.brandInfoTranslate?.name?.en != '') {
-                                                                                                        return stackBrandsRecord?.brandInfoTranslate?.name?.en;
+                                                                                                      if (stackBrandsRecord?.brandInfoCustomTranslate.name.en != '') {
+                                                                                                        return stackBrandsRecord?.brandInfoCustomTranslate.name.en;
+                                                                                                      } else if (stackBrandsRecord?.brandInfoTranslate.name.en != '') {
+                                                                                                        return stackBrandsRecord?.brandInfoTranslate.name.en;
                                                                                                       } else {
-                                                                                                        return stackBrandsRecord?.brandInfo?.name;
+                                                                                                        return stackBrandsRecord?.brandInfo.name;
                                                                                                       }
                                                                                                     }(),
                                                                                                     arText: () {
-                                                                                                      if (stackBrandsRecord?.brandInfoCustomTranslate?.name?.ar != '') {
-                                                                                                        return stackBrandsRecord?.brandInfoCustomTranslate?.name?.ar;
-                                                                                                      } else if (stackBrandsRecord?.brandInfoTranslate?.name?.ar != '') {
-                                                                                                        return stackBrandsRecord?.brandInfoTranslate?.name?.ar;
+                                                                                                      if (stackBrandsRecord?.brandInfoCustomTranslate.name.ar != '') {
+                                                                                                        return stackBrandsRecord?.brandInfoCustomTranslate.name.ar;
+                                                                                                      } else if (stackBrandsRecord?.brandInfoTranslate.name.ar != '') {
+                                                                                                        return stackBrandsRecord?.brandInfoTranslate.name.ar;
                                                                                                       } else {
-                                                                                                        return stackBrandsRecord?.brandInfo?.name;
+                                                                                                        return stackBrandsRecord?.brandInfo.name;
                                                                                                       }
                                                                                                     }(),
                                                                                                   ),
                                                                                                   style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                                         fontFamily: 'almarai',
-                                                                                                        color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
+                                                                                                        color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
                                                                                                         letterSpacing: 0.0,
                                                                                                       ),
                                                                                                 ),
@@ -1735,7 +1696,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             backgroundColor:
                                                                                 Colors.transparent,
                                                                             alignment:
-                                                                                AlignmentDirectional(0.0, 1.0).resolve(Directionality.of(context)),
+                                                                                const AlignmentDirectional(0.0, 1.0).resolve(Directionality.of(context)),
                                                                             child:
                                                                                 WebViewAware(
                                                                               child: GestureDetector(
@@ -1766,7 +1727,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                     ),
                                                                   ),
                                                                 ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   width: 8.0)),
                                                             ),
                                                           ),
@@ -1797,11 +1758,11 @@ class _ProductWidgetState extends State<ProductWidget> {
                                             'ready')
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Container(
                                               height: 50.0,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -1862,7 +1823,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                           .height *
                                                                       0.6,
                                                                   child:
-                                                                      ProductMeasurementPopupWidget(),
+                                                                      const ProductMeasurementPopupWidget(),
                                                                 ),
                                                               ),
                                                             ),
@@ -1883,7 +1844,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     0.0,
@@ -1911,9 +1872,9 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    ((currentUserDocument?.userBody?.toList() ?? []).length ==
+                                                                    ((currentUserDocument?.userBody.toList() ?? []).length ==
                                                                                 0) ||
-                                                                            ((currentUserDocument?.userBody?.toList() ?? []).where((e) => e.isDefault == true).toList().length ==
+                                                                            ((currentUserDocument?.userBody.toList() ?? []).where((e) => e.isDefault == true).toList().length ==
                                                                                 0)
                                                                         ? FFLocalizations.of(context)
                                                                             .getVariableText(
@@ -1922,7 +1883,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             arText:
                                                                                 'اختر هنا ..',
                                                                           )
-                                                                        : (currentUserDocument?.userBody?.toList() ??
+                                                                        : (currentUserDocument?.userBody.toList() ??
                                                                                 [])
                                                                             .where((e) =>
                                                                                 e.isDefault ==
@@ -1947,11 +1908,6 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             .UserDataFlow
                                                                             .userSelectedBody
                                                                             .userName !=
-                                                                        null &&
-                                                                    FFAppState()
-                                                                            .UserDataFlow
-                                                                            .userSelectedBody
-                                                                            .userName !=
                                                                         '')
                                                                   Text(
                                                                     'H: ${'${FFAppState().UserDataFlow.userSelectedBody.bodyInfo.height.toString()} ${FFAppState().UserDataFlow.userSelectedBody.bodyInfo.heightUnit}'} W: ${'${FFAppState().UserDataFlow.userSelectedBody.bodyInfo.weight.toString()} ${FFAppState().UserDataFlow.userSelectedBody.bodyInfo.weightUnit}'}',
@@ -1967,7 +1923,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               0.0,
                                                                         ),
                                                                   ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   height: 4.0)),
                                                             ),
                                                             Icon(
@@ -1977,13 +1933,13 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   .primaryText,
                                                               size: 14.0,
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               width: 8.0)),
                                                         ),
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(width: 8.0)),
+                                                ].divide(const SizedBox(width: 8.0)),
                                               ),
                                             ),
                                           ),
@@ -2003,7 +1959,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                   ],
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -2081,14 +2037,14 @@ class _ProductWidgetState extends State<ProductWidget> {
                                               letterSpacing: 0.0,
                                             ),
                                       ),
-                                    ].divide(SizedBox(height: 4.0)),
+                                    ].divide(const SizedBox(height: 4.0)),
                                   ),
                                 ),
                                 if (stackProductsRecord
                                         .product.isProductReturn ==
                                     false)
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -2123,19 +2079,19 @@ class _ProductWidgetState extends State<ProductWidget> {
                                       return Container(
                                         width: 0.0,
                                         height: 0.0,
-                                        child: BlankLoadingWidget(),
+                                        child: const BlankLoadingWidget(),
                                       );
                                     }
                                     List<TagsRecord> tagsTagsRecordList =
                                         snapshot.data!;
 
                                     return Container(
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: Visibility(
                                         visible: tagsTagsRecordList.length > 0,
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -2242,7 +2198,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                             extra: <String,
                                                                 dynamic>{
                                                               '__transition_info__':
-                                                                  TransitionInfo(
+                                                                  const TransitionInfo(
                                                                 hasTransition:
                                                                     true,
                                                                 transitionType:
@@ -2323,7 +2279,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                   );
                                                 },
                                               ),
-                                            ].divide(SizedBox(height: 4.0)),
+                                            ].divide(const SizedBox(height: 4.0)),
                                           ),
                                         ),
                                       ),
@@ -2334,16 +2290,16 @@ class _ProductWidgetState extends State<ProductWidget> {
                                         .creatorIdList.length >
                                     0)
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 8.0),
                                     child: Container(
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 8.0, 16.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -2412,14 +2368,14 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                     options: FFButtonOptions(
                                                       height: 28.0,
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
                                                                   0.0,
                                                                   12.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -2466,19 +2422,19 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                               .info,
                                                     ),
                                                   ),
-                                              ].divide(SizedBox(width: 8.0)),
+                                              ].divide(const SizedBox(width: 8.0)),
                                             ),
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 0.0, 0.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   1.0,
                                               height: 180.0,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: Builder(
                                                 builder: (context) {
                                                   final creatorList =
@@ -2496,7 +2452,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                     itemCount:
                                                         creatorList.length,
                                                     separatorBuilder: (_, __) =>
-                                                        SizedBox(width: 8.0),
+                                                        const SizedBox(width: 8.0),
                                                     itemBuilder: (context,
                                                         creatorListIndex) {
                                                       final creatorListItem =
@@ -2525,7 +2481,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                               width: 0.0,
                                                               height: 0.0,
                                                               child:
-                                                                  BlankLoadingWidget(),
+                                                                  const BlankLoadingWidget(),
                                                             );
                                                           }
                                                           List<UsersRecord>
@@ -2572,8 +2528,8 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               8.0),
                                                                       child: Image
                                                                           .network(
-                                                                        containerUsersRecord?.creatorMainInfo?.creatorInfo?.brandPhoto != null &&
-                                                                                containerUsersRecord?.creatorMainInfo?.creatorInfo?.brandPhoto != ''
+                                                                        containerUsersRecord?.creatorMainInfo.creatorInfo.brandPhoto != null &&
+                                                                                containerUsersRecord?.creatorMainInfo.creatorInfo.brandPhoto != ''
                                                                             ? containerUsersRecord!.creatorMainInfo.creatorInfo.brandPhoto
                                                                             : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/i9u1ra67p2p4/Azyaa-logo_(2).jpg',
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -2582,20 +2538,20 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             500.0,
                                                                         fit: BoxFit
                                                                             .cover,
-                                                                        alignment: Alignment(
+                                                                        alignment: const Alignment(
                                                                             0.0,
                                                                             -1.0),
                                                                       ),
                                                                     ),
                                                                     Align(
                                                                       alignment:
-                                                                          AlignmentDirectional(
+                                                                          const AlignmentDirectional(
                                                                               0.0,
                                                                               1.0),
                                                                       child:
                                                                           Container(
                                                                         decoration:
-                                                                            BoxDecoration(
+                                                                            const BoxDecoration(
                                                                           gradient:
                                                                               LinearGradient(
                                                                             colors: [
@@ -2622,7 +2578,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              EdgeInsets.all(12.0),
+                                                                              const EdgeInsets.all(12.0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -2648,10 +2604,10 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                             fontWeight: FontWeight.w600,
                                                                                           ),
                                                                                     ),
-                                                                                  ].divide(SizedBox(height: 4.0)),
+                                                                                  ].divide(const SizedBox(height: 4.0)),
                                                                                 ),
                                                                               ),
-                                                                            ].divide(SizedBox(width: 8.0)),
+                                                                            ].divide(const SizedBox(width: 8.0)),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -2669,18 +2625,15 @@ class _ProductWidgetState extends State<ProductWidget> {
                                               ),
                                             ),
                                           ),
-                                        ].divide(SizedBox(height: 12.0)),
+                                        ].divide(const SizedBox(height: 12.0)),
                                       ),
                                     ),
                                   ),
                                 if (stackProductsRecord.productAuthorizer
                                             .productDesignerId !=
-                                        null &&
-                                    stackProductsRecord.productAuthorizer
-                                            .productDesignerId !=
                                         '')
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 8.0),
                                     child: Wrap(
                                       spacing: 0.0,
@@ -2695,7 +2648,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: StreamBuilder<UsersRecord>(
                                             stream: UsersRecord.getDocument(
@@ -2708,7 +2661,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                 return Container(
                                                   width: 0.0,
                                                   height: 0.0,
-                                                  child: BlankLoadingWidget(),
+                                                  child: const BlankLoadingWidget(),
                                                 );
                                               }
 
@@ -2737,7 +2690,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       '__transition_info__':
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -2779,15 +2732,13 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                 DecorationImage(
                                                               fit: BoxFit.cover,
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               image:
-                                                                  Image.network(
+                                                                  CachedNetworkImageProvider(
                                                                 valueOrDefault<
                                                                     String>(
                                                                   designerUsersRecord.designerMainInfo.designerInfo.brandPhoto !=
-                                                                              null &&
-                                                                          designerUsersRecord.designerMainInfo.designerInfo.brandPhoto !=
                                                                               ''
                                                                       ? designerUsersRecord
                                                                           .designerMainInfo
@@ -2797,7 +2748,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                           .photoUrl,
                                                                   'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/kwcb1kmteqoh/Frame_2087324774.png',
                                                                 ),
-                                                              ).image,
+                                                              ),
                                                             ),
                                                             borderRadius:
                                                                 BorderRadius
@@ -2809,15 +2760,10 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(16.0),
-                                                        child: Image.network(
-                                                          valueOrDefault<
+                                                        child: CachedNetworkImage(
+                                                          imageUrl: valueOrDefault<
                                                               String>(
                                                             designerUsersRecord
-                                                                            .designerMainInfo
-                                                                            .designerInfo
-                                                                            .brandPhoto !=
-                                                                        null &&
-                                                                    designerUsersRecord
                                                                             .designerMainInfo
                                                                             .designerInfo
                                                                             .brandPhoto !=
@@ -2837,17 +2783,17 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   1.0,
                                                           height: 500.0,
                                                           fit: BoxFit.cover,
-                                                          alignment: Alignment(
+                                                          alignment: const Alignment(
                                                               0.0, 0.0),
                                                         ),
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 1.0),
                                                         child: Container(
                                                           decoration:
-                                                              BoxDecoration(
+                                                              const BoxDecoration(
                                                             gradient:
                                                                 LinearGradient(
                                                               colors: [
@@ -2879,7 +2825,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     16.0),
                                                             child: Row(
                                                               mainAxisSize:
@@ -2905,8 +2851,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             .start,
                                                                     children: [
                                                                       Text(
-                                                                        designerUsersRecord.designerMainInfo.designerInfo.name != null &&
-                                                                                designerUsersRecord.designerMainInfo.designerInfo.name != ''
+                                                                        designerUsersRecord.designerMainInfo.designerInfo.name != ''
                                                                             ? designerUsersRecord.designerMainInfo.designerInfo.name
                                                                             : designerUsersRecord.displayName,
                                                                         style: FlutterFlowTheme.of(context)
@@ -2918,7 +2863,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               fontWeight: FontWeight.w600,
                                                                             ),
                                                                       ),
-                                                                    ].divide(SizedBox(
+                                                                    ].divide(const SizedBox(
                                                                         height:
                                                                             8.0)),
                                                                   ),
@@ -2948,12 +2893,12 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                         FFButtonOptions(
                                                                       height:
                                                                           28.0,
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           12.0,
                                                                           0.0,
                                                                           12.0,
                                                                           0.0),
-                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -2979,7 +2924,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                       elevation:
                                                                           0.0,
                                                                       borderSide:
-                                                                          BorderSide(
+                                                                          const BorderSide(
                                                                         width:
                                                                             1.0,
                                                                       ),
@@ -3004,11 +2949,11 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                         (loggedIn ==
                                                                             true))
                                                                       Stack(
-                                                                        alignment: AlignmentDirectional(
+                                                                        alignment: const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                         children: [
-                                                                          if ((currentUserDocument?.userDesignerFollowing?.toList() ?? []).contains(designerUsersRecord.reference) ==
+                                                                          if ((currentUserDocument?.userDesignerFollowing.toList() ?? []).contains(designerUsersRecord.reference) ==
                                                                               false)
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => FFButtonWidget(
@@ -3032,9 +2977,9 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   height: 28.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  color: Color(0x34000000),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  color: const Color(0x34000000),
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: 'almarai',
                                                                                         color: FlutterFlowTheme.of(context).info,
@@ -3043,7 +2988,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                         fontWeight: FontWeight.normal,
                                                                                       ),
                                                                                   elevation: 0.0,
-                                                                                  borderSide: BorderSide(
+                                                                                  borderSide: const BorderSide(
                                                                                     color: Colors.transparent,
                                                                                     width: 0.0,
                                                                                   ),
@@ -3053,7 +2998,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                 ),
                                                                               ),
                                                                             ),
-                                                                          if ((currentUserDocument?.userDesignerFollowing?.toList() ?? []).contains(designerUsersRecord.reference) ==
+                                                                          if ((currentUserDocument?.userDesignerFollowing.toList() ?? []).contains(designerUsersRecord.reference) ==
                                                                               true)
                                                                             Builder(
                                                                               builder: (context) => AuthUserStreamWidget(
@@ -3067,7 +3012,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                           elevation: 0,
                                                                                           insetPadding: EdgeInsets.zero,
                                                                                           backgroundColor: Colors.transparent,
-                                                                                          alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                           child: WebViewAware(
                                                                                             child: GestureDetector(
                                                                                               onTap: () {
@@ -3098,9 +3043,9 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     height: 28.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    color: Color(0x34000000),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    color: const Color(0x34000000),
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: 'almarai',
                                                                                           color: FlutterFlowTheme.of(context).info,
@@ -3108,7 +3053,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                     elevation: 0.0,
-                                                                                    borderSide: BorderSide(
+                                                                                    borderSide: const BorderSide(
                                                                                       color: Colors.transparent,
                                                                                       width: 0.0,
                                                                                     ),
@@ -3123,7 +3068,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                       ),
                                                                   ],
                                                                 ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   width: 8.0)),
                                                             ),
                                                           ),
@@ -3147,7 +3092,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -3163,7 +3108,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -3213,7 +3158,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(SizedBox(height: 4.0)),
+                                              ].divide(const SizedBox(height: 4.0)),
                                             ),
                                             Expanded(
                                               child: Column(
@@ -3244,7 +3189,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                       Expanded(
                                                         child: Container(
                                                           decoration:
-                                                              BoxDecoration(),
+                                                              const BoxDecoration(),
                                                           child:
                                                               LinearPercentIndicator(
                                                             percent:
@@ -3293,7 +3238,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   ),
                                                             ),
                                                             barRadius:
-                                                                Radius.circular(
+                                                                const Radius.circular(
                                                                     8.0),
                                                             padding:
                                                                 EdgeInsets.zero,
@@ -3301,7 +3246,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 4.0)),
+                                                        const SizedBox(width: 4.0)),
                                                   ),
                                                   Row(
                                                     mainAxisSize:
@@ -3328,7 +3273,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                       Expanded(
                                                         child: Container(
                                                           decoration:
-                                                              BoxDecoration(),
+                                                              const BoxDecoration(),
                                                           child:
                                                               LinearPercentIndicator(
                                                             percent:
@@ -3378,7 +3323,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   ),
                                                             ),
                                                             barRadius:
-                                                                Radius.circular(
+                                                                const Radius.circular(
                                                                     8.0),
                                                             padding:
                                                                 EdgeInsets.zero,
@@ -3386,7 +3331,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 4.0)),
+                                                        const SizedBox(width: 4.0)),
                                                   ),
                                                   Row(
                                                     mainAxisSize:
@@ -3413,7 +3358,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                       Expanded(
                                                         child: Container(
                                                           decoration:
-                                                              BoxDecoration(),
+                                                              const BoxDecoration(),
                                                           child:
                                                               LinearPercentIndicator(
                                                             percent:
@@ -3463,7 +3408,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   ),
                                                             ),
                                                             barRadius:
-                                                                Radius.circular(
+                                                                const Radius.circular(
                                                                     8.0),
                                                             padding:
                                                                 EdgeInsets.zero,
@@ -3471,7 +3416,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 4.0)),
+                                                        const SizedBox(width: 4.0)),
                                                   ),
                                                   Row(
                                                     mainAxisSize:
@@ -3498,7 +3443,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                       Expanded(
                                                         child: Container(
                                                           decoration:
-                                                              BoxDecoration(),
+                                                              const BoxDecoration(),
                                                           child:
                                                               LinearPercentIndicator(
                                                             percent:
@@ -3548,7 +3493,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   ),
                                                             ),
                                                             barRadius:
-                                                                Radius.circular(
+                                                                const Radius.circular(
                                                                     8.0),
                                                             padding:
                                                                 EdgeInsets.zero,
@@ -3556,7 +3501,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 4.0)),
+                                                        const SizedBox(width: 4.0)),
                                                   ),
                                                   Row(
                                                     mainAxisSize:
@@ -3583,7 +3528,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                       Expanded(
                                                         child: Container(
                                                           decoration:
-                                                              BoxDecoration(),
+                                                              const BoxDecoration(),
                                                           child:
                                                               LinearPercentIndicator(
                                                             percent:
@@ -3632,7 +3577,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   ),
                                                             ),
                                                             barRadius:
-                                                                Radius.circular(
+                                                                const Radius.circular(
                                                                     8.0),
                                                             padding:
                                                                 EdgeInsets.zero,
@@ -3640,12 +3585,12 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 4.0)),
+                                                        const SizedBox(width: 4.0)),
                                                   ),
-                                                ].divide(SizedBox(height: 1.0)),
+                                                ].divide(const SizedBox(height: 1.0)),
                                               ),
                                             ),
-                                          ].divide(SizedBox(width: 24.0)),
+                                          ].divide(const SizedBox(width: 24.0)),
                                         ),
                                       ),
                                       if (stackProductsRecord.productReview
@@ -3656,16 +3601,16 @@ class _ProductWidgetState extends State<ProductWidget> {
                                           0)
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 0.0, 0.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
                                             height: 120.0,
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                             child: Padding(
-                                              padding: EdgeInsets.all(2.0),
+                                              padding: const EdgeInsets.all(2.0),
                                               child: Builder(
                                                 builder: (context) {
                                                   final reviewList =
@@ -3678,7 +3623,7 @@ class _ProductWidgetState extends State<ProductWidget> {
 
                                                   return ListView.separated(
                                                     padding:
-                                                        EdgeInsets.fromLTRB(
+                                                        const EdgeInsets.fromLTRB(
                                                       0,
                                                       0,
                                                       16.0,
@@ -3691,7 +3636,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                     itemCount:
                                                         reviewList.length,
                                                     separatorBuilder: (_, __) =>
-                                                        SizedBox(width: 8.0),
+                                                        const SizedBox(width: 8.0),
                                                     itemBuilder: (context,
                                                         reviewListIndex) {
                                                       final reviewListItem =
@@ -3711,7 +3656,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                         ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, -1.0),
+                                            const AlignmentDirectional(0.0, -1.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
                                             '35s0i4pq' /* View More */,
@@ -3727,7 +3672,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                               ),
                                         ),
                                       ),
-                                    ].divide(SizedBox(height: 16.0)),
+                                    ].divide(const SizedBox(height: 16.0)),
                                   ),
                                 if (true /* Warning: Trying to access variable not yet defined. */)
                                   FutureBuilder<List<ProductsRecord>>(
@@ -3752,7 +3697,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                         return Container(
                                           width: 0.0,
                                           height: 0.0,
-                                          child: BlankLoadingWidget(),
+                                          child: const BlankLoadingWidget(),
                                         );
                                       }
                                       List<ProductsRecord>
@@ -3760,7 +3705,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                           snapshot.data!;
 
                                       return Container(
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: Visibility(
                                           visible:
                                               popularProductsRecordList.length >
@@ -3769,7 +3714,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 8.0, 16.0, 0.0),
                                                 child: Row(
@@ -3843,7 +3788,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsets.all(4.0),
+                                                            const EdgeInsets.all(4.0),
                                                         child: Icon(
                                                           Icons
                                                               .navigate_next_rounded,
@@ -3855,11 +3800,11 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(width: 8.0)),
+                                                      const SizedBox(width: 8.0)),
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: Builder(
@@ -3909,20 +3854,20 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                   },
                                                 ),
                                               ),
-                                            ].divide(SizedBox(height: 12.0)),
+                                            ].divide(const SizedBox(height: 12.0)),
                                           ),
                                         ),
                                       );
                                     },
                                   ),
                                 if (((currentUserDocument?.userRecentViews
-                                                    ?.toList() ??
+                                                    .toList() ??
                                                 [])
                                             .length >
                                         0) &&
                                     loggedIn)
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 12.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Column(
@@ -3930,7 +3875,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 8.0, 16.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -4009,7 +3954,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(4.0),
+                                                          const EdgeInsets.all(4.0),
                                                       child: Icon(
                                                         Icons
                                                             .navigate_next_rounded,
@@ -4021,19 +3966,19 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                              ].divide(SizedBox(width: 8.0)),
+                                              ].divide(const SizedBox(width: 8.0)),
                                             ),
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 0.0, 8.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   1.0,
                                               height: 165.0,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: StreamBuilder<
                                                   List<ProductsRecord>>(
                                                 stream: queryProductsRecord(
@@ -4053,7 +3998,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
                                                   if (!snapshot.hasData) {
-                                                    return Center(
+                                                    return const Center(
                                                       child: SizedBox(
                                                         width: 2.0,
                                                         height: 2.0,
@@ -4074,7 +4019,7 @@ class _ProductWidgetState extends State<ProductWidget> {
 
                                                   return ListView.separated(
                                                     padding:
-                                                        EdgeInsets.fromLTRB(
+                                                        const EdgeInsets.fromLTRB(
                                                       0,
                                                       0,
                                                       16.0,
@@ -4088,7 +4033,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                         listViewProductsRecordList
                                                             .length,
                                                     separatorBuilder: (_, __) =>
-                                                        SizedBox(width: 8.0),
+                                                        const SizedBox(width: 8.0),
                                                     itemBuilder: (context,
                                                         listViewIndex) {
                                                       final listViewProductsRecord =
@@ -4106,18 +4051,18 @@ class _ProductWidgetState extends State<ProductWidget> {
                                               ),
                                             ),
                                           ),
-                                        ].divide(SizedBox(height: 12.0)),
+                                        ].divide(const SizedBox(height: 12.0)),
                                       ),
                                     ),
                                   ),
                               ]
-                                  .divide(SizedBox(height: 12.0))
-                                  .addToStart(SizedBox(height: 16.0))
-                                  .addToEnd(SizedBox(height: 100.0)),
+                                  .divide(const SizedBox(height: 12.0))
+                                  .addToStart(const SizedBox(height: 16.0))
+                                  .addToEnd(const SizedBox(height: 100.0)),
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(0.0, 1.0),
+                            alignment: const AlignmentDirectional(0.0, 1.0),
                             child: StreamBuilder<List<SettingsRecord>>(
                               stream: querySettingsRecord(
                                 queryBuilder: (settingsRecord) => settingsRecord
@@ -4138,7 +4083,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                     child: Container(
                                       width: 0.0,
                                       height: 0.0,
-                                      child: BlankLoadingWidget(),
+                                      child: const BlankLoadingWidget(),
                                     ),
                                   );
                                 }
@@ -4155,7 +4100,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                         : null;
 
                                 return Container(
-                                  decoration: BoxDecoration(),
+                                  decoration: const BoxDecoration(),
                                   child: Stack(
                                     children: [
                                       if (stackProductsRecord
@@ -4174,7 +4119,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                   child: Container(
                                                     width: 0.0,
                                                     height: 0.0,
-                                                    child: BlankLoadingWidget(),
+                                                    child: const BlankLoadingWidget(),
                                                   ),
                                                 );
                                               }
@@ -4204,7 +4149,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                       .primaryBackground,
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 4.0),
                                                   child: Stack(
@@ -4231,7 +4176,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                       }())
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       8.0,
@@ -4244,7 +4189,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -4264,7 +4209,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                         (readymadeInventoryRecord.stock >
                                                                             0))
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             8.0,
                                                                             0.0,
                                                                             8.0,
@@ -4323,7 +4268,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                 1,
                                                                             maximum:
                                                                                 readymadeInventoryRecord.stock,
-                                                                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 12.0,
                                                                                 0.0,
                                                                                 12.0,
@@ -4351,7 +4296,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                       Expanded(
                                                                         child:
                                                                             Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               0.0,
                                                                               -1.0),
                                                                           child:
@@ -4365,7 +4310,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             child:
                                                                                 DefaultCartButtonWidget(
                                                                               type: 'button',
-                                                                              product: widget!.product!,
+                                                                              product: widget.product!,
                                                                               navigation: 'cart',
                                                                               defaultTerms: FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute,
                                                                               quantity: stackProductsRecord.product.productType == 'ready' ? _model.countControllerValue : 1,
@@ -4389,7 +4334,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                       true))
                                                                 Stack(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   children: [
@@ -4401,7 +4346,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                         (stackProductsRecord.productAuthorizer.creatorIdList.where((e) => e == currentUserUid).toList().length ==
                                                                             0))
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             8.0,
                                                                             0.0,
                                                                             8.0,
@@ -4413,7 +4358,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             var _shouldSetState =
                                                                                 false;
                                                                             if ((valueOrDefault(currentUserDocument?.userRole, '') == 'Creator') &&
-                                                                                (stackProductsRecord.productAuthorizer.creatorIdList.contains(currentUserDocument?.creatorMainInfo?.creatorMainId) == false)) {
+                                                                                (stackProductsRecord.productAuthorizer.creatorIdList.contains(currentUserDocument?.creatorMainInfo.creatorMainId) == false)) {
                                                                               _model.iDMapResultOne = await queryIdMapRecordOnce(
                                                                                 queryBuilder: (idMapRecord) => idMapRecord.where(
                                                                                   'type',
@@ -4439,7 +4384,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                   )
                                                                                   ..promotionCreatedAt = getCurrentTimestamp
                                                                                   ..promotionStatus = 'active'
-                                                                                  ..promotionId = 'PROMP${_model.iDMapResultOne?.promotionId?.toString()}'
+                                                                                  ..promotionId = 'PROMP${_model.iDMapResultOne?.promotionId.toString()}'
                                                                                   ..promotionCaption = stackProductsRecord.productInfo.name
                                                                                   ..promotionDescription = stackProductsRecord.productInfo.description
                                                                                   ..promotionCode = 'PROMP${random_data.randomString(
@@ -4486,7 +4431,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                 ),
                                                                               });
 
-                                                                              await widget!.product!.update(createProductsRecordData(
+                                                                              await widget.product!.update(createProductsRecordData(
                                                                                 productAuthorizer: createProductAuthorizeInfoStruct(
                                                                                   fieldValues: {
                                                                                     'creator_id_list': FieldValue.arrayUnion([
@@ -4554,7 +4499,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             'vz37nhn5' /* Promote */,
                                                                           ),
                                                                           icon:
-                                                                              Icon(
+                                                                              const Icon(
                                                                             FFIcons.kstar,
                                                                             size:
                                                                                 24.0,
@@ -4565,12 +4510,12 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                 MediaQuery.sizeOf(context).width * 1.0,
                                                                             height:
                                                                                 48.0,
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 16.0,
                                                                                 0.0,
                                                                                 16.0,
                                                                                 0.0),
-                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -4581,7 +4526,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                 FlutterFlowTheme.of(context).primaryBackground,
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: 'almarai',
-                                                                                  color: Color(0xFF344054),
+                                                                                  color: const Color(0xFF344054),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                             elevation:
@@ -4603,7 +4548,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                         (stackProductsRecord.productAuthorizer.creatorIdList.where((e) => e == currentUserUid).toList().length >
                                                                             0))
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             8.0,
                                                                             0.0,
                                                                             8.0,
@@ -4615,7 +4560,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             context.pushNamed(
                                                                               CreatorSpaceWidget.routeName,
                                                                               extra: <String, dynamic>{
-                                                                                '__transition_info__': TransitionInfo(
+                                                                                '__transition_info__': const TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                   duration: Duration(milliseconds: 0),
@@ -4628,7 +4573,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             'h05ej0tu' /* See Insights */,
                                                                           ),
                                                                           icon:
-                                                                              Icon(
+                                                                              const Icon(
                                                                             FFIcons.kicon10,
                                                                             size:
                                                                                 21.0,
@@ -4639,12 +4584,12 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                 MediaQuery.sizeOf(context).width * 1.0,
                                                                             height:
                                                                                 48.0,
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 16.0,
                                                                                 0.0,
                                                                                 16.0,
                                                                                 0.0),
-                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -4655,7 +4600,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                 FlutterFlowTheme.of(context).primaryBackground,
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: 'almarai',
-                                                                                  color: Color(0xFF344054),
+                                                                                  color: const Color(0xFF344054),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                             elevation:
@@ -4689,7 +4634,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -4705,7 +4650,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                           if (readymadeInventoryRecord.stock >
                                                                               0) {
                                                                             FFAppState().updateUserDataFlowStruct(
-                                                                              (e) => e..userCartCount = currentUserDocument?.userCart?.cartItems?.where((e) => e.productType != 'membership').toList()?.length,
+                                                                              (e) => e..userCartCount = currentUserDocument?.userCart.cartItems.where((e) => e.productType != 'membership').toList().length,
                                                                             );
                                                                             _model.idMapResult =
                                                                                 await queryIdMapRecordOnce(
@@ -4745,7 +4690,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                           productRef: stackProductsRecord.reference,
                                                                                           fieldValues: {
                                                                                             'cart_item_attribute': getProductAttributesNewListFirestoreData(
-                                                                                              (currentUserDocument?.userRecentViews?.toList() ?? []).where((e) => stackProductsRecord.productId == e.viewedItemId).toList().firstOrNull?.productAttribute,
+                                                                                              (currentUserDocument?.userRecentViews.toList() ?? []).where((e) => stackProductsRecord.productId == e.viewedItemId).toList().firstOrNull?.productAttribute,
                                                                                             ),
                                                                                           },
                                                                                           clearUnsetFields: false,
@@ -4769,7 +4714,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             } else {
                                                                               FFAppState().updateUserDataFlowStruct(
                                                                                 (e) => e
-                                                                                  ..userCartCount = currentUserDocument?.userCart?.cartItems?.length
+                                                                                  ..userCartCount = currentUserDocument?.userCart.cartItems.length
                                                                                   ..userCartItemList = currentUserDocument!.userCart.cartItems.toList(),
                                                                               );
                                                                               while (FFAppState().UserDataFlow.userCartCount > 0) {
@@ -4784,7 +4729,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                           ..quantity = 1
                                                                                           ..price = stackProductsRecord.product.productPrice
                                                                                           ..totalPrice = stackProductsRecord.product.productPrice
-                                                                                          ..cartItemAttribute = (currentUserDocument?.userRecentViews?.toList() ?? []).where((e) => stackProductsRecord.productId == e.viewedItemId).toList().firstOrNull!.productAttribute.toList()
+                                                                                          ..cartItemAttribute = (currentUserDocument?.userRecentViews.toList() ?? []).where((e) => stackProductsRecord.productId == e.viewedItemId).toList().firstOrNull!.productAttribute.toList()
                                                                                           ..productDesignerRef = stackProductsRecord.productAuthorizer.productDesignerRef
                                                                                           ..productDesignerId = stackProductsRecord.productAuthorizer.productDesignerId
                                                                                           ..productRef = stackProductsRecord.reference,
@@ -4810,7 +4755,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                   context.pushNamed(
                                                                                     CartWidget.routeName,
                                                                                     extra: <String, dynamic>{
-                                                                                      '__transition_info__': TransitionInfo(
+                                                                                      '__transition_info__': const TransitionInfo(
                                                                                         hasTransition: true,
                                                                                         transitionType: PageTransitionType.fade,
                                                                                         duration: Duration(milliseconds: 0),
@@ -4836,7 +4781,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                       quantity: 1,
                                                                                       price: stackProductsRecord.product.productPrice,
                                                                                       totalPrice: stackProductsRecord.product.productPrice,
-                                                                                      cartItemAttribute: (currentUserDocument?.userRecentViews?.toList() ?? []).where((e) => stackProductsRecord.productId == e.viewedItemId).toList().firstOrNull?.productAttribute,
+                                                                                      cartItemAttribute: (currentUserDocument?.userRecentViews.toList() ?? []).where((e) => stackProductsRecord.productId == e.viewedItemId).toList().firstOrNull?.productAttribute,
                                                                                       productDesignerRef: stackProductsRecord.productAuthorizer.productDesignerRef,
                                                                                       productDesignerId: stackProductsRecord.productAuthorizer.productDesignerId,
                                                                                       productRef: stackProductsRecord.reference,
@@ -4862,7 +4807,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             context.pushNamed(
                                                                               CartWidget.routeName,
                                                                               extra: <String, dynamic>{
-                                                                                '__transition_info__': TransitionInfo(
+                                                                                '__transition_info__': const TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                   duration: Duration(milliseconds: 0),
@@ -4876,7 +4821,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             LoginWidget.routeName,
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              '__transition_info__': TransitionInfo(
+                                                                              '__transition_info__': const TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.fade,
                                                                                 duration: Duration(milliseconds: 0),
@@ -4900,14 +4845,14 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             1.0,
                                                                         height:
                                                                             48.0,
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             16.0,
                                                                             0.0,
                                                                             16.0,
                                                                             0.0),
                                                                         iconAlignment:
                                                                             IconAlignment.end,
-                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -4950,7 +4895,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -5024,7 +4969,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             context.pushNamed(
                                                                               CartWidget.routeName,
                                                                               extra: <String, dynamic>{
-                                                                                '__transition_info__': TransitionInfo(
+                                                                                '__transition_info__': const TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                   duration: Duration(milliseconds: 0),
@@ -5038,7 +4983,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             LoginWidget.routeName,
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              '__transition_info__': TransitionInfo(
+                                                                              '__transition_info__': const TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.fade,
                                                                                 duration: Duration(milliseconds: 0),
@@ -5070,14 +5015,14 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             1.0,
                                                                         height:
                                                                             48.0,
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             16.0,
                                                                             0.0,
                                                                             16.0,
                                                                             0.0),
                                                                         iconAlignment:
                                                                             IconAlignment.end,
-                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -5111,7 +5056,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                               0))
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: InkWell(
                                                             splashColor: Colors
@@ -5160,7 +5105,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             .primaryText,
                                                                       ),
                                                                     ),
-                                                                    duration: Duration(
+                                                                    duration: const Duration(
                                                                         milliseconds:
                                                                             3000),
                                                                     backgroundColor:
@@ -5198,7 +5143,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             .stock <=
                                                                         0,
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           16.0,
@@ -5257,7 +5202,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                   child: Container(
                                                     width: 0.0,
                                                     height: 0.0,
-                                                    child: BlankLoadingWidget(),
+                                                    child: const BlankLoadingWidget(),
                                                   ),
                                                 );
                                               }
@@ -5287,14 +5232,14 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                       .primaryBackground,
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 4.0),
                                                   child: Stack(
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     8.0,
@@ -5306,7 +5251,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -5328,7 +5273,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             0)
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.0, -1.0),
+                                                                                const AlignmentDirectional(0.0, -1.0),
                                                                             child:
                                                                                 wrapWithModel(
                                                                               model: _model.defaultCartButtonModel2,
@@ -5336,7 +5281,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               updateOnChange: true,
                                                                               child: DefaultCartButtonWidget(
                                                                                 type: 'button',
-                                                                                product: widget!.product!,
+                                                                                product: widget.product!,
                                                                                 navigation: 'cart',
                                                                                 defaultTerms: FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute,
                                                                                 quantity: 1,
@@ -5375,9 +5320,9 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                 FFButtonOptions(
                                                                               width: MediaQuery.sizeOf(context).width * 1.0,
                                                                               height: 48.0,
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                               iconAlignment: IconAlignment.end,
-                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                               color: FlutterFlowTheme.of(context).primaryBackground,
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: 'almarai',
@@ -5411,7 +5356,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                     true))
                                                               Stack(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 children: [
@@ -5433,7 +5378,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               .length ==
                                                                           0))
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           8.0,
                                                                           0.0,
                                                                           8.0,
@@ -5445,7 +5390,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                           var _shouldSetState =
                                                                               false;
                                                                           if ((valueOrDefault(currentUserDocument?.userRole, '') == 'Creator') &&
-                                                                              (stackProductsRecord.productAuthorizer.creatorIdList.contains(currentUserDocument?.creatorMainInfo?.creatorMainId) == false)) {
+                                                                              (stackProductsRecord.productAuthorizer.creatorIdList.contains(currentUserDocument?.creatorMainInfo.creatorMainId) == false)) {
                                                                             _model.iDMapResultCustomOne =
                                                                                 await queryIdMapRecordOnce(
                                                                               queryBuilder: (idMapRecord) => idMapRecord.where(
@@ -5473,7 +5418,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                 )
                                                                                 ..promotionCreatedAt = getCurrentTimestamp
                                                                                 ..promotionStatus = 'active'
-                                                                                ..promotionId = 'PROMP${_model.iDMapResultCustomOne?.promotionId?.toString()}'
+                                                                                ..promotionId = 'PROMP${_model.iDMapResultCustomOne?.promotionId.toString()}'
                                                                                 ..promotionCaption = stackProductsRecord.productInfo.name
                                                                                 ..promotionDescription = stackProductsRecord.productInfo.description
                                                                                 ..promotionCode = 'PROMP${random_data.randomString(
@@ -5521,7 +5466,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               ),
                                                                             });
 
-                                                                            await widget!.product!.update(createProductsRecordData(
+                                                                            await widget.product!.update(createProductsRecordData(
                                                                               productAuthorizer: createProductAuthorizeInfoStruct(
                                                                                 fieldValues: {
                                                                                   'creator_id_list': FieldValue.arrayUnion([
@@ -5590,7 +5535,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                           'sm50rzpt' /* Promote */,
                                                                         ),
                                                                         icon:
-                                                                            Icon(
+                                                                            const Icon(
                                                                           FFIcons
                                                                               .kstar,
                                                                           size:
@@ -5602,12 +5547,12 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               MediaQuery.sizeOf(context).width * 1.0,
                                                                           height:
                                                                               48.0,
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               16.0,
                                                                               0.0,
                                                                               16.0,
                                                                               0.0),
-                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               0.0,
@@ -5620,7 +5565,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               .titleSmall
                                                                               .override(
                                                                                 fontFamily: 'almarai',
-                                                                                color: Color(0xFF344054),
+                                                                                color: const Color(0xFF344054),
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                           elevation:
@@ -5653,7 +5598,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               .length >
                                                                           0))
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           8.0,
                                                                           0.0,
                                                                           8.0,
@@ -5667,7 +5612,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             CreatorSpaceWidget.routeName,
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              '__transition_info__': TransitionInfo(
+                                                                              '__transition_info__': const TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.fade,
                                                                                 duration: Duration(milliseconds: 0),
@@ -5680,7 +5625,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                           'a56vsja7' /* See Insights */,
                                                                         ),
                                                                         icon:
-                                                                            Icon(
+                                                                            const Icon(
                                                                           FFIcons
                                                                               .kicon10,
                                                                           size:
@@ -5692,12 +5637,12 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               MediaQuery.sizeOf(context).width * 1.0,
                                                                           height:
                                                                               48.0,
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               16.0,
                                                                               0.0,
                                                                               16.0,
                                                                               0.0),
-                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               0.0,
@@ -5710,7 +5655,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               .titleSmall
                                                                               .override(
                                                                                 fontFamily: 'almarai',
-                                                                                color: Color(0xFF344054),
+                                                                                color: const Color(0xFF344054),
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                           elevation:

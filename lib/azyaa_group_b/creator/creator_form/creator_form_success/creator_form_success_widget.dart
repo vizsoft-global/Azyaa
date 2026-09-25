@@ -2,12 +2,9 @@ import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'creator_form_success_model.dart';
 export 'creator_form_success_model.dart';
 
@@ -56,7 +53,7 @@ class _CreatorFormSuccessWidgetState extends State<CreatorFormSuccessWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -106,7 +103,7 @@ class _CreatorFormSuccessWidgetState extends State<CreatorFormSuccessWidget> {
                             context.goNamed(
                               HomeWidget.routeName,
                               extra: <String, dynamic>{
-                                '__transition_info__': TransitionInfo(
+                                '__transition_info__': const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -115,11 +112,11 @@ class _CreatorFormSuccessWidgetState extends State<CreatorFormSuccessWidget> {
                             );
                           },
                         ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -132,7 +129,7 @@ class _CreatorFormSuccessWidgetState extends State<CreatorFormSuccessWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
@@ -144,7 +141,7 @@ class _CreatorFormSuccessWidgetState extends State<CreatorFormSuccessWidget> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
                                 child: Image.asset(
@@ -156,9 +153,9 @@ class _CreatorFormSuccessWidgetState extends State<CreatorFormSuccessWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -176,9 +173,9 @@ class _CreatorFormSuccessWidgetState extends State<CreatorFormSuccessWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 24.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -198,7 +195,7 @@ class _CreatorFormSuccessWidgetState extends State<CreatorFormSuccessWidget> {
                                 ),
                               ),
                             ),
-                          ].divide(SizedBox(height: 16.0)),
+                          ].divide(const SizedBox(height: 16.0)),
                         ),
                       ),
                       if (responsiveVisibility(
@@ -209,7 +206,7 @@ class _CreatorFormSuccessWidgetState extends State<CreatorFormSuccessWidget> {
                         desktop: false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () {
@@ -221,9 +218,9 @@ class _CreatorFormSuccessWidgetState extends State<CreatorFormSuccessWidget> {
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 48.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
@@ -244,14 +241,14 @@ class _CreatorFormSuccessWidgetState extends State<CreatorFormSuccessWidget> {
                           ),
                         ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             context.goNamed(
                               HomeWidget.routeName,
                               extra: <String, dynamic>{
-                                '__transition_info__': TransitionInfo(
+                                '__transition_info__': const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -265,9 +262,9 @@ class _CreatorFormSuccessWidgetState extends State<CreatorFormSuccessWidget> {
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 48.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -283,8 +280,8 @@ class _CreatorFormSuccessWidgetState extends State<CreatorFormSuccessWidget> {
                         ),
                       ),
                     ]
-                        .divide(SizedBox(height: 16.0))
-                        .addToEnd(SizedBox(height: 16.0)),
+                        .divide(const SizedBox(height: 16.0))
+                        .addToEnd(const SizedBox(height: 16.0)),
                   ),
                 ],
               ),

@@ -1,21 +1,15 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'membership_plan_model.dart';
 export 'membership_plan_model.dart';
@@ -66,7 +60,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -94,7 +88,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -107,12 +101,12 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   wrapWithModel(
                     model: _model.appUpdateCheckerModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: AppUpdateCheckerWidget(),
+                    child: const AppUpdateCheckerWidget(),
                   ),
                   SingleChildScrollView(
                     child: Column(
@@ -120,7 +114,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -163,7 +157,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -206,7 +200,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 16.0),
                           child: Wrap(
                             spacing: 16.0,
@@ -259,10 +253,10 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                      ].divide(SizedBox(height: 4.0)),
+                                      ].divide(const SizedBox(height: 4.0)),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -272,7 +266,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                     width: 23.0,
                                     height: 23.0,
                                     fit: BoxFit.cover,
-                                    alignment: Alignment(0.0, 0.0),
+                                    alignment: const Alignment(0.0, 0.0),
                                   ),
                                   Expanded(
                                     child: Column(
@@ -306,7 +300,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                      ].divide(SizedBox(height: 4.0)),
+                                      ].divide(const SizedBox(height: 4.0)),
                                     ),
                                   ),
                                   if (responsiveVisibility(
@@ -322,7 +316,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                           .primaryText,
                                       size: 24.0,
                                     ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -365,10 +359,10 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                      ].divide(SizedBox(height: 4.0)),
+                                      ].divide(const SizedBox(height: 4.0)),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -378,7 +372,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                     width: 23.0,
                                     height: 23.0,
                                     fit: BoxFit.contain,
-                                    alignment: Alignment(0.0, 0.0),
+                                    alignment: const Alignment(0.0, 0.0),
                                   ),
                                   Expanded(
                                     child: Column(
@@ -412,7 +406,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                      ].divide(SizedBox(height: 4.0)),
+                                      ].divide(const SizedBox(height: 4.0)),
                                     ),
                                   ),
                                   if (responsiveVisibility(
@@ -428,7 +422,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                           .primaryText,
                                       size: 24.0,
                                     ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -438,7 +432,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                     width: 23.0,
                                     height: 23.0,
                                     fit: BoxFit.cover,
-                                    alignment: Alignment(0.0, 0.0),
+                                    alignment: const Alignment(0.0, 0.0),
                                   ),
                                   Expanded(
                                     child: Column(
@@ -472,7 +466,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                      ].divide(SizedBox(height: 4.0)),
+                                      ].divide(const SizedBox(height: 4.0)),
                                     ),
                                   ),
                                   if (responsiveVisibility(
@@ -488,13 +482,13 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                           .primaryText,
                                       size: 24.0,
                                     ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ],
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -537,12 +531,12 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 0.0, 8.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 280.0,
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child:
                                 StreamBuilder<List<UserMembershipPlansRecord>>(
                               stream: queryUserMembershipPlansRecord(
@@ -576,7 +570,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                     snapshot.data!;
 
                                 return ListView.separated(
-                                  padding: EdgeInsets.fromLTRB(
+                                  padding: const EdgeInsets.fromLTRB(
                                     0,
                                     0,
                                     16.0,
@@ -589,7 +583,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                       listPlanUserMembershipPlansRecordList
                                           .length,
                                   separatorBuilder: (_, __) =>
-                                      SizedBox(width: 16.0),
+                                      const SizedBox(width: 16.0),
                                   itemBuilder: (context, listPlanIndex) {
                                     final listPlanUserMembershipPlansRecord =
                                         listPlanUserMembershipPlansRecordList[
@@ -607,7 +601,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                               LoginWidget.routeName,
                                               extra: <String, dynamic>{
                                                 '__transition_info__':
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -625,12 +619,12 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                             (e) => e
                                               ..userCartCount =
                                                   currentUserDocument
-                                                      ?.userCart?.cartItems
-                                                      ?.where((e) =>
+                                                      ?.userCart.cartItems
+                                                      .where((e) =>
                                                           e.productType ==
                                                           'membership')
                                                       .toList()
-                                                      ?.length,
+                                                      .length,
                                           );
                                           if (FFAppState()
                                                   .UserDataFlow
@@ -723,8 +717,8 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                                 ..userCartCount =
                                                     currentUserDocument
                                                         ?.userCart
-                                                        ?.cartItems
-                                                        ?.length
+                                                        .cartItems
+                                                        .length
                                                 ..userCartItemList =
                                                     currentUserDocument!
                                                         .userCart.cartItems
@@ -794,12 +788,12 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                           height: 300.0,
                                           decoration: BoxDecoration(
                                             color: currentUserDocument
-                                                        ?.userCart?.cartItems
-                                                        ?.where((e) =>
+                                                        ?.userCart.cartItems
+                                                        .where((e) =>
                                                             e.productType ==
                                                             'membership')
                                                         .toList()
-                                                        ?.firstOrNull
+                                                        .firstOrNull
                                                         ?.productId ==
                                                     (listPlanUserMembershipPlansRecord
                                                         .membershipPlanId
@@ -818,14 +812,14 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(12.0),
+                                            padding: const EdgeInsets.all(12.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 8.0),
                                                   child: Row(
@@ -839,7 +833,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                                     children: [
                                                       if (currentUserDocument
                                                               ?.userMemberships
-                                                              ?.planId ==
+                                                              .planId ==
                                                           listPlanUserMembershipPlansRecord
                                                               .membershipPlanId)
                                                         Container(
@@ -855,7 +849,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     3.0),
                                                             child: Row(
                                                               mainAxisSize:
@@ -889,17 +883,17 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                                                             0.0,
                                                                       ),
                                                                 ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   width: 2.0)),
                                                             ),
                                                           ),
                                                         ),
                                                     ].divide(
-                                                        SizedBox(width: 24.0)),
+                                                        const SizedBox(width: 24.0)),
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 8.0),
                                                   child: Text(
@@ -918,7 +912,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
                                                   child: Text(
@@ -1053,11 +1047,11 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, 1.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 4.0),
                                                     child: Text(
@@ -1089,7 +1083,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -1097,7 +1091,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                 context.pushNamed(
                                   CartWidget.routeName,
                                   extra: <String, dynamic>{
-                                    '__transition_info__': TransitionInfo(
+                                    '__transition_info__': const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -1108,7 +1102,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                                 context.goNamed(
                                   LoginWidget.routeName,
                                   extra: <String, dynamic>{
-                                    '__transition_info__': TransitionInfo(
+                                    '__transition_info__': const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -1125,9 +1119,9 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 48.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -1143,7 +1137,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
                               'l3qfuzxk' /* 100% secure payments. Cancel a... */,
@@ -1161,7 +1155,7 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -1236,9 +1230,9 @@ class _MembershipPlanWidgetState extends State<MembershipPlanWidget> {
                           ),
                         ),
                       ]
-                          .divide(SizedBox(height: 12.0))
-                          .addToStart(SizedBox(height: 12.0))
-                          .addToEnd(SizedBox(height: 16.0)),
+                          .divide(const SizedBox(height: 12.0))
+                          .addToStart(const SizedBox(height: 12.0))
+                          .addToEnd(const SizedBox(height: 16.0)),
                     ),
                   ),
                 ],

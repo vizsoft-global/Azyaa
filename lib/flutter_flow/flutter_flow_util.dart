@@ -443,7 +443,7 @@ Future<LatLng?> queryCurrentUserLocation() async {
   }
 
   final position = await Geolocator.getCurrentPosition();
-  return position != null && position.latitude != 0 && position.longitude != 0
+  return position.latitude != 0 && position.longitude != 0
       ? LatLng(position.latitude, position.longitude)
       : null;
 }
@@ -494,7 +494,7 @@ void showSnackbar(
         children: [
           if (loading)
             Padding(
-              padding: EdgeInsetsDirectional.only(end: 10.0),
+              padding: const EdgeInsetsDirectional.only(end: 10.0),
               child: Container(
                 height: 20,
                 width: 20,

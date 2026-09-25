@@ -1,11 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'empty_v_t_o_model.dart';
 export 'empty_v_t_o_model.dart';
 
@@ -52,17 +49,17 @@ class _EmptyVTOWidgetState extends State<EmptyVTOWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Padding(
-        padding: EdgeInsets.all(24.0),
+        padding: const EdgeInsets.all(24.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 70.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 70.0),
               child: Text(
-                widget!.messageOne!,
+                widget.messageOne!,
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'almarai',
@@ -77,7 +74,7 @@ class _EmptyVTOWidgetState extends State<EmptyVTOWidget> {
                 context.pushNamed(
                   ShopWidget.routeName,
                   extra: <String, dynamic>{
-                    '__transition_info__': TransitionInfo(
+                    '__transition_info__': const TransitionInfo(
                       hasTransition: true,
                       transitionType: PageTransitionType.fade,
                       duration: Duration(milliseconds: 0),
@@ -85,12 +82,12 @@ class _EmptyVTOWidgetState extends State<EmptyVTOWidget> {
                   },
                 );
               },
-              text: widget!.buttonText!,
+              text: widget.buttonText!,
               options: FFButtonOptions(
                 width: 150.0,
                 height: 40.0,
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primaryBackground,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'almarai',
@@ -104,7 +101,7 @@ class _EmptyVTOWidgetState extends State<EmptyVTOWidget> {
                 borderRadius: BorderRadius.circular(8.0),
               ),
             ),
-          ].divide(SizedBox(height: 8.0)),
+          ].divide(const SizedBox(height: 8.0)),
         ),
       ),
     );

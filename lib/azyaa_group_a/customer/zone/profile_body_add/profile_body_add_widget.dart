@@ -1,18 +1,13 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'profile_body_add_model.dart';
 export 'profile_body_add_model.dart';
@@ -21,7 +16,7 @@ class ProfileBodyAddWidget extends StatefulWidget {
   const ProfileBodyAddWidget({
     super.key,
     String? navigatedFrom,
-  }) : this.navigatedFrom = navigatedFrom ?? 'default';
+  }) : navigatedFrom = navigatedFrom ?? 'default';
 
   final String navigatedFrom;
 
@@ -89,7 +84,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
       width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 5.0,
             color: Color(0x3B1D2429),
@@ -99,7 +94,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
             ),
           )
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -108,9 +103,9 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
         mainAxisSize: MainAxisSize.max,
         children: [
           Align(
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
               child: Container(
                 width: 35.0,
                 height: 3.0,
@@ -122,9 +117,9 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
             ),
           ),
           Align(
-            alignment: AlignmentDirectional(-1.0, -1.0),
+            alignment: const AlignmentDirectional(-1.0, -1.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
               child: Text(
                 FFLocalizations.of(context).getText(
                   'k014uaz5' /* Add Your Body Measurements */,
@@ -139,7 +134,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
             child: Text(
               FFLocalizations.of(context).getText(
                 '6visnkd7' /* Accurate measurements help us ... */,
@@ -166,7 +161,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         child: TextFormField(
@@ -251,7 +246,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                       desktop: false,
                     ))
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 24.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -334,18 +329,18 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                       ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 24.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 24.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Expanded(
                             child: Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: MediaQuery.sizeOf(context).height * 0.5,
-                                decoration: BoxDecoration(),
+                                decoration: const BoxDecoration(),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
                                   child: Image.asset(
@@ -355,7 +350,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                     height:
                                         MediaQuery.sizeOf(context).height * 1.0,
                                     fit: BoxFit.contain,
-                                    alignment: Alignment(0.0, 0.0),
+                                    alignment: const Alignment(0.0, 0.0),
                                   ),
                                 ),
                               ),
@@ -364,13 +359,13 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                           Expanded(
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              decoration: BoxDecoration(),
+                              decoration: const BoxDecoration(),
                               child: SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 8.0, 0.0),
                                       child: Container(
                                         width:
@@ -388,7 +383,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -428,7 +423,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 4.0, 0.0),
                                                   child: Row(
@@ -480,7 +475,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                             enabledBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 0.0,
@@ -493,7 +488,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 0.0,
@@ -536,7 +531,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                                     .of(context)
                                                                 .primaryBackground,
                                                             contentPadding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     15.0),
                                                           ),
                                                           style: FlutterFlowTheme
@@ -638,7 +633,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                         borderWidth: 0.0,
                                                         borderRadius: 0.0,
                                                         margin:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     4.0,
                                                                     0.0,
@@ -653,13 +648,13 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ].divide(SizedBox(height: 4.0)),
+                                            ].divide(const SizedBox(height: 4.0)),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 8.0, 0.0),
                                       child: Container(
                                         width:
@@ -677,7 +672,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -717,7 +712,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 4.0, 0.0),
                                                   child: Row(
@@ -769,7 +764,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                             enabledBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 0.0,
@@ -782,7 +777,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 0.0,
@@ -825,7 +820,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                                     .of(context)
                                                                 .primaryBackground,
                                                             contentPadding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     15.0),
                                                           ),
                                                           style: FlutterFlowTheme
@@ -927,7 +922,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                         borderWidth: 0.0,
                                                         borderRadius: 0.0,
                                                         margin:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     4.0,
                                                                     0.0,
@@ -942,13 +937,13 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ].divide(SizedBox(height: 8.0)),
+                                            ].divide(const SizedBox(height: 8.0)),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 8.0, 0.0),
                                       child: Container(
                                         width:
@@ -966,7 +961,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -1006,7 +1001,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 4.0, 0.0),
                                                   child: Row(
@@ -1058,7 +1053,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                             enabledBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 0.0,
@@ -1071,7 +1066,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 0.0,
@@ -1114,7 +1109,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                                     .of(context)
                                                                 .primaryBackground,
                                                             contentPadding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     15.0),
                                                           ),
                                                           style: FlutterFlowTheme
@@ -1216,7 +1211,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                         borderWidth: 0.0,
                                                         borderRadius: 0.0,
                                                         margin:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     4.0,
                                                                     0.0,
@@ -1231,13 +1226,13 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ].divide(SizedBox(height: 8.0)),
+                                            ].divide(const SizedBox(height: 8.0)),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 8.0, 0.0),
                                       child: Container(
                                         width:
@@ -1255,7 +1250,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -1295,7 +1290,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 4.0, 0.0),
                                                   child: Row(
@@ -1347,7 +1342,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                             enabledBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 0.0,
@@ -1360,7 +1355,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 0.0,
@@ -1403,7 +1398,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                                     .of(context)
                                                                 .primaryBackground,
                                                             contentPadding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     15.0),
                                                           ),
                                                           style: FlutterFlowTheme
@@ -1510,7 +1505,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                         borderWidth: 0.0,
                                                         borderRadius: 0.0,
                                                         margin:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     4.0,
                                                                     0.0,
@@ -1525,13 +1520,13 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ].divide(SizedBox(height: 8.0)),
+                                            ].divide(const SizedBox(height: 8.0)),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 8.0, 0.0),
                                       child: Container(
                                         width:
@@ -1549,7 +1544,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -1589,7 +1584,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 4.0, 0.0),
                                                   child: Row(
@@ -1641,7 +1636,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                             enabledBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 0.0,
@@ -1654,7 +1649,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 0.0,
@@ -1697,7 +1692,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                                     .of(context)
                                                                 .primaryBackground,
                                                             contentPadding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     15.0),
                                                           ),
                                                           style: FlutterFlowTheme
@@ -1804,7 +1799,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                         borderWidth: 0.0,
                                                         borderRadius: 0.0,
                                                         margin:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     4.0,
                                                                     0.0,
@@ -1819,13 +1814,13 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ].divide(SizedBox(height: 8.0)),
+                                            ].divide(const SizedBox(height: 8.0)),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 8.0, 0.0),
                                       child: Container(
                                         width:
@@ -1843,7 +1838,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -1883,7 +1878,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 4.0, 0.0),
                                                   child: Row(
@@ -1935,7 +1930,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                             enabledBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 0.0,
@@ -1948,7 +1943,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 0.0,
@@ -1991,7 +1986,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                                     .of(context)
                                                                 .primaryBackground,
                                                             contentPadding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     15.0),
                                                           ),
                                                           style: FlutterFlowTheme
@@ -2098,7 +2093,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                         borderWidth: 0.0,
                                                         borderRadius: 0.0,
                                                         margin:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     4.0,
                                                                     0.0,
@@ -2113,13 +2108,13 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ].divide(SizedBox(height: 8.0)),
+                                            ].divide(const SizedBox(height: 8.0)),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 8.0, 0.0),
                                       child: Container(
                                         width:
@@ -2137,7 +2132,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -2177,7 +2172,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 4.0, 0.0),
                                                   child: Row(
@@ -2229,7 +2224,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                             enabledBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 0.0,
@@ -2242,7 +2237,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 0.0,
@@ -2285,7 +2280,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                                     .of(context)
                                                                 .primaryBackground,
                                                             contentPadding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     15.0),
                                                           ),
                                                           style: FlutterFlowTheme
@@ -2392,7 +2387,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                         borderWidth: 0.0,
                                                         borderRadius: 0.0,
                                                         margin:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     4.0,
                                                                     0.0,
@@ -2407,13 +2402,13 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ].divide(SizedBox(height: 8.0)),
+                                            ].divide(const SizedBox(height: 8.0)),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 8.0, 0.0),
                                       child: Container(
                                         width:
@@ -2431,7 +2426,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -2471,7 +2466,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 4.0, 0.0),
                                                   child: Row(
@@ -2523,7 +2518,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                             enabledBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 0.0,
@@ -2536,7 +2531,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 0.0,
@@ -2579,7 +2574,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                                     .of(context)
                                                                 .primaryBackground,
                                                             contentPadding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     15.0),
                                                           ),
                                                           style: FlutterFlowTheme
@@ -2686,7 +2681,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                         borderWidth: 0.0,
                                                         borderRadius: 0.0,
                                                         margin:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     4.0,
                                                                     0.0,
@@ -2701,24 +2696,24 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ].divide(SizedBox(height: 8.0)),
+                                            ].divide(const SizedBox(height: 8.0)),
                                           ),
                                         ),
                                       ),
                                     ),
                                   ]
-                                      .divide(SizedBox(height: 8.0))
-                                      .addToEnd(SizedBox(height: 12.0)),
+                                      .divide(const SizedBox(height: 8.0))
+                                      .addToEnd(const SizedBox(height: 12.0)),
                                 ),
                               ),
                             ),
                           ),
-                        ].divide(SizedBox(width: 12.0)),
+                        ].divide(const SizedBox(width: 12.0)),
                       ),
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -2746,7 +2741,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                   ? BorderSide(
                                       width: 2,
                                       color: FlutterFlowTheme.of(context)
-                                          .alternate!,
+                                          .alternate,
                                     )
                                   : null,
                               activeColor: FlutterFlowTheme.of(context).primary,
@@ -2772,14 +2767,14 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                       ),
                     ),
                   ]
-                      .addToStart(SizedBox(height: 12.0))
-                      .addToEnd(SizedBox(height: 12.0)),
+                      .addToStart(const SizedBox(height: 12.0))
+                      .addToEnd(const SizedBox(height: 12.0)),
                 ),
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
                 var _shouldSetState = false;
@@ -2787,8 +2782,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                     !_model.formKey.currentState!.validate()) {
                   return;
                 }
-                if (_model.hieghtTextController.text == null ||
-                    _model.hieghtTextController.text == '') {
+                if (_model.hieghtTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -2816,8 +2810,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                   );
                   if (_shouldSetState) safeSetState(() {});
                   return;
-                } else if (_model.weightTextController.text == null ||
-                    _model.weightTextController.text == '') {
+                } else if (_model.weightTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -2845,8 +2838,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                   );
                   if (_shouldSetState) safeSetState(() {});
                   return;
-                } else if (_model.chestTextController.text == null ||
-                    _model.chestTextController.text == '') {
+                } else if (_model.chestTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -2874,8 +2866,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                   );
                   if (_shouldSetState) safeSetState(() {});
                   return;
-                } else if (_model.waistTextController.text == null ||
-                    _model.waistTextController.text == '') {
+                } else if (_model.waistTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -2903,8 +2894,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                   );
                   if (_shouldSetState) safeSetState(() {});
                   return;
-                } else if (_model.hipTextController.text == null ||
-                    _model.hipTextController.text == '') {
+                } else if (_model.hipTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -2932,8 +2922,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                   );
                   if (_shouldSetState) safeSetState(() {});
                   return;
-                } else if (_model.inseamTextController.text == null ||
-                    _model.inseamTextController.text == '') {
+                } else if (_model.inseamTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -2961,8 +2950,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                   );
                   if (_shouldSetState) safeSetState(() {});
                   return;
-                } else if (_model.shoulderTextController.text == null ||
-                    _model.shoulderTextController.text == '') {
+                } else if (_model.shoulderTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -2990,8 +2978,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                   );
                   if (_shouldSetState) safeSetState(() {});
                   return;
-                } else if (_model.armTextController.text == null ||
-                    _model.armTextController.text == '') {
+                } else if (_model.armTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -3019,8 +3006,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                   );
                   if (_shouldSetState) safeSetState(() {});
                   return;
-                } else if (_model.nameTextController.text == null ||
-                    _model.nameTextController.text == '') {
+                } else if (_model.nameTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -3052,9 +3038,9 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
 
                 if (_model.checkboxValue != false) {
                   _model.count =
-                      (currentUserDocument?.userBody?.toList() ?? []).length;
+                      (currentUserDocument?.userBody.toList() ?? []).length;
                   _model.bodyList =
-                      (currentUserDocument?.userBody?.toList() ?? [])
+                      (currentUserDocument?.userBody.toList() ?? [])
                           .toList()
                           .cast<UserBodyStruct>();
                   while (_model.count! > 0) {
@@ -3147,15 +3133,15 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                     },
                   ),
                 });
-                if ((widget!.navigatedFrom == 'default') &&
-                    ((currentUserDocument?.userBody?.toList() ?? [])
+                if ((widget.navigatedFrom == 'default') &&
+                    ((currentUserDocument?.userBody.toList() ?? [])
                             .lastOrNull
                             ?.isDefault ==
                         true)) {
                   FFAppState().updateUserDataFlowStruct(
                     (e) => e
                       ..userSelectedBody =
-                          (currentUserDocument?.userBody?.toList() ?? [])
+                          (currentUserDocument?.userBody.toList() ?? [])
                               .lastOrNull,
                   );
                 }
@@ -3170,7 +3156,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                         color: FlutterFlowTheme.of(context).primaryText,
                       ),
                     ),
-                    duration: Duration(milliseconds: 4000),
+                    duration: const Duration(milliseconds: 4000),
                     backgroundColor: FlutterFlowTheme.of(context).secondary,
                   ),
                 );
@@ -3183,8 +3169,8 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
               options: FFButtonOptions(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: 48.0,
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'almarai',
@@ -3196,7 +3182,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
               ),
             ),
           ),
-        ].addToStart(SizedBox(height: 16.0)).addToEnd(SizedBox(height: 16.0)),
+        ].addToStart(const SizedBox(height: 16.0)).addToEnd(const SizedBox(height: 16.0)),
       ),
     );
   }

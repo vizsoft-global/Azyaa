@@ -2,19 +2,15 @@ import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/loading_animation/loading_animation_widget.dart';
 import '/azyaa_group_a/payment/cart_item_list_success/cart_item_list_success_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'success_model.dart';
 export 'success_model.dart';
@@ -42,7 +38,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await Future.delayed(
-        Duration(
+        const Duration(
           milliseconds: 20000,
         ),
       );
@@ -54,7 +50,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
       context.goNamed(
         HomeWidget.routeName,
         extra: <String, dynamic>{
-          '__transition_info__': TransitionInfo(
+          '__transition_info__': const TransitionInfo(
             hasTransition: true,
             transitionType: PageTransitionType.fade,
             duration: Duration(milliseconds: 0),
@@ -91,7 +87,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
               key: scaffoldKey,
               backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
               appBar: PreferredSize(
-                preferredSize: Size.fromHeight(60.0),
+                preferredSize: const Size.fromHeight(60.0),
                 child: AppBar(
                   backgroundColor:
                       FlutterFlowTheme.of(context).primaryBackground,
@@ -126,7 +122,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                               context.goNamed(
                                 HomeWidget.routeName,
                                 extra: <String, dynamic>{
-                                  '__transition_info__': TransitionInfo(
+                                  '__transition_info__': const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 0),
@@ -159,11 +155,11 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                   .primaryBackground,
                             ),
                           ),
-                        ].divide(SizedBox(width: 8.0)),
+                        ].divide(const SizedBox(width: 8.0)),
                       ),
                     ],
                   ),
-                  actions: [],
+                  actions: const [],
                   centerTitle: true,
                   elevation: 0.0,
                 ),
@@ -176,7 +172,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                       model: _model.userInitialModel,
                       updateCallback: () => safeSetState(() {}),
                       updateOnChange: true,
-                      child: UserInitialWidget(),
+                      child: const UserInitialWidget(),
                     ),
                     StreamBuilder<List<OrdersRecord>>(
                       stream: queryOrdersRecord(
@@ -193,7 +189,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 150.0,
-                              child: LoadingAnimationWidget(),
+                              child: const LoadingAnimationWidget(),
                             ),
                           );
                         }
@@ -214,7 +210,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.0, -1.0),
+                                alignment: const AlignmentDirectional(0.0, -1.0),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
                                   child: SvgPicture.asset(
@@ -236,12 +232,12 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                 clipBehavior: Clip.none,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        Icon(
+                                        const Icon(
                                           Icons.check_circle,
                                           color: Color(0xFF5BA841),
                                           size: 42.0,
@@ -264,7 +260,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                           .getText(
                                                         'onuba3yr' /* Thank You! */,
                                                       ),
-                                                      style: TextStyle(),
+                                                      style: const TextStyle(),
                                                     )
                                                   ],
                                                   style: FlutterFlowTheme.of(
@@ -319,21 +315,21 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                         lineHeight: 1.5,
                                                       ),
                                                 ),
-                                            ].divide(SizedBox(height: 4.0)),
+                                            ].divide(const SizedBox(height: 4.0)),
                                           ),
                                         ),
-                                      ].divide(SizedBox(width: 8.0)),
+                                      ].divide(const SizedBox(width: 8.0)),
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Text(
                                       '${FFLocalizations.of(context).getVariableText(
                                         enText: 'We sent an email to ',
                                         arText:
                                             'لقد أرسلنا بريدا إلكترونيا إلى',
-                                      )}${columnOrdersRecord?.shippingAddress?.shippingEmail}${FFLocalizations.of(context).getVariableText(
+                                      )}${columnOrdersRecord.shippingAddress.shippingEmail}${FFLocalizations.of(context).getVariableText(
                                         enText:
                                             ' with your order confirmation and invoice.',
                                         arText: 'مع تأكيد طلبك والفاتورة.',
@@ -347,7 +343,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Text(
                                       '${FFLocalizations.of(context).getVariableText(
@@ -355,7 +351,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                         arText: 'الوقت المحدد:',
                                       )}${dateTimeFormat(
                                         "yMMMd",
-                                        columnOrdersRecord?.updatedAt,
+                                        columnOrdersRecord.updatedAt,
                                         locale: FFLocalizations.of(context)
                                             .languageCode,
                                       )}${FFLocalizations.of(context).getVariableText(
@@ -363,7 +359,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                         arText: '|',
                                       )}${dateTimeFormat(
                                         "jm",
-                                        columnOrdersRecord?.updatedAt,
+                                        columnOrdersRecord.updatedAt,
                                         locale: FFLocalizations.of(context)
                                             .languageCode,
                                       )}',
@@ -378,7 +374,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                   ),
                                 ],
                               ),
-                              if (columnOrdersRecord!.orderItems.cartItems
+                              if (columnOrdersRecord.orderItems.cartItems
                                       .where((e) => e.productType == 'product')
                                       .toList()
                                       .length >
@@ -401,7 +397,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                       desktop: false,
                                     ))
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 8.0, 16.0, 8.0),
                                         child: Container(
                                           width:
@@ -414,7 +410,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                 BorderRadius.circular(10.0),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(12.0),
+                                            padding: const EdgeInsets.all(12.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -451,7 +447,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                                 '0i1v9rcz' /* You are just */,
                                                               ),
                                                               style:
-                                                                  TextStyle(),
+                                                                  const TextStyle(),
                                                             ),
                                                             TextSpan(
                                                               text: FFLocalizations
@@ -459,7 +455,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                                   .getText(
                                                                 'i5vgqgah' /*  13 points  */,
                                                               ),
-                                                              style: TextStyle(
+                                                              style: const TextStyle(
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .bold,
@@ -472,7 +468,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                                 'v7abtd85' /* away from unlocking exclusive ... */,
                                                               ),
                                                               style:
-                                                                  TextStyle(),
+                                                                  const TextStyle(),
                                                             )
                                                           ],
                                                           style: FlutterFlowTheme
@@ -494,7 +490,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(height: 4.0)),
+                                                        const SizedBox(height: 4.0)),
                                                   ),
                                                 ),
                                                 Icon(
@@ -504,7 +500,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                       .primaryText,
                                                   size: 24.0,
                                                 ),
-                                              ].divide(SizedBox(width: 8.0)),
+                                              ].divide(const SizedBox(width: 8.0)),
                                             ),
                                           ),
                                         ),
@@ -522,7 +518,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -539,7 +535,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -553,17 +549,17 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                   BorderRadius.circular(10.0),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(16.0),
+                                              padding: const EdgeInsets.all(16.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    '${columnOrdersRecord?.shippingInfo?.userName}${columnOrdersRecord?.shippingInfo?.relationName != null && columnOrdersRecord?.shippingInfo?.relationName != '' ? FFLocalizations.of(context).getVariableText(
+                                                    '${columnOrdersRecord.shippingInfo.userName}${columnOrdersRecord.shippingInfo.relationName != '' ? FFLocalizations.of(context).getVariableText(
                                                         enText: ' (',
                                                         arText: ' (',
-                                                      ) : ''}${columnOrdersRecord?.shippingInfo?.relationName != null && columnOrdersRecord?.shippingInfo?.relationName != '' ? columnOrdersRecord?.shippingInfo?.relationName : ''}${columnOrdersRecord?.shippingInfo?.relationName != null && columnOrdersRecord?.shippingInfo?.relationName != '' ? FFLocalizations.of(context).getVariableText(
+                                                      ) : ''}${columnOrdersRecord.shippingInfo.relationName != '' ? columnOrdersRecord.shippingInfo.relationName : ''}${columnOrdersRecord.shippingInfo.relationName != '' ? FFLocalizations.of(context).getVariableText(
                                                         enText: ')',
                                                         arText: ')',
                                                       ) : ''}',
@@ -578,10 +574,10 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                         ),
                                                   ),
                                                   Text(
-                                                    '${columnOrdersRecord?.shippingAddress?.shippingEmail}${FFLocalizations.of(context).getVariableText(
+                                                    '${columnOrdersRecord.shippingAddress.shippingEmail}${FFLocalizations.of(context).getVariableText(
                                                       enText: '|',
                                                       arText: '|',
-                                                    )}${columnOrdersRecord?.shippingAddress?.shippingPhone}',
+                                                    )}${columnOrdersRecord.shippingAddress.shippingPhone}',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodySmall
@@ -591,19 +587,19 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                         ),
                                                   ),
                                                   Text(
-                                                    '${columnOrdersRecord?.shippingAddress?.addressLine1}${FFLocalizations.of(context).getVariableText(
+                                                    '${columnOrdersRecord.shippingAddress.addressLine1}${FFLocalizations.of(context).getVariableText(
                                                       enText: ',',
                                                       arText: ',',
-                                                    )}${columnOrdersRecord?.shippingAddress?.city}${FFLocalizations.of(context).getVariableText(
+                                                    )}${columnOrdersRecord.shippingAddress.city}${FFLocalizations.of(context).getVariableText(
                                                       enText: ',',
                                                       arText: ',',
-                                                    )}${columnOrdersRecord?.shippingAddress?.state}${FFLocalizations.of(context).getVariableText(
+                                                    )}${columnOrdersRecord.shippingAddress.state}${FFLocalizations.of(context).getVariableText(
                                                       enText: ',',
                                                       arText: ',',
-                                                    )}${columnOrdersRecord?.shippingAddress?.country}${FFLocalizations.of(context).getVariableText(
+                                                    )}${columnOrdersRecord.shippingAddress.country}${FFLocalizations.of(context).getVariableText(
                                                       enText: '-',
                                                       arText: '-',
-                                                    )}${columnOrdersRecord?.shippingAddress?.postalCode}${FFLocalizations.of(context).getVariableText(
+                                                    )}${columnOrdersRecord.shippingAddress.postalCode}${FFLocalizations.of(context).getVariableText(
                                                       enText: '.',
                                                       arText: '.',
                                                     )}',
@@ -615,7 +611,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
-                                                ].divide(SizedBox(height: 4.0)),
+                                                ].divide(const SizedBox(height: 4.0)),
                                               ),
                                             ),
                                           ),
@@ -629,7 +625,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                         ))
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 8.0, 16.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -656,7 +652,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                         ))
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
@@ -670,7 +666,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                     BorderRadius.circular(10.0),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsets.all(16.0),
+                                                padding: const EdgeInsets.all(16.0),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -695,7 +691,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                           ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(height: 4.0)),
+                                                      const SizedBox(height: 4.0)),
                                                 ),
                                               ),
                                             ),
@@ -703,7 +699,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 8.0, 16.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -719,7 +715,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: Container(
                                         width:
@@ -732,7 +728,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                               BorderRadius.circular(10.0),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(16.0),
+                                          padding: const EdgeInsets.all(16.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -758,7 +754,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                         children: [
                                                           TextSpan(
                                                             text:
-                                                                '${columnOrdersRecord?.orderItems?.cartItems?.where((e) => e.productMainType == 'ready').toList()?.length?.toString()}${FFLocalizations.of(context).getVariableText(
+                                                                '${columnOrdersRecord.orderItems.cartItems.where((e) => e.productMainType == 'ready').toList().length.toString()}${FFLocalizations.of(context).getVariableText(
                                                               enText:
                                                                   ' Ready Made dress arrives by ',
                                                               arText:
@@ -766,7 +762,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                             )}${dateTimeFormat(
                                                               "yMMMd",
                                                               functions.getDateForSubscription(
-                                                                  columnOrdersRecord!
+                                                                  columnOrdersRecord
                                                                       .updatedAt!,
                                                                   7),
                                                               locale: FFLocalizations
@@ -778,7 +774,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                             )}${dateTimeFormat(
                                                               "yMMMd",
                                                               functions.getDateForSubscription(
-                                                                  columnOrdersRecord!
+                                                                  columnOrdersRecord
                                                                       .updatedAt!,
                                                                   8),
                                                               locale: FFLocalizations
@@ -788,7 +784,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                               enText: '.',
                                                               arText: '.',
                                                             )}',
-                                                            style: TextStyle(),
+                                                            style: const TextStyle(),
                                                           )
                                                         ],
                                                         style:
@@ -844,23 +840,23 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                                 ),
                                                       ),
                                                   ].divide(
-                                                      SizedBox(height: 4.0)),
+                                                      const SizedBox(height: 4.0)),
                                                 ),
                                               ),
-                                            ].divide(SizedBox(width: 8.0)),
+                                            ].divide(const SizedBox(width: 8.0)),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: Builder(
                                         builder: (context) {
                                           final cartItemList =
                                               columnOrdersRecord
-                                                      ?.orderItems?.cartItems
-                                                      ?.toList() ??
+                                                      .orderItems.cartItems
+                                                      .toList() ??
                                                   [];
 
                                           return ListView.separated(
@@ -870,7 +866,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                             scrollDirection: Axis.vertical,
                                             itemCount: cartItemList.length,
                                             separatorBuilder: (_, __) =>
-                                                SizedBox(height: 16.0),
+                                                const SizedBox(height: 16.0),
                                             itemBuilder:
                                                 (context, cartItemListIndex) {
                                               final cartItemListItem =
@@ -887,7 +883,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 8.0, 16.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -915,7 +911,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -936,7 +932,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                         ),
                                               ),
                                               Text(
-                                                '${functions.newCartTotal(columnOrdersRecord!.orderItems.cartItems.map((e) => e.totalPrice).toList()).toString()}${FFLocalizations.of(context).getVariableText(
+                                                '${functions.newCartTotal(columnOrdersRecord.orderItems.cartItems.map((e) => e.totalPrice).toList()).toString()}${FFLocalizations.of(context).getVariableText(
                                                   enText: 'KD',
                                                   arText: 'KD',
                                                 )}',
@@ -948,7 +944,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
-                                            ].divide(SizedBox(width: 8.0)),
+                                            ].divide(const SizedBox(width: 8.0)),
                                           ),
                                         ),
                                         if (responsiveVisibility(
@@ -960,7 +956,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                         ))
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -994,7 +990,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(SizedBox(width: 8.0)),
+                                              ].divide(const SizedBox(width: 8.0)),
                                             ),
                                           ),
                                         if (responsiveVisibility(
@@ -1006,7 +1002,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                         ))
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -1040,18 +1036,15 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(SizedBox(width: 8.0)),
+                                              ].divide(const SizedBox(width: 8.0)),
                                             ),
                                           ),
-                                        if (columnOrdersRecord?.orderItems
-                                                    ?.couponInfo?.couponId !=
-                                                null &&
-                                            columnOrdersRecord?.orderItems
-                                                    ?.couponInfo?.couponId !=
+                                        if (columnOrdersRecord.orderItems
+                                                    .couponInfo.couponId !=
                                                 '')
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -1063,7 +1056,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                   '${FFLocalizations.of(context).getVariableText(
                                                     enText: 'Coupon : ',
                                                     arText: 'القسيمة :',
-                                                  )}${columnOrdersRecord?.orderItems?.couponInfo?.couponValue}',
+                                                  )}${columnOrdersRecord.orderItems.couponInfo.couponValue}',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -1076,7 +1069,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                   '${FFLocalizations.of(context).getVariableText(
                                                     enText: '-',
                                                     arText: '-',
-                                                  )}${(functions.newCartTotal(columnOrdersRecord!.orderItems.cartItems.map((e) => e.totalPrice).toList()) - columnOrdersRecord!.orderItems.couponInfo.couponDiscountedPrice).toString()}${FFLocalizations.of(context).getVariableText(
+                                                  )}${(functions.newCartTotal(columnOrdersRecord.orderItems.cartItems.map((e) => e.totalPrice).toList()) - columnOrdersRecord.orderItems.couponInfo.couponDiscountedPrice).toString()}${FFLocalizations.of(context).getVariableText(
                                                     enText: 'KD',
                                                     arText: 'KD',
                                                   )}',
@@ -1088,13 +1081,13 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(SizedBox(width: 8.0)),
+                                              ].divide(const SizedBox(width: 8.0)),
                                             ),
                                           ),
                                       ],
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 16.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1114,7 +1107,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                 ),
                                           ),
                                           Text(
-                                            '${columnOrdersRecord?.totalPrice?.toString()}${FFLocalizations.of(context).getVariableText(
+                                            '${columnOrdersRecord.totalPrice.toString()}${FFLocalizations.of(context).getVariableText(
                                               enText: 'KD',
                                               arText: 'KD',
                                             )}',
@@ -1126,13 +1119,13 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                           ),
-                                        ].divide(SizedBox(width: 8.0)),
+                                        ].divide(const SizedBox(width: 8.0)),
                                       ),
                                     ),
                                   ],
                                 ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -1145,7 +1138,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                     context.goNamed(
                                       HomeWidget.routeName,
                                       extra: <String, dynamic>{
-                                        '__transition_info__': TransitionInfo(
+                                        '__transition_info__': const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -1161,9 +1154,9 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                     width:
                                         MediaQuery.sizeOf(context).width * 1.0,
                                     height: 48.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
@@ -1171,7 +1164,7 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                         .titleSmall
                                         .override(
                                           fontFamily: 'almarai',
-                                          color: Color(0xFF344054),
+                                          color: const Color(0xFF344054),
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 0.0,
@@ -1184,8 +1177,8 @@ class _SuccessWidgetState extends State<SuccessWidget> {
                                 ),
                               ),
                             ]
-                                .divide(SizedBox(height: 12.0))
-                                .addToEnd(SizedBox(height: 16.0)),
+                                .divide(const SizedBox(height: 12.0))
+                                .addToEnd(const SizedBox(height: 16.0)),
                           ),
                         );
                       },

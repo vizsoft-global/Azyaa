@@ -2,25 +2,22 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/sign/register/social/social_widget.dart';
 import '/azyaa_group_a/home/components/blank_loading/blank_loading_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'register_model.dart';
@@ -105,9 +102,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       autovalidateMode: AutovalidateMode.disabled,
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: SingleChildScrollView(
                             child: Column(
@@ -116,7 +113,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 16.0),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
@@ -129,7 +126,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 16.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -146,7 +143,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 24.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -167,12 +164,12 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                 wrapWithModel(
                                   model: _model.socialModel,
                                   updateCallback: () => safeSetState(() {}),
-                                  child: SocialWidget(),
+                                  child: const SocialWidget(),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(-1.0, -1.0),
+                                  alignment: const AlignmentDirectional(-1.0, -1.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -220,7 +217,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 24.0),
                                   child: Container(
                                     width:
@@ -330,9 +327,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(-1.0, -1.0),
+                                  alignment: const AlignmentDirectional(-1.0, -1.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -380,7 +377,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 24.0),
                                   child: Container(
                                     width:
@@ -471,7 +468,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 8.0),
                                   child: RichText(
                                     textScaler:
@@ -513,7 +510,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 24.0),
                                   child: Container(
                                     width:
@@ -623,7 +620,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 8.0),
                                   child: RichText(
                                     textScaler:
@@ -665,7 +662,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 24.0),
                                   child: Container(
                                     width:
@@ -794,7 +791,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         child: Container(
                                           width: 0.0,
                                           height: 0.0,
-                                          child: BlankLoadingWidget(),
+                                          child: const BlankLoadingWidget(),
                                         ),
                                       );
                                     }
@@ -816,7 +813,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                             false)
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 8.0),
                                             child: RichText(
                                               textScaler: MediaQuery.of(context)
@@ -870,7 +867,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                             false)
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 12.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
@@ -890,17 +887,17 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                   width: 1.0,
                                                 ),
                                               ),
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Stack(
                                                 children: [
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(2.0),
+                                                          const EdgeInsets.all(2.0),
                                                       child:
                                                           FlutterFlowDropDown<
                                                               String>(
@@ -992,7 +989,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                         borderWidth: 0.0,
                                                         borderRadius: 0.0,
                                                         margin:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     65.0,
                                                                     4.0,
@@ -1007,13 +1004,13 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(8.0),
-                                                      child: Image.network(
-                                                        functions.getCountryFlag(
+                                                          const EdgeInsets.all(8.0),
+                                                      child: CachedNetworkImage(
+                                                        imageUrl: functions.getCountryFlag(
                                                             _model
                                                                 .countryListValue)!,
                                                         width: 35.0,
@@ -1030,13 +1027,13 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                             false)
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 24.0),
                                             child: Stack(
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, -1.0),
                                                   child: Container(
                                                     width: MediaQuery.sizeOf(
@@ -1157,7 +1154,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                                     context)
                                                                 .primaryBackground,
                                                         contentPadding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     68.0,
                                                                     0.0,
@@ -1197,11 +1194,11 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, -1.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(16.0),
+                                                        const EdgeInsets.all(16.0),
                                                     child: Text(
                                                       '${FFLocalizations.of(context).getVariableText(
                                                         enText: '+',
@@ -1234,7 +1231,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   desktop: false,
                                 ))
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 16.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -1274,11 +1271,11 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                             ),
                                           ),
                                         ),
-                                      ].divide(SizedBox(width: 8.0)),
+                                      ].divide(const SizedBox(width: 8.0)),
                                     ),
                                   ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 12.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
@@ -1377,7 +1374,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                               context.mounted,
                                               extra: <String, dynamic>{
                                                 '__transition_info__':
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -1441,7 +1438,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                             context.mounted,
                                             extra: <String, dynamic>{
                                               '__transition_info__':
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -1551,7 +1548,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                             context.mounted,
                                             extra: <String, dynamic>{
                                               '__transition_info__':
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -1606,10 +1603,10 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       height: 48.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -1627,9 +1624,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, -1.0),
+                                  alignment: const AlignmentDirectional(0.0, -1.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 24.0),
                                     child: RichText(
                                       textScaler:
@@ -1673,7 +1670,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                   TermsWidget.routeName,
                                                   extra: <String, dynamic>{
                                                     '__transition_info__':
-                                                        TransitionInfo(
+                                                        const TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -1719,7 +1716,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                   PrivacyPolicyWidget.routeName,
                                                   extra: <String, dynamic>{
                                                     '__transition_info__':
-                                                        TransitionInfo(
+                                                        const TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -1748,9 +1745,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, -1.0),
+                                  alignment: const AlignmentDirectional(0.0, -1.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 12.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -1762,7 +1759,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                           LoginWidget.routeName,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,

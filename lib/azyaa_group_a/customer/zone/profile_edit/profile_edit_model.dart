@@ -1,33 +1,12 @@
-import '/auth/base_auth_user_provider.dart';
-import '/auth/firebase_auth/auth_util.dart';
-import '/azyaa_group_a/customer/zone/profile_body_add/profile_body_add_widget.dart';
-import '/azyaa_group_a/customer/zone/profile_body_edit/profile_body_edit_widget.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
-import '/azyaa_group_a/home/components/category_small_grid/category_small_grid_widget.dart';
 import '/backend/backend.dart';
-import '/backend/firebase_storage/storage.dart';
 import '/backend/schema/structs/index.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/flutter_flow/upload_data.dart';
-import 'dart:ui';
-import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'profile_edit_widget.dart' show ProfileEditWidget;
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
-import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 
 class ProfileEditModel extends FlutterFlowModel<ProfileEditWidget> {
   ///  Local state fields for this page.

@@ -1,22 +1,16 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'designer_consult_details_model.dart';
@@ -63,18 +57,18 @@ class _DesignerConsultDetailsWidgetState
         singleRecord: true,
       ).then((s) => s.firstOrNull);
       if (_model.settingsrslt1?.settingsHoildayDates
-              ?.contains(functions.presentDateFromZerotime()) ==
+              .contains(functions.presentDateFromZerotime()) ==
           true) {
         await showDialog(
           context: context,
           builder: (alertDialogContext) {
             return WebViewAware(
               child: AlertDialog(
-                content: Text('Today is hoilday.'),
+                content: const Text('Today is hoilday.'),
                 actions: [
                   TextButton(
                     onPressed: () => Navigator.pop(alertDialogContext),
-                    child: Text('Ok'),
+                    child: const Text('Ok'),
                   ),
                 ],
               ),
@@ -88,7 +82,7 @@ class _DesignerConsultDetailsWidgetState
         FFAppState().update(() {});
       } else {
         if (_model.settingsrslt1?.settingsWorkingHours
-                ?.where((e) =>
+                .where((e) =>
                     dateTimeFormat(
                       "EEEE",
                       getCurrentTimestamp,
@@ -100,7 +94,7 @@ class _DesignerConsultDetailsWidgetState
                       locale: FFLocalizations.of(context).languageCode,
                     ))
                 .toList()
-                ?.firstOrNull
+                .firstOrNull
                 ?.isChangeLanguage ==
             false) {
           await showDialog(
@@ -108,11 +102,11 @@ class _DesignerConsultDetailsWidgetState
             builder: (alertDialogContext) {
               return WebViewAware(
                 child: AlertDialog(
-                  content: Text('Today is hoilday.'),
+                  content: const Text('Today is hoilday.'),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(alertDialogContext),
-                      child: Text('Ok'),
+                      child: const Text('Ok'),
                     ),
                   ],
                 ),
@@ -125,20 +119,20 @@ class _DesignerConsultDetailsWidgetState
           FFAppState().userSessionDate = null;
           FFAppState().update(() {});
         } else {
-          if (widget!.designerDoc?.designerMainInfo?.designerApproval
-                  ?.designerHoildayList
-                  ?.contains(getCurrentTimestamp) ==
+          if (widget.designerDoc?.designerMainInfo.designerApproval
+                  .designerHoildayList
+                  .contains(getCurrentTimestamp) ==
               true) {
             await showDialog(
               context: context,
               builder: (alertDialogContext) {
                 return WebViewAware(
                   child: AlertDialog(
-                    content: Text('Today is hoilday.'),
+                    content: const Text('Today is hoilday.'),
                     actions: [
                       TextButton(
                         onPressed: () => Navigator.pop(alertDialogContext),
-                        child: Text('Ok'),
+                        child: const Text('Ok'),
                       ),
                     ],
                   ),
@@ -184,7 +178,7 @@ class _DesignerConsultDetailsWidgetState
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -214,7 +208,7 @@ class _DesignerConsultDetailsWidgetState
                         ),
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -262,11 +256,11 @@ class _DesignerConsultDetailsWidgetState
                             print('IconButton pressed ...');
                           },
                         ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -279,37 +273,37 @@ class _DesignerConsultDetailsWidgetState
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.0, -1.0),
+                            alignment: const AlignmentDirectional(0.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 16.0),
                               child: Container(
                                 width: 100.0,
                                 height: 100.0,
                                 clipBehavior: Clip.antiAlias,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   shape: BoxShape.circle,
                                 ),
                                 child: Image.asset(
                                   'assets/images/Frame1.jpg',
                                   fit: BoxFit.cover,
-                                  alignment: Alignment(0.0, 0.0),
+                                  alignment: const Alignment(0.0, 0.0),
                                 ),
                               ),
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 8.0),
                             child: Text(
-                              widget!.designerDoc!.designerMainInfo.designerInfo
+                              widget.designerDoc!.designerMainInfo.designerInfo
                                   .name,
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -322,9 +316,9 @@ class _DesignerConsultDetailsWidgetState
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(0.0, -1.0),
+                            alignment: const AlignmentDirectional(0.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 24.0),
                               child: RichText(
                                 textScaler: MediaQuery.of(context).textScaler,
@@ -379,9 +373,9 @@ class _DesignerConsultDetailsWidgetState
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 16.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -389,11 +383,11 @@ class _DesignerConsultDetailsWidgetState
                                   color: FlutterFlowTheme.of(context).accent2,
                                   borderRadius: BorderRadius.circular(16.0),
                                 ),
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsets.all(8.0),
+                                    padding: const EdgeInsets.all(8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -401,7 +395,7 @@ class _DesignerConsultDetailsWidgetState
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, -1.0),
+                                              const AlignmentDirectional(0.0, -1.0),
                                           child: RichText(
                                             textScaler: MediaQuery.of(context)
                                                 .textScaler,
@@ -457,14 +451,14 @@ class _DesignerConsultDetailsWidgetState
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, -1.0),
+                                              const AlignmentDirectional(0.0, -1.0),
                                           child: RichText(
                                             textScaler: MediaQuery.of(context)
                                                 .textScaler,
                                             text: TextSpan(
                                               children: [
                                                 TextSpan(
-                                                  text: widget!
+                                                  text: widget
                                                       .designerDoc!
                                                       .designerMainInfo
                                                       .designerInfo
@@ -526,9 +520,9 @@ class _DesignerConsultDetailsWidgetState
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(-1.0, -1.0),
+                            alignment: const AlignmentDirectional(-1.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 8.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -546,12 +540,12 @@ class _DesignerConsultDetailsWidgetState
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(-1.0, -1.0),
+                            alignment: const AlignmentDirectional(-1.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 24.0),
                               child: Text(
-                                widget!.designerDoc!.designerMainInfo
+                                widget.designerDoc!.designerMainInfo
                                     .designerInfo.bio,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -568,7 +562,7 @@ class _DesignerConsultDetailsWidgetState
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(-1.0, -1.0),
+                            alignment: const AlignmentDirectional(-1.0, -1.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'a70rtkrw' /* Select Date */,
@@ -584,7 +578,7 @@ class _DesignerConsultDetailsWidgetState
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 24.0),
                             child: FlutterFlowCalendar(
                               color: FlutterFlowTheme.of(context).primary,
@@ -616,7 +610,7 @@ class _DesignerConsultDetailsWidgetState
                                     ).then((s) => s.firstOrNull);
                                     if (_model
                                             .settingsrslt1?.settingsHoildayDates
-                                            ?.contains(_model
+                                            .contains(_model
                                                 .calendarSelectedDay?.start) ==
                                         true) {
                                       await showDialog(
@@ -624,14 +618,14 @@ class _DesignerConsultDetailsWidgetState
                                         builder: (alertDialogContext) {
                                           return WebViewAware(
                                             child: AlertDialog(
-                                              content: Text(
+                                              content: const Text(
                                                   'Selected date is holiday.'),
                                               actions: [
                                                 TextButton(
                                                   onPressed: () =>
                                                       Navigator.pop(
                                                           alertDialogContext),
-                                                  child: Text('Ok'),
+                                                  child: const Text('Ok'),
                                                 ),
                                               ],
                                             ),
@@ -646,7 +640,7 @@ class _DesignerConsultDetailsWidgetState
                                     } else {
                                       if (_model.settingsrslt1
                                               ?.settingsWorkingHours
-                                              ?.where((e) =>
+                                              .where((e) =>
                                                   dateTimeFormat(
                                                     "EEEE",
                                                     getCurrentTimestamp,
@@ -663,7 +657,7 @@ class _DesignerConsultDetailsWidgetState
                                                         .languageCode,
                                                   ))
                                               .toList()
-                                              ?.firstOrNull
+                                              .firstOrNull
                                               ?.isChangeLanguage ==
                                           false) {
                                         await showDialog(
@@ -671,14 +665,14 @@ class _DesignerConsultDetailsWidgetState
                                           builder: (alertDialogContext) {
                                             return WebViewAware(
                                               child: AlertDialog(
-                                                content: Text(
+                                                content: const Text(
                                                     'Selected date is holiday.'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: Text('Ok'),
+                                                    child: const Text('Ok'),
                                                   ),
                                                 ],
                                               ),
@@ -691,12 +685,12 @@ class _DesignerConsultDetailsWidgetState
                                         FFAppState().userSessionDate = null;
                                         FFAppState().update(() {});
                                       } else {
-                                        if (widget!
+                                        if (widget
                                                 .designerDoc
                                                 ?.designerMainInfo
-                                                ?.designerApproval
-                                                ?.designerHoildayList
-                                                ?.contains(_model
+                                                .designerApproval
+                                                .designerHoildayList
+                                                .contains(_model
                                                     .calendarSelectedDay
                                                     ?.start) ==
                                             true) {
@@ -705,14 +699,14 @@ class _DesignerConsultDetailsWidgetState
                                             builder: (alertDialogContext) {
                                               return WebViewAware(
                                                 child: AlertDialog(
-                                                  content: Text(
+                                                  content: const Text(
                                                       'Selected date is holiday for this designer.'),
                                                   actions: [
                                                     TextButton(
                                                       onPressed: () =>
                                                           Navigator.pop(
                                                               alertDialogContext),
-                                                      child: Text('Ok'),
+                                                      child: const Text('Ok'),
                                                     ),
                                                   ],
                                                 ),
@@ -740,14 +734,14 @@ class _DesignerConsultDetailsWidgetState
                                       builder: (alertDialogContext) {
                                         return WebViewAware(
                                           child: AlertDialog(
-                                            title: Text('Nope!'),
+                                            title: const Text('Nope!'),
                                             content:
-                                                Text('Select within 30 days.'),
+                                                const Text('Select within 30 days.'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext),
-                                                child: Text('Ok'),
+                                                child: const Text('Ok'),
                                               ),
                                             ],
                                           ),
@@ -766,13 +760,13 @@ class _DesignerConsultDetailsWidgetState
                                     builder: (alertDialogContext) {
                                       return WebViewAware(
                                         child: AlertDialog(
-                                          content: Text(
+                                          content: const Text(
                                               'Select today or later dates. Past dates are not allowed!!'),
                                           actions: [
                                             TextButton(
                                               onPressed: () => Navigator.pop(
                                                   alertDialogContext),
-                                              child: Text('Ok'),
+                                              child: const Text('Ok'),
                                             ),
                                           ],
                                         ),
@@ -836,9 +830,9 @@ class _DesignerConsultDetailsWidgetState
                             desktop: false,
                           ))
                             Align(
-                              alignment: AlignmentDirectional(-1.0, -1.0),
+                              alignment: const AlignmentDirectional(-1.0, -1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 8.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -861,7 +855,7 @@ class _DesignerConsultDetailsWidgetState
                               visible: ((FFAppState().userSessionDate !=
                                           null) &&
                                       (_model.sessionStatus == 'show')) &&
-                                  (widget!.designerDoc!.designerMainInfo
+                                  (widget.designerDoc!.designerMainInfo
                                           .deisgnerSessionList
                                           .where((e) => FFAppState()
                                                       .userSessionDate ==
@@ -901,11 +895,11 @@ class _DesignerConsultDetailsWidgetState
                                       0),
                               child: Builder(
                                 builder: (context) {
-                                  final sessionList = widget!
+                                  final sessionList = widget
                                           .designerDoc
                                           ?.designerMainInfo
-                                          ?.deisgnerSessionList
-                                          ?.where((e) => FFAppState()
+                                          .deisgnerSessionList
+                                          .where((e) => FFAppState()
                                                       .userSessionDate ==
                                                   functions
                                                       .presentDateFromZerotime()
@@ -939,7 +933,7 @@ class _DesignerConsultDetailsWidgetState
                                                   )) ==
                                                   true))
                                           .toList()
-                                          ?.toList() ??
+                                          .toList() ??
                                       [];
 
                                   return Container(
@@ -997,7 +991,7 @@ class _DesignerConsultDetailsWidgetState
                                                       await _model
                                                           .carouselController
                                                           ?.previousPage(
-                                                        duration: Duration(
+                                                        duration: const Duration(
                                                             milliseconds: 300),
                                                         curve: Curves.ease,
                                                       );
@@ -1080,7 +1074,7 @@ class _DesignerConsultDetailsWidgetState
                                                       await _model
                                                           .carouselController
                                                           ?.nextPage(
-                                                        duration: Duration(
+                                                        duration: const Duration(
                                                             milliseconds: 300),
                                                         curve: Curves.ease,
                                                       );
@@ -1095,7 +1089,7 @@ class _DesignerConsultDetailsWidgetState
                                                       size: 24.0,
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(width: 8.0)),
+                                                ].divide(const SizedBox(width: 8.0)),
                                               ),
                                             ),
                                             Expanded(
@@ -1106,11 +1100,11 @@ class _DesignerConsultDetailsWidgetState
                                                   children: [
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               0.0, -1.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1177,11 +1171,11 @@ class _DesignerConsultDetailsWidgetState
                                                                               (alertDialogContext) {
                                                                             return WebViewAware(
                                                                               child: AlertDialog(
-                                                                                content: Text('Time out..'),
+                                                                                content: const Text('Time out..'),
                                                                                 actions: [
                                                                                   TextButton(
                                                                                     onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                    child: Text('ok'),
+                                                                                    child: const Text('ok'),
                                                                                   ),
                                                                                 ],
                                                                               ),
@@ -1214,14 +1208,14 @@ class _DesignerConsultDetailsWidgetState
                                                                         170.0,
                                                                     height:
                                                                         40.0,
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             4.0,
                                                                             0.0,
                                                                             4.0,
                                                                             0.0),
                                                                     iconPadding:
-                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                        const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -1275,11 +1269,11 @@ class _DesignerConsultDetailsWidgetState
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(height: 16.0)),
+                                                      const SizedBox(height: 16.0)),
                                                 ),
                                               ),
                                             ),
-                                          ].divide(SizedBox(height: 16.0)),
+                                          ].divide(const SizedBox(height: 16.0)),
                                         );
                                       },
                                       carouselController:
@@ -1305,12 +1299,12 @@ class _DesignerConsultDetailsWidgetState
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 24.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 40.0,
-                              decoration: BoxDecoration(),
+                              decoration: const BoxDecoration(),
                               child: ListView(
                                 padding: EdgeInsets.zero,
                                 primary: false,
@@ -1327,10 +1321,10 @@ class _DesignerConsultDetailsWidgetState
                                     options: FFButtonOptions(
                                       width: 100.0,
                                       height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).accent2,
@@ -1357,10 +1351,10 @@ class _DesignerConsultDetailsWidgetState
                                     options: FFButtonOptions(
                                       width: 100.0,
                                       height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).accent2,
@@ -1387,10 +1381,10 @@ class _DesignerConsultDetailsWidgetState
                                     options: FFButtonOptions(
                                       width: 100.0,
                                       height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).accent2,
@@ -1417,10 +1411,10 @@ class _DesignerConsultDetailsWidgetState
                                     options: FFButtonOptions(
                                       width: 100.0,
                                       height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -1437,14 +1431,14 @@ class _DesignerConsultDetailsWidgetState
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(-1.0, -1.0),
+                            alignment: const AlignmentDirectional(-1.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 8.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -1462,7 +1456,7 @@ class _DesignerConsultDetailsWidgetState
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 32.0),
                             child: FlutterFlowDropDown<String>(
                               controller: _model.dropDownValueController ??=
@@ -1503,7 +1497,7 @@ class _DesignerConsultDetailsWidgetState
                               borderColor: FlutterFlowTheme.of(context).border,
                               borderWidth: 1.0,
                               borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
+                              margin: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 12.0, 0.0),
                               hidesUnderline: true,
                               isOverButton: false,
@@ -1521,9 +1515,9 @@ class _DesignerConsultDetailsWidgetState
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 48.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -1537,10 +1531,10 @@ class _DesignerConsultDetailsWidgetState
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
-                        ].addToStart(SizedBox(height: 12.0)),
+                        ].addToStart(const SizedBox(height: 12.0)),
                       ),
                     ),
-                  ].addToEnd(SizedBox(height: 16.0)),
+                  ].addToEnd(const SizedBox(height: 16.0)),
                 ),
               ),
             ),

@@ -1,16 +1,9 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'creatorspace_productview_model.dart';
 export 'creatorspace_productview_model.dart';
 
@@ -44,9 +37,9 @@ class _CreatorspaceProductviewWidgetState
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.count = widget!.promotionInfo!.productDocReference.length;
+      _model.count = widget.promotionInfo!.productDocReference.length;
       while (_model.count > 0) {
-        _model.productresult1 = await ProductsRecord.getDocumentOnce(widget!
+        _model.productresult1 = await ProductsRecord.getDocumentOnce(widget
             .promotionInfo!.productDocReference
             .elementAtOrNull(_model.count)!);
         _model.totalCommission = _model.totalCommission +
@@ -83,35 +76,35 @@ class _CreatorspaceProductviewWidgetState
                       FlutterFlowTheme.of(context).secondary,
                       FlutterFlowTheme.of(context).primary
                     ],
-                    stops: [0.6, 1.0],
-                    begin: AlignmentDirectional(0.0, -1.0),
-                    end: AlignmentDirectional(0, 1.0),
+                    stops: const [0.6, 1.0],
+                    begin: const AlignmentDirectional(0.0, -1.0),
+                    end: const AlignmentDirectional(0, 1.0),
                   ),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
-                  child: Image.network(
-                    widget!.promotionInfo?.promotionInfo?.featureImage !=
+                  child: CachedNetworkImage(
+                    imageUrl: widget.promotionInfo?.promotionInfo.featureImage !=
                                 null &&
-                            widget!.promotionInfo?.promotionInfo
-                                    ?.featureImage !=
+                            widget.promotionInfo?.promotionInfo
+                                    .featureImage !=
                                 ''
-                        ? widget!.promotionInfo!.promotionInfo.featureImage
-                        : widget!.promotionInfo!.promotionInfo.galleryImage
+                        ? widget.promotionInfo!.promotionInfo.featureImage
+                        : widget.promotionInfo!.promotionInfo.galleryImage
                             .firstOrNull!,
                     width: MediaQuery.sizeOf(context).width * 1.0,
                     height: MediaQuery.sizeOf(context).height * 1.0,
                     fit: BoxFit.cover,
-                    alignment: Alignment(0.0, -1.0),
+                    alignment: const Alignment(0.0, -1.0),
                   ),
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(-1.0, 1.0),
+                alignment: const AlignmentDirectional(-1.0, 1.0),
                 child: Container(
                   width: 200.0,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       colors: [Colors.transparent, Color(0xB2000000)],
                       stops: [0.0, 1.0],
@@ -124,11 +117,11 @@ class _CreatorspaceProductviewWidgetState
                     ),
                   ),
                   child: Visibility(
-                    visible: widget!
+                    visible: widget
                             .promotionInfo!.promotionInfo.galleryImage.length >
                         0,
                     child: Padding(
-                      padding: EdgeInsets.all(4.0),
+                      padding: const EdgeInsets.all(4.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -136,9 +129,9 @@ class _CreatorspaceProductviewWidgetState
                         children: [
                           Builder(
                             builder: (context) {
-                              final imageList = (widget!.promotionInfo
-                                          ?.promotionInfo?.galleryImage
-                                          ?.toList() ??
+                              final imageList = (widget.promotionInfo
+                                          ?.promotionInfo.galleryImage
+                                          .toList() ??
                                       [])
                                   .take(2)
                                   .toList();
@@ -158,31 +151,31 @@ class _CreatorspaceProductviewWidgetState
                                       imageList[imageListIndex];
                                   return ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
-                                    child: Image.network(
-                                      imageListItem,
+                                    child: CachedNetworkImage(
+                                      imageUrl: imageListItem,
                                       width: 45.0,
                                       height: 45.0,
                                       fit: BoxFit.cover,
-                                      alignment: Alignment(0.0, -1.0),
+                                      alignment: const Alignment(0.0, -1.0),
                                     ),
                                   );
                                 }),
                               );
                             },
                           ),
-                          if (widget!.promotionInfo!.promotionInfo.galleryImage
+                          if (widget.promotionInfo!.promotionInfo.galleryImage
                                   .length >=
                               3)
                             Stack(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               children: [
                                 Container(
                                   decoration: BoxDecoration(
-                                    color: Color(0x80000000),
+                                    color: const Color(0x80000000),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   child: Visibility(
-                                    visible: widget!
+                                    visible: widget
                                             .promotionInfo!
                                             .promotionInfo
                                             .galleryImage
@@ -190,23 +183,23 @@ class _CreatorspaceProductviewWidgetState
                                         3,
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
-                                      child: Image.network(
-                                        widget!.promotionInfo!.promotionInfo
+                                      child: CachedNetworkImage(
+                                        imageUrl: widget.promotionInfo!.promotionInfo
                                             .galleryImage
                                             .elementAtOrNull(2)!,
                                         width: 45.0,
                                         height: 45.0,
                                         fit: BoxFit.cover,
-                                        alignment: Alignment(0.0, -1.0),
+                                        alignment: const Alignment(0.0, -1.0),
                                       ),
                                     ),
                                   ),
                                 ),
-                                if (widget!.promotionInfo!.promotionInfo
+                                if (widget.promotionInfo!.promotionInfo
                                         .galleryImage.length >=
                                     4)
                                   Text(
-                                    '+${(widget!.promotionInfo!.promotionInfo.galleryImage.length - 3).toString()}',
+                                    '+${(widget.promotionInfo!.promotionInfo.galleryImage.length - 3).toString()}',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -219,7 +212,7 @@ class _CreatorspaceProductviewWidgetState
                                   ),
                               ],
                             ),
-                        ].divide(SizedBox(width: 4.0)),
+                        ].divide(const SizedBox(width: 4.0)),
                       ),
                     ),
                   ),
@@ -229,7 +222,7 @@ class _CreatorspaceProductviewWidgetState
           ),
         ),
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
           child: RichText(
             textScaler: MediaQuery.of(context).textScaler,
             text: TextSpan(
@@ -246,7 +239,7 @@ class _CreatorspaceProductviewWidgetState
                       ),
                 ),
                 TextSpan(
-                  text: widget!.promotionInfo!.promotionId,
+                  text: widget.promotionInfo!.promotionId,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'almarai',
                         fontSize: 10.0,
@@ -265,9 +258,9 @@ class _CreatorspaceProductviewWidgetState
           ),
         ),
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
           child: Text(
-            widget!.promotionInfo!.promotionCaption,
+            widget.promotionInfo!.promotionCaption,
             maxLines: 1,
             style: FlutterFlowTheme.of(context).bodySmall.override(
                   fontFamily: 'almarai',
@@ -277,15 +270,15 @@ class _CreatorspaceProductviewWidgetState
                 ),
           ),
         ),
-        if (widget!.promotionInfo!.promotionSales > 0)
+        if (widget.promotionInfo!.promotionSales > 0)
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
             child: RichText(
               textScaler: MediaQuery.of(context).textScaler,
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: widget!.promotionInfo!.promotionSales.toString(),
+                    text: widget.promotionInfo!.promotionSales.toString(),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'almarai',
                           fontSize: 10.0,
@@ -306,7 +299,7 @@ class _CreatorspaceProductviewWidgetState
                         ),
                   ),
                   TextSpan(
-                    text: widget!.promotionInfo!.promotionEarnings.toString(),
+                    text: widget.promotionInfo!.promotionEarnings.toString(),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'almarai',
                           color: FlutterFlowTheme.of(context).primaryText,
@@ -348,7 +341,7 @@ class _CreatorspaceProductviewWidgetState
               ),
             ),
           ),
-      ].divide(SizedBox(height: 4.0)),
+      ].divide(const SizedBox(height: 4.0)),
     );
   }
 }

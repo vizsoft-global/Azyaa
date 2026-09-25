@@ -1,4 +1,3 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/virtual_try_on/v_t_o_delete_confirm/v_t_o_delete_confirm_widget.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
@@ -9,19 +8,14 @@ import '/azyaa_group_a/home/components/loading_animation/loading_animation_widge
 import '/azyaa_group_a/home/components/product_listview/product_listview_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'virtual_try_on_copy_model.dart';
@@ -73,7 +67,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -85,7 +79,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                     wrapWithModel(
                       model: _model.universalAppBarModel,
                       updateCallback: () => safeSetState(() {}),
-                      child: UniversalAppBarWidget(
+                      child: const UniversalAppBarWidget(
                         backButtonStatus: true,
                         title: 'Virtual-try-on',
                         navigationIconStatus: true,
@@ -97,7 +91,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -110,21 +104,21 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   wrapWithModel(
                     model: _model.appUpdateCheckerModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: AppUpdateCheckerWidget(),
+                    child: const AppUpdateCheckerWidget(),
                   ),
                   Container(
-                    decoration: BoxDecoration(),
+                    decoration: const BoxDecoration(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: StreamBuilder<List<TryonRequestsRecord>>(
                             stream: queryTryonRequestsRecord(
@@ -187,7 +181,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                       context.pushNamed(
                                         VirtualTryOnCopyWidget.routeName,
                                         extra: <String, dynamic>{
-                                          '__transition_info__': TransitionInfo(
+                                          '__transition_info__': const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -205,8 +199,8 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
-                                            child: Image.network(
-                                              valueOrDefault<String>(
+                                            child: CachedNetworkImage(
+                                              imageUrl: valueOrDefault<String>(
                                                 staggeredViewTryonRequestsRecord
                                                     .result,
                                                 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/i9u1ra67p2p4/Azyaa-logo_(2).jpg',
@@ -258,7 +252,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsets.all(8.0),
+                                                padding: const EdgeInsets.all(8.0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -323,7 +317,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                                         if (loggedIn) {
                                                           if ((currentUserDocument
                                                                           ?.userRecentViews
-                                                                          ?.toList() ??
+                                                                          .toList() ??
                                                                       [])
                                                                   .length !=
                                                               0) {
@@ -332,11 +326,11 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                                               (e) => e
                                                                 ..count = (currentUserDocument
                                                                             ?.userRecentViews
-                                                                            ?.toList() ??
+                                                                            .toList() ??
                                                                         [])
                                                                     .length
                                                                 ..userRecentView =
-                                                                    (currentUserDocument?.userRecentViews?.toList() ??
+                                                                    (currentUserDocument?.userRecentViews.toList() ??
                                                                             [])
                                                                         .toList(),
                                                             );
@@ -366,7 +360,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                                                             FFAppState().UserDataFlow.count -
                                                                                 1)
                                                                         ?.productAttribute
-                                                                        ?.length !=
+                                                                        .length !=
                                                                     containerProductsRecord
                                                                         .productAttribute
                                                                         .length) {
@@ -473,13 +467,13 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                                       },
                                                     ),
                                                   ].divide(
-                                                      SizedBox(width: 8.0)),
+                                                      const SizedBox(width: 8.0)),
                                                 ),
                                               ),
                                             );
                                           },
                                         ),
-                                      ].divide(SizedBox(height: 4.0)),
+                                      ].divide(const SizedBox(height: 4.0)),
                                     ),
                                   );
                                 },
@@ -494,7 +488,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                           desktop: false,
                         ))
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 32.0),
                             child: StreamBuilder<List<TryonRequestsRecord>>(
                               stream: queryTryonRequestsRecord(
@@ -519,7 +513,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       height: 150.0,
-                                      child: LoadingAnimationWidget(),
+                                      child: const LoadingAnimationWidget(),
                                     ),
                                   );
                                 }
@@ -528,7 +522,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                     snapshot.data!;
                                 if (sortListDefaultTryonRequestsRecordList
                                     .isEmpty) {
-                                  return Center(
+                                  return const Center(
                                     child: EmptyWidget(
                                       messageOne: 'No Try-Ons Available',
                                       image: '',
@@ -572,7 +566,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                             children: [
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 85.0),
                                                   child: InkWell(
@@ -594,8 +588,8 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                                           child:
                                                               FlutterFlowExpandedImageView(
                                                             image:
-                                                                Image.network(
-                                                              sortListDefaultTryonRequestsRecord
+                                                                CachedNetworkImage(
+                                                              imageUrl: sortListDefaultTryonRequestsRecord
                                                                   .result,
                                                               fit: BoxFit
                                                                   .contain,
@@ -621,8 +615,8 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(8.0),
-                                                        child: Image.network(
-                                                          sortListDefaultTryonRequestsRecord
+                                                        child: CachedNetworkImage(
+                                                          imageUrl: sortListDefaultTryonRequestsRecord
                                                               .result,
                                                           width:
                                                               MediaQuery.sizeOf(
@@ -641,14 +635,14 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(1.0, -1.0),
+                                                const AlignmentDirectional(1.0, -1.0),
                                             child: Padding(
-                                              padding: EdgeInsets.all(8.0),
+                                              padding: const EdgeInsets.all(8.0),
                                               child: FlutterFlowIconButton(
-                                                borderColor: Color(0x7FFFFFFF),
+                                                borderColor: const Color(0x7FFFFFFF),
                                                 borderRadius: 100.0,
                                                 buttonSize: 40.0,
-                                                fillColor: Color(0xFFAFAEA2),
+                                                fillColor: const Color(0xFFAFAEA2),
                                                 icon: Icon(
                                                   Icons.more_vert,
                                                   color: FlutterFlowTheme.of(
@@ -673,9 +667,9 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 1.0),
+                                                const AlignmentDirectional(0.0, 1.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 8.0, 0.0),
                                               child:
                                                   StreamBuilder<ProductsRecord>(
@@ -689,7 +683,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                                       width: 0.0,
                                                       height: 0.0,
                                                       child:
-                                                          BlankLoadingWidget(),
+                                                          const BlankLoadingWidget(),
                                                     );
                                                   }
 
@@ -714,7 +708,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(8.0),
+                                                          const EdgeInsets.all(8.0),
                                                       child:
                                                           ProductListviewWidget(
                                                         key: Key(
@@ -732,10 +726,10 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                               (sortListDefaultIndex ==
                                                   _model.index))
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   1.0, -1.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 50.0, 8.0, 0.0),
                                                 child: Container(
@@ -749,7 +743,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 16.0,
                                                                 12.0,
@@ -831,7 +825,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                                                     backgroundColor:
                                                                         Colors
                                                                             .transparent,
-                                                                    alignment: AlignmentDirectional(
+                                                                    alignment: const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0)
                                                                         .resolve(
@@ -891,7 +885,7 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                                                             ),
                                                           ),
                                                         ),
-                                                      ].divide(SizedBox(
+                                                      ].divide(const SizedBox(
                                                           height: 8.0)),
                                                     ),
                                                   ),
@@ -907,8 +901,8 @@ class _VirtualTryOnCopyWidgetState extends State<VirtualTryOnCopyWidget> {
                             ),
                           ),
                       ]
-                          .divide(SizedBox(height: 8.0))
-                          .addToStart(SizedBox(height: 16.0)),
+                          .divide(const SizedBox(height: 8.0))
+                          .addToStart(const SizedBox(height: 16.0)),
                     ),
                   ),
                 ],

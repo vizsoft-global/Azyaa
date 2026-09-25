@@ -1,18 +1,11 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'apply_coupon_model.dart';
 export 'apply_coupon_model.dart';
@@ -60,7 +53,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.sizeOf(context).width * 1.0,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color(0xFFF1F1F1),
         boxShadow: [
           BoxShadow(
@@ -83,7 +76,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
           Container(
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).primaryBackground,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(16.0),
                 topRight: Radius.circular(16.0),
               ),
@@ -93,13 +86,13 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
               children: [
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 32.0, 16.0, 24.0),
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 32.0, 16.0, 24.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         child: Align(
-                          alignment: AlignmentDirectional(-1.0, -1.0),
+                          alignment: const AlignmentDirectional(-1.0, -1.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
                               '7gd4ax2q' /* Apply Coupon */,
@@ -134,9 +127,9 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                   child: Stack(
-                    alignment: AlignmentDirectional(1.0, 0.0),
+                    alignment: const AlignmentDirectional(1.0, 0.0),
                     children: [
                       Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
@@ -205,9 +198,9 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(1.0, 0.0),
+                        alignment: const AlignmentDirectional(1.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -468,11 +461,11 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                 if (_shouldSetState) safeSetState(() {});
                                 return;
                               } else if (currentUserDocument
-                                      ?.userCart?.cartItems?.length !=
-                                  currentUserDocument?.userCart?.cartItems
-                                      ?.where((e) => e.productType == 'product')
+                                      ?.userCart.cartItems.length !=
+                                  currentUserDocument?.userCart.cartItems
+                                      .where((e) => e.productType == 'product')
                                       .toList()
-                                      ?.length) {
+                                      .length) {
                                 await showDialog(
                                   context: context,
                                   builder: (alertDialogContext) {
@@ -516,7 +509,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                   .userCart.cartItems
                                                   .map((e) => e.totalPrice)
                                                   .toList()) +
-                                          (widget!.shippingCharges!)) -
+                                          (widget.shippingCharges!)) -
                                       _model
                                           .couponResult!.couponMaximumDiscount;
                                   _model.updateCouponInfoStruct(
@@ -563,13 +556,13 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                       (_model.couponResult!.couponPrice / 100) *
                                           (currentUserDocument!
                                                   .userCart.subtotal +
-                                              (widget!.shippingCharges!));
+                                              (widget.shippingCharges!));
                                   _model.discountedTotal = (functions
                                               .newCartTotal(currentUserDocument!
                                                   .userCart.cartItems
                                                   .map((e) => e.totalPrice)
                                                   .toList()) +
-                                          (widget!.shippingCharges!)) -
+                                          (widget.shippingCharges!)) -
                                       (_model.discountedTotal!);
                                   _model.updateCouponInfoStruct(
                                     (e) => e
@@ -798,7 +791,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                 'Total amount should be greater than ',
                                             arText:
                                                 'يجب أن يكون المبلغ الإجمالي أكبر من',
-                                          )}${_model.couponResult?.couponMinimumOrderAmount?.toString()}${FFLocalizations.of(context).getVariableText(
+                                          )}${_model.couponResult?.couponMinimumOrderAmount.toString()}${FFLocalizations.of(context).getVariableText(
                                             enText: 'KD',
                                             arText: 'KD',
                                           )}'),
@@ -833,9 +826,9 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                             ),
                             options: FFButtonOptions(
                               height: 30.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -857,7 +850,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                     ],
                   ),
                 ),
-              ].addToEnd(SizedBox(height: 12.0)),
+              ].addToEnd(const SizedBox(height: 12.0)),
             ),
           ),
           Flexible(
@@ -887,7 +880,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
 
                 return Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFFF1F1F1),
                   ),
                   child: SingleChildScrollView(
@@ -895,7 +888,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 8.0, 16.0, 16.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -917,7 +910,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       6.0, 2.0, 6.0, 4.0),
                                   child: Text(
                                     containerCouponRecordList
@@ -942,7 +935,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                   ),
                                 ),
                               ),
-                            ].divide(SizedBox(width: 8.0)),
+                            ].divide(const SizedBox(width: 8.0)),
                           ),
                         ),
                         Builder(
@@ -963,11 +956,11 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                               scrollDirection: Axis.vertical,
                               itemCount: coupons.length,
                               separatorBuilder: (_, __) =>
-                                  SizedBox(height: 12.0),
+                                  const SizedBox(height: 12.0),
                               itemBuilder: (context, couponsIndex) {
                                 final couponsItem = coupons[couponsIndex];
                                 return Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 4.0),
                                   child: Stack(
                                     children: [
@@ -977,7 +970,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                           Stack(
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 0.0),
                                                 child: Container(
@@ -995,7 +988,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                   .toList()
                                                                   .length >
                                                               0
-                                                          ? Color(0xFFCBCBCB)
+                                                          ? const Color(0xFFCBCBCB)
                                                           : FlutterFlowTheme.of(
                                                                   context)
                                                               .purple,
@@ -1004,7 +997,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                           .purple,
                                                     ),
                                                     borderRadius:
-                                                        BorderRadius.only(
+                                                        const BorderRadius.only(
                                                       topLeft:
                                                           Radius.circular(16.0),
                                                       topRight:
@@ -1020,7 +1013,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                     .toList()
                                                                     .length >
                                                                 0
-                                                            ? Color(0xFFCBCBCB)
+                                                            ? const Color(0xFFCBCBCB)
                                                             : FlutterFlowTheme
                                                                     .of(context)
                                                                 .purple,
@@ -1033,7 +1026,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 12.0,
                                                                 12.0,
@@ -1069,7 +1062,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                 desktop: false,
                                               ))
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 8.0),
                                                   child: Container(
@@ -1087,7 +1080,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                     .toList()
                                                                     .length >
                                                                 0
-                                                            ? Color(0xFFCBCBCB)
+                                                            ? const Color(0xFFCBCBCB)
                                                             : FlutterFlowTheme
                                                                     .of(context)
                                                                 .purple,
@@ -1096,7 +1089,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                             .purple,
                                                       ),
                                                       borderRadius:
-                                                          BorderRadius.only(
+                                                          const BorderRadius.only(
                                                         topLeft:
                                                             Radius.circular(
                                                                 16.0),
@@ -1107,7 +1100,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(12.0),
+                                                          const EdgeInsets.all(12.0),
                                                       child: Text(
                                                         '${'${couponsItem.couponPrice.toString()}${couponsItem.couponDiscountType == 'Percentage' ? ' % ' : ' KD '}'}OFF',
                                                         textAlign:
@@ -1138,7 +1131,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             child: Container(
                                               decoration: BoxDecoration(
@@ -1150,14 +1143,14 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                               .toList()
                                                               .length >
                                                           0
-                                                      ? Color(0xFFCBCBCB)
+                                                      ? const Color(0xFFCBCBCB)
                                                       : FlutterFlowTheme.of(
                                                               context)
                                                           .purple,
                                                   FlutterFlowTheme.of(context)
                                                       .purple,
                                                 ),
-                                                borderRadius: BorderRadius.only(
+                                                borderRadius: const BorderRadius.only(
                                                   bottomLeft:
                                                       Radius.circular(16.0),
                                                   bottomRight:
@@ -1172,7 +1165,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                 .toList()
                                                                 .length >
                                                             0
-                                                        ? Color(0xFFCBCBCB)
+                                                        ? const Color(0xFFCBCBCB)
                                                         : FlutterFlowTheme.of(
                                                                 context)
                                                             .purple,
@@ -1186,7 +1179,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 8.0,
                                                                 0.0, 0.0),
                                                     child: Container(
@@ -1195,7 +1188,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                 .of(context)
                                                             .primaryBackground,
                                                         borderRadius:
-                                                            BorderRadius.only(
+                                                            const BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   16.0),
@@ -1206,7 +1199,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     4.0,
@@ -1343,8 +1336,8 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                             _model.couponTextController?.clear();
                                                                           });
                                                                           return;
-                                                                        } else if (currentUserDocument?.userCart?.cartItems?.length !=
-                                                                            currentUserDocument?.userCart?.cartItems?.where((e) => e.productType == 'product').toList()?.length) {
+                                                                        } else if (currentUserDocument?.userCart.cartItems.length !=
+                                                                            currentUserDocument?.userCart.cartItems.where((e) => e.productType == 'product').toList().length) {
                                                                           await showDialog(
                                                                             context:
                                                                                 context,
@@ -1378,7 +1371,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                           if (couponsItem.couponDiscountType ==
                                                                               'Amount') {
                                                                             _model.discountedTotal =
-                                                                                (functions.newCartTotal(currentUserDocument!.userCart.cartItems.map((e) => e.totalPrice).toList()) + (widget!.shippingCharges!)) - couponsItem.couponMaximumDiscount;
+                                                                                (functions.newCartTotal(currentUserDocument!.userCart.cartItems.map((e) => e.totalPrice).toList()) + (widget.shippingCharges!)) - couponsItem.couponMaximumDiscount;
                                                                             _model.updateCouponInfoStruct(
                                                                               (e) => e
                                                                                 ..couponRef = _model.couponResult?.reference
@@ -1408,9 +1401,9 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                             ));
                                                                           } else {
                                                                             _model.discountedTotal =
-                                                                                (couponsItem.couponPrice / 100) * (currentUserDocument!.userCart.subtotal + (widget!.shippingCharges!));
+                                                                                (couponsItem.couponPrice / 100) * (currentUserDocument!.userCart.subtotal + (widget.shippingCharges!));
                                                                             _model.discountedTotal =
-                                                                                (functions.newCartTotal(currentUserDocument!.userCart.cartItems.map((e) => e.totalPrice).toList()) + (widget!.shippingCharges!)) - (_model.discountedTotal!);
+                                                                                (functions.newCartTotal(currentUserDocument!.userCart.cartItems.map((e) => e.totalPrice).toList()) + (widget.shippingCharges!)) - (_model.discountedTotal!);
                                                                             _model.updateCouponInfoStruct(
                                                                               (e) => e
                                                                                 ..couponRef = _model.couponResult?.reference
@@ -1562,7 +1555,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                                     content: Text('${FFLocalizations.of(context).getVariableText(
                                                                                       enText: 'Total amount should be greater than ',
                                                                                       arText: 'يجب أن يكون المبلغ الإجمالي أكبر من',
-                                                                                    )}${_model.couponResult?.couponMinimumOrderAmount?.toString()}${FFLocalizations.of(context).getVariableText(
+                                                                                    )}${_model.couponResult?.couponMinimumOrderAmount.toString()}${FFLocalizations.of(context).getVariableText(
                                                                                       enText: 'KD',
                                                                                       arText: 'KD',
                                                                                     )}'),
@@ -1600,7 +1593,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                             fontFamily:
                                                                                 'almarai',
                                                                             color: couponsItem.couponUsedUserList.where((e) => e.userId == currentUserUid).toList().length > 0
-                                                                                ? Color(0xFFCBCBCB)
+                                                                                ? const Color(0xFFCBCBCB)
                                                                                 : FlutterFlowTheme.of(context).velvet,
                                                                             letterSpacing:
                                                                                 0.0,
@@ -1676,7 +1669,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                                 _model.couponTextController?.clear();
                                                                               });
                                                                               return;
-                                                                            } else if (currentUserDocument?.userCart?.cartItems?.length != currentUserDocument?.userCart?.cartItems?.where((e) => e.productType == 'product').toList()?.length) {
+                                                                            } else if (currentUserDocument?.userCart.cartItems.length != currentUserDocument?.userCart.cartItems.where((e) => e.productType == 'product').toList().length) {
                                                                               await showDialog(
                                                                                 context: context,
                                                                                 builder: (alertDialogContext) {
@@ -1705,7 +1698,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                               return;
                                                                             } else if (couponsItem.couponFor == 'Creator') {
                                                                               if (couponsItem.couponDiscountType == 'Amount') {
-                                                                                _model.discountedTotal = (functions.newCartTotal(currentUserDocument!.userCart.cartItems.map((e) => e.totalPrice).toList()) + (widget!.shippingCharges!)) - couponsItem.couponMaximumDiscount;
+                                                                                _model.discountedTotal = (functions.newCartTotal(currentUserDocument!.userCart.cartItems.map((e) => e.totalPrice).toList()) + (widget.shippingCharges!)) - couponsItem.couponMaximumDiscount;
                                                                                 _model.updateCouponInfoStruct(
                                                                                   (e) => e
                                                                                     ..couponRef = couponsItem.reference
@@ -1736,8 +1729,8 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                                   ),
                                                                                 ));
                                                                               } else {
-                                                                                _model.discountedTotal = (couponsItem.couponPrice / 100) * (currentUserDocument!.userCart.subtotal + (widget!.shippingCharges!));
-                                                                                _model.discountedTotal = (functions.newCartTotal(currentUserDocument!.userCart.cartItems.map((e) => e.totalPrice).toList()) + (widget!.shippingCharges!)) - (_model.discountedTotal!);
+                                                                                _model.discountedTotal = (couponsItem.couponPrice / 100) * (currentUserDocument!.userCart.subtotal + (widget.shippingCharges!));
+                                                                                _model.discountedTotal = (functions.newCartTotal(currentUserDocument!.userCart.cartItems.map((e) => e.totalPrice).toList()) + (widget.shippingCharges!)) - (_model.discountedTotal!);
                                                                                 _model.updateCouponInfoStruct(
                                                                                   (e) => e
                                                                                     ..couponRef = couponsItem.reference
@@ -1922,14 +1915,14 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                       FFButtonOptions(
                                                                     height:
                                                                         30.0,
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
                                                                             16.0,
                                                                             0.0),
                                                                     iconPadding:
-                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                        const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -1958,7 +1951,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                         BorderRadius.circular(
                                                                             8.0),
                                                                     disabledTextColor:
-                                                                        Color(
+                                                                        const Color(
                                                                             0xFFCBCBCB),
                                                                   ),
                                                                 ),
@@ -1967,14 +1960,10 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                             if (couponsItem
                                                                         .couponMainInfo
                                                                         .mainShortDescription !=
-                                                                    null &&
-                                                                couponsItem
-                                                                        .couponMainInfo
-                                                                        .mainShortDescription !=
                                                                     '')
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -2013,7 +2002,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                               ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -2035,7 +2024,7 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                                   fit: BoxFit
                                                                       .fitWidth,
                                                                   alignment:
-                                                                      Alignment(
+                                                                      const Alignment(
                                                                           0.0,
                                                                           0.0),
                                                                 ),
@@ -2077,9 +2066,9 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                               ),
                                                             ),
                                                           ]
-                                                              .divide(SizedBox(
+                                                              .divide(const SizedBox(
                                                                   height: 6.0))
-                                                              .addToEnd(SizedBox(
+                                                              .addToEnd(const SizedBox(
                                                                   height:
                                                                       12.0)),
                                                         ),
@@ -2088,14 +2077,14 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.03, -1.0),
                                                     child: Container(
                                                       width: 15.0,
                                                       height: 15.0,
                                                       decoration: BoxDecoration(
                                                         color:
-                                                            Color(0xFFF1F1F1),
+                                                            const Color(0xFFF1F1F1),
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(
@@ -2105,14 +2094,14 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             1.03, -1.0),
                                                     child: Container(
                                                       width: 15.0,
                                                       height: 15.0,
                                                       decoration: BoxDecoration(
                                                         color:
-                                                            Color(0xFFF1F1F1),
+                                                            const Color(0xFFF1F1F1),
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(
@@ -2134,9 +2123,9 @@ class _ApplyCouponWidgetState extends State<ApplyCouponWidget> {
                           },
                         ),
                       ]
-                          .divide(SizedBox(height: 8.0))
-                          .addToStart(SizedBox(height: 12.0))
-                          .addToEnd(SizedBox(height: 12.0)),
+                          .divide(const SizedBox(height: 8.0))
+                          .addToStart(const SizedBox(height: 12.0))
+                          .addToEnd(const SizedBox(height: 12.0)),
                     ),
                   ),
                 );

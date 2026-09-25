@@ -1,12 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'wait_list_popup_model.dart';
 export 'wait_list_popup_model.dart';
 
@@ -49,7 +45,7 @@ class _WaitListPopupWidgetState extends State<WaitListPopupWidget> {
         borderRadius: BorderRadius.circular(16.0),
       ),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,7 +117,7 @@ class _WaitListPopupWidgetState extends State<WaitListPopupWidget> {
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'almarai',
-                    color: Color(0xFF475467),
+                    color: const Color(0xFF475467),
                     letterSpacing: 0.0,
                   ),
             ),
@@ -135,8 +131,8 @@ class _WaitListPopupWidgetState extends State<WaitListPopupWidget> {
               options: FFButtonOptions(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: 48.0,
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'almarai',
@@ -147,7 +143,7 @@ class _WaitListPopupWidgetState extends State<WaitListPopupWidget> {
                 borderRadius: BorderRadius.circular(8.0),
               ),
             ),
-          ].divide(SizedBox(height: 16.0)),
+          ].divide(const SizedBox(height: 16.0)),
         ),
       ),
     );

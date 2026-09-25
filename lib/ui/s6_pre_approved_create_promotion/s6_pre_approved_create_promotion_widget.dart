@@ -1,13 +1,10 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 's6_pre_approved_create_promotion_model.dart';
 export 's6_pre_approved_create_promotion_model.dart';
 
@@ -61,7 +58,7 @@ class _S6PreApprovedCreatePromotionWidgetState
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -91,9 +88,9 @@ class _S6PreApprovedCreatePromotionWidgetState
                         ),
                         Expanded(
                           child: Align(
-                            alignment: AlignmentDirectional(-1.0, -1.0),
+                            alignment: const AlignmentDirectional(-1.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -134,11 +131,11 @@ class _S6PreApprovedCreatePromotionWidgetState
                               print('IconButton pressed ...');
                             },
                           ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -150,9 +147,9 @@ class _S6PreApprovedCreatePromotionWidgetState
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(-1.0, -1.0),
+                      alignment: const AlignmentDirectional(-1.0, -1.0),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
@@ -170,9 +167,9 @@ class _S6PreApprovedCreatePromotionWidgetState
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, 0.0),
+                      alignment: const AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 16.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
@@ -194,7 +191,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -214,14 +211,14 @@ class _S6PreApprovedCreatePromotionWidgetState
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(8.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
                                       '7w0fmey0' /* Select your items */,
@@ -249,13 +246,13 @@ class _S6PreApprovedCreatePromotionWidgetState
                     ),
                     Expanded(
                       child: Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 0.0, 8.0),
                           child: Container(
                             height: 100.0,
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: ListView(
                               padding: EdgeInsets.zero,
                               primary: false,
@@ -263,7 +260,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                               scrollDirection: Axis.horizontal,
                               children: [
                                 Stack(
-                                  alignment: AlignmentDirectional(1.0, -1.0),
+                                  alignment: const AlignmentDirectional(1.0, -1.0),
                                   children: [
                                     Container(
                                       width: 120.0,
@@ -291,9 +288,9 @@ class _S6PreApprovedCreatePromotionWidgetState
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(1.0, -1.0),
+                                          const AlignmentDirectional(1.0, -1.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 6.0, 6.0, 0.0),
                                         child: Container(
                                           decoration: BoxDecoration(
@@ -303,7 +300,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                 BorderRadius.circular(100.0),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(2.0),
+                                            padding: const EdgeInsets.all(2.0),
                                             child: Icon(
                                               Icons.close_sharp,
                                               color:
@@ -318,7 +315,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                   ],
                                 ),
                                 Stack(
-                                  alignment: AlignmentDirectional(1.0, -1.0),
+                                  alignment: const AlignmentDirectional(1.0, -1.0),
                                   children: [
                                     Container(
                                       width: 120.0,
@@ -346,9 +343,9 @@ class _S6PreApprovedCreatePromotionWidgetState
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(1.0, -1.0),
+                                          const AlignmentDirectional(1.0, -1.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 6.0, 6.0, 0.0),
                                         child: Container(
                                           decoration: BoxDecoration(
@@ -358,7 +355,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                 BorderRadius.circular(100.0),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(2.0),
+                                            padding: const EdgeInsets.all(2.0),
                                             child: Icon(
                                               Icons.close,
                                               color:
@@ -373,7 +370,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                   ],
                                 ),
                                 Stack(
-                                  alignment: AlignmentDirectional(1.0, -1.0),
+                                  alignment: const AlignmentDirectional(1.0, -1.0),
                                   children: [
                                     Container(
                                       width: 120.0,
@@ -401,9 +398,9 @@ class _S6PreApprovedCreatePromotionWidgetState
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(1.0, -1.0),
+                                          const AlignmentDirectional(1.0, -1.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 6.0, 6.0, 0.0),
                                         child: Container(
                                           decoration: BoxDecoration(
@@ -413,7 +410,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                 BorderRadius.circular(100.0),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(2.0),
+                                            padding: const EdgeInsets.all(2.0),
                                             child: Icon(
                                               Icons.close,
                                               color:
@@ -428,7 +425,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                   ],
                                 ),
                                 Stack(
-                                  alignment: AlignmentDirectional(1.0, -1.0),
+                                  alignment: const AlignmentDirectional(1.0, -1.0),
                                   children: [
                                     Container(
                                       width: 120.0,
@@ -451,15 +448,15 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                   .height *
                                               1.0,
                                           fit: BoxFit.cover,
-                                          alignment: Alignment(0.0, 0.0),
+                                          alignment: const Alignment(0.0, 0.0),
                                         ),
                                       ),
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(1.0, -1.0),
+                                          const AlignmentDirectional(1.0, -1.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 6.0, 6.0, 0.0),
                                         child: Container(
                                           decoration: BoxDecoration(
@@ -469,7 +466,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                 BorderRadius.circular(100.0),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(2.0),
+                                            padding: const EdgeInsets.all(2.0),
                                             child: Icon(
                                               Icons.delete_outline_rounded,
                                               color:
@@ -483,7 +480,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                     ),
                                   ],
                                 ),
-                              ].divide(SizedBox(width: 16.0)),
+                              ].divide(const SizedBox(width: 16.0)),
                             ),
                           ),
                         ),
@@ -496,7 +493,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 4.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 4.0),
                       child: Container(
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primaryBackground,
@@ -510,7 +507,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -529,7 +526,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                               value: _model.switchValue!,
                               onChanged: (newValue) async {
                                 safeSetState(
-                                    () => _model.switchValue = newValue!);
+                                    () => _model.switchValue = newValue);
                               },
                               activeColor:
                                   FlutterFlowTheme.of(context).alternate,
@@ -546,7 +543,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -574,13 +571,13 @@ class _S6PreApprovedCreatePromotionWidgetState
                                   ),
                             ),
                           ),
-                        ].divide(SizedBox(width: 4.0)),
+                        ].divide(const SizedBox(width: 4.0)),
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, -1.0),
+                      alignment: const AlignmentDirectional(-1.0, -1.0),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 8.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
@@ -599,13 +596,13 @@ class _S6PreApprovedCreatePromotionWidgetState
                     ),
                     Expanded(
                       child: Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 0.0, 16.0),
                           child: Container(
                             height: 180.0,
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: ListView(
                               padding: EdgeInsets.zero,
                               primary: false,
@@ -613,7 +610,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                               scrollDirection: Axis.horizontal,
                               children: [
                                 Stack(
-                                  alignment: AlignmentDirectional(1.0, -1.0),
+                                  alignment: const AlignmentDirectional(1.0, -1.0),
                                   children: [
                                     Container(
                                       width: 120.0,
@@ -635,7 +632,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                   .height *
                                               1.0,
                                           fit: BoxFit.cover,
-                                          alignment: Alignment(0.0, 0.0),
+                                          alignment: const Alignment(0.0, 0.0),
                                         ),
                                       ),
                                     ),
@@ -667,7 +664,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                 width: 2,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .alternate!,
+                                                        .alternate,
                                               )
                                             : null,
                                         activeColor:
@@ -680,7 +677,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                   ],
                                 ),
                                 Stack(
-                                  alignment: AlignmentDirectional(1.0, -1.0),
+                                  alignment: const AlignmentDirectional(1.0, -1.0),
                                   children: [
                                     Container(
                                       width: 120.0,
@@ -702,7 +699,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                   .height *
                                               1.0,
                                           fit: BoxFit.cover,
-                                          alignment: Alignment(0.0, 0.0),
+                                          alignment: const Alignment(0.0, 0.0),
                                         ),
                                       ),
                                     ),
@@ -734,7 +731,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                 width: 2,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .alternate!,
+                                                        .alternate,
                                               )
                                             : null,
                                         activeColor:
@@ -747,7 +744,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                   ],
                                 ),
                                 Stack(
-                                  alignment: AlignmentDirectional(1.0, -1.0),
+                                  alignment: const AlignmentDirectional(1.0, -1.0),
                                   children: [
                                     Container(
                                       width: 120.0,
@@ -769,7 +766,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                   .height *
                                               1.0,
                                           fit: BoxFit.cover,
-                                          alignment: Alignment(0.0, 0.0),
+                                          alignment: const Alignment(0.0, 0.0),
                                         ),
                                       ),
                                     ),
@@ -801,7 +798,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                 width: 2,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .alternate!,
+                                                        .alternate,
                                               )
                                             : null,
                                         activeColor:
@@ -814,7 +811,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                   ],
                                 ),
                                 Stack(
-                                  alignment: AlignmentDirectional(1.0, -1.0),
+                                  alignment: const AlignmentDirectional(1.0, -1.0),
                                   children: [
                                     Container(
                                       width: 120.0,
@@ -836,7 +833,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                   .height *
                                               1.0,
                                           fit: BoxFit.cover,
-                                          alignment: Alignment(0.0, 0.0),
+                                          alignment: const Alignment(0.0, 0.0),
                                         ),
                                       ),
                                     ),
@@ -868,7 +865,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                 width: 2,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .alternate!,
+                                                        .alternate,
                                               )
                                             : null,
                                         activeColor:
@@ -880,16 +877,16 @@ class _S6PreApprovedCreatePromotionWidgetState
                                     ),
                                   ],
                                 ),
-                              ].divide(SizedBox(width: 16.0)),
+                              ].divide(const SizedBox(width: 16.0)),
                             ),
                           ),
                         ),
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, -1.0),
+                      alignment: const AlignmentDirectional(-1.0, -1.0),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 8.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
@@ -908,13 +905,13 @@ class _S6PreApprovedCreatePromotionWidgetState
                     ),
                     Expanded(
                       child: Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 0.0, 16.0),
                           child: Container(
                             height: 180.0,
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: ListView(
                               padding: EdgeInsets.zero,
                               primary: false,
@@ -922,7 +919,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                               scrollDirection: Axis.horizontal,
                               children: [
                                 Stack(
-                                  alignment: AlignmentDirectional(1.0, -1.0),
+                                  alignment: const AlignmentDirectional(1.0, -1.0),
                                   children: [
                                     Container(
                                       width: 120.0,
@@ -944,7 +941,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                   .height *
                                               1.0,
                                           fit: BoxFit.cover,
-                                          alignment: Alignment(0.0, 0.0),
+                                          alignment: const Alignment(0.0, 0.0),
                                         ),
                                       ),
                                     ),
@@ -976,7 +973,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                 width: 2,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .alternate!,
+                                                        .alternate,
                                               )
                                             : null,
                                         activeColor:
@@ -989,7 +986,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                   ],
                                 ),
                                 Stack(
-                                  alignment: AlignmentDirectional(1.0, -1.0),
+                                  alignment: const AlignmentDirectional(1.0, -1.0),
                                   children: [
                                     Container(
                                       width: 120.0,
@@ -1011,7 +1008,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                   .height *
                                               1.0,
                                           fit: BoxFit.cover,
-                                          alignment: Alignment(0.0, 0.0),
+                                          alignment: const Alignment(0.0, 0.0),
                                         ),
                                       ),
                                     ),
@@ -1043,7 +1040,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                 width: 2,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .alternate!,
+                                                        .alternate,
                                               )
                                             : null,
                                         activeColor:
@@ -1056,7 +1053,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                   ],
                                 ),
                                 Stack(
-                                  alignment: AlignmentDirectional(1.0, -1.0),
+                                  alignment: const AlignmentDirectional(1.0, -1.0),
                                   children: [
                                     Container(
                                       width: 120.0,
@@ -1078,7 +1075,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                   .height *
                                               1.0,
                                           fit: BoxFit.cover,
-                                          alignment: Alignment(0.0, 0.0),
+                                          alignment: const Alignment(0.0, 0.0),
                                         ),
                                       ),
                                     ),
@@ -1110,7 +1107,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                 width: 2,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .alternate!,
+                                                        .alternate,
                                               )
                                             : null,
                                         activeColor:
@@ -1123,7 +1120,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                   ],
                                 ),
                                 Stack(
-                                  alignment: AlignmentDirectional(1.0, -1.0),
+                                  alignment: const AlignmentDirectional(1.0, -1.0),
                                   children: [
                                     Container(
                                       width: 120.0,
@@ -1145,7 +1142,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                   .height *
                                               1.0,
                                           fit: BoxFit.cover,
-                                          alignment: Alignment(0.0, 0.0),
+                                          alignment: const Alignment(0.0, 0.0),
                                         ),
                                       ),
                                     ),
@@ -1177,7 +1174,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                                 width: 2,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .alternate!,
+                                                        .alternate,
                                               )
                                             : null,
                                         activeColor:
@@ -1189,7 +1186,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                                     ),
                                   ],
                                 ),
-                              ].divide(SizedBox(width: 16.0)),
+                              ].divide(const SizedBox(width: 16.0)),
                             ),
                           ),
                         ),
@@ -1201,9 +1198,9 @@ class _S6PreApprovedCreatePromotionWidgetState
                       color: FlutterFlowTheme.of(context).alternate,
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, -1.0),
+                      alignment: const AlignmentDirectional(-1.0, -1.0),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 8.0, 16.0, 8.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
@@ -1222,7 +1219,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 24.0),
+                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 24.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         child: TextFormField(
@@ -1311,7 +1308,7 @@ class _S6PreApprovedCreatePromotionWidgetState
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () {
                           print('Button pressed ...');
@@ -1322,9 +1319,9 @@ class _S6PreApprovedCreatePromotionWidgetState
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 48.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -1339,8 +1336,8 @@ class _S6PreApprovedCreatePromotionWidgetState
                       ),
                     ),
                   ]
-                      .addToStart(SizedBox(height: 12.0))
-                      .addToEnd(SizedBox(height: 16.0)),
+                      .addToStart(const SizedBox(height: 12.0))
+                      .addToEnd(const SizedBox(height: 16.0)),
                 ),
               ),
             ),

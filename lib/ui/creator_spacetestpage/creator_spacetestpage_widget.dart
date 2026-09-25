@@ -4,15 +4,11 @@ import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'creator_spacetestpage_model.dart';
 export 'creator_spacetestpage_model.dart';
 
@@ -76,11 +72,11 @@ class _CreatorSpacetestpageWidgetState
                     ))
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                         child: Container(
                           height: 240.0,
                           child: Stack(
-                            alignment: AlignmentDirectional(0.0, -1.0),
+                            alignment: const AlignmentDirectional(0.0, -1.0),
                             children: [
                               Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -94,9 +90,9 @@ class _CreatorSpacetestpageWidgetState
                                   ),
                                 ),
                                 child: Align(
-                                  alignment: AlignmentDirectional(0.0, -1.0),
+                                  alignment: const AlignmentDirectional(0.0, -1.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 24.0, 16.0, 24.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -107,7 +103,7 @@ class _CreatorSpacetestpageWidgetState
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 8.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -119,7 +115,7 @@ class _CreatorSpacetestpageWidgetState
                                               FlutterFlowIconButton(
                                                 borderRadius: 100.0,
                                                 buttonSize: 42.0,
-                                                fillColor: Color(0x66AEDF0A),
+                                                fillColor: const Color(0x66AEDF0A),
                                                 icon: Icon(
                                                   Icons.close,
                                                   color: FlutterFlowTheme.of(
@@ -134,7 +130,7 @@ class _CreatorSpacetestpageWidgetState
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: Text(
@@ -162,7 +158,7 @@ class _CreatorSpacetestpageWidgetState
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -195,7 +191,7 @@ class _CreatorSpacetestpageWidgetState
                                                             .override(
                                                               fontFamily:
                                                                   'almarai',
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFF5B7700),
                                                               fontSize: 16.0,
                                                               letterSpacing:
@@ -217,7 +213,7 @@ class _CreatorSpacetestpageWidgetState
                                                             .override(
                                                               fontFamily:
                                                                   'almarai',
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFF5B7700),
                                                               fontSize: 12.0,
                                                               letterSpacing:
@@ -225,7 +221,7 @@ class _CreatorSpacetestpageWidgetState
                                                             ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(height: 4.0)),
+                                                        const SizedBox(height: 4.0)),
                                                   ),
                                                 ),
                                                 ClipRRect(
@@ -249,9 +245,9 @@ class _CreatorSpacetestpageWidgetState
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 1.0),
+                                alignment: const AlignmentDirectional(0.0, 1.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: Material(
                                     color: Colors.transparent,
@@ -270,13 +266,13 @@ class _CreatorSpacetestpageWidgetState
                                             BorderRadius.circular(12.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(8.0),
+                                        padding: const EdgeInsets.all(8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Expanded(
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -326,13 +322,13 @@ class _CreatorSpacetestpageWidgetState
                       ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                       child: Container(
                         height: 250.0,
                         child: Stack(
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, -1.0),
+                              alignment: const AlignmentDirectional(0.0, -1.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 230.0,
@@ -350,7 +346,7 @@ class _CreatorSpacetestpageWidgetState
                                   child: Stack(
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 40.0),
                                         child: PageView(
                                           controller: _model
@@ -359,7 +355,7 @@ class _CreatorSpacetestpageWidgetState
                                           scrollDirection: Axis.horizontal,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 48.0, 16.0, 0.0),
                                               child: Column(
@@ -369,7 +365,7 @@ class _CreatorSpacetestpageWidgetState
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 24.0,
                                                                 24.0,
@@ -409,7 +405,7 @@ class _CreatorSpacetestpageWidgetState
                                                                     .override(
                                                                       fontFamily:
                                                                           'almarai',
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xFF5B7700),
                                                                       fontSize:
                                                                           16.0,
@@ -434,7 +430,7 @@ class _CreatorSpacetestpageWidgetState
                                                                       .override(
                                                                         fontFamily:
                                                                             'almarai',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFF5B7700),
                                                                         fontSize:
                                                                             12.0,
@@ -445,7 +441,7 @@ class _CreatorSpacetestpageWidgetState
                                                                       ),
                                                                 ),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 height: 4.0)),
                                                           ),
                                                         ),
@@ -461,7 +457,7 @@ class _CreatorSpacetestpageWidgetState
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       1.0, 0.4),
                                                               child: ClipRRect(
                                                                 borderRadius:
@@ -477,7 +473,7 @@ class _CreatorSpacetestpageWidgetState
                                                                 ),
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               height: 4.0)),
                                                         ),
                                                       ],
@@ -487,7 +483,7 @@ class _CreatorSpacetestpageWidgetState
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 48.0, 16.0, 0.0),
                                               child: Column(
@@ -497,7 +493,7 @@ class _CreatorSpacetestpageWidgetState
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 24.0,
                                                                 24.0,
@@ -537,7 +533,7 @@ class _CreatorSpacetestpageWidgetState
                                                                     .override(
                                                                       fontFamily:
                                                                           'almarai',
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xFF5B7700),
                                                                       fontSize:
                                                                           16.0,
@@ -562,7 +558,7 @@ class _CreatorSpacetestpageWidgetState
                                                                       .override(
                                                                         fontFamily:
                                                                             'almarai',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFF5B7700),
                                                                         fontSize:
                                                                             12.0,
@@ -573,7 +569,7 @@ class _CreatorSpacetestpageWidgetState
                                                                       ),
                                                                 ),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 height: 4.0)),
                                                           ),
                                                         ),
@@ -589,7 +585,7 @@ class _CreatorSpacetestpageWidgetState
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       1.0, 0.4),
                                                               child: ClipRRect(
                                                                 borderRadius:
@@ -605,7 +601,7 @@ class _CreatorSpacetestpageWidgetState
                                                                 ),
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               height: 4.0)),
                                                         ),
                                                       ],
@@ -615,7 +611,7 @@ class _CreatorSpacetestpageWidgetState
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 48.0, 16.0, 0.0),
                                               child: Column(
@@ -625,7 +621,7 @@ class _CreatorSpacetestpageWidgetState
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 24.0,
                                                                 24.0,
@@ -665,7 +661,7 @@ class _CreatorSpacetestpageWidgetState
                                                                     .override(
                                                                       fontFamily:
                                                                           'almarai',
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xFF5B7700),
                                                                       fontSize:
                                                                           16.0,
@@ -690,7 +686,7 @@ class _CreatorSpacetestpageWidgetState
                                                                       .override(
                                                                         fontFamily:
                                                                             'almarai',
-                                                                        color: Color(
+                                                                        color: const Color(
                                                                             0xFF5B7700),
                                                                         fontSize:
                                                                             12.0,
@@ -701,7 +697,7 @@ class _CreatorSpacetestpageWidgetState
                                                                       ),
                                                                 ),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 height: 4.0)),
                                                           ),
                                                         ),
@@ -717,7 +713,7 @@ class _CreatorSpacetestpageWidgetState
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       1.0, 0.4),
                                                               child: ClipRRect(
                                                                 borderRadius:
@@ -733,7 +729,7 @@ class _CreatorSpacetestpageWidgetState
                                                                 ),
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               height: 4.0)),
                                                         ),
                                                       ],
@@ -747,10 +743,10 @@ class _CreatorSpacetestpageWidgetState
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.7),
+                                            const AlignmentDirectional(0.0, 0.7),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
                                           child: smooth_page_indicator
                                               .SmoothPageIndicator(
@@ -764,7 +760,7 @@ class _CreatorSpacetestpageWidgetState
                                                   .animateToPage(
                                                 i,
                                                 duration:
-                                                    Duration(milliseconds: 500),
+                                                    const Duration(milliseconds: 500),
                                                 curve: Curves.ease,
                                               );
                                               safeSetState(() {});
@@ -792,16 +788,16 @@ class _CreatorSpacetestpageWidgetState
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, -1.0),
+                              alignment: const AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 24.0, 0.0, 0.0),
                                 child: Container(
                                   height: 50.0,
-                                  decoration: BoxDecoration(),
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  decoration: const BoxDecoration(),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.min,
@@ -813,7 +809,7 @@ class _CreatorSpacetestpageWidgetState
                                         FlutterFlowIconButton(
                                           borderRadius: 100.0,
                                           buttonSize: 42.0,
-                                          fillColor: Color(0x66AEDF0A),
+                                          fillColor: const Color(0x66AEDF0A),
                                           icon: Icon(
                                             Icons.close,
                                             color: FlutterFlowTheme.of(context)
@@ -828,7 +824,7 @@ class _CreatorSpacetestpageWidgetState
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -856,9 +852,9 @@ class _CreatorSpacetestpageWidgetState
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 1.0),
+                              alignment: const AlignmentDirectional(0.0, 1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Material(
                                   color: Colors.transparent,
@@ -876,13 +872,13 @@ class _CreatorSpacetestpageWidgetState
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.all(8.0),
+                                      padding: const EdgeInsets.all(8.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Expanded(
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
@@ -930,7 +926,7 @@ class _CreatorSpacetestpageWidgetState
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         decoration: BoxDecoration(
@@ -943,7 +939,7 @@ class _CreatorSpacetestpageWidgetState
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.all(12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -1027,7 +1023,7 @@ class _CreatorSpacetestpageWidgetState
                                   borderRadius: BorderRadius.circular(100.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(4.0),
+                                  padding: const EdgeInsets.all(4.0),
                                   child: Icon(
                                     Icons.navigate_next_rounded,
                                     color: FlutterFlowTheme.of(context)
@@ -1037,16 +1033,16 @@ class _CreatorSpacetestpageWidgetState
                                 ),
                               ),
                             ]
-                                .divide(SizedBox(width: 16.0))
-                                .addToStart(SizedBox(width: 8.0))
-                                .addToEnd(SizedBox(width: 8.0)),
+                                .divide(const SizedBox(width: 16.0))
+                                .addToStart(const SizedBox(width: 8.0))
+                                .addToEnd(const SizedBox(width: 8.0)),
                           ),
                         ),
                       ),
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 24.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 24.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         decoration: BoxDecoration(
@@ -1059,12 +1055,12 @@ class _CreatorSpacetestpageWidgetState
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.all(12.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1090,7 +1086,7 @@ class _CreatorSpacetestpageWidgetState
                                             BorderRadius.circular(100.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(4.0),
+                                        padding: const EdgeInsets.all(4.0),
                                         child: Icon(
                                           Icons.navigate_next_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -1100,9 +1096,9 @@ class _CreatorSpacetestpageWidgetState
                                       ),
                                     ),
                                   ]
-                                      .divide(SizedBox(width: 16.0))
-                                      .addToStart(SizedBox(width: 8.0))
-                                      .addToEnd(SizedBox(width: 8.0)),
+                                      .divide(const SizedBox(width: 16.0))
+                                      .addToStart(const SizedBox(width: 8.0))
+                                      .addToEnd(const SizedBox(width: 8.0)),
                                 ),
                               ),
                               Divider(
@@ -1166,7 +1162,7 @@ class _CreatorSpacetestpageWidgetState
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                      ].divide(SizedBox(height: 4.0)),
+                                      ].divide(const SizedBox(height: 4.0)),
                                     ),
                                   ),
                                   Expanded(
@@ -1235,7 +1231,7 @@ class _CreatorSpacetestpageWidgetState
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                      ].divide(SizedBox(height: 4.0)),
+                                      ].divide(const SizedBox(height: 4.0)),
                                     ),
                                   ),
                                 ],
@@ -1247,7 +1243,7 @@ class _CreatorSpacetestpageWidgetState
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -1293,7 +1289,7 @@ class _CreatorSpacetestpageWidgetState
                               borderRadius: BorderRadius.circular(100.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(4.0),
+                              padding: const EdgeInsets.all(4.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -1312,23 +1308,23 @@ class _CreatorSpacetestpageWidgetState
                               ),
                             ),
                           ),
-                        ].divide(SizedBox(width: 8.0)),
+                        ].divide(const SizedBox(width: 8.0)),
                       ),
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 24.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 24.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 230.0,
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               ListView(
-                                padding: EdgeInsets.fromLTRB(
+                                padding: const EdgeInsets.fromLTRB(
                                   0,
                                   0,
                                   24.0,
@@ -1345,7 +1341,7 @@ class _CreatorSpacetestpageWidgetState
                                       promotionInfo: CreatorPromotionsStruct(),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 16.0)),
+                                ].divide(const SizedBox(width: 16.0)),
                               ),
                               if (responsiveVisibility(
                                 context: context,
@@ -1355,7 +1351,7 @@ class _CreatorSpacetestpageWidgetState
                                 desktop: false,
                               ))
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 24.0),
                                   child: FFButtonWidget(
                                     onPressed: () {
@@ -1366,10 +1362,10 @@ class _CreatorSpacetestpageWidgetState
                                     ),
                                     options: FFButtonOptions(
                                       height: 28.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
@@ -1403,7 +1399,7 @@ class _CreatorSpacetestpageWidgetState
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -1449,7 +1445,7 @@ class _CreatorSpacetestpageWidgetState
                               borderRadius: BorderRadius.circular(100.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(4.0),
+                              padding: const EdgeInsets.all(4.0),
                               child: Icon(
                                 Icons.navigate_next_rounded,
                                 color: FlutterFlowTheme.of(context).primaryText,
@@ -1457,15 +1453,15 @@ class _CreatorSpacetestpageWidgetState
                               ),
                             ),
                           ),
-                        ].divide(SizedBox(width: 8.0)),
+                        ].divide(const SizedBox(width: 8.0)),
                       ),
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: GridView(
                         padding: EdgeInsets.zero,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                           crossAxisSpacing: 10.0,
                           mainAxisSpacing: 10.0,
@@ -1490,14 +1486,14 @@ class _CreatorSpacetestpageWidgetState
                                 'assets/images/h3.jpg',
                                 width: 200.0,
                                 fit: BoxFit.cover,
-                                alignment: Alignment(0.0, -1.0),
+                                alignment: const Alignment(0.0, -1.0),
                               ),
                             ),
                           ),
                         ],
                       ),
                     ),
-                  ].addToEnd(SizedBox(height: 32.0)),
+                  ].addToEnd(const SizedBox(height: 32.0)),
                 ),
               ),
             ),

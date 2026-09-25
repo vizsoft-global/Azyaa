@@ -1,23 +1,16 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:async';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
-import '/flutter_flow/permissions_util.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'profile_address_edit_model.dart';
 export 'profile_address_edit_model.dart';
@@ -51,43 +44,43 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
     super.initState();
     _model = createModel(context, () => ProfileAddressEditModel());
 
-    getCurrentUserLocation(defaultLocation: LatLng(0.0, 0.0), cached: true)
+    getCurrentUserLocation(defaultLocation: const LatLng(0.0, 0.0), cached: true)
         .then((loc) => safeSetState(() => currentUserLocationValue = loc));
     _model.nameTextController ??=
-        TextEditingController(text: widget!.shippingAddress?.userName);
+        TextEditingController(text: widget.shippingAddress?.userName);
     _model.nameFocusNode ??= FocusNode();
 
     _model.relationTextController ??=
-        TextEditingController(text: widget!.shippingAddress?.relationName);
+        TextEditingController(text: widget.shippingAddress?.relationName);
     _model.relationFocusNode ??= FocusNode();
 
     _model.phonenumberTextController ??= TextEditingController(
         text:
-            '+${widget!.shippingAddress?.shippingAddressInfo?.shippingPhoneWithoutDailcode}');
+            '+${widget.shippingAddress?.shippingAddressInfo.shippingPhoneWithoutDailcode}');
     _model.phonenumberFocusNode ??= FocusNode();
 
     _model.emailTextController ??= TextEditingController(
-        text: widget!.shippingAddress?.shippingAddressInfo?.shippingEmail);
+        text: widget.shippingAddress?.shippingAddressInfo.shippingEmail);
     _model.emailFocusNode ??= FocusNode();
 
     _model.streetAddress1TextController ??= TextEditingController(
-        text: widget!.shippingAddress?.shippingAddressInfo?.addressLine1);
+        text: widget.shippingAddress?.shippingAddressInfo.addressLine1);
     _model.streetAddress1FocusNode ??= FocusNode();
 
     _model.cityTextController ??= TextEditingController(
-        text: widget!.shippingAddress?.shippingAddressInfo?.city);
+        text: widget.shippingAddress?.shippingAddressInfo.city);
     _model.cityFocusNode ??= FocusNode();
 
     _model.regionTextController ??= TextEditingController(
-        text: widget!.shippingAddress?.shippingAddressInfo?.state);
+        text: widget.shippingAddress?.shippingAddressInfo.state);
     _model.regionFocusNode ??= FocusNode();
 
     _model.countryTextController ??= TextEditingController(
-        text: widget!.shippingAddress?.shippingAddressInfo?.country);
+        text: widget.shippingAddress?.shippingAddressInfo.country);
     _model.countryFocusNode ??= FocusNode();
 
     _model.postalCodeTextController ??= TextEditingController(
-        text: widget!.shippingAddress?.shippingAddressInfo?.postalCode);
+        text: widget.shippingAddress?.shippingAddressInfo.postalCode);
     _model.postalCodeFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -123,7 +116,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
       width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 5.0,
             color: Color(0x3B1D2429),
@@ -133,7 +126,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
             ),
           )
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -153,7 +146,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 16.0),
                         child: Container(
                           width: 35.0,
@@ -165,9 +158,9 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 16.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -192,7 +185,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         desktop: false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 24.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -202,7 +195,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 8.0, 12.0, 8.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -217,7 +210,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   Expanded(
                                     child: Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           '74pwzzfc' /* Get Current Location */,
@@ -231,15 +224,15 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                       ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ),
                           ),
                         ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -283,7 +276,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 24.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -369,9 +362,9 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         desktop: false,
                       ))
                         Align(
-                          alignment: AlignmentDirectional(-1.0, -1.0),
+                          alignment: const AlignmentDirectional(-1.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 8.0),
                             child: RichText(
                               textScaler: MediaQuery.of(context).textScaler,
@@ -422,7 +415,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         desktop: false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 24.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -501,9 +494,9 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                           ),
                         ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -551,9 +544,9 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         phone: false,
                       ))
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 8.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -567,21 +560,21 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                   width: 1.0,
                                 ),
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Stack(
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsets.all(2.0),
+                                      padding: const EdgeInsets.all(2.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
                                                 .countryListValueController ??=
                                             FormFieldController<String>(
-                                          _model.countryListValue ??= widget!
+                                          _model.countryListValue ??= widget
                                               .shippingAddress
                                               ?.shippingAddressInfo
-                                              ?.shippingPhoneCountry,
+                                              .shippingPhoneCountry,
                                         ),
                                         options: functions.getCountrList(),
                                         onChanged: (val) async {
@@ -590,7 +583,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                           safeSetState(() {
                                             _model.phonenumberTextController
                                                     ?.text =
-                                                '+${widget!.shippingAddress?.shippingAddressInfo?.shippingPhoneWithoutDailcode}';
+                                                '+${widget.shippingAddress?.shippingAddressInfo.shippingPhoneWithoutDailcode}';
                                           });
                                         },
                                         width: double.infinity,
@@ -631,7 +624,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                         borderColor: Colors.transparent,
                                         borderWidth: 0.0,
                                         borderRadius: 0.0,
-                                        margin: EdgeInsetsDirectional.fromSTEB(
+                                        margin: const EdgeInsetsDirectional.fromSTEB(
                                             65.0, 4.0, 12.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
@@ -641,11 +634,11 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsets.all(8.0),
-                                      child: Image.network(
-                                        functions.getCountryFlag(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: CachedNetworkImage(
+                                        imageUrl: functions.getCountryFlag(
                                             _model.countryListValue)!,
                                         width: 35.0,
                                         fit: BoxFit.cover,
@@ -658,9 +651,9 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                           ),
                         ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 24.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -673,9 +666,9 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                 color: FlutterFlowTheme.of(context).border,
                               ),
                             ),
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsets.all(4.0),
+                              padding: const EdgeInsets.all(4.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -685,7 +678,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                     phone: false,
                                   ))
                                     Padding(
-                                      padding: EdgeInsets.all(12.0),
+                                      padding: const EdgeInsets.all(12.0),
                                       child: Text(
                                         functions.getDailCode(
                                             _model.countryListValue)!,
@@ -700,7 +693,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                     ),
                                   Expanded(
                                     child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Container(
                                         width:
                                             MediaQuery.sizeOf(context).width *
@@ -753,7 +746,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .primaryBackground,
                                             contentPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 0.0, 8.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
@@ -791,9 +784,9 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -837,7 +830,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 24.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -914,9 +907,9 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -960,7 +953,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 24.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1036,9 +1029,9 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -1082,7 +1075,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 24.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1161,9 +1154,9 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -1207,7 +1200,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 24.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1287,9 +1280,9 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -1333,9 +1326,9 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 24.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1349,16 +1342,16 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                 width: 1.0,
                               ),
                             ),
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsets.all(2.0),
+                              padding: const EdgeInsets.all(2.0),
                               child: FlutterFlowDropDown<String>(
                                 controller: _model.countryGCCValueController ??=
                                     FormFieldController<String>(
                                   _model.countryGCCValue ??=
                                       valueOrDefault<String>(
-                                    widget!.shippingAddress?.shippingAddressInfo
-                                        ?.country,
+                                    widget.shippingAddress?.shippingAddressInfo
+                                        .country,
                                     'Kuwait',
                                   ),
                                 ),
@@ -1419,7 +1412,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                 borderColor: Colors.transparent,
                                 borderWidth: 0.0,
                                 borderRadius: 0.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
+                                margin: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 4.0, 12.0, 4.0),
                                 hidesUnderline: true,
                                 isOverButton: true,
@@ -1438,7 +1431,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         desktop: false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 24.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1517,9 +1510,9 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                           ),
                         ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -1563,7 +1556,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 24.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1649,9 +1642,9 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -1695,7 +1688,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 24.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1706,21 +1699,21 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                             borderRadius: BorderRadius.circular(16.0),
                           ),
                           child: Builder(builder: (context) {
-                            final _googleMapMarker = (widget!.shippingAddress
-                                        ?.shippingAddressInfo?.latLong !=
+                            final _googleMapMarker = (widget.shippingAddress
+                                        ?.shippingAddressInfo.latLong !=
                                     null
-                                ? widget!.shippingAddress?.shippingAddressInfo
-                                    ?.latLong
+                                ? widget.shippingAddress?.shippingAddressInfo
+                                    .latLong
                                 : _model.googleMapsCenter);
                             return FlutterFlowGoogleMap(
                               controller: _model.googleMapsController,
                               onCameraIdle: (latLng) => safeSetState(
                                   () => _model.googleMapsCenter = latLng),
                               initialLocation: _model.googleMapsCenter ??=
-                                  widget!.shippingAddress?.shippingAddressInfo
-                                              ?.latLong !=
+                                  widget.shippingAddress?.shippingAddressInfo
+                                              .latLong !=
                                           null
-                                      ? widget!.shippingAddress!
+                                      ? widget.shippingAddress!
                                           .shippingAddressInfo.latLong!
                                       : currentUserLocationValue!,
                               markers: [
@@ -1748,7 +1741,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 16.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -1768,7 +1761,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               ),
                               child: Checkbox(
                                 value: _model.checkboxValue ??=
-                                    widget!.shippingAddress?.isDefault == true,
+                                    widget.shippingAddress?.isDefault == true,
                                 onChanged: (newValue) async {
                                   safeSetState(
                                       () => _model.checkboxValue = newValue!);
@@ -1778,7 +1771,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                     ? BorderSide(
                                         width: 2,
                                         color: FlutterFlowTheme.of(context)
-                                            .alternate!,
+                                            .alternate,
                                       )
                                     : null,
                                 activeColor:
@@ -1805,15 +1798,15 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                         ),
                       ),
                     ]
-                        .addToStart(SizedBox(height: 16.0))
-                        .addToEnd(SizedBox(height: 16.0)),
+                        .addToStart(const SizedBox(height: 16.0))
+                        .addToEnd(const SizedBox(height: 16.0)),
                   ),
                 ),
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
                 if (_model.formKey.currentState == null ||
@@ -1848,8 +1841,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                   );
                   return;
                 }
-                if (_model.phonenumberTextController.text == null ||
-                    _model.phonenumberTextController.text == '') {
+                if (_model.phonenumberTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -1879,10 +1871,10 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                 }
                 if (_model.checkboxValue != false) {
                   _model.count =
-                      (currentUserDocument?.userShippingaddress?.toList() ?? [])
+                      (currentUserDocument?.userShippingaddress.toList() ?? [])
                           .length;
                   _model.all =
-                      (currentUserDocument?.userShippingaddress?.toList() ?? [])
+                      (currentUserDocument?.userShippingaddress.toList() ?? [])
                           .toList()
                           .cast<UserShippingaddressStruct>();
                   while (_model.count! > 0) {
@@ -1911,14 +1903,14 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                   }
                 }
                 _model.count =
-                    (currentUserDocument?.userShippingaddress?.toList() ?? [])
+                    (currentUserDocument?.userShippingaddress.toList() ?? [])
                         .length;
                 _model.all =
-                    (currentUserDocument?.userShippingaddress?.toList() ?? [])
+                    (currentUserDocument?.userShippingaddress.toList() ?? [])
                         .toList()
                         .cast<UserShippingaddressStruct>();
                 while (_model.count! > 0) {
-                  if (widget!.shippingAddress?.relationId ==
+                  if (widget.shippingAddress?.relationId ==
                       _model.all
                           .elementAtOrNull((_model.count!) - 1)
                           ?.relationId) {
@@ -1969,7 +1961,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                             letterSpacing: 0.0,
                           ),
                     ),
-                    duration: Duration(milliseconds: 4000),
+                    duration: const Duration(milliseconds: 4000),
                     backgroundColor: FlutterFlowTheme.of(context).secondary,
                   ),
                 );
@@ -1985,8 +1977,8 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
               options: FFButtonOptions(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: 48.0,
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'almarai',
@@ -1998,7 +1990,7 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
               ),
             ),
           ),
-        ].addToStart(SizedBox(height: 16.0)).addToEnd(SizedBox(height: 16.0)),
+        ].addToStart(const SizedBox(height: 16.0)).addToEnd(const SizedBox(height: 16.0)),
       ),
     );
   }

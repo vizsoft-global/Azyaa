@@ -1,19 +1,15 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
 import 'package:flutter/services.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -90,10 +86,10 @@ class _RegisterVerificationWidgetState
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: MediaQuery.sizeOf(context).height * 1.0,
-                        decoration: BoxDecoration(),
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        decoration: const BoxDecoration(),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -101,7 +97,7 @@ class _RegisterVerificationWidgetState
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 16.0),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
@@ -114,7 +110,7 @@ class _RegisterVerificationWidgetState
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 16.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -131,7 +127,7 @@ class _RegisterVerificationWidgetState
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 24.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -151,9 +147,9 @@ class _RegisterVerificationWidgetState
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 24.0),
                                   child: Text(
                                     FFAppState().UserDataFlow.userEmail,
@@ -172,7 +168,7 @@ class _RegisterVerificationWidgetState
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 12.0),
                                 child: PinCodeTextField(
                                   autoDisposeControllers: false,
@@ -204,7 +200,7 @@ class _RegisterVerificationWidgetState
                                     fieldHeight: 50.0,
                                     fieldWidth: 40.0,
                                     borderWidth: 1.0,
-                                    borderRadius: BorderRadius.only(
+                                    borderRadius: const BorderRadius.only(
                                       bottomLeft: Radius.circular(8.0),
                                       bottomRight: Radius.circular(8.0),
                                       topLeft: Radius.circular(8.0),
@@ -226,7 +222,7 @@ class _RegisterVerificationWidgetState
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 12.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -269,13 +265,13 @@ class _RegisterVerificationWidgetState
                                               ?.settingsPhoneOtpStatus ==
                                           true) {
                                         if (currentUserDocument?.userInfo
-                                                ?.isPhoneVerificationStatus ==
+                                                .isPhoneVerificationStatus ==
                                             false) {
                                           context.goNamed(
                                             PhoneWidget.routeName,
                                             extra: <String, dynamic>{
                                               '__transition_info__':
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -289,7 +285,7 @@ class _RegisterVerificationWidgetState
                                             HomeWidget.routeName,
                                             extra: <String, dynamic>{
                                               '__transition_info__':
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -304,7 +300,7 @@ class _RegisterVerificationWidgetState
                                           HomeWidget.routeName,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -359,9 +355,9 @@ class _RegisterVerificationWidgetState
                                     width:
                                         MediaQuery.sizeOf(context).width * 1.0,
                                     height: 48.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -378,7 +374,7 @@ class _RegisterVerificationWidgetState
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 24.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -391,7 +387,7 @@ class _RegisterVerificationWidgetState
                                                 .userEmailOtpAttempt <=
                                             2))
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 8.0, 0.0, 8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -401,7 +397,7 @@ class _RegisterVerificationWidgetState
                                               CrossAxisAlignment.center,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   1.0, -1.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
@@ -436,7 +432,7 @@ class _RegisterVerificationWidgetState
                                               controller:
                                                   _model.timerController,
                                               updateStateInterval:
-                                                  Duration(milliseconds: 1000),
+                                                  const Duration(milliseconds: 1000),
                                               onChanged: (value, displayTime,
                                                   shouldUpdate) {
                                                 _model.timerMilliseconds =
@@ -485,7 +481,7 @@ class _RegisterVerificationWidgetState
                                                   ),
                                             ),
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   1.0, -1.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
@@ -517,7 +513,7 @@ class _RegisterVerificationWidgetState
                                         (_model.timerMilliseconds == 0))
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(1.0, -1.0),
+                                            const AlignmentDirectional(1.0, -1.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -569,7 +565,7 @@ class _RegisterVerificationWidgetState
                                                         .primaryText,
                                                   ),
                                                 ),
-                                                duration: Duration(
+                                                duration: const Duration(
                                                     milliseconds: 4000),
                                                 backgroundColor:
                                                     FlutterFlowTheme.of(context)
@@ -604,9 +600,9 @@ class _RegisterVerificationWidgetState
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, -1.0),
+                                alignment: const AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 24.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -623,7 +619,7 @@ class _RegisterVerificationWidgetState
                                         LoginWidget.routeName,
                                         context.mounted,
                                         extra: <String, dynamic>{
-                                          '__transition_info__': TransitionInfo(
+                                          '__transition_info__': const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,

@@ -1,16 +1,11 @@
 import '/azyaa_group_a/home/components/blank_loading/blank_loading_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'waitlist_success_model.dart';
 export 'waitlist_success_model.dart';
 
@@ -76,11 +71,11 @@ class _WaitlistSuccessWidgetState extends State<WaitlistSuccessWidget> {
                         autovalidateMode: AutovalidateMode.disabled,
                         child: StreamBuilder<UserWaitlistRecord>(
                           stream: UserWaitlistRecord.getDocument(
-                              widget!.waiterRef!),
+                              widget.waiterRef!),
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
                             if (!snapshot.hasData) {
-                              return BlankLoadingWidget();
+                              return const BlankLoadingWidget();
                             }
 
                             final containerUserWaitlistRecord = snapshot.data!;
@@ -88,10 +83,10 @@ class _WaitlistSuccessWidgetState extends State<WaitlistSuccessWidget> {
                             return Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: MediaQuery.sizeOf(context).height * 1.0,
-                              decoration: BoxDecoration(),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              decoration: const BoxDecoration(),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -99,15 +94,15 @@ class _WaitlistSuccessWidgetState extends State<WaitlistSuccessWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: Stack(
                                         alignment:
-                                            AlignmentDirectional(0.0, 1.0),
+                                            const AlignmentDirectional(0.0, 1.0),
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 40.0),
                                             child: Container(
                                               width: 260.0,
@@ -116,7 +111,7 @@ class _WaitlistSuccessWidgetState extends State<WaitlistSuccessWidget> {
                                                 image: DecorationImage(
                                                   fit: BoxFit.contain,
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, -1.0),
                                                   image: Image.asset(
                                                     'assets/images/Vector_(4).png',
@@ -139,7 +134,7 @@ class _WaitlistSuccessWidgetState extends State<WaitlistSuccessWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 8.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -156,7 +151,7 @@ class _WaitlistSuccessWidgetState extends State<WaitlistSuccessWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 24.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -188,7 +183,7 @@ class _WaitlistSuccessWidgetState extends State<WaitlistSuccessWidget> {
                                             BorderRadius.circular(9.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -228,7 +223,7 @@ class _WaitlistSuccessWidgetState extends State<WaitlistSuccessWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 24.0, 0.0, 24.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -250,7 +245,7 @@ class _WaitlistSuccessWidgetState extends State<WaitlistSuccessWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 12.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
@@ -258,7 +253,7 @@ class _WaitlistSuccessWidgetState extends State<WaitlistSuccessWidget> {
                                             WaitlistSecretWidget.routeName,
                                             extra: <String, dynamic>{
                                               '__transition_info__':
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -278,10 +273,10 @@ class _WaitlistSuccessWidgetState extends State<WaitlistSuccessWidget> {
                                                   1.0,
                                           height: 48.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,

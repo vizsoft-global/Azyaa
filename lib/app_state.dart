@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
-import 'package:ff_commons/api_requests/api_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
@@ -238,7 +236,7 @@ class FFAppState extends ChangeNotifier {
     _deeplinkproductRef = value;
   }
 
-  LatLng? _defaultLocation = LatLng(29.373751, 47.975931);
+  LatLng? _defaultLocation = const LatLng(29.373751, 47.975931);
   LatLng? get defaultLocation => _defaultLocation;
   set defaultLocation(LatLng? value) {
     _defaultLocation = value;

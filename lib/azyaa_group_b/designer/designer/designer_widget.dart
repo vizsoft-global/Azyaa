@@ -1,4 +1,3 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
@@ -9,22 +8,16 @@ import '/azyaa_group_b/components/unfollow_confirm_popup/unfollow_confirm_popup_
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:convert';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:expandable/expandable.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'designer_model.dart';
@@ -82,7 +75,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -111,7 +104,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                               tryonStatus: false,
                               shareIconStatus: false,
                               designerRef: functions
-                                  .getUserReference(widget!.designerUid!),
+                                  .getUserReference(widget.designerUid!),
                             ),
                           ),
                         ],
@@ -141,7 +134,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                           _model.designerDoc = await queryUsersRecordOnce(
                             queryBuilder: (usersRecord) => usersRecord.where(
                               'uid',
-                              isEqualTo: widget!.designerUid,
+                              isEqualTo: widget.designerUid,
                             ),
                             singleRecord: true,
                           ).then((s) => s.firstOrNull);
@@ -149,16 +142,16 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                               await DuoDeeplinkGroup.createLinkCall.call(
                             url: 'https://azyaa.ai',
                             title: _model.designerDoc?.designerMainInfo
-                                ?.designerInfo?.name,
+                                .designerInfo.name,
                             image: _model.designerDoc?.designerMainInfo
-                                ?.designerInfo?.brandPhoto,
+                                .designerInfo.brandPhoto,
                             ios:
-                                'https://azyaa.ai/azyaa-designer?designerUid=${widget!.designerUid}',
+                                'https://azyaa.ai/azyaa-designer?designerUid=${widget.designerUid}',
                             domain: 'azyaa.link',
                             externalID:
-                                '${currentUserUid}-DS${_model.idmapDoc?.shareLinkId?.toString()}',
+                                '${currentUserUid}-DS${_model.idmapDoc?.shareLinkId.toString()}',
                             android:
-                                'https://azyaa.ai/azyaa-designer?designerUid=${widget!.designerUid}',
+                                'https://azyaa.ai/azyaa-designer?designerUid=${widget.designerUid}',
                           );
 
                           if ((_model.dubshortlink?.succeeded ?? true)) {
@@ -184,12 +177,12 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                 return WebViewAware(
                                   child: AlertDialog(
                                     content:
-                                        Text('Server busy try after sometime.'),
+                                        const Text('Server busy try after sometime.'),
                                     actions: [
                                       TextButton(
                                         onPressed: () =>
                                             Navigator.pop(alertDialogContext),
-                                        child: Text('Ok'),
+                                        child: const Text('Ok'),
                                       ),
                                     ],
                                   ),
@@ -204,7 +197,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -217,18 +210,18 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   wrapWithModel(
                     model: _model.appUpdateCheckerModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: AppUpdateCheckerWidget(),
+                    child: const AppUpdateCheckerWidget(),
                   ),
                   StreamBuilder<List<UsersRecord>>(
                     stream: queryUsersRecord(
                       queryBuilder: (usersRecord) => usersRecord.where(
                         'uid',
-                        isEqualTo: widget!.designerUid,
+                        isEqualTo: widget.designerUid,
                       ),
                       singleRecord: true,
                     ),
@@ -238,7 +231,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                         return Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 150.0,
-                          child: LoadingAnimationWidget(),
+                          child: const LoadingAnimationWidget(),
                         );
                       }
                       List<UsersRecord> columnUsersRecordList = snapshot.data!;
@@ -255,7 +248,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 16.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -263,7 +256,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, -1.0),
+                                    alignment: const AlignmentDirectional(-1.0, -1.0),
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
@@ -278,29 +271,29 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
-                                        child: Image.network(
-                                          valueOrDefault<String>(
+                                        child: CachedNetworkImage(
+                                          imageUrl: valueOrDefault<String>(
                                             columnUsersRecord
                                                             ?.designerMainInfo
-                                                            ?.designerInfo
-                                                            ?.brandPhoto !=
+                                                            .designerInfo
+                                                            .brandPhoto !=
                                                         null &&
                                                     columnUsersRecord
                                                             ?.designerMainInfo
-                                                            ?.designerInfo
-                                                            ?.brandPhoto !=
+                                                            .designerInfo
+                                                            .brandPhoto !=
                                                         ''
                                                 ? columnUsersRecord
                                                     ?.designerMainInfo
-                                                    ?.designerInfo
-                                                    ?.brandPhoto
+                                                    .designerInfo
+                                                    .brandPhoto
                                                 : columnUsersRecord?.photoUrl,
                                             'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/m1a9p5ryq5fw/Azyaa_Designer_Default_Piccture_-_User_App__designerlistpage(1).png',
                                           ),
                                           width: 100.0,
                                           height: 80.0,
                                           fit: BoxFit.cover,
-                                          alignment: Alignment(0.0, 0.0),
+                                          alignment: const Alignment(0.0, 0.0),
                                         ),
                                       ),
                                     ),
@@ -315,18 +308,18 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 4.0),
                                           child: Text(
                                             columnUsersRecord
                                                             ?.designerMainInfo
-                                                            ?.designerInfo
-                                                            ?.name !=
+                                                            .designerInfo
+                                                            .name !=
                                                         null &&
                                                     columnUsersRecord
                                                             ?.designerMainInfo
-                                                            ?.designerInfo
-                                                            ?.name !=
+                                                            .designerInfo
+                                                            .name !=
                                                         ''
                                                 ? columnUsersRecord!
                                                     .designerMainInfo
@@ -346,13 +339,13 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 4.0),
                                           child: Text(
                                             '${FFLocalizations.of(context).getVariableText(
                                               enText: 'Experience:',
                                               arText: 'خبرة:',
-                                            )}${columnUsersRecord?.designerMainInfo?.designerInfo?.experienceInYears?.toString()}${FFLocalizations.of(context).getVariableText(
+                                            )}${columnUsersRecord.designerMainInfo.designerInfo.experienceInYears.toString()}${FFLocalizations.of(context).getVariableText(
                                               enText: 'years',
                                               arText: 'سنين',
                                             )}',
@@ -375,19 +368,19 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                   Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      if ((columnUsersRecord?.reference !=
+                                      if ((columnUsersRecord.reference !=
                                               currentUserReference) &&
                                           (loggedIn == true))
                                         Stack(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           children: [
                                             if ((currentUserDocument
                                                             ?.userDesignerFollowing
-                                                            ?.toList() ??
+                                                            .toList() ??
                                                         [])
                                                     .contains(columnUsersRecord
-                                                        ?.reference) ==
+                                                        .reference) ==
                                                 false)
                                               AuthUserStreamWidget(
                                                 builder: (context) =>
@@ -401,7 +394,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                               FieldValue
                                                                   .arrayUnion([
                                                             columnUsersRecord
-                                                                ?.reference
+                                                                .reference
                                                           ]),
                                                         },
                                                       ),
@@ -421,11 +414,11 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                   options: FFButtonOptions(
                                                     height: 28.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 12.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -466,10 +459,10 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                               ),
                                             if ((currentUserDocument
                                                             ?.userDesignerFollowing
-                                                            ?.toList() ??
+                                                            .toList() ??
                                                         [])
                                                     .contains(columnUsersRecord
-                                                        ?.reference) ==
+                                                        .reference) ==
                                                 true)
                                               Builder(
                                                 builder: (context) =>
@@ -488,7 +481,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                             backgroundColor:
                                                                 Colors
                                                                     .transparent,
-                                                            alignment: AlignmentDirectional(
+                                                            alignment: const AlignmentDirectional(
                                                                     0.0, 0.0)
                                                                 .resolve(
                                                                     Directionality.of(
@@ -521,7 +514,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                                       'h1hkw04g' /* you want to unfollow this Desi... */,
                                                                     ),
                                                                     userRef:
-                                                                        columnUsersRecord!
+                                                                        columnUsersRecord
                                                                             .reference,
                                                                     type:
                                                                         'Designer',
@@ -541,14 +534,14 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                     options: FFButtonOptions(
                                                       height: 28.0,
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
                                                                   0.0,
                                                                   12.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -598,21 +591,21 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                         ),
                                     ],
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 16.0),
                               child: Container(
                                 width: double.infinity,
-                                color: Color(0x00000000),
+                                color: const Color(0x00000000),
                                 child: ExpandableNotifier(
                                   controller: _model
                                       .designerMoreInfoExpandableController,
                                   child: ExpandablePanel(
                                     header: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 8.0, 20.0, 8.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -632,7 +625,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                     ),
                                     collapsed: Container(),
                                     expanded: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: Container(
                                         width:
@@ -649,14 +642,14 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(12.0),
+                                          padding: const EdgeInsets.all(12.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 4.0),
                                                 child: Text(
@@ -677,11 +670,11 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 12.0),
                                                 child: Text(
-                                                  columnUsersRecord!
+                                                  columnUsersRecord
                                                       .designerMainInfo
                                                       .designerInfo
                                                       .bio,
@@ -701,7 +694,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 4.0),
                                                 child: Text(
@@ -722,17 +715,17 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 12.0),
                                                 child: Builder(
                                                   builder: (context) {
                                                     final styleList =
                                                         columnUsersRecord
-                                                                ?.designerMainInfo
-                                                                ?.designerInfo
-                                                                ?.contentCategoryList
-                                                                ?.toList() ??
+                                                                .designerMainInfo
+                                                                .designerInfo
+                                                                .contentCategoryList
+                                                                .toList() ??
                                                             [];
 
                                                     return Wrap(
@@ -758,7 +751,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                             styleList[
                                                                 styleListIndex];
                                                         return Text(
-                                                          '${styleListItem}${styleListIndex != (columnUsersRecord!.designerMainInfo.designerInfo.contentCategoryList.length - 1) ? ', ' : '. '}',
+                                                          '${styleListItem}${styleListIndex != (columnUsersRecord.designerMainInfo.designerInfo.contentCategoryList.length - 1) ? ', ' : '. '}',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium
@@ -780,7 +773,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 4.0),
                                                 child: Text(
@@ -808,13 +801,13 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   await launchURL(
-                                                      columnUsersRecord!
+                                                      columnUsersRecord
                                                           .designerMainInfo
                                                           .designerInfo
                                                           .portfolioLink);
                                                 },
                                                 child: Text(
-                                                  columnUsersRecord!
+                                                  columnUsersRecord
                                                       .designerMainInfo
                                                       .designerInfo
                                                       .portfolioLink,
@@ -853,7 +846,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                       iconSize: 18.0,
                                       iconColor:
                                           FlutterFlowTheme.of(context).primary,
-                                      iconPadding: EdgeInsets.fromLTRB(
+                                      iconPadding: const EdgeInsets.fromLTRB(
                                           16.0, 0.0, 16.0, 0.0),
                                     ),
                                   ),
@@ -861,7 +854,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 24.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -920,7 +913,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                             BorderRadius.circular(100.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(4.0),
+                                        padding: const EdgeInsets.all(4.0),
                                         child: Icon(
                                           Icons.navigate_next_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -929,11 +922,11 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                         ),
                                       ),
                                     ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: StreamBuilder<List<ProductsRecord>>(
                                 stream: queryProductsRecord(
@@ -946,7 +939,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                           .where(
                                             'product_authorizer.product_designer_ref',
                                             isEqualTo:
-                                                columnUsersRecord?.reference,
+                                                columnUsersRecord.reference,
                                           )
                                           .orderBy('created_at',
                                               descending: true),
@@ -957,7 +950,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                     return Container(
                                       width: 0.0,
                                       height: 0.0,
-                                      child: BlankLoadingWidget(),
+                                      child: const BlankLoadingWidget(),
                                     );
                                   }
                                   List<ProductsRecord>
@@ -1000,8 +993,8 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                               ),
                             ),
                           ]
-                              .addToStart(SizedBox(height: 16.0))
-                              .addToEnd(SizedBox(height: 16.0)),
+                              .addToStart(const SizedBox(height: 16.0))
+                              .addToEnd(const SizedBox(height: 16.0)),
                         ),
                       );
                     },

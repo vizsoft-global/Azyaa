@@ -5,13 +5,9 @@ import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_wid
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'membership_model.dart';
 export 'membership_model.dart';
 
@@ -59,7 +55,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -85,7 +81,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -98,12 +94,12 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   wrapWithModel(
                     model: _model.appUpdateCheckerModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: AppUpdateCheckerWidget(),
+                    child: const AppUpdateCheckerWidget(),
                   ),
                   SingleChildScrollView(
                     child: Column(
@@ -111,7 +107,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -121,7 +117,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                   .secondaryBackground,
                               image: DecorationImage(
                                 fit: BoxFit.contain,
-                                alignment: AlignmentDirectional(1.0, 1.0),
+                                alignment: const AlignmentDirectional(1.0, 1.0),
                                 image: Image.asset(
                                   'assets/images/khaled-ghareeb--NyPn9up_7o-unsplash-Photoroom_2-min.png',
                                 ).image,
@@ -129,7 +125,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(16.0),
+                              padding: const EdgeInsets.all(16.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -191,10 +187,10 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                                 fontWeight: FontWeight.normal,
                                               ),
                                         ),
-                                      ].divide(SizedBox(height: 8.0)),
+                                      ].divide(const SizedBox(height: 8.0)),
                                     ),
                                   ),
-                                  Expanded(
+                                  const Expanded(
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [],
@@ -237,7 +233,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                 snapshot.data!;
 
                             return Container(
-                              decoration: BoxDecoration(),
+                              decoration: const BoxDecoration(),
                               child: Visibility(
                                 visible: categoryCategoryRecordList.length > 0,
                                 child: Wrap(
@@ -251,7 +247,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                   clipBehavior: Clip.none,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 8.0, 16.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -305,11 +301,11 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                               ),
                                             ),
                                           ),
-                                        ].divide(SizedBox(width: 8.0)),
+                                        ].divide(const SizedBox(width: 8.0)),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 0.0, 0.0),
                                       child: Container(
                                         width:
@@ -327,7 +323,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                                     .toList();
 
                                             return ListView.separated(
-                                              padding: EdgeInsets.fromLTRB(
+                                              padding: const EdgeInsets.fromLTRB(
                                                 0,
                                                 0,
                                                 16.0,
@@ -338,7 +334,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                               scrollDirection: Axis.horizontal,
                                               itemCount: styleList.length,
                                               separatorBuilder: (_, __) =>
-                                                  SizedBox(width: 8.0),
+                                                  const SizedBox(width: 8.0),
                                               itemBuilder:
                                                   (context, styleListIndex) {
                                                 final styleListItem =
@@ -361,14 +357,14 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                           },
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 16.0, 16.0, 8.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               context.pushNamed(
                                 MembershipPlanWidget.routeName,
                                 extra: <String, dynamic>{
-                                  '__transition_info__': TransitionInfo(
+                                  '__transition_info__': const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 0),
@@ -382,9 +378,9 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 48.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -400,7 +396,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 8.0, 16.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -442,11 +438,11 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                       ),
                                 ),
                               ),
-                            ].divide(SizedBox(width: 8.0)),
+                            ].divide(const SizedBox(width: 8.0)),
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
                           child: Wrap(
                             spacing: 12.0,
@@ -499,10 +495,10 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                      ].divide(SizedBox(height: 4.0)),
+                                      ].divide(const SizedBox(height: 4.0)),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -512,7 +508,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                     width: 23.0,
                                     height: 23.0,
                                     fit: BoxFit.cover,
-                                    alignment: Alignment(0.0, 0.0),
+                                    alignment: const Alignment(0.0, 0.0),
                                   ),
                                   Expanded(
                                     child: Column(
@@ -546,7 +542,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                      ].divide(SizedBox(height: 4.0)),
+                                      ].divide(const SizedBox(height: 4.0)),
                                     ),
                                   ),
                                   if (responsiveVisibility(
@@ -562,7 +558,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                           .primaryText,
                                       size: 24.0,
                                     ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -605,10 +601,10 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                      ].divide(SizedBox(height: 4.0)),
+                                      ].divide(const SizedBox(height: 4.0)),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -618,7 +614,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                     width: 23.0,
                                     height: 23.0,
                                     fit: BoxFit.contain,
-                                    alignment: Alignment(0.0, 0.0),
+                                    alignment: const Alignment(0.0, 0.0),
                                   ),
                                   Expanded(
                                     child: Column(
@@ -652,7 +648,7 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                      ].divide(SizedBox(height: 4.0)),
+                                      ].divide(const SizedBox(height: 4.0)),
                                     ),
                                   ),
                                   if (responsiveVisibility(
@@ -668,14 +664,14 @@ class _MembershipWidgetState extends State<MembershipWidget> {
                                           .primaryText,
                                       size: 24.0,
                                     ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ],
                           ),
                         ),
                       ]
-                          .divide(SizedBox(height: 12.0))
-                          .addToEnd(SizedBox(height: 16.0)),
+                          .divide(const SizedBox(height: 12.0))
+                          .addToEnd(const SizedBox(height: 16.0)),
                     ),
                   ),
                 ],

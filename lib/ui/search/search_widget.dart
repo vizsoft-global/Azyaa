@@ -1,11 +1,7 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'search_model.dart';
 export 'search_model.dart';
 
@@ -48,14 +44,14 @@ class _SearchWidgetState extends State<SearchWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(4.0),
+      padding: const EdgeInsets.all(4.0),
       child: Container(
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).accent2,
           borderRadius: BorderRadius.circular(8.0),
         ),
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,7 +89,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(8.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -115,14 +111,14 @@ class _SearchWidgetState extends State<SearchWidget> {
               ),
               Builder(
                 builder: (context) {
-                  final searchResult1 = widget!.searchList?.toList() ?? [];
+                  final searchResult1 = widget.searchList?.toList() ?? [];
 
                   return ListView.separated(
                     padding: EdgeInsets.zero,
                     shrinkWrap: true,
                     scrollDirection: Axis.vertical,
                     itemCount: searchResult1.length,
-                    separatorBuilder: (_, __) => SizedBox(height: 8.0),
+                    separatorBuilder: (_, __) => const SizedBox(height: 8.0),
                     itemBuilder: (context, searchResult1Index) {
                       final searchResult1Item =
                           searchResult1[searchResult1Index];
@@ -138,7 +134,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                   );
                 },
               ),
-            ].divide(SizedBox(height: 16.0)).addToEnd(SizedBox(height: 12.0)),
+            ].divide(const SizedBox(height: 16.0)).addToEnd(const SizedBox(height: 12.0)),
           ),
         ),
       ),

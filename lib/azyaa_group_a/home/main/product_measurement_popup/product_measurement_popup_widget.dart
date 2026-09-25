@@ -1,15 +1,11 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/profile_body_add/profile_body_add_widget.dart';
 import '/azyaa_group_a/customer/zone/profile_body_edit/profile_body_edit_widget.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'product_measurement_popup_model.dart';
@@ -56,7 +52,7 @@ class _ProductMeasurementPopupWidgetState
       width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 5.0,
             color: Color(0x3B1D2429),
@@ -66,7 +62,7 @@ class _ProductMeasurementPopupWidgetState
             ),
           )
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -76,7 +72,7 @@ class _ProductMeasurementPopupWidgetState
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
             child: Container(
               width: 35.0,
               height: 3.0,
@@ -87,13 +83,13 @@ class _ProductMeasurementPopupWidgetState
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Align(
-                  alignment: AlignmentDirectional(-1.0, -1.0),
+                  alignment: const AlignmentDirectional(-1.0, -1.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'nj454r3h' /* Select Body Measurement */,
@@ -110,7 +106,7 @@ class _ProductMeasurementPopupWidgetState
           ),
           Builder(
             builder: (context) => Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
               child: InkWell(
                 splashColor: Colors.transparent,
                 focusColor: Colors.transparent,
@@ -124,12 +120,12 @@ class _ProductMeasurementPopupWidgetState
                         elevation: 0,
                         insetPadding: EdgeInsets.zero,
                         backgroundColor: Colors.transparent,
-                        alignment: AlignmentDirectional(0.0, 1.0)
+                        alignment: const AlignmentDirectional(0.0, 1.0)
                             .resolve(Directionality.of(context)),
                         child: WebViewAware(
                           child: Container(
                             height: MediaQuery.sizeOf(context).height * 0.8,
-                            child: ProfileBodyAddWidget(
+                            child: const ProfileBodyAddWidget(
                               navigatedFrom: 'product',
                             ),
                           ),
@@ -147,7 +143,7 @@ class _ProductMeasurementPopupWidgetState
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -159,7 +155,7 @@ class _ProductMeasurementPopupWidgetState
                         ),
                         Expanded(
                           child: Align(
-                            alignment: AlignmentDirectional(-1.0, 0.0),
+                            alignment: const AlignmentDirectional(-1.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'cmzo2dm4' /* Add a New body Measurement */,
@@ -174,14 +170,14 @@ class _ProductMeasurementPopupWidgetState
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(1.0, 0.0),
+                          alignment: const AlignmentDirectional(1.0, 0.0),
                           child: Icon(
                             Icons.chevron_right,
                             color: FlutterFlowTheme.of(context).primaryText,
                             size: 24.0,
                           ),
                         ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ),
                 ),
@@ -195,12 +191,12 @@ class _ProductMeasurementPopupWidgetState
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => Builder(
                         builder: (context) {
                           final measurementList =
-                              (currentUserDocument?.userBody?.toList() ?? [])
+                              (currentUserDocument?.userBody.toList() ?? [])
                                   .toList();
 
                           return Wrap(
@@ -227,9 +223,9 @@ class _ProductMeasurementPopupWidgetState
                                     color: FlutterFlowTheme.of(context).border,
                                   ),
                                 ),
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsets.all(4.0),
+                                  padding: const EdgeInsets.all(4.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     crossAxisAlignment:
@@ -239,7 +235,7 @@ class _ProductMeasurementPopupWidgetState
                                           '/azyaa-product')
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Theme(
                                             data: ThemeData(
                                               checkboxTheme: CheckboxThemeData(
@@ -298,7 +294,7 @@ class _ProductMeasurementPopupWidgetState
                                                           width: 2,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .alternate!,
+                                                              .alternate,
                                                         )
                                                       : null,
                                               activeColor:
@@ -343,9 +339,6 @@ class _ProductMeasurementPopupWidgetState
                                                 ),
                                                 if (measurementListItem
                                                             .relationName !=
-                                                        null &&
-                                                    measurementListItem
-                                                            .relationName !=
                                                         '')
                                                   Text(
                                                     '( ${measurementListItem.relationName} )',
@@ -360,7 +353,7 @@ class _ProductMeasurementPopupWidgetState
                                                               FontWeight.w600,
                                                         ),
                                                   ),
-                                              ].divide(SizedBox(width: 6.0)),
+                                              ].divide(const SizedBox(width: 6.0)),
                                             ),
                                             Flexible(
                                               child: RichText(
@@ -479,13 +472,13 @@ class _ProductMeasurementPopupWidgetState
                                                 ),
                                               ),
                                             ),
-                                          ].divide(SizedBox(height: 2.0)),
+                                          ].divide(const SizedBox(height: 2.0)),
                                         ),
                                       ),
                                       if (measurementListItem.isDefault == true)
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Container(
                                             height: 26.0,
                                             decoration: BoxDecoration(
@@ -496,10 +489,10 @@ class _ProductMeasurementPopupWidgetState
                                                   BorderRadius.circular(100.0),
                                             ),
                                             child: Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         6.0, 2.0, 6.0, 4.0),
                                                 child: Text(
@@ -545,7 +538,7 @@ class _ProductMeasurementPopupWidgetState
                                                   backgroundColor:
                                                       Colors.transparent,
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                               0.0, 1.0)
                                                           .resolve(
                                                               Directionality.of(
@@ -571,7 +564,7 @@ class _ProductMeasurementPopupWidgetState
                                           },
                                         ),
                                       ),
-                                    ].divide(SizedBox(width: 4.0)),
+                                    ].divide(const SizedBox(width: 4.0)),
                                   ),
                                 ),
                               );
@@ -586,7 +579,7 @@ class _ProductMeasurementPopupWidgetState
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -602,9 +595,9 @@ class _ProductMeasurementPopupWidgetState
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 48.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -617,13 +610,13 @@ class _ProductMeasurementPopupWidgetState
                     ),
                   ),
                 ),
-              ].divide(SizedBox(width: 16.0)),
+              ].divide(const SizedBox(width: 16.0)),
             ),
           ),
         ]
-            .divide(SizedBox(height: 16.0))
-            .addToStart(SizedBox(height: 16.0))
-            .addToEnd(SizedBox(height: 16.0)),
+            .divide(const SizedBox(height: 16.0))
+            .addToStart(const SizedBox(height: 16.0))
+            .addToEnd(const SizedBox(height: 16.0)),
       ),
     );
   }

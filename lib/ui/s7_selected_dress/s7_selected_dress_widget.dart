@@ -2,11 +2,8 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 's7_selected_dress_model.dart';
 export 's7_selected_dress_model.dart';
 
@@ -57,7 +54,7 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -87,7 +84,7 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -126,11 +123,11 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
                               print('IconButton pressed ...');
                             },
                           ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -142,7 +139,7 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                     child: Container(
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       child: TextFormField(
@@ -169,14 +166,14 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
                                     letterSpacing: 0.0,
                                   ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
                             ),
@@ -212,7 +209,7 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: StreamBuilder<List<ProductsRecord>>(
                         stream: queryProductsRecord(
                           queryBuilder: (productsRecord) =>
@@ -242,7 +239,7 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
                           return GridView.builder(
                             padding: EdgeInsets.zero,
                             gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
+                                const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 2,
                               crossAxisSpacing: 16.0,
                               mainAxisSpacing: 16.0,
@@ -258,7 +255,7 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
                               return Stack(
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(1.0, -1.0),
+                                    alignment: const AlignmentDirectional(1.0, -1.0),
                                     child: Theme(
                                       data: ThemeData(
                                         checkboxTheme: CheckboxThemeData(
@@ -290,7 +287,7 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
                                                 width: 2,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .alternate!,
+                                                        .alternate,
                                               )
                                             : null,
                                         activeColor:
@@ -311,7 +308,7 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () {
                         print('Button pressed ...');
@@ -322,10 +319,10 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 48.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -338,7 +335,7 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
                       ),
                     ),
                   ),
-                ].addToEnd(SizedBox(height: 16.0)),
+                ].addToEnd(const SizedBox(height: 16.0)),
               ),
             ),
           ),

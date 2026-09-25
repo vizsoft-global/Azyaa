@@ -1,12 +1,8 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'designer_booking_complete_model.dart';
 export 'designer_booking_complete_model.dart';
 
@@ -56,7 +52,7 @@ class _DesignerBookingCompleteWidgetState
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -99,11 +95,11 @@ class _DesignerBookingCompleteWidgetState
                                 ),
                           ),
                         ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -111,7 +107,7 @@ class _DesignerBookingCompleteWidgetState
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -119,19 +115,19 @@ class _DesignerBookingCompleteWidgetState
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
                           'assets/images/booking.svg',
                           fit: BoxFit.contain,
-                          alignment: Alignment(0.0, 0.0),
+                          alignment: const Alignment(0.0, 0.0),
                         ),
                       ),
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -140,7 +136,7 @@ class _DesignerBookingCompleteWidgetState
                             borderColor: FlutterFlowTheme.of(context).border,
                             borderRadius: 100.0,
                             buttonSize: 42.0,
-                            fillColor: Color(0xFF5BA841),
+                            fillColor: const Color(0xFF5BA841),
                             icon: Icon(
                               Icons.check,
                               color: FlutterFlowTheme.of(context).info,
@@ -180,16 +176,16 @@ class _DesignerBookingCompleteWidgetState
                                       fontWeight: FontWeight.normal,
                                     ),
                               ),
-                            ].divide(SizedBox(height: 8.0)),
+                            ].divide(const SizedBox(height: 8.0)),
                           ),
-                        ].divide(SizedBox(width: 16.0)),
+                        ].divide(const SizedBox(width: 16.0)),
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, 0.0),
+                      alignment: const AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                         child: RichText(
                           textScaler: MediaQuery.of(context).textScaler,
                           text: TextSpan(
@@ -246,10 +242,10 @@ class _DesignerBookingCompleteWidgetState
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, 0.0),
+                      alignment: const AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                         child: RichText(
                           textScaler: MediaQuery.of(context).textScaler,
                           text: TextSpan(
@@ -329,10 +325,10 @@ class _DesignerBookingCompleteWidgetState
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 48.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primaryBackground,
                         textStyle: FlutterFlowTheme.of(context)
                             .titleSmall
@@ -348,7 +344,7 @@ class _DesignerBookingCompleteWidgetState
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
-                  ].addToEnd(SizedBox(height: 16.0)),
+                  ].addToEnd(const SizedBox(height: 16.0)),
                 ),
               ),
             ),

@@ -1,16 +1,10 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'orders_rate_model.dart';
 export 'orders_rate_model.dart';
 
@@ -53,9 +47,9 @@ class _OrdersRateWidgetState extends State<OrdersRateWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
       child: StreamBuilder<ProductsRecord>(
-        stream: ProductsRecord.getDocument(widget!.productsRef!),
+        stream: ProductsRecord.getDocument(widget.productsRef!),
         builder: (context, snapshot) {
           // Customize what your widget looks like when it's loading.
           if (!snapshot.hasData) {
@@ -136,7 +130,7 @@ class _OrdersRateWidgetState extends State<OrdersRateWidget> {
                             singleRecord: true,
                           ).then((s) => s.firstOrNull);
 
-                          await widget!.productsRef!.update({
+                          await widget.productsRef!.update({
                             ...mapToFirestore(
                               {
                                 'product_review': FieldValue.arrayUnion([

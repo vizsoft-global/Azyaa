@@ -1,26 +1,10 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
-import '/azyaa_group_a/home/components/designer_grid/designer_grid_widget.dart';
-import '/azyaa_group_a/home/components/empty/empty_widget.dart';
-import '/azyaa_group_a/home/components/loading_animation/loading_animation_widget.dart';
-import '/azyaa_group_a/home/components/product_grid/product_grid_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
-import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
-import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
-import '/custom_code/actions/index.dart' as actions;
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'wishlist_widget.dart' show WishlistWidget;
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class WishlistModel extends FlutterFlowModel<WishlistWidget> {
   ///  Local state fields for this page.

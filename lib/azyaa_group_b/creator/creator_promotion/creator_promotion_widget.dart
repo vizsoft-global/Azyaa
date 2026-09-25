@@ -1,16 +1,10 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'creator_promotion_model.dart';
 export 'creator_promotion_model.dart';
 
@@ -44,11 +38,11 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.count = widget!.promotionInfo!.productDocReference.length;
+      _model.count = widget.promotionInfo!.productDocReference.length;
       _model.total = 0.0;
       while (_model.count > 0) {
         _model.indPromotionProductResult = await ProductsRecord.getDocumentOnce(
-            widget!.promotionInfo!.productDocReference
+            widget.promotionInfo!.productDocReference
                 .elementAtOrNull(_model.count - 1)!);
         _model.total = _model.total +
             _model.indPromotionProductResult!.product.productPrice;
@@ -84,16 +78,16 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
           CreatorsIndividualPromoWidget.routeName,
           queryParameters: {
             'promo': serializeParam(
-              widget!.promotionInfo?.promotionId,
+              widget.promotionInfo?.promotionId,
               ParamType.String,
             ),
             'creatorUid': serializeParam(
-              widget!.creator?.uid,
+              widget.creator?.uid,
               ParamType.String,
             ),
           }.withoutNulls,
           extra: <String, dynamic>{
-            '__transition_info__': TransitionInfo(
+            '__transition_info__': const TransitionInfo(
               hasTransition: true,
               transitionType: PageTransitionType.fade,
               duration: Duration(milliseconds: 0),
@@ -102,7 +96,7 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
         );
       },
       child: Container(
-        decoration: BoxDecoration(),
+        decoration: const BoxDecoration(),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -120,9 +114,9 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
                             FlutterFlowTheme.of(context).secondary,
                             FlutterFlowTheme.of(context).primary
                           ],
-                          stops: [0.6, 1.0],
-                          begin: AlignmentDirectional(0.0, -1.0),
-                          end: AlignmentDirectional(0, 1.0),
+                          stops: const [0.6, 1.0],
+                          begin: const AlignmentDirectional(0.0, -1.0),
+                          end: const AlignmentDirectional(0, 1.0),
                         ),
                         borderRadius: BorderRadius.circular(8.0),
                         border: Border.all(
@@ -131,26 +125,26 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          widget!.promotionInfo?.promotionInfo?.featureImage !=
+                        child: CachedNetworkImage(
+                          imageUrl: widget.promotionInfo?.promotionInfo.featureImage !=
                                       null &&
-                                  widget!.promotionInfo?.promotionInfo
-                                          ?.featureImage !=
+                                  widget.promotionInfo?.promotionInfo
+                                          .featureImage !=
                                       ''
-                              ? widget!
+                              ? widget
                                   .promotionInfo!.promotionInfo.featureImage
                               : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/i9u1ra67p2p4/Azyaa-logo_(2).jpg',
                           height: MediaQuery.sizeOf(context).height * 1.0,
                           fit: BoxFit.cover,
-                          alignment: Alignment(0.0, -1.0),
+                          alignment: const Alignment(0.0, -1.0),
                         ),
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0.0, 1.0),
+                      alignment: const AlignmentDirectional(0.0, 1.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           gradient: LinearGradient(
                             colors: [Colors.transparent, Color(0xB2000000)],
                             stops: [0.0, 1.0],
@@ -159,11 +153,11 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
                           ),
                         ),
                         child: Visibility(
-                          visible: widget!.promotionInfo!.promotionInfo
+                          visible: widget.promotionInfo!.promotionInfo
                                   .galleryImage.length >
                               0,
                           child: Padding(
-                            padding: EdgeInsets.all(4.0),
+                            padding: const EdgeInsets.all(4.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -171,9 +165,9 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
                               children: [
                                 Builder(
                                   builder: (context) {
-                                    final imageList = (widget!.promotionInfo
-                                                ?.promotionInfo?.galleryImage
-                                                ?.toList() ??
+                                    final imageList = (widget.promotionInfo
+                                                ?.promotionInfo.galleryImage
+                                                .toList() ??
                                             [])
                                         .take(2)
                                         .toList();
@@ -195,8 +189,8 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
                                         return ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            imageListItem,
+                                          child: CachedNetworkImage(
+                                            imageUrl: imageListItem,
                                             width: () {
                                               if (MediaQuery.sizeOf(context)
                                                       .width <
@@ -236,24 +230,24 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
                                               }
                                             }(),
                                             fit: BoxFit.cover,
-                                            alignment: Alignment(0.0, 0.0),
+                                            alignment: const Alignment(0.0, 0.0),
                                           ),
                                         );
                                       }),
                                     );
                                   },
                                 ),
-                                if (widget!.promotionInfo!.promotionImages
+                                if (widget.promotionInfo!.promotionImages
                                         .length >=
                                     3)
                                   Stack(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     children: [
                                       ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
-                                        child: Image.network(
-                                          widget!.promotionInfo!.promotionInfo
+                                        child: CachedNetworkImage(
+                                          imageUrl: widget.promotionInfo!.promotionInfo
                                               .galleryImage
                                               .elementAtOrNull(2)!,
                                           width: () {
@@ -295,14 +289,14 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
                                             }
                                           }(),
                                           fit: BoxFit.cover,
-                                          alignment: Alignment(0.0, 0.0),
+                                          alignment: const Alignment(0.0, 0.0),
                                         ),
                                       ),
-                                      if (widget!.promotionInfo!.promotionInfo
+                                      if (widget.promotionInfo!.promotionInfo
                                               .galleryImage.length >=
                                           4)
                                         Text(
-                                          '+${(widget!.promotionInfo!.promotionInfo.galleryImage.length - 3).toString()}',
+                                          '+${(widget.promotionInfo!.promotionInfo.galleryImage.length - 3).toString()}',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -316,7 +310,7 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
                                         ),
                                     ],
                                   ),
-                              ].divide(SizedBox(width: 4.0)),
+                              ].divide(const SizedBox(width: 4.0)),
                             ),
                           ),
                         ),
@@ -327,9 +321,9 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 8.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 8.0, 0.0),
               child: Text(
-                widget!.promotionInfo!.promotionCaption,
+                widget.promotionInfo!.promotionCaption,
                 maxLines: 1,
                 style: FlutterFlowTheme.of(context).bodySmall.override(
                       fontFamily: 'almarai',
@@ -340,7 +334,7 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
             ),
             if (_model.priceStatus == 'show')
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -365,10 +359,10 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
                             fontWeight: FontWeight.w600,
                           ),
                     ),
-                  ].divide(SizedBox(width: 4.0)),
+                  ].divide(const SizedBox(width: 4.0)),
                 ),
               ),
-          ].divide(SizedBox(height: 4.0)),
+          ].divide(const SizedBox(height: 4.0)),
         ),
       ),
     );

@@ -1,22 +1,17 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/home/components/product_attribute/product_attribute_widget.dart';
 import '/azyaa_group_a/home/components/size_chart_default/size_chart_default_widget.dart';
 import '/azyaa_group_a/home/main/product_measurement_popup/product_measurement_popup_widget.dart';
 import '/azyaa_group_a/payment/chosseoption_popup/chosseoption_popup_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'product_attribute_promo_level_model.dart';
@@ -31,7 +26,7 @@ class ProductAttributePromoLevelWidget extends StatefulWidget {
     required this.popupType,
     required this.creatorDoc,
     required this.promoID,
-  }) : this.navigation = navigation ?? 'default';
+  }) : navigation = navigation ?? 'default';
 
   final int? cartIndex;
   final ProductsRecord? product;
@@ -78,7 +73,7 @@ class _ProductAttributePromoLevelWidgetState
       width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 5.0,
             color: Color(0x3B1D2429),
@@ -88,7 +83,7 @@ class _ProductAttributePromoLevelWidgetState
             ),
           )
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -99,7 +94,7 @@ class _ProductAttributePromoLevelWidgetState
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
               child: Container(
                 width: 35.0,
                 height: 3.0,
@@ -110,13 +105,13 @@ class _ProductAttributePromoLevelWidgetState
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(-1.0, -1.0),
+                    alignment: const AlignmentDirectional(-1.0, -1.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         '09a2x3qy' /* Choose */,
@@ -129,7 +124,7 @@ class _ProductAttributePromoLevelWidgetState
                           ),
                     ),
                   ),
-                  if (widget!.popupType == 'icon')
+                  if (widget.popupType == 'icon')
                     Builder(
                       builder: (context) => FFButtonWidget(
                         onPressed: () async {
@@ -137,7 +132,7 @@ class _ProductAttributePromoLevelWidgetState
                           if (loggedIn) {
                             _model.normalProductResult =
                                 await ProductsRecord.getDocumentOnce(
-                                    widget!.product!.reference);
+                                    widget.product!.reference);
                             _shouldSetState = true;
                             _model.normalInventoryResult =
                                 await InventoryRecord.getDocumentOnce(_model
@@ -151,7 +146,7 @@ class _ProductAttributePromoLevelWidgetState
                                       .userProductSwatchesList
                                       .where((e) =>
                                           e.viewedItemId ==
-                                          widget!.product?.productId)
+                                          widget.product?.productId)
                                       .toList()
                                       .length >
                                   0) {
@@ -162,18 +157,18 @@ class _ProductAttributePromoLevelWidgetState
                                         .userProductSwatchesList
                                         .where((e) =>
                                             e.viewedItemId ==
-                                            widget!.product?.productId)
+                                            widget.product?.productId)
                                         .toList()
                                         .firstOrNull
                                         ?.productAttribute
-                                        ?.length
+                                        .length
                                     ..userSwatchesProductAttribute =
                                         FFAppState()
                                             .UserDataFlow
                                             .userProductSwatchesList
                                             .where((e) =>
                                                 e.viewedItemId ==
-                                                widget!.product?.productId)
+                                                widget.product?.productId)
                                             .toList()
                                             .firstOrNull!
                                             .productAttribute
@@ -196,7 +191,7 @@ class _ProductAttributePromoLevelWidgetState
                                           elevation: 0,
                                           insetPadding: EdgeInsets.zero,
                                           backgroundColor: Colors.transparent,
-                                          alignment: AlignmentDirectional(
+                                          alignment: const AlignmentDirectional(
                                                   0.0, 0.0)
                                               .resolve(
                                                   Directionality.of(context)),
@@ -239,7 +234,7 @@ class _ProductAttributePromoLevelWidgetState
                                       elevation: 0,
                                       insetPadding: EdgeInsets.zero,
                                       backgroundColor: Colors.transparent,
-                                      alignment: AlignmentDirectional(0.0, 0.0)
+                                      alignment: const AlignmentDirectional(0.0, 0.0)
                                           .resolve(Directionality.of(context)),
                                       child: WebViewAware(
                                         child: Container(
@@ -284,7 +279,7 @@ class _ProductAttributePromoLevelWidgetState
                                       .userProductSwatchesList
                                       .where((e) =>
                                           e.viewedItemId ==
-                                          widget!.product?.productId)
+                                          widget.product?.productId)
                                       .toList()
                                       .length <=
                                   0) {
@@ -302,26 +297,26 @@ class _ProductAttributePromoLevelWidgetState
                                             _model.idMapResultNew?.cartItemId,
                                         productType: 'product',
                                         cartItemAttribute:
-                                            widget!.product?.productAttribute,
-                                        productId: widget!.product?.productId,
+                                            widget.product?.productAttribute,
+                                        productId: widget.product?.productId,
                                         productInfo:
-                                            widget!.product?.productInfo,
+                                            widget.product?.productInfo,
                                         quantity: 1,
-                                        price: widget!
+                                        price: widget
                                                 .product!.product.productPrice *
                                             1,
-                                        totalPrice: widget!
+                                        totalPrice: widget
                                                 .product!.product.productPrice *
                                             1,
-                                        productDesignerRef: widget!
+                                        productDesignerRef: widget
                                             .product
                                             ?.productAuthorizer
-                                            ?.productDesignerRef,
-                                        productDesignerId: widget!
+                                            .productDesignerRef,
+                                        productDesignerId: widget
                                             .product
                                             ?.productAuthorizer
-                                            ?.productDesignerId,
-                                        productRef: widget!.product?.reference,
+                                            .productDesignerId,
+                                        productRef: widget.product?.reference,
                                         productStockInfo:
                                             _model.normalProductResult?.product,
                                         productInventoryInfo:
@@ -388,7 +383,7 @@ class _ProductAttributePromoLevelWidgetState
                                       .userCart.cartItems
                                       .toList()
                                   ..count = currentUserDocument
-                                      ?.userCart?.cartItems?.length
+                                      ?.userCart.cartItems.length
                                   ..userCartItemPAFound = 'notfound',
                               );
                               while (FFAppState().UserDataFlow.count > 0) {
@@ -398,7 +393,7 @@ class _ProductAttributePromoLevelWidgetState
                                         .elementAtOrNull(
                                             FFAppState().UserDataFlow.count - 1)
                                         ?.productId ==
-                                    widget!.product?.productId) {
+                                    widget.product?.productId) {
                                   FFAppState().updateUserDataFlowStruct(
                                     (e) => e
                                       ..userCartItemProductAttribute =
@@ -424,7 +419,7 @@ class _ProductAttributePromoLevelWidgetState
                                               FFAppState().UserDataFlow.count -
                                                   1)
                                           ?.cartItemAttribute
-                                          ?.length,
+                                          .length,
                                   );
                                   while (FFAppState().UserDataFlow.count > 0) {
                                     if ((FFAppState()
@@ -440,14 +435,14 @@ class _ProductAttributePromoLevelWidgetState
                                                 .userProductSwatchesList
                                                 .where((e) =>
                                                     e.viewedItemId ==
-                                                    widget!.product?.productId)
+                                                    widget.product?.productId)
                                                 .toList()
                                                 .elementAtOrNull(FFAppState()
                                                         .UserDataFlow
                                                         .count -
                                                     1)
                                                 ?.productAttribute
-                                                ?.firstOrNull
+                                                .firstOrNull
                                                 ?.attributesDefaultTermId) ||
                                         (FFAppState()
                                                 .UserDataFlow
@@ -462,12 +457,12 @@ class _ProductAttributePromoLevelWidgetState
                                                     .userProductSwatchesList
                                                     .where((e) =>
                                                         e.viewedItemId ==
-                                                        widget!
+                                                        widget
                                                             .product?.productId)
                                                     .toList()
                                                     .firstOrNull
                                                     ?.productAttribute
-                                                    ?.elementAtOrNull(
+                                                    .elementAtOrNull(
                                                         FFAppState()
                                                                 .UserDataFlow
                                                                 .count -
@@ -525,7 +520,7 @@ class _ProductAttributePromoLevelWidgetState
                                       ),
                                   );
                                   if ((currentUserDocument?.userBody
-                                                  ?.toList() ??
+                                                  .toList() ??
                                               [])
                                           .where((e) => e.isDefault == true)
                                           .toList()
@@ -537,7 +532,7 @@ class _ProductAttributePromoLevelWidgetState
                                           (e) => e[FFAppState()
                                               .UserDataFlow
                                               .userCartItemPAIndex]
-                                            ..price = widget!.product!.product
+                                            ..price = widget.product!.product
                                                     .productPrice *
                                                 FFAppState()
                                                     .UserDataFlow
@@ -546,7 +541,7 @@ class _ProductAttributePromoLevelWidgetState
                                                         .UserDataFlow
                                                         .userCartItemPAIndex)!
                                                     .quantity
-                                            ..totalPrice = widget!.product!
+                                            ..totalPrice = widget.product!
                                                     .product.productPrice *
                                                 FFAppState()
                                                     .UserDataFlow
@@ -558,39 +553,39 @@ class _ProductAttributePromoLevelWidgetState
                                             ..productMainType = _model
                                                 .normalProductResult
                                                 ?.product
-                                                ?.productType
+                                                .productType
                                             ..productUserBodyInfo =
                                                 (currentUserDocument?.userBody
-                                                            ?.toList() ??
+                                                            .toList() ??
                                                         [])
                                                     .where((e) =>
                                                         e.isDefault == true)
                                                     .toList()
                                                     .firstOrNull
                                             ..creatorRef =
-                                                widget!.creatorDoc?.reference
+                                                widget.creatorDoc?.reference
                                             ..creatorId =
-                                                widget!.creatorDoc?.uid
-                                            ..promotionId = widget!.promoID
-                                            ..promotionUrl = widget!
+                                                widget.creatorDoc?.uid
+                                            ..promotionId = widget.promoID
+                                            ..promotionUrl = widget
                                                 .creatorDoc
                                                 ?.creatorMainInfo
-                                                ?.creatorPromotions
-                                                ?.where((e) =>
+                                                .creatorPromotions
+                                                .where((e) =>
                                                     e.promotionId ==
-                                                    widget!.promoID)
+                                                    widget.promoID)
                                                 .toList()
-                                                ?.firstOrNull
+                                                .firstOrNull
                                                 ?.promotionUrl
-                                            ..promotionCommisionRate = widget!
+                                            ..promotionCommisionRate = widget
                                                 .product
                                                 ?.productAuthorizer
-                                                ?.affiliateCommissionRate,
+                                                .affiliateCommissionRate,
                                         ),
                                     );
                                   } else {
                                     if (_model.normalProductResult?.product
-                                            ?.productType ==
+                                            .productType ==
                                         'custom') {
                                       await showDialog(
                                         context: context,
@@ -632,7 +627,7 @@ class _ProductAttributePromoLevelWidgetState
                                             (e) => e[FFAppState()
                                                 .UserDataFlow
                                                 .userCartItemPAIndex]
-                                              ..price = widget!.product!.product
+                                              ..price = widget.product!.product
                                                       .productPrice *
                                                   FFAppState()
                                                       .UserDataFlow
@@ -641,7 +636,7 @@ class _ProductAttributePromoLevelWidgetState
                                                           .UserDataFlow
                                                           .userCartItemPAIndex)!
                                                       .quantity
-                                              ..totalPrice = widget!.product!
+                                              ..totalPrice = widget.product!
                                                       .product.productPrice *
                                                   FFAppState()
                                                       .UserDataFlow
@@ -653,28 +648,28 @@ class _ProductAttributePromoLevelWidgetState
                                               ..productMainType = _model
                                                   .normalProductResult
                                                   ?.product
-                                                  ?.productType
+                                                  .productType
                                               ..creatorRef =
-                                                  widget!.creatorDoc?.reference
-                                              ..creatorId = widget!
+                                                  widget.creatorDoc?.reference
+                                              ..creatorId = widget
                                                   .creatorDoc
                                                   ?.creatorMainInfo
-                                                  ?.creatorMainId
-                                              ..promotionId = widget!.promoID
-                                              ..promotionUrl = widget!
+                                                  .creatorMainId
+                                              ..promotionId = widget.promoID
+                                              ..promotionUrl = widget
                                                   .creatorDoc
                                                   ?.creatorMainInfo
-                                                  ?.creatorPromotions
-                                                  ?.where((e) =>
+                                                  .creatorPromotions
+                                                  .where((e) =>
                                                       e.promotionId ==
-                                                      widget!.promoID)
+                                                      widget.promoID)
                                                   .toList()
-                                                  ?.firstOrNull
+                                                  .firstOrNull
                                                   ?.promotionUrl
-                                              ..promotionCommisionRate = widget!
+                                              ..promotionCommisionRate = widget
                                                   .product
                                                   ?.productAuthorizer
-                                                  ?.affiliateCommissionRate,
+                                                  .affiliateCommissionRate,
                                           ),
                                       );
                                     }
@@ -688,18 +683,18 @@ class _ProductAttributePromoLevelWidgetState
                                         .userProductSwatchesList
                                         .where((e) =>
                                             e.viewedItemId ==
-                                            widget!.product?.productId)
+                                            widget.product?.productId)
                                         .toList()
                                         .firstOrNull
                                         ?.productAttribute
-                                        ?.length
+                                        .length
                                     ..userSwatchesProductAttribute =
                                         FFAppState()
                                             .UserDataFlow
                                             .userProductSwatchesList
                                             .where((e) =>
                                                 e.viewedItemId ==
-                                                widget!.product?.productId)
+                                                widget.product?.productId)
                                             .toList()
                                             .firstOrNull!
                                             .productAttribute
@@ -730,15 +725,15 @@ class _ProductAttributePromoLevelWidgetState
                                           (e) => e[
                                               FFAppState().UserDataFlow.count -
                                                   1]
-                                            ..attributesDefaultTermId = (widget!
+                                            ..attributesDefaultTermId = (widget
                                                     .product?.productAttribute
-                                                    ?.elementAtOrNull(
+                                                    .elementAtOrNull(
                                                         FFAppState()
                                                                 .UserDataFlow
                                                                 .count -
                                                             1))
                                                 ?.attributesBrandTermIds
-                                                ?.firstOrNull,
+                                                .firstOrNull,
                                         ),
                                     );
                                   }
@@ -748,7 +743,7 @@ class _ProductAttributePromoLevelWidgetState
                                           FFAppState().UserDataFlow.count - 1,
                                   );
                                 }
-                                if ((currentUserDocument?.userBody?.toList() ??
+                                if ((currentUserDocument?.userBody.toList() ??
                                             [])
                                         .where((e) => e.isDefault == true)
                                         .toList()
@@ -764,26 +759,26 @@ class _ProductAttributePromoLevelWidgetState
                                           cartItemAttribute: FFAppState()
                                               .UserDataFlow
                                               .userSwatchesProductAttribute,
-                                          productId: widget!.product?.productId,
+                                          productId: widget.product?.productId,
                                           productInfo:
-                                              widget!.product?.productInfo,
+                                              widget.product?.productInfo,
                                           quantity: 1,
-                                          price: widget!.product!.product
+                                          price: widget.product!.product
                                                   .productPrice *
                                               1,
-                                          totalPrice: widget!.product!.product
+                                          totalPrice: widget.product!.product
                                                   .productPrice *
                                               1,
-                                          productDesignerRef: widget!
+                                          productDesignerRef: widget
                                               .product
                                               ?.productAuthorizer
-                                              ?.productDesignerRef,
-                                          productDesignerId: widget!
+                                              .productDesignerRef,
+                                          productDesignerId: widget
                                               .product
                                               ?.productAuthorizer
-                                              ?.productDesignerId,
+                                              .productDesignerId,
                                           productRef:
-                                              widget!.product?.reference,
+                                              widget.product?.reference,
                                           productStockInfo: _model
                                               .normalProductResult?.product,
                                           productInventoryInfo:
@@ -803,39 +798,39 @@ class _ProductAttributePromoLevelWidgetState
                                           productMainType: _model
                                               .normalProductResult
                                               ?.product
-                                              ?.productType,
+                                              .productType,
                                           productUserBodyInfo:
                                               (currentUserDocument?.userBody
-                                                          ?.toList() ??
+                                                          .toList() ??
                                                       [])
                                                   .where((e) =>
                                                       e.isDefault == true)
                                                   .toList()
                                                   .firstOrNull,
                                           creatorRef:
-                                              widget!.creatorDoc?.reference,
-                                          creatorId: widget!.creatorDoc?.uid,
-                                          promotionId: widget!.promoID,
-                                          promotionUrl: widget!
+                                              widget.creatorDoc?.reference,
+                                          creatorId: widget.creatorDoc?.uid,
+                                          promotionId: widget.promoID,
+                                          promotionUrl: widget
                                               .creatorDoc
                                               ?.creatorMainInfo
-                                              ?.creatorPromotions
-                                              ?.where((e) =>
+                                              .creatorPromotions
+                                              .where((e) =>
                                                   e.promotionId ==
-                                                  widget!.promoID)
+                                                  widget.promoID)
                                               .toList()
-                                              ?.firstOrNull
+                                              .firstOrNull
                                               ?.promotionUrl,
-                                          promotionCommisionRate: widget!
+                                          promotionCommisionRate: widget
                                               .product
                                               ?.productAuthorizer
-                                              ?.affiliateCommissionRate,
+                                              .affiliateCommissionRate,
                                         )),
                                       ),
                                   );
                                 } else {
                                   if (_model.normalProductResult?.product
-                                          ?.productType ==
+                                          .productType ==
                                       'custom') {
                                     await showDialog(
                                       context: context,
@@ -880,26 +875,26 @@ class _ProductAttributePromoLevelWidgetState
                                                 .UserDataFlow
                                                 .userSwatchesProductAttribute,
                                             productId:
-                                                widget!.product?.productId,
+                                                widget.product?.productId,
                                             productInfo:
-                                                widget!.product?.productInfo,
+                                                widget.product?.productInfo,
                                             quantity: 1,
-                                            price: widget!.product!.product
+                                            price: widget.product!.product
                                                     .productPrice *
                                                 1,
-                                            totalPrice: widget!.product!.product
+                                            totalPrice: widget.product!.product
                                                     .productPrice *
                                                 1,
-                                            productDesignerRef: widget!
+                                            productDesignerRef: widget
                                                 .product
                                                 ?.productAuthorizer
-                                                ?.productDesignerRef,
-                                            productDesignerId: widget!
+                                                .productDesignerRef,
+                                            productDesignerId: widget
                                                 .product
                                                 ?.productAuthorizer
-                                                ?.productDesignerId,
+                                                .productDesignerId,
                                             productRef:
-                                                widget!.product?.reference,
+                                                widget.product?.reference,
                                             productStockInfo: _model
                                                 .normalProductResult?.product,
                                             productInventoryInfo:
@@ -919,28 +914,28 @@ class _ProductAttributePromoLevelWidgetState
                                             productMainType: _model
                                                 .normalProductResult
                                                 ?.product
-                                                ?.productType,
+                                                .productType,
                                             creatorRef:
-                                                widget!.creatorDoc?.reference,
-                                            creatorId: widget!
+                                                widget.creatorDoc?.reference,
+                                            creatorId: widget
                                                 .creatorDoc
                                                 ?.creatorMainInfo
-                                                ?.creatorMainId,
-                                            promotionId: widget!.promoID,
-                                            promotionUrl: widget!
+                                                .creatorMainId,
+                                            promotionId: widget.promoID,
+                                            promotionUrl: widget
                                                 .creatorDoc
                                                 ?.creatorMainInfo
-                                                ?.creatorPromotions
-                                                ?.where((e) =>
+                                                .creatorPromotions
+                                                .where((e) =>
                                                     e.promotionId ==
-                                                    widget!.promoID)
+                                                    widget.promoID)
                                                 .toList()
-                                                ?.firstOrNull
+                                                .firstOrNull
                                                 ?.promotionUrl,
-                                            promotionCommisionRate: widget!
+                                            promotionCommisionRate: widget
                                                 .product
                                                 ?.productAuthorizer
-                                                ?.affiliateCommissionRate,
+                                                .affiliateCommissionRate,
                                           )),
                                         ),
                                     );
@@ -996,7 +991,7 @@ class _ProductAttributePromoLevelWidgetState
                             context.goNamed(
                               LoginWidget.routeName,
                               extra: <String, dynamic>{
-                                '__transition_info__': TransitionInfo(
+                                '__transition_info__': const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -1012,9 +1007,9 @@ class _ProductAttributePromoLevelWidgetState
                         ),
                         options: FFButtonOptions(
                           height: 32.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -1044,10 +1039,10 @@ class _ProductAttributePromoLevelWidgetState
               children: [
                 Builder(
                   builder: (context) {
-                    final attributeList = widget!.product?.productAttribute
-                            ?.sortedList(
+                    final attributeList = widget.product?.productAttribute
+                            .sortedList(
                                 keyOf: (e) => e.attributesId, desc: false)
-                            ?.toList() ??
+                            .toList() ??
                         [];
 
                     return ListView.builder(
@@ -1060,7 +1055,7 @@ class _ProductAttributePromoLevelWidgetState
                         final attributeListItem =
                             attributeList[attributeListIndex];
                         return Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: StreamBuilder<List<AttributesRecord>>(
                             stream: queryAttributesRecord(
@@ -1080,7 +1075,7 @@ class _ProductAttributePromoLevelWidgetState
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
                               if (!snapshot.hasData) {
-                                return Center(
+                                return const Center(
                                   child: SizedBox(
                                     width: 2.0,
                                     height: 2.0,
@@ -1115,7 +1110,7 @@ class _ProductAttributePromoLevelWidgetState
                                   ),
                                   Container(
                                     height: 50.0,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -1127,49 +1122,49 @@ class _ProductAttributePromoLevelWidgetState
                                             enText: () {
                                               if (variationAttributesRecord
                                                       ?.attributeInfoCustomTranslate
-                                                      ?.name
-                                                      ?.en !=
+                                                      .name
+                                                      .en !=
                                                   '') {
                                                 return variationAttributesRecord
                                                     ?.attributeInfoCustomTranslate
-                                                    ?.name
-                                                    ?.en;
+                                                    .name
+                                                    .en;
                                               } else if (variationAttributesRecord
                                                       ?.attributeInfoTranslate
-                                                      ?.name
-                                                      ?.en !=
+                                                      .name
+                                                      .en !=
                                                   '') {
                                                 return variationAttributesRecord
                                                     ?.attributeInfoTranslate
-                                                    ?.name
-                                                    ?.en;
+                                                    .name
+                                                    .en;
                                               } else {
                                                 return variationAttributesRecord
-                                                    ?.attributeInfo?.name;
+                                                    ?.attributeInfo.name;
                                               }
                                             }(),
                                             arText: () {
                                               if (variationAttributesRecord
                                                       ?.attributeInfoCustomTranslate
-                                                      ?.name
-                                                      ?.ar !=
+                                                      .name
+                                                      .ar !=
                                                   '') {
                                                 return variationAttributesRecord
                                                     ?.attributeInfoCustomTranslate
-                                                    ?.name
-                                                    ?.ar;
+                                                    .name
+                                                    .ar;
                                               } else if (variationAttributesRecord
                                                       ?.attributeInfoTranslate
-                                                      ?.name
-                                                      ?.ar !=
+                                                      .name
+                                                      .ar !=
                                                   '') {
                                                 return variationAttributesRecord
                                                     ?.attributeInfoTranslate
-                                                    ?.name
-                                                    ?.ar;
+                                                    .name
+                                                    .ar;
                                               } else {
                                                 return variationAttributesRecord
-                                                    ?.attributeInfo?.name;
+                                                    ?.attributeInfo.name;
                                               }
                                             }(),
                                           ),
@@ -1201,7 +1196,7 @@ class _ProductAttributePromoLevelWidgetState
                                                       backgroundColor:
                                                           Colors.transparent,
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
@@ -1211,7 +1206,7 @@ class _ProductAttributePromoLevelWidgetState
                                                           width: 600.0,
                                                           child:
                                                               SizeChartDefaultWidget(
-                                                            product: widget!
+                                                            product: widget
                                                                 .product!,
                                                           ),
                                                         ),
@@ -1283,7 +1278,7 @@ class _ProductAttributePromoLevelWidgetState
                                                           (context, snapshot) {
                                                         // Customize what your widget looks like when it's loading.
                                                         if (!snapshot.hasData) {
-                                                          return Center(
+                                                          return const Center(
                                                             child: SizedBox(
                                                               width: 2.0,
                                                               height: 2.0,
@@ -1329,7 +1324,7 @@ class _ProductAttributePromoLevelWidgetState
                                                                     .userProductSwatchesList
                                                                     .where((e) =>
                                                                         e.viewedItemId ==
-                                                                        widget!
+                                                                        widget
                                                                             .product
                                                                             ?.productId)
                                                                     .toList()
@@ -1338,11 +1333,11 @@ class _ProductAttributePromoLevelWidgetState
                                                               FFAppState()
                                                                   .updateUserDataFlowStruct(
                                                                 (e) => e
-                                                                  ..count = widget!
+                                                                  ..count = widget
                                                                       .product
                                                                       ?.productAttribute
-                                                                      ?.length
-                                                                  ..userSwatchesProductAttribute = widget!
+                                                                      .length
+                                                                  ..userSwatchesProductAttribute = widget
                                                                       .product!
                                                                       .productAttribute
                                                                       .toList(),
@@ -1379,7 +1374,7 @@ class _ProductAttributePromoLevelWidgetState
                                                                         UserRecentViewedListStruct(
                                                                       createdAt:
                                                                           getCurrentTimestamp,
-                                                                      viewedItemId: widget!
+                                                                      viewedItemId: widget
                                                                           .product
                                                                           ?.productId,
                                                                       productAttribute: FFAppState()
@@ -1410,7 +1405,7 @@ class _ProductAttributePromoLevelWidgetState
                                                                           FFAppState().UserDataFlow.count -
                                                                               1)
                                                                       ?.viewedItemId ==
-                                                                  widget!
+                                                                  widget
                                                                       .product
                                                                       ?.productId) {
                                                                 FFAppState()
@@ -1442,7 +1437,7 @@ class _ProductAttributePromoLevelWidgetState
                                                                       1,
                                                               );
                                                             }
-                                                            if (widget!
+                                                            if (widget
                                                                     .popupType ==
                                                                 'icon') {
                                                               return;
@@ -1453,8 +1448,8 @@ class _ProductAttributePromoLevelWidgetState
                                                                 ..count =
                                                                     currentUserDocument
                                                                         ?.userCart
-                                                                        ?.cartItems
-                                                                        ?.length
+                                                                        .cartItems
+                                                                        .length
                                                                 ..userCartItemList =
                                                                     currentUserDocument!
                                                                         .userCart
@@ -1472,7 +1467,7 @@ class _ProductAttributePromoLevelWidgetState
                                                                           FFAppState().UserDataFlow.count -
                                                                               1)
                                                                       ?.productId ==
-                                                                  widget!
+                                                                  widget
                                                                       .product
                                                                       ?.productId) {
                                                                 FFAppState()
@@ -1544,11 +1539,11 @@ class _ProductAttributePromoLevelWidgetState
                                                                       '1001') &&
                                                                   (stackBrandsRecord
                                                                           ?.brandInfo
-                                                                          ?.color !=
+                                                                          .color !=
                                                                       null))
                                                                 Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child:
@@ -1560,7 +1555,7 @@ class _ProductAttributePromoLevelWidgetState
                                                                       border:
                                                                           Border
                                                                               .all(
-                                                                        color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == widget!.product?.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId ==
+                                                                        color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == widget.product?.productId).toList().firstOrNull?.productAttribute.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId ==
                                                                                 stackBrandsRecord?.brandId
                                                                             ? FlutterFlowTheme.of(context).primaryText
                                                                             : FlutterFlowTheme.of(context).primaryBackground,
@@ -1569,7 +1564,7 @@ class _ProductAttributePromoLevelWidgetState
                                                                     child:
                                                                         Padding(
                                                                       padding:
-                                                                          EdgeInsets.all(
+                                                                          const EdgeInsets.all(
                                                                               2.0),
                                                                       child:
                                                                           Container(
@@ -1581,13 +1576,13 @@ class _ProductAttributePromoLevelWidgetState
                                                                             BoxDecoration(
                                                                           color: stackBrandsRecord
                                                                               ?.brandInfo
-                                                                              ?.color,
+                                                                              .color,
                                                                           borderRadius:
                                                                               BorderRadius.circular(100.0),
                                                                           border:
                                                                               Border.all(
                                                                             color:
-                                                                                Color(0x27000000),
+                                                                                const Color(0x27000000),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -1599,11 +1594,11 @@ class _ProductAttributePromoLevelWidgetState
                                                                       '1001') &&
                                                                   (stackBrandsRecord
                                                                           ?.brandInfo
-                                                                          ?.color !=
+                                                                          .color !=
                                                                       null)))
                                                                 Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child:
@@ -1616,7 +1611,7 @@ class _ProductAttributePromoLevelWidgetState
                                                                       border:
                                                                           Border
                                                                               .all(
-                                                                        color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == widget!.product?.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId ==
+                                                                        color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == widget.product?.productId).toList().firstOrNull?.productAttribute.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId ==
                                                                                 stackBrandsRecord?.brandId
                                                                             ? FlutterFlowTheme.of(context).primaryText
                                                                             : FlutterFlowTheme.of(context).secondaryText,
@@ -1624,7 +1619,7 @@ class _ProductAttributePromoLevelWidgetState
                                                                     ),
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           12.0,
                                                                           8.0,
                                                                           12.0,
@@ -1635,26 +1630,26 @@ class _ProductAttributePromoLevelWidgetState
                                                                             .getVariableText(
                                                                           enText:
                                                                               () {
-                                                                            if (stackBrandsRecord?.brandInfoCustomTranslate?.name?.en !=
+                                                                            if (stackBrandsRecord?.brandInfoCustomTranslate.name.en !=
                                                                                 '') {
-                                                                              return stackBrandsRecord?.brandInfoCustomTranslate?.name?.en;
-                                                                            } else if (stackBrandsRecord?.brandInfoTranslate?.name?.en !=
+                                                                              return stackBrandsRecord?.brandInfoCustomTranslate.name.en;
+                                                                            } else if (stackBrandsRecord?.brandInfoTranslate.name.en !=
                                                                                 '') {
-                                                                              return stackBrandsRecord?.brandInfoTranslate?.name?.en;
+                                                                              return stackBrandsRecord?.brandInfoTranslate.name.en;
                                                                             } else {
-                                                                              return stackBrandsRecord?.brandInfo?.name;
+                                                                              return stackBrandsRecord?.brandInfo.name;
                                                                             }
                                                                           }(),
                                                                           arText:
                                                                               () {
-                                                                            if (stackBrandsRecord?.brandInfoCustomTranslate?.name?.ar !=
+                                                                            if (stackBrandsRecord?.brandInfoCustomTranslate.name.ar !=
                                                                                 '') {
-                                                                              return stackBrandsRecord?.brandInfoCustomTranslate?.name?.ar;
-                                                                            } else if (stackBrandsRecord?.brandInfoTranslate?.name?.ar !=
+                                                                              return stackBrandsRecord?.brandInfoCustomTranslate.name.ar;
+                                                                            } else if (stackBrandsRecord?.brandInfoTranslate.name.ar !=
                                                                                 '') {
-                                                                              return stackBrandsRecord?.brandInfoTranslate?.name?.ar;
+                                                                              return stackBrandsRecord?.brandInfoTranslate.name.ar;
                                                                             } else {
-                                                                              return stackBrandsRecord?.brandInfo?.name;
+                                                                              return stackBrandsRecord?.brandInfo.name;
                                                                             }
                                                                           }(),
                                                                         ),
@@ -1662,7 +1657,7 @@ class _ProductAttributePromoLevelWidgetState
                                                                             .bodyLarge
                                                                             .override(
                                                                               fontFamily: 'almarai',
-                                                                              color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == widget!.product?.productId).toList().firstOrNull?.productAttribute?.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
+                                                                              color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == widget.product?.productId).toList().firstOrNull?.productAttribute.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -1676,11 +1671,11 @@ class _ProductAttributePromoLevelWidgetState
                                                     );
                                                   })
                                                       .divide(
-                                                          SizedBox(width: 4.0))
+                                                          const SizedBox(width: 4.0))
                                                       .addToStart(
-                                                          SizedBox(width: 8.0))
+                                                          const SizedBox(width: 8.0))
                                                       .addToEnd(
-                                                          SizedBox(width: 8.0)),
+                                                          const SizedBox(width: 8.0)),
                                                 ),
                                               );
                                             },
@@ -1711,7 +1706,7 @@ class _ProductAttributePromoLevelWidgetState
                                                       backgroundColor:
                                                           Colors.transparent,
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                                   0.0, 1.0)
                                                               .resolve(
                                                                   Directionality.of(
@@ -1723,12 +1718,12 @@ class _ProductAttributePromoLevelWidgetState
                                                               attributeListIndex,
                                                           attribute:
                                                               attributeListItem,
-                                                          productID: widget!
+                                                          productID: widget
                                                               .product!
                                                               .productId,
                                                           navigation: 'cart',
                                                           cartItemIndex:
-                                                              widget!.cartIndex,
+                                                              widget.cartIndex,
                                                         ),
                                                       ),
                                                     );
@@ -1744,7 +1739,7 @@ class _ProductAttributePromoLevelWidgetState
                                               ),
                                             ),
                                           ),
-                                      ].divide(SizedBox(width: 8.0)),
+                                      ].divide(const SizedBox(width: 8.0)),
                                     ),
                                   ),
                                 ],
@@ -1759,7 +1754,7 @@ class _ProductAttributePromoLevelWidgetState
                 Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    if (widget!.product?.product?.productType != 'ready')
+                    if (widget.product?.product.productType != 'ready')
                       Divider(
                         height: 4.0,
                         thickness: 1.0,
@@ -1767,13 +1762,13 @@ class _ProductAttributePromoLevelWidgetState
                         endIndent: 16.0,
                         color: FlutterFlowTheme.of(context).alternate,
                       ),
-                    if (widget!.product?.product?.productType != 'ready')
+                    if (widget.product?.product.productType != 'ready')
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: Container(
                           height: 50.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1810,7 +1805,7 @@ class _ProductAttributePromoLevelWidgetState
                                                     .height *
                                                 0.6,
                                             child:
-                                                ProductMeasurementPopupWidget(),
+                                                const ProductMeasurementPopupWidget(),
                                           ),
                                         ),
                                       );
@@ -1825,7 +1820,7 @@ class _ProductAttributePromoLevelWidgetState
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -1841,13 +1836,13 @@ class _ProductAttributePromoLevelWidgetState
                                             AuthUserStreamWidget(
                                               builder: (context) => Text(
                                                 ((currentUserDocument?.userBody
-                                                                        ?.toList() ??
+                                                                        .toList() ??
                                                                     [])
                                                                 .length ==
                                                             0) ||
                                                         ((currentUserDocument
                                                                         ?.userBody
-                                                                        ?.toList() ??
+                                                                        .toList() ??
                                                                     [])
                                                                 .where((e) =>
                                                                     e.isDefault ==
@@ -1858,7 +1853,7 @@ class _ProductAttributePromoLevelWidgetState
                                                     ? 'Choose here..'
                                                     : (currentUserDocument
                                                                 ?.userBody
-                                                                ?.toList() ??
+                                                                .toList() ??
                                                             [])
                                                         .where((e) =>
                                                             e.isDefault == true)
@@ -1877,7 +1872,7 @@ class _ProductAttributePromoLevelWidgetState
                                               ),
                                             ),
                                             if ((currentUserDocument?.userBody
-                                                            ?.toList() ??
+                                                            .toList() ??
                                                         [])
                                                     .where((e) =>
                                                         e.isDefault == true)
@@ -1886,7 +1881,7 @@ class _ProductAttributePromoLevelWidgetState
                                                 0)
                                               AuthUserStreamWidget(
                                                 builder: (context) => Text(
-                                                  'H: ${'${(currentUserDocument?.userBody?.toList() ?? []).where((e) => e.isDefault == true).toList().firstOrNull?.bodyInfo?.height?.toString()} ${(currentUserDocument?.userBody?.toList() ?? []).where((e) => e.isDefault == true).toList().firstOrNull?.bodyInfo?.heightUnit}'} W: ${'${(currentUserDocument?.userBody?.toList() ?? []).where((e) => e.isDefault == true).toList().firstOrNull?.bodyInfo?.weight?.toString()} ${(currentUserDocument?.userBody?.toList() ?? []).where((e) => e.isDefault == true).toList().firstOrNull?.bodyInfo?.weightUnit}'}',
+                                                  'H: ${'${(currentUserDocument?.userBody.toList() ?? []).where((e) => e.isDefault == true).toList().firstOrNull?.bodyInfo.height.toString()} ${(currentUserDocument?.userBody.toList() ?? []).where((e) => e.isDefault == true).toList().firstOrNull?.bodyInfo.heightUnit}'} W: ${'${(currentUserDocument?.userBody.toList() ?? []).where((e) => e.isDefault == true).toList().firstOrNull?.bodyInfo.weight.toString()} ${(currentUserDocument?.userBody.toList() ?? []).where((e) => e.isDefault == true).toList().firstOrNull?.bodyInfo.weightUnit}'}',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelSmall
@@ -1897,7 +1892,7 @@ class _ProductAttributePromoLevelWidgetState
                                                       ),
                                                 ),
                                               ),
-                                          ].divide(SizedBox(height: 4.0)),
+                                          ].divide(const SizedBox(height: 4.0)),
                                         ),
                                         Icon(
                                           FFIcons.klayer1,
@@ -1905,12 +1900,12 @@ class _ProductAttributePromoLevelWidgetState
                                               .primaryText,
                                           size: 14.0,
                                         ),
-                                      ].divide(SizedBox(width: 8.0)),
+                                      ].divide(const SizedBox(width: 8.0)),
                                     ),
                                   ),
                                 ),
                               ),
-                            ].divide(SizedBox(width: 8.0)),
+                            ].divide(const SizedBox(width: 8.0)),
                           ),
                         ),
                       ),
@@ -1926,9 +1921,9 @@ class _ProductAttributePromoLevelWidgetState
               ],
             ),
           ]
-              .divide(SizedBox(height: 16.0))
-              .addToStart(SizedBox(height: 24.0))
-              .addToEnd(SizedBox(height: 24.0)),
+              .divide(const SizedBox(height: 16.0))
+              .addToStart(const SizedBox(height: 24.0))
+              .addToEnd(const SizedBox(height: 24.0)),
         ),
       ),
     );

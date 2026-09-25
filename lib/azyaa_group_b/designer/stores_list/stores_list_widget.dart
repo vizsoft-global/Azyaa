@@ -9,13 +9,10 @@ import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
 import '/index.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'stores_list_model.dart';
 export 'stores_list_model.dart';
 
@@ -63,7 +60,7 @@ class _StoresListWidgetState extends State<StoresListWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -91,7 +88,7 @@ class _StoresListWidgetState extends State<StoresListWidget> {
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -104,12 +101,12 @@ class _StoresListWidgetState extends State<StoresListWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   wrapWithModel(
                     model: _model.appUpdateCheckerModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: AppUpdateCheckerWidget(),
+                    child: const AppUpdateCheckerWidget(),
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
@@ -124,7 +121,7 @@ class _StoresListWidgetState extends State<StoresListWidget> {
                         desktop: false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 8.0, 16.0, 8.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -133,7 +130,7 @@ class _StoresListWidgetState extends State<StoresListWidget> {
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 12.0, 12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -168,10 +165,10 @@ dre... */
                                     ),
                                     options: FFButtonOptions(
                                       height: 30.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
@@ -189,7 +186,7 @@ dre... */
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ),
                           ),
@@ -202,7 +199,7 @@ dre... */
                         desktop: false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: Stack(
                             children: [
@@ -214,13 +211,13 @@ dre... */
                                   borderRadius: BorderRadius.circular(16.0),
                                 ),
                                 child: Stack(
-                                  alignment: AlignmentDirectional(1.0, 1.0),
+                                  alignment: const AlignmentDirectional(1.0, 1.0),
                                   children: [
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
-                                          padding: EdgeInsets.all(12.0),
+                                          padding: const EdgeInsets.all(12.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             crossAxisAlignment:
@@ -285,7 +282,7 @@ dre... */
                                               Expanded(
                                                 child: Container(
                                                   width: 200.0,
-                                                  decoration: BoxDecoration(),
+                                                  decoration: const BoxDecoration(),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -388,14 +385,14 @@ selecting dre... */
                                                               FFButtonOptions(
                                                             height: 30.0,
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         0.0,
                                                                         8.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -430,24 +427,24 @@ selecting dre... */
                                                           ),
                                                         ),
                                                       ].divide(
-                                                          SizedBox(width: 8.0)),
+                                                          const SizedBox(width: 8.0)),
                                                     ),
                                                   ),
                                                 ),
                                               ),
-                                            ].divide(SizedBox(height: 8.0)),
+                                            ].divide(const SizedBox(height: 8.0)),
                                           ),
                                         ),
-                                        Column(
+                                        const Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [],
                                         ),
                                       ],
                                     ),
                                     Align(
-                                      alignment: AlignmentDirectional(1.0, 1.0),
+                                      alignment: const AlignmentDirectional(1.0, 1.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 12.0, 0.0, 12.0),
                                         child: ClipRRect(
                                           borderRadius:
@@ -457,7 +454,7 @@ selecting dre... */
                                             width: 130.0,
                                             height: 180.0,
                                             fit: BoxFit.cover,
-                                            alignment: Alignment(0.0, 1.0),
+                                            alignment: const Alignment(0.0, 1.0),
                                           ),
                                         ),
                                       ),
@@ -502,14 +499,14 @@ selecting dre... */
                                     .toList();
 
                             return Container(
-                              decoration: BoxDecoration(),
+                              decoration: const BoxDecoration(),
                               child: SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: FlutterFlowChoiceChips(
                                         options: [
@@ -598,7 +595,7 @@ selecting dre... */
                                       children: [
                                         Stack(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           children: [
                                             AuthUserStreamWidget(
                                               builder: (context) => Builder(
@@ -622,7 +619,7 @@ selecting dre... */
                                                                             'الكل',
                                                                       )
                                                                   ? true
-                                                                  : ((currentUserDocument?.userDesignerFollowing?.toList() ??
+                                                                  : ((currentUserDocument?.userDesignerFollowing.toList() ??
                                                                               [])
                                                                           .contains(e
                                                                               .reference) ==
@@ -669,7 +666,7 @@ selecting dre... */
                                                     itemCount: storeDesignerList
                                                         .length,
                                                     separatorBuilder: (_, __) =>
-                                                        SizedBox(height: 12.0),
+                                                        const SizedBox(height: 12.0),
                                                     itemBuilder: (context,
                                                         storeDesignerListIndex) {
                                                       final storeDesignerListItem =
@@ -677,7 +674,7 @@ selecting dre... */
                                                               storeDesignerListIndex];
                                                       return Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -708,7 +705,7 @@ selecting dre... */
                                                               extra: <String,
                                                                   dynamic>{
                                                                 '__transition_info__':
-                                                                    TransitionInfo(
+                                                                    const TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -745,7 +742,7 @@ selecting dre... */
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(8.0),
                                                               child: Row(
                                                                 mainAxisSize:
@@ -761,8 +758,7 @@ selecting dre... */
                                                                             8.0),
                                                                     child: Image
                                                                         .network(
-                                                                      storeDesignerListItem.designerMainInfo.designerInfo.brandPhoto != null &&
-                                                                              storeDesignerListItem.designerMainInfo.designerInfo.brandPhoto !=
+                                                                      storeDesignerListItem.designerMainInfo.designerInfo.brandPhoto !=
                                                                                   ''
                                                                           ? storeDesignerListItem
                                                                               .designerMainInfo
@@ -777,7 +773,7 @@ selecting dre... */
                                                                       fit: BoxFit
                                                                           .cover,
                                                                       alignment:
-                                                                          Alignment(
+                                                                          const Alignment(
                                                                               0.0,
                                                                               0.0),
                                                                     ),
@@ -807,9 +803,9 @@ selecting dre... */
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
                                                                                     child: Text(
-                                                                                      storeDesignerListItem.designerMainInfo.designerInfo.name != null && storeDesignerListItem.designerMainInfo.designerInfo.name != '' ? storeDesignerListItem.designerMainInfo.designerInfo.name : storeDesignerListItem.displayName,
+                                                                                      storeDesignerListItem.designerMainInfo.designerInfo.name != '' ? storeDesignerListItem.designerMainInfo.designerInfo.name : storeDesignerListItem.displayName,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                             fontFamily: 'almarai',
                                                                                             fontSize: 14.0,
@@ -819,7 +815,7 @@ selecting dre... */
                                                                                     ),
                                                                                   ),
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                     child: Text(
                                                                                       storeDesignerListItem.designerMainInfo.designerInfo.bio.maybeHandleOverflow(
                                                                                         maxChars: 20,
@@ -844,14 +840,14 @@ selecting dre... */
                                                                               desktop: false,
                                                                             ))
                                                                               Align(
-                                                                                alignment: AlignmentDirectional(1.0, -1.0),
+                                                                                alignment: const AlignmentDirectional(1.0, -1.0),
                                                                                 child: Container(
                                                                                   decoration: BoxDecoration(
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
                                                                                     borderRadius: BorderRadius.circular(100.0),
                                                                                   ),
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(6.0, 2.0, 6.0, 4.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(6.0, 2.0, 6.0, 4.0),
                                                                                     child: Text(
                                                                                       FFLocalizations.of(context).getText(
                                                                                         '07yicerj' /* Best Rated */,
@@ -876,7 +872,7 @@ selecting dre... */
                                                                             height:
                                                                                 45.0,
                                                                             decoration:
-                                                                                BoxDecoration(),
+                                                                                const BoxDecoration(),
                                                                             child:
                                                                                 Builder(
                                                                               builder: (context) {
@@ -888,7 +884,7 @@ selecting dre... */
                                                                                   shrinkWrap: true,
                                                                                   scrollDirection: Axis.horizontal,
                                                                                   itemCount: brandGalleryList.length,
-                                                                                  separatorBuilder: (_, __) => SizedBox(width: 8.0),
+                                                                                  separatorBuilder: (_, __) => const SizedBox(width: 8.0),
                                                                                   itemBuilder: (context, brandGalleryListIndex) {
                                                                                     final brandGalleryListItem = brandGalleryList[brandGalleryListIndex];
                                                                                     return Container(
@@ -901,12 +897,12 @@ selecting dre... */
                                                                                       ),
                                                                                       child: ClipRRect(
                                                                                         borderRadius: BorderRadius.circular(8.0),
-                                                                                        child: Image.network(
-                                                                                          brandGalleryListItem,
+                                                                                        child: CachedNetworkImage(
+                                                                                          imageUrl: brandGalleryListItem,
                                                                                           width: 40.0,
                                                                                           height: 45.0,
                                                                                           fit: BoxFit.contain,
-                                                                                          alignment: Alignment(0.0, 0.0),
+                                                                                          alignment: const Alignment(0.0, 0.0),
                                                                                         ),
                                                                                       ),
                                                                                     );
@@ -918,7 +914,7 @@ selecting dre... */
                                                                       ],
                                                                     ),
                                                                   ),
-                                                                ].divide(SizedBox(
+                                                                ].divide(const SizedBox(
                                                                     width:
                                                                         8.0)),
                                                               ),
@@ -936,9 +932,9 @@ selecting dre... */
                                       ],
                                     ),
                                   ]
-                                      .divide(SizedBox(height: 12.0))
-                                      .addToStart(SizedBox(height: 12.0))
-                                      .addToEnd(SizedBox(height: 12.0)),
+                                      .divide(const SizedBox(height: 12.0))
+                                      .addToStart(const SizedBox(height: 12.0))
+                                      .addToEnd(const SizedBox(height: 12.0)),
                                 ),
                               ),
                             );
@@ -946,11 +942,11 @@ selecting dre... */
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 1.0),
+                        alignment: const AlignmentDirectional(0.0, 1.0),
                         child: wrapWithModel(
                           model: _model.universalNavigationBarModel,
                           updateCallback: () => safeSetState(() {}),
-                          child: UniversalNavigationBarWidget(
+                          child: const UniversalNavigationBarWidget(
                             navigation: 'designer',
                           ),
                         ),

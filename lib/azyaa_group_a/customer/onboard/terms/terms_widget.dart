@@ -1,11 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'terms_model.dart';
 export 'terms_model.dart';
 
@@ -89,9 +85,9 @@ class _TermsWidgetState extends State<TermsWidget> {
                               ),
                     ),
                   ),
-                ].divide(SizedBox(width: 8.0)),
+                ].divide(const SizedBox(width: 8.0)),
               ),
-              actions: [],
+              actions: const [],
               flexibleSpace: FlexibleSpaceBar(
                 background: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
@@ -107,7 +103,7 @@ class _TermsWidgetState extends State<TermsWidget> {
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                 child: Stack(
                   children: [
                     SingleChildScrollView(
@@ -139,7 +135,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 8.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -167,7 +163,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 8.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -206,7 +202,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 8.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -246,7 +242,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 8.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -274,7 +270,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 8.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -290,7 +286,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 8.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -305,7 +301,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                                         ),
                                   ),
                                 ),
-                              ].divide(SizedBox(height: 8.0)),
+                              ].divide(const SizedBox(height: 8.0)),
                             ),
                           ),
                         ],

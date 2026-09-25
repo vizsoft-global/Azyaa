@@ -1,4 +1,3 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/home_app_bar/home_app_bar_widget.dart';
@@ -10,11 +9,9 @@ import '/azyaa_group_a/home/components/product_grid/product_grid_widget.dart';
 import '/azyaa_group_a/home/components/product_small_grid/product_small_grid_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/ui/shortlist_icon/shortlist_icon_widget.dart';
-import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'dart:async';
@@ -25,12 +22,10 @@ import 'package:branchio_dynamic_linking_akp5u6/flutter_flow/custom_functions.da
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:easy_debounce/easy_debounce.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'home_model.dart';
 export 'home_model.dart';
 
@@ -112,16 +107,16 @@ class _HomeWidgetState extends State<HomeWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
                 title: wrapWithModel(
                   model: _model.homeAppBarModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: HomeAppBarWidget(),
+                  child: const HomeAppBarWidget(),
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -139,7 +134,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                 builder: (context, snapshot) {
                   // Customize what your widget looks like when it's loading.
                   if (!snapshot.hasData) {
-                    return Center(
+                    return const Center(
                       child: SizedBox(
                         width: 2.0,
                         height: 2.0,
@@ -162,15 +157,15 @@ class _HomeWidgetState extends State<HomeWidget> {
                         model: _model.userInitialModel,
                         updateCallback: () => safeSetState(() {}),
                         updateOnChange: true,
-                        child: UserInitialWidget(),
+                        child: const UserInitialWidget(),
                       ),
                       wrapWithModel(
                         model: _model.appUpdateCheckerModel,
                         updateCallback: () => safeSetState(() {}),
-                        child: AppUpdateCheckerWidget(),
+                        child: const AppUpdateCheckerWidget(),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 1.0),
+                        alignment: const AlignmentDirectional(0.0, 1.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -181,7 +176,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     if ((stackSettingsRecord?.settingsHome
-                                                ?.settingsIsSearchStatus ??
+                                                .settingsIsSearchStatus ??
                                             true) &&
                                         responsiveVisibility(
                                           context: context,
@@ -191,7 +186,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                           desktop: false,
                                         ))
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: Container(
                                           width:
@@ -204,13 +199,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             onChanged: (_) =>
                                                 EasyDebounce.debounce(
                                               '_model.searchTextController',
-                                              Duration(milliseconds: 2000),
+                                              const Duration(milliseconds: 2000),
                                               () async {
                                                 context.goNamed(
                                                   HomeSearchWidget.routeName,
                                                   extra: <String, dynamic>{
                                                     '__transition_info__':
-                                                        TransitionInfo(
+                                                        const TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -251,7 +246,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                               enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -259,7 +254,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     BorderRadius.circular(16.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -291,7 +286,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
                                                       .accent2,
-                                              suffixIcon: Icon(
+                                              suffixIcon: const Icon(
                                                 FFIcons.ksearch,
                                               ),
                                             ),
@@ -312,10 +307,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                       ),
                                     if (loggedIn &&
                                         (stackSettingsRecord?.settingsHome
-                                                ?.settingsIsSearchStatus ==
+                                                .settingsIsSearchStatus ==
                                             true))
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -327,7 +322,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                               HomeSearchWidget.routeName,
                                               extra: <String, dynamic>{
                                                 '__transition_info__':
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -349,7 +344,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                   BorderRadius.circular(16.0),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 14.0, 12.0, 14.0),
                                               child: Row(
@@ -380,7 +375,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 8.0, 0.0),
                                                     child: Icon(
@@ -399,7 +394,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                         ),
                                       ),
                                     if (stackSettingsRecord?.settingsHome
-                                            ?.settingsIsCategoryWidgetStatus ??
+                                            .settingsIsCategoryWidgetStatus ??
                                         true)
                                       StreamBuilder<List<SettingsRecord>>(
                                         stream: querySettingsRecord(
@@ -413,7 +408,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
                                           if (!snapshot.hasData) {
-                                            return Center(
+                                            return const Center(
                                               child: SizedBox(
                                                 width: 2.0,
                                                 height: 2.0,
@@ -455,7 +450,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             clipBehavior: Clip.none,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 12.0),
                                                 child: FutureBuilder<
@@ -487,7 +482,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                         width: 0.0,
                                                         height: 0.0,
                                                         child:
-                                                            BlankLoadingWidget(),
+                                                            const BlankLoadingWidget(),
                                                       );
                                                     }
                                                     List<CategoryRecord>
@@ -496,7 +491,7 @@ class _HomeWidgetState extends State<HomeWidget> {
 
                                                     return Container(
                                                       decoration:
-                                                          BoxDecoration(),
+                                                          const BoxDecoration(),
                                                       child: Visibility(
                                                         visible:
                                                             categoryCategoryRecordList
@@ -508,7 +503,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           8.0,
@@ -541,7 +536,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         extra: <String,
                                                                             dynamic>{
                                                                           '__transition_info__':
-                                                                              TransitionInfo(
+                                                                              const TransitionInfo(
                                                                             hasTransition:
                                                                                 true,
                                                                             transitionType:
@@ -613,7 +608,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         extra: <String,
                                                                             dynamic>{
                                                                           '__transition_info__':
-                                                                              TransitionInfo(
+                                                                              const TransitionInfo(
                                                                             hasTransition:
                                                                                 true,
                                                                             transitionType:
@@ -636,7 +631,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            EdgeInsets.all(4.0),
+                                                                            const EdgeInsets.all(4.0),
                                                                         child:
                                                                             Icon(
                                                                           Icons
@@ -649,14 +644,14 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       ),
                                                                     ),
                                                                   ),
-                                                                ].divide(SizedBox(
+                                                                ].divide(const SizedBox(
                                                                     width:
                                                                         8.0)),
                                                               ),
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -732,7 +727,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 },
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               height: 12.0)),
                                                         ),
                                                       ),
@@ -745,14 +740,14 @@ class _HomeWidgetState extends State<HomeWidget> {
                                         },
                                       ),
                                     if (stackSettingsRecord?.settingsHome
-                                            ?.settingsIsBannerlistWidgetStatus ??
+                                            .settingsIsBannerlistWidgetStatus ??
                                         true)
                                       Builder(
                                         builder: (context) {
                                           final sliderList = stackSettingsRecord
                                                   ?.settingsHome
-                                                  ?.settingsBannerInfoList
-                                                  ?.toList() ??
+                                                  .settingsBannerInfoList
+                                                  .toList() ??
                                               [];
 
                                           return Container(
@@ -761,7 +756,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             child: Stack(
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 40.0),
                                                   child: PageView.builder(
@@ -791,7 +786,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                           Expanded(
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -828,7 +823,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            EdgeInsets.all(16.0),
+                                                                            const EdgeInsets.all(16.0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -854,7 +849,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             Expanded(
                                                                               child: Container(
                                                                                 width: 200.0,
-                                                                                decoration: BoxDecoration(),
+                                                                                decoration: const BoxDecoration(),
                                                                                 child: Text(
                                                                                   FFLocalizations.of(context).getVariableText(
                                                                                     enText: sliderListItem.shortDescription,
@@ -870,13 +865,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             ),
                                                                             Expanded(
                                                                               child: Align(
-                                                                                alignment: AlignmentDirectional(-1.0, 1.0),
+                                                                                alignment: const AlignmentDirectional(-1.0, 1.0),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     context.pushNamed(
                                                                                       ShopWidget.routeName,
                                                                                       extra: <String, dynamic>{
-                                                                                        '__transition_info__': TransitionInfo(
+                                                                                        '__transition_info__': const TransitionInfo(
                                                                                           hasTransition: true,
                                                                                           transitionType: PageTransitionType.fade,
                                                                                           duration: Duration(milliseconds: 0),
@@ -889,8 +884,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     height: 30.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                     textStyle: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                           fontFamily: 'almarai',
@@ -906,7 +901,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 ),
                                                                               ),
                                                                             ),
-                                                                          ].divide(SizedBox(height: 8.0)),
+                                                                          ].divide(const SizedBox(height: 8.0)),
                                                                         ),
                                                                       ),
                                                                     ),
@@ -921,12 +916,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             borderRadius:
                                                                                 BorderRadius.circular(0.0),
                                                                             child:
-                                                                                Image.network(
-                                                                              sliderListItem.featureImage,
+                                                                                CachedNetworkImage(
+                                                                              imageUrl: sliderListItem.featureImage,
                                                                               width: 130.0,
                                                                               height: MediaQuery.sizeOf(context).height * 1.0,
                                                                               fit: BoxFit.cover,
-                                                                              alignment: Alignment(1.0, -1.0),
+                                                                              alignment: const Alignment(1.0, -1.0),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -944,11 +939,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 1.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 16.0),
                                                     child: smooth_page_indicator
@@ -971,7 +966,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                             .bannerListController!
                                                             .animateToPage(
                                                           i,
-                                                          duration: Duration(
+                                                          duration: const Duration(
                                                               milliseconds:
                                                                   500),
                                                           curve: Curves.ease,
@@ -1005,10 +1000,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                         },
                                       ),
                                     if (stackSettingsRecord?.settingsHome
-                                            ?.settingsIsNewStatus ??
+                                            .settingsIsNewStatus ??
                                         true)
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 12.0),
                                         child:
                                             FutureBuilder<List<ProductsRecord>>(
@@ -1032,7 +1027,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                             .width *
                                                         1.0,
                                                 height: 150.0,
-                                                child: LoadingAnimationWidget(),
+                                                child: const LoadingAnimationWidget(),
                                               );
                                             }
                                             List<ProductsRecord>
@@ -1040,7 +1035,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                 snapshot.data!;
 
                                             return Container(
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: Visibility(
                                                 visible: newlyProductsRecordList
                                                         .length >
@@ -1051,7 +1046,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -1158,7 +1153,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsets
+                                                                    const EdgeInsets
                                                                         .all(
                                                                             4.0),
                                                                 child: Icon(
@@ -1172,13 +1167,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                               ),
                                                             ),
                                                           ),
-                                                        ].divide(SizedBox(
+                                                        ].divide(const SizedBox(
                                                             width: 8.0)),
                                                       ),
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -1192,7 +1187,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 1.0,
                                                         height: 165.0,
                                                         decoration:
-                                                            BoxDecoration(),
+                                                            const BoxDecoration(),
                                                         child: Builder(
                                                           builder: (context) {
                                                             final newProduct =
@@ -1202,7 +1197,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                             return ListView
                                                                 .separated(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .fromLTRB(
                                                                 0,
                                                                 0,
@@ -1218,7 +1213,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       .length,
                                                               separatorBuilder:
                                                                   (_, __) =>
-                                                                      SizedBox(
+                                                                      const SizedBox(
                                                                           width:
                                                                               8.0),
                                                               itemBuilder: (context,
@@ -1239,7 +1234,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(height: 12.0)),
+                                                      const SizedBox(height: 12.0)),
                                                 ),
                                               ),
                                             );
@@ -1247,7 +1242,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                         ),
                                       ),
                                     if (((currentUserDocument?.userRecentViews
-                                                        ?.toList() ??
+                                                        .toList() ??
                                                     [])
                                                 .length >
                                             0) &&
@@ -1255,14 +1250,14 @@ class _HomeWidgetState extends State<HomeWidget> {
                                         stackSettingsRecord!.settingsHome
                                             .settingsIsRecentviewWidgetStatus)
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 12.0),
                                         child: AuthUserStreamWidget(
                                           builder: (context) => Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 8.0, 16.0, 0.0),
                                                 child: Row(
@@ -1338,7 +1333,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                           extra: <String,
                                                               dynamic>{
                                                             '__transition_info__':
-                                                                TransitionInfo(
+                                                                const TransitionInfo(
                                                               hasTransition:
                                                                   true,
                                                               transitionType:
@@ -1364,7 +1359,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   4.0),
                                                           child: Icon(
                                                             Icons
@@ -1378,11 +1373,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(width: 8.0)),
+                                                      const SizedBox(width: 8.0)),
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 0.0, 0.0),
                                                 child: Container(
@@ -1391,13 +1386,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                               .width *
                                                           1.0,
                                                   height: 165.0,
-                                                  decoration: BoxDecoration(),
+                                                  decoration: const BoxDecoration(),
                                                   child: Builder(
                                                     builder: (context) {
                                                       final recentViewList =
                                                           (currentUserDocument
                                                                       ?.userRecentViews
-                                                                      ?.toList() ??
+                                                                      .toList() ??
                                                                   [])
                                                               .sortedList(
                                                                   keyOf: (e) =>
@@ -1409,7 +1404,7 @@ class _HomeWidgetState extends State<HomeWidget> {
 
                                                       return ListView.separated(
                                                         padding:
-                                                            EdgeInsets.fromLTRB(
+                                                            const EdgeInsets.fromLTRB(
                                                           0,
                                                           0,
                                                           16.0,
@@ -1423,7 +1418,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                             recentViewList
                                                                 .length,
                                                         separatorBuilder:
-                                                            (_, __) => SizedBox(
+                                                            (_, __) => const SizedBox(
                                                                 width: 8.0),
                                                         itemBuilder: (context,
                                                             recentViewListIndex) {
@@ -1487,15 +1482,15 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ].divide(SizedBox(height: 12.0)),
+                                            ].divide(const SizedBox(height: 12.0)),
                                           ),
                                         ),
                                       ),
                                     if (stackSettingsRecord?.settingsHome
-                                            ?.settingsIsRecommendedWidgetStatus ??
+                                            .settingsIsRecommendedWidgetStatus ??
                                         true)
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 12.0),
                                         child:
                                             FutureBuilder<List<ProductsRecord>>(
@@ -1531,7 +1526,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                               return Container(
                                                 width: 0.0,
                                                 height: 0.0,
-                                                child: BlankLoadingWidget(),
+                                                child: const BlankLoadingWidget(),
                                               );
                                             }
                                             List<ProductsRecord>
@@ -1539,7 +1534,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                 snapshot.data!;
 
                                             return Container(
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: Visibility(
                                                 visible:
                                                     popularProductsRecordList
@@ -1558,7 +1553,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -1588,7 +1583,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       '__transition_info__':
-                                                                          TransitionInfo(
+                                                                          const TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -1663,7 +1658,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       '__transition_info__':
-                                                                          TransitionInfo(
+                                                                          const TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -1688,7 +1683,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                   child:
                                                                       Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
+                                                                        const EdgeInsets.all(
                                                                             4.0),
                                                                     child: Icon(
                                                                       Icons
@@ -1702,13 +1697,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                   ),
                                                                 ),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 width: 8.0)),
                                                           ),
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
@@ -1731,7 +1726,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   '__transition_info__':
-                                                                      TransitionInfo(
+                                                                      const TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -1772,7 +1767,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -1855,7 +1850,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(height: 12.0)),
+                                                      const SizedBox(height: 12.0)),
                                                 ),
                                               ),
                                             );
@@ -1863,18 +1858,18 @@ class _HomeWidgetState extends State<HomeWidget> {
                                         ),
                                       ),
                                   ]
-                                      .divide(SizedBox(height: 16.0))
-                                      .addToEnd(SizedBox(height: 16.0)),
+                                      .divide(const SizedBox(height: 16.0))
+                                      .addToEnd(const SizedBox(height: 16.0)),
                                 ),
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 1.0),
+                              alignment: const AlignmentDirectional(0.0, 1.0),
                               child: wrapWithModel(
                                 model: _model.universalNavigationBarModel,
                                 updateCallback: () => safeSetState(() {}),
                                 updateOnChange: true,
-                                child: UniversalNavigationBarWidget(
+                                child: const UniversalNavigationBarWidget(
                                   navigation: 'home',
                                 ),
                               ),
@@ -1890,9 +1885,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                         desktop: false,
                       ))
                         Align(
-                          alignment: AlignmentDirectional(1.0, 1.0),
+                          alignment: const AlignmentDirectional(1.0, 1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 16.0, 80.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -1903,7 +1898,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 context.pushNamed(
                                   ShortlistWidget.routeName,
                                   extra: <String, dynamic>{
-                                    '__transition_info__': TransitionInfo(
+                                    '__transition_info__': const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -1914,7 +1909,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                               child: wrapWithModel(
                                 model: _model.shortlistIconModel,
                                 updateCallback: () => safeSetState(() {}),
-                                child: ShortlistIconWidget(),
+                                child: const ShortlistIconWidget(),
                               ),
                             ),
                           ),

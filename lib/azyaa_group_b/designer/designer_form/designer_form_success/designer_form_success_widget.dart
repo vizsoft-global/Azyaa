@@ -2,12 +2,9 @@ import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'designer_form_success_model.dart';
 export 'designer_form_success_model.dart';
 
@@ -56,7 +53,7 @@ class _DesignerFormSuccessWidgetState extends State<DesignerFormSuccessWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -113,11 +110,11 @@ class _DesignerFormSuccessWidgetState extends State<DesignerFormSuccessWidget> {
                               print('IconButton pressed ...');
                             },
                           ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -130,7 +127,7 @@ class _DesignerFormSuccessWidgetState extends State<DesignerFormSuccessWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
@@ -142,7 +139,7 @@ class _DesignerFormSuccessWidgetState extends State<DesignerFormSuccessWidget> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
                                 child: Image.asset(
@@ -154,9 +151,9 @@ class _DesignerFormSuccessWidgetState extends State<DesignerFormSuccessWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -174,9 +171,9 @@ class _DesignerFormSuccessWidgetState extends State<DesignerFormSuccessWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 24.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -196,7 +193,7 @@ class _DesignerFormSuccessWidgetState extends State<DesignerFormSuccessWidget> {
                                 ),
                               ),
                             ),
-                          ].divide(SizedBox(height: 16.0)),
+                          ].divide(const SizedBox(height: 16.0)),
                         ),
                       ),
                       if (responsiveVisibility(
@@ -207,7 +204,7 @@ class _DesignerFormSuccessWidgetState extends State<DesignerFormSuccessWidget> {
                         desktop: false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () {
@@ -219,9 +216,9 @@ class _DesignerFormSuccessWidgetState extends State<DesignerFormSuccessWidget> {
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 48.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
@@ -242,14 +239,14 @@ class _DesignerFormSuccessWidgetState extends State<DesignerFormSuccessWidget> {
                           ),
                         ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             context.goNamed(
                               HomeWidget.routeName,
                               extra: <String, dynamic>{
-                                '__transition_info__': TransitionInfo(
+                                '__transition_info__': const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -263,9 +260,9 @@ class _DesignerFormSuccessWidgetState extends State<DesignerFormSuccessWidget> {
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 48.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -281,8 +278,8 @@ class _DesignerFormSuccessWidgetState extends State<DesignerFormSuccessWidget> {
                         ),
                       ),
                     ]
-                        .divide(SizedBox(height: 16.0))
-                        .addToEnd(SizedBox(height: 16.0)),
+                        .divide(const SizedBox(height: 16.0))
+                        .addToEnd(const SizedBox(height: 16.0)),
                   ),
                 ],
               ),

@@ -1,21 +1,16 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'order_return_model.dart';
 export 'order_return_model.dart';
@@ -72,7 +67,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -101,12 +96,12 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                               OrdersDetailsWidget.routeName,
                               queryParameters: {
                                 'order': serializeParam(
-                                  widget!.order,
+                                  widget.order,
                                   ParamType.DocumentReference,
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                '__transition_info__': TransitionInfo(
+                                '__transition_info__': const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -131,11 +126,11 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                 ),
                           ),
                         ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -143,11 +138,11 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
             body: SafeArea(
               top: true,
               child: StreamBuilder<OrdersRecord>(
-                stream: OrdersRecord.getDocument(widget!.order!),
+                stream: OrdersRecord.getDocument(widget.order!),
                 builder: (context, snapshot) {
                   // Customize what your widget looks like when it's loading.
                   if (!snapshot.hasData) {
-                    return Center(
+                    return const Center(
                       child: SizedBox(
                         width: 2.0,
                         height: 2.0,
@@ -174,7 +169,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                           color: FlutterFlowTheme.of(context).alternate,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -240,7 +235,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 4.0, 8.0, 4.0),
                                   child: RichText(
                                     textScaler:
@@ -268,7 +263,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                               .getText(
                                             'lr7vps4i' /* -  */,
                                           ),
-                                          style: TextStyle(),
+                                          style: const TextStyle(),
                                         ),
                                         TextSpan(
                                           text: valueOrDefault<String>(
@@ -297,7 +292,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                   ),
                                 ),
                               ),
-                            ].divide(SizedBox(width: 8.0)),
+                            ].divide(const SizedBox(width: 8.0)),
                           ),
                         ),
                         Divider(
@@ -309,9 +304,9 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(-1.0, -1.0),
+                              alignment: const AlignmentDirectional(-1.0, -1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -344,7 +339,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                       List.generate(items.length, (itemsIndex) {
                                     final itemsItem = items[itemsIndex];
                                     return Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 4.0),
                                       child: Container(
                                         decoration: BoxDecoration(
@@ -353,7 +348,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 16.0, 4.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -412,7 +407,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                           width: 2,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .alternate!,
+                                                              .alternate,
                                                         )
                                                       : null,
                                                   activeColor:
@@ -440,11 +435,8 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           8.0),
-                                                  child: Image.network(
-                                                    itemsItem.productInfo
-                                                                    .featureImage !=
-                                                                null &&
-                                                            itemsItem
+                                                  child: CachedNetworkImage(
+                                                    imageUrl: itemsItem
                                                                     .productInfo
                                                                     .featureImage !=
                                                                 ''
@@ -464,7 +456,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                         1.0,
                                                     fit: BoxFit.cover,
                                                     alignment:
-                                                        Alignment(0.0, -1.0),
+                                                        const Alignment(0.0, -1.0),
                                                   ),
                                                 ),
                                               ),
@@ -472,7 +464,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                 child: Container(
                                                   width: 100.0,
                                                   height: 100.0,
-                                                  decoration: BoxDecoration(),
+                                                  decoration: const BoxDecoration(),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -621,7 +613,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                                   // Customize what your widget looks like when it's loading.
                                                                   if (!snapshot
                                                                       .hasData) {
-                                                                    return Center(
+                                                                    return const Center(
                                                                       child:
                                                                           SizedBox(
                                                                         width:
@@ -661,7 +653,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                                             String>(
                                                                           rowAttributesRecord
                                                                               ?.attributeInfo
-                                                                              ?.name,
+                                                                              .name,
                                                                           '-',
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
@@ -727,11 +719,11 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
 
                                                                           return Container(
                                                                             decoration:
-                                                                                BoxDecoration(),
+                                                                                const BoxDecoration(),
                                                                             child:
                                                                                 Text(
                                                                               valueOrDefault<String>(
-                                                                                containerBrandsRecord?.brandInfo?.name,
+                                                                                containerBrandsRecord?.brandInfo.name,
                                                                                 '-',
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -754,7 +746,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                         },
                                                       ),
                                                     ].divide(
-                                                        SizedBox(height: 4.0)),
+                                                        const SizedBox(height: 4.0)),
                                                   ),
                                                 ),
                                               ),
@@ -782,7 +774,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                               FontWeight.w600,
                                                         ),
                                               ),
-                                            ].divide(SizedBox(width: 12.0)),
+                                            ].divide(const SizedBox(width: 12.0)),
                                           ),
                                         ),
                                       ),
@@ -801,7 +793,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                               ),
                             if (_model.returnProduct.length > 0)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -881,7 +873,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                                   .getText(
                                                 'u65mr1gr' /*  KD */,
                                               ),
-                                              style: TextStyle(),
+                                              style: const TextStyle(),
                                             )
                                           ],
                                           style: FlutterFlowTheme.of(context)
@@ -897,9 +889,9 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                 ),
                               ),
                           ]
-                              .divide(SizedBox(height: 12.0))
-                              .addToStart(SizedBox(height: 16.0))
-                              .addToEnd(SizedBox(height: 16.0)),
+                              .divide(const SizedBox(height: 12.0))
+                              .addToStart(const SizedBox(height: 16.0))
+                              .addToEnd(const SizedBox(height: 16.0)),
                         ),
                         Divider(
                           height: 10.0,
@@ -907,7 +899,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                           color: FlutterFlowTheme.of(context).alternate,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 16.0, 16.0, 8.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -924,7 +916,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 16.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -937,9 +929,9 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                 color: FlutterFlowTheme.of(context).border,
                               ),
                             ),
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsets.all(2.0),
+                              padding: const EdgeInsets.all(2.0),
                               child: FlutterFlowDropDown<String>(
                                 controller: _model
                                         .reasonforReturnFieldValueController ??=
@@ -990,7 +982,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                 borderColor: Colors.transparent,
                                 borderWidth: 0.0,
                                 borderRadius: 0.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
+                                margin: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 12.0, 0.0),
                                 hidesUnderline: true,
                                 isOverButton: false,
@@ -1006,7 +998,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                           color: FlutterFlowTheme.of(context).alternate,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 16.0, 16.0, 8.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -1023,7 +1015,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 16.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1060,7 +1052,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
@@ -1105,27 +1097,26 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                         ),
                         if (_model.returnProduct.length > 0)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 24.0, 16.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
                                 var _shouldSetState = false;
                                 if (_model.reasonforReturnFieldValue ==
                                     'Others') {
-                                  if (!(_model.textController.text != null &&
-                                      _model.textController.text != '')) {
+                                  if (!(_model.textController.text != '')) {
                                     await showDialog(
                                       context: context,
                                       builder: (alertDialogContext) {
                                         return WebViewAware(
                                           child: AlertDialog(
-                                            content: Text(
+                                            content: const Text(
                                                 'Please specifive the reason in the additional comment box.'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext),
-                                                child: Text('Ok'),
+                                                child: const Text('Ok'),
                                               ),
                                             ],
                                           ),
@@ -1151,7 +1142,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                 await returnRequestsRecordReference.set({
                                   ...createReturnRequestsRecordData(
                                     returnRequestId:
-                                        'RTORD${_model.idmapResult?.returnRequestId?.toString()}',
+                                        'RTORD${_model.idmapResult?.returnRequestId.toString()}',
                                     createdAt: getCurrentTimestamp,
                                     updatedAt: getCurrentTimestamp,
                                     status: 'Pending',
@@ -1182,7 +1173,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                     ReturnRequestsRecord.getDocumentFromData({
                                   ...createReturnRequestsRecordData(
                                     returnRequestId:
-                                        'RTORD${_model.idmapResult?.returnRequestId?.toString()}',
+                                        'RTORD${_model.idmapResult?.returnRequestId.toString()}',
                                     createdAt: getCurrentTimestamp,
                                     updatedAt: getCurrentTimestamp,
                                     status: 'Pending',
@@ -1211,7 +1202,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                 }, returnRequestsRecordReference);
                                 _shouldSetState = true;
 
-                                await widget!.order!
+                                await widget.order!
                                     .update(createOrdersRecordData(
                                   returnRequestId:
                                       _model.newDoc?.returnRequestId,
@@ -1229,7 +1220,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                                 context.goNamed(
                                   OrderReturnSubmitWidget.routeName,
                                   extra: <String, dynamic>{
-                                    '__transition_info__': TransitionInfo(
+                                    '__transition_info__': const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -1245,9 +1236,9 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                               options: FFButtonOptions(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 48.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -1262,7 +1253,7 @@ class _OrderReturnWidgetState extends State<OrderReturnWidget> {
                               ),
                             ),
                           ),
-                      ].addToEnd(SizedBox(height: 16.0)),
+                      ].addToEnd(const SizedBox(height: 16.0)),
                     ),
                   );
                 },

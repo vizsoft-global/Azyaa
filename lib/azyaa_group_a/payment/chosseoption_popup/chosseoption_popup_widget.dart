@@ -2,11 +2,8 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'chosseoption_popup_model.dart';
 export 'chosseoption_popup_model.dart';
 
@@ -52,12 +49,12 @@ class _ChosseoptionPopupWidgetState extends State<ChosseoptionPopupWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Container(
         width: MediaQuery.sizeOf(context).width * 1.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               blurRadius: 5.0,
               color: Color(0x3B1D2429),
@@ -75,7 +72,7 @@ class _ChosseoptionPopupWidgetState extends State<ChosseoptionPopupWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -89,16 +86,16 @@ class _ChosseoptionPopupWidgetState extends State<ChosseoptionPopupWidget> {
                     desktop: false,
                   ))
                     Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Color(0xFFF7F7F7),
                         shape: BoxShape.circle,
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(8.0),
                         child: FlutterFlowIconButton(
                           borderRadius: 100.0,
                           buttonSize: 40.0,
-                          fillColor: Color(0xFFE9E9E9),
+                          fillColor: const Color(0xFFE9E9E9),
                           icon: Icon(
                             FFIcons.kdelete2,
                             color: FlutterFlowTheme.of(context).primaryText,
@@ -139,11 +136,11 @@ class _ChosseoptionPopupWidgetState extends State<ChosseoptionPopupWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(-1.0, -1.0),
+              alignment: const AlignmentDirectional(-1.0, -1.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Text(
-                  widget!.title!,
+                  widget.title!,
                   style: FlutterFlowTheme.of(context).titleLarge.override(
                         fontFamily: 'almarai',
                         fontSize: 18.0,
@@ -154,9 +151,9 @@ class _ChosseoptionPopupWidgetState extends State<ChosseoptionPopupWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 24.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 24.0),
               child: Text(
-                widget!.description!,
+                widget.description!,
                 style: FlutterFlowTheme.of(context).bodyLarge.override(
                       fontFamily: 'almarai',
                       color: FlutterFlowTheme.of(context).secondaryText,
@@ -168,7 +165,7 @@ class _ChosseoptionPopupWidgetState extends State<ChosseoptionPopupWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   unawaited(
@@ -183,9 +180,9 @@ class _ChosseoptionPopupWidgetState extends State<ChosseoptionPopupWidget> {
                 options: FFButtonOptions(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 48.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'almarai',
@@ -204,7 +201,7 @@ class _ChosseoptionPopupWidgetState extends State<ChosseoptionPopupWidget> {
               tabletLandscape: false,
             ))
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -229,7 +226,7 @@ class _ChosseoptionPopupWidgetState extends State<ChosseoptionPopupWidget> {
                         side: (FlutterFlowTheme.of(context).alternate != null)
                             ? BorderSide(
                                 width: 2,
-                                color: FlutterFlowTheme.of(context).alternate!,
+                                color: FlutterFlowTheme.of(context).alternate,
                               )
                             : null,
                         activeColor: FlutterFlowTheme.of(context).primary,
@@ -251,7 +248,7 @@ class _ChosseoptionPopupWidgetState extends State<ChosseoptionPopupWidget> {
                   ],
                 ),
               ),
-          ].addToStart(SizedBox(height: 16.0)).addToEnd(SizedBox(height: 16.0)),
+          ].addToStart(const SizedBox(height: 16.0)).addToEnd(const SizedBox(height: 16.0)),
         ),
       ),
     );

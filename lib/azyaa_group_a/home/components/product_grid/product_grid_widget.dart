@@ -1,22 +1,16 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_wishlist/user_wishlist_widget.dart';
 import '/azyaa_group_a/home/components/blank_loading/blank_loading_widget.dart';
 import '/azyaa_group_a/payment/default_cart_button/default_cart_button_widget.dart';
 import '/azyaa_group_b/creator/product_attribute_promo_level/product_attribute_promo_level_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'product_grid_model.dart';
@@ -34,9 +28,9 @@ class ProductGridWidget extends StatefulWidget {
     String? cartButtonStatus,
     this.creatorDoc,
     this.promoID,
-  })  : this.checkboxStatus = checkboxStatus ?? 'hide',
-        this.cartCheckboxStatus = cartCheckboxStatus ?? 'hide',
-        this.cartButtonStatus = cartButtonStatus ?? 'show';
+  })  : checkboxStatus = checkboxStatus ?? 'hide',
+        cartCheckboxStatus = cartCheckboxStatus ?? 'hide',
+        cartButtonStatus = cartButtonStatus ?? 'show';
 
   final ProductsRecord? product;
   final String checkboxStatus;
@@ -84,7 +78,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
       stream: queryInventoryRecord(
         queryBuilder: (inventoryRecord) => inventoryRecord.where(
           'inventory_id',
-          isEqualTo: widget!.product?.product?.inventoryId,
+          isEqualTo: widget.product?.product.inventoryId,
         ),
         singleRecord: true,
       ),
@@ -119,16 +113,16 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
           highlightColor: Colors.transparent,
           onTap: () async {
             if (loggedIn) {
-              if ((currentUserDocument?.userRecentViews?.toList() ?? [])
+              if ((currentUserDocument?.userRecentViews.toList() ?? [])
                       .length !=
                   0) {
                 FFAppState().updateUserDataFlowStruct(
                   (e) => e
                     ..count =
-                        (currentUserDocument?.userRecentViews?.toList() ?? [])
+                        (currentUserDocument?.userRecentViews.toList() ?? [])
                             .length
                     ..userRecentView =
-                        (currentUserDocument?.userRecentViews?.toList() ?? [])
+                        (currentUserDocument?.userRecentViews.toList() ?? [])
                             .toList(),
                 );
                 while (FFAppState().UserDataFlow.count > 0) {
@@ -138,7 +132,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                               .elementAtOrNull(
                                   FFAppState().UserDataFlow.count - 1)
                               ?.viewedItemId ==
-                          widget!.product?.productId) &&
+                          widget.product?.productId) &&
                       (FFAppState()
                               .UserDataFlow
                               .userRecentView
@@ -152,14 +146,14 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                             .elementAtOrNull(
                                 FFAppState().UserDataFlow.count - 1)
                             ?.productAttribute
-                            ?.length !=
-                        widget!.product?.productAttribute?.length) {
+                            .length !=
+                        widget.product?.productAttribute.length) {
                       FFAppState().updateUserDataFlowStruct(
                         (e) => e
                           ..updateUserRecentView(
                             (e) => e[FFAppState().UserDataFlow.count - 1]
                               ..productAttribute =
-                                  widget!.product!.productAttribute.toList(),
+                                  widget.product!.productAttribute.toList(),
                           ),
                       );
 
@@ -179,12 +173,12 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                       ProductWidget.routeName,
                       queryParameters: {
                         'product': serializeParam(
-                          widget!.product?.reference,
+                          widget.product?.reference,
                           ParamType.DocumentReference,
                         ),
                       }.withoutNulls,
                       extra: <String, dynamic>{
-                        '__transition_info__': TransitionInfo(
+                        '__transition_info__': const TransitionInfo(
                           hasTransition: true,
                           transitionType: PageTransitionType.fade,
                           duration: Duration(milliseconds: 0),
@@ -208,8 +202,8 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                         updateUserRecentViewedListStruct(
                           UserRecentViewedListStruct(
                             createdAt: getCurrentTimestamp,
-                            viewedItemId: widget!.product?.productId,
-                            productAttribute: widget!.product?.productAttribute,
+                            viewedItemId: widget.product?.productId,
+                            productAttribute: widget.product?.productAttribute,
                             viewedEntityType: 'product',
                           ),
                           clearUnsetFields: false,
@@ -226,12 +220,12 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
               ProductWidget.routeName,
               queryParameters: {
                 'product': serializeParam(
-                  widget!.product?.reference,
+                  widget.product?.reference,
                   ParamType.DocumentReference,
                 ),
               }.withoutNulls,
               extra: <String, dynamic>{
-                '__transition_info__': TransitionInfo(
+                '__transition_info__': const TransitionInfo(
                   hasTransition: true,
                   transitionType: PageTransitionType.fade,
                   duration: Duration(milliseconds: 0),
@@ -245,7 +239,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
             children: [
               Expanded(
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
                   child: Stack(
                     children: [
                       Container(
@@ -265,50 +259,50 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                               ),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
-                                child: Image.network(
-                                  () {
-                                    if (widget!.product?.productInfo
-                                                ?.featureImage !=
+                                child: CachedNetworkImage(
+                                  imageUrl: () {
+                                    if (widget.product?.productInfo
+                                                .featureImage !=
                                             null &&
-                                        widget!.product?.productInfo
-                                                ?.featureImage !=
+                                        widget.product?.productInfo
+                                                .featureImage !=
                                             '') {
                                       return (((isiOS == true) ||
                                                   (isAndroid == true)) &&
-                                              (widget!.product?.productInfo
-                                                          ?.featureImageId !=
+                                              (widget.product?.productInfo
+                                                          .featureImageId !=
                                                       null &&
-                                                  widget!.product?.productInfo
-                                                          ?.featureImageId !=
+                                                  widget.product?.productInfo
+                                                          .featureImageId !=
                                                       '')
-                                          ? widget!
+                                          ? widget
                                               .product!.productInfo.featureImage
-                                          : widget!.product!.productInfo
+                                          : widget.product!.productInfo
                                               .featureImage);
-                                    } else if (widget!.product?.productInfo
-                                                ?.iconImage !=
+                                    } else if (widget.product?.productInfo
+                                                .iconImage !=
                                             null &&
-                                        widget!.product?.productInfo
-                                                ?.iconImage !=
+                                        widget.product?.productInfo
+                                                .iconImage !=
                                             '') {
-                                      return widget!
+                                      return widget
                                           .product!.productInfo.iconImage;
-                                    } else if (widget!.product!.productInfo
+                                    } else if (widget.product!.productInfo
                                             .galleryImage.length >
                                         0) {
-                                      return widget!.product!.productInfo
+                                      return widget.product!.productInfo
                                           .galleryImage.firstOrNull!;
                                     } else {
                                       return 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/i9u1ra67p2p4/Azyaa-logo_(2).jpg';
                                     }
                                   }(),
                                   fit: BoxFit.cover,
-                                  alignment: Alignment(0.0, -1.0),
+                                  alignment: const Alignment(0.0, -1.0),
                                 ),
                               ),
                             ),
                             if (((columnInventoryRecord!.stock > 0) &&
-                                    (widget!.checkboxStatus == 'show')) &&
+                                    (widget.checkboxStatus == 'show')) &&
                                 responsiveVisibility(
                                   context: context,
                                   phone: false,
@@ -317,7 +311,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                   desktop: false,
                                 ))
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     7.0, 7.0, 0.0, 0.0),
                                 child: Container(
                                   width: 18.0,
@@ -327,14 +321,14 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                     borderRadius: BorderRadius.circular(4.0),
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        if (widget!.checkboxComponentType ==
+                                        if (widget.checkboxComponentType ==
                                             'wishlist') {
                                           await currentUserReference!.update({
                                             ...mapToFirestore(
@@ -343,7 +337,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                                     FieldValue.arrayRemove([
                                                   getUserWishlistItemFirestoreData(
                                                     updateUserWishlistItemStruct(
-                                                      widget!.wishlistDatatype,
+                                                      widget.wishlistDatatype,
                                                       clearUnsetFields: false,
                                                     ),
                                                     true,
@@ -353,7 +347,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                             ),
                                           });
                                         } else {
-                                          if (widget!.checkboxComponentType ==
+                                          if (widget.checkboxComponentType ==
                                               'recent') {
                                             await currentUserReference!.update({
                                               ...mapToFirestore(
@@ -362,7 +356,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                                       FieldValue.arrayRemove([
                                                     getUserRecentViewedListFirestoreData(
                                                       updateUserRecentViewedListStruct(
-                                                        widget!.recentDatatype,
+                                                        widget.recentDatatype,
                                                         clearUnsetFields: false,
                                                       ),
                                                       true,
@@ -384,11 +378,11 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                   ),
                                 ),
                               ),
-                            if (widget!.product!.productReview.length > 0)
+                            if (widget.product!.productReview.length > 0)
                               Align(
-                                alignment: AlignmentDirectional(-1.0, 1.0),
+                                alignment: const AlignmentDirectional(-1.0, 1.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 0.0, 8.0),
                                   child: Container(
                                     decoration: BoxDecoration(
@@ -401,23 +395,23 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           4.0, 2.0, 4.0, 2.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 2.0, 0.0),
                                             child: Text(
-                                              (functions.newCartTotal(widget!
+                                              (functions.newCartTotal(widget
                                                           .product!
                                                           .productReview
                                                           .map((e) =>
                                                               e.reviewRate)
                                                           .toList()) /
-                                                      widget!.product!
+                                                      widget.product!
                                                           .productReview.length)
                                                   .toString(),
                                               style:
@@ -432,7 +426,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 4.0, 0.0),
                                             child: Icon(
                                               Icons.star_rounded,
@@ -454,10 +448,10 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 0.0, 0.0),
                                             child: Text(
-                                              widget!
+                                              widget
                                                   .product!.productReview.length
                                                   .toString(),
                                               style:
@@ -480,13 +474,13 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                   ),
                                 ),
                               ),
-                            if ((columnInventoryRecord!.stock > 0) &&
-                                (widget!.cartCheckboxStatus == 'show'))
+                            if ((columnInventoryRecord.stock > 0) &&
+                                (widget.cartCheckboxStatus == 'show'))
                               Align(
-                                alignment: AlignmentDirectional(1.0, -1.0),
+                                alignment: const AlignmentDirectional(1.0, -1.0),
                                 child: Builder(
                                   builder: (context) => Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 2.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) =>
@@ -510,7 +504,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                             return Container(
                                               width: 0.0,
                                               height: 0.0,
-                                              child: BlankLoadingWidget(),
+                                              child: const BlankLoadingWidget(),
                                             );
                                           }
                                           List<SettingsRecord>
@@ -550,11 +544,11 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                                           .userCart.cartItems
                                                           .where((e) =>
                                                               (e.productRef ==
-                                                                  widget!
+                                                                  widget
                                                                       .product
                                                                       ?.reference) &&
                                                               (e.creatorRef ==
-                                                                  widget!
+                                                                  widget
                                                                       .creatorDoc
                                                                       ?.reference))
                                                           .toList()
@@ -576,7 +570,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                                         backgroundColor:
                                                             Colors.transparent,
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                     0.0, 1.0)
                                                                 .resolve(
                                                                     Directionality.of(
@@ -589,13 +583,13 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                                                     .userCart
                                                                     .cartItems
                                                                     .length,
-                                                            product: widget!
+                                                            product: widget
                                                                 .product!,
                                                             navigation: 'cart',
                                                             popupType: 'icon',
-                                                            creatorDoc: widget!
+                                                            creatorDoc: widget
                                                                 .creatorDoc!,
-                                                            promoID: widget!
+                                                            promoID: widget
                                                                 .promoID!,
                                                           ),
                                                         ),
@@ -611,8 +605,8 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                                       ..count =
                                                           currentUserDocument
                                                               ?.userCart
-                                                              ?.cartItems
-                                                              ?.length
+                                                              .cartItems
+                                                              .length
                                                       ..userCartItemList =
                                                           currentUserDocument!
                                                               .userCart
@@ -623,7 +617,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                                           .UserDataFlow
                                                           .count >
                                                       0) {
-                                                    if ((widget!.product
+                                                    if ((widget.product
                                                                 ?.reference ==
                                                             FFAppState()
                                                                 .UserDataFlow
@@ -634,7 +628,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                                                             .count -
                                                                         1)
                                                                 ?.productRef) &&
-                                                        (widget!.creatorDoc
+                                                        (widget.creatorDoc
                                                                 ?.reference ==
                                                             FFAppState()
                                                                 .UserDataFlow
@@ -698,7 +692,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                                           width: 2,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .tertiary!,
+                                                              .tertiary,
                                                         )
                                                       : null,
                                               activeColor:
@@ -716,15 +710,15 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                 ),
                               ),
                             Align(
-                              alignment: AlignmentDirectional(1.0, 1.0),
+                              alignment: const AlignmentDirectional(1.0, 1.0),
                               child: Padding(
-                                padding: EdgeInsets.all(4.0),
+                                padding: const EdgeInsets.all(4.0),
                                 child: wrapWithModel(
                                   model: _model.userWishlistModel,
                                   updateCallback: () => safeSetState(() {}),
                                   child: UserWishlistWidget(
                                     type: 'product',
-                                    itemID: widget!.product!.productId,
+                                    itemID: widget.product!.productId,
                                     iconSize: 14.0,
                                     containersize: 30,
                                     iconsize: 14,
@@ -735,13 +729,13 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                           ],
                         ),
                       ),
-                      if ((((columnInventoryRecord!.stock <= 0) &&
+                      if ((((columnInventoryRecord.stock <= 0) &&
                                   (getCurrentRouteStack(context).lastOrNull !=
                                       '/home')) ||
-                              ((columnInventoryRecord!.stock <= 0) &&
+                              ((columnInventoryRecord.stock <= 0) &&
                                   (getCurrentRouteStack(context).lastOrNull !=
                                       '/')) ||
-                              ((columnInventoryRecord!.stock <= 0) &&
+                              ((columnInventoryRecord.stock <= 0) &&
                                   (getCurrentRouteStack(context).lastOrNull !=
                                       '/azyaa-product-list'))) &&
                           responsiveVisibility(
@@ -755,7 +749,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: MediaQuery.sizeOf(context).height * 1.0,
                           decoration: BoxDecoration(
-                            color: Color(0xD3B9B4B4),
+                            color: const Color(0xD3B9B4B4),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                         ),
@@ -765,7 +759,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
               ),
               Container(
                 height: 90.0,
-                decoration: BoxDecoration(),
+                decoration: const BoxDecoration(),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -781,52 +775,52 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 0.0, 4.0),
                                 child: Text(
                                   FFLocalizations.of(context).getVariableText(
                                     enText: () {
-                                      if (widget!.product?.productInfoTranslate
-                                              ?.name?.en !=
+                                      if (widget.product?.productInfoTranslate
+                                              .name.en !=
                                           '') {
-                                        return widget!.product
-                                            ?.productInfoTranslate?.name?.en;
-                                      } else if (widget!
+                                        return widget.product
+                                            ?.productInfoTranslate.name.en;
+                                      } else if (widget
                                               .product
                                               ?.productInfoCustomTranslate
-                                              ?.name
-                                              ?.en !=
+                                              .name
+                                              .en !=
                                           '') {
-                                        return widget!
+                                        return widget
                                             .product
                                             ?.productInfoCustomTranslate
-                                            ?.name
-                                            ?.en;
+                                            .name
+                                            .en;
                                       } else {
-                                        return widget!
-                                            .product?.productInfo?.name;
+                                        return widget
+                                            .product?.productInfo.name;
                                       }
                                     }(),
                                     arText: () {
-                                      if (widget!.product?.productInfoTranslate
-                                              ?.name?.ar !=
+                                      if (widget.product?.productInfoTranslate
+                                              .name.ar !=
                                           '') {
-                                        return widget!.product
-                                            ?.productInfoTranslate?.name?.ar;
-                                      } else if (widget!
+                                        return widget.product
+                                            ?.productInfoTranslate.name.ar;
+                                      } else if (widget
                                               .product
                                               ?.productInfoCustomTranslate
-                                              ?.name
-                                              ?.ar !=
+                                              .name
+                                              .ar !=
                                           '') {
-                                        return widget!
+                                        return widget
                                             .product
                                             ?.productInfoCustomTranslate
-                                            ?.name
-                                            ?.ar;
+                                            .name
+                                            .ar;
                                       } else {
-                                        return widget!
-                                            .product?.productInfo?.name;
+                                        return widget
+                                            .product?.productInfo.name;
                                       }
                                     }(),
                                   ),
@@ -841,7 +835,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 0.0, 4.0),
                                 child: RichText(
                                   textScaler: MediaQuery.of(context).textScaler,
@@ -850,13 +844,13 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                       TextSpan(
                                         text: FFLocalizations.of(context)
                                             .getVariableText(
-                                          enText: widget!.product?.product
-                                                      ?.productType ==
+                                          enText: widget.product?.product
+                                                      .productType ==
                                                   'ready'
                                               ? 'Ready made'
                                               : 'Custom made',
-                                          arText: widget!.product?.product
-                                                      ?.productType ==
+                                          arText: widget.product?.product
+                                                      .productType ==
                                                   'ready'
                                               ? 'جاهز'
                                               : 'مصنوع بطريقة مخصصة',
@@ -891,7 +885,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                 desktop: false,
                               ))
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 0.0, 4.0),
                                   child: RichText(
                                     textScaler:
@@ -932,11 +926,11 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                               ),
                                         ),
                                         TextSpan(
-                                          text: columnInventoryRecord!.stock > 0
+                                          text: columnInventoryRecord.stock > 0
                                               ? '${FFLocalizations.of(context).getVariableText(
                                                   enText: 'Last ',
                                                   arText: 'آخر',
-                                                )}${columnInventoryRecord?.stock?.toString()}${FFLocalizations.of(context).getVariableText(
+                                                )}${columnInventoryRecord.stock.toString()}${FFLocalizations.of(context).getVariableText(
                                                   enText: ' stocks',
                                                   arText: 'الأسهم',
                                                 )}'
@@ -949,7 +943,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'almarai',
-                                                color: columnInventoryRecord!
+                                                color: columnInventoryRecord
                                                             .stock >
                                                         0
                                                     ? FlutterFlowTheme.of(
@@ -976,10 +970,10 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                             ],
                           ),
                         ),
-                        if ((columnInventoryRecord!.stock > 0) &&
-                            (widget!.cartButtonStatus == 'show'))
+                        if ((columnInventoryRecord.stock > 0) &&
+                            (widget.cartButtonStatus == 'show'))
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 0.0, 0.0),
                             child: wrapWithModel(
                               model: _model.defaultCartButtonModel,
@@ -987,14 +981,14 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                               updateOnChange: true,
                               child: DefaultCartButtonWidget(
                                 type: 'icon',
-                                product: widget!.product!.reference,
+                                product: widget.product!.reference,
                                 navigation: 'cart',
                                 defaultTerms: FFAppState()
                                     .UserDataFlow
                                     .userProductSwatchesList
                                     .where((e) =>
                                         e.viewedItemId ==
-                                        widget!.product?.productId)
+                                        widget.product?.productId)
                                     .toList()
                                     .firstOrNull
                                     ?.productAttribute,
@@ -1006,12 +1000,12 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 4.0),
+                          const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 4.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            '${widget!.product?.product?.productPrice?.toString()} KD',
+                            '${widget.product?.product.productPrice.toString()} KD',
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'almarai',
@@ -1020,10 +1014,10 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                       fontWeight: FontWeight.bold,
                                     ),
                           ),
-                          if (widget!.product?.product?.productRegularPrice !=
-                              widget!.product?.product?.productPrice)
+                          if (widget.product?.product.productRegularPrice !=
+                              widget.product?.product.productPrice)
                             Text(
-                              '${widget!.product?.product?.productRegularPrice?.toString()}',
+                              '${widget.product?.product.productRegularPrice.toString()}',
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
@@ -1036,14 +1030,14 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                     decoration: TextDecoration.lineThrough,
                                   ),
                             ),
-                        ].divide(SizedBox(width: 4.0)),
+                        ].divide(const SizedBox(width: 4.0)),
                       ),
                     ),
                     Stack(
                       children: [
-                        if (loggedIn && (columnInventoryRecord!.stock <= 0))
+                        if (loggedIn && (columnInventoryRecord.stock <= 0))
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 4.0, 0.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -1059,17 +1053,17 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                   ),
                             ),
                           ),
-                        if ((columnInventoryRecord!.stock > 0) &&
-                            (widget!.product?.product?.productType == 'ready'))
+                        if ((columnInventoryRecord.stock > 0) &&
+                            (widget.product?.product.productType == 'ready'))
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 4.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              columnInventoryRecord!.stock > 0
+                              columnInventoryRecord.stock > 0
                                   ? '${FFLocalizations.of(context).getVariableText(
                                       enText: 'Last ',
                                       arText: 'آخر',
-                                    )}${columnInventoryRecord?.stock?.toString()}${FFLocalizations.of(context).getVariableText(
+                                    )}${columnInventoryRecord.stock.toString()}${FFLocalizations.of(context).getVariableText(
                                       enText: ' stocks',
                                       arText: 'الأسهم',
                                     )}'

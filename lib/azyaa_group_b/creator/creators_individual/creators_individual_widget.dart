@@ -1,4 +1,3 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
@@ -8,20 +7,15 @@ import '/azyaa_group_b/creator/creator_promotion/creator_promotion_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:convert';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'creators_individual_model.dart';
@@ -84,7 +78,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -139,7 +133,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                           _model.creatorDoc = await queryUsersRecordOnce(
                             queryBuilder: (usersRecord) => usersRecord.where(
                               'uid',
-                              isEqualTo: widget!.creatorUid,
+                              isEqualTo: widget.creatorUid,
                             ),
                             singleRecord: true,
                           ).then((s) => s.firstOrNull);
@@ -147,16 +141,16 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                               await DuoDeeplinkGroup.createLinkCall.call(
                             url: 'https://azyaa.ai',
                             title: _model
-                                .creatorDoc?.creatorMainInfo?.creatorInfo?.name,
+                                .creatorDoc?.creatorMainInfo.creatorInfo.name,
                             image: _model.creatorDoc?.creatorMainInfo
-                                ?.creatorInfo?.brandPhoto,
+                                .creatorInfo.brandPhoto,
                             ios:
-                                'https://azyaa.ai/azyaa-creator?creatorUid=${widget!.creatorUid}',
+                                'https://azyaa.ai/azyaa-creator?creatorUid=${widget.creatorUid}',
                             domain: 'azyaa.link',
                             externalID:
-                                '${currentUserUid}-CR${_model.idmapDoc?.shareLinkId?.toString()}',
+                                '${currentUserUid}-CR${_model.idmapDoc?.shareLinkId.toString()}',
                             android:
-                                'https://azyaa.ai/azyaa-creator?creatorUid=${widget!.creatorUid}',
+                                'https://azyaa.ai/azyaa-creator?creatorUid=${widget.creatorUid}',
                           );
 
                           if ((_model.dubshortlink?.succeeded ?? true)) {
@@ -182,12 +176,12 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                 return WebViewAware(
                                   child: AlertDialog(
                                     content:
-                                        Text('Server busy try after sometime.'),
+                                        const Text('Server busy try after sometime.'),
                                     actions: [
                                       TextButton(
                                         onPressed: () =>
                                             Navigator.pop(alertDialogContext),
-                                        child: Text('Ok'),
+                                        child: const Text('Ok'),
                                       ),
                                     ],
                                   ),
@@ -202,7 +196,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -215,18 +209,18 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   wrapWithModel(
                     model: _model.appUpdateCheckerModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: AppUpdateCheckerWidget(),
+                    child: const AppUpdateCheckerWidget(),
                   ),
                   StreamBuilder<List<UsersRecord>>(
                     stream: queryUsersRecord(
                       queryBuilder: (usersRecord) => usersRecord.where(
                         'uid',
-                        isEqualTo: widget!.creatorUid,
+                        isEqualTo: widget.creatorUid,
                       ),
                       singleRecord: true,
                     ),
@@ -236,7 +230,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                         return Container(
                           width: MediaQuery.sizeOf(context).width * 10.0,
                           height: 150.0,
-                          child: LoadingAnimationWidget(),
+                          child: const LoadingAnimationWidget(),
                         );
                       }
                       List<UsersRecord> columnUsersRecordList = snapshot.data!;
@@ -254,7 +248,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -267,16 +261,16 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                       ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
-                                        child: Image.network(
-                                          columnUsersRecord
+                                        child: CachedNetworkImage(
+                                          imageUrl: columnUsersRecord
                                                           ?.creatorMainInfo
-                                                          ?.creatorInfo
-                                                          ?.brandPhoto !=
+                                                          .creatorInfo
+                                                          .brandPhoto !=
                                                       null &&
                                                   columnUsersRecord
                                                           ?.creatorMainInfo
-                                                          ?.creatorInfo
-                                                          ?.brandPhoto !=
+                                                          .creatorInfo
+                                                          .brandPhoto !=
                                                       ''
                                               ? columnUsersRecord!
                                                   .creatorMainInfo
@@ -286,7 +280,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                           width: 100.0,
                                           height: 80.0,
                                           fit: BoxFit.cover,
-                                          alignment: Alignment(0.0, 0.0),
+                                          alignment: const Alignment(0.0, 0.0),
                                         ),
                                       ),
                                       Expanded(
@@ -298,18 +292,18 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                               CrossAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 4.0),
                                               child: Text(
                                                 columnUsersRecord
                                                                 ?.creatorMainInfo
-                                                                ?.creatorInfo
-                                                                ?.name !=
+                                                                .creatorInfo
+                                                                .name !=
                                                             null &&
                                                         columnUsersRecord
                                                                 ?.creatorMainInfo
-                                                                ?.creatorInfo
-                                                                ?.name !=
+                                                                .creatorInfo
+                                                                .name !=
                                                             ''
                                                     ? columnUsersRecord!
                                                         .creatorMainInfo
@@ -330,11 +324,11 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 12.0),
                                               child: Text(
-                                                columnUsersRecord!
+                                                columnUsersRecord
                                                     .creatorMainInfo
                                                     .creatorInfo
                                                     .bio,
@@ -356,24 +350,24 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                           ],
                                         ),
                                       ),
-                                    ].divide(SizedBox(width: 12.0)),
+                                    ].divide(const SizedBox(width: 12.0)),
                                   ),
                                 ),
                                 Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    if (columnUsersRecord?.reference !=
+                                    if (columnUsersRecord.reference !=
                                         currentUserReference)
                                       Stack(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         children: [
                                           if ((currentUserDocument
                                                           ?.userCreatorFollowing
-                                                          ?.toList() ??
+                                                          .toList() ??
                                                       [])
                                                   .contains(columnUsersRecord
-                                                      ?.reference) ==
+                                                      .reference) ==
                                               false)
                                             AuthUserStreamWidget(
                                               builder: (context) =>
@@ -388,7 +382,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                               FieldValue
                                                                   .arrayUnion([
                                                             columnUsersRecord
-                                                                ?.reference
+                                                                .reference
                                                           ]),
                                                         },
                                                       ),
@@ -404,7 +398,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                       LoginWidget.routeName,
                                                       extra: <String, dynamic>{
                                                         '__transition_info__':
-                                                            TransitionInfo(
+                                                            const TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -423,11 +417,11 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                 ),
                                                 options: FFButtonOptions(
                                                   height: 28.0,
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 12.0, 0.0),
                                                   iconPadding:
-                                                      EdgeInsetsDirectional
+                                                      const EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -468,10 +462,10 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                             ),
                                           if ((currentUserDocument
                                                           ?.userCreatorFollowing
-                                                          ?.toList() ??
+                                                          .toList() ??
                                                       [])
                                                   .contains(columnUsersRecord
-                                                      ?.reference) ==
+                                                      .reference) ==
                                               true)
                                             Builder(
                                               builder: (context) =>
@@ -490,7 +484,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                           backgroundColor:
                                                               Colors
                                                                   .transparent,
-                                                          alignment: AlignmentDirectional(
+                                                          alignment: const AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
@@ -523,7 +517,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                                     '1qdwfjk6' /* you want to unfollow this Crea... */,
                                                                   ),
                                                                   userRef:
-                                                                      columnUsersRecord!
+                                                                      columnUsersRecord
                                                                           .reference,
                                                                   type:
                                                                       'Creator',
@@ -543,11 +537,11 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                   options: FFButtonOptions(
                                                     height: 28.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 12.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -591,18 +585,18 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                       ),
                                   ],
                                 ),
-                              ].divide(SizedBox(width: 8.0)),
+                              ].divide(const SizedBox(width: 8.0)),
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 0.0, 8.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 48.0,
-                              decoration: BoxDecoration(),
+                              decoration: const BoxDecoration(),
                               child: ListView(
-                                padding: EdgeInsets.fromLTRB(
+                                padding: const EdgeInsets.fromLTRB(
                                   0,
                                   0,
                                   16.0,
@@ -613,14 +607,9 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                 scrollDirection: Axis.horizontal,
                                 children: [
                                   if (columnUsersRecord
-                                              ?.creatorMainInfo
-                                              ?.creatorInfo
-                                              ?.instagramProfileFollowers !=
-                                          null &&
-                                      columnUsersRecord
-                                              ?.creatorMainInfo
-                                              ?.creatorInfo
-                                              ?.instagramProfileFollowers !=
+                                              .creatorMainInfo
+                                              .creatorInfo
+                                              .instagramProfileFollowers !=
                                           '')
                                     InkWell(
                                       splashColor: Colors.transparent,
@@ -629,16 +618,11 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         if (columnUsersRecord
-                                                    ?.creatorMainInfo
-                                                    ?.creatorInfo
-                                                    ?.instagramProfile !=
-                                                null &&
-                                            columnUsersRecord
-                                                    ?.creatorMainInfo
-                                                    ?.creatorInfo
-                                                    ?.instagramProfile !=
+                                                    .creatorMainInfo
+                                                    .creatorInfo
+                                                    .instagramProfile !=
                                                 '') {
-                                          await launchURL(columnUsersRecord!
+                                          await launchURL(columnUsersRecord
                                               .creatorMainInfo
                                               .creatorInfo
                                               .instagramProfile);
@@ -660,9 +644,9 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                           ),
                                         ),
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
-                                          padding: EdgeInsets.all(4.0),
+                                          padding: const EdgeInsets.all(4.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -681,7 +665,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    columnUsersRecord!
+                                                    columnUsersRecord
                                                         .creatorMainInfo
                                                         .creatorInfo
                                                         .instagramProfileFollowers,
@@ -712,20 +696,15 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                   ),
                                                 ],
                                               ),
-                                            ].divide(SizedBox(width: 8.0)),
+                                            ].divide(const SizedBox(width: 8.0)),
                                           ),
                                         ),
                                       ),
                                     ),
                                   if (columnUsersRecord
-                                              ?.creatorMainInfo
-                                              ?.creatorInfo
-                                              ?.facebookProfileFollowers !=
-                                          null &&
-                                      columnUsersRecord
-                                              ?.creatorMainInfo
-                                              ?.creatorInfo
-                                              ?.facebookProfileFollowers !=
+                                              .creatorMainInfo
+                                              .creatorInfo
+                                              .facebookProfileFollowers !=
                                           '')
                                     InkWell(
                                       splashColor: Colors.transparent,
@@ -734,16 +713,11 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         if (columnUsersRecord
-                                                    ?.creatorMainInfo
-                                                    ?.creatorInfo
-                                                    ?.facebookProfile !=
-                                                null &&
-                                            columnUsersRecord
-                                                    ?.creatorMainInfo
-                                                    ?.creatorInfo
-                                                    ?.facebookProfile !=
+                                                    .creatorMainInfo
+                                                    .creatorInfo
+                                                    .facebookProfile !=
                                                 '') {
-                                          await launchURL(columnUsersRecord!
+                                          await launchURL(columnUsersRecord
                                               .creatorMainInfo
                                               .creatorInfo
                                               .facebookProfile);
@@ -765,9 +739,9 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                           ),
                                         ),
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
-                                          padding: EdgeInsets.all(4.0),
+                                          padding: const EdgeInsets.all(4.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -788,7 +762,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                       CrossAxisAlignment.start,
                                                   children: [
                                                     Text(
-                                                      columnUsersRecord!
+                                                      columnUsersRecord
                                                           .creatorMainInfo
                                                           .creatorInfo
                                                           .facebookProfileFollowers,
@@ -823,20 +797,15 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                   ],
                                                 ),
                                               ),
-                                            ].divide(SizedBox(width: 8.0)),
+                                            ].divide(const SizedBox(width: 8.0)),
                                           ),
                                         ),
                                       ),
                                     ),
                                   if (columnUsersRecord
-                                              ?.creatorMainInfo
-                                              ?.creatorInfo
-                                              ?.tiktokProfileFollowers !=
-                                          null &&
-                                      columnUsersRecord
-                                              ?.creatorMainInfo
-                                              ?.creatorInfo
-                                              ?.tiktokProfileFollowers !=
+                                              .creatorMainInfo
+                                              .creatorInfo
+                                              .tiktokProfileFollowers !=
                                           '')
                                     InkWell(
                                       splashColor: Colors.transparent,
@@ -845,16 +814,11 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         if (columnUsersRecord
-                                                    ?.creatorMainInfo
-                                                    ?.creatorInfo
-                                                    ?.tiktokHandle !=
-                                                null &&
-                                            columnUsersRecord
-                                                    ?.creatorMainInfo
-                                                    ?.creatorInfo
-                                                    ?.tiktokHandle !=
+                                                    .creatorMainInfo
+                                                    .creatorInfo
+                                                    .tiktokHandle !=
                                                 '') {
-                                          await launchURL(columnUsersRecord!
+                                          await launchURL(columnUsersRecord
                                               .creatorMainInfo
                                               .creatorInfo
                                               .tiktokHandle);
@@ -876,9 +840,9 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                           ),
                                         ),
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
-                                          padding: EdgeInsets.all(4.0),
+                                          padding: const EdgeInsets.all(4.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -899,7 +863,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                       CrossAxisAlignment.start,
                                                   children: [
                                                     Text(
-                                                      columnUsersRecord!
+                                                      columnUsersRecord
                                                           .creatorMainInfo
                                                           .creatorInfo
                                                           .tiktokProfileFollowers,
@@ -934,20 +898,15 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                   ],
                                                 ),
                                               ),
-                                            ].divide(SizedBox(width: 8.0)),
+                                            ].divide(const SizedBox(width: 8.0)),
                                           ),
                                         ),
                                       ),
                                     ),
                                   if (columnUsersRecord
-                                              ?.creatorMainInfo
-                                              ?.creatorInfo
-                                              ?.youtubeProfileFollowers !=
-                                          null &&
-                                      columnUsersRecord
-                                              ?.creatorMainInfo
-                                              ?.creatorInfo
-                                              ?.youtubeProfileFollowers !=
+                                              .creatorMainInfo
+                                              .creatorInfo
+                                              .youtubeProfileFollowers !=
                                           '')
                                     InkWell(
                                       splashColor: Colors.transparent,
@@ -956,16 +915,11 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         if (columnUsersRecord
-                                                    ?.creatorMainInfo
-                                                    ?.creatorInfo
-                                                    ?.youtubeChannel !=
-                                                null &&
-                                            columnUsersRecord
-                                                    ?.creatorMainInfo
-                                                    ?.creatorInfo
-                                                    ?.youtubeChannel !=
+                                                    .creatorMainInfo
+                                                    .creatorInfo
+                                                    .youtubeChannel !=
                                                 '') {
-                                          await launchURL(columnUsersRecord!
+                                          await launchURL(columnUsersRecord
                                               .creatorMainInfo
                                               .creatorInfo
                                               .youtubeChannel);
@@ -987,9 +941,9 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                           ),
                                         ),
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
-                                          padding: EdgeInsets.all(4.0),
+                                          padding: const EdgeInsets.all(4.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -1010,7 +964,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                       CrossAxisAlignment.start,
                                                   children: [
                                                     Text(
-                                                      columnUsersRecord!
+                                                      columnUsersRecord
                                                           .creatorMainInfo
                                                           .creatorInfo
                                                           .youtubeProfileFollowers,
@@ -1045,12 +999,12 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                   ],
                                                 ),
                                               ),
-                                            ].divide(SizedBox(width: 8.0)),
+                                            ].divide(const SizedBox(width: 8.0)),
                                           ),
                                         ),
                                       ),
                                     ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ),
                           ),
@@ -1058,7 +1012,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                             child: Column(
                               children: [
                                 Align(
-                                  alignment: Alignment(0.0, 0),
+                                  alignment: const Alignment(0.0, 0),
                                   child: TabBar(
                                     labelColor: FlutterFlowTheme.of(context)
                                         .primaryText,
@@ -1066,7 +1020,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                         FlutterFlowTheme.of(context)
                                             .primaryText,
                                     labelPadding:
-                                        EdgeInsetsDirectional.fromSTEB(
+                                        const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .titleMedium
@@ -1117,24 +1071,24 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                               CrossAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
                                               child: Builder(
                                                 builder: (context) {
                                                   final promotionsList =
                                                       columnUsersRecord
-                                                              ?.creatorMainInfo
-                                                              ?.creatorPromotions
-                                                              ?.where((e) =>
+                                                              .creatorMainInfo
+                                                              .creatorPromotions
+                                                              .where((e) =>
                                                                   e.promotionStatus ==
                                                                   'active')
                                                               .toList()
-                                                              ?.sortedList(
+                                                              .sortedList(
                                                                   keyOf: (e) =>
                                                                       e.promotionCreatedAt!,
                                                                   desc: true)
-                                                              ?.toList() ??
+                                                              .toList() ??
                                                           [];
 
                                                   return GridView.builder(
@@ -1169,7 +1123,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                         promotionInfo:
                                                             promotionsListItem,
                                                         creator:
-                                                            columnUsersRecord!,
+                                                            columnUsersRecord,
                                                       );
                                                     },
                                                   );
@@ -1177,10 +1131,10 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                               ),
                                             ),
                                           ]
-                                              .divide(SizedBox(height: 12.0))
+                                              .divide(const SizedBox(height: 12.0))
                                               .addToStart(
-                                                  SizedBox(height: 12.0))
-                                              .addToEnd(SizedBox(height: 12.0)),
+                                                  const SizedBox(height: 12.0))
+                                              .addToEnd(const SizedBox(height: 12.0)),
                                         ),
                                       ),
                                       SingleChildScrollView(
@@ -1188,23 +1142,23 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
                                               child: Builder(
                                                 builder: (context) {
                                                   final imageList = columnUsersRecord
-                                                          ?.creatorMainInfo
-                                                          ?.creatorPromotions
-                                                          ?.where((e) =>
+                                                          .creatorMainInfo
+                                                          .creatorPromotions
+                                                          .where((e) =>
                                                               e.promotionStatus ==
                                                               'active')
                                                           .toList()
-                                                          ?.sortedList(
+                                                          .sortedList(
                                                               keyOf: (e) => e
                                                                   .promotionCreatedAt!,
                                                               desc: true)
-                                                          ?.toList() ??
+                                                          .toList() ??
                                                       [];
 
                                                   return GridView.builder(
@@ -1253,14 +1207,14 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                               BorderRadius
                                                                   .circular(
                                                                       8.0),
-                                                          child: Image.network(
-                                                            imageListItem
+                                                          child: CachedNetworkImage(
+                                                            imageUrl: imageListItem
                                                                 .promotionInfo
                                                                 .featureImage,
                                                             width: 200.0,
                                                             fit: BoxFit.cover,
                                                             alignment:
-                                                                Alignment(
+                                                                const Alignment(
                                                                     0.0, -1.0),
                                                           ),
                                                         ),
@@ -1272,8 +1226,8 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                             ),
                                           ]
                                               .addToStart(
-                                                  SizedBox(height: 12.0))
-                                              .addToEnd(SizedBox(height: 12.0)),
+                                                  const SizedBox(height: 12.0))
+                                              .addToEnd(const SizedBox(height: 12.0)),
                                         ),
                                       ),
                                     ],
@@ -1283,8 +1237,8 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                             ),
                           ),
                         ]
-                            .addToStart(SizedBox(height: 16.0))
-                            .addToEnd(SizedBox(height: 16.0)),
+                            .addToStart(const SizedBox(height: 16.0))
+                            .addToEnd(const SizedBox(height: 16.0)),
                       );
                     },
                   ),

@@ -168,7 +168,7 @@ class ProductAttributesNewStruct extends FFFirebaseStruct {
           ParamType.bool,
           false,
         ),
-        firestoreUtilData: FirestoreUtilData(
+        firestoreUtilData: const FirestoreUtilData(
           clearUnsetFields: false,
           create: true,
         ),

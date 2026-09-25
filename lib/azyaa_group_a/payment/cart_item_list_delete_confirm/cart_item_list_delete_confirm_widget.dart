@@ -1,15 +1,11 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
-import 'dart:ui';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'cart_item_list_delete_confirm_model.dart';
 export 'cart_item_list_delete_confirm_model.dart';
@@ -59,12 +55,12 @@ class _CartItemListDeleteConfirmWidgetState
     context.watch<FFAppState>();
 
     return Padding(
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Container(
         width: MediaQuery.sizeOf(context).width * 1.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               blurRadius: 5.0,
               color: Color(0x3B1D2429),
@@ -82,23 +78,23 @@ class _CartItemListDeleteConfirmWidgetState
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Color(0xFFF7F7F7),
                       shape: BoxShape.circle,
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: FlutterFlowIconButton(
                         borderRadius: 100.0,
                         buttonSize: 40.0,
-                        fillColor: Color(0xFFE9E9E9),
+                        fillColor: const Color(0xFFE9E9E9),
                         icon: Icon(
                           FFIcons.kdelete2,
                           color: FlutterFlowTheme.of(context).primaryText,
@@ -132,9 +128,9 @@ class _CartItemListDeleteConfirmWidgetState
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(-1.0, -1.0),
+              alignment: const AlignmentDirectional(-1.0, -1.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     'w9ph2wn4' /* Are you sure? */,
@@ -149,7 +145,7 @@ class _CartItemListDeleteConfirmWidgetState
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 24.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 24.0),
               child: Text(
                 FFLocalizations.of(context).getText(
                   'xpv8xtv1' /* Are you sure you want to remov... */,
@@ -172,25 +168,25 @@ class _CartItemListDeleteConfirmWidgetState
               desktop: false,
             ))
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    if (widget!.cartItem?.productType == 'product') {
-                      if ((currentUserDocument?.userWishlistItem?.toList() ??
+                    if (widget.cartItem?.productType == 'product') {
+                      if ((currentUserDocument?.userWishlistItem.toList() ??
                                   [])
                               .where((e) =>
                                   (e.entityType == 'product') &&
                                   (e.wishlistItemId ==
-                                      widget!.cartItem?.productId))
+                                      widget.cartItem?.productId))
                               .toList()
                               .length >
                           0) {
                         _model.count =
-                            (currentUserDocument?.userWishlistItem?.toList() ??
+                            (currentUserDocument?.userWishlistItem.toList() ??
                                     [])
                                 .length;
                         _model.wishlistItems =
-                            (currentUserDocument?.userWishlistItem?.toList() ??
+                            (currentUserDocument?.userWishlistItem.toList() ??
                                     [])
                                 .toList()
                                 .cast<UserWishlistItemStruct>();
@@ -198,7 +194,7 @@ class _CartItemListDeleteConfirmWidgetState
                           if ((_model.wishlistItems
                                       .elementAtOrNull((_model.count!) - 1)
                                       ?.wishlistItemId ==
-                                  widget!.cartItem?.productId) &&
+                                  widget.cartItem?.productId) &&
                               (_model.wishlistItems
                                       .elementAtOrNull((_model.count!) - 1)
                                       ?.entityType ==
@@ -227,7 +223,7 @@ class _CartItemListDeleteConfirmWidgetState
                               'user_wishlist_item': FieldValue.arrayUnion([
                                 getUserWishlistItemFirestoreData(
                                   createUserWishlistItemStruct(
-                                    wishlistItemId: widget!.cartItem?.productId,
+                                    wishlistItemId: widget.cartItem?.productId,
                                     entityType: 'product',
                                     addedAt: getCurrentTimestamp,
                                     clearUnsetFields: false,
@@ -248,7 +244,7 @@ class _CartItemListDeleteConfirmWidgetState
                     FFAppState().updateUserDataFlowStruct(
                       (e) => e
                         ..updateUserCartItemList(
-                          (e) => e.remove(widget!.cartItem),
+                          (e) => e.remove(widget.cartItem),
                         ),
                     );
 
@@ -279,9 +275,9 @@ class _CartItemListDeleteConfirmWidgetState
                     width: MediaQuery.sizeOf(context).width * 1.0,
                     height: 48.0,
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'almarai',
@@ -294,7 +290,7 @@ class _CartItemListDeleteConfirmWidgetState
                 ),
               ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   FFAppState().updateUserDataFlowStruct(
@@ -305,7 +301,7 @@ class _CartItemListDeleteConfirmWidgetState
                   FFAppState().updateUserDataFlowStruct(
                     (e) => e
                       ..updateUserCartItemList(
-                        (e) => e.remove(widget!.cartItem),
+                        (e) => e.remove(widget.cartItem),
                       ),
                   );
 
@@ -335,9 +331,9 @@ class _CartItemListDeleteConfirmWidgetState
                 options: FFButtonOptions(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 48.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'almarai',
@@ -360,7 +356,7 @@ class _CartItemListDeleteConfirmWidgetState
               tabletLandscape: false,
             ))
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -385,7 +381,7 @@ class _CartItemListDeleteConfirmWidgetState
                         side: (FlutterFlowTheme.of(context).alternate != null)
                             ? BorderSide(
                                 width: 2,
-                                color: FlutterFlowTheme.of(context).alternate!,
+                                color: FlutterFlowTheme.of(context).alternate,
                               )
                             : null,
                         activeColor: FlutterFlowTheme.of(context).primary,
@@ -407,7 +403,7 @@ class _CartItemListDeleteConfirmWidgetState
                   ],
                 ),
               ),
-          ].addToStart(SizedBox(height: 16.0)).addToEnd(SizedBox(height: 16.0)),
+          ].addToStart(const SizedBox(height: 16.0)).addToEnd(const SizedBox(height: 16.0)),
         ),
       ),
     );

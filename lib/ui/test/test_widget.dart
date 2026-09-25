@@ -2,12 +2,9 @@ import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:provider/provider.dart';
 import 'test_model.dart';
 export 'test_model.dart';
 
@@ -55,35 +52,35 @@ class _TestWidgetState extends State<TestWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(100.0),
+              preferredSize: const Size.fromHeight(100.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primary,
                 automaticallyImplyLeading: false,
-                actions: [],
+                actions: const [],
                 flexibleSpace: FlexibleSpaceBar(
                   title: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 30.0,
                                   borderWidth: 1.0,
                                   buttonSize: 50.0,
-                                  icon: Icon(
+                                  icon: const Icon(
                                     Icons.arrow_back_rounded,
                                     color: Colors.white,
                                     size: 30.0,
@@ -94,7 +91,7 @@ class _TestWidgetState extends State<TestWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -114,7 +111,7 @@ class _TestWidgetState extends State<TestWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -153,9 +150,9 @@ class _TestWidgetState extends State<TestWidget> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, -1.0),
+                              alignment: const AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 16.0),
                                 child: Container(
                                   width: 35.0,
@@ -169,7 +166,7 @@ class _TestWidgetState extends State<TestWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -177,7 +174,7 @@ class _TestWidgetState extends State<TestWidget> {
                                 children: [
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -194,11 +191,11 @@ class _TestWidgetState extends State<TestWidget> {
                                       ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   32.0, 0.0, 32.0, 8.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -211,10 +208,10 @@ class _TestWidgetState extends State<TestWidget> {
                                     PageTransition(
                                       type: PageTransitionType.fade,
                                       child: FlutterFlowExpandedImageView(
-                                        image: Image.network(
-                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/jyv97i7p8kif/girl1.jpg',
+                                        image: CachedNetworkImage(
+                                          imageUrl: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/jyv97i7p8kif/girl1.jpg',
                                           fit: BoxFit.contain,
-                                          alignment: Alignment(0.0, 1.0),
+                                          alignment: const Alignment(0.0, 1.0),
                                         ),
                                         allowRotation: false,
                                         useHeroAnimation: false,
@@ -224,12 +221,12 @@ class _TestWidgetState extends State<TestWidget> {
                                 },
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.network(
-                                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/jyv97i7p8kif/girl1.jpg',
+                                  child: CachedNetworkImage(
+                                    imageUrl: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/jyv97i7p8kif/girl1.jpg',
                                     width: 500.0,
                                     height: 400.0,
                                     fit: BoxFit.cover,
-                                    alignment: Alignment(0.0, 1.0),
+                                    alignment: const Alignment(0.0, 1.0),
                                   ),
                                 ),
                               ),
@@ -242,7 +239,7 @@ class _TestWidgetState extends State<TestWidget> {
                               desktop: false,
                             ))
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 16.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -261,7 +258,7 @@ class _TestWidgetState extends State<TestWidget> {
                               color: FlutterFlowTheme.of(context).alternate,
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -280,10 +277,10 @@ class _TestWidgetState extends State<TestWidget> {
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         height: 48.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -311,7 +308,7 @@ class _TestWidgetState extends State<TestWidget> {
                                       text: FFLocalizations.of(context).getText(
                                         '0hpt774y' /* Share */,
                                       ),
-                                      icon: Icon(
+                                      icon: const Icon(
                                         FFIcons.kshare,
                                         size: 15.0,
                                       ),
@@ -320,11 +317,11 @@ class _TestWidgetState extends State<TestWidget> {
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         height: 48.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         iconAlignment: IconAlignment.end,
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
@@ -348,13 +345,13 @@ class _TestWidgetState extends State<TestWidget> {
                                       ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 16.0)),
+                                ].divide(const SizedBox(width: 16.0)),
                               ),
                             ),
                           ]
-                              .divide(SizedBox(height: 8.0))
-                              .addToStart(SizedBox(height: 24.0))
-                              .addToEnd(SizedBox(height: 24.0)),
+                              .divide(const SizedBox(height: 8.0))
+                              .addToStart(const SizedBox(height: 24.0))
+                              .addToEnd(const SizedBox(height: 24.0)),
                         ),
                       ],
                     ),

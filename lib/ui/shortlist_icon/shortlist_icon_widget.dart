@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'shortlist_icon_model.dart';
 export 'shortlist_icon_model.dart';
 
@@ -42,10 +39,10 @@ class _ShortlistIconWidgetState extends State<ShortlistIconWidget> {
   @override
   Widget build(BuildContext context) {
     return FlutterFlowIconButton(
-      borderColor: Color(0x33FFFFFF),
+      borderColor: const Color(0x33FFFFFF),
       borderRadius: 100.0,
       buttonSize: 55.0,
-      fillColor: Color(0xFF553680),
+      fillColor: const Color(0xFF553680),
       icon: Icon(
         FFIcons.kicon16,
         color: FlutterFlowTheme.of(context).info,

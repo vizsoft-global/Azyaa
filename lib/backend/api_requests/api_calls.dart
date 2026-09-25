@@ -1,13 +1,10 @@
 import 'dart:convert';
-import 'dart:typed_data';
-import '../schema/structs/index.dart';
 
 import 'package:flutter/foundation.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:ff_commons/api_requests/api_manager.dart';
 
-import 'package:ff_commons/api_requests/api_paging_params.dart';
 
 export 'package:ff_commons/api_requests/api_manager.dart' show ApiCallResponse;
 
@@ -709,7 +706,7 @@ class InvoiceCall {
       url: url,
     );
 
-    final ffApiRequestBody = '''
+    const ffApiRequestBody = '''
 {
   "CustomerName": "name",
   "NotificationOption": "ALL",

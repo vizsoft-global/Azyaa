@@ -1,17 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/home/components/blank_loading/blank_loading_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -54,7 +49,7 @@ class _SocialWidgetState extends State<SocialWidget> {
     context.watch<FFAppState>();
 
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
       child: StreamBuilder<List<SettingsRecord>>(
         stream: querySettingsRecord(
           queryBuilder: (settingsRecord) => settingsRecord.where(
@@ -69,7 +64,7 @@ class _SocialWidgetState extends State<SocialWidget> {
             return Container(
               width: 0.0,
               height: 0.0,
-              child: BlankLoadingWidget(),
+              child: const BlankLoadingWidget(),
             );
           }
           List<SettingsRecord> socialSettingsRecordList = snapshot.data!;
@@ -85,11 +80,11 @@ class _SocialWidgetState extends State<SocialWidget> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              if (socialSettingsRecord?.settingsSocialLogin?.googleLogin ==
+              if (socialSettingsRecord?.settingsSocialLogin.googleLogin ==
                   true)
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -150,7 +145,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                               LoginWidget.routeName,
                               context.mounted,
                               extra: <String, dynamic>{
-                                '__transition_info__': TransitionInfo(
+                                '__transition_info__': const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -206,7 +201,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                               Step1PersonalWidget.routeName,
                               context.mounted,
                               extra: <String, dynamic>{
-                                '__transition_info__': TransitionInfo(
+                                '__transition_info__': const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -218,7 +213,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                               PhoneWidget.routeName,
                               context.mounted,
                               extra: <String, dynamic>{
-                                '__transition_info__': TransitionInfo(
+                                '__transition_info__': const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -232,13 +227,13 @@ class _SocialWidgetState extends State<SocialWidget> {
                             FFAppState().updateUserDataFlowStruct(
                               (e) => e
                                 ..userEmail =
-                                    currentUserDocument?.userInfo?.email
+                                    currentUserDocument?.userInfo.email
                                 ..phoneNumberCountry = currentUserDocument
-                                    ?.userInfo?.phoneNumberCountry
+                                    ?.userInfo.phoneNumberCountry
                                 ..userPhoneNumber =
-                                    currentUserDocument?.userInfo?.phoneNumber
+                                    currentUserDocument?.userInfo.phoneNumber
                                 ..phoneNumberDailcode = currentUserDocument
-                                    ?.userInfo?.phoneNumberDailCode
+                                    ?.userInfo.phoneNumberDailCode
                                 ..userRef = currentUserReference,
                             );
                             FFAppState().updateUserDataFlowStruct(
@@ -246,13 +241,13 @@ class _SocialWidgetState extends State<SocialWidget> {
                             );
                             await actions.registerFcmTokenIfMissing();
                             if (currentUserDocument
-                                    ?.userInfo?.isPofileCompleteStatus ==
+                                    ?.userInfo.isPofileCompleteStatus ==
                                 true) {
                               context.goNamedAuth(
                                 HomeWidget.routeName,
                                 context.mounted,
                                 extra: <String, dynamic>{
-                                  '__transition_info__': TransitionInfo(
+                                  '__transition_info__': const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 0),
@@ -261,7 +256,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                               );
                             } else {
                               if (currentUserDocument
-                                      ?.userInfo?.isEmailVerificationStatus ==
+                                      ?.userInfo.isEmailVerificationStatus ==
                                   false) {
                                 FFAppState().updateUserDataFlowStruct(
                                   (e) => e
@@ -289,7 +284,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                                   RegisterVerificationWidget.routeName,
                                   context.mounted,
                                   extra: <String, dynamic>{
-                                    '__transition_info__': TransitionInfo(
+                                    '__transition_info__': const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -300,13 +295,13 @@ class _SocialWidgetState extends State<SocialWidget> {
                                 if (socialSettingsRecord!
                                         .settingsPhoneOtpStatus &&
                                     (currentUserDocument?.userInfo
-                                            ?.isPhoneVerificationStatus ==
+                                            .isPhoneVerificationStatus ==
                                         false)) {
                                   context.goNamedAuth(
                                     PhoneWidget.routeName,
                                     context.mounted,
                                     extra: <String, dynamic>{
-                                      '__transition_info__': TransitionInfo(
+                                      '__transition_info__': const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -315,13 +310,13 @@ class _SocialWidgetState extends State<SocialWidget> {
                                   );
                                 } else {
                                   if (currentUserDocument
-                                          ?.userInfo?.isStep1Status ==
+                                          ?.userInfo.isStep1Status ==
                                       false) {
                                     context.goNamedAuth(
                                       Step1PersonalWidget.routeName,
                                       context.mounted,
                                       extra: <String, dynamic>{
-                                        '__transition_info__': TransitionInfo(
+                                        '__transition_info__': const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -331,13 +326,13 @@ class _SocialWidgetState extends State<SocialWidget> {
                                     );
                                   } else {
                                     if (currentUserDocument
-                                            ?.userInfo?.isStep2Status ==
+                                            ?.userInfo.isStep2Status ==
                                         false) {
                                       context.goNamedAuth(
                                         Step2MeasurementsWidget.routeName,
                                         context.mounted,
                                         extra: <String, dynamic>{
-                                          '__transition_info__': TransitionInfo(
+                                          '__transition_info__': const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -347,14 +342,14 @@ class _SocialWidgetState extends State<SocialWidget> {
                                       );
                                     } else {
                                       if (currentUserDocument
-                                              ?.userInfo?.isStep3Status ==
+                                              ?.userInfo.isStep3Status ==
                                           false) {
                                         context.goNamedAuth(
                                           Step3PreferredStyleWidget.routeName,
                                           context.mounted,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -369,7 +364,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                                           context.mounted,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -420,7 +415,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                               LoginWidget.routeName,
                               context.mounted,
                               extra: <String, dynamic>{
-                                '__transition_info__': TransitionInfo(
+                                '__transition_info__': const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -443,7 +438,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                           children: [
                             if (_model.googlestatus == 'hide')
                               Padding(
-                                padding: EdgeInsets.all(12.0),
+                                padding: const EdgeInsets.all(12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -470,12 +465,12 @@ class _SocialWidgetState extends State<SocialWidget> {
                                             fontWeight: FontWeight.w600,
                                           ),
                                     ),
-                                  ].divide(SizedBox(width: 12.0)),
+                                  ].divide(const SizedBox(width: 12.0)),
                                 ),
                               ),
                             if (_model.googlestatus == 'show')
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Lottie.asset(
                                   'assets/jsons/google-login.json',
                                   width: 50.0,
@@ -491,11 +486,11 @@ class _SocialWidgetState extends State<SocialWidget> {
                   ),
                 ),
               if ((isiOS == true) &&
-                  (socialSettingsRecord?.settingsSocialLogin?.appleLogin ==
+                  (socialSettingsRecord?.settingsSocialLogin.appleLogin ==
                       true))
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -555,7 +550,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                               LoginWidget.routeName,
                               context.mounted,
                               extra: <String, dynamic>{
-                                '__transition_info__': TransitionInfo(
+                                '__transition_info__': const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -619,13 +614,13 @@ class _SocialWidgetState extends State<SocialWidget> {
                             FFAppState().updateUserDataFlowStruct(
                               (e) => e
                                 ..userEmail =
-                                    currentUserDocument?.userInfo?.email
+                                    currentUserDocument?.userInfo.email
                                 ..phoneNumberCountry = currentUserDocument
-                                    ?.userInfo?.phoneNumberCountry
+                                    ?.userInfo.phoneNumberCountry
                                 ..userPhoneNumber =
-                                    currentUserDocument?.userInfo?.phoneNumber
+                                    currentUserDocument?.userInfo.phoneNumber
                                 ..phoneNumberDailcode = currentUserDocument
-                                    ?.userInfo?.phoneNumberDailCode
+                                    ?.userInfo.phoneNumberDailCode
                                 ..userRef = currentUserReference,
                             );
                             FFAppState().updateUserDataFlowStruct(
@@ -633,13 +628,13 @@ class _SocialWidgetState extends State<SocialWidget> {
                             );
                             await actions.registerFcmTokenIfMissing();
                             if (currentUserDocument
-                                    ?.userInfo?.isPofileCompleteStatus ==
+                                    ?.userInfo.isPofileCompleteStatus ==
                                 true) {
                               context.goNamedAuth(
                                 HomeWidget.routeName,
                                 context.mounted,
                                 extra: <String, dynamic>{
-                                  '__transition_info__': TransitionInfo(
+                                  '__transition_info__': const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 0),
@@ -648,7 +643,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                               );
                             } else {
                               if (currentUserDocument
-                                      ?.userInfo?.isEmailVerificationStatus ==
+                                      ?.userInfo.isEmailVerificationStatus ==
                                   false) {
                                 FFAppState().updateUserDataFlowStruct(
                                   (e) => e
@@ -676,7 +671,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                                   RegisterVerificationWidget.routeName,
                                   context.mounted,
                                   extra: <String, dynamic>{
-                                    '__transition_info__': TransitionInfo(
+                                    '__transition_info__': const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -685,7 +680,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                                 );
                               } else {
                                 if ((currentUserDocument?.userInfo
-                                            ?.isPhoneVerificationStatus ==
+                                            .isPhoneVerificationStatus ==
                                         false) &&
                                     (socialSettingsRecord
                                             ?.settingsPhoneOtpStatus ==
@@ -694,7 +689,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                                     PhoneWidget.routeName,
                                     context.mounted,
                                     extra: <String, dynamic>{
-                                      '__transition_info__': TransitionInfo(
+                                      '__transition_info__': const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -703,13 +698,13 @@ class _SocialWidgetState extends State<SocialWidget> {
                                   );
                                 } else {
                                   if (currentUserDocument
-                                          ?.userInfo?.isStep1Status ==
+                                          ?.userInfo.isStep1Status ==
                                       false) {
                                     context.goNamedAuth(
                                       Step1PersonalWidget.routeName,
                                       context.mounted,
                                       extra: <String, dynamic>{
-                                        '__transition_info__': TransitionInfo(
+                                        '__transition_info__': const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -719,13 +714,13 @@ class _SocialWidgetState extends State<SocialWidget> {
                                     );
                                   } else {
                                     if (currentUserDocument
-                                            ?.userInfo?.isStep2Status ==
+                                            ?.userInfo.isStep2Status ==
                                         false) {
                                       context.goNamedAuth(
                                         Step2MeasurementsWidget.routeName,
                                         context.mounted,
                                         extra: <String, dynamic>{
-                                          '__transition_info__': TransitionInfo(
+                                          '__transition_info__': const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -735,14 +730,14 @@ class _SocialWidgetState extends State<SocialWidget> {
                                       );
                                     } else {
                                       if (currentUserDocument
-                                              ?.userInfo?.isStep3Status ==
+                                              ?.userInfo.isStep3Status ==
                                           false) {
                                         context.goNamedAuth(
                                           Step3PreferredStyleWidget.routeName,
                                           context.mounted,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -757,7 +752,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                                           context.mounted,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -808,7 +803,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                               LoginWidget.routeName,
                               context.mounted,
                               extra: <String, dynamic>{
-                                '__transition_info__': TransitionInfo(
+                                '__transition_info__': const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -831,7 +826,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                           children: [
                             if (_model.applestatus == 'hide')
                               Padding(
-                                padding: EdgeInsets.all(12.0),
+                                padding: const EdgeInsets.all(12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -858,12 +853,12 @@ class _SocialWidgetState extends State<SocialWidget> {
                                             fontWeight: FontWeight.w600,
                                           ),
                                     ),
-                                  ].divide(SizedBox(width: 12.0)),
+                                  ].divide(const SizedBox(width: 12.0)),
                                 ),
                               ),
                             if (_model.applestatus == 'show')
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Lottie.asset(
                                   'assets/jsons/apple_login.json',
                                   width: 50.0,
@@ -878,11 +873,11 @@ class _SocialWidgetState extends State<SocialWidget> {
                     ),
                   ),
                 ),
-              if (socialSettingsRecord?.settingsSocialLogin?.facebookLogin ==
+              if (socialSettingsRecord?.settingsSocialLogin.facebookLogin ==
                   true)
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -942,7 +937,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                               LoginWidget.routeName,
                               context.mounted,
                               extra: <String, dynamic>{
-                                '__transition_info__': TransitionInfo(
+                                '__transition_info__': const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -989,7 +984,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                             PhoneWidget.routeName,
                             context.mounted,
                             extra: <String, dynamic>{
-                              '__transition_info__': TransitionInfo(
+                              '__transition_info__': const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                                 duration: Duration(milliseconds: 0),
@@ -1002,13 +997,13 @@ class _SocialWidgetState extends State<SocialWidget> {
                             FFAppState().updateUserDataFlowStruct(
                               (e) => e
                                 ..userEmail =
-                                    currentUserDocument?.userInfo?.email
+                                    currentUserDocument?.userInfo.email
                                 ..phoneNumberCountry = currentUserDocument
-                                    ?.userInfo?.phoneNumberCountry
+                                    ?.userInfo.phoneNumberCountry
                                 ..userPhoneNumber =
-                                    currentUserDocument?.userInfo?.phoneNumber
+                                    currentUserDocument?.userInfo.phoneNumber
                                 ..phoneNumberDailcode = currentUserDocument
-                                    ?.userInfo?.phoneNumberDailCode
+                                    ?.userInfo.phoneNumberDailCode
                                 ..userRef = currentUserReference,
                             );
                             FFAppState().updateUserDataFlowStruct(
@@ -1016,13 +1011,13 @@ class _SocialWidgetState extends State<SocialWidget> {
                             );
                             await actions.registerFcmTokenIfMissing();
                             if (currentUserDocument
-                                    ?.userInfo?.isPofileCompleteStatus ==
+                                    ?.userInfo.isPofileCompleteStatus ==
                                 true) {
                               context.goNamedAuth(
                                 HomeWidget.routeName,
                                 context.mounted,
                                 extra: <String, dynamic>{
-                                  '__transition_info__': TransitionInfo(
+                                  '__transition_info__': const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 0),
@@ -1031,7 +1026,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                               );
                             } else {
                               if (currentUserDocument
-                                      ?.userInfo?.isEmailVerificationStatus ==
+                                      ?.userInfo.isEmailVerificationStatus ==
                                   false) {
                                 FFAppState().updateUserDataFlowStruct(
                                   (e) => e
@@ -1059,7 +1054,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                                   RegisterVerificationWidget.routeName,
                                   context.mounted,
                                   extra: <String, dynamic>{
-                                    '__transition_info__': TransitionInfo(
+                                    '__transition_info__': const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -1068,13 +1063,13 @@ class _SocialWidgetState extends State<SocialWidget> {
                                 );
                               } else {
                                 if (currentUserDocument
-                                        ?.userInfo?.isPhoneVerificationStatus ==
+                                        ?.userInfo.isPhoneVerificationStatus ==
                                     false) {
                                   context.goNamedAuth(
                                     PhoneWidget.routeName,
                                     context.mounted,
                                     extra: <String, dynamic>{
-                                      '__transition_info__': TransitionInfo(
+                                      '__transition_info__': const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -1083,13 +1078,13 @@ class _SocialWidgetState extends State<SocialWidget> {
                                   );
                                 } else {
                                   if (currentUserDocument
-                                          ?.userInfo?.isStep1Status ==
+                                          ?.userInfo.isStep1Status ==
                                       false) {
                                     context.goNamedAuth(
                                       Step1PersonalWidget.routeName,
                                       context.mounted,
                                       extra: <String, dynamic>{
-                                        '__transition_info__': TransitionInfo(
+                                        '__transition_info__': const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -1099,13 +1094,13 @@ class _SocialWidgetState extends State<SocialWidget> {
                                     );
                                   } else {
                                     if (currentUserDocument
-                                            ?.userInfo?.isStep2Status ==
+                                            ?.userInfo.isStep2Status ==
                                         false) {
                                       context.goNamedAuth(
                                         Step2MeasurementsWidget.routeName,
                                         context.mounted,
                                         extra: <String, dynamic>{
-                                          '__transition_info__': TransitionInfo(
+                                          '__transition_info__': const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -1115,14 +1110,14 @@ class _SocialWidgetState extends State<SocialWidget> {
                                       );
                                     } else {
                                       if (currentUserDocument
-                                              ?.userInfo?.isStep3Status ==
+                                              ?.userInfo.isStep3Status ==
                                           false) {
                                         context.goNamedAuth(
                                           Step3PreferredStyleWidget.routeName,
                                           context.mounted,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -1137,7 +1132,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                                           context.mounted,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -1188,7 +1183,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                               LoginWidget.routeName,
                               context.mounted,
                               extra: <String, dynamic>{
-                                '__transition_info__': TransitionInfo(
+                                '__transition_info__': const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -1211,7 +1206,7 @@ class _SocialWidgetState extends State<SocialWidget> {
                           children: [
                             if (_model.applestatus == 'hide')
                               Padding(
-                                padding: EdgeInsets.all(12.0),
+                                padding: const EdgeInsets.all(12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -1238,12 +1233,12 @@ class _SocialWidgetState extends State<SocialWidget> {
                                             fontWeight: FontWeight.w600,
                                           ),
                                     ),
-                                  ].divide(SizedBox(width: 12.0)),
+                                  ].divide(const SizedBox(width: 12.0)),
                                 ),
                               ),
                             if (_model.applestatus == 'show')
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Lottie.asset(
                                   'assets/jsons/Animation_-_1747305540589.json',
                                   width: 50.0,

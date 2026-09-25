@@ -1,9 +1,7 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/payment/chosseoption_popup/chosseoption_popup_widget.dart';
 import '/azyaa_group_a/payment/product_attribute_cart_level/product_attribute_cart_level_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -12,11 +10,9 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import '/flutter_flow/revenue_cat_util.dart' as revenue_cat;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'default_cart_button_model.dart';
@@ -30,7 +26,7 @@ class DefaultCartButtonWidget extends StatefulWidget {
     required this.navigation,
     this.defaultTerms,
     this.quantity,
-  }) : this.type = type ?? 'button';
+  }) : type = type ?? 'button';
 
   final String type;
   final DocumentReference? product;
@@ -87,7 +83,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
-          return Center(
+          return const Center(
             child: SizedBox(
               width: 2.0,
               height: 2.0,
@@ -112,7 +108,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
           children: [
             Stack(
               children: [
-                if (widget!.type == 'button')
+                if (widget.type == 'button')
                   Builder(
                     builder: (context) => AuthUserStreamWidget(
                       builder: (context) => FFButtonWidget(
@@ -121,7 +117,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                           if (loggedIn) {
                             _model.normalProductResult =
                                 await ProductsRecord.getDocumentOnce(
-                                    widget!.product!);
+                                    widget.product!);
                             _shouldSetState = true;
                             _model.normalInventoryResult =
                                 await InventoryRecord.getDocumentOnce(_model
@@ -171,7 +167,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                           .toList()
                                           .firstOrNull
                                           ?.productAttribute
-                                          ?.length
+                                          .length
                                       ..userSwatchesProductAttribute =
                                           FFAppState()
                                               .UserDataFlow
@@ -203,7 +199,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                             elevation: 0,
                                             insetPadding: EdgeInsets.zero,
                                             backgroundColor: Colors.transparent,
-                                            alignment: AlignmentDirectional(
+                                            alignment: const AlignmentDirectional(
                                                     0.0, 0.0)
                                                 .resolve(
                                                     Directionality.of(context)),
@@ -248,7 +244,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                         insetPadding: EdgeInsets.zero,
                                         backgroundColor: Colors.transparent,
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0)
+                                            const AlignmentDirectional(0.0, 0.0)
                                                 .resolve(
                                                     Directionality.of(context)),
                                         child: WebViewAware(
@@ -281,9 +277,9 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                         .userCart.cartItems
                                         .toList()
                                     ..userSwatchesProductAttribute =
-                                        widget!.defaultTerms!.toList()
+                                        widget.defaultTerms!.toList()
                                     ..count = currentUserDocument
-                                        ?.userCart?.cartItems?.length
+                                        ?.userCart.cartItems.length
                                     ..userCartItemPAFound = 'notfound',
                                 );
                                 while (FFAppState().UserDataFlow.count > 0) {
@@ -321,7 +317,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                                     .count -
                                                 1)
                                             ?.cartItemAttribute
-                                            ?.length,
+                                            .length,
                                     );
                                     while (
                                         FFAppState().UserDataFlow.count > 0) {
@@ -333,7 +329,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                                           .count -
                                                       1)
                                                   ?.attributesDefaultTermId ==
-                                              (widget!.defaultTerms
+                                              (widget.defaultTerms
                                                       ?.elementAtOrNull(
                                                           FFAppState()
                                                                   .UserDataFlow
@@ -348,14 +344,14 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                                           .count -
                                                       1)
                                                   ?.attributesDefaultTermId ==
-                                              (widget!.defaultTerms
+                                              (widget.defaultTerms
                                                       ?.elementAtOrNull(
                                                           FFAppState()
                                                                   .UserDataFlow
                                                                   .count -
                                                               1))
                                                   ?.attributesBrandTermIds
-                                                  ?.firstOrNull)) {
+                                                  .firstOrNull)) {
                                         FFAppState().updateUserDataFlowStruct(
                                           (e) =>
                                               e..userCartItemPAFound = 'found',
@@ -393,7 +389,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                                   .UserDataFlow
                                                   .userCartItemPAIndex)!
                                               .quantity +
-                                          (widget!.quantity!))) {
+                                          (widget.quantity!))) {
                                     FFAppState().updateUserDataFlowStruct(
                                       (e) => e
                                         ..updateUserCartItemList(
@@ -407,11 +403,11 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                                         .UserDataFlow
                                                         .userCartItemPAIndex)!
                                                     .quantity +
-                                                (widget!.quantity!),
+                                                (widget.quantity!),
                                         ),
                                     );
                                     if ((currentUserDocument?.userBody
-                                                    ?.toList() ??
+                                                    .toList() ??
                                                 [])
                                             .where((e) => e.isDefault == true)
                                             .toList()
@@ -448,10 +444,10 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                               ..productMainType = _model
                                                   .normalProductResult
                                                   ?.product
-                                                  ?.productType
+                                                  .productType
                                               ..productUserBodyInfo =
                                                   (currentUserDocument?.userBody
-                                                              ?.toList() ??
+                                                              .toList() ??
                                                           [])
                                                       .where((e) =>
                                                           e.isDefault == true)
@@ -461,7 +457,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                       );
                                     } else {
                                       if (_model.normalProductResult?.product
-                                              ?.productType ==
+                                              .productType ==
                                           'custom') {
                                         await showDialog(
                                           context: context,
@@ -481,7 +477,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: Text('Ok'),
+                                                    child: const Text('Ok'),
                                                   ),
                                                 ],
                                               ),
@@ -525,7 +521,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                                 ..productMainType = _model
                                                     .normalProductResult
                                                     ?.product
-                                                    ?.productType,
+                                                    .productType,
                                             ),
                                         );
                                       }
@@ -533,7 +529,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                   }
                                 } else {
                                   if ((currentUserDocument?.userBody
-                                                  ?.toList() ??
+                                                  .toList() ??
                                               [])
                                           .where((e) => e.isDefault == true)
                                           .toList()
@@ -547,29 +543,29 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                                 .idMapResultNew?.cartItemId,
                                             productType: 'product',
                                             cartItemAttribute:
-                                                widget!.defaultTerms,
+                                                widget.defaultTerms,
                                             productId: _model
                                                 .normalProductResult?.productId,
                                             productInfo: _model
                                                 .normalProductResult
                                                 ?.productInfo,
-                                            quantity: widget!.quantity,
+                                            quantity: widget.quantity,
                                             price: _model.normalProductResult!
                                                     .product.productPrice *
-                                                (widget!.quantity!),
+                                                (widget.quantity!),
                                             totalPrice: _model
                                                     .normalProductResult!
                                                     .product
                                                     .productPrice *
-                                                (widget!.quantity!),
+                                                (widget.quantity!),
                                             productDesignerRef: _model
                                                 .normalProductResult
                                                 ?.productAuthorizer
-                                                ?.productDesignerRef,
+                                                .productDesignerRef,
                                             productDesignerId: _model
                                                 .normalProductResult
                                                 ?.productAuthorizer
-                                                ?.productDesignerId,
+                                                .productDesignerId,
                                             productRef: _model
                                                 .normalProductResult?.reference,
                                             productStockInfo: _model
@@ -591,10 +587,10 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                             productMainType: _model
                                                 .normalProductResult
                                                 ?.product
-                                                ?.productType,
+                                                .productType,
                                             productUserBodyInfo:
                                                 (currentUserDocument?.userBody
-                                                            ?.toList() ??
+                                                            .toList() ??
                                                         [])
                                                     .where((e) =>
                                                         e.isDefault == true)
@@ -605,21 +601,21 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                     );
                                   } else {
                                     if (_model.normalProductResult?.product
-                                            ?.productType ==
+                                            .productType ==
                                         'custom') {
                                       await showDialog(
                                         context: context,
                                         builder: (alertDialogContext) {
                                           return WebViewAware(
                                             child: AlertDialog(
-                                              content: Text(
+                                              content: const Text(
                                                   'Kindly choose your measurement.'),
                                               actions: [
                                                 TextButton(
                                                   onPressed: () =>
                                                       Navigator.pop(
                                                           alertDialogContext),
-                                                  child: Text('Ok'),
+                                                  child: const Text('Ok'),
                                                 ),
                                               ],
                                             ),
@@ -637,30 +633,30 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                                   .idMapResultNew?.cartItemId,
                                               productType: 'product',
                                               cartItemAttribute:
-                                                  widget!.defaultTerms,
+                                                  widget.defaultTerms,
                                               productId: _model
                                                   .normalProductResult
                                                   ?.productId,
                                               productInfo: _model
                                                   .normalProductResult
                                                   ?.productInfo,
-                                              quantity: widget!.quantity,
+                                              quantity: widget.quantity,
                                               price: _model.normalProductResult!
                                                       .product.productPrice *
-                                                  (widget!.quantity!),
+                                                  (widget.quantity!),
                                               totalPrice: _model
                                                       .normalProductResult!
                                                       .product
                                                       .productPrice *
-                                                  (widget!.quantity!),
+                                                  (widget.quantity!),
                                               productDesignerRef: _model
                                                   .normalProductResult
                                                   ?.productAuthorizer
-                                                  ?.productDesignerRef,
+                                                  .productDesignerRef,
                                               productDesignerId: _model
                                                   .normalProductResult
                                                   ?.productAuthorizer
-                                                  ?.productDesignerId,
+                                                  .productDesignerId,
                                               productRef: _model
                                                   .normalProductResult
                                                   ?.reference,
@@ -669,7 +665,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                               productMainType: _model
                                                   .normalProductResult
                                                   ?.product
-                                                  ?.productType,
+                                                  .productType,
                                             )),
                                           ),
                                       );
@@ -726,7 +722,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                       elevation: 0,
                                       insetPadding: EdgeInsets.zero,
                                       backgroundColor: Colors.transparent,
-                                      alignment: AlignmentDirectional(0.0, 1.0)
+                                      alignment: const AlignmentDirectional(0.0, 1.0)
                                           .resolve(Directionality.of(context)),
                                       child: WebViewAware(
                                         child: ProductAttributeCartLevelWidget(
@@ -756,7 +752,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                         text: loggedIn
                             ? (currentUserDocument!.userCart.cartItems
                                         .where((e) =>
-                                            (e.productRef == widget!.product) &&
+                                            (e.productRef == widget.product) &&
                                             (e.productType == 'product'))
                                         .toList()
                                         .length >
@@ -776,16 +772,16 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 48.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           iconAlignment: IconAlignment.end,
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: loggedIn
                               ? (currentUserDocument!.userCart.cartItems
                                           .where((e) =>
                                               (e.productRef ==
-                                                  widget!.product) &&
+                                                  widget.product) &&
                                               (e.productType == 'product'))
                                           .toList()
                                           .length >
@@ -805,9 +801,9 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                       ),
                     ),
                   ),
-                if (widget!.type == 'icon')
+                if (widget.type == 'icon')
                   Align(
-                    alignment: AlignmentDirectional(1.0, -1.0),
+                    alignment: const AlignmentDirectional(1.0, -1.0),
                     child: Builder(
                       builder: (context) => FlutterFlowIconButton(
                         borderRadius: 100.0,
@@ -824,7 +820,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                           if (loggedIn) {
                             _model.iconProductResult =
                                 await ProductsRecord.getDocumentOnce(
-                                    widget!.product!);
+                                    widget.product!);
                             _model.iconInventoryResult =
                                 await InventoryRecord.getDocumentOnce(_model
                                     .iconProductResult!.product.inventoryRef!);
@@ -836,7 +832,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                     elevation: 0,
                                     insetPadding: EdgeInsets.zero,
                                     backgroundColor: Colors.transparent,
-                                    alignment: AlignmentDirectional(0.0, 1.0)
+                                    alignment: const AlignmentDirectional(0.0, 1.0)
                                         .resolve(Directionality.of(context)),
                                     child: WebViewAware(
                                       child: ProductAttributeCartLevelWidget(
@@ -856,7 +852,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                             context.goNamed(
                               LoginWidget.routeName,
                               extra: <String, dynamic>{
-                                '__transition_info__': TransitionInfo(
+                                '__transition_info__': const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -888,12 +884,12 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                       ProductWidget.routeName,
                       queryParameters: {
                         'product': serializeParam(
-                          widget!.product,
+                          widget.product,
                           ParamType.DocumentReference,
                         ),
                       }.withoutNulls,
                       extra: <String, dynamic>{
-                        '__transition_info__': TransitionInfo(
+                        '__transition_info__': const TransitionInfo(
                           hasTransition: true,
                           transitionType: PageTransitionType.fade,
                           duration: Duration(milliseconds: 0),
@@ -917,7 +913,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                   .secondaryBackground,
                             ),
                           ),
-                          duration: Duration(milliseconds: 4000),
+                          duration: const Duration(milliseconds: 4000),
                           backgroundColor: FlutterFlowTheme.of(context).primary,
                         ),
                       );
@@ -933,7 +929,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                   .secondaryBackground,
                             ),
                           ),
-                          duration: Duration(milliseconds: 4000),
+                          duration: const Duration(milliseconds: 4000),
                           backgroundColor: FlutterFlowTheme.of(context).primary,
                         ),
                       );
@@ -947,7 +943,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                       _shouldSetState = true;
                       _model.normalProductInappResult =
                           await ProductsRecord.getDocumentOnce(
-                              widget!.product!);
+                              widget.product!);
                       _shouldSetState = true;
                       _model.addToInappCartItems(UserCartItemsStruct(
                         cartItemId: _model.idMapResultInapp?.cartItemId,
@@ -959,14 +955,14 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                             _model.normalProductInappResult?.productInfo,
                         quantity: 1,
                         price: _model
-                            .normalProductInappResult?.product?.productPrice,
+                            .normalProductInappResult?.product.productPrice,
                         totalPrice: _model
-                            .normalProductInappResult?.product?.productPrice,
+                            .normalProductInappResult?.product.productPrice,
                         productDesignerRef: _model.normalProductInappResult
-                            ?.productAuthorizer?.productDesignerRef,
-                        productRef: widget!.product,
+                            ?.productAuthorizer.productDesignerRef,
+                        productRef: widget.product,
                         productDesignerId: _model.normalProductInappResult
-                            ?.productAuthorizer?.productDesignerId,
+                            ?.productAuthorizer.productDesignerId,
                       ));
                       safeSetState(() {});
 
@@ -978,16 +974,16 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                             'ORDAZYA_INAPP${random_data.randomInteger(1000, 9999).toString()}',
                         customerRef: currentUserReference,
                         totalPrice: _model
-                            .normalProductInappResult?.product?.productPrice,
+                            .normalProductInappResult?.product.productPrice,
                         orderItems: updateUserCartStruct(
                           UserCartStruct(
                             cartId: _model.idMapResultInapp?.cartId,
                             createdAt: getCurrentTimestamp,
                             updatedAt: getCurrentTimestamp,
                             subtotal: _model.normalProductInappResult?.product
-                                ?.productPrice,
+                                .productPrice,
                             total: _model.normalProductInappResult?.product
-                                ?.productPrice,
+                                .productPrice,
                             cartItems: _model.inappCartItems,
                           ),
                           clearUnsetFields: false,
@@ -1004,16 +1000,16 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                     'ORDAZYA_INAPP${random_data.randomInteger(1000, 9999).toString()}',
                                 customerRef: currentUserReference,
                                 totalPrice: _model.normalProductInappResult
-                                    ?.product?.productPrice,
+                                    ?.product.productPrice,
                                 orderItems: updateUserCartStruct(
                                   UserCartStruct(
                                     cartId: _model.idMapResultInapp?.cartId,
                                     createdAt: getCurrentTimestamp,
                                     updatedAt: getCurrentTimestamp,
                                     subtotal: _model.normalProductInappResult
-                                        ?.product?.productPrice,
+                                        ?.product.productPrice,
                                     total: _model.normalProductInappResult
-                                        ?.product?.productPrice,
+                                        ?.product.productPrice,
                                     cartItems: _model.inappCartItems,
                                   ),
                                   clearUnsetFields: false,
@@ -1032,7 +1028,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                             .update(createOrdersRecordData(
                           shippingAddress: updateUserShippingaddressInfoStruct(
                             (currentUserDocument?.userShippingaddress
-                                        ?.toList() ??
+                                        .toList() ??
                                     [])
                                 .where((e) => e.isDefault == true)
                                 .toList()
@@ -1042,7 +1038,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                           ),
                           shippingInfo: updateUserShippingaddressStruct(
                             (currentUserDocument?.userShippingaddress
-                                        ?.toList() ??
+                                        .toList() ??
                                     [])
                                 .where((e) => e.isDefault == true)
                                 .toList()
@@ -1100,12 +1096,12 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                       quantity: 1,
                                       salesUserInfo: createSalesUserInfoStruct(
                                         customerId: currentUserDocument
-                                            ?.userInfo?.userId,
+                                            ?.userInfo.userId,
                                         customerRef: currentUserReference,
                                         customerName: currentUserDisplayName,
                                         email: currentUserEmail,
                                         phoneNumber: currentUserDocument
-                                            ?.userInfo?.phoneNumber,
+                                            ?.userInfo.phoneNumber,
                                         clearUnsetFields: false,
                                       ),
                                       clearUnsetFields: false,
@@ -1123,7 +1119,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                       context.goNamed(
                         SuccessWidget.routeName,
                         extra: <String, dynamic>{
-                          '__transition_info__': TransitionInfo(
+                          '__transition_info__': const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -1146,7 +1142,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                   .secondaryBackground,
                             ),
                           ),
-                          duration: Duration(milliseconds: 4000),
+                          duration: const Duration(milliseconds: 4000),
                           backgroundColor: FlutterFlowTheme.of(context).error,
                         ),
                       );
@@ -1161,9 +1157,9 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                 options: FFButtonOptions(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 48.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'almarai',
@@ -1172,7 +1168,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                         letterSpacing: 0.0,
                       ),
                   elevation: 0.0,
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.transparent,
                     width: 1.0,
                   ),

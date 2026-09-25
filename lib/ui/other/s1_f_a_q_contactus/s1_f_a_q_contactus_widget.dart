@@ -1,15 +1,11 @@
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:expandable/expandable.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 's1_f_a_q_contactus_model.dart';
 export 's1_f_a_q_contactus_model.dart';
 
@@ -78,7 +74,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -108,9 +104,9 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                         ),
                         Expanded(
                           child: Align(
-                            alignment: AlignmentDirectional(-1.0, -1.0),
+                            alignment: const AlignmentDirectional(-1.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -158,11 +154,11 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                             print('IconButton pressed ...');
                           },
                         ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -176,13 +172,13 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                     child: Column(
                       children: [
                         Align(
-                          alignment: Alignment(0.0, 0),
+                          alignment: const Alignment(0.0, 0),
                           child: TabBar(
                             labelColor:
                                 FlutterFlowTheme.of(context).primaryText,
                             unselectedLabelColor:
                                 FlutterFlowTheme.of(context).primaryText,
-                            labelPadding: EdgeInsetsDirectional.fromSTEB(
+                            labelPadding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             labelStyle: FlutterFlowTheme.of(context)
                                 .titleMedium
@@ -229,14 +225,14 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 0.0, 16.0),
                                       child: Container(
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         height: 30.0,
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -254,7 +250,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 4.0, 12.0, 4.0),
                                                 child: Icon(
@@ -267,7 +263,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                               ),
                                             ),
                                             Container(
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: ListView(
                                                 padding: EdgeInsets.zero,
                                                 primary: false,
@@ -292,7 +288,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   4.0,
@@ -334,7 +330,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   4.0,
@@ -376,7 +372,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   4.0,
@@ -418,7 +414,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   4.0,
@@ -456,7 +452,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                               .width *
                                                           1.0,
                                                       decoration:
-                                                          BoxDecoration(),
+                                                          const BoxDecoration(),
                                                       child:
                                                           FlutterFlowChoiceChips(
                                                         options: [
@@ -585,10 +581,10 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                         wrapped: false,
                                                       ),
                                                     ),
-                                                ].divide(SizedBox(width: 8.0)),
+                                                ].divide(const SizedBox(width: 8.0)),
                                               ),
                                             ),
-                                          ].divide(SizedBox(width: 8.0)),
+                                          ].divide(const SizedBox(width: 8.0)),
                                         ),
                                       ),
                                     ),
@@ -600,19 +596,19 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                               CrossAxisAlignment.center,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 8.0),
                                               child: Container(
                                                 width: double.infinity,
-                                                color: Color(0x00000000),
+                                                color: const Color(0x00000000),
                                                 child: ExpandableNotifier(
                                                   controller: _model
                                                       .q1ExpandableController,
                                                   child: ExpandablePanel(
                                                     header: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   0.0,
@@ -640,7 +636,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                     ),
                                                     collapsed: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -662,7 +658,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                     ),
                                                     expanded: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -684,7 +680,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         0.0,
@@ -724,7 +720,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                     .of(context)
                                                                 .alternate,
                                                           ),
-                                                        ].divide(SizedBox(
+                                                        ].divide(const SizedBox(
                                                             height: 8.0)),
                                                       ),
                                                     ),
@@ -751,19 +747,19 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 16.0),
                                               child: Container(
                                                 width: double.infinity,
-                                                color: Color(0x00000000),
+                                                color: const Color(0x00000000),
                                                 child: ExpandableNotifier(
                                                   controller: _model
                                                       .q2ExpandableController,
                                                   child: ExpandablePanel(
                                                     header: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   0.0,
@@ -791,7 +787,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                     ),
                                                     collapsed: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -813,7 +809,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                     ),
                                                     expanded: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -835,7 +831,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         0.0,
@@ -868,7 +864,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                   ),
                                                             ),
                                                           ),
-                                                        ].divide(SizedBox(
+                                                        ].divide(const SizedBox(
                                                             height: 8.0)),
                                                       ),
                                                     ),
@@ -895,19 +891,19 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 16.0),
                                               child: Container(
                                                 width: double.infinity,
-                                                color: Color(0x00000000),
+                                                color: const Color(0x00000000),
                                                 child: ExpandableNotifier(
                                                   controller: _model
                                                       .q3ExpandableController,
                                                   child: ExpandablePanel(
                                                     header: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   0.0,
@@ -935,7 +931,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                     ),
                                                     collapsed: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -957,7 +953,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                     ),
                                                     expanded: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -979,7 +975,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         0.0,
@@ -1012,7 +1008,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                   ),
                                                             ),
                                                           ),
-                                                        ].divide(SizedBox(
+                                                        ].divide(const SizedBox(
                                                             height: 8.0)),
                                                       ),
                                                     ),
@@ -1039,19 +1035,19 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 16.0),
                                               child: Container(
                                                 width: double.infinity,
-                                                color: Color(0x00000000),
+                                                color: const Color(0x00000000),
                                                 child: ExpandableNotifier(
                                                   controller: _model
                                                       .q4ExpandableController,
                                                   child: ExpandablePanel(
                                                     header: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   0.0,
@@ -1079,7 +1075,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                     ),
                                                     collapsed: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -1101,7 +1097,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                     ),
                                                     expanded: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -1123,7 +1119,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         0.0,
@@ -1156,7 +1152,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                   ),
                                                             ),
                                                           ),
-                                                        ].divide(SizedBox(
+                                                        ].divide(const SizedBox(
                                                             height: 8.0)),
                                                       ),
                                                     ),
@@ -1184,19 +1180,19 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 16.0),
                                                 child: Container(
                                                   width: double.infinity,
-                                                  color: Color(0x00000000),
+                                                  color: const Color(0x00000000),
                                                   child: ExpandableNotifier(
                                                     controller: _model
                                                         .q5ExpandableController,
                                                     child: ExpandablePanel(
                                                       header: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     0.0,
@@ -1224,7 +1220,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                       ),
                                                       collapsed: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     8.0,
@@ -1246,7 +1242,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                       ),
                                                       expanded: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     8.0,
@@ -1268,7 +1264,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -1301,7 +1297,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                     ),
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               height: 8.0)),
                                                         ),
                                                       ),
@@ -1331,19 +1327,19 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 16.0),
                                               child: Container(
                                                 width: double.infinity,
-                                                color: Color(0x00000000),
+                                                color: const Color(0x00000000),
                                                 child: ExpandableNotifier(
                                                   controller: _model
                                                       .q6ExpandableController,
                                                   child: ExpandablePanel(
                                                     header: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   0.0,
@@ -1371,7 +1367,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                     ),
                                                     collapsed: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -1393,7 +1389,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                     ),
                                                     expanded: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -1415,7 +1411,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         0.0,
@@ -1448,7 +1444,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                   ),
                                                             ),
                                                           ),
-                                                        ].divide(SizedBox(
+                                                        ].divide(const SizedBox(
                                                             height: 8.0)),
                                                       ),
                                                     ),
@@ -1476,19 +1472,19 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 16.0),
                                                 child: Container(
                                                   width: double.infinity,
-                                                  color: Color(0x00000000),
+                                                  color: const Color(0x00000000),
                                                   child: ExpandableNotifier(
                                                     controller: _model
                                                         .q7ExpandableController,
                                                     child: ExpandablePanel(
                                                       header: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     0.0,
@@ -1516,7 +1512,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                       ),
                                                       collapsed: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     8.0,
@@ -1538,7 +1534,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                       ),
                                                       expanded: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     8.0,
@@ -1560,7 +1556,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -1593,7 +1589,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                                     ),
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               height: 8.0)),
                                                         ),
                                                       ),
@@ -1627,15 +1623,15 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                       ),
                                     ),
                                   ]
-                                      .addToStart(SizedBox(height: 12.0))
-                                      .addToEnd(SizedBox(height: 12.0)),
+                                      .addToStart(const SizedBox(height: 12.0))
+                                      .addToEnd(const SizedBox(height: 12.0)),
                                 ),
                               ),
                               Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 16.0, 16.0, 0.0),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
@@ -1651,7 +1647,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(12.0),
+                                        padding: const EdgeInsets.all(12.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -1684,13 +1680,13 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                       .primaryText,
                                               size: 24.0,
                                             ),
-                                          ].divide(SizedBox(width: 12.0)),
+                                          ].divide(const SizedBox(width: 12.0)),
                                         ),
                                       ),
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 16.0, 16.0, 0.0),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
@@ -1706,7 +1702,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(12.0),
+                                        padding: const EdgeInsets.all(12.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -1739,13 +1735,13 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                       .primaryText,
                                               size: 24.0,
                                             ),
-                                          ].divide(SizedBox(width: 12.0)),
+                                          ].divide(const SizedBox(width: 12.0)),
                                         ),
                                       ),
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 16.0, 16.0, 0.0),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
@@ -1761,7 +1757,7 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(12.0),
+                                        padding: const EdgeInsets.all(12.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -1794,14 +1790,14 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                                                       .primaryText,
                                               size: 24.0,
                                             ),
-                                          ].divide(SizedBox(width: 12.0)),
+                                          ].divide(const SizedBox(width: 12.0)),
                                         ),
                                       ),
                                     ),
                                   ),
                                 ]
-                                    .addToStart(SizedBox(height: 12.0))
-                                    .addToEnd(SizedBox(height: 12.0)),
+                                    .addToStart(const SizedBox(height: 12.0))
+                                    .addToEnd(const SizedBox(height: 12.0)),
                               ),
                             ],
                           ),

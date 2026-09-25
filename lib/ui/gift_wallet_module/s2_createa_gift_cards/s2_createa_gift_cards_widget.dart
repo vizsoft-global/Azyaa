@@ -3,13 +3,9 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 's2_createa_gift_cards_model.dart';
 export 's2_createa_gift_cards_model.dart';
 
@@ -67,7 +63,7 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -97,7 +93,7 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -145,11 +141,11 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                             print('IconButton pressed ...');
                           },
                         ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -177,7 +173,7 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
@@ -186,14 +182,14 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                                         width: 200.0,
                                         height: 130.0,
                                         fit: BoxFit.contain,
-                                        alignment: Alignment(-1.0, 0.0),
+                                        alignment: const Alignment(-1.0, 0.0),
                                       ),
                                     ),
                                   ),
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsets.all(16.0),
+                                    padding: const EdgeInsets.all(16.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -235,7 +231,7 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -267,7 +263,7 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 16.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -282,12 +278,12 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 0.0, 24.0),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   height: 30.0,
-                                  decoration: BoxDecoration(),
+                                  decoration: const BoxDecoration(),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -304,7 +300,7 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 4.0, 12.0, 4.0),
                                           child: Icon(
                                             Icons.add,
@@ -315,7 +311,7 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                                         ),
                                       ),
                                       Container(
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: ListView(
                                           padding: EdgeInsets.zero,
                                           primary: false,
@@ -326,7 +322,7 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   1.0,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: FlutterFlowChoiceChips(
                                                 options: [
                                                   ChipData(FFLocalizations.of(
@@ -459,7 +455,7 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 4.0, 8.0, 4.0),
                                                   child: Text(
@@ -477,15 +473,15 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                                                   ),
                                                 ),
                                               ),
-                                          ].divide(SizedBox(width: 8.0)),
+                                          ].divide(const SizedBox(width: 8.0)),
                                         ),
                                       ),
-                                    ].divide(SizedBox(width: 8.0)),
+                                    ].divide(const SizedBox(width: 8.0)),
                                   ),
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 8.0),
                                 child: RichText(
                                   textScaler: MediaQuery.of(context).textScaler,
@@ -531,7 +527,7 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 24.0),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
@@ -620,7 +616,7 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 8.0),
                                 child: RichText(
                                   textScaler: MediaQuery.of(context).textScaler,
@@ -666,9 +662,9 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 24.0),
                                   child: Container(
                                     width:
@@ -684,16 +680,16 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                                         width: 1.0,
                                       ),
                                     ),
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsets.all(4.0),
+                                      padding: const EdgeInsets.all(4.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         crossAxisAlignment:
                                             CrossAxisAlignment.center,
                                         children: [
                                           Padding(
-                                            padding: EdgeInsets.all(12.0),
+                                            padding: const EdgeInsets.all(12.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -715,7 +711,7 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                                           ),
                                           Expanded(
                                             child: Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Container(
                                                 width:
@@ -777,7 +773,7 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                                                                 context)
                                                             .primaryBackground,
                                                     contentPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 0.0,
                                                                 0.0, 8.0),
                                                   ),
@@ -814,7 +810,7 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 8.0),
                                 child: RichText(
                                   textScaler: MediaQuery.of(context).textScaler,
@@ -860,7 +856,7 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 24.0),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
@@ -946,7 +942,7 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                                   ),
                                 ),
                               ),
-                            ].addToStart(SizedBox(height: 24.0)),
+                            ].addToStart(const SizedBox(height: 24.0)),
                           ),
                         ],
                       ),
@@ -954,7 +950,7 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () {
                         print('Button pressed ...');
@@ -965,10 +961,10 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 48.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -982,9 +978,9 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                     ),
                   ),
                 ]
-                    .divide(SizedBox(height: 16.0))
-                    .addToStart(SizedBox(height: 16.0))
-                    .addToEnd(SizedBox(height: 16.0)),
+                    .divide(const SizedBox(height: 16.0))
+                    .addToStart(const SizedBox(height: 16.0))
+                    .addToEnd(const SizedBox(height: 16.0)),
               ),
             ),
           ),

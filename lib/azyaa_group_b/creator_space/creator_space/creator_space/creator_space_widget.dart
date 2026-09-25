@@ -1,20 +1,16 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_b/creator_space/creator_space/components/creatorspace_productview/creatorspace_productview_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'creator_space_model.dart';
 export 'creator_space_model.dart';
 
@@ -76,11 +72,11 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                     ))
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                         child: Container(
                           height: 240.0,
                           child: Stack(
-                            alignment: AlignmentDirectional(0.0, -1.0),
+                            alignment: const AlignmentDirectional(0.0, -1.0),
                             children: [
                               Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -94,9 +90,9 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                   ),
                                 ),
                                 child: Align(
-                                  alignment: AlignmentDirectional(0.0, -1.0),
+                                  alignment: const AlignmentDirectional(0.0, -1.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 24.0, 16.0, 24.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -107,7 +103,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 8.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -119,7 +115,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                               FlutterFlowIconButton(
                                                 borderRadius: 100.0,
                                                 buttonSize: 42.0,
-                                                fillColor: Color(0x66AEDF0A),
+                                                fillColor: const Color(0x66AEDF0A),
                                                 icon: Icon(
                                                   Icons.close,
                                                   color: FlutterFlowTheme.of(
@@ -132,7 +128,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                     HomeWidget.routeName,
                                                     extra: <String, dynamic>{
                                                       '__transition_info__':
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -147,11 +143,11 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                               Expanded(
                                                 child: Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, -1.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 8.0, 0.0),
                                                     child: Text(
@@ -183,7 +179,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -216,7 +212,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                             .override(
                                                               fontFamily:
                                                                   'almarai',
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFF5B7700),
                                                               fontSize: 16.0,
                                                               letterSpacing:
@@ -238,7 +234,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                             .override(
                                                               fontFamily:
                                                                   'almarai',
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFF5B7700),
                                                               fontSize: 12.0,
                                                               letterSpacing:
@@ -246,7 +242,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                             ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(height: 4.0)),
+                                                        const SizedBox(height: 4.0)),
                                                   ),
                                                 ),
                                                 ClipRRect(
@@ -270,9 +266,9 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 1.0),
+                                alignment: const AlignmentDirectional(0.0, 1.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -283,7 +279,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                       context.pushNamed(
                                         CreatePromotionCustomWidget.routeName,
                                         extra: <String, dynamic>{
-                                          '__transition_info__': TransitionInfo(
+                                          '__transition_info__': const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -311,13 +307,13 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                               BorderRadius.circular(12.0),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -361,7 +357,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                           .routeName,
                                                       extra: <String, dynamic>{
                                                         '__transition_info__':
-                                                            TransitionInfo(
+                                                            const TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -395,13 +391,13 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                       ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                       child: Container(
                         height: 250.0,
                         child: Stack(
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, -1.0),
+                              alignment: const AlignmentDirectional(0.0, -1.0),
                               child: StreamBuilder<List<SettingsRecord>>(
                                 stream: querySettingsRecord(
                                   singleRecord: true,
@@ -450,15 +446,15 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                     child: Visibility(
                                       visible: containerSettingsRecord
                                               ?.settingsHome
-                                              ?.settingIsCreatorBannnerWidgetStatus ==
+                                              .settingIsCreatorBannnerWidgetStatus ==
                                           true,
                                       child: Builder(
                                         builder: (context) {
                                           final creatorSliderList =
                                               containerSettingsRecord
                                                       ?.settingsHome
-                                                      ?.settingsCreatorBannerInfoList
-                                                      ?.toList() ??
+                                                      .settingsCreatorBannerInfoList
+                                                      .toList() ??
                                                   [];
 
                                           return Container(
@@ -467,7 +463,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                             child: Stack(
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 40.0),
                                                   child: PageView.builder(
@@ -492,7 +488,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                               creatorSliderListIndex];
                                                       return Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     48.0,
@@ -507,7 +503,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                           children: [
                                                             Expanded(
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
@@ -565,7 +561,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                                                   lineHeight: 1.5,
                                                                                 ),
                                                                           ),
-                                                                        ].divide(SizedBox(height: 4.0)),
+                                                                        ].divide(const SizedBox(height: 4.0)),
                                                                       ),
                                                                     ),
                                                                     Column(
@@ -581,7 +577,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                                       children:
                                                                           [
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               1.0,
                                                                               0.4),
                                                                           child:
@@ -589,17 +585,17 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                                             borderRadius:
                                                                                 BorderRadius.circular(8.0),
                                                                             child:
-                                                                                Image.network(
-                                                                              creatorSliderListItem.featureImage,
+                                                                                CachedNetworkImage(
+                                                                              imageUrl: creatorSliderListItem.featureImage,
                                                                               width: 80.0,
                                                                               fit: BoxFit.cover,
                                                                             ),
                                                                           ),
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               height: 4.0)),
                                                                     ),
-                                                                  ].divide(SizedBox(
+                                                                  ].divide(const SizedBox(
                                                                       width:
                                                                           8.0)),
                                                                 ),
@@ -613,11 +609,11 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.7),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 16.0),
                                                     child: smooth_page_indicator
@@ -641,7 +637,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                             .pageViewController!
                                                             .animateToPage(
                                                           i,
-                                                          duration: Duration(
+                                                          duration: const Duration(
                                                               milliseconds:
                                                                   500),
                                                           curve: Curves.ease,
@@ -680,16 +676,16 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, -1.0),
+                              alignment: const AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 24.0, 0.0, 0.0),
                                 child: Container(
                                   height: 60.0,
-                                  decoration: BoxDecoration(),
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  decoration: const BoxDecoration(),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -699,7 +695,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                         FlutterFlowIconButton(
                                           borderRadius: 100.0,
                                           buttonSize: 42.0,
-                                          fillColor: Color(0xFFAC7BAC),
+                                          fillColor: const Color(0xFFAC7BAC),
                                           icon: Icon(
                                             Icons.chevron_left,
                                             color: FlutterFlowTheme.of(context)
@@ -711,7 +707,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                               HomeWidget.routeName,
                                               extra: <String, dynamic>{
                                                 '__transition_info__':
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -849,7 +845,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                                   .primaryText,
                                                             ),
                                                           ),
-                                                          duration: Duration(
+                                                          duration: const Duration(
                                                               milliseconds:
                                                                   3000),
                                                           backgroundColor:
@@ -868,18 +864,18 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                       size: 18.0,
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(width: 8.0)),
+                                                ].divide(const SizedBox(width: 8.0)),
                                               ),
-                                            ].divide(SizedBox(height: 4.0)),
+                                            ].divide(const SizedBox(height: 4.0)),
                                           ),
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(1.0, -1.0),
+                                              const AlignmentDirectional(1.0, -1.0),
                                           child: FlutterFlowIconButton(
                                             borderRadius: 100.0,
                                             buttonSize: 42.0,
-                                            fillColor: Color(0xFFAC7BAC),
+                                            fillColor: const Color(0xFFAC7BAC),
                                             icon: Icon(
                                               FFIcons.kshare,
                                               color:
@@ -892,16 +888,16 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                             },
                                           ),
                                         ),
-                                      ].divide(SizedBox(width: 4.0)),
+                                      ].divide(const SizedBox(width: 4.0)),
                                     ),
                                   ),
                                 ),
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 1.0),
+                              alignment: const AlignmentDirectional(0.0, 1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -912,7 +908,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                     context.pushNamed(
                                       CreatePromotionCustomWidget.routeName,
                                       extra: <String, dynamic>{
-                                        '__transition_info__': TransitionInfo(
+                                        '__transition_info__': const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -938,13 +934,13 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                             BorderRadius.circular(12.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(8.0),
+                                        padding: const EdgeInsets.all(8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Expanded(
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -985,7 +981,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                         .routeName,
                                                     extra: <String, dynamic>{
                                                       '__transition_info__':
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -1025,7 +1021,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                       desktop: false,
                     ))
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 16.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1039,7 +1035,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(12.0),
+                            padding: const EdgeInsets.all(12.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -1146,7 +1142,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                           BorderRadius.circular(100.0),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.all(4.0),
+                                      padding: const EdgeInsets.all(4.0),
                                       child: Icon(
                                         Icons.navigate_next_rounded,
                                         color: FlutterFlowTheme.of(context)
@@ -1157,16 +1153,16 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                   ),
                                 ),
                               ]
-                                  .divide(SizedBox(width: 16.0))
-                                  .addToStart(SizedBox(width: 8.0))
-                                  .addToEnd(SizedBox(width: 8.0)),
+                                  .divide(const SizedBox(width: 16.0))
+                                  .addToStart(const SizedBox(width: 8.0))
+                                  .addToEnd(const SizedBox(width: 8.0)),
                             ),
                           ),
                         ),
                       ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 24.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 24.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         decoration: BoxDecoration(
@@ -1179,12 +1175,12 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.all(12.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1212,7 +1208,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                           S3QuickStatsWidget.routeName,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -1230,7 +1226,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                               BorderRadius.circular(100.0),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(4.0),
+                                          padding: const EdgeInsets.all(4.0),
                                           child: Icon(
                                             Icons.navigate_next_rounded,
                                             color: FlutterFlowTheme.of(context)
@@ -1241,9 +1237,9 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                       ),
                                     ),
                                   ]
-                                      .divide(SizedBox(width: 16.0))
-                                      .addToStart(SizedBox(width: 8.0))
-                                      .addToEnd(SizedBox(width: 8.0)),
+                                      .divide(const SizedBox(width: 16.0))
+                                      .addToStart(const SizedBox(width: 8.0))
+                                      .addToEnd(const SizedBox(width: 8.0)),
                                 ),
                               ),
                               Divider(
@@ -1257,7 +1253,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                   Expanded(
                                     child: Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         crossAxisAlignment:
@@ -1307,14 +1303,14 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
-                                        ].divide(SizedBox(height: 4.0)),
+                                        ].divide(const SizedBox(height: 4.0)),
                                       ),
                                     ),
                                   ),
                                   Expanded(
                                     child: Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         crossAxisAlignment:
@@ -1370,7 +1366,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
-                                        ].divide(SizedBox(height: 4.0)),
+                                        ].divide(const SizedBox(height: 4.0)),
                                       ),
                                     ),
                                   ),
@@ -1449,7 +1445,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
-                                        ].divide(SizedBox(height: 4.0)),
+                                        ].divide(const SizedBox(height: 4.0)),
                                       ),
                                     ),
                                 ],
@@ -1467,7 +1463,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                             .length >
                         0)
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 16.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Row(
@@ -1518,7 +1514,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                   context.pushNamed(
                                     PromotedProductsListingWidget.routeName,
                                     extra: <String, dynamic>{
-                                      '__transition_info__': TransitionInfo(
+                                      '__transition_info__': const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -1533,7 +1529,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                     borderRadius: BorderRadius.circular(100.0),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(4.0),
+                                    padding: const EdgeInsets.all(4.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -1545,7 +1541,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                               .routeName,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -1565,17 +1561,17 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                   ),
                                 ),
                               ),
-                            ].divide(SizedBox(width: 8.0)),
+                            ].divide(const SizedBox(width: 8.0)),
                           ),
                         ),
                       ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 24.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 24.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 270.0,
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
@@ -1585,19 +1581,19 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                 builder: (context) => Builder(
                                   builder: (context) {
                                     final promotionList = currentUserDocument
-                                            ?.creatorMainInfo?.creatorPromotions
-                                            ?.where((e) =>
+                                            ?.creatorMainInfo.creatorPromotions
+                                            .where((e) =>
                                                 e.promotionStatus == 'active')
                                             .toList()
-                                            ?.sortedList(
+                                            .sortedList(
                                                 keyOf: (e) =>
                                                     e.promotionCreatedAt!,
                                                 desc: true)
-                                            ?.toList() ??
+                                            .toList() ??
                                         [];
 
                                     return ListView.separated(
-                                      padding: EdgeInsets.fromLTRB(
+                                      padding: const EdgeInsets.fromLTRB(
                                         0,
                                         0,
                                         16.0,
@@ -1608,14 +1604,14 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                       scrollDirection: Axis.horizontal,
                                       itemCount: promotionList.length,
                                       separatorBuilder: (_, __) =>
-                                          SizedBox(width: 8.0),
+                                          const SizedBox(width: 8.0),
                                       itemBuilder:
                                           (context, promotionListIndex) {
                                         final promotionListItem =
                                             promotionList[promotionListIndex];
                                         return Container(
                                           width: 170.0,
-                                          decoration: BoxDecoration(),
+                                          decoration: const BoxDecoration(),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -1634,7 +1630,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                                 }.withoutNulls,
                                                 extra: <String, dynamic>{
                                                   '__transition_info__':
-                                                      TransitionInfo(
+                                                      const TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType.fade,
@@ -1665,7 +1661,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                 desktop: false,
                               ))
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 24.0),
                                   child: FFButtonWidget(
                                     onPressed: () {
@@ -1676,10 +1672,10 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                     ),
                                     options: FFButtonOptions(
                                       height: 28.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
@@ -1719,7 +1715,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                             .length >
                         0)
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 16.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Row(
@@ -1775,7 +1771,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                     borderRadius: BorderRadius.circular(100.0),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(4.0),
+                                    padding: const EdgeInsets.all(4.0),
                                     child: Icon(
                                       Icons.navigate_next_rounded,
                                       color: FlutterFlowTheme.of(context)
@@ -1784,31 +1780,31 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                     ),
                                   ),
                                 ),
-                            ].divide(SizedBox(width: 8.0)),
+                            ].divide(const SizedBox(width: 8.0)),
                           ),
                         ),
                       ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: AuthUserStreamWidget(
                         builder: (context) => Builder(
                           builder: (context) {
                             final imageList = currentUserDocument
-                                    ?.creatorMainInfo?.creatorPromotions
-                                    ?.where(
+                                    ?.creatorMainInfo.creatorPromotions
+                                    .where(
                                         (e) => e.promotionStatus == 'active')
                                     .toList()
-                                    ?.sortedList(
+                                    .sortedList(
                                         keyOf: (e) => e.promotionCreatedAt!,
                                         desc: true)
-                                    ?.toList() ??
+                                    .toList() ??
                                 [];
 
                             return GridView.builder(
                               padding: EdgeInsets.zero,
                               gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
                                 crossAxisSpacing: 8.0,
                                 mainAxisSpacing: 10.0,
@@ -1832,11 +1828,11 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                   ),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
-                                    child: Image.network(
-                                      imageListItem.promotionInfo.featureImage,
+                                    child: CachedNetworkImage(
+                                      imageUrl: imageListItem.promotionInfo.featureImage,
                                       width: 200.0,
                                       fit: BoxFit.cover,
-                                      alignment: Alignment(0.0, -1.0),
+                                      alignment: const Alignment(0.0, -1.0),
                                     ),
                                   ),
                                 );
@@ -1846,7 +1842,7 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                         ),
                       ),
                     ),
-                  ].addToEnd(SizedBox(height: 32.0)),
+                  ].addToEnd(const SizedBox(height: 32.0)),
                 ),
               ),
             ),

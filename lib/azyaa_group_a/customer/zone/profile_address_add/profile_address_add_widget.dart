@@ -1,22 +1,18 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:async';
-import 'dart:ui';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'profile_address_add_model.dart';
@@ -46,7 +42,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
     super.initState();
     _model = createModel(context, () => ProfileAddressAddModel());
 
-    getCurrentUserLocation(defaultLocation: LatLng(0.0, 0.0), cached: true)
+    getCurrentUserLocation(defaultLocation: const LatLng(0.0, 0.0), cached: true)
         .then((loc) => safeSetState(() => currentUserLocationValue = loc));
     _model.regionTextController ??= TextEditingController();
     _model.regionFocusNode ??= FocusNode();
@@ -115,7 +111,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
       width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 5.0,
             color: Color(0x3B1D2429),
@@ -125,7 +121,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
             ),
           )
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -145,7 +141,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 16.0),
                         child: Container(
                           width: 35.0,
@@ -161,9 +157,9 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         tablet: false,
                       ))
                         Align(
-                          alignment: AlignmentDirectional(-1.0, -1.0),
+                          alignment: const AlignmentDirectional(-1.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 16.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -188,7 +184,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         desktop: false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 20.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -198,7 +194,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 8.0, 12.0, 8.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -213,7 +209,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                                   Expanded(
                                     child: Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           'pu39x3h7' /* Get Current Location */,
@@ -227,15 +223,15 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                                       ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ),
                           ),
                         ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -279,7 +275,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 24.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -358,9 +354,9 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -404,7 +400,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 24.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Container(
@@ -502,9 +498,9 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                           clipBehavior: Clip.none,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(-1.0, -1.0),
+                              alignment: const AlignmentDirectional(-1.0, -1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 8.0),
                                 child: RichText(
                                   textScaler: MediaQuery.of(context).textScaler,
@@ -551,7 +547,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 24.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -638,9 +634,9 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                           ],
                         ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -691,9 +687,9 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         desktop: false,
                       ))
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 8.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -707,13 +703,13 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                                   width: 1.0,
                                 ),
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Stack(
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsets.all(2.0),
+                                      padding: const EdgeInsets.all(2.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
                                                 .countryListValueController ??=
@@ -771,7 +767,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                                         borderColor: Colors.transparent,
                                         borderWidth: 0.0,
                                         borderRadius: 0.0,
-                                        margin: EdgeInsetsDirectional.fromSTEB(
+                                        margin: const EdgeInsetsDirectional.fromSTEB(
                                             65.0, 4.0, 12.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
@@ -781,11 +777,11 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsets.all(8.0),
-                                      child: Image.network(
-                                        functions.getCountryFlag(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: CachedNetworkImage(
+                                        imageUrl: functions.getCountryFlag(
                                             _model.countryListValue)!,
                                         width: 35.0,
                                         fit: BoxFit.cover,
@@ -798,9 +794,9 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                           ),
                         ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 16.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => Container(
@@ -854,7 +850,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   contentPadding:
-                                      EdgeInsetsDirectional.fromSTEB(
+                                      const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 8.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
@@ -894,7 +890,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         desktop: false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 24.0),
                           child: Stack(
                             children: [
@@ -963,7 +959,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                                     fillColor: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                     contentPadding:
-                                        EdgeInsetsDirectional.fromSTEB(
+                                        const EdgeInsetsDirectional.fromSTEB(
                                             60.0, 0.0, 0.0, 0.0),
                                   ),
                                   style: FlutterFlowTheme.of(context)
@@ -984,7 +980,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 16.0, 0.0, 0.0),
                                 child: Text(
                                   functions
@@ -1002,9 +998,9 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                           ),
                         ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -1048,7 +1044,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 24.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1127,9 +1123,9 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -1173,7 +1169,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 24.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1249,9 +1245,9 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -1295,7 +1291,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 24.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1374,9 +1370,9 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -1420,9 +1416,9 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 24.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1436,9 +1432,9 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                                 width: 1.0,
                               ),
                             ),
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsets.all(2.0),
+                              padding: const EdgeInsets.all(2.0),
                               child: FlutterFlowDropDown<String>(
                                 controller: _model.countryGCCValueController ??=
                                     FormFieldController<String>(
@@ -1498,7 +1494,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                                 borderColor: Colors.transparent,
                                 borderWidth: 0.0,
                                 borderRadius: 0.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
+                                margin: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 4.0, 12.0, 4.0),
                                 hidesUnderline: true,
                                 isOverButton: true,
@@ -1517,7 +1513,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         desktop: false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 24.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1596,9 +1592,9 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                           ),
                         ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -1642,7 +1638,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 24.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1728,9 +1724,9 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -1776,7 +1772,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                       Stack(
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 24.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1828,7 +1824,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                                 desktop: false,
                               ))
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 24.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -1861,7 +1857,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         ],
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 16.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -1890,7 +1886,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                                     ? BorderSide(
                                         width: 2,
                                         color: FlutterFlowTheme.of(context)
-                                            .alternate!,
+                                            .alternate,
                                       )
                                     : null,
                                 activeColor:
@@ -1917,15 +1913,15 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         ),
                       ),
                     ]
-                        .addToStart(SizedBox(height: 16.0))
-                        .addToEnd(SizedBox(height: 16.0)),
+                        .addToStart(const SizedBox(height: 16.0))
+                        .addToEnd(const SizedBox(height: 16.0)),
                   ),
                 ),
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
                 var _shouldSetState = false;
@@ -1961,8 +1957,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                   );
                   return;
                 }
-                if (_model.phonenumberTextController.text == null ||
-                    _model.phonenumberTextController.text == '') {
+                if (_model.phonenumberTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -1993,10 +1988,10 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                 }
                 if (_model.checkboxValue != false) {
                   _model.count =
-                      (currentUserDocument?.userShippingaddress?.toList() ?? [])
+                      (currentUserDocument?.userShippingaddress.toList() ?? [])
                           .length;
                   _model.all =
-                      (currentUserDocument?.userShippingaddress?.toList() ?? [])
+                      (currentUserDocument?.userShippingaddress.toList() ?? [])
                           .toList()
                           .cast<UserShippingaddressStruct>();
                   while (_model.count! > 0) {
@@ -2052,10 +2047,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                               postalCode: _model.postalCodeTextController.text,
                               country: _model.countryGCCValue,
                               shippingEmail: _model.emailTextController.text,
-                              shippingPhone: _model
-                                              .phonenumberTextController.text !=
-                                          null &&
-                                      _model.phonenumberTextController.text !=
+                              shippingPhone: _model.phonenumberTextController.text !=
                                           ''
                                   ? _model.phonenumberTextController.text
                                   : currentPhoneNumber,
@@ -2096,7 +2088,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
                         color: FlutterFlowTheme.of(context).primaryText,
                       ),
                     ),
-                    duration: Duration(milliseconds: 4000),
+                    duration: const Duration(milliseconds: 4000),
                     backgroundColor: FlutterFlowTheme.of(context).secondary,
                   ),
                 );
@@ -2113,8 +2105,8 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
               options: FFButtonOptions(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: 48.0,
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'almarai',
@@ -2126,7 +2118,7 @@ class _ProfileAddressAddWidgetState extends State<ProfileAddressAddWidget> {
               ),
             ),
           ),
-        ].addToStart(SizedBox(height: 16.0)).addToEnd(SizedBox(height: 16.0)),
+        ].addToStart(const SizedBox(height: 16.0)).addToEnd(const SizedBox(height: 16.0)),
       ),
     );
   }

@@ -1,15 +1,11 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'category_small_grid_model.dart';
@@ -20,7 +16,7 @@ class CategorySmallGridWidget extends StatefulWidget {
     super.key,
     this.category,
     String? componentType,
-  }) : this.componentType = componentType ?? 'default';
+  }) : componentType = componentType ?? 'default';
 
   final CategoryRecord? category;
   final String componentType;
@@ -65,8 +61,8 @@ class _CategorySmallGridWidgetState extends State<CategorySmallGridWidget> {
       highlightColor: Colors.transparent,
       onTap: () async {
         var _shouldSetState = false;
-        if (widget!.componentType == 'profile') {
-          if (currentUserDocument?.userPreferences?.categories?.length == 0) {
+        if (widget.componentType == 'profile') {
+          if (currentUserDocument?.userPreferences.categories.length == 0) {
             _model.idMapResult1 = await queryIdMapRecordOnce(
               queryBuilder: (idMapRecord) => idMapRecord.where(
                 'type',
@@ -87,8 +83,8 @@ class _CategorySmallGridWidgetState extends State<CategorySmallGridWidget> {
                       updateUserPreferencesCategoriesStruct(
                         UserPreferencesCategoriesStruct(
                           categoriesPriority: 1,
-                          categoriesInfo: widget!.category?.categoryInfo,
-                          categoriesId: widget!.category?.categoryId,
+                          categoriesInfo: widget.category?.categoryInfo,
+                          categoriesId: widget.category?.categoryId,
                         ),
                         clearUnsetFields: false,
                       ),
@@ -111,7 +107,7 @@ class _CategorySmallGridWidgetState extends State<CategorySmallGridWidget> {
             FFAppState().updateUserDataFlowStruct(
               (e) => e
                 ..count =
-                    currentUserDocument?.userPreferences?.categories?.length
+                    currentUserDocument?.userPreferences.categories.length
                 ..userCategoryPreferenceList =
                     currentUserDocument!.userPreferences.categories.toList()
                 ..userCategoryPreferenceFindStatus = 'notfound',
@@ -122,7 +118,7 @@ class _CategorySmallGridWidgetState extends State<CategorySmallGridWidget> {
                       .userCategoryPreferenceList
                       .elementAtOrNull(FFAppState().UserDataFlow.count - 1)
                       ?.categoriesId ==
-                  widget!.category?.categoryId) {
+                  widget.category?.categoryId) {
                 if (currentUserDocument!.userPreferences.categories.length >
                     3) {
                   FFAppState().updateUserDataFlowStruct(
@@ -162,7 +158,7 @@ class _CategorySmallGridWidgetState extends State<CategorySmallGridWidget> {
                             TextButton(
                               onPressed: () =>
                                   Navigator.pop(alertDialogContext),
-                              child: Text('Ok'),
+                              child: const Text('Ok'),
                             ),
                           ],
                         ),
@@ -188,8 +184,8 @@ class _CategorySmallGridWidgetState extends State<CategorySmallGridWidget> {
                         updateUserPreferencesCategoriesStruct(
                           UserPreferencesCategoriesStruct(
                             categoriesPriority: 1,
-                            categoriesInfo: widget!.category?.categoryInfo,
-                            categoriesId: widget!.category?.categoryId,
+                            categoriesInfo: widget.category?.categoryInfo,
+                            categoriesId: widget.category?.categoryId,
                           ),
                           clearUnsetFields: false,
                         ),
@@ -208,42 +204,42 @@ class _CategorySmallGridWidgetState extends State<CategorySmallGridWidget> {
           );
           _model.updatePage(() {});
         } else {
-          if (widget!.componentType == 'default') {
+          if (widget.componentType == 'default') {
             FFAppState().updateUserFilterStruct(
               (e) => e..filterStatus = 'set',
             );
             if (FFAppState()
                     .UserFilter
                     .categoryId
-                    .contains(widget!.category?.categoryId) !=
+                    .contains(widget.category?.categoryId) !=
                 true) {
               FFAppState().updateUserFilterStruct(
                 (e) => e
                   ..updateCategoryId(
-                    (e) => e.add(widget!.category!.categoryId),
+                    (e) => e.add(widget.category!.categoryId),
                   ),
               );
             }
             if (FFAppState().UserFilter.productId.length == 0) {
               FFAppState().updateUserFilterStruct(
                 (e) => e
-                  ..productId = widget!.category!.categoryProductList.toList(),
+                  ..productId = widget.category!.categoryProductList.toList(),
               );
             } else {
               FFAppState().updateUserFilterStruct(
                 (e) => e
                   ..productCount =
-                      widget!.category?.categoryProductList?.length,
+                      widget.category?.categoryProductList.length,
               );
               while (FFAppState().UserFilter.productCount > 0) {
                 if (FFAppState().UserFilter.productId.contains(
-                        widget!.category?.categoryProductList?.elementAtOrNull(
+                        widget.category?.categoryProductList.elementAtOrNull(
                             FFAppState().UserFilter.productCount - 1)) !=
                     true) {
                   FFAppState().updateUserFilterStruct(
                     (e) => e
                       ..updateProductId(
-                        (e) => e.add(widget!.category!.categoryProductList
+                        (e) => e.add(widget.category!.categoryProductList
                             .elementAtOrNull(
                                 FFAppState().UserFilter.productCount - 1)!),
                       ),
@@ -259,7 +255,7 @@ class _CategorySmallGridWidgetState extends State<CategorySmallGridWidget> {
             context.pushNamed(
               ProductListWidget.routeName,
               extra: <String, dynamic>{
-                '__transition_info__': TransitionInfo(
+                '__transition_info__': const TransitionInfo(
                   hasTransition: true,
                   transitionType: PageTransitionType.fade,
                   duration: Duration(milliseconds: 0),
@@ -280,7 +276,7 @@ class _CategorySmallGridWidgetState extends State<CategorySmallGridWidget> {
           borderRadius: BorderRadius.circular(8.0),
         ),
         child: Align(
-          alignment: AlignmentDirectional(0.0, 0.0),
+          alignment: const AlignmentDirectional(0.0, 0.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -293,21 +289,21 @@ class _CategorySmallGridWidgetState extends State<CategorySmallGridWidget> {
                       color: FlutterFlowTheme.of(context).primaryBackground,
                       borderRadius: BorderRadius.circular(8.0),
                       border: Border.all(
-                        color: (widget!.componentType != 'default') &&
+                        color: (widget.componentType != 'default') &&
                                 (currentUserDocument!.userPreferences.categories
                                         .where((e) =>
                                             e.categoriesId ==
-                                            widget!.category?.categoryId)
+                                            widget.category?.categoryId)
                                         .toList()
                                         .length >
                                     0)
                             ? FlutterFlowTheme.of(context).primary
                             : FlutterFlowTheme.of(context).border,
-                        width: (widget!.componentType != 'default') &&
+                        width: (widget.componentType != 'default') &&
                                 (currentUserDocument!.userPreferences.categories
                                         .where((e) =>
                                             e.categoriesId ==
-                                            widget!.category?.categoryId)
+                                            widget.category?.categoryId)
                                         .toList()
                                         .length >
                                     0)
@@ -317,59 +313,59 @@ class _CategorySmallGridWidgetState extends State<CategorySmallGridWidget> {
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
-                      child: Image.network(
-                        () {
-                          if (widget!.category?.categoryInfo?.featureImage !=
+                      child: CachedNetworkImage(
+                        imageUrl: () {
+                          if (widget.category?.categoryInfo.featureImage !=
                                   null &&
-                              widget!.category?.categoryInfo?.featureImage !=
+                              widget.category?.categoryInfo.featureImage !=
                                   '') {
-                            return widget!.category!.categoryInfo.featureImage;
-                          } else if (widget!
-                                      .category?.categoryInfo?.iconImage !=
+                            return widget.category!.categoryInfo.featureImage;
+                          } else if (widget
+                                      .category?.categoryInfo.iconImage !=
                                   null &&
-                              widget!.category?.categoryInfo?.iconImage != '') {
-                            return widget!.category!.categoryInfo.iconImage;
+                              widget.category?.categoryInfo.iconImage != '') {
+                            return widget.category!.categoryInfo.iconImage;
                           } else {
                             return 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/i9u1ra67p2p4/Azyaa-logo_(2).jpg';
                           }
                         }(),
                         fit: BoxFit.cover,
-                        alignment: Alignment(0.0, -1.0),
+                        alignment: const Alignment(0.0, -1.0),
                       ),
                     ),
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getVariableText(
                     enText: () {
-                      if (widget!.category?.categoryInfoTranslate?.name?.en !=
+                      if (widget.category?.categoryInfoTranslate.name.en !=
                           '') {
-                        return widget!
-                            .category?.categoryInfoTranslate?.name?.en;
-                      } else if (widget!.category?.categoryInfoCustomTranslate
-                              ?.name?.en !=
+                        return widget
+                            .category?.categoryInfoTranslate.name.en;
+                      } else if (widget.category?.categoryInfoCustomTranslate
+                              .name.en !=
                           '') {
-                        return widget!
-                            .category?.categoryInfoCustomTranslate?.name?.en;
+                        return widget
+                            .category?.categoryInfoCustomTranslate.name.en;
                       } else {
-                        return widget!.category?.categoryInfo?.name;
+                        return widget.category?.categoryInfo.name;
                       }
                     }(),
                     arText: () {
-                      if (widget!.category?.categoryInfoTranslate?.name?.ar !=
+                      if (widget.category?.categoryInfoTranslate.name.ar !=
                           '') {
-                        return widget!
-                            .category?.categoryInfoTranslate?.name?.ar;
-                      } else if (widget!.category?.categoryInfoCustomTranslate
-                              ?.name?.ar !=
+                        return widget
+                            .category?.categoryInfoTranslate.name.ar;
+                      } else if (widget.category?.categoryInfoCustomTranslate
+                              .name.ar !=
                           '') {
-                        return widget!
-                            .category?.categoryInfoCustomTranslate?.name?.ar;
+                        return widget
+                            .category?.categoryInfoCustomTranslate.name.ar;
                       } else {
-                        return widget!.category?.categoryInfo?.name;
+                        return widget.category?.categoryInfo.name;
                       }
                     }(),
                   ),
@@ -380,7 +376,7 @@ class _CategorySmallGridWidgetState extends State<CategorySmallGridWidget> {
                       ),
                 ),
               ),
-            ].divide(SizedBox(height: 4.0)),
+            ].divide(const SizedBox(height: 4.0)),
           ),
         ),
       ),

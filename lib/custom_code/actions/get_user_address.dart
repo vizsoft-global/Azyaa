@@ -1,11 +1,8 @@
 // Automatic FlutterFlow imports
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'index.dart'; // Imports other custom actions
-import '/flutter_flow/custom_functions.dart'; // Imports custom functions
-import 'package:flutter/material.dart';
+// Imports other custom actions
+// Imports custom functions
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
@@ -18,7 +15,7 @@ Future<String> getUserAddress(LatLng userCurrentLocation) async {
         userCurrentLocation.latitude, userCurrentLocation.longitude);
 
     // Check if placemarks list is not empty and the first placemark is not null
-    if (placemarks.isNotEmpty && placemarks[0] != null) {
+    if (placemarks.isNotEmpty) {
       // Access placemark properties safely
       String address = (placemarks[0].street ?? '') +
           ", " +

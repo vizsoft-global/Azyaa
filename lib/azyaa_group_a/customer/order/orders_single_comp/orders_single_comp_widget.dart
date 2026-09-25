@@ -1,15 +1,10 @@
 import '/azyaa_group_a/customer/order/track_order/track_order_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'orders_single_comp_model.dart';
 export 'orders_single_comp_model.dart';
@@ -60,17 +55,17 @@ class _OrdersSingleCompWidgetState extends State<OrdersSingleCompWidget> {
         borderRadius: BorderRadius.circular(0.0),
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
             Builder(
               builder: (context) {
                 final activeOrderItems =
-                    widget!.orderCart?.cartItems?.toList() ?? [];
+                    widget.orderCart?.cartItems.toList() ?? [];
 
                 return ListView.separated(
-                  padding: EdgeInsets.fromLTRB(
+                  padding: const EdgeInsets.fromLTRB(
                     0,
                     8.0,
                     0,
@@ -80,15 +75,15 @@ class _OrdersSingleCompWidgetState extends State<OrdersSingleCompWidget> {
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
                   itemCount: activeOrderItems.length,
-                  separatorBuilder: (_, __) => SizedBox(height: 16.0),
+                  separatorBuilder: (_, __) => const SizedBox(height: 16.0),
                   itemBuilder: (context, activeOrderItemsIndex) {
                     final activeOrderItemsItem =
                         activeOrderItems[activeOrderItemsIndex];
                     return Stack(
-                      alignment: AlignmentDirectional(1.0, 1.0),
+                      alignment: const AlignmentDirectional(1.0, 1.0),
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -104,8 +99,8 @@ class _OrdersSingleCompWidgetState extends State<OrdersSingleCompWidget> {
                                 ),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.network(
-                                    activeOrderItemsItem.productType ==
+                                  child: CachedNetworkImage(
+                                    imageUrl: activeOrderItemsItem.productType ==
                                             'membership'
                                         ? 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/kwcb1kmteqoh/Frame_2087324774.png'
                                         : activeOrderItemsItem
@@ -115,7 +110,7 @@ class _OrdersSingleCompWidgetState extends State<OrdersSingleCompWidget> {
                                     height:
                                         MediaQuery.sizeOf(context).height * 1.0,
                                     fit: BoxFit.cover,
-                                    alignment: Alignment(0.0, -1.0),
+                                    alignment: const Alignment(0.0, -1.0),
                                   ),
                                 ),
                               ),
@@ -145,7 +140,7 @@ class _OrdersSingleCompWidgetState extends State<OrdersSingleCompWidget> {
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
                                           if (!snapshot.hasData) {
-                                            return Center(
+                                            return const Center(
                                               child: SizedBox(
                                                 width: 2.0,
                                                 height: 2.0,
@@ -175,56 +170,56 @@ class _OrdersSingleCompWidgetState extends State<OrdersSingleCompWidget> {
                                                   : null;
 
                                           return Container(
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getVariableText(
                                                 enText: () {
                                                   if (containerProductsRecord
                                                           ?.productInfoCustomTranslate
-                                                          ?.name
-                                                          ?.en !=
+                                                          .name
+                                                          .en !=
                                                       '') {
                                                     return containerProductsRecord
                                                         ?.productInfoCustomTranslate
-                                                        ?.name
-                                                        ?.en;
+                                                        .name
+                                                        .en;
                                                   } else if (containerProductsRecord
                                                           ?.productInfoTranslate
-                                                          ?.name
-                                                          ?.en !=
+                                                          .name
+                                                          .en !=
                                                       '') {
                                                     return containerProductsRecord
                                                         ?.productInfoTranslate
-                                                        ?.name
-                                                        ?.en;
+                                                        .name
+                                                        .en;
                                                   } else {
                                                     return containerProductsRecord
-                                                        ?.productInfo?.name;
+                                                        ?.productInfo.name;
                                                   }
                                                 }(),
                                                 arText: () {
                                                   if (containerProductsRecord
                                                           ?.productInfoCustomTranslate
-                                                          ?.name
-                                                          ?.ar !=
+                                                          .name
+                                                          .ar !=
                                                       '') {
                                                     return containerProductsRecord
                                                         ?.productInfoCustomTranslate
-                                                        ?.name
-                                                        ?.ar;
+                                                        .name
+                                                        .ar;
                                                   } else if (containerProductsRecord
                                                           ?.productInfoTranslate
-                                                          ?.name
-                                                          ?.ar !=
+                                                          .name
+                                                          .ar !=
                                                       '') {
                                                     return containerProductsRecord
                                                         ?.productInfoTranslate
-                                                        ?.name
-                                                        ?.ar;
+                                                        .name
+                                                        .ar;
                                                   } else {
                                                     return containerProductsRecord
-                                                        ?.productInfo?.name;
+                                                        ?.productInfo.name;
                                                   }
                                                 }(),
                                               ),
@@ -281,7 +276,7 @@ class _OrdersSingleCompWidgetState extends State<OrdersSingleCompWidget> {
                                         ))
                                           Expanded(
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 0.0, 0.0),
                                               child: RichText(
@@ -407,7 +402,7 @@ class _OrdersSingleCompWidgetState extends State<OrdersSingleCompWidget> {
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
                                                 if (!snapshot.hasData) {
-                                                  return Center(
+                                                  return const Center(
                                                     child: SizedBox(
                                                       width: 2.0,
                                                       height: 2.0,
@@ -443,7 +438,7 @@ class _OrdersSingleCompWidgetState extends State<OrdersSingleCompWidget> {
                                                       MainAxisAlignment.start,
                                                   children: [
                                                     Text(
-                                                      '${rowAttributesRecord?.attributeInfo?.name}${FFLocalizations.of(context).getVariableText(
+                                                      '${rowAttributesRecord?.attributeInfo.name}${FFLocalizations.of(context).getVariableText(
                                                         enText: ':',
                                                         arText: ':',
                                                       )}',
@@ -484,7 +479,7 @@ class _OrdersSingleCompWidgetState extends State<OrdersSingleCompWidget> {
                                                           (context, snapshot) {
                                                         // Customize what your widget looks like when it's loading.
                                                         if (!snapshot.hasData) {
-                                                          return Center(
+                                                          return const Center(
                                                             child: SizedBox(
                                                               width: 2.0,
                                                               height: 2.0,
@@ -606,7 +601,7 @@ class _OrdersSingleCompWidgetState extends State<OrdersSingleCompWidget> {
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
                                           if (!snapshot.hasData) {
-                                            return Center(
+                                            return const Center(
                                               child: SizedBox(
                                                 width: 2.0,
                                                 height: 2.0,
@@ -637,12 +632,12 @@ class _OrdersSingleCompWidgetState extends State<OrdersSingleCompWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               if ((rowProductsRecord?.product
-                                                          ?.isProductReturn ==
+                                                          .isProductReturn ==
                                                       true) &&
-                                                  (widget!.order?.orderStatus ==
+                                                  (widget.order?.orderStatus ==
                                                       'CAPTURED') &&
                                                   (functions.getDateForSubscription(
-                                                          widget!.order!
+                                                          widget.order!
                                                               .deliveredAt!,
                                                           rowProductsRecord!
                                                               .product
@@ -679,9 +674,9 @@ class _OrdersSingleCompWidgetState extends State<OrdersSingleCompWidget> {
                                                         text: dateTimeFormat(
                                                           "yMMMd",
                                                           functions.getDateForSubscription(
-                                                              widget!.order!
+                                                              widget.order!
                                                                   .deliveredAt!,
-                                                              rowProductsRecord!
+                                                              rowProductsRecord
                                                                   .product
                                                                   .returnProductNumberDay),
                                                           locale:
@@ -718,7 +713,7 @@ class _OrdersSingleCompWidgetState extends State<OrdersSingleCompWidget> {
                                         },
                                       ),
                                     ),
-                                  ].divide(SizedBox(height: 4.0)),
+                                  ].divide(const SizedBox(height: 4.0)),
                                 ),
                               ),
                               Text(
@@ -733,34 +728,34 @@ class _OrdersSingleCompWidgetState extends State<OrdersSingleCompWidget> {
                                       fontWeight: FontWeight.w600,
                                     ),
                               ),
-                            ].divide(SizedBox(width: 12.0)),
+                            ].divide(const SizedBox(width: 12.0)),
                           ),
                         ),
-                        if ((widget!.order?.paymentStatus == 'CAPTURED') &&
-                            (widget!.order?.deliveryInfoList
-                                        ?.where((e) =>
+                        if ((widget.order?.paymentStatus == 'CAPTURED') &&
+                            (widget.order?.deliveryInfoList
+                                        .where((e) =>
                                             e.productIds.contains(
                                                 activeOrderItemsItem
                                                     .productId) ==
                                             true)
                                         .toList()
-                                        ?.firstOrNull
+                                        .firstOrNull
                                         ?.deliveryTrackingId !=
                                     null &&
-                                widget!.order?.deliveryInfoList
-                                        ?.where((e) =>
+                                widget.order?.deliveryInfoList
+                                        .where((e) =>
                                             e.productIds.contains(
                                                 activeOrderItemsItem
                                                     .productId) ==
                                             true)
                                         .toList()
-                                        ?.firstOrNull
+                                        .firstOrNull
                                         ?.deliveryTrackingId !=
                                     '') &&
-                            (widget!.order?.orderStatus != 'completed'))
+                            (widget.order?.orderStatus != 'completed'))
                           Builder(
                             builder: (context) => Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 12.0, 0.0),
                               child:
                                   StreamBuilder<List<LogisticsResponseRecord>>(
@@ -768,14 +763,14 @@ class _OrdersSingleCompWidgetState extends State<OrdersSingleCompWidget> {
                                   queryBuilder: (logisticsResponseRecord) =>
                                       logisticsResponseRecord.where(
                                     'id',
-                                    isEqualTo: widget!.order?.deliveryInfoList
-                                        ?.where((e) =>
+                                    isEqualTo: widget.order?.deliveryInfoList
+                                        .where((e) =>
                                             e.productIds.contains(
                                                 activeOrderItemsItem
                                                     .productId) ==
                                             true)
                                         .toList()
-                                        ?.firstOrNull
+                                        .firstOrNull
                                         ?.deliveryId,
                                   ),
                                   singleRecord: true,
@@ -817,14 +812,14 @@ class _OrdersSingleCompWidgetState extends State<OrdersSingleCompWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       await showDialog(
-                                        barrierColor: Color(0x7B000000),
+                                        barrierColor: const Color(0x7B000000),
                                         context: context,
                                         builder: (dialogContext) {
                                           return Dialog(
                                             elevation: 0,
                                             insetPadding: EdgeInsets.zero,
                                             backgroundColor: Colors.transparent,
-                                            alignment: AlignmentDirectional(
+                                            alignment: const AlignmentDirectional(
                                                     0.0, 0.0)
                                                 .resolve(
                                                     Directionality.of(context)),

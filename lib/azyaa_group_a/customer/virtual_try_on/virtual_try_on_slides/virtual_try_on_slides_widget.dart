@@ -10,16 +10,9 @@ import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_swipeable_stack.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'virtual_try_on_slides_model.dart';
 export 'virtual_try_on_slides_model.dart';
@@ -74,7 +67,7 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryText,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primary,
                 automaticallyImplyLeading: false,
@@ -95,7 +88,7 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                     shareIconStatus: false,
                   ),
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -108,15 +101,15 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   wrapWithModel(
                     model: _model.appUpdateCheckerModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: AppUpdateCheckerWidget(),
+                    child: const AppUpdateCheckerWidget(),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, -1.0),
+                    alignment: const AlignmentDirectional(0.0, -1.0),
                     child: StreamBuilder<List<TryonRequestsRecord>>(
                       stream: queryTryonRequestsRecord(
                         queryBuilder: (tryonRequestsRecord) =>
@@ -127,7 +120,7 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                                 )
                                 .where(
                                   'product_ref',
-                                  isEqualTo: widget!.product,
+                                  isEqualTo: widget.product,
                                 )
                                 .orderBy('created_at', descending: true),
                       ),
@@ -137,7 +130,7 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                           return Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 150.0,
-                            child: LoadingAnimationWidget(),
+                            child: const LoadingAnimationWidget(),
                           );
                         }
                         List<TryonRequestsRecord>
@@ -148,17 +141,17 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                                   kBreakpointMedium
                               ? MediaQuery.sizeOf(context).width
                               : 700.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                           child: StreamBuilder<ProductsRecord>(
                             stream:
-                                ProductsRecord.getDocument(widget!.product!),
+                                ProductsRecord.getDocument(widget.product!),
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
                               if (!snapshot.hasData) {
                                 return Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   height: 150.0,
-                                  child: LoadingAnimationWidget(),
+                                  child: const LoadingAnimationWidget(),
                                 );
                               }
 
@@ -199,7 +192,7 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                                                       Expanded(
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -276,11 +269,11 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 1.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -305,7 +298,7 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   8.0),
                                                           child:
                                                               ProductListviewWidget(
@@ -320,11 +313,11 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             1.0, 1.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -343,12 +336,12 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                                                             desktop: false,
                                                           ))
                                                             FlutterFlowIconButton(
-                                                              borderColor: Color(
+                                                              borderColor: const Color(
                                                                   0x7FFFFFFF),
                                                               borderRadius:
                                                                   100.0,
                                                               buttonSize: 42.0,
-                                                              fillColor: Color(
+                                                              fillColor: const Color(
                                                                   0x795E5E5E),
                                                               icon: Icon(
                                                                 FFIcons.kicon1,
@@ -371,12 +364,12 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                                                             desktop: false,
                                                           ))
                                                             FlutterFlowIconButton(
-                                                              borderColor: Color(
+                                                              borderColor: const Color(
                                                                   0x7FFFFFFF),
                                                               borderRadius:
                                                                   100.0,
                                                               buttonSize: 42.0,
-                                                              fillColor: Color(
+                                                              fillColor: const Color(
                                                                   0x795E5E5E),
                                                               icon: Icon(
                                                                 FFIcons.kicon,
@@ -391,12 +384,12 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                                                           Builder(
                                                             builder: (context) =>
                                                                 FlutterFlowIconButton(
-                                                              borderColor: Color(
+                                                              borderColor: const Color(
                                                                   0x7FFFFFFF),
                                                               borderRadius:
                                                                   100.0,
                                                               buttonSize: 42.0,
-                                                              fillColor: Color(
+                                                              fillColor: const Color(
                                                                   0x795E5E5E),
                                                               icon: Icon(
                                                                 FFIcons.kdelete,
@@ -421,7 +414,7 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                                                                       backgroundColor:
                                                                           Colors
                                                                               .transparent,
-                                                                      alignment: AlignmentDirectional(
+                                                                      alignment: const AlignmentDirectional(
                                                                               0.0,
                                                                               0.0)
                                                                           .resolve(
@@ -454,7 +447,7 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                                                               },
                                                             ),
                                                           ),
-                                                        ].divide(SizedBox(
+                                                        ].divide(const SizedBox(
                                                             height: 12.0)),
                                                       ),
                                                     ),
@@ -469,15 +462,15 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                                           loop: true,
                                           cardDisplayCount: 1,
                                           scale: 0.0,
-                                          cardPadding: EdgeInsets.all(0.0),
+                                          cardPadding: const EdgeInsets.all(0.0),
                                         );
                                       },
                                     ),
                                   ),
                                 ]
-                                    .divide(SizedBox(height: 8.0))
-                                    .addToStart(SizedBox(height: 16.0))
-                                    .addToEnd(SizedBox(height: 64.0)),
+                                    .divide(const SizedBox(height: 8.0))
+                                    .addToStart(const SizedBox(height: 16.0))
+                                    .addToEnd(const SizedBox(height: 64.0)),
                               );
                             },
                           ),
@@ -486,10 +479,10 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 1.0),
+                    alignment: const AlignmentDirectional(0.0, 1.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -499,7 +492,7 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                           context.pushNamed(
                             VirtualTryOnWidget.routeName,
                             extra: <String, dynamic>{
-                              '__transition_info__': TransitionInfo(
+                              '__transition_info__': const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                                 duration: Duration(milliseconds: 0),

@@ -1,12 +1,8 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'creatorproduct_video_model.dart';
 export 'creatorproduct_video_model.dart';
 
@@ -64,24 +60,24 @@ class _CreatorproductVideoWidgetState extends State<CreatorproductVideoWidget> {
                   ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
-                    child: Image.network(
-                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/kylm6cx4lequ/dress1.jpg',
+                    child: CachedNetworkImage(
+                      imageUrl: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/kylm6cx4lequ/dress1.jpg',
                       fit: BoxFit.cover,
-                      alignment: Alignment(0.0, -1.0),
+                      alignment: const Alignment(0.0, -1.0),
                     ),
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional(1.0, -1.0),
+                  alignment: const AlignmentDirectional(1.0, -1.0),
                   child: Padding(
-                    padding: EdgeInsets.all(4.0),
+                    padding: const EdgeInsets.all(4.0),
                     child: Container(
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).alternate,
                         borderRadius: BorderRadius.circular(100.0),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(4.0),
+                        padding: const EdgeInsets.all(4.0),
                         child: Icon(
                           Icons.close,
                           color: FlutterFlowTheme.of(context).secondaryText,
@@ -92,11 +88,11 @@ class _CreatorproductVideoWidgetState extends State<CreatorproductVideoWidget> {
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: FlutterFlowIconButton(
                     borderRadius: 100.0,
                     buttonSize: 30.0,
-                    fillColor: Color(0xFF9597A4),
+                    fillColor: const Color(0xFF9597A4),
                     icon: Icon(
                       Icons.play_arrow,
                       color: FlutterFlowTheme.of(context).info,
@@ -112,7 +108,7 @@ class _CreatorproductVideoWidgetState extends State<CreatorproductVideoWidget> {
           ),
         ),
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
           child: Text(
             FFLocalizations.of(context).getText(
               'tl7wszaq' /* Video99817_9280.mp4 */,
@@ -126,7 +122,7 @@ class _CreatorproductVideoWidgetState extends State<CreatorproductVideoWidget> {
           ),
         ),
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
           child: RichText(
             textScaler: MediaQuery.of(context).textScaler,
             text: TextSpan(
@@ -213,7 +209,7 @@ class _CreatorproductVideoWidgetState extends State<CreatorproductVideoWidget> {
           desktop: false,
         ))
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 8.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 8.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -241,10 +237,10 @@ class _CreatorproductVideoWidgetState extends State<CreatorproductVideoWidget> {
                         fontWeight: FontWeight.bold,
                       ),
                 ),
-              ].divide(SizedBox(width: 2.0)),
+              ].divide(const SizedBox(width: 2.0)),
             ),
           ),
-      ].divide(SizedBox(height: 4.0)),
+      ].divide(const SizedBox(height: 4.0)),
     );
   }
 }

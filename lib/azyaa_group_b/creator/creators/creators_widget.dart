@@ -1,4 +1,3 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
@@ -10,17 +9,12 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:easy_debounce/easy_debounce.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:provider/provider.dart';
 import 'creators_model.dart';
 export 'creators_model.dart';
 
@@ -63,7 +57,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
           context.pushNamed(
             LoginWidget.routeName,
             extra: <String, dynamic>{
-              '__transition_info__': TransitionInfo(
+              '__transition_info__': const TransitionInfo(
                 hasTransition: true,
                 transitionType: PageTransitionType.fade,
                 duration: Duration(milliseconds: 0),
@@ -99,7 +93,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -127,7 +121,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -140,12 +134,12 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   wrapWithModel(
                     model: _model.appUpdateCheckerModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: AppUpdateCheckerWidget(),
+                    child: const AppUpdateCheckerWidget(),
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
@@ -160,10 +154,10 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                         desktop: false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 12.0),
                           child: Stack(
-                            alignment: AlignmentDirectional(1.0, 1.0),
+                            alignment: const AlignmentDirectional(1.0, 1.0),
                             children: [
                               Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -172,7 +166,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                   borderRadius: BorderRadius.circular(16.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(12.0),
+                                  padding: const EdgeInsets.all(12.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     crossAxisAlignment:
@@ -228,7 +222,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                       ),
                                       Container(
                                         width: 180.0,
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
                                             'ifa42y0z' /* Browse through our featured Cr... */,
@@ -246,7 +240,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                               ),
                                         ),
                                       ),
-                                    ].divide(SizedBox(height: 8.0)),
+                                    ].divide(const SizedBox(height: 8.0)),
                                   ),
                                 ),
                               ),
@@ -257,7 +251,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                   width: 150.0,
                                   height: 90.0,
                                   fit: BoxFit.cover,
-                                  alignment: Alignment(1.0, -1.0),
+                                  alignment: const Alignment(1.0, -1.0),
                                 ),
                               ),
                             ],
@@ -265,16 +259,16 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                         ),
                       if (loggedIn)
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 12.0),
                           child: Container(
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 if (loggedIn)
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
@@ -285,12 +279,9 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                         focusNode: _model.searchFiledsFocusNode,
                                         onChanged: (_) => EasyDebounce.debounce(
                                           '_model.searchFiledsTextController',
-                                          Duration(milliseconds: 2000),
+                                          const Duration(milliseconds: 2000),
                                           () async {
                                             if (_model.searchFiledsTextController
-                                                        .text !=
-                                                    null &&
-                                                _model.searchFiledsTextController
                                                         .text !=
                                                     '') {
                                               safeSetState(() => _model
@@ -337,12 +328,12 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                   .labelMedium
                                                   .override(
                                                     fontFamily: 'almarai',
-                                                    color: Color(0xFF575454),
+                                                    color: const Color(0xFF575454),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                   ),
                                           enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -350,7 +341,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                 BorderRadius.circular(16.0),
                                           ),
                                           focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -404,9 +395,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                       ),
                                     ),
                                   ),
-                                if ((_model.searchFiledsTextController.text !=
-                                            null &&
-                                        _model.searchFiledsTextController
+                                if ((_model.searchFiledsTextController
                                                 .text !=
                                             '') &&
                                     responsiveVisibility(
@@ -418,7 +407,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                     ))
                                   Container(
                                     height: 200.0,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: Builder(
                                       builder: (context) {
                                         if (_model.algoliaSearchResults ==
@@ -506,7 +495,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                             return Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 300.0,
-                              decoration: BoxDecoration(),
+                              decoration: const BoxDecoration(),
                               child: SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -517,7 +506,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                         if (loggedIn)
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: FlutterFlowChoiceChips(
                                               options: [
@@ -613,7 +602,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                         if (!loggedIn)
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: FlutterFlowChoiceChips(
                                               options: [
@@ -704,11 +693,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                         AuthUserStreamWidget(
                                           builder: (context) => Builder(
                                             builder: (context) {
-                                              final allCreatorList = (_model
-                                                                      .searchFiledsTextController
-                                                                      .text !=
-                                                                  null &&
-                                                              _model.searchFiledsTextController
+                                              final allCreatorList = (_model.searchFiledsTextController
                                                                       .text !=
                                                                   ''
                                                           ? _model
@@ -727,7 +712,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                       (e.userRole ==
                                                                           'Creator')
                                                                   ? true
-                                                                  : (((currentUserDocument?.userCreatorFollowing?.toList() ?? [])
+                                                                  : (((currentUserDocument?.userCreatorFollowing.toList() ?? [])
                                                                               .contains(e.reference) ==
                                                                           (_model.choiceChipsloginValue1 ==
                                                                                   FFLocalizations.of(context).getVariableText(
@@ -739,7 +724,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                       (e.status == 'Published') &&
                                                                       (e.userRole == 'Creator')))
                                                               .toList()
-                                                              ?.sortedList(keyOf: (e) => e.createdTime!, desc: false)
+                                                              .sortedList(keyOf: (e) => e.createdTime!, desc: false)
                                                           : creatorUsersRecordList
                                                               .where((e) => () {
                                                                     if (!loggedIn &&
@@ -757,7 +742,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                             ))) {
                                                                       return true;
                                                                     } else {
-                                                                      return ((currentUserDocument?.userCreatorFollowing?.toList() ?? [])
+                                                                      return ((currentUserDocument?.userCreatorFollowing.toList() ?? [])
                                                                               .contains(e.reference) ==
                                                                           ((_model.choiceChipsloginValue1 ==
                                                                                       FFLocalizations.of(context).getVariableText(
@@ -807,7 +792,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                 itemCount:
                                                     allCreatorList.length,
                                                 separatorBuilder: (_, __) =>
-                                                    SizedBox(height: 12.0),
+                                                    const SizedBox(height: 12.0),
                                                 itemBuilder: (context,
                                                     allCreatorListIndex) {
                                                   final allCreatorListItem =
@@ -815,7 +800,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                           allCreatorListIndex];
                                                   return Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     child: InkWell(
@@ -842,7 +827,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                           extra: <String,
                                                               dynamic>{
                                                             '__transition_info__':
-                                                                TransitionInfo(
+                                                                const TransitionInfo(
                                                               hasTransition:
                                                                   true,
                                                               transitionType:
@@ -878,7 +863,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   8.0),
                                                           child: Row(
                                                             mainAxisSize:
@@ -908,7 +893,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                   fit: BoxFit
                                                                       .cover,
                                                                   alignment:
-                                                                      Alignment(
+                                                                      const Alignment(
                                                                           0.0,
                                                                           0.0),
                                                                 ),
@@ -952,7 +937,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                                     ),
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                 child: Text(
                                                                                   allCreatorListItem.creatorMainInfo.creatorInfo.bio.maybeHandleOverflow(
                                                                                     maxChars: 100,
@@ -982,15 +967,15 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                         ))
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(1.0, -1.0),
+                                                                                const AlignmentDirectional(1.0, -1.0),
                                                                             child:
                                                                                 Container(
                                                                               decoration: BoxDecoration(
-                                                                                color: Color(0xFF6729DA),
+                                                                                color: const Color(0xFF6729DA),
                                                                                 borderRadius: BorderRadius.circular(100.0),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(6.0, 2.0, 6.0, 4.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(6.0, 2.0, 6.0, 4.0),
                                                                                 child: Text(
                                                                                   FFLocalizations.of(context).getText(
                                                                                     'wts05ndc' /* Best Rated */,
@@ -1022,7 +1007,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                         height:
                                                                             40.0,
                                                                         decoration:
-                                                                            BoxDecoration(),
+                                                                            const BoxDecoration(),
                                                                         child:
                                                                             Builder(
                                                                           builder:
@@ -1031,7 +1016,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                                 allCreatorListItem.creatorMainInfo.creatorPromotions.where((e) => e.promotionStatus == 'active').toList().sortedList(keyOf: (e) => e.promotionCreatedAt!, desc: true).map((e) => e.promotionInfo.galleryImage.firstOrNull).withoutNulls.toList().take(4).toList();
 
                                                                             return ListView.separated(
-                                                                              padding: EdgeInsets.fromLTRB(
+                                                                              padding: const EdgeInsets.fromLTRB(
                                                                                 0,
                                                                                 0,
                                                                                 8.0,
@@ -1041,7 +1026,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                               shrinkWrap: true,
                                                                               scrollDirection: Axis.horizontal,
                                                                               itemCount: portfolioImageList.length,
-                                                                              separatorBuilder: (_, __) => SizedBox(width: 8.0),
+                                                                              separatorBuilder: (_, __) => const SizedBox(width: 8.0),
                                                                               itemBuilder: (context, portfolioImageListIndex) {
                                                                                 final portfolioImageListItem = portfolioImageList[portfolioImageListIndex];
                                                                                 return Container(
@@ -1054,12 +1039,12 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                                   ),
                                                                                   child: ClipRRect(
                                                                                     borderRadius: BorderRadius.circular(4.0),
-                                                                                    child: Image.network(
-                                                                                      portfolioImageListItem,
+                                                                                    child: CachedNetworkImage(
+                                                                                      imageUrl: portfolioImageListItem,
                                                                                       width: 40.0,
                                                                                       height: 45.0,
                                                                                       fit: BoxFit.cover,
-                                                                                      alignment: Alignment(0.0, 0.0),
+                                                                                      alignment: const Alignment(0.0, 0.0),
                                                                                     ),
                                                                                   ),
                                                                                 );
@@ -1071,7 +1056,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                   ],
                                                                 ),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 width: 8.0)),
                                                           ),
                                                         ),
@@ -1083,12 +1068,12 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                             },
                                           ),
                                         ),
-                                      ].divide(SizedBox(height: 12.0)),
+                                      ].divide(const SizedBox(height: 12.0)),
                                     ),
                                   ]
-                                      .divide(SizedBox(height: 12.0))
-                                      .addToStart(SizedBox(height: 12.0))
-                                      .addToEnd(SizedBox(height: 12.0)),
+                                      .divide(const SizedBox(height: 12.0))
+                                      .addToStart(const SizedBox(height: 12.0))
+                                      .addToEnd(const SizedBox(height: 12.0)),
                                 ),
                               ),
                             );
@@ -1125,7 +1110,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                 return Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   height: 150.0,
-                                  child: LoadingAnimationWidget(),
+                                  child: const LoadingAnimationWidget(),
                                 );
                               }
                               List<UsersRecord> tabBarUsersRecordList = snapshot
@@ -1136,7 +1121,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                               return Column(
                                 children: [
                                   Align(
-                                    alignment: Alignment(0.0, 0),
+                                    alignment: const Alignment(0.0, 0),
                                     child: TabBar(
                                       labelColor: FlutterFlowTheme.of(context)
                                           .primaryText,
@@ -1144,7 +1129,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                           FlutterFlowTheme.of(context)
                                               .primaryText,
                                       labelPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               16.0, 0.0, 16.0, 0.0),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .titleMedium
@@ -1199,7 +1184,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                   if (loggedIn)
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -1321,7 +1306,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                   if (!loggedIn)
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -1360,7 +1345,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                               extra: <String,
                                                                   dynamic>{
                                                                 '__transition_info__':
-                                                                    TransitionInfo(
+                                                                    const TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -1475,7 +1460,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                               'الجميع',
                                                                         )
                                                                     ? true
-                                                                    : ((currentUserDocument?.userCreatorFollowing?.toList() ??
+                                                                    : ((currentUserDocument?.userCreatorFollowing.toList() ??
                                                                                 [])
                                                                             .contains(e
                                                                                 .reference) ==
@@ -1508,7 +1493,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                   .length,
                                                           separatorBuilder: (_,
                                                                   __) =>
-                                                              SizedBox(
+                                                              const SizedBox(
                                                                   height: 12.0),
                                                           itemBuilder: (context,
                                                               allCreatorListIndex) {
@@ -1517,7 +1502,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                     allCreatorListIndex];
                                                             return Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -1552,7 +1537,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       '__transition_info__':
-                                                                          TransitionInfo(
+                                                                          const TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -1588,7 +1573,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                   child:
                                                                       Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
+                                                                        const EdgeInsets.all(
                                                                             8.0),
                                                                     child: Row(
                                                                       mainAxisSize:
@@ -1603,8 +1588,8 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                           borderRadius:
                                                                               BorderRadius.circular(8.0),
                                                                           child:
-                                                                              Image.network(
-                                                                            valueOrDefault<String>(
+                                                                              CachedNetworkImage(
+                                                                            imageUrl: valueOrDefault<String>(
                                                                               allCreatorListItem.creatorMainInfo.creatorInfo.brandPhoto,
                                                                               'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/i9u1ra67p2p4/Azyaa-logo_(2).jpg',
                                                                             ),
@@ -1615,7 +1600,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                             fit:
                                                                                 BoxFit.cover,
                                                                             alignment:
-                                                                                Alignment(0.0, 0.0),
+                                                                                const Alignment(0.0, 0.0),
                                                                           ),
                                                                         ),
                                                                         Expanded(
@@ -1646,7 +1631,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                                               ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                                                                                           child: Text(
                                                                                             allCreatorListItem.creatorMainInfo.creatorInfo.bio.maybeHandleOverflow(
                                                                                               maxChars: 100,
@@ -1671,14 +1656,14 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                                     tabletLandscape: false,
                                                                                   ))
                                                                                     Align(
-                                                                                      alignment: AlignmentDirectional(1.0, -1.0),
+                                                                                      alignment: const AlignmentDirectional(1.0, -1.0),
                                                                                       child: Container(
                                                                                         decoration: BoxDecoration(
-                                                                                          color: Color(0xFF6729DA),
+                                                                                          color: const Color(0xFF6729DA),
                                                                                           borderRadius: BorderRadius.circular(100.0),
                                                                                         ),
                                                                                         child: Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(6.0, 2.0, 6.0, 4.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(6.0, 2.0, 6.0, 4.0),
                                                                                           child: Text(
                                                                                             FFLocalizations.of(context).getText(
                                                                                               'sjbxzl97' /* Best Rated */,
@@ -1699,13 +1684,13 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                                 Container(
                                                                                   width: 190.0,
                                                                                   height: 40.0,
-                                                                                  decoration: BoxDecoration(),
+                                                                                  decoration: const BoxDecoration(),
                                                                                   child: Builder(
                                                                                     builder: (context) {
-                                                                                      final portfolioImageList = (currentUserDocument?.creatorMainInfo?.creatorInfo?.brandGallery?.toList() ?? []).take(5).toList();
+                                                                                      final portfolioImageList = (currentUserDocument?.creatorMainInfo.creatorInfo.brandGallery.toList() ?? []).take(5).toList();
 
                                                                                       return ListView.separated(
-                                                                                        padding: EdgeInsets.fromLTRB(
+                                                                                        padding: const EdgeInsets.fromLTRB(
                                                                                           0,
                                                                                           0,
                                                                                           8.0,
@@ -1715,7 +1700,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                                         shrinkWrap: true,
                                                                                         scrollDirection: Axis.horizontal,
                                                                                         itemCount: portfolioImageList.length,
-                                                                                        separatorBuilder: (_, __) => SizedBox(width: 8.0),
+                                                                                        separatorBuilder: (_, __) => const SizedBox(width: 8.0),
                                                                                         itemBuilder: (context, portfolioImageListIndex) {
                                                                                           final portfolioImageListItem = portfolioImageList[portfolioImageListIndex];
                                                                                           return Container(
@@ -1728,12 +1713,12 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                                             ),
                                                                                             child: ClipRRect(
                                                                                               borderRadius: BorderRadius.circular(8.0),
-                                                                                              child: Image.network(
-                                                                                                portfolioImageListItem,
+                                                                                              child: CachedNetworkImage(
+                                                                                                imageUrl: portfolioImageListItem,
                                                                                                 width: 40.0,
                                                                                                 height: 45.0,
                                                                                                 fit: BoxFit.contain,
-                                                                                                alignment: Alignment(0.0, 0.0),
+                                                                                                alignment: const Alignment(0.0, 0.0),
                                                                                               ),
                                                                                             ),
                                                                                           );
@@ -1745,7 +1730,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                             ],
                                                                           ),
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               width: 8.0)),
                                                                     ),
                                                                   ),
@@ -1758,23 +1743,23 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                     ),
                                                   ),
                                                 ].divide(
-                                                    SizedBox(height: 12.0)),
+                                                    const SizedBox(height: 12.0)),
                                               ),
                                             ]
-                                                .divide(SizedBox(height: 12.0))
+                                                .divide(const SizedBox(height: 12.0))
                                                 .addToStart(
-                                                    SizedBox(height: 12.0))
+                                                    const SizedBox(height: 12.0))
                                                 .addToEnd(
-                                                    SizedBox(height: 12.0)),
+                                                    const SizedBox(height: 12.0)),
                                           ),
                                         ),
                                         Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Container(
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: Builder(
@@ -1790,7 +1775,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                 .toList()
                                                                 .firstOrNull
                                                                 ?.promotionInfo
-                                                                ?.featureImage)
+                                                                .featureImage)
                                                             .withoutNulls
                                                             .toList();
 
@@ -1862,7 +1847,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                       fit: BoxFit
                                                                           .contain,
                                                                       alignment:
-                                                                          Alignment(
+                                                                          const Alignment(
                                                                               0.0,
                                                                               -1.0),
                                                                     ),
@@ -1893,7 +1878,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                   fit: BoxFit
                                                                       .cover,
                                                                   alignment:
-                                                                      Alignment(
+                                                                      const Alignment(
                                                                           0.0,
                                                                           -1.0),
                                                                 ),
@@ -1909,8 +1894,8 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                             ),
                                           ]
                                               .addToStart(
-                                                  SizedBox(height: 12.0))
-                                              .addToEnd(SizedBox(height: 12.0)),
+                                                  const SizedBox(height: 12.0))
+                                              .addToEnd(const SizedBox(height: 12.0)),
                                         ),
                                       ],
                                     ),
@@ -1921,11 +1906,11 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                           ),
                         ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 1.0),
+                        alignment: const AlignmentDirectional(0.0, 1.0),
                         child: wrapWithModel(
                           model: _model.universalNavigationBarModel,
                           updateCallback: () => safeSetState(() {}),
-                          child: UniversalNavigationBarWidget(
+                          child: const UniversalNavigationBarWidget(
                             navigation: 'creator',
                           ),
                         ),

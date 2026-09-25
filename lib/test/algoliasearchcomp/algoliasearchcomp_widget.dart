@@ -1,11 +1,8 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'algoliasearchcomp_model.dart';
 export 'algoliasearchcomp_model.dart';
 
@@ -70,7 +67,7 @@ class _AlgoliasearchcompWidgetState extends State<AlgoliasearchcompWidget> {
                 Expanded(
                   child: Container(
                     width: 100.0,
-                    child: Stack(
+                    child: const Stack(
                       children: [],
                     ),
                   ),
@@ -92,17 +89,17 @@ class _AlgoliasearchcompWidgetState extends State<AlgoliasearchcompWidget> {
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
-                      child: Image.network(
-                        widget!.searchlist!.productInfo.featureImage,
+                      child: CachedNetworkImage(
+                        imageUrl: widget.searchlist!.productInfo.featureImage,
                         fit: BoxFit.cover,
-                        alignment: Alignment(0.0, -1.0),
+                        alignment: const Alignment(0.0, -1.0),
                       ),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                     child: Text(
-                      widget!.searchlist!.productInfo.name.maybeHandleOverflow(
+                      widget.searchlist!.productInfo.name.maybeHandleOverflow(
                         maxChars: 12,
                       ),
                       maxLines: 1,
@@ -113,9 +110,9 @@ class _AlgoliasearchcompWidgetState extends State<AlgoliasearchcompWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                     child: Text(
-                      widget!.searchlist!.productInfo.shortDescription,
+                      widget.searchlist!.productInfo.shortDescription,
                       style: FlutterFlowTheme.of(context).bodySmall.override(
                             fontFamily: 'almarai',
                             letterSpacing: 0.0,
@@ -123,9 +120,9 @@ class _AlgoliasearchcompWidgetState extends State<AlgoliasearchcompWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                     child: Text(
-                      '${widget!.searchlist?.product?.productPrice?.toString()} KD',
+                      '${widget.searchlist?.product.productPrice.toString()} KD',
                       style: FlutterFlowTheme.of(context).bodySmall.override(
                             fontFamily: 'almarai',
                             fontSize: 11.0,
@@ -136,7 +133,7 @@ class _AlgoliasearchcompWidgetState extends State<AlgoliasearchcompWidget> {
                   ),
                 ],
               ),
-            ].divide(SizedBox(height: 4.0)),
+            ].divide(const SizedBox(height: 4.0)),
           ),
         ],
       ),

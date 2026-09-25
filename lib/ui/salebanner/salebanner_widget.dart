@@ -1,11 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'salebanner_model.dart';
 export 'salebanner_model.dart';
 
@@ -43,7 +39,7 @@ class _SalebannerWidgetState extends State<SalebannerWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -51,9 +47,9 @@ class _SalebannerWidgetState extends State<SalebannerWidget> {
               FlutterFlowTheme.of(context).purple,
               FlutterFlowTheme.of(context).purple
             ],
-            stops: [0.0, 1.0],
-            begin: AlignmentDirectional(0.0, -1.0),
-            end: AlignmentDirectional(0, 1.0),
+            stops: const [0.0, 1.0],
+            begin: const AlignmentDirectional(0.0, -1.0),
+            end: const AlignmentDirectional(0, 1.0),
           ),
           borderRadius: BorderRadius.circular(8.0),
         ),
@@ -61,7 +57,7 @@ class _SalebannerWidgetState extends State<SalebannerWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8.0),
                 child: Image.asset(
@@ -71,13 +67,13 @@ class _SalebannerWidgetState extends State<SalebannerWidget> {
                       ? 80.0
                       : 120.0,
                   fit: BoxFit.contain,
-                  alignment: Alignment(-1.0, 1.0),
+                  alignment: const Alignment(-1.0, 1.0),
                 ),
               ),
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     'sb5rmt1a' /* Biggest Ramadan
@@ -95,11 +91,11 @@ Sale Now */
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
               child: FlutterFlowIconButton(
                 borderRadius: 100.0,
                 buttonSize: 32.0,
-                fillColor: Color(0x32FFFFFF),
+                fillColor: const Color(0x32FFFFFF),
                 icon: Icon(
                   Icons.navigate_next_rounded,
                   color: FlutterFlowTheme.of(context).info,

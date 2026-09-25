@@ -3,21 +3,17 @@ import '/azyaa_group_b/creator_space/creator_space/components/creatorproduct_img
 import '/azyaa_group_b/creator_space/creator_space/components/selected_dress_component/selected_dress_component_widget.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'dart:ui';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'create_promotion_custom_model.dart';
@@ -77,7 +73,7 @@ class _CreatePromotionCustomWidgetState
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -107,7 +103,7 @@ class _CreatePromotionCustomWidgetState
                         ),
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 8.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -147,11 +143,11 @@ class _CreatePromotionCustomWidgetState
                               print('IconButton pressed ...');
                             },
                           ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -166,7 +162,7 @@ class _CreatePromotionCustomWidgetState
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 24.0),
                         child: Container(
                           decoration: BoxDecoration(
@@ -181,7 +177,7 @@ class _CreatePromotionCustomWidgetState
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 12.0, 8.0),
                                 child: RichText(
                                   textScaler: MediaQuery.of(context).textScaler,
@@ -222,7 +218,7 @@ class _CreatePromotionCustomWidgetState
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 12.0, 16.0),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
@@ -311,7 +307,7 @@ class _CreatePromotionCustomWidgetState
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 12.0, 8.0),
                                 child: RichText(
                                   textScaler: MediaQuery.of(context).textScaler,
@@ -349,7 +345,7 @@ class _CreatePromotionCustomWidgetState
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 12.0, 0.0),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
@@ -451,15 +447,15 @@ class _CreatePromotionCustomWidgetState
                                 ),
                               ),
                             ]
-                                .addToStart(SizedBox(height: 16.0))
-                                .addToEnd(SizedBox(height: 16.0)),
+                                .addToStart(const SizedBox(height: 16.0))
+                                .addToEnd(const SizedBox(height: 16.0)),
                           ),
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -477,9 +473,9 @@ class _CreatePromotionCustomWidgetState
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -500,9 +496,9 @@ class _CreatePromotionCustomWidgetState
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 24.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -523,14 +519,14 @@ class _CreatePromotionCustomWidgetState
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 16.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(-1.0, -1.0),
+                              alignment: const AlignmentDirectional(-1.0, -1.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   _model.productIdList = [];
@@ -566,8 +562,8 @@ class _CreatePromotionCustomWidgetState
                                     _model.cartCount = _model.ordersList
                                         .elementAtOrNull((_model.count!) - 1)
                                         ?.orderItems
-                                        ?.cartItems
-                                        ?.length;
+                                        .cartItems
+                                        .length;
                                     while (_model.cartCount! > 0) {
                                       _model.addToProductIdList(_model
                                           .ordersList
@@ -584,7 +580,7 @@ class _CreatePromotionCustomWidgetState
                                   }
                                   await showModalBottomSheet(
                                     isScrollControlled: true,
-                                    backgroundColor: Color(0x7B000000),
+                                    backgroundColor: const Color(0x7B000000),
                                     context: context,
                                     builder: (context) {
                                       return WebViewAware(
@@ -618,15 +614,15 @@ class _CreatePromotionCustomWidgetState
                                 text: FFLocalizations.of(context).getText(
                                   'u5l67zmj' /* Select Product */,
                                 ),
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.add,
                                   size: 14.0,
                                 ),
                                 options: FFButtonOptions(
                                   height: 28.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
@@ -654,7 +650,7 @@ class _CreatePromotionCustomWidgetState
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -690,12 +686,12 @@ class _CreatePromotionCustomWidgetState
                       ),
                       if (FFAppState().promotionflow.productRef.length > 0)
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 0.0, 24.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 160.0,
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: Builder(
                               builder: (context) {
                                 final selectedList = FFAppState()
@@ -704,7 +700,7 @@ class _CreatePromotionCustomWidgetState
                                     .toList();
 
                                 return ListView.separated(
-                                  padding: EdgeInsets.fromLTRB(
+                                  padding: const EdgeInsets.fromLTRB(
                                     0,
                                     0,
                                     16.0,
@@ -715,13 +711,13 @@ class _CreatePromotionCustomWidgetState
                                   scrollDirection: Axis.horizontal,
                                   itemCount: selectedList.length,
                                   separatorBuilder: (_, __) =>
-                                      SizedBox(width: 8.0),
+                                      const SizedBox(width: 8.0),
                                   itemBuilder: (context, selectedListIndex) {
                                     final selectedListItem =
                                         selectedList[selectedListIndex];
                                     return Container(
                                       width: 130.0,
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: CreatorproductImgWidget(
                                         key: Key(
                                             'Keyx32_${selectedListIndex}_of_${selectedList.length}'),
@@ -740,9 +736,9 @@ class _CreatePromotionCustomWidgetState
                         color: FlutterFlowTheme.of(context).alternate,
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 24.0, 16.0, 16.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -767,9 +763,9 @@ class _CreatePromotionCustomWidgetState
                         desktop: false,
                       ))
                         Align(
-                          alignment: AlignmentDirectional(-1.0, -1.0),
+                          alignment: const AlignmentDirectional(-1.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 24.0),
                             child: RichText(
                               textScaler: MediaQuery.of(context).textScaler,
@@ -797,7 +793,7 @@ class _CreatePromotionCustomWidgetState
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'almarai',
-                                          color: Color(0xFF0089F2),
+                                          color: const Color(0xFF0089F2),
                                           fontSize: 12.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
@@ -807,7 +803,7 @@ class _CreatePromotionCustomWidgetState
                                     text: FFLocalizations.of(context).getText(
                                       '0yihe8wd' /* &  */,
                                     ),
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       color: Color(0xFF0089F2),
                                       fontSize: 12.0,
                                     ),
@@ -820,7 +816,7 @@ class _CreatePromotionCustomWidgetState
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'almarai',
-                                          color: Color(0xFF0089F2),
+                                          color: const Color(0xFF0089F2),
                                           fontSize: 12.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
@@ -842,14 +838,14 @@ class _CreatePromotionCustomWidgetState
                           ),
                         ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 16.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(-1.0, -1.0),
+                              alignment: const AlignmentDirectional(-1.0, -1.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   final selectedMedia =
@@ -929,15 +925,15 @@ class _CreatePromotionCustomWidgetState
                                 text: FFLocalizations.of(context).getText(
                                   '43r9xgjo' /* Upload Primary Photo */,
                                 ),
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.add,
                                   size: 14.0,
                                 ),
                                 options: FFButtonOptions(
                                   height: 28.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
@@ -965,7 +961,7 @@ class _CreatePromotionCustomWidgetState
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -1018,16 +1014,16 @@ class _CreatePromotionCustomWidgetState
                               .featureImage !=
                           '')
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 24.0),
                             child: Container(
                               width: 130.0,
                               child: Stack(
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Container(
                                       width: 130.0,
                                       height: 180.0,
@@ -1042,22 +1038,22 @@ class _CreatePromotionCustomWidgetState
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
-                                        child: Image.network(
-                                          FFAppState()
+                                        child: CachedNetworkImage(
+                                          imageUrl: FFAppState()
                                               .promotionflow
                                               .promotionInfo
                                               .featureImage,
                                           width: 130.0,
                                           fit: BoxFit.cover,
-                                          alignment: Alignment(0.0, -1.0),
+                                          alignment: const Alignment(0.0, -1.0),
                                         ),
                                       ),
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(1.0, -1.0),
+                                    alignment: const AlignmentDirectional(1.0, -1.0),
                                     child: Padding(
-                                      padding: EdgeInsets.all(4.0),
+                                      padding: const EdgeInsets.all(4.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -1095,7 +1091,7 @@ class _CreatePromotionCustomWidgetState
                                                 BorderRadius.circular(100.0),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(4.0),
+                                            padding: const EdgeInsets.all(4.0),
                                             child: Icon(
                                               Icons.close,
                                               color:
@@ -1114,7 +1110,7 @@ class _CreatePromotionCustomWidgetState
                           ),
                         ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 16.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -1141,7 +1137,7 @@ class _CreatePromotionCustomWidgetState
                                   ))
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, -1.0),
+                                          const AlignmentDirectional(-1.0, -1.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           final selectedMedia =
@@ -1232,17 +1228,17 @@ class _CreatePromotionCustomWidgetState
                                             FFLocalizations.of(context).getText(
                                           'ut35fmj8' /* Add Videos */,
                                         ),
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.add,
                                           size: 14.0,
                                         ),
                                         options: FFButtonOptions(
                                           height: 28.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 12.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
@@ -1275,7 +1271,7 @@ class _CreatePromotionCustomWidgetState
                                       ),
                                     ),
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, -1.0),
+                                    alignment: const AlignmentDirectional(-1.0, -1.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
                                         final selectedMedia =
@@ -1360,16 +1356,16 @@ class _CreatePromotionCustomWidgetState
                                       text: FFLocalizations.of(context).getText(
                                         '9cedo5xv' /* Add Secondary Photos */,
                                       ),
-                                      icon: Icon(
+                                      icon: const Icon(
                                         Icons.add,
                                         size: 14.0,
                                       ),
                                       options: FFButtonOptions(
                                         height: 28.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
@@ -1403,7 +1399,7 @@ class _CreatePromotionCustomWidgetState
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -1449,16 +1445,16 @@ class _CreatePromotionCustomWidgetState
                                 ),
                               ),
                             ),
-                          ].divide(SizedBox(width: 8.0)),
+                          ].divide(const SizedBox(width: 8.0)),
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 0.0, 24.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 180.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                           child: SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             child: Row(
@@ -1473,7 +1469,7 @@ class _CreatePromotionCustomWidgetState
                                 ))
                                   Container(
                                     width: 130.0,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
@@ -1498,19 +1494,19 @@ class _CreatePromotionCustomWidgetState
                                             child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
-                                              child: Image.network(
-                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/kylm6cx4lequ/dress1.jpg',
+                                              child: CachedNetworkImage(
+                                                imageUrl: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/kylm6cx4lequ/dress1.jpg',
                                                 width: 130.0,
                                                 fit: BoxFit.cover,
-                                                alignment: Alignment(0.0, -1.0),
+                                                alignment: const Alignment(0.0, -1.0),
                                               ),
                                             ),
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(1.0, -1.0),
+                                                const AlignmentDirectional(1.0, -1.0),
                                             child: Padding(
-                                              padding: EdgeInsets.all(4.0),
+                                              padding: const EdgeInsets.all(4.0),
                                               child: Container(
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
@@ -1521,7 +1517,7 @@ class _CreatePromotionCustomWidgetState
                                                           100.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(4.0),
+                                                  padding: const EdgeInsets.all(4.0),
                                                   child: Icon(
                                                     Icons.close,
                                                     color: FlutterFlowTheme.of(
@@ -1535,11 +1531,11 @@ class _CreatePromotionCustomWidgetState
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: FlutterFlowIconButton(
                                               borderRadius: 100.0,
                                               buttonSize: 30.0,
-                                              fillColor: Color(0xFF9597A4),
+                                              fillColor: const Color(0xFF9597A4),
                                               icon: Icon(
                                                 Icons.play_arrow,
                                                 color:
@@ -1565,7 +1561,7 @@ class _CreatePromotionCustomWidgetState
                                         .toList();
 
                                     return ListView.separated(
-                                      padding: EdgeInsets.fromLTRB(
+                                      padding: const EdgeInsets.fromLTRB(
                                         0,
                                         0,
                                         16.0,
@@ -1576,22 +1572,22 @@ class _CreatePromotionCustomWidgetState
                                       scrollDirection: Axis.horizontal,
                                       itemCount: galleryList.length,
                                       separatorBuilder: (_, __) =>
-                                          SizedBox(width: 16.0),
+                                          const SizedBox(width: 16.0),
                                       itemBuilder: (context, galleryListIndex) {
                                         final galleryListItem =
                                             galleryList[galleryListIndex];
                                         return Align(
                                           alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
+                                              const AlignmentDirectional(-1.0, 0.0),
                                           child: Container(
                                             width: 130.0,
                                             child: Stack(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   -1.0, -1.0),
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, -1.0),
                                                   child: Container(
                                                     width: 130.0,
@@ -1611,11 +1607,11 @@ class _CreatePromotionCustomWidgetState
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               8.0),
-                                                      child: Image.network(
-                                                        galleryListItem,
+                                                      child: CachedNetworkImage(
+                                                        imageUrl: galleryListItem,
                                                         width: 130.0,
                                                         fit: BoxFit.cover,
-                                                        alignment: Alignment(
+                                                        alignment: const Alignment(
                                                             0.0, -1.0),
                                                       ),
                                                     ),
@@ -1623,11 +1619,11 @@ class _CreatePromotionCustomWidgetState
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           1.0, -1.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(4.0),
+                                                        const EdgeInsets.all(4.0),
                                                     child: InkWell(
                                                       splashColor:
                                                           Colors.transparent,
@@ -1677,7 +1673,7 @@ class _CreatePromotionCustomWidgetState
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   4.0),
                                                           child: Icon(
                                                             Icons.close,
@@ -1707,21 +1703,14 @@ class _CreatePromotionCustomWidgetState
                       if ((FFAppState().promotionflow.productDetails.length >
                               0) &&
                           (_model.nameYourpromotionTextController.text !=
-                                  null &&
-                              _model.nameYourpromotionTextController.text !=
                                   '') &&
                           (FFAppState()
                                       .promotionflow
                                       .promotionInfo
                                       .featureImage !=
-                                  null &&
-                              FFAppState()
-                                      .promotionflow
-                                      .promotionInfo
-                                      .featureImage !=
                                   ''))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -1732,11 +1721,6 @@ class _CreatePromotionCustomWidgetState
                                       .length >
                                   0) {
                                 if (FFAppState()
-                                            .promotionflow
-                                            .promotionInfo
-                                            .featureImage !=
-                                        null &&
-                                    FFAppState()
                                             .promotionflow
                                             .promotionInfo
                                             .featureImage !=
@@ -1771,7 +1755,7 @@ class _CreatePromotionCustomWidgetState
                                                     getCurrentTimestamp,
                                                 promotionStatus: 'pending',
                                                 promotionId:
-                                                    'PROMOC${_model.idmapresult1?.promotionId?.toString()}',
+                                                    'PROMOC${_model.idmapresult1?.promotionId.toString()}',
                                                 promotionType: 'custom',
                                                 promotionCaption: _model
                                                     .nameYourpromotionTextController
@@ -1841,14 +1825,14 @@ class _CreatePromotionCustomWidgetState
                                         .set(createNotificationRecordData(
                                           notificationId: _model
                                               .idmapresult3?.notificationId
-                                              ?.toString(),
+                                              .toString(),
                                           createdAt: getCurrentTimestamp,
                                           updatedAt: getCurrentTimestamp,
                                           notificationType: 'promotion',
                                           messageType:
                                               'CUSTOM PROMOTION REQUEST',
                                           message:
-                                              'Custom Promotion Request from ${currentUserDocument?.creatorMainInfo?.creatorInfo?.name} || ${currentUserDocument?.creatorMainInfo?.creatorMainId} Promotion ID : ${'PROMOC${_model.idmapresult1?.promotionId?.toString()}'}',
+                                              'Custom Promotion Request from ${currentUserDocument?.creatorMainInfo.creatorInfo.name} || ${currentUserDocument?.creatorMainInfo.creatorMainId} Promotion ID : ${'PROMOC${_model.idmapresult1?.promotionId.toString()}'}',
                                           sentFrom: 'system',
                                           markAsRead: false,
                                           toUserRef: FFAppState()
@@ -1883,7 +1867,7 @@ class _CreatePromotionCustomWidgetState
                                     CreatorsPromotionSubmittedSuccesfullyWidget
                                         .routeName,
                                     extra: <String, dynamic>{
-                                      '__transition_info__': TransitionInfo(
+                                      '__transition_info__': const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -1965,9 +1949,9 @@ class _CreatePromotionCustomWidgetState
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 48.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -1983,8 +1967,8 @@ class _CreatePromotionCustomWidgetState
                           ),
                         ),
                     ]
-                        .addToStart(SizedBox(height: 12.0))
-                        .addToEnd(SizedBox(height: 16.0)),
+                        .addToStart(const SizedBox(height: 12.0))
+                        .addToEnd(const SizedBox(height: 16.0)),
                   ),
                 ),
               ),

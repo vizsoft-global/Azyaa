@@ -1,13 +1,9 @@
 import '/azyaa_group_a/home/components/blank_loading/blank_loading_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'cart_item_list_success_model.dart';
 export 'cart_item_list_success_model.dart';
 
@@ -54,14 +50,14 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
       stream: queryProductsRecord(
         queryBuilder: (productsRecord) => productsRecord.where(
           'product_id',
-          isEqualTo: widget!.cartItems?.productId,
+          isEqualTo: widget.cartItems?.productId,
         ),
         singleRecord: true,
       ),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
-          return BlankLoadingWidget();
+          return const BlankLoadingWidget();
         }
         List<ProductsRecord> rowProductsRecordList = snapshot.data!;
         final rowProductsRecord = rowProductsRecordList.isNotEmpty
@@ -74,17 +70,17 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
-              child: Image.network(
-                widget!.cartItems?.productType == 'membership'
+              child: CachedNetworkImage(
+                imageUrl: widget.cartItems?.productType == 'membership'
                     ? 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/i9u1ra67p2p4/Azyaa-logo_(2).jpg'
                     : valueOrDefault<String>(
-                        widget!.cartItems?.productInfo?.featureImage,
+                        widget.cartItems?.productInfo.featureImage,
                         'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/dj2fqe7bf1be/Frame_1609.png',
                       ),
                 width: 80.0,
                 height: 80.0,
                 fit: BoxFit.cover,
-                alignment: Alignment(0.0, -1.0),
+                alignment: const Alignment(0.0, -1.0),
               ),
             ),
             Expanded(
@@ -101,33 +97,33 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
                         child: Text(
                           FFLocalizations.of(context).getVariableText(
                             enText: () {
-                              if (widget!.cartItems?.productInfo
-                                      ?.infoCustomTranslate?.name?.en !=
+                              if (widget.cartItems?.productInfo
+                                      .infoCustomTranslate.name.en !=
                                   '') {
-                                return widget!.cartItems?.productInfo
-                                    ?.infoCustomTranslate?.name?.en;
-                              } else if (widget!.cartItems?.productInfo
-                                      ?.infoTranslate?.name?.en !=
+                                return widget.cartItems?.productInfo
+                                    .infoCustomTranslate.name.en;
+                              } else if (widget.cartItems?.productInfo
+                                      .infoTranslate.name.en !=
                                   '') {
-                                return widget!.cartItems?.productInfo
-                                    ?.infoTranslate?.name?.en;
+                                return widget.cartItems?.productInfo
+                                    .infoTranslate.name.en;
                               } else {
-                                return widget!.cartItems?.productInfo?.name;
+                                return widget.cartItems?.productInfo.name;
                               }
                             }(),
                             arText: () {
-                              if (widget!.cartItems?.productInfo
-                                      ?.infoCustomTranslate?.name?.ar !=
+                              if (widget.cartItems?.productInfo
+                                      .infoCustomTranslate.name.ar !=
                                   '') {
-                                return widget!.cartItems?.productInfo
-                                    ?.infoCustomTranslate?.name?.ar;
-                              } else if (widget!.cartItems?.productInfo
-                                      ?.infoTranslate?.name?.ar !=
+                                return widget.cartItems?.productInfo
+                                    .infoCustomTranslate.name.ar;
+                              } else if (widget.cartItems?.productInfo
+                                      .infoTranslate.name.ar !=
                                   '') {
-                                return widget!.cartItems?.productInfo
-                                    ?.infoTranslate?.name?.ar;
+                                return widget.cartItems?.productInfo
+                                    .infoTranslate.name.ar;
                               } else {
-                                return widget!.cartItems?.productInfo?.name;
+                                return widget.cartItems?.productInfo.name;
                               }
                             }(),
                           ),
@@ -140,7 +136,7 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
                         ),
                       ),
                       Text(
-                        '${widget!.cartItems?.price?.toString()}${FFLocalizations.of(context).getVariableText(
+                        '${widget.cartItems?.price.toString()}${FFLocalizations.of(context).getVariableText(
                           enText: ' KWD',
                           arText: ' KWD',
                         )}',
@@ -150,14 +146,14 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
                               fontWeight: FontWeight.bold,
                             ),
                       ),
-                    ].divide(SizedBox(width: 8.0)),
+                    ].divide(const SizedBox(width: 8.0)),
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        widget!.cartItems?.productType == 'membership'
+                        widget.cartItems?.productType == 'membership'
                             ? FFLocalizations.of(context).getVariableText(
                                 enText: 'Membership plan',
                                 arText: 'خطة العضوية',
@@ -165,7 +161,7 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
                             : '${FFLocalizations.of(context).getVariableText(
                                 enText: 'Quantity:',
                                 arText: 'كمية:',
-                              )}${widget!.cartItems?.quantity?.toString()}',
+                              )}${widget.cartItems?.quantity.toString()}',
                         style: FlutterFlowTheme.of(context).bodySmall.override(
                               fontFamily: 'almarai',
                               color: FlutterFlowTheme.of(context).secondaryText,
@@ -173,7 +169,7 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
                             ),
                       ),
                       Text(
-                        '${widget!.cartItems?.totalPrice?.toString()}${FFLocalizations.of(context).getVariableText(
+                        '${widget.cartItems?.totalPrice.toString()}${FFLocalizations.of(context).getVariableText(
                           enText: ' KWD',
                           arText: ' KWD',
                         )}',
@@ -188,7 +184,7 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
                   Builder(
                     builder: (context) {
                       final attributeList =
-                          widget!.cartItems?.cartItemAttribute?.toList() ?? [];
+                          widget.cartItems?.cartItemAttribute.toList() ?? [];
 
                       return ListView.builder(
                         padding: EdgeInsets.zero,
@@ -216,7 +212,7 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
                               if (!snapshot.hasData) {
-                                return Center(
+                                return const Center(
                                   child: SizedBox(
                                     width: 2.0,
                                     height: 2.0,
@@ -249,49 +245,49 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
                                       enText: () {
                                         if (rowAttributesRecord
                                                 ?.attributeInfoCustomTranslate
-                                                ?.name
-                                                ?.en !=
+                                                .name
+                                                .en !=
                                             '') {
                                           return rowAttributesRecord
                                               ?.attributeInfoCustomTranslate
-                                              ?.name
-                                              ?.en;
+                                              .name
+                                              .en;
                                         } else if (rowAttributesRecord
                                                 ?.attributeInfoTranslate
-                                                ?.name
-                                                ?.en !=
+                                                .name
+                                                .en !=
                                             '') {
                                           return rowAttributesRecord
                                               ?.attributeInfoTranslate
-                                              ?.name
-                                              ?.en;
+                                              .name
+                                              .en;
                                         } else {
                                           return rowAttributesRecord
-                                              ?.attributeInfo?.name;
+                                              ?.attributeInfo.name;
                                         }
                                       }(),
                                       arText: () {
                                         if (rowAttributesRecord
                                                 ?.attributeInfoCustomTranslate
-                                                ?.name
-                                                ?.ar !=
+                                                .name
+                                                .ar !=
                                             '') {
                                           return rowAttributesRecord
                                               ?.attributeInfoCustomTranslate
-                                              ?.name
-                                              ?.en;
+                                              .name
+                                              .en;
                                         } else if (rowAttributesRecord
                                                 ?.attributeInfoTranslate
-                                                ?.name
-                                                ?.ar !=
+                                                .name
+                                                .ar !=
                                             '') {
                                           return rowAttributesRecord
                                               ?.attributeInfoTranslate
-                                              ?.name
-                                              ?.en;
+                                              .name
+                                              .en;
                                         } else {
                                           return rowAttributesRecord
-                                              ?.attributeInfo?.name;
+                                              ?.attributeInfo.name;
                                         }
                                       }(),
                                     ),
@@ -322,7 +318,7 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
                                     builder: (context, snapshot) {
                                       // Customize what your widget looks like when it's loading.
                                       if (!snapshot.hasData) {
-                                        return Center(
+                                        return const Center(
                                           child: SizedBox(
                                             width: 2.0,
                                             height: 2.0,
@@ -355,49 +351,49 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
                                           enText: () {
                                             if (attributeDefaultTermBrandsRecord
                                                     ?.brandInfoCustomTranslate
-                                                    ?.name
-                                                    ?.en !=
+                                                    .name
+                                                    .en !=
                                                 '') {
                                               return attributeDefaultTermBrandsRecord
                                                   ?.brandInfoCustomTranslate
-                                                  ?.name
-                                                  ?.en;
+                                                  .name
+                                                  .en;
                                             } else if (attributeDefaultTermBrandsRecord
                                                     ?.brandInfoTranslate
-                                                    ?.name
-                                                    ?.en !=
+                                                    .name
+                                                    .en !=
                                                 '') {
                                               return attributeDefaultTermBrandsRecord
                                                   ?.brandInfoTranslate
-                                                  ?.name
-                                                  ?.en;
+                                                  .name
+                                                  .en;
                                             } else {
                                               return attributeDefaultTermBrandsRecord
-                                                  ?.brandInfo?.name;
+                                                  ?.brandInfo.name;
                                             }
                                           }(),
                                           arText: () {
                                             if (attributeDefaultTermBrandsRecord
                                                     ?.brandInfoCustomTranslate
-                                                    ?.name
-                                                    ?.ar !=
+                                                    .name
+                                                    .ar !=
                                                 '') {
                                               return attributeDefaultTermBrandsRecord
                                                   ?.brandInfoCustomTranslate
-                                                  ?.name
-                                                  ?.ar;
+                                                  .name
+                                                  .ar;
                                             } else if (attributeDefaultTermBrandsRecord
                                                     ?.brandInfoTranslate
-                                                    ?.name
-                                                    ?.ar !=
+                                                    .name
+                                                    .ar !=
                                                 '') {
                                               return attributeDefaultTermBrandsRecord
                                                   ?.brandInfoTranslate
-                                                  ?.name
-                                                  ?.ar;
+                                                  .name
+                                                  .ar;
                                             } else {
                                               return attributeDefaultTermBrandsRecord
-                                                  ?.brandInfo?.name;
+                                                  ?.brandInfo.name;
                                             }
                                           }(),
                                         ),
@@ -419,10 +415,10 @@ class _CartItemListSuccessWidgetState extends State<CartItemListSuccessWidget> {
                       );
                     },
                   ),
-                ].divide(SizedBox(height: 4.0)),
+                ].divide(const SizedBox(height: 4.0)),
               ),
             ),
-          ].divide(SizedBox(width: 8.0)),
+          ].divide(const SizedBox(width: 8.0)),
         );
       },
     );

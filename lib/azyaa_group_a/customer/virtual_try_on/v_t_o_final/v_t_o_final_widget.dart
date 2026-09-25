@@ -8,17 +8,12 @@ import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'dart:convert';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'v_t_o_final_model.dart';
 export 'v_t_o_final_model.dart';
@@ -52,7 +47,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.outfitImage =
-          widget!.product?.productInfo?.galleryImage?.firstOrNull;
+          widget.product?.productInfo.galleryImage.firstOrNull;
       safeSetState(() {});
     });
 
@@ -71,7 +66,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
     return Container(
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -87,7 +82,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                     width: MediaQuery.sizeOf(context).width * 1.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primaryBackground,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           blurRadius: 5.0,
                           color: Color(0x3B1D2429),
@@ -97,7 +92,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                           ),
                         )
                       ],
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(16.0),
                         topRight: Radius.circular(16.0),
                       ),
@@ -109,9 +104,9 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.0, -1.0),
+                            alignment: const AlignmentDirectional(0.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 8.0),
                               child: Container(
                                 width: 35.0,
@@ -125,9 +120,9 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(1.0, -1.0),
+                            alignment: const AlignmentDirectional(1.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 16.0, 8.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -147,7 +142,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -174,11 +169,11 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                     borderRadius: BorderRadius.circular(100.0),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 8.0, 16.0, 8.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        '${currentUserDocument?.userVto?.userVtoCreditPoints?.toString()}${FFLocalizations.of(context).getVariableText(
+                                        '${currentUserDocument?.userVto.userVtoCreditPoints.toString()}${FFLocalizations.of(context).getVariableText(
                                           enText: ' Credits',
                                           arText: 'الاعتمادات',
                                         )}',
@@ -197,11 +192,11 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                     ),
                                   ),
                                 ),
-                              ].divide(SizedBox(width: 8.0)),
+                              ].divide(const SizedBox(width: 8.0)),
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 8.0),
                             child: Container(
                               decoration: BoxDecoration(
@@ -212,19 +207,19 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                 ),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(8.0),
                                 child: wrapWithModel(
                                   model: _model.productListviewModel1,
                                   updateCallback: () => safeSetState(() {}),
                                   updateOnChange: true,
                                   child: ProductListviewWidget(
-                                    product: widget!.product,
+                                    product: widget.product,
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                          if (widget!.product!.productInfo.galleryImage.length >
+                          if (widget.product!.productInfo.galleryImage.length >
                               0)
                             Wrap(
                               spacing: 16.0,
@@ -239,15 +234,15 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                 Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   height: 120.0,
-                                  decoration: BoxDecoration(),
+                                  decoration: const BoxDecoration(),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 0.0, 0.0),
                                     child: Builder(
                                       builder: (context) {
-                                        final galleryImgList = widget!.product
-                                                ?.productInfo?.galleryImage
-                                                ?.toList() ??
+                                        final galleryImgList = widget.product
+                                                ?.productInfo.galleryImage
+                                                .toList() ??
                                             [];
 
                                         return ListView.separated(
@@ -257,7 +252,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                           scrollDirection: Axis.horizontal,
                                           itemCount: galleryImgList.length,
                                           separatorBuilder: (_, __) =>
-                                              SizedBox(width: 8.0),
+                                              const SizedBox(width: 8.0),
                                           itemBuilder:
                                               (context, galleryImgListIndex) {
                                             final galleryImgListItem =
@@ -285,7 +280,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                                         ? FlutterFlowTheme.of(
                                                                 context)
                                                             .primaryText
-                                                        : Color(0x00000000),
+                                                        : const Color(0x00000000),
                                                     width: 2.0,
                                                   ),
                                                 ),
@@ -298,8 +293,8 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(8.0),
-                                                        child: Image.network(
-                                                          galleryImgListItem,
+                                                        child: CachedNetworkImage(
+                                                          imageUrl: galleryImgListItem,
                                                           width: 100.0,
                                                           height: 200.0,
                                                           fit: BoxFit.cover,
@@ -319,7 +314,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                               ],
                             ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -330,7 +325,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
                                       fit: BoxFit.contain,
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       image: Image.asset(
                                         'assets/images/Frame_2087324739.png',
                                       ).image,
@@ -341,8 +336,8 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                       ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
-                                        child: Image.network(
-                                          valueOrDefault<String>(
+                                        child: CachedNetworkImage(
+                                          imageUrl: valueOrDefault<String>(
                                             _model
                                                 .uploadedFileUrl_uploadImageUser11,
                                             'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/kwcb1kmteqoh/Frame_2087324774.png',
@@ -357,9 +352,9 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                           '')
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(1.0, -1.0),
+                                              const AlignmentDirectional(1.0, -1.0),
                                           child: Padding(
-                                            padding: EdgeInsets.all(4.0),
+                                            padding: const EdgeInsets.all(4.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
                                               focusColor: Colors.transparent,
@@ -393,7 +388,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                                   shape: BoxShape.circle,
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(4.0),
+                                                  padding: const EdgeInsets.all(4.0),
                                                   child: Icon(
                                                     Icons.close_rounded,
                                                     color: FlutterFlowTheme.of(
@@ -411,7 +406,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                           true)
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Lottie.asset(
                                             'assets/jsons/upload.json',
                                             width: 60.0,
@@ -453,7 +448,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                             ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 8.0, 0.0, 8.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -558,17 +553,17 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                               .getText(
                                             'j7ejaem6' /* Upload Photo */,
                                           ),
-                                          icon: Icon(
+                                          icon: const Icon(
                                             Icons.add,
                                             size: 14.0,
                                           ),
                                           options: FFButtonOptions(
                                             height: 28.0,
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 12.0, 0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
@@ -624,14 +619,14 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                    ].divide(SizedBox(height: 4.0)),
+                                    ].divide(const SizedBox(height: 4.0)),
                                   ),
                                 ),
-                              ].divide(SizedBox(width: 16.0)),
+                              ].divide(const SizedBox(width: 16.0)),
                             ),
                           ),
                           if ((currentUserDocument?.userVtoUploadedImages
-                                          ?.toList() ??
+                                          .toList() ??
                                       [])
                                   .length >
                               0)
@@ -647,7 +642,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                 clipBehavior: Clip.none,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -666,15 +661,15 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                     width:
                                         MediaQuery.sizeOf(context).width * 1.0,
                                     height: 120.0,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 0.0, 0.0),
                                       child: Builder(
                                         builder: (context) {
                                           final resImages = (currentUserDocument
                                                       ?.userVtoUploadedImages
-                                                      ?.toList() ??
+                                                      .toList() ??
                                                   [])
                                               .toList();
 
@@ -685,7 +680,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                             scrollDirection: Axis.horizontal,
                                             itemCount: resImages.length,
                                             separatorBuilder: (_, __) =>
-                                                SizedBox(width: 8.0),
+                                                const SizedBox(width: 8.0),
                                             itemBuilder:
                                                 (context, resImagesIndex) {
                                               final resImagesItem =
@@ -712,7 +707,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                                           ? FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryText
-                                                          : Color(0x00000000),
+                                                          : const Color(0x00000000),
                                                       width: 2.0,
                                                     ),
                                                   ),
@@ -726,8 +721,8 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                                               BorderRadius
                                                                   .circular(
                                                                       8.0),
-                                                          child: Image.network(
-                                                            resImagesItem,
+                                                          child: CachedNetworkImage(
+                                                            imageUrl: resImagesItem,
                                                             width: 100.0,
                                                             height: 200.0,
                                                             fit: BoxFit.cover,
@@ -735,11 +730,11 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                                         ),
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   1.0, -1.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     4.0),
                                                             child: InkWell(
                                                               splashColor: Colors
@@ -776,7 +771,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                                                 ),
                                                                 child: Padding(
                                                                   padding:
-                                                                      EdgeInsets
+                                                                      const EdgeInsets
                                                                           .all(
                                                                               4.0),
                                                                   child:
@@ -837,7 +832,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                               ),
                             ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -931,7 +926,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                     createdAt: getCurrentTimestamp,
                                     userId: currentUserUid,
                                     status: 'pending',
-                                    productRef: widget!.product?.reference,
+                                    productRef: widget.product?.reference,
                                     personImage: _model.personImage,
                                     outfitImage: _model.outfitImage,
                                   ));
@@ -947,7 +942,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                             userId: currentUserUid,
                                             status: 'pending',
                                             productRef:
-                                                widget!.product?.reference,
+                                                widget.product?.reference,
                                             personImage: _model.personImage,
                                             outfitImage: _model.outfitImage,
                                           ),
@@ -1023,9 +1018,9 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                               options: FFButtonOptions(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 48.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -1042,9 +1037,9 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                             ),
                           ),
                         ]
-                            .divide(SizedBox(height: 8.0))
-                            .addToStart(SizedBox(height: 24.0))
-                            .addToEnd(SizedBox(height: 24.0)),
+                            .divide(const SizedBox(height: 8.0))
+                            .addToStart(const SizedBox(height: 24.0))
+                            .addToEnd(const SizedBox(height: 24.0)),
                       ),
                     ),
                   ),
@@ -1068,7 +1063,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                         return Container(
                           width: MediaQuery.sizeOf(context).width * 0.0,
                           height: 0.0,
-                          child: BlankLoadingWidget(),
+                          child: const BlankLoadingWidget(),
                         );
                       }
                       List<TryonRequestsRecord>
@@ -1086,7 +1081,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primaryBackground,
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 5.0,
                               color: Color(0x3B1D2429),
@@ -1096,7 +1091,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                               ),
                             )
                           ],
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(16.0),
                             topRight: Radius.circular(16.0),
                           ),
@@ -1107,14 +1102,14 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, -1.0),
+                              alignment: const AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: EdgeInsets.all(16.0),
+                                padding: const EdgeInsets.all(16.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Lottie.asset(
                                         'assets/jsons/Animation_-_1743158750199.json',
                                         width: 300.0,
@@ -1124,7 +1119,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -1139,7 +1134,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 8.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -1172,9 +1167,9 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                               ),
                             ),
                           ]
-                              .divide(SizedBox(height: 8.0))
-                              .addToStart(SizedBox(height: 24.0))
-                              .addToEnd(SizedBox(height: 24.0)),
+                              .divide(const SizedBox(height: 8.0))
+                              .addToStart(const SizedBox(height: 24.0))
+                              .addToEnd(const SizedBox(height: 24.0)),
                         ),
                       );
                     },
@@ -1199,7 +1194,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                         return Container(
                           width: 0.0,
                           height: 0.0,
-                          child: BlankLoadingWidget(),
+                          child: const BlankLoadingWidget(),
                         );
                       }
                       List<TryonRequestsRecord> resultTryonRequestsRecordList =
@@ -1217,7 +1212,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primaryBackground,
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 5.0,
                               color: Color(0x3B1D2429),
@@ -1227,7 +1222,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                               ),
                             )
                           ],
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(16.0),
                             topRight: Radius.circular(16.0),
                           ),
@@ -1238,9 +1233,9 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, -1.0),
+                              alignment: const AlignmentDirectional(0.0, -1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 16.0),
                                 child: Container(
                                   width: 35.0,
@@ -1254,7 +1249,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1262,7 +1257,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                 children: [
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -1279,11 +1274,11 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                       ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   32.0, 0.0, 32.0, 8.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -1296,12 +1291,12 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                     PageTransition(
                                       type: PageTransitionType.fade,
                                       child: FlutterFlowExpandedImageView(
-                                        image: Image.network(
-                                          resultTryonRequestsRecord!.result,
+                                        image: CachedNetworkImage(
+                                          imageUrl: resultTryonRequestsRecord.result,
                                           fit: BoxFit.contain,
                                         ),
                                         allowRotation: false,
-                                        tag: resultTryonRequestsRecord!.result,
+                                        tag: resultTryonRequestsRecord.result,
                                         useHeroAnimation: true,
                                       ),
                                     ),
@@ -1312,8 +1307,8 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                   transitionOnUserGestures: true,
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
-                                    child: Image.network(
-                                      resultTryonRequestsRecord!.result,
+                                    child: CachedNetworkImage(
+                                      imageUrl: resultTryonRequestsRecord.result,
                                       width: 500.0,
                                       height: 400.0,
                                       fit: BoxFit.contain,
@@ -1323,7 +1318,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 8.0),
                               child: Container(
                                 decoration: BoxDecoration(
@@ -1334,20 +1329,20 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(8.0),
                                   child: wrapWithModel(
                                     model: _model.productListviewModel2,
                                     updateCallback: () => safeSetState(() {}),
                                     updateOnChange: true,
                                     child: ProductListviewWidget(
-                                      product: widget!.product,
+                                      product: widget.product,
                                     ),
                                   ),
                                 ),
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 16.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -1358,7 +1353,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                   context.pushNamed(
                                     VirtualTryOnWidget.routeName,
                                     extra: <String, dynamic>{
-                                      '__transition_info__': TransitionInfo(
+                                      '__transition_info__': const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -1384,7 +1379,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                               color: FlutterFlowTheme.of(context).alternate,
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1399,7 +1394,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                           ShopWidget.routeName,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -1417,10 +1412,10 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         height: 48.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -1448,7 +1443,7 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                       text: FFLocalizations.of(context).getText(
                                         'e5uxj1re' /* Share */,
                                       ),
-                                      icon: Icon(
+                                      icon: const Icon(
                                         FFIcons.kshare,
                                         size: 15.0,
                                       ),
@@ -1457,11 +1452,11 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         height: 48.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         iconAlignment: IconAlignment.end,
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
@@ -1485,13 +1480,13 @@ class _VTOFinalWidgetState extends State<VTOFinalWidget> {
                                       ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 16.0)),
+                                ].divide(const SizedBox(width: 16.0)),
                               ),
                             ),
                           ]
-                              .divide(SizedBox(height: 8.0))
-                              .addToStart(SizedBox(height: 24.0))
-                              .addToEnd(SizedBox(height: 24.0)),
+                              .divide(const SizedBox(height: 8.0))
+                              .addToStart(const SizedBox(height: 24.0))
+                              .addToEnd(const SizedBox(height: 24.0)),
                         ),
                       );
                     },

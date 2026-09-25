@@ -1,12 +1,8 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'reject_reason_model.dart';
 export 'reject_reason_model.dart';
 
@@ -51,15 +47,15 @@ class _RejectReasonWidgetState extends State<RejectReasonWidget> {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: AlignmentDirectional(1.0, -1.0),
+      alignment: const AlignmentDirectional(1.0, -1.0),
       children: [
         Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Container(
             width: MediaQuery.sizeOf(context).width * 1.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).primaryBackground,
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   blurRadius: 5.0,
                   color: Color(0x3B1D2429),
@@ -77,10 +73,10 @@ class _RejectReasonWidgetState extends State<RejectReasonWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Align(
-                  alignment: AlignmentDirectional(-1.0, -1.0),
+                  alignment: const AlignmentDirectional(-1.0, -1.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         '73b3jtx8' /* Reason for Rejection */,
@@ -96,7 +92,7 @@ class _RejectReasonWidgetState extends State<RejectReasonWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       '1t1k7txm' /* Product used or damaged  */,
@@ -112,10 +108,10 @@ class _RejectReasonWidgetState extends State<RejectReasonWidget> {
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional(-1.0, -1.0),
+                  alignment: const AlignmentDirectional(-1.0, -1.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'm95r8ezw' /* Additional message for Rejecti... */,
@@ -131,7 +127,7 @@ class _RejectReasonWidgetState extends State<RejectReasonWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'g749i7b8' /* The product did not meet my ex... */,
@@ -147,13 +143,13 @@ class _RejectReasonWidgetState extends State<RejectReasonWidget> {
                   ),
                 ),
               ]
-                  .addToStart(SizedBox(height: 16.0))
-                  .addToEnd(SizedBox(height: 16.0)),
+                  .addToStart(const SizedBox(height: 16.0))
+                  .addToEnd(const SizedBox(height: 16.0)),
             ),
           ),
         ),
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 24.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 24.0, 0.0),
           child: FlutterFlowIconButton(
             borderColor: FlutterFlowTheme.of(context).border,
             borderRadius: 100.0,

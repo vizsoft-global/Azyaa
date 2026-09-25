@@ -1,11 +1,9 @@
 // Automatic FlutterFlow imports
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'index.dart'; // Imports other custom widgets
-import '/custom_code/actions/index.dart'; // Imports custom actions
-import '/flutter_flow/custom_functions.dart'; // Imports custom functions
+// Imports other custom widgets
+// Imports custom actions
+// Imports custom functions
 import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
@@ -96,7 +94,7 @@ class _MapLocationPickerWidgetState extends State<MapLocationPickerWidget> {
             },
             markers: {
               gmap.Marker(
-                markerId: gmap.MarkerId('picked_location'),
+                markerId: const gmap.MarkerId('picked_location'),
                 position: _pickedLocation,
                 draggable: true,
                 onDragEnd: (gmap.LatLng newPosition) {
@@ -116,18 +114,18 @@ class _MapLocationPickerWidgetState extends State<MapLocationPickerWidget> {
             right: 0,
             child: Center(
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(8),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black26,
                       blurRadius: 4,
                     ),
                   ],
                 ),
-                child: Text(
+                child: const Text(
                   'Tap or drag pin to set location',
                   style: TextStyle(fontSize: 12, color: Colors.black87),
                 ),

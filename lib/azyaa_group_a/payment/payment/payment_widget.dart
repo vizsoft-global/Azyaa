@@ -1,22 +1,16 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/payment/payment_checker/payment_checker_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_web_view.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'payment_model.dart';
@@ -46,7 +40,7 @@ class _PaymentWidgetState extends State<PaymentWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (_model.processes == 'initial') {
         await Future.delayed(
-          Duration(
+          const Duration(
             milliseconds: 3000,
           ),
         );
@@ -83,7 +77,7 @@ class _PaymentWidgetState extends State<PaymentWidget> {
               key: scaffoldKey,
               backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
               appBar: PreferredSize(
-                preferredSize: Size.fromHeight(60.0),
+                preferredSize: const Size.fromHeight(60.0),
                 child: AppBar(
                   backgroundColor:
                       FlutterFlowTheme.of(context).primaryBackground,
@@ -97,7 +91,7 @@ class _PaymentWidgetState extends State<PaymentWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(-1.0, -1.0),
+                            alignment: const AlignmentDirectional(-1.0, -1.0),
                             child: FlutterFlowIconButton(
                               borderColor: FlutterFlowTheme.of(context).border,
                               borderRadius: 100.0,
@@ -113,7 +107,7 @@ class _PaymentWidgetState extends State<PaymentWidget> {
                                 context.goNamed(
                                   CartWidget.routeName,
                                   extra: <String, dynamic>{
-                                    '__transition_info__': TransitionInfo(
+                                    '__transition_info__': const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -126,13 +120,13 @@ class _PaymentWidgetState extends State<PaymentWidget> {
                           wrapWithModel(
                             model: _model.paymentCheckerModel,
                             updateCallback: () => safeSetState(() {}),
-                            child: PaymentCheckerWidget(),
+                            child: const PaymentCheckerWidget(),
                           ),
                           wrapWithModel(
                             model: _model.userInitialModel,
                             updateCallback: () => safeSetState(() {}),
                             updateOnChange: true,
-                            child: UserInitialWidget(),
+                            child: const UserInitialWidget(),
                           ),
                           if (responsiveVisibility(
                             context: context,
@@ -142,7 +136,7 @@ class _PaymentWidgetState extends State<PaymentWidget> {
                             desktop: false,
                           ))
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -173,7 +167,7 @@ class _PaymentWidgetState extends State<PaymentWidget> {
                                   context.goNamed(
                                     CartWidget.routeName,
                                     extra: <String, dynamic>{
-                                      '__transition_info__': TransitionInfo(
+                                      '__transition_info__': const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -201,7 +195,7 @@ class _PaymentWidgetState extends State<PaymentWidget> {
                                         size: 26.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 4.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -229,7 +223,7 @@ class _PaymentWidgetState extends State<PaymentWidget> {
                       ),
                     ],
                   ),
-                  actions: [],
+                  actions: const [],
                   centerTitle: true,
                   elevation: 0.0,
                 ),
@@ -239,7 +233,7 @@ class _PaymentWidgetState extends State<PaymentWidget> {
                 child: Stack(
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -272,7 +266,7 @@ class _PaymentWidgetState extends State<PaymentWidget> {
                               children: [
                                 if (_model.processes == 'initial')
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -280,7 +274,7 @@ class _PaymentWidgetState extends State<PaymentWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Lottie.asset(
                                             'assets/jsons/debit-card.json',
                                             width: 150.0,

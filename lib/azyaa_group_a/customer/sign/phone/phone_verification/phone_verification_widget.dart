@@ -1,20 +1,15 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:convert';
-import 'dart:ui';
 import '/index.dart';
 import 'package:flutter/services.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -123,10 +118,10 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                           return Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: MediaQuery.sizeOf(context).height * 1.0,
-                            decoration: BoxDecoration(),
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            decoration: const BoxDecoration(),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -134,7 +129,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 16.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
@@ -147,7 +142,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 16.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -164,7 +159,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 24.0),
                                     child: Text(
                                       () {
@@ -212,9 +207,9 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 24.0),
                                       child: Text(
                                         '+${FFAppState().UserDataFlow.userPhoneNumber}',
@@ -234,7 +229,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 12.0),
                                     child: PinCodeTextField(
                                       autoDisposeControllers: false,
@@ -266,7 +261,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                         fieldHeight: 50.0,
                                         fieldWidth: 40.0,
                                         borderWidth: 1.0,
-                                        borderRadius: BorderRadius.only(
+                                        borderRadius: const BorderRadius.only(
                                           bottomLeft: Radius.circular(8.0),
                                           bottomRight: Radius.circular(8.0),
                                           topLeft: Radius.circular(8.0),
@@ -292,7 +287,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 12.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -320,8 +315,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                               .prepareAuthEvent();
                                           final smsCodeVal =
                                               _model.pinCodeController!.text;
-                                          if (smsCodeVal == null ||
-                                              smsCodeVal.isEmpty) {
+                                          if (smsCodeVal.isEmpty) {
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(
                                               SnackBar(
@@ -373,7 +367,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                             context.mounted,
                                             extra: <String, dynamic>{
                                               '__transition_info__':
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -389,7 +383,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                             if (_model
                                                     .settingsResultPhoneOtpType
                                                     ?.settingsCompanyInfo
-                                                    ?.phoneOtpType ==
+                                                    .phoneOtpType ==
                                                 'SMS') {
                                               _model.otpSmsVerificationApiStatus =
                                                   await OTPlessGroup
@@ -629,7 +623,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                               context.mounted,
                                               extra: <String, dynamic>{
                                                 '__transition_info__':
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -652,10 +646,10 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         height: 48.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -675,7 +669,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 24.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -689,7 +683,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                                 2))
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 8.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -700,7 +694,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           1.0, -1.0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
@@ -735,7 +729,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                                   ),
                                                   controller:
                                                       _model.timerController,
-                                                  updateStateInterval: Duration(
+                                                  updateStateInterval: const Duration(
                                                       milliseconds: 1000),
                                                   onChanged: (value,
                                                       displayTime,
@@ -790,7 +784,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           1.0, -1.0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
@@ -822,7 +816,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                             (_model.timerMilliseconds == 0))
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(1.0, -1.0),
+                                                const AlignmentDirectional(1.0, -1.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
                                               focusColor: Colors.transparent,
@@ -844,8 +838,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                                   );
                                                   final phoneNumberVal =
                                                       '+${FFAppState().UserDataFlow.userPhoneNumber}';
-                                                  if (phoneNumberVal == null ||
-                                                      phoneNumberVal.isEmpty ||
+                                                  if (phoneNumberVal.isEmpty ||
                                                       !phoneNumberVal
                                                           .startsWith('+')) {
                                                     ScaffoldMessenger.of(
@@ -895,7 +888,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                                     if (_model
                                                             .settingsSMSResultPhoneOtpType
                                                             ?.settingsCompanyInfo
-                                                            ?.phoneOtpType ==
+                                                            .phoneOtpType ==
                                                         'SMS') {
                                                       _model.otpSmsSendApiStatus =
                                                           await OTPlessGroup
@@ -949,7 +942,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                                                     .primaryText,
                                                               ),
                                                             ),
-                                                            duration: Duration(
+                                                            duration: const Duration(
                                                                 milliseconds:
                                                                     4000),
                                                             backgroundColor:
@@ -978,7 +971,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                                                     .primaryText,
                                                               ),
                                                             ),
-                                                            duration: Duration(
+                                                            duration: const Duration(
                                                                 milliseconds:
                                                                     4000),
                                                             backgroundColor:
@@ -1059,9 +1052,9 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, -1.0),
+                                    alignment: const AlignmentDirectional(0.0, -1.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 24.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -1080,7 +1073,7 @@ class _PhoneVerificationWidgetState extends State<PhoneVerificationWidget> {
                                             context.mounted,
                                             extra: <String, dynamic>{
                                               '__transition_info__':
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,

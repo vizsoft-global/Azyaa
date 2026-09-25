@@ -1,17 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'profile_body_edit_model.dart';
 export 'profile_body_edit_model.dart';
@@ -21,7 +16,7 @@ class ProfileBodyEditWidget extends StatefulWidget {
     super.key,
     required this.measurement,
     String? navigatedFrom,
-  }) : this.navigatedFrom = navigatedFrom ?? 'default';
+  }) : navigatedFrom = navigatedFrom ?? 'default';
 
   final UserBodyStruct? measurement;
   final String navigatedFrom;
@@ -45,43 +40,43 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
     _model = createModel(context, () => ProfileBodyEditModel());
 
     _model.nameTextController ??=
-        TextEditingController(text: widget!.measurement?.userName);
+        TextEditingController(text: widget.measurement?.userName);
     _model.nameFocusNode ??= FocusNode();
 
     _model.relationTextController ??=
-        TextEditingController(text: widget!.measurement?.relationName);
+        TextEditingController(text: widget.measurement?.relationName);
     _model.relationFocusNode ??= FocusNode();
 
     _model.heightTextController ??= TextEditingController(
-        text: widget!.measurement?.bodyInfo?.height?.toString());
+        text: widget.measurement?.bodyInfo.height.toString());
     _model.heightFocusNode ??= FocusNode();
 
     _model.weightTextController ??= TextEditingController(
-        text: widget!.measurement?.bodyInfo?.weight?.toString());
+        text: widget.measurement?.bodyInfo.weight.toString());
     _model.weightFocusNode ??= FocusNode();
 
     _model.chestTextController ??= TextEditingController(
-        text: widget!.measurement?.bodyInfo?.chest?.toString());
+        text: widget.measurement?.bodyInfo.chest.toString());
     _model.chestFocusNode ??= FocusNode();
 
     _model.waistTextController ??= TextEditingController(
-        text: widget!.measurement?.bodyInfo?.waist?.toString());
+        text: widget.measurement?.bodyInfo.waist.toString());
     _model.waistFocusNode ??= FocusNode();
 
     _model.hipTextController ??= TextEditingController(
-        text: widget!.measurement?.bodyInfo?.hips?.toString());
+        text: widget.measurement?.bodyInfo.hips.toString());
     _model.hipFocusNode ??= FocusNode();
 
     _model.inseamTextController ??= TextEditingController(
-        text: widget!.measurement?.bodyInfo?.inseam?.toString());
+        text: widget.measurement?.bodyInfo.inseam.toString());
     _model.inseamFocusNode ??= FocusNode();
 
     _model.shoulderTextController ??= TextEditingController(
-        text: widget!.measurement?.bodyInfo?.shoulderWidth?.toString());
+        text: widget.measurement?.bodyInfo.shoulderWidth.toString());
     _model.shoulderFocusNode ??= FocusNode();
 
     _model.armTextController ??= TextEditingController(
-        text: widget!.measurement?.bodyInfo?.armLength?.toString());
+        text: widget.measurement?.bodyInfo.armLength.toString());
     _model.armFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -100,7 +95,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
       width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 5.0,
             color: Color(0x3B1D2429),
@@ -110,7 +105,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
             ),
           )
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -119,7 +114,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
         mainAxisSize: MainAxisSize.max,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
             child: Container(
               width: 35.0,
               height: 3.0,
@@ -130,9 +125,9 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
             ),
           ),
           Align(
-            alignment: AlignmentDirectional(-1.0, -1.0),
+            alignment: const AlignmentDirectional(-1.0, -1.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
               child: Text(
                 FFLocalizations.of(context).getText(
                   'k7ofq0ic' /* Edit Your Body Measurements */,
@@ -147,7 +142,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
             child: Text(
               FFLocalizations.of(context).getText(
                 'ypy7x59q' /* Accurate measurements help us ... */,
@@ -168,14 +163,14 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 12.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
@@ -263,7 +258,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                           desktop: false,
                         ))
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 24.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -348,7 +343,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                             ),
                           ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -359,7 +354,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   height:
                                       MediaQuery.sizeOf(context).height * 0.5,
-                                  decoration: BoxDecoration(),
+                                  decoration: const BoxDecoration(),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
                                     child: Image.asset(
@@ -370,7 +365,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                           MediaQuery.sizeOf(context).height *
                                               1.0,
                                       fit: BoxFit.contain,
-                                      alignment: Alignment(0.0, 0.0),
+                                      alignment: const Alignment(0.0, 0.0),
                                     ),
                                   ),
                                 ),
@@ -378,14 +373,14 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                               Expanded(
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
-                                  decoration: BoxDecoration(),
+                                  decoration: const BoxDecoration(),
                                   child: SingleChildScrollView(
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 8.0, 0.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -405,7 +400,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(8.0),
+                                              padding: const EdgeInsets.all(8.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -447,7 +442,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -504,7 +499,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 enabledBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 0.0,
@@ -517,7 +512,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 0.0,
@@ -560,7 +555,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                         context)
                                                                     .primaryBackground,
                                                                 contentPadding:
-                                                                    EdgeInsets
+                                                                    const EdgeInsets
                                                                         .all(
                                                                             15.0),
                                                               ),
@@ -606,10 +601,10 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 FormFieldController<
                                                                     String>(
                                                               _model.unitHeightValue ??=
-                                                                  widget!
+                                                                  widget
                                                                       .measurement
                                                                       ?.bodyInfo
-                                                                      ?.heightUnit,
+                                                                      .heightUnit,
                                                             ),
                                                             options: [
                                                               FFLocalizations.of(
@@ -662,7 +657,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                             borderWidth: 0.0,
                                                             borderRadius: 0.0,
                                                             margin:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         4.0,
                                                                         0.0,
@@ -679,14 +674,14 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(height: 4.0)),
+                                                ].divide(const SizedBox(height: 4.0)),
                                               ),
                                             ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 8.0, 0.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -706,7 +701,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(8.0),
+                                              padding: const EdgeInsets.all(8.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -748,7 +743,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -805,7 +800,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 enabledBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 0.0,
@@ -818,7 +813,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 0.0,
@@ -861,7 +856,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                         context)
                                                                     .primaryBackground,
                                                                 contentPadding:
-                                                                    EdgeInsets
+                                                                    const EdgeInsets
                                                                         .all(
                                                                             15.0),
                                                               ),
@@ -907,10 +902,10 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 FormFieldController<
                                                                     String>(
                                                               _model.unitWeightValue ??=
-                                                                  widget!
+                                                                  widget
                                                                       .measurement
                                                                       ?.bodyInfo
-                                                                      ?.weightUnit,
+                                                                      .weightUnit,
                                                             ),
                                                             options: [
                                                               FFLocalizations.of(
@@ -963,7 +958,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                             borderWidth: 0.0,
                                                             borderRadius: 0.0,
                                                             margin:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         4.0,
                                                                         0.0,
@@ -980,14 +975,14 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(height: 8.0)),
+                                                ].divide(const SizedBox(height: 8.0)),
                                               ),
                                             ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 8.0, 0.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -1007,7 +1002,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(8.0),
+                                              padding: const EdgeInsets.all(8.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -1049,7 +1044,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1106,7 +1101,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 enabledBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 0.0,
@@ -1119,7 +1114,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 0.0,
@@ -1162,7 +1157,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                         context)
                                                                     .primaryBackground,
                                                                 contentPadding:
-                                                                    EdgeInsets
+                                                                    const EdgeInsets
                                                                         .all(
                                                                             15.0),
                                                               ),
@@ -1208,10 +1203,10 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 FormFieldController<
                                                                     String>(
                                                               _model.unitChestValue ??=
-                                                                  widget!
+                                                                  widget
                                                                       .measurement
                                                                       ?.bodyInfo
-                                                                      ?.chestUnit,
+                                                                      .chestUnit,
                                                             ),
                                                             options: [
                                                               FFLocalizations.of(
@@ -1269,7 +1264,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                             borderWidth: 0.0,
                                                             borderRadius: 0.0,
                                                             margin:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         4.0,
                                                                         0.0,
@@ -1286,14 +1281,14 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(height: 8.0)),
+                                                ].divide(const SizedBox(height: 8.0)),
                                               ),
                                             ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 8.0, 0.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -1313,7 +1308,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(8.0),
+                                              padding: const EdgeInsets.all(8.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -1355,7 +1350,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1412,7 +1407,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 enabledBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 0.0,
@@ -1425,7 +1420,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 0.0,
@@ -1468,7 +1463,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                         context)
                                                                     .primaryBackground,
                                                                 contentPadding:
-                                                                    EdgeInsets
+                                                                    const EdgeInsets
                                                                         .all(
                                                                             15.0),
                                                               ),
@@ -1514,10 +1509,10 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 FormFieldController<
                                                                     String>(
                                                               _model.unitWaistValue ??=
-                                                                  widget!
+                                                                  widget
                                                                       .measurement
                                                                       ?.bodyInfo
-                                                                      ?.waistUnit,
+                                                                      .waistUnit,
                                                             ),
                                                             options: [
                                                               FFLocalizations.of(
@@ -1575,7 +1570,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                             borderWidth: 0.0,
                                                             borderRadius: 0.0,
                                                             margin:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         4.0,
                                                                         0.0,
@@ -1592,14 +1587,14 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(height: 8.0)),
+                                                ].divide(const SizedBox(height: 8.0)),
                                               ),
                                             ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 8.0, 0.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -1619,7 +1614,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(8.0),
+                                              padding: const EdgeInsets.all(8.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -1661,7 +1656,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1718,7 +1713,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 enabledBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 0.0,
@@ -1731,7 +1726,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 0.0,
@@ -1774,7 +1769,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                         context)
                                                                     .primaryBackground,
                                                                 contentPadding:
-                                                                    EdgeInsets
+                                                                    const EdgeInsets
                                                                         .all(
                                                                             15.0),
                                                               ),
@@ -1820,10 +1815,10 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 FormFieldController<
                                                                     String>(
                                                               _model.unitHipValue ??=
-                                                                  widget!
+                                                                  widget
                                                                       .measurement
                                                                       ?.bodyInfo
-                                                                      ?.hipsUnit,
+                                                                      .hipsUnit,
                                                             ),
                                                             options: [
                                                               FFLocalizations.of(
@@ -1881,7 +1876,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                             borderWidth: 0.0,
                                                             borderRadius: 0.0,
                                                             margin:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         4.0,
                                                                         0.0,
@@ -1898,14 +1893,14 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(height: 8.0)),
+                                                ].divide(const SizedBox(height: 8.0)),
                                               ),
                                             ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 8.0, 0.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -1925,7 +1920,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(8.0),
+                                              padding: const EdgeInsets.all(8.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -1967,7 +1962,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -2024,7 +2019,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 enabledBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 0.0,
@@ -2037,7 +2032,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 0.0,
@@ -2080,7 +2075,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                         context)
                                                                     .primaryBackground,
                                                                 contentPadding:
-                                                                    EdgeInsets
+                                                                    const EdgeInsets
                                                                         .all(
                                                                             15.0),
                                                               ),
@@ -2126,10 +2121,10 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 FormFieldController<
                                                                     String>(
                                                               _model.unitInseamValue ??=
-                                                                  widget!
+                                                                  widget
                                                                       .measurement
                                                                       ?.bodyInfo
-                                                                      ?.inseamUnit,
+                                                                      .inseamUnit,
                                                             ),
                                                             options: [
                                                               FFLocalizations.of(
@@ -2187,7 +2182,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                             borderWidth: 0.0,
                                                             borderRadius: 0.0,
                                                             margin:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         4.0,
                                                                         0.0,
@@ -2204,14 +2199,14 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(height: 8.0)),
+                                                ].divide(const SizedBox(height: 8.0)),
                                               ),
                                             ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 8.0, 0.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -2231,7 +2226,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(8.0),
+                                              padding: const EdgeInsets.all(8.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -2273,7 +2268,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -2330,7 +2325,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 enabledBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 0.0,
@@ -2343,7 +2338,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 0.0,
@@ -2386,7 +2381,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                         context)
                                                                     .primaryBackground,
                                                                 contentPadding:
-                                                                    EdgeInsets
+                                                                    const EdgeInsets
                                                                         .all(
                                                                             15.0),
                                                               ),
@@ -2432,10 +2427,10 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 FormFieldController<
                                                                     String>(
                                                               _model.unitShoulderValue ??=
-                                                                  widget!
+                                                                  widget
                                                                       .measurement
                                                                       ?.bodyInfo
-                                                                      ?.shoulderWidthUnit,
+                                                                      .shoulderWidthUnit,
                                                             ),
                                                             options: [
                                                               FFLocalizations.of(
@@ -2493,7 +2488,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                             borderWidth: 0.0,
                                                             borderRadius: 0.0,
                                                             margin:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         4.0,
                                                                         0.0,
@@ -2510,14 +2505,14 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(height: 8.0)),
+                                                ].divide(const SizedBox(height: 8.0)),
                                               ),
                                             ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 8.0, 0.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -2537,7 +2532,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(8.0),
+                                              padding: const EdgeInsets.all(8.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -2579,7 +2574,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -2636,7 +2631,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 enabledBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 0.0,
@@ -2649,7 +2644,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 0.0,
@@ -2692,7 +2687,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                         context)
                                                                     .primaryBackground,
                                                                 contentPadding:
-                                                                    EdgeInsets
+                                                                    const EdgeInsets
                                                                         .all(
                                                                             15.0),
                                                               ),
@@ -2738,10 +2733,10 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                                 FormFieldController<
                                                                     String>(
                                                               _model.unitArmValue ??=
-                                                                  widget!
+                                                                  widget
                                                                       .measurement
                                                                       ?.bodyInfo
-                                                                      ?.armLengthUnit,
+                                                                      .armLengthUnit,
                                                             ),
                                                             options: [
                                                               FFLocalizations.of(
@@ -2799,7 +2794,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                             borderWidth: 0.0,
                                                             borderRadius: 0.0,
                                                             margin:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         4.0,
                                                                         0.0,
@@ -2816,19 +2811,19 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(height: 8.0)),
+                                                ].divide(const SizedBox(height: 8.0)),
                                               ),
                                             ),
                                           ),
                                         ),
                                       ]
-                                          .divide(SizedBox(height: 8.0))
-                                          .addToEnd(SizedBox(height: 12.0)),
+                                          .divide(const SizedBox(height: 8.0))
+                                          .addToEnd(const SizedBox(height: 12.0)),
                                     ),
                                   ),
                                 ),
                               ),
-                            ].divide(SizedBox(width: 12.0)),
+                            ].divide(const SizedBox(width: 12.0)),
                           ),
                         ),
                         Row(
@@ -2849,7 +2844,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                               ),
                               child: Checkbox(
                                 value: _model.checkboxValue ??=
-                                    widget!.measurement!.isDefault,
+                                    widget.measurement!.isDefault,
                                 onChanged: (newValue) async {
                                   safeSetState(
                                       () => _model.checkboxValue = newValue!);
@@ -2859,7 +2854,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                                     ? BorderSide(
                                         width: 2,
                                         color: FlutterFlowTheme.of(context)
-                                            .alternate!,
+                                            .alternate,
                                       )
                                     : null,
                                 activeColor:
@@ -2885,8 +2880,8 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                           ],
                         ),
                       ]
-                          .addToStart(SizedBox(height: 12.0))
-                          .addToEnd(SizedBox(height: 12.0)),
+                          .addToStart(const SizedBox(height: 12.0))
+                          .addToEnd(const SizedBox(height: 12.0)),
                     ),
                   ),
                 ),
@@ -2894,11 +2889,10 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
-                if (_model.heightTextController.text == null ||
-                    _model.heightTextController.text == '') {
+                if (_model.heightTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -2925,8 +2919,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                     },
                   );
                   return;
-                } else if (_model.weightTextController.text == null ||
-                    _model.weightTextController.text == '') {
+                } else if (_model.weightTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -2953,8 +2946,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                     },
                   );
                   return;
-                } else if (_model.chestTextController.text == null ||
-                    _model.chestTextController.text == '') {
+                } else if (_model.chestTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -2981,8 +2973,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                     },
                   );
                   return;
-                } else if (_model.waistTextController.text == null ||
-                    _model.waistTextController.text == '') {
+                } else if (_model.waistTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -3009,8 +3000,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                     },
                   );
                   return;
-                } else if (_model.hipTextController.text == null ||
-                    _model.hipTextController.text == '') {
+                } else if (_model.hipTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -3037,8 +3027,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                     },
                   );
                   return;
-                } else if (_model.inseamTextController.text == null ||
-                    _model.inseamTextController.text == '') {
+                } else if (_model.inseamTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -3065,8 +3054,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                     },
                   );
                   return;
-                } else if (_model.shoulderTextController.text == null ||
-                    _model.shoulderTextController.text == '') {
+                } else if (_model.shoulderTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -3093,8 +3081,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                     },
                   );
                   return;
-                } else if (_model.armTextController.text == null ||
-                    _model.armTextController.text == '') {
+                } else if (_model.armTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -3121,8 +3108,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                     },
                   );
                   return;
-                } else if (_model.nameTextController.text == null ||
-                    _model.nameTextController.text == '') {
+                } else if (_model.nameTextController.text == '') {
                   await showDialog(
                     context: context,
                     builder: (alertDialogContext) {
@@ -3151,15 +3137,15 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                   return;
                 }
 
-                _model.all = (currentUserDocument?.userBody?.toList() ?? [])
+                _model.all = (currentUserDocument?.userBody.toList() ?? [])
                     .toList()
                     .cast<UserBodyStruct>();
                 _model.count =
-                    (currentUserDocument?.userBody?.toList() ?? []).length;
+                    (currentUserDocument?.userBody.toList() ?? []).length;
                 if (_model.checkboxValue != false) {
                   _model.count =
-                      (currentUserDocument?.userBody?.toList() ?? []).length;
-                  _model.all = (currentUserDocument?.userBody?.toList() ?? [])
+                      (currentUserDocument?.userBody.toList() ?? []).length;
+                  _model.all = (currentUserDocument?.userBody.toList() ?? [])
                       .toList()
                       .cast<UserBodyStruct>();
                   while (_model.count > 0) {
@@ -3187,12 +3173,12 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                   }
                 }
                 _model.count =
-                    (currentUserDocument?.userBody?.toList() ?? []).length;
-                _model.all = (currentUserDocument?.userBody?.toList() ?? [])
+                    (currentUserDocument?.userBody.toList() ?? []).length;
+                _model.all = (currentUserDocument?.userBody.toList() ?? [])
                     .toList()
                     .cast<UserBodyStruct>();
                 while (_model.count > 0) {
-                  if (widget!.measurement?.relationId ==
+                  if (widget.measurement?.relationId ==
                       _model.all
                           .elementAtOrNull(_model.count - 1)
                           ?.relationId) {
@@ -3229,7 +3215,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                             ..armLengthUnit = _model.unitArmValue,
                         ),
                     );
-                    if ((widget!.navigatedFrom == 'default') &&
+                    if ((widget.navigatedFrom == 'default') &&
                         (_model.all
                                 .elementAtOrNull(_model.count - 1)
                                 ?.isDefault ==
@@ -3266,7 +3252,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
                         color: FlutterFlowTheme.of(context).primaryText,
                       ),
                     ),
-                    duration: Duration(milliseconds: 4000),
+                    duration: const Duration(milliseconds: 4000),
                     backgroundColor: FlutterFlowTheme.of(context).secondary,
                   ),
                 );
@@ -3279,8 +3265,8 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
               options: FFButtonOptions(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: 48.0,
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'almarai',
@@ -3292,7 +3278,7 @@ class _ProfileBodyEditWidgetState extends State<ProfileBodyEditWidget> {
               ),
             ),
           ),
-        ].addToStart(SizedBox(height: 16.0)).addToEnd(SizedBox(height: 16.0)),
+        ].addToStart(const SizedBox(height: 16.0)).addToEnd(const SizedBox(height: 16.0)),
       ),
     );
   }

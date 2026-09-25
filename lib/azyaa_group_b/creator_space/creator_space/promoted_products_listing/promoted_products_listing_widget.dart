@@ -1,18 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_b/creator_space/creator_space/components/creatorspace_productview/creatorspace_productview_widget.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:expandable/expandable.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'promoted_products_listing_model.dart';
 export 'promoted_products_listing_model.dart';
 
@@ -74,7 +68,7 @@ class _PromotedProductsListingWidgetState
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -140,11 +134,11 @@ class _PromotedProductsListingWidgetState
                               print('IconButton pressed ...');
                             },
                           ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -165,12 +159,12 @@ class _PromotedProductsListingWidgetState
                             .length >
                         0)
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Container(
                             width: double.infinity,
-                            color: Color(0x00000000),
+                            color: const Color(0x00000000),
                             child: ExpandableNotifier(
                               controller:
                                   _model.expandableExpandableController1,
@@ -180,7 +174,7 @@ class _PromotedProductsListingWidgetState
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 0.0, 0.0),
                                       child: RichText(
                                         textScaler:
@@ -257,7 +251,7 @@ class _PromotedProductsListingWidgetState
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 0.0, 0.0),
                                           child: RichText(
                                             textScaler: MediaQuery.of(context)
@@ -321,7 +315,7 @@ class _PromotedProductsListingWidgetState
                                   ],
                                 ),
                                 collapsed: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -336,7 +330,7 @@ class _PromotedProductsListingWidgetState
                                   ),
                                 ),
                                 expanded: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -352,15 +346,15 @@ class _PromotedProductsListingWidgetState
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         height: 300.0,
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Builder(
                                             builder: (context) {
                                               final thisweekList = currentUserDocument
                                                       ?.creatorMainInfo
-                                                      ?.creatorPromotions
-                                                      ?.where((e) =>
+                                                      .creatorPromotions
+                                                      .where((e) =>
                                                           (e.promotionStatus ==
                                                               'active') &&
                                                           (e.promotionCreatedAt! >=
@@ -369,11 +363,11 @@ class _PromotedProductsListingWidgetState
                                                                       getCurrentTimestamp,
                                                                       7)))
                                                       .toList()
-                                                      ?.toList() ??
+                                                      .toList() ??
                                                   [];
 
                                               return ListView.separated(
-                                                padding: EdgeInsets.fromLTRB(
+                                                padding: const EdgeInsets.fromLTRB(
                                                   0,
                                                   0,
                                                   16.0,
@@ -385,7 +379,7 @@ class _PromotedProductsListingWidgetState
                                                     Axis.horizontal,
                                                 itemCount: thisweekList.length,
                                                 separatorBuilder: (_, __) =>
-                                                    SizedBox(width: 8.0),
+                                                    const SizedBox(width: 8.0),
                                                 itemBuilder: (context,
                                                     thisweekListIndex) {
                                                   final thisweekListItem =
@@ -420,7 +414,7 @@ class _PromotedProductsListingWidgetState
                                                         extra: <String,
                                                             dynamic>{
                                                           '__transition_info__':
-                                                              TransitionInfo(
+                                                              const TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -449,7 +443,7 @@ class _PromotedProductsListingWidgetState
                                     ],
                                   ),
                                 ),
-                                theme: ExpandableThemeData(
+                                theme: const ExpandableThemeData(
                                   tapHeaderToExpand: true,
                                   tapBodyToExpand: false,
                                   tapBodyToCollapse: false,
@@ -475,12 +469,12 @@ class _PromotedProductsListingWidgetState
                             .length >
                         0)
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Container(
                             width: double.infinity,
-                            color: Color(0x00000000),
+                            color: const Color(0x00000000),
                             child: ExpandableNotifier(
                               controller:
                                   _model.expandableExpandableController2,
@@ -490,7 +484,7 @@ class _PromotedProductsListingWidgetState
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 0.0, 0.0),
                                       child: RichText(
                                         textScaler:
@@ -567,7 +561,7 @@ class _PromotedProductsListingWidgetState
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 0.0, 0.0),
                                           child: RichText(
                                             textScaler: MediaQuery.of(context)
@@ -631,7 +625,7 @@ class _PromotedProductsListingWidgetState
                                   ],
                                 ),
                                 collapsed: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -646,7 +640,7 @@ class _PromotedProductsListingWidgetState
                                   ),
                                 ),
                                 expanded: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -662,15 +656,15 @@ class _PromotedProductsListingWidgetState
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         height: 300.0,
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Builder(
                                             builder: (context) {
                                               final thismonthList = currentUserDocument
                                                       ?.creatorMainInfo
-                                                      ?.creatorPromotions
-                                                      ?.where((e) =>
+                                                      .creatorPromotions
+                                                      .where((e) =>
                                                           (e.promotionStatus ==
                                                               'active') &&
                                                           (e.promotionCreatedAt! >=
@@ -684,11 +678,11 @@ class _PromotedProductsListingWidgetState
                                                                       getCurrentTimestamp,
                                                                       7)))
                                                       .toList()
-                                                      ?.toList() ??
+                                                      .toList() ??
                                                   [];
 
                                               return ListView.separated(
-                                                padding: EdgeInsets.fromLTRB(
+                                                padding: const EdgeInsets.fromLTRB(
                                                   0,
                                                   0,
                                                   16.0,
@@ -700,7 +694,7 @@ class _PromotedProductsListingWidgetState
                                                     Axis.horizontal,
                                                 itemCount: thismonthList.length,
                                                 separatorBuilder: (_, __) =>
-                                                    SizedBox(width: 8.0),
+                                                    const SizedBox(width: 8.0),
                                                 itemBuilder: (context,
                                                     thismonthListIndex) {
                                                   final thismonthListItem =
@@ -735,7 +729,7 @@ class _PromotedProductsListingWidgetState
                                                         extra: <String,
                                                             dynamic>{
                                                           '__transition_info__':
-                                                              TransitionInfo(
+                                                              const TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -764,7 +758,7 @@ class _PromotedProductsListingWidgetState
                                     ],
                                   ),
                                 ),
-                                theme: ExpandableThemeData(
+                                theme: const ExpandableThemeData(
                                   tapHeaderToExpand: true,
                                   tapBodyToExpand: false,
                                   tapBodyToCollapse: false,
@@ -790,12 +784,12 @@ class _PromotedProductsListingWidgetState
                             .length >
                         0)
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Container(
                             width: double.infinity,
-                            color: Color(0x00000000),
+                            color: const Color(0x00000000),
                             child: ExpandableNotifier(
                               controller:
                                   _model.expandableExpandableController3,
@@ -805,7 +799,7 @@ class _PromotedProductsListingWidgetState
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 0.0, 0.0),
                                       child: RichText(
                                         textScaler:
@@ -882,7 +876,7 @@ class _PromotedProductsListingWidgetState
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 0.0, 0.0),
                                           child: RichText(
                                             textScaler: MediaQuery.of(context)
@@ -946,7 +940,7 @@ class _PromotedProductsListingWidgetState
                                   ],
                                 ),
                                 collapsed: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -961,7 +955,7 @@ class _PromotedProductsListingWidgetState
                                   ),
                                 ),
                                 expanded: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -977,15 +971,15 @@ class _PromotedProductsListingWidgetState
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         height: 300.0,
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Builder(
                                             builder: (context) {
                                               final lastmonthList = currentUserDocument
                                                       ?.creatorMainInfo
-                                                      ?.creatorPromotions
-                                                      ?.where((e) =>
+                                                      .creatorPromotions
+                                                      .where((e) =>
                                                           (e.promotionStatus ==
                                                               'active') &&
                                                           (e.promotionCreatedAt! >=
@@ -999,11 +993,11 @@ class _PromotedProductsListingWidgetState
                                                                       getCurrentTimestamp,
                                                                       30)))
                                                       .toList()
-                                                      ?.toList() ??
+                                                      .toList() ??
                                                   [];
 
                                               return ListView.separated(
-                                                padding: EdgeInsets.fromLTRB(
+                                                padding: const EdgeInsets.fromLTRB(
                                                   0,
                                                   0,
                                                   16.0,
@@ -1015,7 +1009,7 @@ class _PromotedProductsListingWidgetState
                                                     Axis.horizontal,
                                                 itemCount: lastmonthList.length,
                                                 separatorBuilder: (_, __) =>
-                                                    SizedBox(width: 8.0),
+                                                    const SizedBox(width: 8.0),
                                                 itemBuilder: (context,
                                                     lastmonthListIndex) {
                                                   final lastmonthListItem =
@@ -1050,7 +1044,7 @@ class _PromotedProductsListingWidgetState
                                                         extra: <String,
                                                             dynamic>{
                                                           '__transition_info__':
-                                                              TransitionInfo(
+                                                              const TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -1079,7 +1073,7 @@ class _PromotedProductsListingWidgetState
                                     ],
                                   ),
                                 ),
-                                theme: ExpandableThemeData(
+                                theme: const ExpandableThemeData(
                                   tapHeaderToExpand: true,
                                   tapBodyToExpand: false,
                                   tapBodyToCollapse: false,
@@ -1102,12 +1096,12 @@ class _PromotedProductsListingWidgetState
                             .length >
                         0)
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Container(
                             width: double.infinity,
-                            color: Color(0x00000000),
+                            color: const Color(0x00000000),
                             child: ExpandableNotifier(
                               controller:
                                   _model.expandableExpandableController4,
@@ -1117,7 +1111,7 @@ class _PromotedProductsListingWidgetState
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 0.0, 0.0),
                                       child: RichText(
                                         textScaler:
@@ -1194,7 +1188,7 @@ class _PromotedProductsListingWidgetState
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 0.0, 0.0),
                                           child: RichText(
                                             textScaler: MediaQuery.of(context)
@@ -1258,7 +1252,7 @@ class _PromotedProductsListingWidgetState
                                   ],
                                 ),
                                 collapsed: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -1273,7 +1267,7 @@ class _PromotedProductsListingWidgetState
                                   ),
                                 ),
                                 expanded: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -1289,15 +1283,15 @@ class _PromotedProductsListingWidgetState
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         height: 300.0,
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Builder(
                                             builder: (context) {
                                               final prevmonthsList = currentUserDocument
                                                       ?.creatorMainInfo
-                                                      ?.creatorPromotions
-                                                      ?.where((e) =>
+                                                      .creatorPromotions
+                                                      .where((e) =>
                                                           (e.promotionStatus ==
                                                               'active') &&
                                                           (e.promotionCreatedAt! <=
@@ -1306,11 +1300,11 @@ class _PromotedProductsListingWidgetState
                                                                       getCurrentTimestamp,
                                                                       60)))
                                                       .toList()
-                                                      ?.toList() ??
+                                                      .toList() ??
                                                   [];
 
                                               return ListView.separated(
-                                                padding: EdgeInsets.fromLTRB(
+                                                padding: const EdgeInsets.fromLTRB(
                                                   0,
                                                   0,
                                                   16.0,
@@ -1323,7 +1317,7 @@ class _PromotedProductsListingWidgetState
                                                 itemCount:
                                                     prevmonthsList.length,
                                                 separatorBuilder: (_, __) =>
-                                                    SizedBox(width: 8.0),
+                                                    const SizedBox(width: 8.0),
                                                 itemBuilder: (context,
                                                     prevmonthsListIndex) {
                                                   final prevmonthsListItem =
@@ -1358,7 +1352,7 @@ class _PromotedProductsListingWidgetState
                                                         extra: <String,
                                                             dynamic>{
                                                           '__transition_info__':
-                                                              TransitionInfo(
+                                                              const TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -1387,7 +1381,7 @@ class _PromotedProductsListingWidgetState
                                     ],
                                   ),
                                 ),
-                                theme: ExpandableThemeData(
+                                theme: const ExpandableThemeData(
                                   tapHeaderToExpand: true,
                                   tapBodyToExpand: false,
                                   tapBodyToCollapse: false,
@@ -1401,8 +1395,8 @@ class _PromotedProductsListingWidgetState
                         ),
                       ),
                   ]
-                      .divide(SizedBox(height: 12.0))
-                      .addToStart(SizedBox(height: 12.0)),
+                      .divide(const SizedBox(height: 12.0))
+                      .addToStart(const SizedBox(height: 12.0)),
                 ),
               ),
             ),

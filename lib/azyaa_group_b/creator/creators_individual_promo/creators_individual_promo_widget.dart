@@ -1,4 +1,3 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
@@ -8,19 +7,14 @@ import '/azyaa_group_a/home/components/product_grid/product_grid_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:convert';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -82,7 +76,7 @@ class _CreatorsIndividualPromoWidgetState
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -137,7 +131,7 @@ class _CreatorsIndividualPromoWidgetState
                           _model.creatorDoc = await queryUsersRecordOnce(
                             queryBuilder: (usersRecord) => usersRecord.where(
                               'uid',
-                              isEqualTo: widget!.creatorUid,
+                              isEqualTo: widget.creatorUid,
                             ),
                             singleRecord: true,
                           ).then((s) => s.firstOrNull);
@@ -146,36 +140,36 @@ class _CreatorsIndividualPromoWidgetState
                             url: 'https://azyaa.ai',
                             title: valueOrDefault<String>(
                               _model.creatorDoc?.creatorMainInfo
-                                  ?.creatorPromotions
-                                  ?.where((e) => e.promotionId == widget!.promo)
+                                  .creatorPromotions
+                                  .where((e) => e.promotionId == widget.promo)
                                   .toList()
-                                  ?.firstOrNull
+                                  .firstOrNull
                                   ?.promotionCaption,
                               '-',
                             ),
                             description: valueOrDefault<String>(
                               _model.creatorDoc?.creatorMainInfo
-                                  ?.creatorPromotions
-                                  ?.where((e) => e.promotionId == widget!.promo)
+                                  .creatorPromotions
+                                  .where((e) => e.promotionId == widget.promo)
                                   .toList()
-                                  ?.firstOrNull
+                                  .firstOrNull
                                   ?.promotionDescription,
                               '-',
                             ),
                             image: _model
-                                .creatorDoc?.creatorMainInfo?.creatorPromotions
-                                ?.where((e) => e.promotionId == widget!.promo)
+                                .creatorDoc?.creatorMainInfo.creatorPromotions
+                                .where((e) => e.promotionId == widget.promo)
                                 .toList()
-                                ?.firstOrNull
+                                .firstOrNull
                                 ?.promotionImages
-                                ?.firstOrNull,
+                                .firstOrNull,
                             ios:
-                                'https://azyaa.ai/azyaa-creator-promo?promo=${widget!.promo}&creatorUid=${widget!.creatorUid}',
+                                'https://azyaa.ai/azyaa-creator-promo?promo=${widget.promo}&creatorUid=${widget.creatorUid}',
                             domain: 'azyaa.link',
                             externalID:
-                                '${currentUserUid}-PR${_model.idmapDoc?.shareLinkId?.toString()}',
+                                '${currentUserUid}-PR${_model.idmapDoc?.shareLinkId.toString()}',
                             android:
-                                'https://azyaa.ai/azyaa-creator-promo?promo=${widget!.promo}&creatorUid=${widget!.creatorUid}',
+                                'https://azyaa.ai/azyaa-creator-promo?promo=${widget.promo}&creatorUid=${widget.creatorUid}',
                           );
 
                           if ((_model.dubshortlink?.succeeded ?? true)) {
@@ -201,12 +195,12 @@ class _CreatorsIndividualPromoWidgetState
                                 return WebViewAware(
                                   child: AlertDialog(
                                     content:
-                                        Text('Server busy try after sometime.'),
+                                        const Text('Server busy try after sometime.'),
                                     actions: [
                                       TextButton(
                                         onPressed: () =>
                                             Navigator.pop(alertDialogContext),
-                                        child: Text('Ok'),
+                                        child: const Text('Ok'),
                                       ),
                                     ],
                                   ),
@@ -221,7 +215,7 @@ class _CreatorsIndividualPromoWidgetState
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -234,18 +228,18 @@ class _CreatorsIndividualPromoWidgetState
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   wrapWithModel(
                     model: _model.appUpdateCheckerModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: AppUpdateCheckerWidget(),
+                    child: const AppUpdateCheckerWidget(),
                   ),
                   StreamBuilder<List<UsersRecord>>(
                     stream: queryUsersRecord(
                       queryBuilder: (usersRecord) => usersRecord.where(
                         'uid',
-                        isEqualTo: widget!.creatorUid,
+                        isEqualTo: widget.creatorUid,
                       ),
                       singleRecord: true,
                     ),
@@ -255,7 +249,7 @@ class _CreatorsIndividualPromoWidgetState
                         return Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 150.0,
-                          child: LoadingAnimationWidget(),
+                          child: const LoadingAnimationWidget(),
                         );
                       }
                       List<UsersRecord> creatorDocumentUsersRecordList =
@@ -276,7 +270,7 @@ class _CreatorsIndividualPromoWidgetState
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -296,49 +290,49 @@ class _CreatorsIndividualPromoWidgetState
                                     ),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
-                                      child: Image.network(
-                                        () {
+                                      child: CachedNetworkImage(
+                                        imageUrl: () {
                                           if (creatorDocumentUsersRecord
                                                       ?.creatorMainInfo
-                                                      ?.creatorPromotions
-                                                      ?.where((e) =>
+                                                      .creatorPromotions
+                                                      .where((e) =>
                                                           e.promotionId ==
-                                                          widget!.promo)
+                                                          widget.promo)
                                                       .toList()
-                                                      ?.firstOrNull
+                                                      .firstOrNull
                                                       ?.promotionInfo
-                                                      ?.featureImage !=
+                                                      .featureImage !=
                                                   null &&
                                               creatorDocumentUsersRecord
                                                       ?.creatorMainInfo
-                                                      ?.creatorPromotions
-                                                      ?.where((e) =>
+                                                      .creatorPromotions
+                                                      .where((e) =>
                                                           e.promotionId ==
-                                                          widget!.promo)
+                                                          widget.promo)
                                                       .toList()
-                                                      ?.firstOrNull
+                                                      .firstOrNull
                                                       ?.promotionInfo
-                                                      ?.featureImage !=
+                                                      .featureImage !=
                                                   '') {
                                             return creatorDocumentUsersRecord!
                                                 .creatorMainInfo
                                                 .creatorPromotions
                                                 .where((e) =>
                                                     e.promotionId ==
-                                                    widget!.promo)
+                                                    widget.promo)
                                                 .toList()
                                                 .firstOrNull!
                                                 .promotionInfo
                                                 .featureImage;
                                           } else if (creatorDocumentUsersRecord
                                                       ?.creatorMainInfo
-                                                      ?.creatorInfo
-                                                      ?.brandPhoto !=
+                                                      .creatorInfo
+                                                      .brandPhoto !=
                                                   null &&
                                               creatorDocumentUsersRecord
                                                       ?.creatorMainInfo
-                                                      ?.creatorInfo
-                                                      ?.brandPhoto !=
+                                                      .creatorInfo
+                                                      .brandPhoto !=
                                                   '') {
                                             return creatorDocumentUsersRecord!
                                                 .creatorMainInfo
@@ -355,7 +349,7 @@ class _CreatorsIndividualPromoWidgetState
                                             MediaQuery.sizeOf(context).height *
                                                 1.0,
                                         fit: BoxFit.cover,
-                                        alignment: Alignment(0.0, -1.0),
+                                        alignment: const Alignment(0.0, -1.0),
                                       ),
                                     ),
                                   ),
@@ -369,7 +363,7 @@ class _CreatorsIndividualPromoWidgetState
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 4.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.min,
@@ -413,7 +407,7 @@ class _CreatorsIndividualPromoWidgetState
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(4.0),
+                                                          const EdgeInsets.all(4.0),
                                                       child: Icon(
                                                         Icons
                                                             .navigate_next_rounded,
@@ -426,12 +420,12 @@ class _CreatorsIndividualPromoWidgetState
                                                     ),
                                                   ),
                                                 ),
-                                            ].divide(SizedBox(width: 4.0)),
+                                            ].divide(const SizedBox(width: 4.0)),
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 8.0),
                                           child: RichText(
                                             textScaler: MediaQuery.of(context)
@@ -457,12 +451,12 @@ class _CreatorsIndividualPromoWidgetState
                                                 ),
                                                 TextSpan(
                                                   text:
-                                                      creatorDocumentUsersRecord!
+                                                      creatorDocumentUsersRecord
                                                           .creatorMainInfo
                                                           .creatorPromotions
                                                           .where((e) =>
                                                               e.promotionId ==
-                                                              widget!.promo)
+                                                              widget.promo)
                                                           .toList()
                                                           .firstOrNull!
                                                           .promotionCode,
@@ -493,7 +487,7 @@ class _CreatorsIndividualPromoWidgetState
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 4.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -514,15 +508,15 @@ class _CreatorsIndividualPromoWidgetState
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 4.0),
                                           child: Text(
-                                            creatorDocumentUsersRecord!
+                                            creatorDocumentUsersRecord
                                                 .creatorMainInfo
                                                 .creatorPromotions
                                                 .where((e) =>
                                                     e.promotionId ==
-                                                    widget!.promo)
+                                                    widget.promo)
                                                 .toList()
                                                 .firstOrNull!
                                                 .promotionCaption,
@@ -541,7 +535,7 @@ class _CreatorsIndividualPromoWidgetState
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 4.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -562,15 +556,15 @@ class _CreatorsIndividualPromoWidgetState
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 4.0),
                                           child: Text(
-                                            creatorDocumentUsersRecord!
+                                            creatorDocumentUsersRecord
                                                 .creatorMainInfo
                                                 .creatorPromotions
                                                 .where((e) =>
                                                     e.promotionId ==
-                                                    widget!.promo)
+                                                    widget.promo)
                                                 .toList()
                                                 .firstOrNull!
                                                 .promotionDescription,
@@ -587,14 +581,14 @@ class _CreatorsIndividualPromoWidgetState
                                                 ),
                                           ),
                                         ),
-                                      ].divide(SizedBox(height: 2.0)),
+                                      ].divide(const SizedBox(height: 2.0)),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -611,21 +605,21 @@ class _CreatorsIndividualPromoWidgetState
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: Builder(
                                 builder: (context) {
                                   final productLists =
                                       creatorDocumentUsersRecord
-                                              ?.creatorMainInfo
-                                              ?.creatorPromotions
-                                              ?.where((e) =>
-                                                  widget!.promo ==
+                                              .creatorMainInfo
+                                              .creatorPromotions
+                                              .where((e) =>
+                                                  widget.promo ==
                                                   e.promotionId)
                                               .toList()
-                                              ?.firstOrNull
+                                              .firstOrNull
                                               ?.productDocReference
-                                              ?.toList() ??
+                                              .toList() ??
                                           [];
 
                                   return GridView.builder(
@@ -657,7 +651,7 @@ class _CreatorsIndividualPromoWidgetState
                                             return Container(
                                               width: 0.0,
                                               height: 0.0,
-                                              child: BlankLoadingWidget(),
+                                              child: const BlankLoadingWidget(),
                                             );
                                           }
 
@@ -673,7 +667,7 @@ class _CreatorsIndividualPromoWidgetState
                                             cartButtonStatus: 'hide',
                                             creatorDoc:
                                                 creatorDocumentUsersRecord,
-                                            promoID: widget!.promo,
+                                            promoID: widget.promo,
                                           );
                                         },
                                       );
@@ -695,7 +689,7 @@ class _CreatorsIndividualPromoWidgetState
                                   desktop: false,
                                 ))
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -709,11 +703,11 @@ class _CreatorsIndividualPromoWidgetState
                                     FFAppState().updateUserDataFlowStruct(
                                       (e) => e
                                         ..userCartCount = currentUserDocument
-                                            ?.userCart?.cartItems
-                                            ?.where((e) =>
+                                            ?.userCart.cartItems
+                                            .where((e) =>
                                                 e.productType != 'membership')
                                             .toList()
-                                            ?.length
+                                            .length
                                         ..userSelectedProductCount =
                                             FFAppState()
                                                 .UserDataFlow
@@ -743,9 +737,9 @@ class _CreatorsIndividualPromoWidgetState
                                     width:
                                         MediaQuery.sizeOf(context).width * 1.0,
                                     height: 48.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -762,9 +756,9 @@ class _CreatorsIndividualPromoWidgetState
                                 ),
                               ),
                           ]
-                              .divide(SizedBox(height: 16.0))
-                              .addToStart(SizedBox(height: 16.0))
-                              .addToEnd(SizedBox(height: 16.0)),
+                              .divide(const SizedBox(height: 16.0))
+                              .addToStart(const SizedBox(height: 16.0))
+                              .addToEnd(const SizedBox(height: 16.0)),
                         ),
                       );
                     },

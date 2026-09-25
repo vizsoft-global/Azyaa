@@ -1,16 +1,11 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/instant_timer.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'cart_status_model.dart';
 export 'cart_status_model.dart';
@@ -39,13 +34,13 @@ class _CartStatusWidgetState extends State<CartStatusWidget> {
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.instantTimer = InstantTimer.periodic(
-        duration: Duration(milliseconds: 10000),
+        duration: const Duration(milliseconds: 10000),
         callback: (timer) async {
           if (currentUserDocument!.userCart.cartItems.length > 0) {
             FFAppState().updateUserDataFlowStruct(
               (e) => e
                 ..userCartCount =
-                    currentUserDocument?.userCart?.cartItems?.length
+                    currentUserDocument?.userCart.cartItems.length
                 ..userCartItemList =
                     currentUserDocument!.userCart.cartItems.toList(),
             );
@@ -72,7 +67,7 @@ class _CartStatusWidgetState extends State<CartStatusWidget> {
                 _model.inventoryResult1 = await queryInventoryRecordOnce(
                   queryBuilder: (inventoryRecord) => inventoryRecord.where(
                     'inventory_id',
-                    isEqualTo: _model.productResult1?.product?.inventoryId,
+                    isEqualTo: _model.productResult1?.product.inventoryId,
                   ),
                   singleRecord: true,
                 ).then((s) => s.firstOrNull);
@@ -89,7 +84,7 @@ class _CartStatusWidgetState extends State<CartStatusWidget> {
                           .elementAtOrNull(
                               FFAppState().UserDataFlow.userCartCount - 1)
                           ?.price !=
-                      _model.productResult1?.product?.productPrice) {
+                      _model.productResult1?.product.productPrice) {
                     FFAppState().updateUserDataFlowStruct(
                       (e) => e
                         ..updateUserCartItemList(
@@ -102,7 +97,7 @@ class _CartStatusWidgetState extends State<CartStatusWidget> {
                                     FFAppState().UserDataFlow.userCartCount - 1)
                                 ?.quantity
                             ..price =
-                                _model.productResult1?.product?.productPrice
+                                _model.productResult1?.product.productPrice
                             ..totalPrice = FFAppState()
                                     .UserDataFlow
                                     .userCartItemList
@@ -132,7 +127,7 @@ class _CartStatusWidgetState extends State<CartStatusWidget> {
                             ..productInfo = _model.productResult1?.productInfo
                             ..quantity = _model.inventoryResult1?.stock
                             ..price =
-                                _model.productResult1?.product?.productPrice
+                                _model.productResult1?.product.productPrice
                             ..totalPrice = _model.inventoryResult1!.stock *
                                 _model.productResult1!.product.productPrice
                             ..updateProductInventoryInfo(

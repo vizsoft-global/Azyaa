@@ -3,17 +3,10 @@ import '/azyaa_group_a/customer/zone/profile_body_add/profile_body_add_widget.da
 import '/azyaa_group_a/customer/zone/profile_body_edit/profile_body_edit_widget.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
-import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'measurement_model.dart';
 export 'measurement_model.dart';
@@ -62,7 +55,7 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -88,7 +81,7 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -101,7 +94,7 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   SingleChildScrollView(
                     child: Column(
@@ -109,7 +102,7 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                       children: [
                         Builder(
                           builder: (context) => Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -124,7 +117,7 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                                       elevation: 0,
                                       insetPadding: EdgeInsets.zero,
                                       backgroundColor: Colors.transparent,
-                                      alignment: AlignmentDirectional(0.0, 1.0)
+                                      alignment: const AlignmentDirectional(0.0, 1.0)
                                           .resolve(Directionality.of(context)),
                                       child: WebViewAware(
                                         child: GestureDetector(
@@ -138,7 +131,7 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
                                                 0.8,
-                                            child: ProfileBodyAddWidget(),
+                                            child: const ProfileBodyAddWidget(),
                                           ),
                                         ),
                                       ),
@@ -154,7 +147,7 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 8.0, 12.0, 8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -169,7 +162,7 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                                       Expanded(
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
+                                              const AlignmentDirectional(-1.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               '74kkmpb4' /* Add a New body Measurement */,
@@ -185,7 +178,7 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(1.0, 0.0),
+                                            const AlignmentDirectional(1.0, 0.0),
                                         child: Icon(
                                           Icons.chevron_right,
                                           color: FlutterFlowTheme.of(context)
@@ -193,7 +186,7 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                                           size: 24.0,
                                         ),
                                       ),
-                                    ].divide(SizedBox(width: 8.0)),
+                                    ].divide(const SizedBox(width: 8.0)),
                                   ),
                                 ),
                               ),
@@ -201,13 +194,13 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => Builder(
                               builder: (context) {
                                 final measurementList =
-                                    (currentUserDocument?.userBody?.toList() ??
+                                    (currentUserDocument?.userBody.toList() ??
                                             [])
                                         .toList();
 
@@ -239,9 +232,9 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                                               .border,
                                         ),
                                       ),
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsets.all(4.0),
+                                        padding: const EdgeInsets.all(4.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           crossAxisAlignment:
@@ -255,7 +248,7 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                                               desktop: false,
                                             ))
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Theme(
                                                   data: ThemeData(
@@ -301,7 +294,7 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                                                             width: 2,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .alternate!,
+                                                                .alternate,
                                                           )
                                                         : null,
                                                     activeColor:
@@ -317,7 +310,7 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                                               ),
                                             Expanded(
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         4.0, 0.0, 0.0, 0.0),
                                                 child: Column(
@@ -375,7 +368,7 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                                                               ),
                                                         ),
                                                       ].divide(
-                                                          SizedBox(width: 6.0)),
+                                                          const SizedBox(width: 6.0)),
                                                     ),
                                                     Flexible(
                                                       child: RichText(
@@ -513,14 +506,14 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(height: 2.0)),
+                                                      const SizedBox(height: 2.0)),
                                                 ),
                                               ),
                                             ),
                                             if (measurementListItem.isDefault ==
                                                 true)
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Container(
                                                   height: 26.0,
@@ -534,11 +527,11 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   6.0,
                                                                   2.0,
@@ -593,7 +586,7 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                                                         backgroundColor:
                                                             Colors.transparent,
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                     0.0, 1.0)
                                                                 .resolve(
                                                                     Directionality.of(
@@ -630,7 +623,7 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                                                 },
                                               ),
                                             ),
-                                          ].divide(SizedBox(width: 4.0)),
+                                          ].divide(const SizedBox(width: 4.0)),
                                         ),
                                       ),
                                     );
@@ -641,9 +634,9 @@ class _MeasurementWidgetState extends State<MeasurementWidget> {
                           ),
                         ),
                       ]
-                          .divide(SizedBox(height: 12.0))
-                          .addToStart(SizedBox(height: 12.0))
-                          .addToEnd(SizedBox(height: 12.0)),
+                          .divide(const SizedBox(height: 12.0))
+                          .addToStart(const SizedBox(height: 12.0))
+                          .addToEnd(const SizedBox(height: 12.0)),
                     ),
                   ),
                 ],

@@ -1,20 +1,15 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
-import 'dart:convert';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'checkout_payment_method_model.dart';
 export 'checkout_payment_method_model.dart';
@@ -26,7 +21,7 @@ class CheckoutPaymentMethodWidget extends StatefulWidget {
     required this.setting,
     required this.orderInfo,
     double? shippingCharge,
-  }) : this.shippingCharge = shippingCharge ?? 0.0;
+  }) : shippingCharge = shippingCharge ?? 0.0;
 
   final IdMapRecord? id;
   final SettingsRecord? setting;
@@ -86,7 +81,7 @@ class _CheckoutPaymentMethodWidgetState
           width: MediaQuery.sizeOf(context).width * 1.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).primaryBackground,
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 blurRadius: 5.0,
                 color: Color(0x3B1D2429),
@@ -96,7 +91,7 @@ class _CheckoutPaymentMethodWidgetState
                 ),
               )
             ],
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(16.0),
               topRight: Radius.circular(16.0),
             ),
@@ -115,26 +110,26 @@ class _CheckoutPaymentMethodWidgetState
                 ))
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                     child: Container(
                       width: 35.0,
                       height: 3.0,
                       decoration: BoxDecoration(
-                        color: Color(0xFFCCBBCC),
+                        color: const Color(0xFFCCBBCC),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
                   ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             '2dn1kjvx' /* How do you pay */,
@@ -169,7 +164,7 @@ class _CheckoutPaymentMethodWidgetState
                           context.goNamed(
                             CheckoutWidget.routeName,
                             extra: <String, dynamic>{
-                              '__transition_info__': TransitionInfo(
+                              '__transition_info__': const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                                 duration: Duration(milliseconds: 0),
@@ -183,7 +178,7 @@ class _CheckoutPaymentMethodWidgetState
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -213,7 +208,7 @@ class _CheckoutPaymentMethodWidgetState
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -240,13 +235,13 @@ class _CheckoutPaymentMethodWidgetState
                                 width: 50.0,
                                 height: 30.0,
                                 fit: BoxFit.contain,
-                                alignment: Alignment(0.0, 0.0),
+                                alignment: const Alignment(0.0, 0.0),
                               ),
                             ),
                           ]
-                              .divide(SizedBox(width: 8.0))
-                              .addToStart(SizedBox(width: 8.0))
-                              .addToEnd(SizedBox(width: 8.0)),
+                              .divide(const SizedBox(width: 8.0))
+                              .addToStart(const SizedBox(width: 8.0))
+                              .addToEnd(const SizedBox(width: 8.0)),
                         ),
                       ),
                     ),
@@ -254,7 +249,7 @@ class _CheckoutPaymentMethodWidgetState
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -286,7 +281,7 @@ class _CheckoutPaymentMethodWidgetState
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -313,13 +308,13 @@ class _CheckoutPaymentMethodWidgetState
                                 width: 80.0,
                                 height: 30.0,
                                 fit: BoxFit.contain,
-                                alignment: Alignment(0.0, 0.0),
+                                alignment: const Alignment(0.0, 0.0),
                               ),
                             ),
                           ]
-                              .divide(SizedBox(width: 8.0))
-                              .addToStart(SizedBox(width: 8.0))
-                              .addToEnd(SizedBox(width: 8.0)),
+                              .divide(const SizedBox(width: 8.0))
+                              .addToStart(const SizedBox(width: 8.0))
+                              .addToEnd(const SizedBox(width: 8.0)),
                         ),
                       ),
                     ),
@@ -333,7 +328,7 @@ class _CheckoutPaymentMethodWidgetState
                 ))
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -361,7 +356,7 @@ class _CheckoutPaymentMethodWidgetState
                                 ? BorderSide(
                                     width: 2,
                                     color:
-                                        FlutterFlowTheme.of(context).alternate!,
+                                        FlutterFlowTheme.of(context).alternate,
                                   )
                                 : null,
                             activeColor: FlutterFlowTheme.of(context).primary,
@@ -393,7 +388,7 @@ class _CheckoutPaymentMethodWidgetState
                 ))
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -419,7 +414,7 @@ class _CheckoutPaymentMethodWidgetState
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -449,13 +444,13 @@ class _CheckoutPaymentMethodWidgetState
                                   width: 50.0,
                                   height: 30.0,
                                   fit: BoxFit.contain,
-                                  alignment: Alignment(0.0, 0.0),
+                                  alignment: const Alignment(0.0, 0.0),
                                 ),
                               ),
                             ]
-                                .divide(SizedBox(width: 8.0))
-                                .addToStart(SizedBox(width: 8.0))
-                                .addToEnd(SizedBox(width: 8.0)),
+                                .divide(const SizedBox(width: 8.0))
+                                .addToStart(const SizedBox(width: 8.0))
+                                .addToEnd(const SizedBox(width: 8.0)),
                           ),
                         ),
                       ),
@@ -470,7 +465,7 @@ class _CheckoutPaymentMethodWidgetState
                 ))
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -496,7 +491,7 @@ class _CheckoutPaymentMethodWidgetState
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -526,13 +521,13 @@ class _CheckoutPaymentMethodWidgetState
                                   width: 50.0,
                                   height: 30.0,
                                   fit: BoxFit.contain,
-                                  alignment: Alignment(0.0, 0.0),
+                                  alignment: const Alignment(0.0, 0.0),
                                 ),
                               ),
                             ]
-                                .divide(SizedBox(width: 8.0))
-                                .addToStart(SizedBox(width: 8.0))
-                                .addToEnd(SizedBox(width: 8.0)),
+                                .divide(const SizedBox(width: 8.0))
+                                .addToStart(const SizedBox(width: 8.0))
+                                .addToEnd(const SizedBox(width: 8.0)),
                           ),
                         ),
                       ),
@@ -540,7 +535,7 @@ class _CheckoutPaymentMethodWidgetState
                   ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       var _shouldSetState = false;
@@ -556,69 +551,69 @@ class _CheckoutPaymentMethodWidgetState
                                   .secondaryBackground,
                             ),
                           ),
-                          duration: Duration(milliseconds: 4000),
+                          duration: const Duration(milliseconds: 4000),
                         ),
                       );
                       if (_model.payStatus == 'clickable') {
                         _model.payStatus = 'DONE';
                         _model.myfatoorahPaymentResult1 =
                             await MyfatoorahGroup.executeCall.call(
-                          token: widget!.setting?.settingsPaymentInfo
-                                      ?.where((e) => e.isPrimaryStatus == true)
+                          token: widget.setting?.settingsPaymentInfo
+                                      .where((e) => e.isPrimaryStatus == true)
                                       .toList()
-                                      ?.firstOrNull
+                                      .firstOrNull
                                       ?.isProductionStatus ==
                                   true
-                              ? widget!.setting?.settingsPaymentInfo
-                                  ?.where((e) => e.isPrimaryStatus == true)
+                              ? widget.setting?.settingsPaymentInfo
+                                  .where((e) => e.isPrimaryStatus == true)
                                   .toList()
-                                  ?.firstOrNull
+                                  .firstOrNull
                                   ?.productionSecretKey
-                              : widget!.setting?.settingsPaymentInfo
-                                  ?.where((e) => e.isPrimaryStatus == true)
+                              : widget.setting?.settingsPaymentInfo
+                                  .where((e) => e.isPrimaryStatus == true)
                                   .toList()
-                                  ?.firstOrNull
+                                  .firstOrNull
                                   ?.testSecretKey,
-                          url: widget!.setting?.settingsPaymentInfo
-                                      ?.where((e) => e.isPrimaryStatus == true)
+                          url: widget.setting?.settingsPaymentInfo
+                                      .where((e) => e.isPrimaryStatus == true)
                                       .toList()
-                                      ?.firstOrNull
+                                      .firstOrNull
                                       ?.isProductionStatus ==
                                   true
                               ? 'api'
                               : 'apitest',
                           customerName: currentUserDisplayName,
                           customerDailCode: currentUserDocument
-                              ?.userInfo?.phoneNumberDailCode,
+                              ?.userInfo.phoneNumberDailCode,
                           customerPhone: currentUserDocument
-                              ?.userInfo?.phoneNumberWithoutDailcode,
+                              ?.userInfo.phoneNumberWithoutDailcode,
                           customerEmail: currentUserEmail,
                           programPrice: currentUserDocument
-                                          ?.userCart?.couponInfo?.couponId !=
+                                          ?.userCart.couponInfo.couponId !=
                                       null &&
                                   currentUserDocument
-                                          ?.userCart?.couponInfo?.couponId !=
+                                          ?.userCart.couponInfo.couponId !=
                                       ''
                               ? (currentUserDocument!.userCart.couponInfo
                                       .couponDiscountedPrice +
-                                  widget!.shippingCharge)
+                                  widget.shippingCharge)
                               : (functions.newCartTotal(currentUserDocument!
                                       .userCart.cartItems
                                       .map((e) => e.totalPrice)
                                       .toList()) +
-                                  widget!.shippingCharge),
+                                  widget.shippingCharge),
                           returnURL:
-                              'https://azyaa.flutterflow.app/azyaa-verify?orderid=${'ORDAZYA${widget!.id?.orderId?.toString()}'}',
-                          orderId: 'ORDAZYA${widget!.id?.orderId?.toString()}',
-                          cartInfo: widget!.orderInfo,
+                              'https://azyaa.flutterflow.app/azyaa-verify?orderid=${'ORDAZYA${widget.id?.orderId.toString()}'}',
+                          orderId: 'ORDAZYA${widget.id?.orderId.toString()}',
+                          cartInfo: widget.orderInfo,
                           paymentMethodID: FFAppState()
                               .PaymentFlow
                               .selectedPaymentId
                               .toString(),
-                          webhookUrl: widget!.setting?.settingsPaymentInfo
-                                      ?.where((e) => e.isPrimaryStatus == true)
+                          webhookUrl: widget.setting?.settingsPaymentInfo
+                                      .where((e) => e.isPrimaryStatus == true)
                                       .toList()
-                                      ?.firstOrNull
+                                      .firstOrNull
                                       ?.isProductionStatus ==
                                   true
                               ? 'https://hook.us1.make.com/p7og7qm3g9v7amn2rdx6odh24brwvypj?project=azyaa&&paymenttype=myfatoorah&&paytype=live'
@@ -639,7 +634,7 @@ class _CheckoutPaymentMethodWidgetState
                                   )
                                   ?.toString()
                               ..orderId =
-                                  'ORDAZYA${widget!.id?.orderId?.toString()}'
+                                  'ORDAZYA${widget.id?.orderId.toString()}'
                               ..mainPaymentUrl =
                                   MyfatoorahGroup.executeCall.paymentURL(
                                 (_model.myfatoorahPaymentResult1?.jsonBody ??
@@ -650,31 +645,31 @@ class _CheckoutPaymentMethodWidgetState
                                 (_model.myfatoorahPaymentResult1?.jsonBody ??
                                     ''),
                               )
-                              ..secretKey = widget!.setting?.settingsPaymentInfo
-                                          ?.where(
+                              ..secretKey = widget.setting?.settingsPaymentInfo
+                                          .where(
                                               (e) => e.isPrimaryStatus == true)
                                           .toList()
-                                          ?.firstOrNull
+                                          .firstOrNull
                                           ?.isProductionStatus ==
                                       true
-                                  ? widget!.setting?.settingsPaymentInfo
-                                      ?.where((e) => e.isPrimaryStatus == true)
+                                  ? widget.setting?.settingsPaymentInfo
+                                      .where((e) => e.isPrimaryStatus == true)
                                       .toList()
-                                      ?.firstOrNull
+                                      .firstOrNull
                                       ?.productionSecretKey
-                                  : widget!.setting?.settingsPaymentInfo
-                                      ?.where((e) => e.isPrimaryStatus == true)
+                                  : widget.setting?.settingsPaymentInfo
+                                      .where((e) => e.isPrimaryStatus == true)
                                       .toList()
-                                      ?.firstOrNull
+                                      .firstOrNull
                                       ?.testSecretKey
                               ..paymentType = 'myfatoorah'
                               ..presentUserRef = currentUserReference
-                              ..paymentBaseUrl = widget!
+                              ..paymentBaseUrl = widget
                                           .setting?.settingsPaymentInfo
-                                          ?.where(
+                                          .where(
                                               (e) => e.isPrimaryStatus == true)
                                           .toList()
-                                          ?.firstOrNull
+                                          .firstOrNull
                                           ?.isProductionStatus ==
                                       true
                                   ? 'api'
@@ -688,29 +683,29 @@ class _CheckoutPaymentMethodWidgetState
                             orderStatus: 'Initialization',
                             createdAt: getCurrentTimestamp,
                             orderId:
-                                'ORDAZYA${widget!.id?.orderId?.toString()}',
+                                'ORDAZYA${widget.id?.orderId.toString()}',
                             customerRef: currentUserReference,
                             totalPrice: currentUserDocument
-                                            ?.userCart?.couponInfo?.couponId !=
+                                            ?.userCart.couponInfo.couponId !=
                                         null &&
                                     currentUserDocument
-                                            ?.userCart?.couponInfo?.couponId !=
+                                            ?.userCart.couponInfo.couponId !=
                                         ''
                                 ? (currentUserDocument!.userCart.couponInfo
                                         .couponDiscountedPrice +
-                                    widget!.shippingCharge)
+                                    widget.shippingCharge)
                                 : (functions.newCartTotal(currentUserDocument!
                                         .userCart.cartItems
                                         .map((e) => e.totalPrice)
                                         .toList()) +
-                                    widget!.shippingCharge),
+                                    widget.shippingCharge),
                             orderItems: updateUserCartStruct(
                               currentUserDocument?.userCart,
                               clearUnsetFields: false,
                               create: true,
                             ),
                             customerId: currentUserUid,
-                            shippingPrice: widget!.shippingCharge,
+                            shippingPrice: widget.shippingCharge,
                           ));
                           _model.orderMyfatoorahpaymentNew =
                               OrdersRecord.getDocumentFromData(
@@ -718,32 +713,32 @@ class _CheckoutPaymentMethodWidgetState
                                     orderStatus: 'Initialization',
                                     createdAt: getCurrentTimestamp,
                                     orderId:
-                                        'ORDAZYA${widget!.id?.orderId?.toString()}',
+                                        'ORDAZYA${widget.id?.orderId.toString()}',
                                     customerRef: currentUserReference,
                                     totalPrice: currentUserDocument?.userCart
-                                                    ?.couponInfo?.couponId !=
+                                                    .couponInfo.couponId !=
                                                 null &&
                                             currentUserDocument?.userCart
-                                                    ?.couponInfo?.couponId !=
+                                                    .couponInfo.couponId !=
                                                 ''
                                         ? (currentUserDocument!
                                                 .userCart
                                                 .couponInfo
                                                 .couponDiscountedPrice +
-                                            widget!.shippingCharge)
+                                            widget.shippingCharge)
                                         : (functions.newCartTotal(
                                                 currentUserDocument!
                                                     .userCart.cartItems
                                                     .map((e) => e.totalPrice)
                                                     .toList()) +
-                                            widget!.shippingCharge),
+                                            widget.shippingCharge),
                                     orderItems: updateUserCartStruct(
                                       currentUserDocument?.userCart,
                                       clearUnsetFields: false,
                                       create: true,
                                     ),
                                     customerId: currentUserUid,
-                                    shippingPrice: widget!.shippingCharge,
+                                    shippingPrice: widget.shippingCharge,
                                   ),
                                   ordersRecordReference);
                           _shouldSetState = true;
@@ -757,7 +752,7 @@ class _CheckoutPaymentMethodWidgetState
                               shippingAddress:
                                   updateUserShippingaddressInfoStruct(
                                 (currentUserDocument?.userShippingaddress
-                                            ?.toList() ??
+                                            .toList() ??
                                         [])
                                     .where((e) => e.isDefault == true)
                                     .toList()
@@ -767,7 +762,7 @@ class _CheckoutPaymentMethodWidgetState
                               ),
                               shippingInfo: updateUserShippingaddressStruct(
                                 (currentUserDocument?.userShippingaddress
-                                            ?.toList() ??
+                                            .toList() ??
                                         [])
                                     .where((e) => e.isDefault == true)
                                     .toList()
@@ -799,7 +794,7 @@ class _CheckoutPaymentMethodWidgetState
                             ));
                           }
 
-                          await widget!.id!.reference.update({
+                          await widget.id!.reference.update({
                             ...mapToFirestore(
                               {
                                 'order_id': FieldValue.increment(1),
@@ -815,7 +810,7 @@ class _CheckoutPaymentMethodWidgetState
                           context.goNamed(
                             PaymentWidget.routeName,
                             extra: <String, dynamic>{
-                              '__transition_info__': TransitionInfo(
+                              '__transition_info__': const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                                 duration: Duration(milliseconds: 0),
@@ -837,7 +832,7 @@ class _CheckoutPaymentMethodWidgetState
                                       .secondaryBackground,
                                 ),
                               ),
-                              duration: Duration(milliseconds: 4000),
+                              duration: const Duration(milliseconds: 4000),
                             ),
                           );
                           if (_shouldSetState) safeSetState(() {});
@@ -857,9 +852,9 @@ class _CheckoutPaymentMethodWidgetState
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 48.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -881,7 +876,7 @@ class _CheckoutPaymentMethodWidgetState
                 ))
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'kx4ptps8' /* Your payment method and type w... */,
@@ -897,8 +892,8 @@ class _CheckoutPaymentMethodWidgetState
                     ),
                   ),
               ]
-                  .addToStart(SizedBox(height: 16.0))
-                  .addToEnd(SizedBox(height: 16.0)),
+                  .addToStart(const SizedBox(height: 16.0))
+                  .addToEnd(const SizedBox(height: 16.0)),
             ),
           ),
         ),

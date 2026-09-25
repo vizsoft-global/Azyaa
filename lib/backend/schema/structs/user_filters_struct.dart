@@ -546,7 +546,7 @@ class UserFiltersStruct extends FFFirebaseStruct {
           ParamType.double,
           false,
         ),
-        firestoreUtilData: FirestoreUtilData(
+        firestoreUtilData: const FirestoreUtilData(
           clearUnsetFields: false,
           create: true,
         ),

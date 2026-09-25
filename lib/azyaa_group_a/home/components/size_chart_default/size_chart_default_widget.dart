@@ -1,13 +1,10 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'size_chart_default_model.dart';
 export 'size_chart_default_model.dart';
 
@@ -50,7 +47,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: StreamBuilder<List<SettingsRecord>>(
         stream: querySettingsRecord(
           queryBuilder: (settingsRecord) => settingsRecord.where(
@@ -84,7 +81,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
             width: MediaQuery.sizeOf(context).width * 1.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).primaryBackground,
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   blurRadius: 5.0,
                   color: Color(0x3B1D2429),
@@ -103,13 +100,13 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(-1.0, -1.0),
+                          alignment: const AlignmentDirectional(-1.0, -1.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
                               'm9au176p' /* Size Chart */,
@@ -141,10 +138,10 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(1.0, -1.0),
+                    alignment: const AlignmentDirectional(1.0, -1.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                       child: FlutterFlowChoiceChips(
                         options: [
                           ChipData(FFLocalizations.of(context).getText(
@@ -204,7 +201,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8.0),
@@ -215,24 +212,24 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          (_model.choiceChipsValue == 'UK') ||
+                        child: CachedNetworkImage(
+                          imageUrl: (_model.choiceChipsValue == 'UK') ||
                                   (_model.choiceChipsValue == 'المملكة المتحدة')
-                              ? (widget!.product?.product?.productSizechartUk !=
+                              ? (widget.product?.product.productSizechartUk !=
                                       ''
-                                  ? widget!.product!.product.productSizechartUk
+                                  ? widget.product!.product.productSizechartUk
                                   : contarinerSettingsRecord!
                                       .settingsCompanyInfo
                                       .defaultProductSizechartUk)
-                              : (widget!.product?.product?.productSizechartUs !=
+                              : (widget.product?.product.productSizechartUs !=
                                       ''
-                                  ? widget!.product!.product.productSizechartUs
+                                  ? widget.product!.product.productSizechartUs
                                   : contarinerSettingsRecord!
                                       .settingsCompanyInfo
                                       .defaultProductSizechartUs),
                           height: 250.0,
                           fit: BoxFit.contain,
-                          alignment: Alignment(0.0, 0.0),
+                          alignment: const Alignment(0.0, 0.0),
                         ),
                       ),
                     ),
@@ -246,7 +243,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                   ))
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8.0),
@@ -256,7 +253,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(4.0),
+                          padding: const EdgeInsets.all(4.0),
                           child: Wrap(
                             spacing: 8.0,
                             runSpacing: 8.0,
@@ -375,7 +372,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                           ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 4.0)),
+                                ].divide(const SizedBox(width: 4.0)),
                               ),
                               Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -493,7 +490,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                           ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 4.0)),
+                                ].divide(const SizedBox(width: 4.0)),
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -603,7 +600,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                           ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 4.0)),
+                                ].divide(const SizedBox(width: 4.0)),
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -713,7 +710,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                           ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 4.0)),
+                                ].divide(const SizedBox(width: 4.0)),
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -823,7 +820,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                           ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 4.0)),
+                                ].divide(const SizedBox(width: 4.0)),
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -933,7 +930,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                           ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 4.0)),
+                                ].divide(const SizedBox(width: 4.0)),
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1043,7 +1040,7 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                                           ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 4.0)),
+                                ].divide(const SizedBox(width: 4.0)),
                               ),
                             ],
                           ),
@@ -1060,9 +1057,9 @@ class _SizeChartDefaultWidgetState extends State<SizeChartDefaultWidget> {
                         ),
                   ),
                 ]
-                    .divide(SizedBox(height: 16.0))
-                    .addToStart(SizedBox(height: 16.0))
-                    .addToEnd(SizedBox(height: 16.0)),
+                    .divide(const SizedBox(height: 16.0))
+                    .addToStart(const SizedBox(height: 16.0))
+                    .addToEnd(const SizedBox(height: 16.0)),
               ),
             ),
           );

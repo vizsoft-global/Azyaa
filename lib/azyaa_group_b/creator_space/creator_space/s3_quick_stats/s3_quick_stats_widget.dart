@@ -3,17 +3,13 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:expandable/expandable.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 's3_quick_stats_model.dart';
 export 's3_quick_stats_model.dart';
 
@@ -70,7 +66,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -99,7 +95,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                           },
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
                               '2ageag64' /* Recent Transactions */,
@@ -118,13 +114,13 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                         Container(
                           width: 30.0,
                           height: 10.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                         ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -156,7 +152,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                   List<OrdersRecord> containerOrdersRecordList = snapshot.data!;
 
                   return Container(
-                    decoration: BoxDecoration(),
+                    decoration: const BoxDecoration(),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -169,7 +165,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                             desktop: false,
                           ))
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 16.0),
                               child: Wrap(
                                 spacing: 16.0,
@@ -189,12 +185,12 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                           FlutterFlowTheme.of(context).accent2,
                                       borderRadius: BorderRadius.circular(8.0),
                                       border: Border.all(
-                                        color: Color(0xFFEDEDED),
+                                        color: const Color(0xFFEDEDED),
                                         width: 1.0,
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.all(12.0),
+                                      padding: const EdgeInsets.all(12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -204,14 +200,14 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(1.0, -1.0),
+                                                const AlignmentDirectional(1.0, -1.0),
                                             child: FlutterFlowIconButton(
                                               borderColor:
                                                   FlutterFlowTheme.of(context)
                                                       .border,
                                               borderRadius: 100.0,
                                               buttonSize: 42.0,
-                                              fillColor: Color(0x33C4FF00),
+                                              fillColor: const Color(0x33C4FF00),
                                               icon: Icon(
                                                 FFIcons.kq2n,
                                                 color:
@@ -294,12 +290,12 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                           FlutterFlowTheme.of(context).accent2,
                                       borderRadius: BorderRadius.circular(8.0),
                                       border: Border.all(
-                                        color: Color(0xFFEDEDED),
+                                        color: const Color(0xFFEDEDED),
                                         width: 1.0,
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.all(12.0),
+                                      padding: const EdgeInsets.all(12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -309,14 +305,14 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(1.0, -1.0),
+                                                const AlignmentDirectional(1.0, -1.0),
                                             child: FlutterFlowIconButton(
                                               borderColor:
                                                   FlutterFlowTheme.of(context)
                                                       .border,
                                               borderRadius: 100.0,
                                               buttonSize: 42.0,
-                                              fillColor: Color(0x33C4FF00),
+                                              fillColor: const Color(0x33C4FF00),
                                               icon: Icon(
                                                 FFIcons.kq3n,
                                                 color:
@@ -388,12 +384,12 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                           FlutterFlowTheme.of(context).accent2,
                                       borderRadius: BorderRadius.circular(8.0),
                                       border: Border.all(
-                                        color: Color(0xFFEDEDED),
+                                        color: const Color(0xFFEDEDED),
                                         width: 1.0,
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.all(12.0),
+                                      padding: const EdgeInsets.all(12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -403,14 +399,14 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(1.0, -1.0),
+                                                const AlignmentDirectional(1.0, -1.0),
                                             child: FlutterFlowIconButton(
                                               borderColor:
                                                   FlutterFlowTheme.of(context)
                                                       .border,
                                               borderRadius: 100.0,
                                               buttonSize: 42.0,
-                                              fillColor: Color(0x33C4FF00),
+                                              fillColor: const Color(0x33C4FF00),
                                               icon: Icon(
                                                 FFIcons.kq4n,
                                                 color:
@@ -482,12 +478,12 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                           FlutterFlowTheme.of(context).accent2,
                                       borderRadius: BorderRadius.circular(8.0),
                                       border: Border.all(
-                                        color: Color(0xFFEDEDED),
+                                        color: const Color(0xFFEDEDED),
                                         width: 1.0,
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.all(12.0),
+                                      padding: const EdgeInsets.all(12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -497,14 +493,14 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(1.0, -1.0),
+                                                const AlignmentDirectional(1.0, -1.0),
                                             child: FlutterFlowIconButton(
                                               borderColor:
                                                   FlutterFlowTheme.of(context)
                                                       .border,
                                               borderRadius: 100.0,
                                               buttonSize: 42.0,
-                                              fillColor: Color(0x33C4FF00),
+                                              fillColor: const Color(0x33C4FF00),
                                               icon: Icon(
                                                 FFIcons.kq1n,
                                                 color:
@@ -572,7 +568,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                               ),
                             ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -644,9 +640,9 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                             FlutterFlowTheme.of(context).border,
                                       ),
                                     ),
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 2.0, 0.0, 2.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
@@ -689,7 +685,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                         borderColor: Colors.transparent,
                                         borderWidth: 0.0,
                                         borderRadius: 0.0,
-                                        margin: EdgeInsetsDirectional.fromSTEB(
+                                        margin: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 0.0),
                                         hidesUnderline: true,
                                         isOverButton: false,
@@ -698,27 +694,27 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                       ),
                                     ),
                                   ),
-                              ].divide(SizedBox(width: 8.0)),
+                              ].divide(const SizedBox(width: 8.0)),
                             ),
                           ),
                           Container(
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 16.0),
                                   child: Container(
                                     width: double.infinity,
-                                    color: Color(0x00000000),
+                                    color: const Color(0x00000000),
                                     child: ExpandableNotifier(
                                       controller: _model
                                           .expandableExpandableController1,
                                       child: ExpandablePanel(
                                         header: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -771,7 +767,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                               scrollDirection: Axis.vertical,
                                               itemCount: thisWeekOrders.length,
                                               separatorBuilder: (_, __) =>
-                                                  SizedBox(height: 16.0),
+                                                  const SizedBox(height: 16.0),
                                               itemBuilder: (context,
                                                   thisWeekOrdersIndex) {
                                                 final thisWeekOrdersItem =
@@ -791,7 +787,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   16.0,
@@ -823,8 +819,8 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                       .circular(
                                                                           8.0),
                                                               child:
-                                                                  Image.network(
-                                                                thisWeekOrdersItem
+                                                                  CachedNetworkImage(
+                                                                imageUrl: thisWeekOrdersItem
                                                                     .orderItems
                                                                     .cartItems
                                                                     .where((e) =>
@@ -845,7 +841,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                 fit: BoxFit
                                                                     .cover,
                                                                 alignment:
-                                                                    Alignment(
+                                                                    const Alignment(
                                                                         0.0,
                                                                         -1.0),
                                                               ),
@@ -854,7 +850,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                           Expanded(
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -942,13 +938,13 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                         decoration:
                                                                             BoxDecoration(
                                                                           color:
-                                                                              Color(0xFFF6F6F6),
+                                                                              const Color(0xFFF6F6F6),
                                                                           borderRadius:
                                                                               BorderRadius.circular(4.0),
                                                                         ),
                                                                         child:
                                                                             Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               6.0,
                                                                               2.0,
                                                                               6.0,
@@ -958,14 +954,14 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                             thisWeekOrdersItem.orderStatus,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'almarai',
-                                                                                  color: Color(0xFF1F841A),
+                                                                                  color: const Color(0xFF1F841A),
                                                                                   fontSize: 10.0,
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
                                                                         ),
                                                                       ),
-                                                                    ].divide(SizedBox(
+                                                                    ].divide(const SizedBox(
                                                                         width:
                                                                             8.0)),
                                                                   ),
@@ -1034,7 +1030,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                             ),
                                                                       ),
                                                                     ),
-                                                                ].divide(SizedBox(
+                                                                ].divide(const SizedBox(
                                                                     height:
                                                                         8.0)),
                                                               ),
@@ -1049,7 +1045,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                             desktop: false,
                                                           ))
                                                             Text(
-                                                              '${thisWeekOrdersItem.orderItems.cartItems.where((e) => e.creatorRef == currentUserReference).toList().firstOrNull?.promotionCommisionRate?.toString()}KWD',
+                                                              '${thisWeekOrdersItem.orderItems.cartItems.where((e) => e.creatorRef == currentUserReference).toList().firstOrNull?.promotionCommisionRate.toString()}KWD',
                                                               textAlign:
                                                                   TextAlign
                                                                       .start,
@@ -1068,7 +1064,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                             .w600,
                                                                   ),
                                                             ),
-                                                        ].divide(SizedBox(
+                                                        ].divide(const SizedBox(
                                                             width: 12.0)),
                                                       ),
                                                     ),
@@ -1099,18 +1095,18 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 16.0),
                                     child: Container(
                                       width: double.infinity,
-                                      color: Color(0x00000000),
+                                      color: const Color(0x00000000),
                                       child: ExpandableNotifier(
                                         controller: _model
                                             .expandableExpandableController2,
                                         child: ExpandablePanel(
                                           header: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -1169,7 +1165,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                 itemCount:
                                                     thisMonthOrders.length,
                                                 separatorBuilder: (_, __) =>
-                                                    SizedBox(height: 16.0),
+                                                    const SizedBox(height: 16.0),
                                                 itemBuilder: (context,
                                                     thisMonthOrdersIndex) {
                                                   final thisMonthOrdersItem =
@@ -1189,7 +1185,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     16.0,
@@ -1243,7 +1239,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                   fit: BoxFit
                                                                       .cover,
                                                                   alignment:
-                                                                      Alignment(
+                                                                      const Alignment(
                                                                           0.0,
                                                                           -1.0),
                                                                 ),
@@ -1252,7 +1248,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                             Expanded(
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -1336,13 +1332,13 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
-                                                                                Color(0xFFF6F6F6),
+                                                                                const Color(0xFFF6F6F6),
                                                                             borderRadius:
                                                                                 BorderRadius.circular(4.0),
                                                                           ),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 6.0,
                                                                                 2.0,
                                                                                 6.0,
@@ -1352,14 +1348,14 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                               thisMonthOrdersItem.orderStatus,
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'almarai',
-                                                                                    color: Color(0xFF1F841A),
+                                                                                    color: const Color(0xFF1F841A),
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
                                                                                   ),
                                                                             ),
                                                                           ),
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               width: 8.0)),
                                                                     ),
                                                                     if (responsiveVisibility(
@@ -1422,7 +1418,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                               ),
                                                                         ),
                                                                       ),
-                                                                  ].divide(SizedBox(
+                                                                  ].divide(const SizedBox(
                                                                       height:
                                                                           8.0)),
                                                                 ),
@@ -1502,7 +1498,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                     TextAlign
                                                                         .start,
                                                               ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               width: 12.0)),
                                                         ),
                                                       ),
@@ -1535,18 +1531,18 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                 ),
                                 Container(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 16.0),
                                     child: Container(
                                       width: double.infinity,
-                                      color: Color(0x00000000),
+                                      color: const Color(0x00000000),
                                       child: ExpandableNotifier(
                                         controller: _model
                                             .expandableExpandableController3,
                                         child: ExpandablePanel(
                                           header: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -1604,7 +1600,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                 itemCount:
                                                     lastMonthOrders.length,
                                                 separatorBuilder: (_, __) =>
-                                                    SizedBox(height: 16.0),
+                                                    const SizedBox(height: 16.0),
                                                 itemBuilder: (context,
                                                     lastMonthOrdersIndex) {
                                                   final lastMonthOrdersItem =
@@ -1624,7 +1620,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     16.0,
@@ -1678,7 +1674,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                   fit: BoxFit
                                                                       .cover,
                                                                   alignment:
-                                                                      Alignment(
+                                                                      const Alignment(
                                                                           0.0,
                                                                           -1.0),
                                                                 ),
@@ -1687,7 +1683,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                             Expanded(
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -1771,13 +1767,13 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
-                                                                                Color(0xFFF6F6F6),
+                                                                                const Color(0xFFF6F6F6),
                                                                             borderRadius:
                                                                                 BorderRadius.circular(4.0),
                                                                           ),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 6.0,
                                                                                 2.0,
                                                                                 6.0,
@@ -1787,14 +1783,14 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                               lastMonthOrdersItem.orderStatus,
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'almarai',
-                                                                                    color: Color(0xFF1F841A),
+                                                                                    color: const Color(0xFF1F841A),
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
                                                                                   ),
                                                                             ),
                                                                           ),
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               width: 8.0)),
                                                                     ),
                                                                     if (responsiveVisibility(
@@ -1857,7 +1853,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                               ),
                                                                         ),
                                                                       ),
-                                                                  ].divide(SizedBox(
+                                                                  ].divide(const SizedBox(
                                                                       height:
                                                                           8.0)),
                                                                 ),
@@ -1933,7 +1929,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                                   TextAlign
                                                                       .start,
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               width: 12.0)),
                                                         ),
                                                       ),
@@ -1967,7 +1963,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                               ],
                             ),
                           ),
-                        ].addToStart(SizedBox(height: 12.0)),
+                        ].addToStart(const SizedBox(height: 12.0)),
                       ),
                     ),
                   );

@@ -7,18 +7,13 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'step1_personal_model.dart';
 export 'step1_personal_model.dart';
@@ -44,23 +39,23 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
     _model = createModel(context, () => Step1PersonalModel());
 
     _model.firstTextController ??=
-        TextEditingController(text: currentUserDocument?.userInfo?.firstName);
+        TextEditingController(text: currentUserDocument?.userInfo.firstName);
     _model.firstFocusNode ??= FocusNode();
 
     _model.lastTextController ??=
-        TextEditingController(text: currentUserDocument?.userInfo?.lastName);
+        TextEditingController(text: currentUserDocument?.userInfo.lastName);
     _model.lastFocusNode ??= FocusNode();
 
     _model.emailTextController ??=
-        TextEditingController(text: currentUserDocument?.userInfo?.email);
+        TextEditingController(text: currentUserDocument?.userInfo.email);
     _model.emailFocusNode ??= FocusNode();
 
     _model.phone1TextController ??= TextEditingController(
-        text: '+${currentUserDocument?.userInfo?.phoneNumber}');
+        text: '+${currentUserDocument?.userInfo.phoneNumber}');
     _model.phone1FocusNode ??= FocusNode();
 
     _model.alternativephoneTextController ??= TextEditingController(
-        text: currentUserDocument?.userInfo?.alternatePhoneNumber);
+        text: currentUserDocument?.userInfo.alternatePhoneNumber);
     _model.alternativephoneFocusNode ??= FocusNode();
 
     _model.phonenumberTextController ??= TextEditingController();
@@ -136,9 +131,9 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, -1.0),
+                                  alignment: const AlignmentDirectional(0.0, -1.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 8.0),
                                     child: Container(
                                       width: 80.0,
@@ -147,21 +142,18 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                         children: [
                                           if ((_model.userPhotoUploadStatus ==
                                                   'uploaded') ||
-                                              (currentUserPhoto != null &&
-                                                  currentUserPhoto != ''))
+                                              (currentUserPhoto != ''))
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, -1.0),
                                               child: AuthUserStreamWidget(
                                                 builder: (context) => ClipRRect(
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           100.0),
-                                                  child: Image.network(
-                                                    () {
+                                                  child: CachedNetworkImage(
+                                                    imageUrl: () {
                                                       if (currentUserPhoto !=
-                                                              null &&
-                                                          currentUserPhoto !=
                                                               '') {
                                                         return currentUserPhoto;
                                                       } else if (_model
@@ -177,30 +169,29 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                     height: 80.0,
                                                     fit: BoxFit.cover,
                                                     alignment:
-                                                        Alignment(0.0, 0.0),
+                                                        const Alignment(0.0, 0.0),
                                                   ),
                                                 ),
                                               ),
                                             ),
-                                          if ((currentUserPhoto == null ||
-                                                  currentUserPhoto == '') ||
+                                          if ((currentUserPhoto == '') ||
                                               _model
                                                   .isDataUploading_userPhotoUpload)
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, -1.0),
                                               child: AuthUserStreamWidget(
                                                 builder: (context) => ClipRRect(
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           100.0),
-                                                  child: Image.network(
-                                                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/kaffik-c0uyeo/assets/m2e7iznlqinp/placeholder.png',
+                                                  child: CachedNetworkImage(
+                                                    imageUrl: 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/kaffik-c0uyeo/assets/m2e7iznlqinp/placeholder.png',
                                                     width: 80.0,
                                                     height: 80.0,
                                                     fit: BoxFit.cover,
                                                     alignment:
-                                                        Alignment(0.0, 0.0),
+                                                        const Alignment(0.0, 0.0),
                                                   ),
                                                 ),
                                               ),
@@ -208,7 +199,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                           if (_model
                                               .isDataUploading_userPhotoUpload)
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Lottie.asset(
                                                 'assets/jsons/upload.json',
@@ -224,9 +215,9 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, -1.0),
+                                  alignment: const AlignmentDirectional(0.0, -1.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 12.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -325,7 +316,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                 ),
                                               ),
                                               duration:
-                                                  Duration(milliseconds: 3000),
+                                                  const Duration(milliseconds: 3000),
                                               backgroundColor:
                                                   FlutterFlowTheme.of(context)
                                                       .secondary,
@@ -354,7 +345,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 24.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -368,7 +359,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 8.0),
                                               child: RichText(
                                                 textScaler:
@@ -577,7 +568,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 8.0),
                                               child: RichText(
                                                 textScaler:
@@ -780,11 +771,11 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                           ],
                                         ),
                                       ),
-                                    ].divide(SizedBox(width: 10.0)),
+                                    ].divide(const SizedBox(width: 10.0)),
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 8.0),
                                   child: RichText(
                                     textScaler:
@@ -826,7 +817,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 24.0),
                                   child: Container(
                                     height: 50.0,
@@ -840,7 +831,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                         width: 1.0,
                                       ),
                                     ),
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) =>
                                           FlutterFlowRadioButton(
@@ -856,14 +847,14 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                 (valueOrDefault<String>(
                                                               currentUserDocument
                                                                   ?.userInfo
-                                                                  ?.gender,
+                                                                  .gender,
                                                               'Female',
                                                             ) ==
                                                             'Female') ||
                                                         (valueOrDefault<String>(
                                                               currentUserDocument
                                                                   ?.userInfo
-                                                                  ?.gender,
+                                                                  .gender,
                                                               'Female',
                                                             ) ==
                                                             'أنثى')
@@ -908,7 +899,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 8.0),
                                   child: RichText(
                                     textScaler:
@@ -950,7 +941,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 24.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -963,19 +954,19 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                         context: context,
                                         initialDate: ((currentUserDocument
                                                         ?.userInfo
-                                                        ?.dateOfBirth !=
+                                                        .dateOfBirth !=
                                                     null
                                                 ? currentUserDocument
-                                                    ?.userInfo?.dateOfBirth
+                                                    ?.userInfo.dateOfBirth
                                                 : getCurrentTimestamp) ??
                                             DateTime.now()),
                                         firstDate: DateTime(1900),
                                         lastDate: ((currentUserDocument
                                                         ?.userInfo
-                                                        ?.dateOfBirth !=
+                                                        .dateOfBirth !=
                                                     null
                                                 ? currentUserDocument
-                                                    ?.userInfo?.dateOfBirth
+                                                    ?.userInfo.dateOfBirth
                                                 : getCurrentTimestamp) ??
                                             DateTime.now()),
                                         builder: (context, child) {
@@ -1030,10 +1021,10 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                         safeSetState(() {
                                           _model.datePicked =
                                               (currentUserDocument?.userInfo
-                                                          ?.dateOfBirth !=
+                                                          .dateOfBirth !=
                                                       null
                                                   ? currentUserDocument
-                                                      ?.userInfo?.dateOfBirth
+                                                      ?.userInfo.dateOfBirth
                                                   : getCurrentTimestamp);
                                         });
                                       }
@@ -1054,9 +1045,9 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                         ),
                                       ),
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1109,7 +1100,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 8.0),
                                   child: RichText(
                                     textScaler:
@@ -1151,7 +1142,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 24.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => Container(
@@ -1251,10 +1242,9 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                     ),
                                   ),
                                 ),
-                                if (currentPhoneNumber != null &&
-                                    currentPhoneNumber != '')
+                                if (currentPhoneNumber != '')
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 8.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => RichText(
@@ -1300,10 +1290,9 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                       ),
                                     ),
                                   ),
-                                if (currentPhoneNumber != null &&
-                                    currentPhoneNumber != '')
+                                if (currentPhoneNumber != '')
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 24.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Container(
@@ -1414,7 +1403,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                   desktop: false,
                                 ))
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -1453,9 +1442,9 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                   desktop: false,
                                 ))
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 12.0),
                                       child: Container(
                                         width:
@@ -1474,7 +1463,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                           ),
                                         ),
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Stack(
                                           children: [
                                             if (responsiveVisibility(
@@ -1485,10 +1474,10 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                               desktop: false,
                                             ))
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(2.0),
+                                                  padding: const EdgeInsets.all(2.0),
                                                   child: FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model
@@ -1569,7 +1558,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                     borderWidth: 0.0,
                                                     borderRadius: 0.0,
                                                     margin:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(65.0, 4.0,
                                                                 12.0, 4.0),
                                                     hidesUnderline: true,
@@ -1580,12 +1569,12 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                 ),
                                               ),
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsets.all(8.0),
-                                                child: Image.network(
-                                                  functions.getCountryFlag(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: CachedNetworkImage(
+                                                  imageUrl: functions.getCountryFlag(
                                                       _model
                                                           .countryListValue1)!,
                                                   width: 35.0,
@@ -1606,7 +1595,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                   desktop: false,
                                 ))
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 24.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Container(
@@ -1725,10 +1714,9 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                     if ((columnSettingsRecord
                                                 ?.settingsPhoneOtpStatus ==
                                             false) &&
-                                        (currentPhoneNumber == null ||
-                                            currentPhoneNumber == ''))
+                                        (currentPhoneNumber == ''))
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 8.0),
                                         child: AuthUserStreamWidget(
                                           builder: (context) => RichText(
@@ -1781,10 +1769,9 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                     if ((columnSettingsRecord
                                                 ?.settingsPhoneOtpStatus ==
                                             false) &&
-                                        (currentPhoneNumber == null ||
-                                            currentPhoneNumber == ''))
+                                        (currentPhoneNumber == ''))
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 12.0),
                                         child: AuthUserStreamWidget(
                                           builder: (context) => Container(
@@ -1806,16 +1793,16 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                               ),
                                             ),
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Stack(
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(2.0),
+                                                        const EdgeInsets.all(2.0),
                                                     child: FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
@@ -1901,7 +1888,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                       borderWidth: 0.0,
                                                       borderRadius: 0.0,
                                                       margin:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   65.0,
                                                                   4.0,
@@ -1916,13 +1903,13 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(8.0),
-                                                    child: Image.network(
-                                                      functions.getCountryFlag(
+                                                        const EdgeInsets.all(8.0),
+                                                    child: CachedNetworkImage(
+                                                      imageUrl: functions.getCountryFlag(
                                                           _model
                                                               .countryListValue2)!,
                                                       width: 35.0,
@@ -1938,16 +1925,15 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                     if ((columnSettingsRecord
                                                 ?.settingsPhoneOtpStatus ==
                                             false) &&
-                                        (currentPhoneNumber == null ||
-                                            currentPhoneNumber == ''))
+                                        (currentPhoneNumber == ''))
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 24.0),
                                         child: AuthUserStreamWidget(
                                           builder: (context) => Stack(
                                             children: [
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -1.0, -1.0),
                                                 child: Container(
                                                   width:
@@ -2057,7 +2043,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                                   context)
                                                               .primaryBackground,
                                                       contentPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   68.0,
                                                                   0.0,
@@ -2092,10 +2078,10 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -1.0, -1.0),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(16.0),
+                                                  padding: const EdgeInsets.all(16.0),
                                                   child: Text(
                                                     '+${functions.getDailCode(_model.countryListValue2)}',
                                                     style: FlutterFlowTheme.of(
@@ -2115,12 +2101,12 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                                       ),
                                   ],
                                 ),
-                              ].addToStart(SizedBox(height: 12.0)),
+                              ].addToStart(const SizedBox(height: 12.0)),
                             ),
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 52.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -2209,8 +2195,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                               if (!((columnSettingsRecord
                                           ?.settingsPhoneOtpStatus ==
                                       false) &&
-                                  (currentPhoneNumber != null &&
-                                      currentPhoneNumber != ''))) {
+                                  (currentPhoneNumber != ''))) {
                                 await currentUserReference!
                                     .update(createUsersRecordData(
                                   userInfo: createUserRelatedInfoStruct(
@@ -2241,7 +2226,7 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                               context.goNamed(
                                 Step2MeasurementsWidget.routeName,
                                 extra: <String, dynamic>{
-                                  '__transition_info__': TransitionInfo(
+                                  '__transition_info__': const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 0),
@@ -2255,9 +2240,9 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 48.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -2273,8 +2258,8 @@ class _Step1PersonalWidgetState extends State<Step1PersonalWidget> {
                           ),
                         ),
                       ]
-                          .addToStart(SizedBox(height: 12.0))
-                          .addToEnd(SizedBox(height: 24.0)),
+                          .addToStart(const SizedBox(height: 12.0))
+                          .addToEnd(const SizedBox(height: 24.0)),
                     ),
                   );
                 },

@@ -1,14 +1,10 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'c1_share_promotion_model.dart';
 export 'c1_share_promotion_model.dart';
 
@@ -42,7 +38,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
     super.initState();
     _model = createModel(context, () => C1SharePromotionModel());
 
-    _model.textController ??= TextEditingController(text: widget!.promotionURL);
+    _model.textController ??= TextEditingController(text: widget.promotionURL);
     _model.textFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -60,7 +56,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
     return Material(
       color: Colors.transparent,
       elevation: 5.0,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
@@ -70,7 +66,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
         width: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(16.0),
             topRight: Radius.circular(16.0),
           ),
@@ -79,7 +75,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
               child: Container(
                 width: 50.0,
                 height: 4.0,
@@ -90,7 +86,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -101,7 +97,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                     size: 24.0,
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, -1.0),
+                    alignment: const AlignmentDirectional(-1.0, -1.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'wnjb7t80' /* Share Your Exclusive Link! */,
@@ -116,15 +112,15 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                           ),
                     ),
                   ),
-                ].divide(SizedBox(width: 4.0)),
+                ].divide(const SizedBox(width: 4.0)),
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
               child: Container(
                 height: 40.0,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(8.0),
                     topRight: Radius.circular(8.0),
                     bottomLeft: Radius.circular(8.0),
@@ -164,14 +160,14 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0x00000000),
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0x00000000),
                                 width: 1.0,
                               ),
@@ -209,7 +205,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                     FFButtonWidget(
                       onPressed: () async {
                         await Clipboard.setData(
-                            ClipboardData(text: widget!.promotionURL!));
+                            ClipboardData(text: widget.promotionURL!));
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(
@@ -227,7 +223,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                                     letterSpacing: 0.0,
                                   ),
                             ),
-                            duration: Duration(milliseconds: 1200),
+                            duration: const Duration(milliseconds: 1200),
                             backgroundColor:
                                 FlutterFlowTheme.of(context).secondary,
                           ),
@@ -240,16 +236,16 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                         safeSetState(() {});
                       },
                       text: _model.copyText == 'copied' ? 'Copied' : 'Copy',
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.content_copy,
                         size: 15.0,
                       ),
                       options: FFButtonOptions(
                         height: 40.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconColor: _model.copyText == 'copied'
                             ? Colors.white
                             : FlutterFlowTheme.of(context).primary,
@@ -272,7 +268,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                               ? FlutterFlowTheme.of(context).primary
                               : FlutterFlowTheme.of(context).border,
                         ),
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           topRight: Radius.circular(8.0),
                           bottomRight: Radius.circular(8.0),
                         ),
@@ -283,7 +279,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 24.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 24.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -296,7 +292,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       await launchURL(
-                          'https://wa.me/?text=${widget!.promotionURL}');
+                          'https://wa.me/?text=${widget.promotionURL}');
                     },
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -305,7 +301,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                           borderColor: FlutterFlowTheme.of(context).border,
                           borderRadius: 100.0,
                           buttonSize: 42.0,
-                          fillColor: Color(0xFF65D072),
+                          fillColor: const Color(0xFF65D072),
                           icon: Icon(
                             FFIcons.kwhatsapp,
                             color: FlutterFlowTheme.of(context).info,
@@ -326,7 +322,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                                     letterSpacing: 0.0,
                                   ),
                         ),
-                      ].divide(SizedBox(height: 6.0)),
+                      ].divide(const SizedBox(height: 6.0)),
                     ),
                   ),
                   InkWell(
@@ -336,7 +332,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       await launchURL(
-                          'https://www.facebook.com/sharer/sharer.php?u=${widget!.promotionURL}');
+                          'https://www.facebook.com/sharer/sharer.php?u=${widget.promotionURL}');
                     },
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -345,7 +341,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                           borderColor: FlutterFlowTheme.of(context).border,
                           borderRadius: 100.0,
                           buttonSize: 42.0,
-                          fillColor: Color(0xFF425893),
+                          fillColor: const Color(0xFF425893),
                           icon: Icon(
                             FFIcons.kfb,
                             color: FlutterFlowTheme.of(context).info,
@@ -366,7 +362,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                                     letterSpacing: 0.0,
                                   ),
                         ),
-                      ].divide(SizedBox(height: 6.0)),
+                      ].divide(const SizedBox(height: 6.0)),
                     ),
                   ),
                   InkWell(
@@ -376,7 +372,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       await launchURL(
-                          'https://www.instagram.com/stories/create/?media=${widget!.promotionURL}');
+                          'https://www.instagram.com/stories/create/?media=${widget.promotionURL}');
                     },
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -385,7 +381,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                           borderColor: FlutterFlowTheme.of(context).border,
                           borderRadius: 100.0,
                           buttonSize: 42.0,
-                          fillColor: Color(0xFF9D1F74),
+                          fillColor: const Color(0xFF9D1F74),
                           icon: Icon(
                             FFIcons.kinsta,
                             color: FlutterFlowTheme.of(context).info,
@@ -406,7 +402,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                                     letterSpacing: 0.0,
                                   ),
                         ),
-                      ].divide(SizedBox(height: 6.0)),
+                      ].divide(const SizedBox(height: 6.0)),
                     ),
                   ),
                   InkWell(
@@ -416,7 +412,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       await launchURL(
-                          'https://twitter.com/intent/tweet?text=${widget!.promotionURL}');
+                          'https://twitter.com/intent/tweet?text=${widget.promotionURL}');
                     },
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -425,7 +421,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                           borderColor: FlutterFlowTheme.of(context).border,
                           borderRadius: 100.0,
                           buttonSize: 42.0,
-                          fillColor: Color(0xFF4D9FEB),
+                          fillColor: const Color(0xFF4D9FEB),
                           icon: Icon(
                             FFIcons.ktwitter,
                             color: FlutterFlowTheme.of(context).info,
@@ -446,7 +442,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                                     letterSpacing: 0.0,
                                   ),
                         ),
-                      ].divide(SizedBox(height: 6.0)),
+                      ].divide(const SizedBox(height: 6.0)),
                     ),
                   ),
                   Container(
@@ -455,7 +451,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                       borderRadius: BorderRadius.circular(100.0),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Icon(
                         Icons.navigate_next_rounded,
                         color: FlutterFlowTheme.of(context).primaryText,
@@ -467,26 +463,26 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   _model.storeImages =
-                      widget!.promotionImages!.toList().cast<String>();
+                      widget.promotionImages!.toList().cast<String>();
                   safeSetState(() {});
                 },
                 text: FFLocalizations.of(context).getText(
                   'vibez6aw' /* Download all Images */,
                 ),
-                icon: Icon(
+                icon: const Icon(
                   FFIcons.kdownload,
                   size: 24.0,
                 ),
                 options: FFButtonOptions(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 48.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconColor: FlutterFlowTheme.of(context).primaryText,
                   color: FlutterFlowTheme.of(context).primaryBackground,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
@@ -504,7 +500,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   Navigator.pop(context);
@@ -512,7 +508,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                   context.goNamed(
                     HomeWidget.routeName,
                     extra: <String, dynamic>{
-                      '__transition_info__': TransitionInfo(
+                      '__transition_info__': const TransitionInfo(
                         hasTransition: true,
                         transitionType: PageTransitionType.fade,
                         duration: Duration(milliseconds: 0),
@@ -526,9 +522,9 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                 options: FFButtonOptions(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 48.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'almarai',
@@ -541,7 +537,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                 ),
               ),
             ),
-          ].addToStart(SizedBox(height: 16.0)),
+          ].addToStart(const SizedBox(height: 16.0)),
         ),
       ),
     );

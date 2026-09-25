@@ -1,4 +1,3 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/backend/backend.dart';
@@ -9,18 +8,14 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'creator_form_model.dart';
 export 'creator_form_model.dart';
@@ -47,7 +42,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
 
     _model.fullnameFieldTextController ??= TextEditingController(
         text: loggedIn
-            ? currentUserDocument?.creatorRequests?.formData?.name
+            ? currentUserDocument?.creatorRequests.formData.name
             : '');
     _model.fullnameFieldFocusNode ??= FocusNode();
 
@@ -57,7 +52,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
 
     _model.alternativeEmailTextController ??= TextEditingController(
         text: loggedIn
-            ? currentUserDocument?.creatorRequests?.formData?.alternativeEmail
+            ? currentUserDocument?.creatorRequests.formData.alternativeEmail
             : '');
     _model.alternativeEmailFocusNode ??= FocusNode();
 
@@ -71,12 +66,12 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
 
     _model.alternativephonenumberTextController ??= TextEditingController(
         text: loggedIn
-            ? currentUserDocument?.creatorRequests?.formData?.alternativePhone
+            ? currentUserDocument?.creatorRequests.formData.alternativePhone
             : ' ');
     _model.alternativephonenumberFocusNode ??= FocusNode();
 
     _model.aboutYourselfFieldTextController ??= TextEditingController(
-        text: currentUserDocument?.creatorRequests?.formData?.bio);
+        text: currentUserDocument?.creatorRequests.formData.bio);
     _model.aboutYourselfFieldFocusNode ??= FocusNode();
 
     _model.locationFieldTextController ??= TextEditingController();
@@ -86,57 +81,57 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
     _model.experienceFieldFocusNode ??= FocusNode();
 
     _model.engagementRateFieldTextController ??= TextEditingController(
-        text: currentUserDocument?.creatorRequests?.formData?.engagementRate
-            ?.toString());
+        text: currentUserDocument?.creatorRequests.formData.engagementRate
+            .toString());
     _model.engagementRateFieldFocusNode ??= FocusNode();
 
     _model.preferredPromotionStyleFieldTextController ??= TextEditingController(
         text: currentUserDocument
-            ?.creatorRequests?.formData?.preferredPromotionStyle);
+            ?.creatorRequests.formData.preferredPromotionStyle);
     _model.preferredPromotionStyleFieldFocusNode ??= FocusNode();
 
     _model.portfolioorWebsiteLinkFieldTextController ??= TextEditingController(
-        text: currentUserDocument?.creatorRequests?.formData?.portfolioLink);
+        text: currentUserDocument?.creatorRequests.formData.portfolioLink);
     _model.portfolioorWebsiteLinkFieldFocusNode ??= FocusNode();
 
     _model.instagramFieldTextController ??= TextEditingController(
-        text: currentUserDocument?.creatorRequests?.formData?.instagramProfile);
+        text: currentUserDocument?.creatorRequests.formData.instagramProfile);
     _model.instagramFieldFocusNode ??= FocusNode();
 
     _model.instagramFollowersFieldTextController ??= TextEditingController(
         text: currentUserDocument
-            ?.creatorRequests?.formData?.instagramProfileFollowers);
+            ?.creatorRequests.formData.instagramProfileFollowers);
     _model.instagramFollowersFieldFocusNode ??= FocusNode();
 
     _model.tikTokFieldTextController ??= TextEditingController(
-        text: currentUserDocument?.creatorRequests?.formData?.tiktokHandle);
+        text: currentUserDocument?.creatorRequests.formData.tiktokHandle);
     _model.tikTokFieldFocusNode ??= FocusNode();
 
     _model.tikTokFollowersfieldTextController ??= TextEditingController(
         text: currentUserDocument
-            ?.creatorRequests?.formData?.tiktokProfileFollowers);
+            ?.creatorRequests.formData.tiktokProfileFollowers);
     _model.tikTokFollowersfieldFocusNode ??= FocusNode();
 
     _model.facebookFieldTextController ??= TextEditingController(
-        text: currentUserDocument?.creatorRequests?.formData?.facebookProfile);
+        text: currentUserDocument?.creatorRequests.formData.facebookProfile);
     _model.facebookFieldFocusNode ??= FocusNode();
 
     _model.facebookFollowersfieldTextController ??= TextEditingController(
         text: currentUserDocument
-            ?.creatorRequests?.formData?.facebookProfileFollowers);
+            ?.creatorRequests.formData.facebookProfileFollowers);
     _model.facebookFollowersfieldFocusNode ??= FocusNode();
 
     _model.youtubeFieldTextController ??= TextEditingController(
-        text: currentUserDocument?.creatorRequests?.formData?.youtubeChannel);
+        text: currentUserDocument?.creatorRequests.formData.youtubeChannel);
     _model.youtubeFieldFocusNode ??= FocusNode();
 
     _model.youtubeFollowersfieldTextController ??= TextEditingController(
         text: currentUserDocument
-            ?.creatorRequests?.formData?.youtubeProfileFollowers);
+            ?.creatorRequests.formData.youtubeProfileFollowers);
     _model.youtubeFollowersfieldFocusNode ??= FocusNode();
 
     _model.otherFieldTextController ??= TextEditingController(
-        text: currentUserDocument?.creatorRequests?.formData?.otherProfile);
+        text: currentUserDocument?.creatorRequests.formData.otherProfile);
     _model.otherFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -163,7 +158,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -229,11 +224,11 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                               print('IconButton pressed ...');
                             },
                           ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -246,7 +241,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   Form(
                     key: _model.formKey,
@@ -265,7 +260,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                             desktop: false,
                           ))
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 16.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
@@ -275,13 +270,13 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                   borderRadius: BorderRadius.circular(16.0),
                                 ),
                                 child: Stack(
-                                  alignment: AlignmentDirectional(1.0, 1.0),
+                                  alignment: const AlignmentDirectional(1.0, 1.0),
                                   children: [
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
-                                          padding: EdgeInsets.all(12.0),
+                                          padding: const EdgeInsets.all(12.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             crossAxisAlignment:
@@ -306,7 +301,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                               Expanded(
                                                 child: Container(
                                                   width: 200.0,
-                                                  decoration: BoxDecoration(),
+                                                  decoration: const BoxDecoration(),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -328,13 +323,13 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ].divide(SizedBox(height: 8.0)),
+                                            ].divide(const SizedBox(height: 8.0)),
                                           ),
                                         ),
                                       ],
                                     ),
                                     Align(
-                                      alignment: AlignmentDirectional(1.0, 1.0),
+                                      alignment: const AlignmentDirectional(1.0, 1.0),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -343,7 +338,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                           width: 150.0,
                                           height: 200.0,
                                           fit: BoxFit.cover,
-                                          alignment: Alignment(0.0, -1.0),
+                                          alignment: const Alignment(0.0, -1.0),
                                         ),
                                       ),
                                     ),
@@ -352,7 +347,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                               ),
                             ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 8.0, 16.0, 16.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -369,7 +364,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 24.0),
                             child: Container(
                               decoration: BoxDecoration(
@@ -384,7 +379,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 4.0),
                                     child: RichText(
                                       textScaler:
@@ -424,7 +419,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 16.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -443,21 +438,21 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 24.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Container(
                                             width: 80.0,
                                             height: 80.0,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 fit: BoxFit.contain,
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 image: Image.asset(
                                                   'assets/images/backgrounfprofile.png',
@@ -474,7 +469,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                         false))
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
@@ -483,8 +478,8 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                             BorderRadius
                                                                 .circular(
                                                                     100.0),
-                                                        child: Image.network(
-                                                          valueOrDefault<
+                                                        child: CachedNetworkImage(
+                                                          imageUrl: valueOrDefault<
                                                               String>(
                                                             currentUserPhoto !=
                                                                     'notyet'
@@ -496,7 +491,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                           width: 80.0,
                                                           height: 80.0,
                                                           fit: BoxFit.cover,
-                                                          alignment: Alignment(
+                                                          alignment: const Alignment(
                                                               0.0, 0.0),
                                                         ),
                                                       ),
@@ -508,7 +503,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                         false))
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Icon(
                                                       Icons.add_photo_alternate,
@@ -523,7 +518,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                     .isDataUploading_uploadDataWvr134)
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Lottie.asset(
                                                       'assets/jsons/upload.json',
@@ -614,8 +609,6 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                             }
 
                                             if (_model.uploadedFileUrl_uploadDataWvr134 !=
-                                                    null &&
-                                                _model.uploadedFileUrl_uploadDataWvr134 !=
                                                     '') {
                                               _model.photoUploadStatus =
                                                   'uploaded';
@@ -640,17 +633,17 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                       enText: 'Upload Photo',
                                                       arText: 'تحميل الصورة',
                                                     ),
-                                          icon: Icon(
+                                          icon: const Icon(
                                             Icons.add,
                                             size: 14.0,
                                           ),
                                           options: FFButtonOptions(
                                             height: 30.0,
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 4.0, 8.0, 4.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
@@ -683,11 +676,11 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                     .info,
                                           ),
                                         ),
-                                      ].divide(SizedBox(width: 24.0)),
+                                      ].divide(const SizedBox(width: 24.0)),
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -730,7 +723,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 16.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Container(
@@ -848,7 +841,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -891,7 +884,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 16.0),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
@@ -990,7 +983,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -1022,7 +1015,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 16.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Container(
@@ -1135,7 +1128,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -1186,9 +1179,9 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                   ))
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 8.0),
                                         child: Container(
                                           width:
@@ -1208,14 +1201,14 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                             ),
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Align(
                                             alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
+                                                const AlignmentDirectional(-1.0, 0.0),
                                             child: Stack(
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsets.all(2.0),
+                                                  padding: const EdgeInsets.all(2.0),
                                                   child: AuthUserStreamWidget(
                                                     builder: (context) =>
                                                         FlutterFlowDropDown<
@@ -1228,8 +1221,8 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                             loggedIn
                                                                 ? currentUserDocument
                                                                     ?.creatorRequests
-                                                                    ?.formData
-                                                                    ?.country
+                                                                    .formData
+                                                                    .country
                                                                 : valueOrDefault<
                                                                     String>(
                                                                     FFLocalizations.of(
@@ -1313,7 +1306,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                       borderWidth: 0.0,
                                                       borderRadius: 0.0,
                                                       margin:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
                                                                   4.0,
@@ -1335,13 +1328,13 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                 ))
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(8.0),
-                                                      child: Image.network(
-                                                        valueOrDefault<String>(
+                                                          const EdgeInsets.all(8.0),
+                                                      child: CachedNetworkImage(
+                                                        imageUrl: valueOrDefault<String>(
                                                           functions.getCountryFlag(
                                                               _model
                                                                   .countryListmobileValue),
@@ -1359,9 +1352,9 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                       ),
                                     ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 16.0),
                                       child: Container(
                                         width:
@@ -1380,9 +1373,9 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                           ),
                                         ),
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
-                                          padding: EdgeInsets.all(4.0),
+                                          padding: const EdgeInsets.all(4.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment:
@@ -1391,7 +1384,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                               Expanded(
                                                 child: Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: AuthUserStreamWidget(
                                                     builder: (context) =>
@@ -1466,7 +1459,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                                   .of(context)
                                                               .secondaryBackground,
                                                           contentPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       0.0,
@@ -1512,9 +1505,9 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     desktop: false,
                                   ))
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 16.0),
                                         child: Container(
                                           width:
@@ -1600,7 +1593,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                         enabledBorder:
                                                             OutlineInputBorder(
                                                           borderSide:
-                                                              BorderSide(
+                                                              const BorderSide(
                                                             color: Colors
                                                                 .transparent,
                                                             width: 1.0,
@@ -1613,7 +1606,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                         focusedBorder:
                                                             OutlineInputBorder(
                                                           borderSide:
-                                                              BorderSide(
+                                                              const BorderSide(
                                                             color: Colors
                                                                 .transparent,
                                                             width: 1.0,
@@ -1657,7 +1650,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                                     context)
                                                                 .primaryBackground,
                                                         contentPadding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     8.0,
                                                                     0.0,
@@ -1702,7 +1695,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                       ),
                                     ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -1734,9 +1727,9 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 8.0),
                                       child: Container(
                                         width:
@@ -1755,14 +1748,14 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                           ),
                                         ),
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Stack(
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsets.all(2.0),
+                                                padding: const EdgeInsets.all(2.0),
                                                 child: AuthUserStreamWidget(
                                                   builder: (context) =>
                                                       FlutterFlowDropDown<
@@ -1775,8 +1768,8 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                           loggedIn
                                                               ? currentUserDocument
                                                                   ?.creatorRequests
-                                                                  ?.formData
-                                                                  ?.country
+                                                                  .formData
+                                                                  .country
                                                               : valueOrDefault<
                                                                   String>(
                                                                   FFLocalizations.of(
@@ -1864,7 +1857,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                     borderWidth: 0.0,
                                                     borderRadius: 0.0,
                                                     margin:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 4.0,
                                                                 12.0, 4.0),
                                                     hidesUnderline: true,
@@ -1883,12 +1876,12 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                               desktop: false,
                                             ))
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(8.0),
-                                                  child: Image.network(
-                                                    valueOrDefault<String>(
+                                                  padding: const EdgeInsets.all(8.0),
+                                                  child: CachedNetworkImage(
+                                                    imageUrl: valueOrDefault<String>(
                                                       functions.getCountryFlag(
                                                           _model
                                                               .countryListValue),
@@ -1905,9 +1898,9 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 0.0),
                                       child: Container(
                                         width:
@@ -1926,16 +1919,16 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                           ),
                                         ),
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
-                                          padding: EdgeInsets.all(4.0),
+                                          padding: const EdgeInsets.all(4.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.center,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsets.all(12.0),
+                                                padding: const EdgeInsets.all(12.0),
                                                 child: Text(
                                                   valueOrDefault<String>(
                                                     () {
@@ -1965,7 +1958,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                               Expanded(
                                                 child: Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: AuthUserStreamWidget(
                                                     builder: (context) =>
@@ -2039,7 +2032,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                                   .of(context)
                                                               .primaryBackground,
                                                           contentPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       0.0,
@@ -2093,13 +2086,13 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                 ]
-                                    .addToStart(SizedBox(height: 16.0))
-                                    .addToEnd(SizedBox(height: 16.0)),
+                                    .addToStart(const SizedBox(height: 16.0))
+                                    .addToEnd(const SizedBox(height: 16.0)),
                               ),
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 16.0, 16.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -2116,7 +2109,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 24.0),
                             child: Container(
                               decoration: BoxDecoration(
@@ -2131,7 +2124,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 4.0),
                                     child: RichText(
                                       textScaler:
@@ -2171,7 +2164,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 16.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -2190,7 +2183,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 24.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -2334,15 +2327,15 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                 .getText(
                                               '6kckz97x' /* Upload Photo */,
                                             ),
-                                            icon: Icon(
+                                            icon: const Icon(
                                               Icons.add,
                                               size: 14.0,
                                             ),
                                             options: FFButtonOptions(
                                               height: 28.0,
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 8.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -2431,12 +2424,12 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                             ),
                                           ),
                                         ),
-                                      ].divide(SizedBox(width: 24.0)),
+                                      ].divide(const SizedBox(width: 24.0)),
                                     ),
                                   ),
                                   if (_model.thumbnailImages.length > 0)
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 0.0),
                                       child: Builder(
                                         builder: (context) {
@@ -2446,7 +2439,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                           return GridView.builder(
                                             padding: EdgeInsets.zero,
                                             gridDelegate:
-                                                SliverGridDelegateWithFixedCrossAxisCount(
+                                                const SliverGridDelegateWithFixedCrossAxisCount(
                                               crossAxisCount: 4,
                                               crossAxisSpacing: 16.0,
                                               mainAxisSpacing: 16.0,
@@ -2461,7 +2454,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                               final imageListItem =
                                                   imageList[imageListIndex];
                                               return Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Container(
                                                   width: 100.0,
@@ -2469,7 +2462,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                     children: [
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Container(
                                                           width: 100.0,
@@ -2496,8 +2489,8 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                                       .circular(
                                                                           8.0),
                                                               child:
-                                                                  Image.network(
-                                                                currentUserPhoto !=
+                                                                  CachedNetworkImage(
+                                                                imageUrl: currentUserPhoto !=
                                                                         'notyet'
                                                                     ? imageListItem
                                                                     : imageListItem,
@@ -2508,7 +2501,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                                 fit: BoxFit
                                                                     .cover,
                                                                 alignment:
-                                                                    Alignment(
+                                                                    const Alignment(
                                                                         0.0,
                                                                         -1.0),
                                                               ),
@@ -2518,11 +2511,11 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 1.0, -1.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   4.0),
                                                           child: InkWell(
                                                             splashColor: Colors
@@ -2565,7 +2558,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsets
+                                                                    const EdgeInsets
                                                                         .all(
                                                                             2.0),
                                                                 child: Icon(
@@ -2590,13 +2583,13 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                       ),
                                     ),
                                 ]
-                                    .addToStart(SizedBox(height: 16.0))
-                                    .addToEnd(SizedBox(height: 16.0)),
+                                    .addToStart(const SizedBox(height: 16.0))
+                                    .addToEnd(const SizedBox(height: 16.0)),
                               ),
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 16.0, 16.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -2613,7 +2606,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 24.0),
                             child: Container(
                               decoration: BoxDecoration(
@@ -2628,7 +2621,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -2660,7 +2653,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 16.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Container(
@@ -2780,7 +2773,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -2823,7 +2816,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 16.0),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
@@ -2932,7 +2925,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -2975,7 +2968,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 8.0),
                                     child: Builder(
                                       builder: (context) {
@@ -3008,10 +3001,9 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                               ),
                                               child: Visibility(
                                                 visible:
-                                                    stylesListItem != null &&
-                                                        stylesListItem != '',
+                                                    stylesListItem != '',
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 4.0, 8.0, 4.0),
                                                   child: Text(
@@ -3033,7 +3025,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 16.0),
                                     child: StreamBuilder<List<CategoryRecord>>(
                                       stream: queryCategoryRecord(
@@ -3082,9 +3074,9 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                             ),
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
-                                            padding: EdgeInsets.all(2.0),
+                                            padding: const EdgeInsets.all(2.0),
                                             child: FlutterFlowDropDown<String>(
                                               multiSelectController: _model
                                                       .designstyleFieldValueController ??=
@@ -3144,7 +3136,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                               borderColor: Colors.transparent,
                                               borderWidth: 0.0,
                                               borderRadius: 0.0,
-                                              margin: EdgeInsetsDirectional
+                                              margin: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 12.0, 0.0),
                                               hidesUnderline: true,
@@ -3169,7 +3161,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -3212,7 +3204,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 16.0),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
@@ -3333,7 +3325,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     desktop: false,
                                   ))
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 8.0),
                                       child: RichText(
                                         textScaler:
@@ -3360,7 +3352,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                   .getText(
                                                 '2sxq0alz' /* * */,
                                               ),
-                                              style: TextStyle(),
+                                              style: const TextStyle(),
                                             )
                                           ],
                                           style: FlutterFlowTheme.of(context)
@@ -3384,7 +3376,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     desktop: false,
                                   ))
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 16.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Container(
@@ -3495,7 +3487,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                       ),
                                     ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -3520,7 +3512,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                 .getText(
                                               '7sfr1jt4' /* * */,
                                             ),
-                                            style: TextStyle(),
+                                            style: const TextStyle(),
                                           )
                                         ],
                                         style: FlutterFlowTheme.of(context)
@@ -3537,7 +3529,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 16.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Container(
@@ -3648,7 +3640,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -3673,7 +3665,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                                 .getText(
                                               'knjhflhb' /*  */,
                                             ),
-                                            style: TextStyle(),
+                                            style: const TextStyle(),
                                           )
                                         ],
                                         style: FlutterFlowTheme.of(context)
@@ -3690,7 +3682,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Container(
@@ -3793,13 +3785,13 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                 ]
-                                    .addToStart(SizedBox(height: 16.0))
-                                    .addToEnd(SizedBox(height: 16.0)),
+                                    .addToStart(const SizedBox(height: 16.0))
+                                    .addToEnd(const SizedBox(height: 16.0)),
                               ),
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 16.0, 16.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -3816,7 +3808,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 16.0, 16.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -3835,7 +3827,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 16.0),
                             child: Container(
                               decoration: BoxDecoration(
@@ -3850,7 +3842,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -3882,7 +3874,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 16.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Container(
@@ -4016,7 +4008,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     desktop: false,
                                   ))
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 8.0),
                                       child: RichText(
                                         textScaler:
@@ -4057,7 +4049,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     desktop: false,
                                   ))
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 16.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Container(
@@ -4194,7 +4186,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                       ),
                                     ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -4226,7 +4218,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 16.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Container(
@@ -4360,7 +4352,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     desktop: false,
                                   ))
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 8.0),
                                       child: RichText(
                                         textScaler:
@@ -4412,7 +4404,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     desktop: false,
                                   ))
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 16.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Container(
@@ -4549,7 +4541,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                       ),
                                     ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -4592,7 +4584,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 16.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Container(
@@ -4726,7 +4718,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     desktop: false,
                                   ))
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 8.0),
                                       child: RichText(
                                         textScaler:
@@ -4778,7 +4770,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     desktop: false,
                                   ))
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 16.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Container(
@@ -4915,7 +4907,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                       ),
                                     ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -4958,7 +4950,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 16.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Container(
@@ -5092,7 +5084,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     desktop: false,
                                   ))
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 8.0),
                                       child: RichText(
                                         textScaler:
@@ -5144,7 +5136,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     desktop: false,
                                   ))
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 16.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Container(
@@ -5281,7 +5273,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                       ),
                                     ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 8.0),
                                     child: RichText(
                                       textScaler:
@@ -5313,7 +5305,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Container(
@@ -5439,13 +5431,13 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     ),
                                   ),
                                 ]
-                                    .addToStart(SizedBox(height: 16.0))
-                                    .addToEnd(SizedBox(height: 16.0)),
+                                    .addToStart(const SizedBox(height: 16.0))
+                                    .addToEnd(const SizedBox(height: 16.0)),
                               ),
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -5485,7 +5477,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                               width: 2,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .alternate!,
+                                                      .alternate,
                                             )
                                           : null,
                                       activeColor:
@@ -5514,7 +5506,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -5545,7 +5537,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                         ? BorderSide(
                                             width: 2,
                                             color: FlutterFlowTheme.of(context)
-                                                .alternate!,
+                                                .alternate,
                                           )
                                         : null,
                                     activeColor:
@@ -5573,7 +5565,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -5601,7 +5593,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                           createCreatorRequestsStruct(
                                         creatorRequestId: _model
                                             .iDMapResult?.creatorRequestId
-                                            ?.toString(),
+                                            .toString(),
                                         requestType: 'Pending',
                                         submissionDate: getCurrentTimestamp,
                                         formData: createFormListStruct(
@@ -5692,7 +5684,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                     context.pushNamed(
                                       CreatorFormUploadWidget.routeName,
                                       extra: <String, dynamic>{
-                                        '__transition_info__': TransitionInfo(
+                                        '__transition_info__': const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -5771,9 +5763,9 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                               options: FFButtonOptions(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 48.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -5788,7 +5780,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                               ),
                             ),
                           ),
-                        ].addToEnd(SizedBox(height: 16.0)),
+                        ].addToEnd(const SizedBox(height: 16.0)),
                       ),
                     ),
                   ),

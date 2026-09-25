@@ -1,14 +1,10 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/home/components/empty/empty_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'selected_dress_component_model.dart';
@@ -59,7 +55,7 @@ class _SelectedDressComponentWidgetState
     return Material(
       color: Colors.transparent,
       elevation: 5.0,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
@@ -67,7 +63,7 @@ class _SelectedDressComponentWidgetState
       ),
       child: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(16.0),
@@ -78,20 +74,20 @@ class _SelectedDressComponentWidgetState
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
               child: Container(
                 width: 35.0,
                 height: 3.0,
                 decoration: BoxDecoration(
-                  color: Color(0xFFCCBBCC),
+                  color: const Color(0xFFCCBBCC),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(-1.0, -1.0),
+              alignment: const AlignmentDirectional(-1.0, -1.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     '2nw6eap5' /* Select Product */,
@@ -107,19 +103,19 @@ class _SelectedDressComponentWidgetState
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 8.0),
                         child: Builder(
                           builder: (context) {
-                            final productList = widget!.productIds!.toList();
+                            final productList = widget.productIds!.toList();
                             if (productList.isEmpty) {
-                              return Center(
+                              return const Center(
                                 child: EmptyWidget(
                                   messageOne: 'Your orders look lonely!',
                                   image:
@@ -134,7 +130,7 @@ class _SelectedDressComponentWidgetState
                             return GridView.builder(
                               padding: EdgeInsets.zero,
                               gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
                                 crossAxisSpacing: 10.0,
                                 mainAxisSpacing: 10.0,
@@ -248,12 +244,12 @@ class _SelectedDressComponentWidgetState
                                                         0.5,
                                                     child: Stack(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               1.0, -1.0),
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -289,15 +285,13 @@ class _SelectedDressComponentWidgetState
                                                                       .circular(
                                                                           8.0),
                                                               child:
-                                                                  Image.network(
-                                                                columnProductsRecord?.productInfo?.featureImage !=
-                                                                            null &&
-                                                                        columnProductsRecord?.productInfo?.featureImage !=
+                                                                  CachedNetworkImage(
+                                                                imageUrl: columnProductsRecord.productInfo.featureImage !=
                                                                             ''
-                                                                    ? columnProductsRecord!
+                                                                    ? columnProductsRecord
                                                                         .productInfo
                                                                         .featureImage
-                                                                    : columnProductsRecord!
+                                                                    : columnProductsRecord
                                                                         .productInfo
                                                                         .galleryImage
                                                                         .firstOrNull!,
@@ -312,7 +306,7 @@ class _SelectedDressComponentWidgetState
                                                                 fit: BoxFit
                                                                     .cover,
                                                                 alignment:
-                                                                    Alignment(
+                                                                    const Alignment(
                                                                         0.0,
                                                                         -1.0),
                                                               ),
@@ -324,7 +318,7 @@ class _SelectedDressComponentWidgetState
                                                             0)
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     1.0, -1.0),
                                                             child: Theme(
                                                               data: ThemeData(
@@ -360,24 +354,24 @@ class _SelectedDressComponentWidgetState
                                                                           newValue!);
                                                                   if (newValue!) {
                                                                     if (columnProductsRecord
-                                                                            ?.productAuthorizer
-                                                                            ?.creatorIdList
-                                                                            ?.contains(currentUserUid) ==
+                                                                            .productAuthorizer
+                                                                            .creatorIdList
+                                                                            .contains(currentUserUid) ==
                                                                         false) {
                                                                       FFAppState()
                                                                           .updatePromotionflowStruct(
                                                                         (e) => e
                                                                           ..updateProductDetails(
                                                                             (e) =>
-                                                                                e.add(columnProductsRecord!.productInfo),
+                                                                                e.add(columnProductsRecord.productInfo),
                                                                           )
                                                                           ..updateProductRef(
                                                                             (e) =>
-                                                                                e.add(columnProductsRecord!.reference),
+                                                                                e.add(columnProductsRecord.reference),
                                                                           )
                                                                           ..updateProductPricesInfo(
                                                                             (e) =>
-                                                                                e.add(columnProductsRecord!.product),
+                                                                                e.add(columnProductsRecord.product),
                                                                           ),
                                                                       );
                                                                       safeSetState(
@@ -398,7 +392,7 @@ class _SelectedDressComponentWidgetState
                                                                               actions: [
                                                                                 TextButton(
                                                                                   onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                  child: Text('Ok'),
+                                                                                  child: const Text('Ok'),
                                                                                 ),
                                                                               ],
                                                                             ),
@@ -416,7 +410,7 @@ class _SelectedDressComponentWidgetState
                                                                             .count >
                                                                         0) {
                                                                       if (columnProductsRecord
-                                                                              ?.reference ==
+                                                                              .reference ==
                                                                           FFAppState()
                                                                               .promotionflow
                                                                               .productRef
@@ -452,7 +446,7 @@ class _SelectedDressComponentWidgetState
                                                                         width:
                                                                             2,
                                                                         color: FlutterFlowTheme.of(context)
-                                                                            .tertiary!,
+                                                                            .tertiary,
                                                                       )
                                                                     : null,
                                                                 activeColor:
@@ -471,11 +465,11 @@ class _SelectedDressComponentWidgetState
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.0, 1.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   4.0,
                                                                   0.0,
@@ -487,52 +481,52 @@ class _SelectedDressComponentWidgetState
                                                             .getVariableText(
                                                           enText: () {
                                                             if (columnProductsRecord
-                                                                    ?.productInfoCustomTranslate
-                                                                    ?.name
-                                                                    ?.en !=
+                                                                    .productInfoCustomTranslate
+                                                                    .name
+                                                                    .en !=
                                                                 '') {
                                                               return columnProductsRecord
-                                                                  ?.productInfoCustomTranslate
-                                                                  ?.name
-                                                                  ?.en;
+                                                                  .productInfoCustomTranslate
+                                                                  .name
+                                                                  .en;
                                                             } else if (columnProductsRecord
-                                                                    ?.productInfoTranslate
-                                                                    ?.name
-                                                                    ?.en !=
+                                                                    .productInfoTranslate
+                                                                    .name
+                                                                    .en !=
                                                                 '') {
                                                               return columnProductsRecord
-                                                                  ?.productInfoTranslate
-                                                                  ?.name
-                                                                  ?.en;
+                                                                  .productInfoTranslate
+                                                                  .name
+                                                                  .en;
                                                             } else {
                                                               return columnProductsRecord
-                                                                  ?.productInfo
-                                                                  ?.name;
+                                                                  .productInfo
+                                                                  .name;
                                                             }
                                                           }(),
                                                           arText: () {
                                                             if (columnProductsRecord
-                                                                    ?.productInfoCustomTranslate
-                                                                    ?.name
-                                                                    ?.ar !=
+                                                                    .productInfoCustomTranslate
+                                                                    .name
+                                                                    .ar !=
                                                                 '') {
                                                               return columnProductsRecord
-                                                                  ?.productInfoCustomTranslate
-                                                                  ?.name
-                                                                  ?.ar;
+                                                                  .productInfoCustomTranslate
+                                                                  .name
+                                                                  .ar;
                                                             } else if (columnProductsRecord
-                                                                    ?.productInfoTranslate
-                                                                    ?.name
-                                                                    ?.ar !=
+                                                                    .productInfoTranslate
+                                                                    .name
+                                                                    .ar !=
                                                                 '') {
                                                               return columnProductsRecord
-                                                                  ?.productInfoTranslate
-                                                                  ?.name
-                                                                  ?.ar;
+                                                                  .productInfoTranslate
+                                                                  .name
+                                                                  .ar;
                                                             } else {
                                                               return columnProductsRecord
-                                                                  ?.productInfo
-                                                                  ?.name;
+                                                                  .productInfo
+                                                                  .name;
                                                             }
                                                           }(),
                                                         ),
@@ -552,18 +546,18 @@ class _SelectedDressComponentWidgetState
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.0, 1.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   4.0,
                                                                   0.0,
                                                                   0.0,
                                                                   4.0),
                                                       child: Text(
-                                                        columnProductsRecord!
+                                                        columnProductsRecord
                                                             .productId,
                                                         style: FlutterFlowTheme
                                                                 .of(context)
@@ -583,7 +577,7 @@ class _SelectedDressComponentWidgetState
                                                       0)
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   4.0,
                                                                   0.0,
@@ -633,7 +627,7 @@ class _SelectedDressComponentWidgetState
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
               child: InkWell(
                 splashColor: Colors.transparent,
                 focusColor: Colors.transparent,
@@ -651,7 +645,7 @@ class _SelectedDressComponentWidgetState
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -716,7 +710,7 @@ class _SelectedDressComponentWidgetState
                 ),
               ),
             ),
-          ].addToStart(SizedBox(height: 16.0)).addToEnd(SizedBox(height: 16.0)),
+          ].addToStart(const SizedBox(height: 16.0)).addToEnd(const SizedBox(height: 16.0)),
         ),
       ),
     );

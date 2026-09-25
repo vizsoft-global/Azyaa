@@ -1,12 +1,8 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 's4_choose_refund_method_model.dart';
 export 's4_choose_refund_method_model.dart';
 
@@ -56,7 +52,7 @@ class _S4ChooseRefundMethodWidgetState
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -86,7 +82,7 @@ class _S4ChooseRefundMethodWidgetState
                         ),
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -118,11 +114,11 @@ class _S4ChooseRefundMethodWidgetState
                             print('IconButton pressed ...');
                           },
                         ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -141,7 +137,7 @@ class _S4ChooseRefundMethodWidgetState
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -198,7 +194,7 @@ class _S4ChooseRefundMethodWidgetState
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 4.0, 8.0, 4.0),
                             child: RichText(
                               textScaler: MediaQuery.of(context).textScaler,
@@ -243,7 +239,7 @@ class _S4ChooseRefundMethodWidgetState
                             ),
                           ),
                         ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ),
                   Divider(
@@ -256,9 +252,9 @@ class _S4ChooseRefundMethodWidgetState
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(-1.0, -1.0),
+                          alignment: const AlignmentDirectional(-1.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 16.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -275,7 +271,7 @@ class _S4ChooseRefundMethodWidgetState
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () {
@@ -287,9 +283,9 @@ class _S4ChooseRefundMethodWidgetState
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 48.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
@@ -312,7 +308,7 @@ class _S4ChooseRefundMethodWidgetState
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () {
@@ -324,9 +320,9 @@ class _S4ChooseRefundMethodWidgetState
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 48.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
@@ -349,14 +345,14 @@ class _S4ChooseRefundMethodWidgetState
                           ),
                         ),
                       ]
-                          .divide(SizedBox(height: 12.0))
-                          .addToStart(SizedBox(height: 16.0))
-                          .addToEnd(SizedBox(height: 16.0)),
+                          .divide(const SizedBox(height: 12.0))
+                          .addToStart(const SizedBox(height: 16.0))
+                          .addToEnd(const SizedBox(height: 16.0)),
                     ),
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 4.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 4.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'gkyv98om' /* Note: */,
@@ -371,7 +367,7 @@ class _S4ChooseRefundMethodWidgetState
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 4.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 4.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'l8i3qwcj' /* Wallet Refund: The refund will... */,
@@ -388,7 +384,7 @@ class _S4ChooseRefundMethodWidgetState
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 24.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 24.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'dk17v9le' /* Bank Refund: The refund will b... */,
@@ -405,7 +401,7 @@ class _S4ChooseRefundMethodWidgetState
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () {
                         print('Button pressed ...');
@@ -416,10 +412,10 @@ class _S4ChooseRefundMethodWidgetState
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 48.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -432,7 +428,7 @@ class _S4ChooseRefundMethodWidgetState
                       ),
                     ),
                   ),
-                ].addToEnd(SizedBox(height: 16.0)),
+                ].addToEnd(const SizedBox(height: 16.0)),
               ),
             ),
           ),

@@ -1,15 +1,11 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:styled_divider/styled_divider.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:provider/provider.dart';
 import 's1_rewards_model.dart';
 export 's1_rewards_model.dart';
 
@@ -64,7 +60,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -94,7 +90,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                         ),
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -127,11 +123,11 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                             print('IconButton pressed ...');
                           },
                         ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -146,17 +142,17 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                   Expanded(
                     child: Container(
                       height: 200.0,
-                      decoration: BoxDecoration(),
+                      decoration: const BoxDecoration(),
                       child: Column(
                         children: [
                           Align(
-                            alignment: Alignment(0.0, 0),
+                            alignment: const Alignment(0.0, 0),
                             child: TabBar(
                               labelColor:
                                   FlutterFlowTheme.of(context).primaryText,
                               unselectedLabelColor:
                                   FlutterFlowTheme.of(context).primaryText,
-                              labelPadding: EdgeInsetsDirectional.fromSTEB(
+                              labelPadding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .titleMedium
@@ -203,7 +199,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                   children: [
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 24.0),
                                         child: SingleChildScrollView(
                                           child: Column(
@@ -212,7 +208,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 24.0, 16.0, 16.0),
                                                 child: Row(
@@ -223,7 +219,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -313,7 +309,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                 'g3nwynyn' /* Enjoy 2x points on every purch... */,
                                                               ),
                                                               style:
-                                                                  TextStyle(),
+                                                                  const TextStyle(),
                                                             )
                                                           ],
                                                           style: FlutterFlowTheme
@@ -329,11 +325,11 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(width: 12.0)),
+                                                      const SizedBox(width: 12.0)),
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 16.0),
                                                 child: RichText(
@@ -396,7 +392,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 24.0),
                                                 child: Row(
@@ -441,7 +437,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                               fit: BoxFit
                                                                   .contain,
                                                               alignment:
-                                                                  Alignment(
+                                                                  const Alignment(
                                                                       0.0, 0.0),
                                                             ),
                                                           ),
@@ -533,7 +529,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                       .center,
                                                             ),
                                                           ),
-                                                        ].divide(SizedBox(
+                                                        ].divide(const SizedBox(
                                                             height: 4.0)),
                                                       ),
                                                     ),
@@ -613,7 +609,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                               fit: BoxFit
                                                                   .contain,
                                                               alignment:
-                                                                  Alignment(
+                                                                  const Alignment(
                                                                       0.0, 0.0),
                                                             ),
                                                           ),
@@ -705,7 +701,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                       .center,
                                                             ),
                                                           ),
-                                                        ].divide(SizedBox(
+                                                        ].divide(const SizedBox(
                                                             height: 4.0)),
                                                       ),
                                                     ),
@@ -785,7 +781,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                               fit: BoxFit
                                                                   .contain,
                                                               alignment:
-                                                                  Alignment(
+                                                                  const Alignment(
                                                                       0.0, 0.0),
                                                             ),
                                                           ),
@@ -877,7 +873,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                                       .center,
                                                             ),
                                                           ),
-                                                        ].divide(SizedBox(
+                                                        ].divide(const SizedBox(
                                                             height: 4.0)),
                                                       ),
                                                     ),
@@ -885,10 +881,10 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                 ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(44.0, 0.0, 44.0,
                                                           24.0),
                                                   child: Text(
@@ -914,7 +910,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 16.0),
                                                 child: RichText(
@@ -977,7 +973,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 16.0),
                                                 child: Container(
@@ -986,17 +982,17 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                               .width *
                                                           1.0,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0xFFEEEEEE),
+                                                    color: const Color(0xFFEEEEEE),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
                                                     border: Border.all(
-                                                      color: Color(0xFF9F9F9F),
+                                                      color: const Color(0xFF9F9F9F),
                                                     ),
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 8.0,
                                                                 16.0, 8.0),
                                                     child: Row(
@@ -1040,7 +1036,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                               fit: BoxFit
                                                                   .contain,
                                                               alignment:
-                                                                  Alignment(
+                                                                  const Alignment(
                                                                       0.0, 0.0),
                                                             ),
                                                           ),
@@ -1051,7 +1047,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 16.0),
                                                 child: Container(
@@ -1060,17 +1056,17 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                               .width *
                                                           1.0,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0xFFF9EEBD),
+                                                    color: const Color(0xFFF9EEBD),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
                                                     border: Border.all(
-                                                      color: Color(0xFFCFA34D),
+                                                      color: const Color(0xFFCFA34D),
                                                     ),
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 8.0,
                                                                 16.0, 8.0),
                                                     child: Row(
@@ -1114,7 +1110,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                               fit: BoxFit
                                                                   .contain,
                                                               alignment:
-                                                                  Alignment(
+                                                                  const Alignment(
                                                                       0.0, 0.0),
                                                             ),
                                                           ),
@@ -1125,7 +1121,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: Container(
@@ -1134,17 +1130,17 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                               .width *
                                                           1.0,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0xFFFABE98),
+                                                    color: const Color(0xFFFABE98),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
                                                     border: Border.all(
-                                                      color: Color(0xFFD8896C),
+                                                      color: const Color(0xFFD8896C),
                                                     ),
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 8.0,
                                                                 16.0, 8.0),
                                                     child: Row(
@@ -1188,7 +1184,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                               fit: BoxFit
                                                                   .contain,
                                                               alignment:
-                                                                  Alignment(
+                                                                  const Alignment(
                                                                       0.0, 0.0),
                                                             ),
                                                           ),
@@ -1200,15 +1196,15 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                               ),
                                             ]
                                                 .addToStart(
-                                                    SizedBox(height: 12.0))
+                                                    const SizedBox(height: 12.0))
                                                 .addToEnd(
-                                                    SizedBox(height: 12.0)),
+                                                    const SizedBox(height: 12.0)),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: FFButtonWidget(
                                         onPressed: () {
@@ -1224,10 +1220,10 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                   1.0,
                                           height: 48.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -1256,7 +1252,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -1284,14 +1280,14 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                       image: DecorationImage(
                                                         fit: BoxFit.cover,
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 1.0),
                                                         image: Image.asset(
                                                           'assets/images/Rectangle_416green.png',
                                                         ).image,
                                                       ),
                                                       borderRadius:
-                                                          BorderRadius.only(
+                                                          const BorderRadius.only(
                                                         topLeft:
                                                             Radius.circular(
                                                                 8.0),
@@ -1306,7 +1302,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   8.0),
                                                           child: Container(
                                                             decoration:
@@ -1321,7 +1317,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(4.0),
                                                               child: ClipRRect(
                                                                 borderRadius:
@@ -1344,7 +1340,7 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                                         Expanded(
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     8.0),
                                                             child: Column(
                                                               mainAxisSize:
@@ -1399,7 +1395,7 @@ supply pu... */
                                                                             0.0,
                                                                       ),
                                                                 ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   height: 4.0)),
                                                             ),
                                                           ),
@@ -1419,7 +1415,7 @@ supply pu... */
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   16.0),
                                                           child: Column(
                                                             mainAxisSize:
@@ -1513,7 +1509,7 @@ supply pu... */
                                                                           0.0,
                                                                     ),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 height: 4.0)),
                                                           ),
                                                         ),
@@ -1522,11 +1518,11 @@ supply pu... */
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   8.0,
@@ -1561,7 +1557,7 @@ supply pu... */
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -1589,14 +1585,14 @@ supply pu... */
                                                       image: DecorationImage(
                                                         fit: BoxFit.cover,
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 1.0),
                                                         image: Image.asset(
                                                           'assets/images/Rectangle_416orange.png',
                                                         ).image,
                                                       ),
                                                       borderRadius:
-                                                          BorderRadius.only(
+                                                          const BorderRadius.only(
                                                         topLeft:
                                                             Radius.circular(
                                                                 8.0),
@@ -1611,7 +1607,7 @@ supply pu... */
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   8.0),
                                                           child: Container(
                                                             decoration:
@@ -1626,7 +1622,7 @@ supply pu... */
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(4.0),
                                                               child: ClipRRect(
                                                                 borderRadius:
@@ -1649,7 +1645,7 @@ supply pu... */
                                                         Expanded(
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     8.0),
                                                             child: Column(
                                                               mainAxisSize:
@@ -1704,7 +1700,7 @@ supply pu... */
                                                                             0.0,
                                                                       ),
                                                                 ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   height: 4.0)),
                                                             ),
                                                           ),
@@ -1724,7 +1720,7 @@ supply pu... */
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   16.0),
                                                           child: Column(
                                                             mainAxisSize:
@@ -1818,7 +1814,7 @@ supply pu... */
                                                                           0.0,
                                                                     ),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 height: 4.0)),
                                                           ),
                                                         ),
@@ -1827,11 +1823,11 @@ supply pu... */
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   8.0,
@@ -1866,9 +1862,9 @@ supply pu... */
                                         ),
                                       ),
                                     ]
-                                        .divide(SizedBox(height: 12.0))
-                                        .addToStart(SizedBox(height: 12.0))
-                                        .addToEnd(SizedBox(height: 12.0)),
+                                        .divide(const SizedBox(height: 12.0))
+                                        .addToStart(const SizedBox(height: 12.0))
+                                        .addToEnd(const SizedBox(height: 12.0)),
                                   ),
                                 ),
                               ],
@@ -1879,8 +1875,8 @@ supply pu... */
                     ),
                   ),
                 ]
-                    .divide(SizedBox(height: 16.0))
-                    .addToEnd(SizedBox(height: 16.0)),
+                    .divide(const SizedBox(height: 16.0))
+                    .addToEnd(const SizedBox(height: 16.0)),
               ),
             ),
           ),

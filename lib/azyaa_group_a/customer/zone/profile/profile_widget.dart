@@ -1,4 +1,3 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/coming_soon/coming_soon_comp/coming_soon_comp_widget.dart';
@@ -7,22 +6,17 @@ import '/azyaa_group_a/home/components/bar/universal_navigation_bar/universal_na
 import '/azyaa_group_a/home/components/loading_animation/loading_animation_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
-import 'dart:ui';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/index.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'profile_model.dart';
 export 'profile_model.dart';
@@ -90,7 +84,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -118,7 +112,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -131,12 +125,12 @@ class _ProfileWidgetState extends State<ProfileWidget>
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   wrapWithModel(
                     model: _model.appUpdateCheckerModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: AppUpdateCheckerWidget(),
+                    child: const AppUpdateCheckerWidget(),
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
@@ -157,7 +151,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               return Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 150.0,
-                                child: LoadingAnimationWidget(),
+                                child: const LoadingAnimationWidget(),
                               );
                             }
                             List<SettingsRecord> columnSettingsRecordList =
@@ -174,7 +168,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 16.0, 16.0, 16.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -187,18 +181,16 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                           builder: (context) => ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(100.0),
-                                            child: Image.network(
-                                              (loggedIn == true) &&
+                                            child: CachedNetworkImage(
+                                              imageUrl: (loggedIn == true) &&
                                                       (currentUserPhoto !=
-                                                              null &&
-                                                          currentUserPhoto !=
                                                               '')
                                                   ? currentUserPhoto
                                                   : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/i9u1ra67p2p4/Azyaa-logo_(2).jpg',
                                               width: 60.0,
                                               height: 60.0,
                                               fit: BoxFit.cover,
-                                              alignment: Alignment(0.0, 0.0),
+                                              alignment: const Alignment(0.0, 0.0),
                                             ),
                                           ),
                                         ),
@@ -218,7 +210,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                   Flexible(
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -269,7 +261,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       4.0,
@@ -308,16 +300,16 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                                           0.0,
                                                                     ),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 width: 2.0)),
                                                           ),
                                                         ),
                                                       ),
                                                     ),
-                                                ].divide(SizedBox(width: 4.0)),
+                                                ].divide(const SizedBox(width: 4.0)),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 6.0),
                                                 child: Text(
@@ -355,7 +347,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                                 .of(context)
                                                             .secondaryBackground,
                                                         borderRadius:
-                                                            BorderRadius.only(
+                                                            const BorderRadius.only(
                                                           topLeft:
                                                               Radius.circular(
                                                                   16.0),
@@ -371,11 +363,11 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       6.0,
                                                                       4.0,
@@ -411,7 +403,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                                 .of(context)
                                                             .secondaryBackground,
                                                         borderRadius:
-                                                            BorderRadius.only(
+                                                            const BorderRadius.only(
                                                           topRight:
                                                               Radius.circular(
                                                                   16.0),
@@ -427,11 +419,11 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       6.0,
                                                                       4.0,
@@ -464,17 +456,17 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(width: 2.0)),
+                                                      const SizedBox(width: 2.0)),
                                                 ),
                                             ],
                                           ),
                                         ),
                                         if (currentUserDocument
-                                                ?.creatorRequests?.status ==
+                                                ?.creatorRequests.status ==
                                             'approved')
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 4.0, 0.0),
                                             child: AuthUserStreamWidget(
                                               builder: (context) => Container(
@@ -487,7 +479,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                           100.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 8.0, 12.0, 8.0),
                                                   child: Text(
@@ -521,7 +513,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                               ProfileEditWidget.routeName,
                                               extra: <String, dynamic>{
                                                 '__transition_info__':
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -545,7 +537,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 4.0, 8.0, 4.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.min,
@@ -556,7 +548,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsets.all(2.0),
+                                                        const EdgeInsets.all(2.0),
                                                     child: Icon(
                                                       Icons.edit,
                                                       color:
@@ -568,7 +560,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 2.0),
                                                     child: InkWell(
@@ -587,7 +579,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                           extra: <String,
                                                               dynamic>{
                                                             '__transition_info__':
-                                                                TransitionInfo(
+                                                                const TransitionInfo(
                                                               hasTransition:
                                                                   true,
                                                               transitionType:
@@ -643,7 +635,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                   BorderRadius.circular(100.0),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(4.0),
+                                              padding: const EdgeInsets.all(4.0),
                                               child: Icon(
                                                 Icons.navigate_next_rounded,
                                                 color:
@@ -653,11 +645,11 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                               ),
                                             ),
                                           ),
-                                      ].divide(SizedBox(width: 8.0)),
+                                      ].divide(const SizedBox(width: 8.0)),
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 16.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -666,19 +658,19 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                       children: [
                                         if ((currentUserDocument
                                                         ?.designerRequests
-                                                        ?.status ==
+                                                        .status ==
                                                     null ||
                                                 currentUserDocument
                                                         ?.designerRequests
-                                                        ?.status ==
+                                                        .status ==
                                                     '') &&
                                             (currentUserDocument
                                                         ?.creatorRequests
-                                                        ?.status ==
+                                                        .status ==
                                                     null ||
                                                 currentUserDocument
                                                         ?.creatorRequests
-                                                        ?.status ==
+                                                        .status ==
                                                     ''))
                                           Expanded(
                                             child: AuthUserStreamWidget(
@@ -694,7 +686,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                         .routeName,
                                                     extra: <String, dynamic>{
                                                       '__transition_info__':
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -719,11 +711,11 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                             8.0),
                                                   ),
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(4.0, 4.0,
                                                                 4.0, 4.0),
                                                     child: Row(
@@ -736,7 +728,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                         Expanded(
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         4.0,
@@ -751,7 +743,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                                       .center,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -791,7 +783,7 @@ Designer */
                                                                             100.0),
                                                                   ),
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child: Icon(
@@ -803,7 +795,7 @@ Designer */
                                                                     size: 14.0,
                                                                   ),
                                                                 ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   width: 4.0)),
                                                             ),
                                                           ),
@@ -819,7 +811,7 @@ Designer */
                                                             height: 60.0,
                                                             fit: BoxFit.cover,
                                                             alignment:
-                                                                Alignment(
+                                                                const Alignment(
                                                                     -1.0, 1.0),
                                                           ),
                                                         ),
@@ -832,19 +824,19 @@ Designer */
                                           ),
                                         if ((currentUserDocument
                                                         ?.designerRequests
-                                                        ?.status ==
+                                                        .status ==
                                                     null ||
                                                 currentUserDocument
                                                         ?.designerRequests
-                                                        ?.status ==
+                                                        .status ==
                                                     '') &&
                                             (currentUserDocument
                                                         ?.creatorRequests
-                                                        ?.status ==
+                                                        .status ==
                                                     null ||
                                                 currentUserDocument
                                                         ?.creatorRequests
-                                                        ?.status ==
+                                                        .status ==
                                                     ''))
                                           Expanded(
                                             child: AuthUserStreamWidget(
@@ -859,7 +851,7 @@ Designer */
                                                     CreatorFormWidget.routeName,
                                                     extra: <String, dynamic>{
                                                       '__transition_info__':
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -884,11 +876,11 @@ Designer */
                                                             8.0),
                                                   ),
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(4.0, 4.0,
                                                                 4.0, 4.0),
                                                     child: Row(
@@ -901,7 +893,7 @@ Designer */
                                                         Expanded(
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         4.0,
@@ -916,7 +908,7 @@ Designer */
                                                                       .center,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -964,7 +956,7 @@ Creator */
                                                                     size: 14.0,
                                                                   ),
                                                                 ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   width: 4.0)),
                                                             ),
                                                           ),
@@ -980,7 +972,7 @@ Creator */
                                                             height: 60.0,
                                                             fit: BoxFit.cover,
                                                             alignment:
-                                                                Alignment(
+                                                                const Alignment(
                                                                     0.0, 1.0),
                                                           ),
                                                         ),
@@ -991,19 +983,19 @@ Creator */
                                               ),
                                             ),
                                           ),
-                                      ].divide(SizedBox(width: 12.0)),
+                                      ].divide(const SizedBox(width: 12.0)),
                                     ),
                                   ),
                                   if (currentUserDocument
-                                          ?.creatorRequests?.status ==
+                                          ?.creatorRequests.status ==
                                       'approved')
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 24.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Stack(
                                           alignment:
-                                              AlignmentDirectional(1.0, 1.0),
+                                              const AlignmentDirectional(1.0, 1.0),
                                           children: [
                                             Container(
                                               width: MediaQuery.sizeOf(context)
@@ -1018,7 +1010,7 @@ Creator */
                                                     BorderRadius.circular(16.0),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsets.all(12.0),
+                                                padding: const EdgeInsets.all(12.0),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -1109,7 +1101,7 @@ Creator */
                                                               extra: <String,
                                                                   dynamic>{
                                                                 '__transition_info__':
-                                                                    TransitionInfo(
+                                                                    const TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -1135,7 +1127,7 @@ Creator */
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(4.0),
                                                               child: Icon(
                                                                 Icons
@@ -1149,13 +1141,13 @@ Creator */
                                                           ),
                                                         ),
                                                       ].divide(
-                                                          SizedBox(width: 4.0)),
+                                                          const SizedBox(width: 4.0)),
                                                     ),
                                                     Expanded(
                                                       child: Container(
                                                         width: 180.0,
                                                         decoration:
-                                                            BoxDecoration(),
+                                                            const BoxDecoration(),
                                                         child: Text(
                                                           FFLocalizations.of(
                                                                   context)
@@ -1182,7 +1174,7 @@ Creator */
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(height: 8.0)),
+                                                      const SizedBox(height: 8.0)),
                                                 ),
                                               ),
                                             ),
@@ -1195,7 +1187,7 @@ Creator */
                                                 height: 90.0,
                                                 fit: BoxFit.cover,
                                                 alignment:
-                                                    Alignment(-1.0, -1.0),
+                                                    const Alignment(-1.0, -1.0),
                                               ),
                                             ),
                                           ],
@@ -1203,10 +1195,10 @@ Creator */
                                       ),
                                     ),
                                   if (columnSettingsRecord?.settingsUserappMenu
-                                          ?.isChangeLanguage ==
+                                          .isChangeLanguage ==
                                       true)
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1243,10 +1235,10 @@ Creator */
                                             ),
                                             options: FFButtonOptions(
                                               height: 30.0,
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 12.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -1299,10 +1291,10 @@ Creator */
                                             ),
                                             options: FFButtonOptions(
                                               height: 30.0,
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 12.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -1345,11 +1337,11 @@ Creator */
                                                       .info,
                                             ),
                                           ),
-                                        ].divide(SizedBox(width: 8.0)),
+                                        ].divide(const SizedBox(width: 8.0)),
                                       ),
                                     ),
                                   if (columnSettingsRecord?.settingsUserappMenu
-                                          ?.isChangeLanguage ==
+                                          .isChangeLanguage ==
                                       true)
                                     Divider(
                                       height: 24.0,
@@ -1360,10 +1352,10 @@ Creator */
                                           .secondaryBackground,
                                     ),
                                   if (columnSettingsRecord
-                                          ?.settingsUserappMenu?.isMyaddress ==
+                                          ?.settingsUserappMenu.isMyaddress ==
                                       true)
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -1375,7 +1367,7 @@ Creator */
                                             AddressWidget.routeName,
                                             extra: <String, dynamic>{
                                               '__transition_info__':
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -1421,7 +1413,7 @@ Creator */
                                       ),
                                     ),
                                   if (columnSettingsRecord
-                                          ?.settingsUserappMenu?.isMyaddress ==
+                                          ?.settingsUserappMenu.isMyaddress ==
                                       true)
                                     Divider(
                                       height: 24.0,
@@ -1432,10 +1424,10 @@ Creator */
                                           .secondaryBackground,
                                     ),
                                   if (columnSettingsRecord
-                                          ?.settingsUserappMenu?.isOrders ==
+                                          ?.settingsUserappMenu.isOrders ==
                                       true)
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -1447,7 +1439,7 @@ Creator */
                                             OrdersWidget.routeName,
                                             extra: <String, dynamic>{
                                               '__transition_info__':
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -1493,7 +1485,7 @@ Creator */
                                       ),
                                     ),
                                   if (columnSettingsRecord
-                                          ?.settingsUserappMenu?.isOrders ==
+                                          ?.settingsUserappMenu.isOrders ==
                                       true)
                                     Divider(
                                       height: 24.0,
@@ -1504,7 +1496,7 @@ Creator */
                                           .secondaryBackground,
                                     ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -1516,7 +1508,7 @@ Creator */
                                           VirtualTryOnWidget.routeName,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -1570,10 +1562,10 @@ Creator */
                                         .secondaryBackground,
                                   ),
                                   if (columnSettingsRecord?.settingsUserappMenu
-                                          ?.isRewardsLoyalty ==
+                                          .isRewardsLoyalty ==
                                       true)
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1610,7 +1602,7 @@ Creator */
                                       ),
                                     ),
                                   if (columnSettingsRecord?.settingsUserappMenu
-                                          ?.isRewardsLoyalty ==
+                                          .isRewardsLoyalty ==
                                       true)
                                     Divider(
                                       height: 24.0,
@@ -1621,10 +1613,10 @@ Creator */
                                           .secondaryBackground,
                                     ),
                                   if (columnSettingsRecord?.settingsUserappMenu
-                                          ?.isGiftcardWallet ==
+                                          .isGiftcardWallet ==
                                       true)
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -1646,7 +1638,7 @@ Creator */
                                             }.withoutNulls,
                                             extra: <String, dynamic>{
                                               '__transition_info__':
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -1691,7 +1683,7 @@ Creator */
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsets.all(4.0),
+                                                padding: const EdgeInsets.all(4.0),
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
@@ -1720,7 +1712,7 @@ Creator */
                                       ),
                                     ),
                                   if (columnSettingsRecord?.settingsUserappMenu
-                                          ?.isGiftcardWallet ==
+                                          .isGiftcardWallet ==
                                       true)
                                     Divider(
                                       height: 24.0,
@@ -1731,10 +1723,10 @@ Creator */
                                           .secondaryBackground,
                                     ),
                                   if (columnSettingsRecord?.settingsUserappMenu
-                                          ?.isMemebership ==
+                                          .isMemebership ==
                                       true)
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -1746,7 +1738,7 @@ Creator */
                                             MembershipWidget.routeName,
                                             extra: <String, dynamic>{
                                               '__transition_info__':
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -1792,7 +1784,7 @@ Creator */
                                       ),
                                     ),
                                   if (columnSettingsRecord?.settingsUserappMenu
-                                          ?.isMemebership ==
+                                          .isMemebership ==
                                       true)
                                     Divider(
                                       height: 24.0,
@@ -1803,11 +1795,11 @@ Creator */
                                           .secondaryBackground,
                                     ),
                                   if (columnSettingsRecord
-                                          ?.settingsUserappMenu?.isFaqHelp ==
+                                          ?.settingsUserappMenu.isFaqHelp ==
                                       true)
                                     Builder(
                                       builder: (context) => Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -1816,7 +1808,7 @@ Creator */
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             await showDialog(
-                                              barrierColor: Color(0x7B000000),
+                                              barrierColor: const Color(0x7B000000),
                                               context: context,
                                               builder: (dialogContext) {
                                                 return Dialog(
@@ -1825,7 +1817,7 @@ Creator */
                                                   backgroundColor:
                                                       Colors.transparent,
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                               0.0, 0.0)
                                                           .resolve(
                                                               Directionality.of(
@@ -1904,7 +1896,7 @@ Creator */
                                       ),
                                     ),
                                   if (columnSettingsRecord
-                                          ?.settingsUserappMenu?.isFaqHelp ==
+                                          ?.settingsUserappMenu.isFaqHelp ==
                                       true)
                                     Divider(
                                       height: 24.0,
@@ -1915,10 +1907,10 @@ Creator */
                                           .secondaryBackground,
                                     ),
                                   if (columnSettingsRecord?.settingsUserappMenu
-                                          ?.isStylistConsultation ==
+                                          .isStylistConsultation ==
                                       true)
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -1930,7 +1922,7 @@ Creator */
                                             DesignerConsultWidget.routeName,
                                             extra: <String, dynamic>{
                                               '__transition_info__':
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -1975,7 +1967,7 @@ Creator */
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsets.all(4.0),
+                                                padding: const EdgeInsets.all(4.0),
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
@@ -2004,7 +1996,7 @@ Creator */
                                       ),
                                     ),
                                   if (columnSettingsRecord?.settingsUserappMenu
-                                          ?.isStylistConsultation ==
+                                          .isStylistConsultation ==
                                       true)
                                     Divider(
                                       height: 24.0,
@@ -2015,7 +2007,7 @@ Creator */
                                           .secondaryBackground,
                                     ),
                                   if ((columnSettingsRecord
-                                              ?.settingsUserappMenu?.isLogout ==
+                                              ?.settingsUserappMenu.isLogout ==
                                           true) &&
                                       responsiveVisibility(
                                         context: context,
@@ -2025,7 +2017,7 @@ Creator */
                                         desktop: false,
                                       ))
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -2148,7 +2140,7 @@ Creator */
                                       ),
                                     ),
                                   if ((columnSettingsRecord
-                                              ?.settingsUserappMenu?.isLogout ==
+                                              ?.settingsUserappMenu.isLogout ==
                                           true) &&
                                       responsiveVisibility(
                                         context: context,
@@ -2166,7 +2158,7 @@ Creator */
                                           .secondaryBackground,
                                     ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 8.0, 16.0, 8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -2190,7 +2182,7 @@ Creator */
                                               ),
                                             ),
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Icon(
                                               FFIcons.kfb2,
                                               color:
@@ -2218,7 +2210,7 @@ Creator */
                                               ),
                                             ),
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Icon(
                                               FFIcons.kaztwitter,
                                               color:
@@ -2254,7 +2246,7 @@ Creator */
                                                   width: 1.0,
                                                 ),
                                               ),
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Icon(
                                                 FFIcons.kinsta2,
@@ -2266,16 +2258,16 @@ Creator */
                                             ),
                                           ),
                                         ),
-                                      ].divide(SizedBox(width: 16.0)),
+                                      ].divide(const SizedBox(width: 16.0)),
                                     ),
                                   ),
                                   Opacity(
                                     opacity: 0.5,
                                     child: Align(
                                       alignment:
-                                          AlignmentDirectional(0.0, -1.0),
+                                          const AlignmentDirectional(0.0, -1.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 32.0, 16.0, 8.0),
                                         child: ClipRRect(
                                           borderRadius:
@@ -2285,16 +2277,16 @@ Creator */
                                             width: 60.0,
                                             height: 60.0,
                                             fit: BoxFit.contain,
-                                            alignment: Alignment(0.0, 0.0),
+                                            alignment: const Alignment(0.0, 0.0),
                                           ),
                                         ),
                                       ),
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, -1.0),
+                                    alignment: const AlignmentDirectional(0.0, -1.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 8.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -2315,7 +2307,7 @@ Creator */
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 8.0),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
@@ -2331,15 +2323,15 @@ Creator */
                                         'containerOnPageLoadAnimation']!),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, -1.0),
+                                    alignment: const AlignmentDirectional(0.0, -1.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 50.0),
                                       child: Container(
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 8.0, 24.0, 8.0),
                                           child: RichText(
                                             textScaler: MediaQuery.of(context)
@@ -2375,7 +2367,7 @@ Creator */
                                                       .override(
                                                         fontFamily: 'almarai',
                                                         color:
-                                                            Color(0xFFFF0000),
+                                                            const Color(0xFFFF0000),
                                                         fontSize: 13.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -2444,11 +2436,11 @@ Creator */
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 1.0),
+                        alignment: const AlignmentDirectional(0.0, 1.0),
                         child: wrapWithModel(
                           model: _model.universalNavigationBarModel,
                           updateCallback: () => safeSetState(() {}),
-                          child: UniversalNavigationBarWidget(
+                          child: const UniversalNavigationBarWidget(
                             navigation: 'profile',
                           ),
                         ),

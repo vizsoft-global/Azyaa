@@ -1,4 +1,3 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/backend/backend.dart';
@@ -10,18 +9,14 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'designer_form_model.dart';
 export 'designer_form_model.dart';
@@ -63,7 +58,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
     _model.phonenumberTextController2 ??= TextEditingController(
         text: loggedIn
             ? currentUserDocument
-                ?.designerMainInfo?.designerInfo?.alternativePhone
+                ?.designerMainInfo.designerInfo.alternativePhone
             : ' ');
     _model.phonenumberFocusNode2 ??= FocusNode();
 
@@ -109,7 +104,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -138,7 +133,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                           },
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               50.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -177,11 +172,11 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                               print('IconButton pressed ...');
                             },
                           ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -194,7 +189,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   SingleChildScrollView(
                     child: Column(
@@ -216,7 +211,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                 desktop: false,
                               ))
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 16.0),
                                   child: Container(
                                     width:
@@ -228,13 +223,13 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                       borderRadius: BorderRadius.circular(16.0),
                                     ),
                                     child: Stack(
-                                      alignment: AlignmentDirectional(1.0, 1.0),
+                                      alignment: const AlignmentDirectional(1.0, 1.0),
                                       children: [
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsets.all(12.0),
+                                              padding: const EdgeInsets.all(12.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
@@ -260,7 +255,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                     child: Container(
                                                       width: 200.0,
                                                       decoration:
-                                                          BoxDecoration(),
+                                                          const BoxDecoration(),
                                                       child: Text(
                                                         FFLocalizations.of(
                                                                 context)
@@ -288,14 +283,14 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(height: 8.0)),
+                                                ].divide(const SizedBox(height: 8.0)),
                                               ),
                                             ),
                                           ],
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(1.0, 1.0),
+                                              const AlignmentDirectional(1.0, 1.0),
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
@@ -304,7 +299,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                               width: 130.0,
                                               height: 180.0,
                                               fit: BoxFit.contain,
-                                              alignment: Alignment(0.0, 1.0),
+                                              alignment: const Alignment(0.0, 1.0),
                                             ),
                                           ),
                                         ),
@@ -313,7 +308,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                   ),
                                 ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 8.0, 16.0, 16.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -330,7 +325,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 24.0),
                                 child: Container(
                                   decoration: BoxDecoration(
@@ -347,7 +342,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 4.0),
                                         child: RichText(
                                           textScaler:
@@ -376,7 +371,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                         .getText(
                                                   'w3fwkspu' /*  */,
                                                 ),
-                                                style: TextStyle(),
+                                                style: const TextStyle(),
                                               )
                                             ],
                                             style: FlutterFlowTheme.of(context)
@@ -390,7 +385,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 16.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -410,13 +405,13 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 24.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Container(
                                                 width: 80.0,
@@ -425,7 +420,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                   image: DecorationImage(
                                                     fit: BoxFit.contain,
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     image: Image.asset(
                                                       'assets/images/backgrounfprofile.png',
@@ -440,15 +435,15 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                             false))
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: ClipRRect(
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
                                                                       100.0),
-                                                          child: Image.network(
-                                                            _model.uploadedFileUrl_uploadDataWif !=
+                                                          child: CachedNetworkImage(
+                                                            imageUrl: _model.uploadedFileUrl_uploadDataWif !=
                                                                     'notyet'
                                                                 ? _model
                                                                     .uploadedFileUrl_uploadDataWif
@@ -457,7 +452,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                             height: 80.0,
                                                             fit: BoxFit.contain,
                                                             alignment:
-                                                                Alignment(
+                                                                const Alignment(
                                                                     0.0, 0.0),
                                                           ),
                                                         ),
@@ -468,7 +463,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                             false))
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Icon(
                                                           Icons
@@ -483,7 +478,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                         .isDataUploading_uploadDataWif)
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Lottie.asset(
                                                           'assets/jsons/upload.json',
@@ -607,17 +602,17 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                           arText:
                                                               'تحميل الصورة',
                                                         ),
-                                              icon: Icon(
+                                              icon: const Icon(
                                                 Icons.add,
                                                 size: 14.0,
                                               ),
                                               options: FFButtonOptions(
                                                 height: 30.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 12.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -651,11 +646,11 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                         .info,
                                               ),
                                             ),
-                                          ].divide(SizedBox(width: 24.0)),
+                                          ].divide(const SizedBox(width: 24.0)),
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 8.0),
                                         child: RichText(
                                           textScaler:
@@ -702,7 +697,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 4.0),
                                         child: Container(
                                           width:
@@ -829,7 +824,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                       ))
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 12.0, 16.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -872,7 +867,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                           width: 2,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .alternate!,
+                                                              .alternate,
                                                         )
                                                       : null,
                                                   activeColor:
@@ -908,7 +903,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                           ),
                                         ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 16.0, 16.0, 16.0),
                                         child: FlutterFlowChoiceChips(
                                           options: [
@@ -993,7 +988,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 8.0),
                                         child: RichText(
                                           textScaler:
@@ -1040,7 +1035,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 16.0),
                                         child: Container(
                                           width:
@@ -1143,7 +1138,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 8.0),
                                         child: RichText(
                                           textScaler:
@@ -1186,7 +1181,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 16.0),
                                         child: Container(
                                           width:
@@ -1289,7 +1284,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 8.0),
                                         child: RichText(
                                           textScaler:
@@ -1337,10 +1332,10 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 12.0, 16.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -1361,9 +1356,9 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                               ),
                                             ),
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsets.all(4.0),
+                                              padding: const EdgeInsets.all(4.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.min,
                                                 crossAxisAlignment:
@@ -1372,7 +1367,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                   Expanded(
                                                     child: Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child:
                                                           AuthUserStreamWidget(
@@ -1449,7 +1444,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                                       .of(context)
                                                                   .secondaryBackground,
                                                               contentPadding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -1488,7 +1483,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 8.0),
                                         child: RichText(
                                           textScaler:
@@ -1532,10 +1527,10 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 12.0, 8.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -1556,15 +1551,15 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                               ),
                                             ),
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Stack(
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsets.all(2.0),
+                                                        const EdgeInsets.all(2.0),
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           FlutterFlowDropDown<
@@ -1577,8 +1572,8 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                               loggedIn
                                                                   ? currentUserDocument
                                                                       ?.designerRequests
-                                                                      ?.formData
-                                                                      ?.country
+                                                                      .formData
+                                                                      .country
                                                                   : valueOrDefault<
                                                                       String>(
                                                                       FFLocalizations.of(
@@ -1670,7 +1665,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                         borderWidth: 0.0,
                                                         borderRadius: 0.0,
                                                         margin:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     4.0,
@@ -1692,13 +1687,13 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                   ))
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               1.0, 1.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsets.all(8.0),
-                                                        child: Image.network(
-                                                          functions.getCountryFlag(
+                                                            const EdgeInsets.all(8.0),
+                                                        child: CachedNetworkImage(
+                                                          imageUrl: functions.getCountryFlag(
                                                               _model
                                                                   .countryListValue)!,
                                                           width: 35.0,
@@ -1714,10 +1709,10 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 12.0, 16.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -1738,9 +1733,9 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                               ),
                                             ),
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsets.all(4.0),
+                                              padding: const EdgeInsets.all(4.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.min,
                                                 crossAxisAlignment:
@@ -1748,7 +1743,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsets.all(12.0),
+                                                        const EdgeInsets.all(12.0),
                                                     child: Text(
                                                       valueOrDefault<String>(
                                                         () {
@@ -1779,7 +1774,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                   Expanded(
                                                     child: Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child:
                                                           AuthUserStreamWidget(
@@ -1855,7 +1850,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                                       .of(context)
                                                                   .primaryBackground,
                                                               contentPadding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
@@ -1903,7 +1898,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 8.0),
                                         child: RichText(
                                           textScaler:
@@ -1932,7 +1927,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                         .getText(
                                                   'tz59guk5' /* * */,
                                                 ),
-                                                style: TextStyle(),
+                                                style: const TextStyle(),
                                               )
                                             ],
                                             style: FlutterFlowTheme.of(context)
@@ -1949,7 +1944,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 0.0),
                                         child: Container(
                                           width:
@@ -2050,13 +2045,13 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                     ]
-                                        .addToStart(SizedBox(height: 16.0))
-                                        .addToEnd(SizedBox(height: 16.0)),
+                                        .addToStart(const SizedBox(height: 16.0))
+                                        .addToEnd(const SizedBox(height: 16.0)),
                                   ),
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 16.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -2073,7 +2068,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 24.0),
                                 child: Container(
                                   decoration: BoxDecoration(
@@ -2090,7 +2085,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 8.0),
                                         child: RichText(
                                           textScaler:
@@ -2137,7 +2132,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 16.0),
                                         child: Container(
                                           width:
@@ -2259,7 +2254,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 8.0),
                                         child: RichText(
                                           textScaler:
@@ -2306,7 +2301,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 8.0),
                                         child: Builder(
                                           builder: (context) {
@@ -2339,12 +2334,10 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                             6.0),
                                                   ),
                                                   child: Visibility(
-                                                    visible: stylesListItem !=
-                                                            null &&
-                                                        stylesListItem != '',
+                                                    visible: stylesListItem != '',
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   4.0,
@@ -2372,7 +2365,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 16.0),
                                         child:
                                             StreamBuilder<List<CategoryRecord>>(
@@ -2424,10 +2417,10 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                       .border,
                                                 ),
                                               ),
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsets.all(2.0),
+                                                padding: const EdgeInsets.all(2.0),
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   multiSelectController: _model
@@ -2496,7 +2489,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                       Colors.transparent,
                                                   borderWidth: 0.0,
                                                   borderRadius: 0.0,
-                                                  margin: EdgeInsetsDirectional
+                                                  margin: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 12.0, 0.0),
                                                   hidesUnderline: true,
@@ -2521,7 +2514,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 8.0),
                                         child: RichText(
                                           textScaler:
@@ -2568,7 +2561,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 16.0),
                                         child: Container(
                                           width:
@@ -2682,7 +2675,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 8.0),
                                         child: RichText(
                                           textScaler:
@@ -2711,7 +2704,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                         .getText(
                                                   'tp104gzy' /* * */,
                                                 ),
-                                                style: TextStyle(),
+                                                style: const TextStyle(),
                                               )
                                             ],
                                             style: FlutterFlowTheme.of(context)
@@ -2728,7 +2721,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 8.0),
                                         child: Container(
                                           width:
@@ -2840,7 +2833,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -2882,7 +2875,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .alternate!,
+                                                                .alternate,
                                                       )
                                                     : null,
                                                 activeColor:
@@ -2915,13 +2908,13 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                     ]
-                                        .addToStart(SizedBox(height: 16.0))
-                                        .addToEnd(SizedBox(height: 16.0)),
+                                        .addToStart(const SizedBox(height: 16.0))
+                                        .addToEnd(const SizedBox(height: 16.0)),
                                   ),
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 16.0, 16.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -2938,7 +2931,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 16.0),
                                 child: Container(
                                   decoration: BoxDecoration(
@@ -2955,7 +2948,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 8.0),
                                         child: RichText(
                                           textScaler:
@@ -3002,7 +2995,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 16.0),
                                         child: Container(
                                           width:
@@ -3123,7 +3116,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 8.0),
                                         child: RichText(
                                           textScaler:
@@ -3170,7 +3163,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 0.0),
                                         child: Container(
                                           width:
@@ -3271,13 +3264,13 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                         ),
                                       ),
                                     ]
-                                        .addToStart(SizedBox(height: 16.0))
-                                        .addToEnd(SizedBox(height: 16.0)),
+                                        .addToStart(const SizedBox(height: 16.0))
+                                        .addToEnd(const SizedBox(height: 16.0)),
                                   ),
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -3311,7 +3304,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                 width: 2,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .alternate!,
+                                                        .alternate,
                                               )
                                             : null,
                                         activeColor:
@@ -3340,7 +3333,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 16.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -3374,7 +3367,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                                 width: 2,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .alternate!,
+                                                        .alternate,
                                               )
                                             : null,
                                         activeColor:
@@ -3403,7 +3396,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -3471,7 +3464,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                             createDesignerRequestsStruct(
                                           designerRequestId: _model
                                               .idmapResult?.designerRequestId
-                                              ?.toString(),
+                                              .toString(),
                                           requestType: 'Pending',
                                           submissionDate: getCurrentTimestamp,
                                           formData: createFormListStruct(
@@ -3546,7 +3539,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                       context.pushNamed(
                                         DesignerPortofolioWidget.routeName,
                                         extra: <String, dynamic>{
-                                          '__transition_info__': TransitionInfo(
+                                          '__transition_info__': const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -3599,9 +3592,9 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                     width:
                                         MediaQuery.sizeOf(context).width * 1.0,
                                     height: 48.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -3617,7 +3610,7 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                                   ),
                                 ),
                               ),
-                            ].addToEnd(SizedBox(height: 16.0)),
+                            ].addToEnd(const SizedBox(height: 16.0)),
                           ),
                         ),
                       ],

@@ -1,12 +1,8 @@
 import '/azyaa_group_a/home/coming_soon/coming_soon_comp/coming_soon_comp_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'coming_soon_model.dart';
 export 'coming_soon_model.dart';
 
@@ -59,7 +55,7 @@ class _ComingSoonWidgetState extends State<ComingSoonWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -85,7 +81,7 @@ class _ComingSoonWidgetState extends State<ComingSoonWidget> {
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -93,7 +89,7 @@ class _ComingSoonWidgetState extends State<ComingSoonWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -104,7 +100,7 @@ class _ComingSoonWidgetState extends State<ComingSoonWidget> {
                       updateCallback: () => safeSetState(() {}),
                       child: ComingSoonCompWidget(
                         image: valueOrDefault<String>(
-                          widget!.type == 'gift'
+                          widget.type == 'gift'
                               ? 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/rsk0xxciuqyd/Group_(6)-min.png'
                               : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/wf3qyseg28mg/Group_(7)-min.png',
                           'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/wf3qyseg28mg/Group_(7)-min.png',
@@ -113,8 +109,8 @@ class _ComingSoonWidgetState extends State<ComingSoonWidget> {
                       ),
                     ),
                   ]
-                      .divide(SizedBox(height: 16.0))
-                      .addToEnd(SizedBox(height: 16.0)),
+                      .divide(const SizedBox(height: 16.0))
+                      .addToEnd(const SizedBox(height: 16.0)),
                 ),
               ),
             ),

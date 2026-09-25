@@ -1,17 +1,12 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'user_initial_model.dart';
 export 'user_initial_model.dart';
@@ -53,12 +48,12 @@ class _UserInitialWidgetState extends State<UserInitialWidget> {
           singleRecord: true,
         ).then((s) => s.firstOrNull);
         if (_model.currentUserResult1?.status == 'Published') {
-          if (_model.currentUserResult1?.userInfo?.isPofileCompleteStatus ==
+          if (_model.currentUserResult1?.userInfo.isPofileCompleteStatus ==
               true) {
             return;
           }
 
-          if (_model.currentUserResult1?.userInfo?.isEmailVerificationStatus ==
+          if (_model.currentUserResult1?.userInfo.isEmailVerificationStatus ==
               false) {
             FFAppState().updateUserDataFlowStruct(
               (e) => e
@@ -84,7 +79,7 @@ class _UserInitialWidgetState extends State<UserInitialWidget> {
               RegisterVerificationWidget.routeName,
               context.mounted,
               extra: <String, dynamic>{
-                '__transition_info__': TransitionInfo(
+                '__transition_info__': const TransitionInfo(
                   hasTransition: true,
                   transitionType: PageTransitionType.fade,
                   duration: Duration(milliseconds: 0),
@@ -96,7 +91,7 @@ class _UserInitialWidgetState extends State<UserInitialWidget> {
           } else {
             if (_model.settingsDoc!.settingsPhoneOtpStatus &&
                 (_model.currentUserResult1?.userInfo
-                        ?.isPhoneVerificationStatus ==
+                        .isPhoneVerificationStatus ==
                     false)) {
               FFAppState().updateUserDataFlowStruct(
                 (e) => e..userRef = currentUserReference,
@@ -106,7 +101,7 @@ class _UserInitialWidgetState extends State<UserInitialWidget> {
                 PhoneWidget.routeName,
                 context.mounted,
                 extra: <String, dynamic>{
-                  '__transition_info__': TransitionInfo(
+                  '__transition_info__': const TransitionInfo(
                     hasTransition: true,
                     transitionType: PageTransitionType.fade,
                     duration: Duration(milliseconds: 0),
@@ -116,12 +111,12 @@ class _UserInitialWidgetState extends State<UserInitialWidget> {
 
               return;
             } else {
-              if (_model.currentUserResult1?.userInfo?.isStep1Status == false) {
+              if (_model.currentUserResult1?.userInfo.isStep1Status == false) {
                 context.goNamedAuth(
                   Step1PersonalWidget.routeName,
                   context.mounted,
                   extra: <String, dynamic>{
-                    '__transition_info__': TransitionInfo(
+                    '__transition_info__': const TransitionInfo(
                       hasTransition: true,
                       transitionType: PageTransitionType.fade,
                       duration: Duration(milliseconds: 0),
@@ -131,13 +126,13 @@ class _UserInitialWidgetState extends State<UserInitialWidget> {
 
                 return;
               } else {
-                if (_model.currentUserResult1?.userInfo?.isStep2Status ==
+                if (_model.currentUserResult1?.userInfo.isStep2Status ==
                     false) {
                   context.goNamedAuth(
                     Step2MeasurementsWidget.routeName,
                     context.mounted,
                     extra: <String, dynamic>{
-                      '__transition_info__': TransitionInfo(
+                      '__transition_info__': const TransitionInfo(
                         hasTransition: true,
                         transitionType: PageTransitionType.fade,
                         duration: Duration(milliseconds: 0),
@@ -147,13 +142,13 @@ class _UserInitialWidgetState extends State<UserInitialWidget> {
 
                   return;
                 } else {
-                  if (_model.currentUserResult1?.userInfo?.isStep3Status ==
+                  if (_model.currentUserResult1?.userInfo.isStep3Status ==
                       false) {
                     context.goNamedAuth(
                       Step3PreferredStyleWidget.routeName,
                       context.mounted,
                       extra: <String, dynamic>{
-                        '__transition_info__': TransitionInfo(
+                        '__transition_info__': const TransitionInfo(
                           hasTransition: true,
                           transitionType: PageTransitionType.fade,
                           duration: Duration(milliseconds: 0),
@@ -164,13 +159,13 @@ class _UserInitialWidgetState extends State<UserInitialWidget> {
                     return;
                   } else {
                     if (_model.currentUserResult1?.userInfo
-                            ?.isPofileCompleteStatus ==
+                            .isPofileCompleteStatus ==
                         false) {
                       context.goNamedAuth(
                         Step4ReferralCodeWidget.routeName,
                         context.mounted,
                         extra: <String, dynamic>{
-                          '__transition_info__': TransitionInfo(
+                          '__transition_info__': const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -200,7 +195,7 @@ class _UserInitialWidgetState extends State<UserInitialWidget> {
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
               ),
-              duration: Duration(milliseconds: 4000),
+              duration: const Duration(milliseconds: 4000),
               backgroundColor: FlutterFlowTheme.of(context).primary,
             ),
           );
@@ -218,7 +213,7 @@ class _UserInitialWidgetState extends State<UserInitialWidget> {
             LoginWidget.routeName,
             context.mounted,
             extra: <String, dynamic>{
-              '__transition_info__': TransitionInfo(
+              '__transition_info__': const TransitionInfo(
                 hasTransition: true,
                 transitionType: PageTransitionType.fade,
                 duration: Duration(milliseconds: 0),

@@ -7,19 +7,14 @@ import '/azyaa_group_a/home/components/loading_animation/loading_animation_widge
 import '/azyaa_group_a/home/components/product_grid/product_grid_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'wishlist_model.dart';
 export 'wishlist_model.dart';
 
@@ -84,7 +79,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -111,7 +106,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -124,12 +119,12 @@ class _WishlistWidgetState extends State<WishlistWidget>
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   wrapWithModel(
                     model: _model.appUpdateCheckerModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: AppUpdateCheckerWidget(),
+                    child: const AppUpdateCheckerWidget(),
                   ),
                   SingleChildScrollView(
                     child: Column(
@@ -148,7 +143,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                             child: Column(
                               children: [
                                 Align(
-                                  alignment: Alignment(0.0, 0),
+                                  alignment: const Alignment(0.0, 0),
                                   child: TabBar(
                                     labelColor: FlutterFlowTheme.of(context)
                                         .primaryText,
@@ -156,7 +151,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                         FlutterFlowTheme.of(context)
                                             .primaryText,
                                     labelPadding:
-                                        EdgeInsetsDirectional.fromSTEB(
+                                        const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .titleMedium
@@ -224,7 +219,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                               desktop: false,
                                             ))
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 0.0, 12.0),
                                                 child: Container(
@@ -233,7 +228,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                               .width *
                                                           1.0,
                                                   height: 30.0,
-                                                  decoration: BoxDecoration(),
+                                                  decoration: const BoxDecoration(),
                                                   child: FlutterFlowChoiceChips(
                                                     options: [
                                                       ChipData(
@@ -359,12 +354,12 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   1.0,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   child: AuthUserStreamWidget(
@@ -374,7 +369,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                         final allWishlist1 =
                                                             (currentUserDocument
                                                                         ?.userWishlistItem
-                                                                        ?.toList() ??
+                                                                        .toList() ??
                                                                     [])
                                                                 .where((e) =>
                                                                     valueOrDefault<
@@ -468,7 +463,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                                         .entityType ==
                                                                     'product')
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -481,7 +476,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                                       height:
                                                                           280.0,
                                                                       decoration:
-                                                                          BoxDecoration(),
+                                                                          const BoxDecoration(),
                                                                       child: StreamBuilder<
                                                                           List<
                                                                               ProductsRecord>>(
@@ -508,7 +503,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                                             return Container(
                                                                               width: MediaQuery.sizeOf(context).width * 1.0,
                                                                               height: 150.0,
-                                                                              child: LoadingAnimationWidget(),
+                                                                              child: const LoadingAnimationWidget(),
                                                                             );
                                                                           }
                                                                           List<ProductsRecord>
@@ -557,7 +552,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                                           false,
                                                                     ))
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -570,7 +565,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                                       height:
                                                                           280.0,
                                                                       decoration:
-                                                                          BoxDecoration(),
+                                                                          const BoxDecoration(),
                                                                       child:
                                                                           DesignerGridWidget(
                                                                         key: Key(
@@ -589,10 +584,10 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                               ),
                                             ),
                                           ]
-                                              .divide(SizedBox(height: 12.0))
+                                              .divide(const SizedBox(height: 12.0))
                                               .addToStart(
-                                                  SizedBox(height: 12.0))
-                                              .addToEnd(SizedBox(height: 12.0)),
+                                                  const SizedBox(height: 12.0))
+                                              .addToEnd(const SizedBox(height: 12.0)),
                                         ),
                                       ),
                                       SingleChildScrollView(
@@ -605,12 +600,12 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   1.0,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   child: AuthUserStreamWidget(
@@ -620,7 +615,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                         final allWishlist1 =
                                                             (currentUserDocument
                                                                         ?.userWishlistItem
-                                                                        ?.toList() ??
+                                                                        .toList() ??
                                                                     [])
                                                                 .where(
                                                                     (e) => () {
@@ -674,7 +669,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                                         .entityType ==
                                                                     'product')
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -687,7 +682,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                                       height:
                                                                           280.0,
                                                                       decoration:
-                                                                          BoxDecoration(),
+                                                                          const BoxDecoration(),
                                                                       child: StreamBuilder<
                                                                           List<
                                                                               ProductsRecord>>(
@@ -714,7 +709,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                                             return Container(
                                                                               width: MediaQuery.sizeOf(context).width * 1.0,
                                                                               height: 150.0,
-                                                                              child: LoadingAnimationWidget(),
+                                                                              child: const LoadingAnimationWidget(),
                                                                             );
                                                                           }
                                                                           List<ProductsRecord>
@@ -747,7 +742,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                                             .entityType ==
                                                                         'creator'))
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -760,7 +755,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                                       height:
                                                                           280.0,
                                                                       decoration:
-                                                                          BoxDecoration(),
+                                                                          const BoxDecoration(),
                                                                       child:
                                                                           DesignerGridWidget(
                                                                         key: Key(
@@ -779,10 +774,10 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                               ),
                                             ),
                                           ]
-                                              .divide(SizedBox(height: 12.0))
+                                              .divide(const SizedBox(height: 12.0))
                                               .addToStart(
-                                                  SizedBox(height: 12.0))
-                                              .addToEnd(SizedBox(height: 12.0)),
+                                                  const SizedBox(height: 12.0))
+                                              .addToEnd(const SizedBox(height: 12.0)),
                                         ),
                                       ),
                                       SingleChildScrollView(
@@ -792,7 +787,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                               CrossAxisAlignment.center,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 0.0, 12.0),
                                               child: Container(
@@ -801,7 +796,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                             .width *
                                                         1.0,
                                                 height: 30.0,
-                                                decoration: BoxDecoration(),
+                                                decoration: const BoxDecoration(),
                                                 child: FlutterFlowChoiceChips(
                                                   options: [
                                                     ChipData(FFLocalizations.of(
@@ -916,12 +911,12 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   1.0,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   child: AuthUserStreamWidget(
@@ -931,7 +926,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                         final allViewed1 =
                                                             (currentUserDocument
                                                                         ?.userRecentViews
-                                                                        ?.toList() ??
+                                                                        .toList() ??
                                                                     [])
                                                                 .where(
                                                                     (e) => () {
@@ -984,7 +979,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                                         .viewedEntityType ==
                                                                     'product')
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -997,7 +992,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                                       height:
                                                                           280.0,
                                                                       decoration:
-                                                                          BoxDecoration(),
+                                                                          const BoxDecoration(),
                                                                       child: StreamBuilder<
                                                                           List<
                                                                               ProductsRecord>>(
@@ -1024,7 +1019,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                                             return Container(
                                                                               width: MediaQuery.sizeOf(context).width * 1.0,
                                                                               height: 150.0,
-                                                                              child: LoadingAnimationWidget(),
+                                                                              child: const LoadingAnimationWidget(),
                                                                             );
                                                                           }
                                                                           List<ProductsRecord>
@@ -1063,7 +1058,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                                             .viewedEntityType ==
                                                                         'creator'))
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1076,7 +1071,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                                       height:
                                                                           280.0,
                                                                       decoration:
-                                                                          BoxDecoration(),
+                                                                          const BoxDecoration(),
                                                                       child:
                                                                           DesignerGridWidget(
                                                                         key: Key(
@@ -1095,10 +1090,10 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                               ),
                                             ),
                                           ]
-                                              .divide(SizedBox(height: 12.0))
+                                              .divide(const SizedBox(height: 12.0))
                                               .addToStart(
-                                                  SizedBox(height: 12.0))
-                                              .addToEnd(SizedBox(height: 12.0)),
+                                                  const SizedBox(height: 12.0))
+                                              .addToEnd(const SizedBox(height: 12.0)),
                                         ),
                                       ),
                                     ],
@@ -1108,14 +1103,14 @@ class _WishlistWidgetState extends State<WishlistWidget>
                             ),
                           ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => Builder(
                               builder: (context) {
                                 final allWishlist1 = (currentUserDocument
                                             ?.userWishlistItem
-                                            ?.toList() ??
+                                            .toList() ??
                                         [])
                                     .where((e) => () {
                                           if (_model.choiceChipsValue1 ==
@@ -1179,12 +1174,12 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                             'product')
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 24.0),
                                             child: Container(
                                               width: _model.gridWidth,
                                               height: 280.0,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: StreamBuilder<
                                                   List<ProductsRecord>>(
                                                 stream: queryProductsRecord(
@@ -1214,7 +1209,7 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                           1.0,
                                                       height: 150.0,
                                                       child:
-                                                          LoadingAnimationWidget(),
+                                                          const LoadingAnimationWidget(),
                                                     );
                                                   }
                                                   List<ProductsRecord>
@@ -1252,12 +1247,12 @@ class _WishlistWidgetState extends State<WishlistWidget>
                                                 'creator'))
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 16.0),
                                             child: Container(
                                               width: _model.gridWidth,
                                               height: 280.0,
-                                              decoration: BoxDecoration(),
+                                              decoration: const BoxDecoration(),
                                               child: DesignerGridWidget(
                                                 key: Key(
                                                     'Keypit_${allWishlist1Index}_of_${allWishlist1.length}'),
@@ -1273,8 +1268,8 @@ class _WishlistWidgetState extends State<WishlistWidget>
                           ),
                         ),
                       ]
-                          .divide(SizedBox(height: 16.0))
-                          .addToEnd(SizedBox(height: 16.0)),
+                          .divide(const SizedBox(height: 16.0))
+                          .addToEnd(const SizedBox(height: 16.0)),
                     ),
                   ),
                 ],

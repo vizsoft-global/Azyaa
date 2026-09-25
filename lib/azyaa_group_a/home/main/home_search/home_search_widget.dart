@@ -7,16 +7,11 @@ import '/azyaa_group_a/home/components/product_small_grid/product_small_grid_wid
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'home_search_model.dart';
 export 'home_search_model.dart';
 
@@ -67,7 +62,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -95,7 +90,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                             context.goNamed(
                               HomeWidget.routeName,
                               extra: <String, dynamic>{
-                                '__transition_info__': TransitionInfo(
+                                '__transition_info__': const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -141,11 +136,11 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                               print('IconButton pressed ...');
                             },
                           ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -158,7 +153,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -170,7 +165,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                 focusNode: _model.searchFocusNode,
                                 onChanged: (_) => EasyDebounce.debounce(
                                   '_model.searchTextController',
-                                  Duration(milliseconds: 2000),
+                                  const Duration(milliseconds: 2000),
                                   () async {
                                     if (_model.searchTextController.text !=
                                         '') {
@@ -217,14 +212,14 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Color(0x00000000),
                                       width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Color(0x00000000),
                                       width: 1.0,
                                     ),
@@ -288,7 +283,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                 safeSetState(() {});
                               },
                             ),
-                        ].divide(SizedBox(width: 8.0)),
+                        ].divide(const SizedBox(width: 8.0)),
                       ),
                     ),
                     StreamBuilder<List<SettingsRecord>>(
@@ -302,7 +297,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                       builder: (context, snapshot) {
                         // Customize what your widget looks like when it's loading.
                         if (!snapshot.hasData) {
-                          return Center(
+                          return const Center(
                             child: SizedBox(
                               width: 2.0,
                               height: 2.0,
@@ -354,26 +349,26 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                   return Container(
                                     width: 0.0,
                                     height: 0.0,
-                                    child: BlankLoadingWidget(),
+                                    child: const BlankLoadingWidget(),
                                   );
                                 }
                                 List<CategoryRecord>
                                     categoryCategoryRecordList = snapshot.data!;
 
                                 return Container(
-                                  decoration: BoxDecoration(),
+                                  decoration: const BoxDecoration(),
                                   child: Visibility(
                                     visible: (_model.serachStatus == false) &&
                                         (categoryCategoryRecordList.length > 0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 24.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 8.0, 16.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -444,7 +439,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(4.0),
+                                                        const EdgeInsets.all(4.0),
                                                     child: Icon(
                                                       Icons
                                                           .navigate_next_rounded,
@@ -456,12 +451,12 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                              ].divide(SizedBox(width: 8.0)),
+                                              ].divide(const SizedBox(width: 8.0)),
                                             ),
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Builder(
                                               builder: (context) {
@@ -535,7 +530,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                               },
                                             ),
                                           ),
-                                        ].divide(SizedBox(height: 12.0)),
+                                        ].divide(const SizedBox(height: 12.0)),
                                       ),
                                     ),
                                   ),
@@ -562,25 +557,25 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                           return Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 150.0,
-                            child: LoadingAnimationWidget(),
+                            child: const LoadingAnimationWidget(),
                           );
                         }
                         List<ProductsRecord> popularProductsRecordList =
                             snapshot.data!;
 
                         return Container(
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                           child: Visibility(
                             visible: (_model.serachStatus == false) &&
                                 (popularProductsRecordList.length > 0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 16.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -637,7 +632,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                                 BorderRadius.circular(100.0),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(4.0),
+                                            padding: const EdgeInsets.all(4.0),
                                             child: Icon(
                                               Icons.navigate_next_rounded,
                                               color:
@@ -647,17 +642,17 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                             ),
                                           ),
                                         ),
-                                      ].divide(SizedBox(width: 8.0)),
+                                      ].divide(const SizedBox(width: 8.0)),
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 0.0, 0.0),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       height: 165.0,
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: Builder(
                                         builder: (context) {
                                           final newProduct =
@@ -665,7 +660,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                                   .toList();
 
                                           return ListView.separated(
-                                            padding: EdgeInsets.fromLTRB(
+                                            padding: const EdgeInsets.fromLTRB(
                                               0,
                                               0,
                                               16.0,
@@ -676,7 +671,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                             scrollDirection: Axis.horizontal,
                                             itemCount: newProduct.length,
                                             separatorBuilder: (_, __) =>
-                                                SizedBox(width: 8.0),
+                                                const SizedBox(width: 8.0),
                                             itemBuilder:
                                                 (context, newProductIndex) {
                                               final newProductItem =
@@ -692,7 +687,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                       ),
                                     ),
                                   ),
-                                ].divide(SizedBox(height: 12.0)),
+                                ].divide(const SizedBox(height: 12.0)),
                               ),
                             ),
                           ),
@@ -701,7 +696,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                       child: FutureBuilder<List<ProductsRecord>>(
                         future: (_model.firestoreRequestCompleter ??= Completer<
                                 List<ProductsRecord>>()
@@ -725,14 +720,14 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                             return Container(
                               width: 0.0,
                               height: 0.0,
-                              child: BlankLoadingWidget(),
+                              child: const BlankLoadingWidget(),
                             );
                           }
                           List<ProductsRecord> afterinputProductsRecordList =
                               snapshot.data!;
 
                           return Container(
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: Visibility(
                               visible: _model.serachStatus == true,
                               child: SingleChildScrollView(
@@ -741,7 +736,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: RichText(
                                         textScaler:
@@ -754,8 +749,8 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                                     ?.where((e) =>
                                                         e.status == 'active')
                                                     .toList()
-                                                    ?.length
-                                                    ?.toString(),
+                                                    .length
+                                                    .toString(),
                                                 '0',
                                               ),
                                               style:
@@ -792,7 +787,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 8.0),
                                       child: Builder(
                                         builder: (context) {
@@ -822,7 +817,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                                   ?.where((e) =>
                                                       e.status == 'active')
                                                   .toList()
-                                                  ?.toList() ??
+                                                  .toList() ??
                                               [];
                                           if (algoliaList.isEmpty) {
                                             return EmptysearchWidget(
@@ -890,7 +885,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                         },
                                       ),
                                     ),
-                                  ].divide(SizedBox(height: 12.0)),
+                                  ].divide(const SizedBox(height: 12.0)),
                                 ),
                               ),
                             ),
@@ -899,8 +894,8 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                       ),
                     ),
                   ]
-                      .addToStart(SizedBox(height: 16.0))
-                      .addToEnd(SizedBox(height: 16.0)),
+                      .addToStart(const SizedBox(height: 16.0))
+                      .addToEnd(const SizedBox(height: 16.0)),
                 ),
               ),
             ),

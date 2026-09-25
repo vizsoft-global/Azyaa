@@ -1,16 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'virtual_try_on_points_model.dart';
 export 'virtual_try_on_points_model.dart';
@@ -55,7 +51,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
       width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 5.0,
             color: Color(0x3B1D2429),
@@ -65,7 +61,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
             ),
           )
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
@@ -75,7 +71,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
             child: Container(
               width: 35.0,
               height: 3.0,
@@ -86,23 +82,23 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
             ),
           ),
           Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(
                         'assets/images/Objects.png',
                         width: 100.0,
                         fit: BoxFit.contain,
-                        alignment: Alignment(0.0, 0.0),
+                        alignment: const Alignment(0.0, 0.0),
                       ),
                     ),
                   ),
@@ -130,12 +126,12 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                           fontWeight: FontWeight.normal,
                         ),
                   ),
-                ].divide(SizedBox(height: 8.0)),
+                ].divide(const SizedBox(height: 8.0)),
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
               decoration: BoxDecoration(
@@ -145,7 +141,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(12.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -163,7 +159,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                     Container(
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 135.0,
-                      decoration: BoxDecoration(),
+                      decoration: const BoxDecoration(),
                       child: StreamBuilder<List<UserVtoPlansRecord>>(
                         stream: queryUserVtoPlansRecord(
                           queryBuilder: (userVtoPlansRecord) =>
@@ -198,7 +194,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
                             itemCount: listViewUserVtoPlansRecordList.length,
-                            separatorBuilder: (_, __) => SizedBox(width: 8.0),
+                            separatorBuilder: (_, __) => const SizedBox(width: 8.0),
                             itemBuilder: (context, listViewIndex) {
                               final listViewUserVtoPlansRecord =
                                   listViewUserVtoPlansRecordList[listViewIndex];
@@ -223,7 +219,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                                           .userCart.cartItems
                                           .toList()
                                       ..count = currentUserDocument
-                                          ?.userCart?.cartItems?.length
+                                          ?.userCart.cartItems.length
                                       ..userCartItemPAFound = 'notfound',
                                   );
                                   while (FFAppState().UserDataFlow.count > 0) {
@@ -403,7 +399,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -424,7 +420,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 8.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -454,7 +450,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                                                 fontWeight: FontWeight.w500,
                                               ),
                                         ),
-                                      ].divide(SizedBox(height: 4.0)),
+                                      ].divide(const SizedBox(height: 4.0)),
                                     ),
                                   ),
                                 ),
@@ -464,13 +460,13 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                         },
                       ),
                     ),
-                  ].divide(SizedBox(height: 16.0)),
+                  ].divide(const SizedBox(height: 16.0)),
                 ),
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -486,9 +482,9 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 48.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primaryBackground,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -520,7 +516,7 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                         context.pushNamed(
                           CartWidget.routeName,
                           extra: <String, dynamic>{
-                            '__transition_info__': TransitionInfo(
+                            '__transition_info__': const TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                               duration: Duration(milliseconds: 0),
@@ -534,10 +530,10 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 48.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -550,13 +546,13 @@ class _VirtualTryOnPointsWidgetState extends State<VirtualTryOnPointsWidget> {
                       ),
                     ),
                   ),
-              ].divide(SizedBox(width: 16.0)),
+              ].divide(const SizedBox(width: 16.0)),
             ),
           ),
         ]
-            .divide(SizedBox(height: 16.0))
-            .addToStart(SizedBox(height: 16.0))
-            .addToEnd(SizedBox(height: 16.0)),
+            .divide(const SizedBox(height: 16.0))
+            .addToStart(const SizedBox(height: 16.0))
+            .addToEnd(const SizedBox(height: 16.0)),
       ),
     );
   }

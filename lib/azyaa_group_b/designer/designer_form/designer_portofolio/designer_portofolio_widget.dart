@@ -2,20 +2,14 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'dart:convert';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'designer_portofolio_model.dart';
 export 'designer_portofolio_model.dart';
@@ -65,7 +59,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -131,11 +125,11 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                               print('IconButton pressed ...');
                             },
                           ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -148,7 +142,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   SingleChildScrollView(
                     child: Column(
@@ -157,7 +151,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 16.0, 4.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -174,7 +168,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 16.0, 24.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -193,7 +187,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 24.0),
                           child: Container(
                             decoration: BoxDecoration(
@@ -208,7 +202,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 4.0),
                                   child: RichText(
                                     textScaler:
@@ -240,7 +234,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 16.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -259,9 +253,9 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  alignment: const AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 16.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -437,7 +431,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                                duration: Duration(
+                                                duration: const Duration(
                                                     milliseconds: 4000),
                                                 backgroundColor:
                                                     FlutterFlowTheme.of(context)
@@ -492,16 +486,16 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                       text: FFLocalizations.of(context).getText(
                                         'awuks81r' /* Upload Photo / PDF */,
                                       ),
-                                      icon: Icon(
+                                      icon: const Icon(
                                         Icons.add,
                                         size: 14.0,
                                       ),
                                       options: FFButtonOptions(
                                         height: 30.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 8.0, 0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
@@ -542,13 +536,13 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                       scrollDirection: Axis.vertical,
                                       itemCount: samples.length,
                                       separatorBuilder: (_, __) =>
-                                          SizedBox(height: 16.0),
+                                          const SizedBox(height: 16.0),
                                       itemBuilder: (context, samplesIndex) {
                                         final samplesItem =
                                             samples[samplesIndex];
                                         return Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 12.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -577,7 +571,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(8.0),
+                                                        const EdgeInsets.all(8.0),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.min,
@@ -606,7 +600,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                             children: [
                                                               Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Text(
@@ -650,7 +644,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                                             0.0,
                                                                       ),
                                                                 ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 height: 4.0)),
                                                           ),
                                                         ),
@@ -689,7 +683,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                           ),
                                                         ),
                                                       ].divide(
-                                                          SizedBox(width: 8.0)),
+                                                          const SizedBox(width: 8.0)),
                                                     ),
                                                   ),
                                                 ),
@@ -700,7 +694,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                       'image/jpeg'))
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Container(
                                                     width: MediaQuery.sizeOf(
@@ -724,7 +718,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                       children: [
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: ClipRRect(
                                                             borderRadius:
@@ -732,8 +726,8 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                                     .circular(
                                                                         8.0),
                                                             child:
-                                                                Image.network(
-                                                              samplesItem
+                                                                CachedNetworkImage(
+                                                              imageUrl: samplesItem
                                                                   .sampleImageUrl,
                                                               width: MediaQuery
                                                                           .sizeOf(
@@ -748,7 +742,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                               fit: BoxFit
                                                                   .contain,
                                                               alignment:
-                                                                  Alignment(
+                                                                  const Alignment(
                                                                       0.0, 0.0),
                                                             ),
                                                           ),
@@ -763,7 +757,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                         ))
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Icon(
                                                               Icons
@@ -776,11 +770,11 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                           ),
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   1.0, -1.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         6.0,
                                                                         6.0,
@@ -815,7 +809,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                                 ),
                                                                 child: Padding(
                                                                   padding:
-                                                                      EdgeInsets
+                                                                      const EdgeInsets
                                                                           .all(
                                                                               4.0),
                                                                   child: Icon(
@@ -834,7 +828,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                            ].divide(SizedBox(height: 12.0)),
+                                            ].divide(const SizedBox(height: 12.0)),
                                           ),
                                         );
                                       },
@@ -842,13 +836,13 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                                   },
                                 ),
                               ]
-                                  .addToStart(SizedBox(height: 16.0))
-                                  .addToEnd(SizedBox(height: 16.0)),
+                                  .addToStart(const SizedBox(height: 16.0))
+                                  .addToEnd(const SizedBox(height: 16.0)),
                             ),
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -868,7 +862,7 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                               context.pushNamed(
                                 DesignerFormUploadWidget.routeName,
                                 extra: <String, dynamic>{
-                                  '__transition_info__': TransitionInfo(
+                                  '__transition_info__': const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 0),
@@ -882,9 +876,9 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 48.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -900,8 +894,8 @@ class _DesignerPortofolioWidgetState extends State<DesignerPortofolioWidget> {
                           ),
                         ),
                       ]
-                          .addToStart(SizedBox(height: 16.0))
-                          .addToEnd(SizedBox(height: 16.0)),
+                          .addToStart(const SizedBox(height: 16.0))
+                          .addToEnd(const SizedBox(height: 16.0)),
                     ),
                   ),
                 ],

@@ -1,11 +1,8 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'coming_soon_comp_model.dart';
 export 'coming_soon_comp_model.dart';
 
@@ -60,7 +57,7 @@ class _ComingSoonCompWidgetState extends State<ComingSoonCompWidget> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.end,
@@ -84,15 +81,15 @@ class _ComingSoonCompWidgetState extends State<ComingSoonCompWidget> {
           ),
           ClipRRect(
             borderRadius: BorderRadius.circular(8.0),
-            child: Image.network(
-              widget!.image!,
+            child: CachedNetworkImage(
+              imageUrl: widget.image!,
               height: 120.0,
               fit: BoxFit.cover,
             ),
           ),
           Text(
             valueOrDefault<String>(
-              widget!.text,
+              widget.text,
               'Coming Soon...',
             ),
             style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -101,9 +98,9 @@ class _ComingSoonCompWidgetState extends State<ComingSoonCompWidget> {
                 ),
           ),
         ]
-            .divide(SizedBox(height: 8.0))
-            .addToStart(SizedBox(height: 24.0))
-            .addToEnd(SizedBox(height: 24.0)),
+            .divide(const SizedBox(height: 8.0))
+            .addToStart(const SizedBox(height: 24.0))
+            .addToEnd(const SizedBox(height: 24.0)),
       ),
     );
   }

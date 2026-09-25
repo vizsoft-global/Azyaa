@@ -1,23 +1,17 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
 import '/azyaa_group_a/home/components/empty_v_t_o/empty_v_t_o_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'virtual_try_on_model.dart';
 export 'virtual_try_on_model.dart';
@@ -68,7 +62,7 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -95,7 +89,7 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -108,23 +102,23 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                     model: _model.userInitialModel,
                     updateCallback: () => safeSetState(() {}),
                     updateOnChange: true,
-                    child: UserInitialWidget(),
+                    child: const UserInitialWidget(),
                   ),
                   wrapWithModel(
                     model: _model.appUpdateCheckerModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: AppUpdateCheckerWidget(),
+                    child: const AppUpdateCheckerWidget(),
                   ),
                   Container(
-                    decoration: BoxDecoration(),
+                    decoration: const BoxDecoration(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: StreamBuilder<List<TryonRequestsRecord>>(
                               stream: queryTryonRequestsRecord(
@@ -215,7 +209,7 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                                           }.withoutNulls,
                                           extra: <String, dynamic>{
                                             '__transition_info__':
-                                                TransitionInfo(
+                                                const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -245,8 +239,8 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                                                         PageTransitionType.fade,
                                                     child:
                                                         FlutterFlowExpandedImageView(
-                                                      image: Image.network(
-                                                        valueOrDefault<String>(
+                                                      image: CachedNetworkImage(
+                                                        imageUrl: valueOrDefault<String>(
                                                           staggeredViewTryonRequestsRecord
                                                               .result,
                                                           'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/i9u1ra67p2p4/Azyaa-logo_(2).jpg',
@@ -278,8 +272,8 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           8.0),
-                                                  child: Image.network(
-                                                    valueOrDefault<String>(
+                                                  child: CachedNetworkImage(
+                                                    imageUrl: valueOrDefault<String>(
                                                       staggeredViewTryonRequestsRecord
                                                           .result,
                                                       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/i9u1ra67p2p4/Azyaa-logo_(2).jpg',
@@ -335,7 +329,7 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(8.0),
+                                                  padding: const EdgeInsets.all(8.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -450,7 +444,7 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                                                           if (loggedIn) {
                                                             if ((currentUserDocument
                                                                             ?.userRecentViews
-                                                                            ?.toList() ??
+                                                                            .toList() ??
                                                                         [])
                                                                     .length !=
                                                                 0) {
@@ -458,11 +452,11 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                                                                   .updateUserDataFlowStruct(
                                                                 (e) => e
                                                                   ..count =
-                                                                      (currentUserDocument?.userRecentViews?.toList() ??
+                                                                      (currentUserDocument?.userRecentViews.toList() ??
                                                                               [])
                                                                           .length
                                                                   ..userRecentView =
-                                                                      (currentUserDocument?.userRecentViews?.toList() ??
+                                                                      (currentUserDocument?.userRecentViews.toList() ??
                                                                               [])
                                                                           .toList(),
                                                               );
@@ -491,7 +485,7 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                                                                           .elementAtOrNull(FFAppState().UserDataFlow.count -
                                                                               1)
                                                                           ?.productAttribute
-                                                                          ?.length !=
+                                                                          .length !=
                                                                       containerProductsRecord
                                                                           .productAttribute
                                                                           .length) {
@@ -536,7 +530,7 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       '__transition_info__':
-                                                                          TransitionInfo(
+                                                                          const TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -605,7 +599,7 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                                                             extra: <String,
                                                                 dynamic>{
                                                               '__transition_info__':
-                                                                  TransitionInfo(
+                                                                  const TransitionInfo(
                                                                 hasTransition:
                                                                     true,
                                                                 transitionType:
@@ -620,13 +614,13 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                                                         },
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 8.0)),
+                                                        const SizedBox(width: 8.0)),
                                                   ),
                                                 ),
                                               );
                                             },
                                           ),
-                                        ].divide(SizedBox(height: 4.0)),
+                                        ].divide(const SizedBox(height: 4.0)),
                                       ),
                                     );
                                   },
@@ -636,8 +630,8 @@ class _VirtualTryOnWidgetState extends State<VirtualTryOnWidget> {
                           ),
                         ),
                       ]
-                          .divide(SizedBox(height: 8.0))
-                          .addToStart(SizedBox(height: 16.0)),
+                          .divide(const SizedBox(height: 8.0))
+                          .addToStart(const SizedBox(height: 16.0)),
                     ),
                   ),
                 ],

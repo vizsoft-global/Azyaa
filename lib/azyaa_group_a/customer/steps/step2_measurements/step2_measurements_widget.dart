@@ -4,15 +4,11 @@ import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'step2_measurements_model.dart';
 export 'step2_measurements_model.dart';
@@ -88,16 +84,16 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(0.0, -1.0),
+                      alignment: const AlignmentDirectional(0.0, -1.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -129,7 +125,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                           FlutterFlowTheme.of(context).primary,
                                     ),
                                   ),
-                                ].divide(SizedBox(height: 24.0)),
+                                ].divide(const SizedBox(height: 24.0)),
                               ),
                             ),
                             Expanded(
@@ -161,7 +157,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                           .primaryBackground,
                                     ),
                                   ),
-                                ].divide(SizedBox(height: 24.0)),
+                                ].divide(const SizedBox(height: 24.0)),
                               ),
                             ),
                             Expanded(
@@ -193,7 +189,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                           .primaryBackground,
                                     ),
                                   ),
-                                ].divide(SizedBox(height: 24.0)),
+                                ].divide(const SizedBox(height: 24.0)),
                               ),
                             ),
                           ],
@@ -201,10 +197,10 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, -1.0),
+                      alignment: const AlignmentDirectional(-1.0, -1.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'x3omtdi1' /* We’ll create your perfect fit! */,
@@ -220,10 +216,10 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, -1.0),
+                      alignment: const AlignmentDirectional(-1.0, -1.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'emoumv29' /* Share your measurements to hel... */,
@@ -244,7 +240,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                     Expanded(
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -255,7 +251,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                   key: _model.formKey,
                                   autovalidateMode: AutovalidateMode.disabled,
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 16.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -269,7 +265,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                             child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
@@ -280,7 +276,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                             .width *
                                                         1.0,
                                                 fit: BoxFit.contain,
-                                                alignment: Alignment(0.0, 0.0),
+                                                alignment: const Alignment(0.0, 0.0),
                                               ),
                                             ),
                                           ),
@@ -290,14 +286,14 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                             child: SingleChildScrollView(
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 8.0, 0.0),
                                                     child: Container(
@@ -321,7 +317,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                         ),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
+                                                        padding: const EdgeInsets.all(
                                                             10.0),
                                                         child: Column(
                                                           mainAxisSize:
@@ -373,7 +369,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -425,7 +421,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                BorderSide(
+                                                                                const BorderSide(
                                                                               color: Color(0x00000000),
                                                                               width: 0.0,
                                                                             ),
@@ -435,7 +431,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           focusedBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                BorderSide(
+                                                                                const BorderSide(
                                                                               color: Color(0x00000000),
                                                                               width: 0.0,
                                                                             ),
@@ -466,7 +462,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                               true,
                                                                           fillColor:
                                                                               FlutterFlowTheme.of(context).primaryBackground,
-                                                                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               15.0,
                                                                               15.0,
                                                                               15.0,
@@ -564,7 +560,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           0.0,
                                                                       borderRadius:
                                                                           0.0,
-                                                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                                                      margin: const EdgeInsetsDirectional.fromSTEB(
                                                                           4.0,
                                                                           0.0,
                                                                           0.0,
@@ -582,7 +578,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                 ),
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               height: 8.0)),
                                                         ),
                                                       ),
@@ -590,7 +586,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 8.0, 0.0),
                                                     child: Container(
@@ -614,7 +610,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                         ),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
+                                                        padding: const EdgeInsets.all(
                                                             10.0),
                                                         child: Column(
                                                           mainAxisSize:
@@ -666,7 +662,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -718,7 +714,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                BorderSide(
+                                                                                const BorderSide(
                                                                               color: Color(0x00000000),
                                                                               width: 0.0,
                                                                             ),
@@ -728,7 +724,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           focusedBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                BorderSide(
+                                                                                const BorderSide(
                                                                               color: Color(0x00000000),
                                                                               width: 0.0,
                                                                             ),
@@ -759,7 +755,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                               true,
                                                                           fillColor:
                                                                               FlutterFlowTheme.of(context).primaryBackground,
-                                                                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               15.0,
                                                                               15.0,
                                                                               15.0,
@@ -857,7 +853,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           0.0,
                                                                       borderRadius:
                                                                           0.0,
-                                                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                                                      margin: const EdgeInsetsDirectional.fromSTEB(
                                                                           4.0,
                                                                           0.0,
                                                                           0.0,
@@ -875,7 +871,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                 ),
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               height: 8.0)),
                                                         ),
                                                       ),
@@ -883,7 +879,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 8.0, 0.0),
                                                     child: Container(
@@ -907,7 +903,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                         ),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
+                                                        padding: const EdgeInsets.all(
                                                             10.0),
                                                         child: Column(
                                                           mainAxisSize:
@@ -959,7 +955,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1011,7 +1007,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                BorderSide(
+                                                                                const BorderSide(
                                                                               color: Color(0x00000000),
                                                                               width: 0.0,
                                                                             ),
@@ -1021,7 +1017,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           focusedBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                BorderSide(
+                                                                                const BorderSide(
                                                                               color: Color(0x00000000),
                                                                               width: 0.0,
                                                                             ),
@@ -1052,7 +1048,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                               true,
                                                                           fillColor:
                                                                               FlutterFlowTheme.of(context).primaryBackground,
-                                                                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               15.0,
                                                                               15.0,
                                                                               15.0,
@@ -1150,7 +1146,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           0.0,
                                                                       borderRadius:
                                                                           0.0,
-                                                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                                                      margin: const EdgeInsetsDirectional.fromSTEB(
                                                                           4.0,
                                                                           0.0,
                                                                           0.0,
@@ -1168,7 +1164,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                 ),
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               height: 8.0)),
                                                         ),
                                                       ),
@@ -1176,7 +1172,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 8.0, 0.0),
                                                     child: Container(
@@ -1200,7 +1196,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                         ),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
+                                                        padding: const EdgeInsets.all(
                                                             10.0),
                                                         child: Column(
                                                           mainAxisSize:
@@ -1252,7 +1248,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1304,7 +1300,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                BorderSide(
+                                                                                const BorderSide(
                                                                               color: Color(0x00000000),
                                                                               width: 0.0,
                                                                             ),
@@ -1314,7 +1310,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           focusedBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                BorderSide(
+                                                                                const BorderSide(
                                                                               color: Color(0x00000000),
                                                                               width: 0.0,
                                                                             ),
@@ -1345,7 +1341,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                               true,
                                                                           fillColor:
                                                                               FlutterFlowTheme.of(context).primaryBackground,
-                                                                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               15.0,
                                                                               15.0,
                                                                               15.0,
@@ -1443,7 +1439,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           0.0,
                                                                       borderRadius:
                                                                           0.0,
-                                                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                                                      margin: const EdgeInsetsDirectional.fromSTEB(
                                                                           4.0,
                                                                           0.0,
                                                                           0.0,
@@ -1461,7 +1457,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                 ),
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               height: 8.0)),
                                                         ),
                                                       ),
@@ -1469,7 +1465,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 8.0, 0.0),
                                                     child: Container(
@@ -1493,7 +1489,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                         ),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
+                                                        padding: const EdgeInsets.all(
                                                             10.0),
                                                         child: Column(
                                                           mainAxisSize:
@@ -1545,7 +1541,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1597,7 +1593,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                BorderSide(
+                                                                                const BorderSide(
                                                                               color: Color(0x00000000),
                                                                               width: 0.0,
                                                                             ),
@@ -1607,7 +1603,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           focusedBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                BorderSide(
+                                                                                const BorderSide(
                                                                               color: Color(0x00000000),
                                                                               width: 0.0,
                                                                             ),
@@ -1638,7 +1634,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                               true,
                                                                           fillColor:
                                                                               FlutterFlowTheme.of(context).primaryBackground,
-                                                                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               15.0,
                                                                               15.0,
                                                                               15.0,
@@ -1736,7 +1732,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           0.0,
                                                                       borderRadius:
                                                                           0.0,
-                                                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                                                      margin: const EdgeInsetsDirectional.fromSTEB(
                                                                           4.0,
                                                                           0.0,
                                                                           0.0,
@@ -1754,7 +1750,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                 ),
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               height: 8.0)),
                                                         ),
                                                       ),
@@ -1762,7 +1758,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 8.0, 0.0),
                                                     child: Container(
@@ -1786,7 +1782,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                         ),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
+                                                        padding: const EdgeInsets.all(
                                                             10.0),
                                                         child: Column(
                                                           mainAxisSize:
@@ -1838,7 +1834,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1890,7 +1886,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                BorderSide(
+                                                                                const BorderSide(
                                                                               color: Color(0x00000000),
                                                                               width: 0.0,
                                                                             ),
@@ -1900,7 +1896,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           focusedBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                BorderSide(
+                                                                                const BorderSide(
                                                                               color: Color(0x00000000),
                                                                               width: 0.0,
                                                                             ),
@@ -1931,7 +1927,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                               true,
                                                                           fillColor:
                                                                               FlutterFlowTheme.of(context).primaryBackground,
-                                                                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               15.0,
                                                                               15.0,
                                                                               15.0,
@@ -2029,7 +2025,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           0.0,
                                                                       borderRadius:
                                                                           0.0,
-                                                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                                                      margin: const EdgeInsetsDirectional.fromSTEB(
                                                                           4.0,
                                                                           0.0,
                                                                           0.0,
@@ -2047,7 +2043,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                 ),
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               height: 8.0)),
                                                         ),
                                                       ),
@@ -2055,7 +2051,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 8.0, 0.0),
                                                     child: Container(
@@ -2079,7 +2075,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                         ),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
+                                                        padding: const EdgeInsets.all(
                                                             10.0),
                                                         child: Column(
                                                           mainAxisSize:
@@ -2131,7 +2127,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -2183,7 +2179,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                BorderSide(
+                                                                                const BorderSide(
                                                                               color: Color(0x00000000),
                                                                               width: 0.0,
                                                                             ),
@@ -2193,7 +2189,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           focusedBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                BorderSide(
+                                                                                const BorderSide(
                                                                               color: Color(0x00000000),
                                                                               width: 0.0,
                                                                             ),
@@ -2224,7 +2220,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                               true,
                                                                           fillColor:
                                                                               FlutterFlowTheme.of(context).primaryBackground,
-                                                                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               15.0,
                                                                               15.0,
                                                                               15.0,
@@ -2322,7 +2318,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           0.0,
                                                                       borderRadius:
                                                                           0.0,
-                                                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                                                      margin: const EdgeInsetsDirectional.fromSTEB(
                                                                           4.0,
                                                                           0.0,
                                                                           0.0,
@@ -2340,7 +2336,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                 ),
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               height: 8.0)),
                                                         ),
                                                       ),
@@ -2348,7 +2344,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 8.0, 0.0),
                                                     child: Container(
@@ -2372,7 +2368,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                         ),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
+                                                        padding: const EdgeInsets.all(
                                                             10.0),
                                                         child: Column(
                                                           mainAxisSize:
@@ -2424,7 +2420,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -2476,7 +2472,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                BorderSide(
+                                                                                const BorderSide(
                                                                               color: Color(0x00000000),
                                                                               width: 0.0,
                                                                             ),
@@ -2486,7 +2482,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           focusedBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
-                                                                                BorderSide(
+                                                                                const BorderSide(
                                                                               color: Color(0x00000000),
                                                                               width: 0.0,
                                                                             ),
@@ -2517,7 +2513,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                               true,
                                                                           fillColor:
                                                                               FlutterFlowTheme.of(context).primaryBackground,
-                                                                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               15.0,
                                                                               15.0,
                                                                               15.0,
@@ -2615,7 +2611,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                           0.0,
                                                                       borderRadius:
                                                                           0.0,
-                                                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                                                      margin: const EdgeInsetsDirectional.fromSTEB(
                                                                           4.0,
                                                                           0.0,
                                                                           0.0,
@@ -2633,7 +2629,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                                 ),
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               height: 8.0)),
                                                         ),
                                                       ),
@@ -2641,16 +2637,16 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                                   ),
                                                 ]
                                                     .divide(
-                                                        SizedBox(height: 12.0))
+                                                        const SizedBox(height: 12.0))
                                                     .addToEnd(
-                                                        SizedBox(height: 12.0)),
+                                                        const SizedBox(height: 12.0)),
                                               ),
                                             ),
                                           ),
                                         ),
                                       ]
-                                          .divide(SizedBox(width: 12.0))
-                                          .addToEnd(SizedBox(width: 8.0)),
+                                          .divide(const SizedBox(width: 12.0))
+                                          .addToEnd(const SizedBox(width: 8.0)),
                                     ),
                                   ),
                                 ),
@@ -2662,12 +2658,11 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           var _shouldSetState = false;
-                          if (_model.hieghtTextController.text == null ||
-                              _model.hieghtTextController.text == '') {
+                          if (_model.hieghtTextController.text == '') {
                             await showDialog(
                               context: context,
                               builder: (alertDialogContext) {
@@ -2695,8 +2690,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                             );
                             if (_shouldSetState) safeSetState(() {});
                             return;
-                          } else if (_model.weightTextController.text == null ||
-                              _model.weightTextController.text == '') {
+                          } else if (_model.weightTextController.text == '') {
                             await showDialog(
                               context: context,
                               builder: (alertDialogContext) {
@@ -2724,8 +2718,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                             );
                             if (_shouldSetState) safeSetState(() {});
                             return;
-                          } else if (_model.chestTextController.text == null ||
-                              _model.chestTextController.text == '') {
+                          } else if (_model.chestTextController.text == '') {
                             await showDialog(
                               context: context,
                               builder: (alertDialogContext) {
@@ -2753,8 +2746,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                             );
                             if (_shouldSetState) safeSetState(() {});
                             return;
-                          } else if (_model.waistTextController.text == null ||
-                              _model.waistTextController.text == '') {
+                          } else if (_model.waistTextController.text == '') {
                             await showDialog(
                               context: context,
                               builder: (alertDialogContext) {
@@ -2782,8 +2774,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                             );
                             if (_shouldSetState) safeSetState(() {});
                             return;
-                          } else if (_model.hipTextController.text == null ||
-                              _model.hipTextController.text == '') {
+                          } else if (_model.hipTextController.text == '') {
                             await showDialog(
                               context: context,
                               builder: (alertDialogContext) {
@@ -2811,8 +2802,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                             );
                             if (_shouldSetState) safeSetState(() {});
                             return;
-                          } else if (_model.inseamTextController.text == null ||
-                              _model.inseamTextController.text == '') {
+                          } else if (_model.inseamTextController.text == '') {
                             await showDialog(
                               context: context,
                               builder: (alertDialogContext) {
@@ -2840,9 +2830,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                             );
                             if (_shouldSetState) safeSetState(() {});
                             return;
-                          } else if (_model.shoulderTextController.text ==
-                                  null ||
-                              _model.shoulderTextController.text == '') {
+                          } else if (_model.shoulderTextController.text == '') {
                             await showDialog(
                               context: context,
                               builder: (alertDialogContext) {
@@ -2870,8 +2858,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                             );
                             if (_shouldSetState) safeSetState(() {});
                             return;
-                          } else if (_model.armTextController.text == null ||
-                              _model.armTextController.text == '') {
+                          } else if (_model.armTextController.text == '') {
                             await showDialog(
                               context: context,
                               builder: (alertDialogContext) {
@@ -2990,7 +2977,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                       letterSpacing: 0.0,
                                     ),
                               ),
-                              duration: Duration(milliseconds: 1500),
+                              duration: const Duration(milliseconds: 1500),
                               backgroundColor:
                                   FlutterFlowTheme.of(context).secondary,
                             ),
@@ -2999,7 +2986,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                           context.goNamed(
                             Step3PreferredStyleWidget.routeName,
                             extra: <String, dynamic>{
-                              '__transition_info__': TransitionInfo(
+                              '__transition_info__': const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                                 duration: Duration(milliseconds: 0),
@@ -3015,9 +3002,9 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 48.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -3048,7 +3035,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                         context.goNamed(
                           Step3PreferredStyleWidget.routeName,
                           extra: <String, dynamic>{
-                            '__transition_info__': TransitionInfo(
+                            '__transition_info__': const TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                               duration: Duration(milliseconds: 0),
@@ -3072,8 +3059,8 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                       ),
                     ),
                   ]
-                      .addToStart(SizedBox(height: 16.0))
-                      .addToEnd(SizedBox(height: 32.0)),
+                      .addToStart(const SizedBox(height: 16.0))
+                      .addToEnd(const SizedBox(height: 32.0)),
                 ),
               ),
             ),

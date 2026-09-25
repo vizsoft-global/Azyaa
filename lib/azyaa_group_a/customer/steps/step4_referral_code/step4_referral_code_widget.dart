@@ -1,18 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'step4_referral_code_model.dart';
 export 'step4_referral_code_model.dart';
 
@@ -66,17 +60,17 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(0.0, -1.0),
+                      alignment: const AlignmentDirectional(0.0, -1.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -108,7 +102,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                           FlutterFlowTheme.of(context).primary,
                                     ),
                                   ),
-                                ].divide(SizedBox(height: 24.0)),
+                                ].divide(const SizedBox(height: 24.0)),
                               ),
                             ),
                             Expanded(
@@ -140,7 +134,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                ].divide(SizedBox(height: 24.0)),
+                                ].divide(const SizedBox(height: 24.0)),
                               ),
                             ),
                             Expanded(
@@ -172,7 +166,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                           FlutterFlowTheme.of(context).primary,
                                     ),
                                   ),
-                                ].divide(SizedBox(height: 24.0)),
+                                ].divide(const SizedBox(height: 24.0)),
                               ),
                             ),
                           ],
@@ -180,10 +174,10 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, -1.0),
+                      alignment: const AlignmentDirectional(-1.0, -1.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'fxnddfmx' /* Do you have a referral code? */,
@@ -199,10 +193,10 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, -1.0),
+                      alignment: const AlignmentDirectional(-1.0, -1.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'iti7nczb' /* Enter your referral code below... */,
@@ -224,14 +218,14 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                     Expanded(
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 8.0),
                                 child: RichText(
                                   textScaler: MediaQuery.of(context).textScaler,
@@ -262,7 +256,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 24.0),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
@@ -273,7 +267,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                         _model.referralcodeFieldFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.referralcodeFieldTextController',
-                                      Duration(milliseconds: 2000),
+                                      const Duration(milliseconds: 2000),
                                       () async {
                                         if (_model
                                                 .referralcodeFieldTextController
@@ -420,9 +414,9 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                     arText: 'ليس بعد',
                                   ))
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, -1.0),
+                                  alignment: const AlignmentDirectional(0.0, -1.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 24.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -432,7 +426,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'almarai',
-                                            color: Color(0xFF2A7803),
+                                            color: const Color(0xFF2A7803),
                                             fontSize: 12.0,
                                             letterSpacing: 0.5,
                                             fontWeight: FontWeight.normal,
@@ -445,11 +439,10 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                         ),
                       ),
                     ),
-                    if (_model.referralcodeFieldTextController.text != null &&
-                        _model.referralcodeFieldTextController.text != '')
+                    if (_model.referralcodeFieldTextController.text != '')
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             if (_model.referralStatys == 'Referred') {
@@ -535,7 +528,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                               context.goNamed(
                                 HomeWidget.routeName,
                                 extra: <String, dynamic>{
-                                  '__transition_info__': TransitionInfo(
+                                  '__transition_info__': const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 0),
@@ -552,9 +545,9 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 48.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -592,7 +585,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                         context.goNamed(
                           HomeWidget.routeName,
                           extra: <String, dynamic>{
-                            '__transition_info__': TransitionInfo(
+                            '__transition_info__': const TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                               duration: Duration(milliseconds: 0),
@@ -616,8 +609,8 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                       ),
                     ),
                   ]
-                      .addToStart(SizedBox(height: 16.0))
-                      .addToEnd(SizedBox(height: 32.0)),
+                      .addToStart(const SizedBox(height: 16.0))
+                      .addToEnd(const SizedBox(height: 32.0)),
                 ),
               ),
             ),

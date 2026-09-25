@@ -4,17 +4,13 @@ import '/azyaa_group_a/payment/cart_item_list_delete_confirm/cart_item_list_dele
 import '/azyaa_group_a/payment/cart_item_out_of_stock/cart_item_out_of_stock_widget.dart';
 import '/azyaa_group_a/payment/product_attribute_cart_level/product_attribute_cart_level_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'cart_item_list_model.dart';
@@ -27,7 +23,7 @@ class CartItemListWidget extends StatefulWidget {
     this.navigationAt,
     this.cartIndex,
     bool? displayFields,
-  }) : this.displayFields = displayFields ?? true;
+  }) : displayFields = displayFields ?? true;
 
   final UserCartItemsStruct? cartItems;
   final String? navigationAt;
@@ -74,14 +70,14 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
           stream: queryProductsRecord(
             queryBuilder: (productsRecord) => productsRecord.where(
               'product_id',
-              isEqualTo: widget!.cartItems?.productId,
+              isEqualTo: widget.cartItems?.productId,
             ),
             singleRecord: true,
           ),
           builder: (context, snapshot) {
             // Customize what your widget looks like when it's loading.
             if (!snapshot.hasData) {
-              return BlankLoadingWidget();
+              return const BlankLoadingWidget();
             }
             List<ProductsRecord> rowProductsRecordList = snapshot.data!;
             final rowProductsRecord = rowProductsRecordList.isNotEmpty
@@ -96,39 +92,39 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Stack(
-                      alignment: AlignmentDirectional(0.0, 1.0),
+                      alignment: const AlignmentDirectional(0.0, 1.0),
                       children: [
                         ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
-                          child: Image.network(
-                            (widget!.cartItems?.productType == 'membership') ||
-                                    (widget!.cartItems?.productType ==
+                          child: CachedNetworkImage(
+                            imageUrl: (widget.cartItems?.productType == 'membership') ||
+                                    (widget.cartItems?.productType ==
                                         'virtualtryon')
                                 ? 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/i9u1ra67p2p4/Azyaa-logo_(2).jpg'
-                                : widget!.cartItems!.productInfo.featureImage,
+                                : widget.cartItems!.productInfo.featureImage,
                             width: 80.0,
                             height: 80.0,
                             fit: BoxFit.cover,
-                            alignment: Alignment(0.0, 1.0),
+                            alignment: const Alignment(0.0, 1.0),
                           ),
                         ),
-                        if (widget!.cartItems?.productType == 'product')
+                        if (widget.cartItems?.productType == 'product')
                           Align(
-                            alignment: AlignmentDirectional(0.0, -1.0),
+                            alignment: const AlignmentDirectional(0.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 2.0),
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).purple,
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       6.0, 2.0, 6.0, 2.0),
                                   child: Text(
-                                    rowProductsRecord?.product?.productType ==
+                                    rowProductsRecord?.product.productType ==
                                             'ready'
                                         ? FFLocalizations.of(context)
                                             .getVariableText(
@@ -178,11 +174,11 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                   elevation: 0,
                                   insetPadding: EdgeInsets.zero,
                                   backgroundColor: Colors.transparent,
-                                  alignment: AlignmentDirectional(0.0, 1.0)
+                                  alignment: const AlignmentDirectional(0.0, 1.0)
                                       .resolve(Directionality.of(context)),
                                   child: WebViewAware(
                                     child: ProductAttributeCartLevelWidget(
-                                      cartIndex: widget!.cartIndex!,
+                                      cartIndex: widget.cartIndex!,
                                       product: rowProductsRecord!,
                                       navigation: 'cart',
                                       popupType: 'default',
@@ -214,7 +210,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                       children: [
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            'H:${'${(currentUserDocument?.userBody?.toList() ?? []).where((e) => e.isDefault == true).toList().firstOrNull?.bodyInfo?.height?.toString()}'}W:${'${(currentUserDocument?.userBody?.toList() ?? []).where((e) => e.isDefault == true).toList().firstOrNull?.bodyInfo?.weight?.toString()}'}',
+                                            'H:${'${(currentUserDocument?.userBody.toList() ?? []).where((e) => e.isDefault == true).toList().firstOrNull?.bodyInfo.height.toString()}'}W:${'${(currentUserDocument?.userBody.toList() ?? []).where((e) => e.isDefault == true).toList().firstOrNull?.bodyInfo.weight.toString()}'}',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -223,7 +219,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                                 ),
                                           ),
                                         ),
-                                      ].divide(SizedBox(height: 4.0)),
+                                      ].divide(const SizedBox(height: 4.0)),
                                     ),
                                   ],
                                 ),
@@ -234,7 +230,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    widget!.cartItems!.productInfo.name
+                                    widget.cartItems!.productInfo.name
                                         .maybeHandleOverflow(
                                       maxChars: 15,
                                       replacement: '…',
@@ -248,7 +244,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                         ),
                                   ),
                                   Text(
-                                    '${widget!.cartItems?.price?.toString()} ${FFLocalizations.of(context).getVariableText(
+                                    '${widget.cartItems?.price.toString()} ${FFLocalizations.of(context).getVariableText(
                                       enText: 'KD',
                                       arText: 'KD',
                                     )}',
@@ -260,7 +256,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -269,17 +265,17 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                 children: [
                                   Text(
                                     () {
-                                      if (widget!.cartItems?.productType ==
+                                      if (widget.cartItems?.productType ==
                                           'membership') {
                                         return FFLocalizations.of(context)
                                             .getVariableText(
                                           enText: 'Membership plan',
                                           arText: 'خطة العضوية',
                                         );
-                                      } else if (widget!
+                                      } else if (widget
                                               .cartItems?.productType ==
                                           'vto') {
-                                        return '${widget!.cartItems?.vtoPoint?.vtoPoint?.toString()}${FFLocalizations.of(context).getVariableText(
+                                        return '${widget.cartItems?.vtoPoint.vtoPoint.toString()}${FFLocalizations.of(context).getVariableText(
                                           enText: ' Credits',
                                           arText: 'الاعتمادات',
                                         )}';
@@ -287,10 +283,10 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                         return '${FFLocalizations.of(context).getVariableText(
                                           enText: 'Quantity : ',
                                           arText: 'كمية :',
-                                        )}${widget!.cartItems?.quantity?.toString()}${rowProductsRecord?.product?.productType != null && rowProductsRecord?.product?.productType != '' ? FFLocalizations.of(context).getVariableText(
+                                        )}${widget.cartItems?.quantity.toString()}${rowProductsRecord?.product.productType != null && rowProductsRecord?.product.productType != '' ? FFLocalizations.of(context).getVariableText(
                                             enText: '(',
                                             arText: '(',
-                                          ) : '  '}${rowProductsRecord?.product?.productType != null && rowProductsRecord?.product?.productType != '' ? rowProductsRecord?.product?.productType : ' '}${rowProductsRecord?.product?.productType != null && rowProductsRecord?.product?.productType != '' ? FFLocalizations.of(context).getVariableText(
+                                          ) : '  '}${rowProductsRecord?.product.productType != null && rowProductsRecord?.product.productType != '' ? rowProductsRecord?.product.productType : ' '}${rowProductsRecord?.product.productType != null && rowProductsRecord?.product.productType != '' ? FFLocalizations.of(context).getVariableText(
                                             enText: ')',
                                             arText: ')',
                                           ) : ' '}';
@@ -306,7 +302,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                         ),
                                   ),
                                   Text(
-                                    '${widget!.cartItems?.totalPrice?.toString()} ${FFLocalizations.of(context).getVariableText(
+                                    '${widget.cartItems?.totalPrice.toString()} ${FFLocalizations.of(context).getVariableText(
                                       enText: 'KD',
                                       arText: 'KD',
                                     )}',
@@ -322,9 +318,9 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                               ),
                               Builder(
                                 builder: (context) {
-                                  final attributeList = widget!
+                                  final attributeList = widget
                                           .cartItems?.cartItemAttribute
-                                          ?.toList() ??
+                                          .toList() ??
                                       [];
 
                                   return ListView.builder(
@@ -354,7 +350,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
                                           if (!snapshot.hasData) {
-                                            return Center(
+                                            return const Center(
                                               child: SizedBox(
                                                 width: 2.0,
                                                 height: 2.0,
@@ -393,49 +389,49 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                                   enText: () {
                                                     if (rowAttributesRecord
                                                             ?.attributeInfoCustomTranslate
-                                                            ?.name
-                                                            ?.en !=
+                                                            .name
+                                                            .en !=
                                                         '') {
                                                       return rowAttributesRecord
                                                           ?.attributeInfoCustomTranslate
-                                                          ?.name
-                                                          ?.en;
+                                                          .name
+                                                          .en;
                                                     } else if (rowAttributesRecord
                                                             ?.attributeInfoTranslate
-                                                            ?.name
-                                                            ?.en !=
+                                                            .name
+                                                            .en !=
                                                         '') {
                                                       return rowAttributesRecord
                                                           ?.attributeInfoTranslate
-                                                          ?.name
-                                                          ?.en;
+                                                          .name
+                                                          .en;
                                                     } else {
                                                       return rowAttributesRecord
-                                                          ?.attributeInfo?.name;
+                                                          ?.attributeInfo.name;
                                                     }
                                                   }(),
                                                   arText: () {
                                                     if (rowAttributesRecord
                                                             ?.attributeInfoCustomTranslate
-                                                            ?.name
-                                                            ?.ar !=
+                                                            .name
+                                                            .ar !=
                                                         '') {
                                                       return rowAttributesRecord
                                                           ?.attributeInfoCustomTranslate
-                                                          ?.name
-                                                          ?.ar;
+                                                          .name
+                                                          .ar;
                                                     } else if (rowAttributesRecord
                                                             ?.attributeInfoTranslate
-                                                            ?.name
-                                                            ?.ar !=
+                                                            .name
+                                                            .ar !=
                                                         '') {
                                                       return rowAttributesRecord
                                                           ?.attributeInfoTranslate
-                                                          ?.name
-                                                          ?.ar;
+                                                          .name
+                                                          .ar;
                                                     } else {
                                                       return rowAttributesRecord
-                                                          ?.attributeInfo?.name;
+                                                          ?.attributeInfo.name;
                                                     }
                                                   }(),
                                                 ),
@@ -471,7 +467,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
                                                   if (!snapshot.hasData) {
-                                                    return Center(
+                                                    return const Center(
                                                       child: SizedBox(
                                                         width: 2.0,
                                                         height: 2.0,
@@ -506,49 +502,49 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                                       enText: () {
                                                         if (attributeDefaultTermBrandsRecord
                                                                 ?.brandInfoCustomTranslate
-                                                                ?.name
-                                                                ?.en !=
+                                                                .name
+                                                                .en !=
                                                             '') {
                                                           return attributeDefaultTermBrandsRecord
                                                               ?.brandInfoCustomTranslate
-                                                              ?.name
-                                                              ?.en;
+                                                              .name
+                                                              .en;
                                                         } else if (attributeDefaultTermBrandsRecord
                                                                 ?.brandInfoTranslate
-                                                                ?.name
-                                                                ?.en !=
+                                                                .name
+                                                                .en !=
                                                             '') {
                                                           return attributeDefaultTermBrandsRecord
                                                               ?.brandInfoTranslate
-                                                              ?.name
-                                                              ?.en;
+                                                              .name
+                                                              .en;
                                                         } else {
                                                           return attributeDefaultTermBrandsRecord
-                                                              ?.brandInfo?.name;
+                                                              ?.brandInfo.name;
                                                         }
                                                       }(),
                                                       arText: () {
                                                         if (attributeDefaultTermBrandsRecord
                                                                 ?.brandInfoCustomTranslate
-                                                                ?.name
-                                                                ?.ar !=
+                                                                .name
+                                                                .ar !=
                                                             '') {
                                                           return attributeDefaultTermBrandsRecord
                                                               ?.brandInfoCustomTranslate
-                                                              ?.name
-                                                              ?.ar;
+                                                              .name
+                                                              .ar;
                                                         } else if (attributeDefaultTermBrandsRecord
                                                                 ?.brandInfoTranslate
-                                                                ?.name
-                                                                ?.ar !=
+                                                                .name
+                                                                .ar !=
                                                             '') {
                                                           return attributeDefaultTermBrandsRecord
                                                               ?.brandInfoTranslate
-                                                              ?.name
-                                                              ?.ar;
+                                                              .name
+                                                              .ar;
                                                         } else {
                                                           return attributeDefaultTermBrandsRecord
-                                                              ?.brandInfo?.name;
+                                                              ?.brandInfo.name;
                                                         }
                                                       }(),
                                                     ),
@@ -576,8 +572,8 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                           ),
                         ),
                       ),
-                      if ((widget!.cartItems?.productType != 'virtualtryon') ||
-                          (rowProductsRecord?.product?.productType !=
+                      if ((widget.cartItems?.productType != 'virtualtryon') ||
+                          (rowProductsRecord?.product.productType !=
                               'virtualtryon'))
                         StreamBuilder<List<InventoryRecord>>(
                           stream: queryInventoryRecord(
@@ -585,14 +581,14 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                 inventoryRecord.where(
                               'inventory_id',
                               isEqualTo:
-                                  rowProductsRecord?.product?.inventoryId,
+                                  rowProductsRecord?.product.inventoryId,
                             ),
                             singleRecord: true,
                           ),
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
                             if (!snapshot.hasData) {
-                              return Center(
+                              return const Center(
                                 child: SizedBox(
                                   width: 2.0,
                                   height: 2.0,
@@ -645,7 +641,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                                 safeSetState(() {}),
                                             updateOnChange: true,
                                             child: CartItemOutOfStockWidget(
-                                              cartIndex: widget!.cartIndex!,
+                                              cartIndex: widget.cartIndex!,
                                             ),
                                           ),
                                         Text(
@@ -665,17 +661,17 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                         ),
                                       ],
                                     ),
-                                  if ((stackInventoryRecord!.stock > 0) &&
+                                  if ((stackInventoryRecord.stock > 0) &&
                                       ((rowProductsRecord
-                                                  ?.product?.productType ==
+                                                  ?.product.productType ==
                                               'product') ||
-                                          (widget!.cartItems?.productType ==
+                                          (widget.cartItems?.productType ==
                                               'product')))
                                     Container(
                                       width: 85.0,
                                       height: 35.0,
                                       decoration: BoxDecoration(
-                                        color: Color(0xFFFAFAFA),
+                                        color: const Color(0xFFFAFAFA),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         shape: BoxShape.rectangle,
@@ -711,23 +707,23 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                               ),
                                         ),
                                         count: _model.countControllerValue1 ??=
-                                            widget!.cartItems!.quantity,
+                                            widget.cartItems!.quantity,
                                         updateCount: (count) async {
                                           safeSetState(() => _model
                                               .countControllerValue1 = count);
-                                          if ((stackInventoryRecord!.stock >
+                                          if ((stackInventoryRecord.stock >
                                                   0) &&
                                               ((rowProductsRecord?.product
-                                                          ?.productType ==
+                                                          .productType ==
                                                       'product') ||
-                                                  (widget!.cartItems
+                                                  (widget.cartItems
                                                           ?.productType ==
                                                       'product'))) {
                                             if (_model.countControllerValue1! >
-                                                stackInventoryRecord!.stock) {
+                                                stackInventoryRecord.stock) {
                                               safeSetState(() {
                                                 _model.countControllerValue1 =
-                                                    stackInventoryRecord!.stock;
+                                                    stackInventoryRecord.stock;
                                               });
                                             }
                                             FFAppState()
@@ -736,8 +732,8 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                                 ..userCartCount =
                                                     currentUserDocument
                                                         ?.userCart
-                                                        ?.cartItems
-                                                        ?.length
+                                                        .cartItems
+                                                        .length
                                                 ..userCartItemList =
                                                     currentUserDocument!
                                                         .userCart.cartItems
@@ -747,14 +743,14 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                                 .updateUserDataFlowStruct(
                                               (e) => e
                                                 ..updateUserCartItemList(
-                                                  (e) => e[widget!.cartIndex!]
+                                                  (e) => e[widget.cartIndex!]
                                                     ..productInfo =
                                                         rowProductsRecord
                                                             ?.productInfo
                                                     ..quantity = _model
                                                         .countControllerValue1
                                                     ..price = rowProductsRecord
-                                                        ?.product?.productPrice
+                                                        ?.product.productPrice
                                                     ..totalPrice = (_model
                                                             .countControllerValue1!) *
                                                         rowProductsRecord!
@@ -764,16 +760,16 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                                       (e) => e
                                                         ..stock =
                                                             stackInventoryRecord
-                                                                ?.stock
+                                                                .stock
                                                         ..stockOnHand =
                                                             stackInventoryRecord
-                                                                ?.stockOnHand
+                                                                .stockOnHand
                                                         ..stockReserved =
                                                             stackInventoryRecord
-                                                                ?.stockReserved
+                                                                .stockReserved
                                                         ..stockUnavailable =
                                                             stackInventoryRecord
-                                                                ?.stockUnavailable,
+                                                                .stockUnavailable,
                                                     ),
                                                 ),
                                             );
@@ -814,9 +810,9 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                         },
                                         stepSize: 1,
                                         minimum: 1,
-                                        maximum: stackInventoryRecord!.stock,
+                                        maximum: stackInventoryRecord.stock,
                                         contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 4.0, 0.0, 4.0, 0.0),
                                       ),
                                     ),
@@ -825,10 +821,10 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                             );
                           },
                         ),
-                      if ((((widget!.cartItems?.productType != 'membership') &&
-                                  (widget!.navigationAt != 'checkout') &&
-                                  (widget!.cartItems?.productType != 'vto')) ||
-                              (widget!.cartItems?.productType == 'product')) &&
+                      if ((((widget.cartItems?.productType != 'membership') &&
+                                  (widget.navigationAt != 'checkout') &&
+                                  (widget.cartItems?.productType != 'vto')) ||
+                              (widget.cartItems?.productType == 'product')) &&
                           responsiveVisibility(
                             context: context,
                             phone: false,
@@ -842,14 +838,14 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                 inventoryRecord.where(
                               'inventory_id',
                               isEqualTo:
-                                  rowProductsRecord?.product?.inventoryId,
+                                  rowProductsRecord?.product.inventoryId,
                             ),
                             singleRecord: true,
                           ),
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
                             if (!snapshot.hasData) {
-                              return Center(
+                              return const Center(
                                 child: SizedBox(
                                   width: 2.0,
                                   height: 2.0,
@@ -902,7 +898,7 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                                 safeSetState(() {}),
                                             updateOnChange: true,
                                             child: CartItemOutOfStockWidget(
-                                              cartIndex: widget!.cartIndex!,
+                                              cartIndex: widget.cartIndex!,
                                             ),
                                           ),
                                         Text(
@@ -922,17 +918,17 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                         ),
                                       ],
                                     ),
-                                  if ((widget!.cartItems?.productType !=
+                                  if ((widget.cartItems?.productType !=
                                           'virtualtryon') ||
-                                      (stackInventoryRecord!.stock > 0) ||
+                                      (stackInventoryRecord.stock > 0) ||
                                       (rowProductsRecord
-                                              ?.product?.productType !=
+                                              ?.product.productType !=
                                           'virtualtryon'))
                                     Container(
                                       width: 85.0,
                                       height: 32.0,
                                       decoration: BoxDecoration(
-                                        color: Color(0xFFFAFAFA),
+                                        color: const Color(0xFFFAFAFA),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         shape: BoxShape.rectangle,
@@ -968,22 +964,22 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                               ),
                                         ),
                                         count: _model.countControllerValue2 ??=
-                                            widget!.cartItems!.quantity,
+                                            widget.cartItems!.quantity,
                                         updateCount: (count) async {
                                           safeSetState(() => _model
                                               .countControllerValue2 = count);
                                           if (_model.countControllerValue2! >
-                                              stackInventoryRecord!.stock) {
+                                              stackInventoryRecord.stock) {
                                             safeSetState(() {
                                               _model.countControllerValue2 =
-                                                  stackInventoryRecord!.stock;
+                                                  stackInventoryRecord.stock;
                                             });
                                           }
                                           FFAppState().updateUserDataFlowStruct(
                                             (e) => e
                                               ..userCartCount =
                                                   currentUserDocument?.userCart
-                                                      ?.cartItems?.length
+                                                      .cartItems.length
                                               ..userCartItemList =
                                                   currentUserDocument!
                                                       .userCart.cartItems
@@ -992,14 +988,14 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                           FFAppState().updateUserDataFlowStruct(
                                             (e) => e
                                               ..updateUserCartItemList(
-                                                (e) => e[widget!.cartIndex!]
+                                                (e) => e[widget.cartIndex!]
                                                   ..productInfo =
                                                       rowProductsRecord
                                                           ?.productInfo
                                                   ..quantity = _model
                                                       .countControllerValue2
                                                   ..price = rowProductsRecord
-                                                      ?.product?.productPrice
+                                                      ?.product.productPrice
                                                   ..totalPrice = (_model
                                                           .countControllerValue2!) *
                                                       rowProductsRecord!
@@ -1008,16 +1004,16 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                                     (e) => e
                                                       ..stock =
                                                           stackInventoryRecord
-                                                              ?.stock
+                                                              .stock
                                                       ..stockOnHand =
                                                           stackInventoryRecord
-                                                              ?.stockOnHand
+                                                              .stockOnHand
                                                       ..stockReserved =
                                                           stackInventoryRecord
-                                                              ?.stockReserved
+                                                              .stockReserved
                                                       ..stockUnavailable =
                                                           stackInventoryRecord
-                                                              ?.stockUnavailable,
+                                                              .stockUnavailable,
                                                   ),
                                               ),
                                           );
@@ -1055,8 +1051,8 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                         },
                                         stepSize: 1,
                                         minimum: 1,
-                                        maximum: stackInventoryRecord!.stock,
-                                        contentPadding: EdgeInsets.all(4.0),
+                                        maximum: stackInventoryRecord.stock,
+                                        contentPadding: const EdgeInsets.all(4.0),
                                       ),
                                     ),
                                 ],
@@ -1064,14 +1060,14 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                             );
                           },
                         ),
-                    ].divide(SizedBox(height: 4.0)),
+                    ].divide(const SizedBox(height: 4.0)),
                   ),
                 ),
-                if (widget!.navigationAt != 'checkout')
+                if (widget.navigationAt != 'checkout')
                   Builder(
                     builder: (context) => Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                       child: FlutterFlowIconButton(
                         borderRadius: 8.0,
                         buttonSize: 40.0,
@@ -1088,14 +1084,14 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                                 elevation: 0,
                                 insetPadding: EdgeInsets.zero,
                                 backgroundColor: Colors.transparent,
-                                alignment: AlignmentDirectional(0.0, 0.0)
+                                alignment: const AlignmentDirectional(0.0, 0.0)
                                     .resolve(Directionality.of(context)),
                                 child: WebViewAware(
                                   child: Container(
                                     width: 500.0,
                                     child: CartItemListDeleteConfirmWidget(
-                                      cartItem: widget!.cartItems!,
-                                      index: widget!.cartIndex!,
+                                      cartItem: widget.cartItems!,
+                                      index: widget.cartIndex!,
                                     ),
                                   ),
                                 ),
@@ -1106,13 +1102,13 @@ class _CartItemListWidgetState extends State<CartItemListWidget> {
                       ),
                     ),
                   ),
-              ].divide(SizedBox(width: 8.0)),
+              ].divide(const SizedBox(width: 8.0)),
             );
           },
         ),
-        if (widget!.cartItems?.productStockInfo?.isProductReturn == false)
+        if (widget.cartItems?.productStockInfo.isProductReturn == false)
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
             child: Text(
               FFLocalizations.of(context).getText(
                 'dluq1saw' /* * Returns Not Applicable for T... */,

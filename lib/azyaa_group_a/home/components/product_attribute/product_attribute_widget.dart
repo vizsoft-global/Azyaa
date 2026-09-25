@@ -1,18 +1,12 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'product_attribute_model.dart';
 export 'product_attribute_model.dart';
@@ -70,7 +64,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
         queryBuilder: (attributesRecord) => attributesRecord
             .where(
               'attribute_id',
-              isEqualTo: widget!.attribute?.attributesId,
+              isEqualTo: widget.attribute?.attributesId,
             )
             .where(
               'status',
@@ -81,7 +75,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
-          return Center(
+          return const Center(
             child: SizedBox(
               width: 2.0,
               height: 2.0,
@@ -107,7 +101,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
           width: MediaQuery.sizeOf(context).width * 1.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).primaryBackground,
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 blurRadius: 5.0,
                 color: Color(0x3B1D2429),
@@ -117,7 +111,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                 ),
               )
             ],
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(16.0),
               topRight: Radius.circular(16.0),
             ),
@@ -127,7 +121,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                 child: Container(
                   width: 35.0,
                   height: 3.0,
@@ -138,7 +132,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -151,34 +145,34 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                         )}${FFLocalizations.of(context).getVariableText(
                           enText: () {
                             if (contarinerAttributesRecord
-                                    ?.attributeInfoCustomTranslate?.name?.en !=
+                                    ?.attributeInfoCustomTranslate.name.en !=
                                 '') {
                               return contarinerAttributesRecord
-                                  ?.attributeInfoCustomTranslate?.name?.en;
+                                  ?.attributeInfoCustomTranslate.name.en;
                             } else if (contarinerAttributesRecord
-                                    ?.attributeInfoTranslate?.name?.en !=
+                                    ?.attributeInfoTranslate.name.en !=
                                 '') {
                               return contarinerAttributesRecord
-                                  ?.attributeInfoTranslate?.name?.en;
+                                  ?.attributeInfoTranslate.name.en;
                             } else {
                               return contarinerAttributesRecord
-                                  ?.attributeInfo?.name;
+                                  ?.attributeInfo.name;
                             }
                           }(),
                           arText: () {
                             if (contarinerAttributesRecord
-                                    ?.attributeInfoCustomTranslate?.name?.ar !=
+                                    ?.attributeInfoCustomTranslate.name.ar !=
                                 '') {
                               return contarinerAttributesRecord
-                                  ?.attributeInfoCustomTranslate?.name?.ar;
+                                  ?.attributeInfoCustomTranslate.name.ar;
                             } else if (contarinerAttributesRecord
-                                    ?.attributeInfoTranslate?.name?.ar !=
+                                    ?.attributeInfoTranslate.name.ar !=
                                 '') {
                               return contarinerAttributesRecord
-                                  ?.attributeInfoTranslate?.name?.ar;
+                                  ?.attributeInfoTranslate.name.ar;
                             } else {
                               return contarinerAttributesRecord
-                                  ?.attributeInfo?.name;
+                                  ?.attributeInfo.name;
                             }
                           }(),
                         )}',
@@ -189,13 +183,13 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                             ),
                       ),
                     ),
-                  ].divide(SizedBox(width: 8.0)),
+                  ].divide(const SizedBox(width: 8.0)),
                 ),
               ),
               Builder(
                 builder: (context) {
                   final attributeNewList =
-                      widget!.attribute?.attributesBrandTermIds?.toList() ?? [];
+                      widget.attribute?.attributesBrandTermIds.toList() ?? [];
 
                   return ListView.separated(
                     padding: EdgeInsets.zero,
@@ -203,12 +197,12 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                     shrinkWrap: true,
                     scrollDirection: Axis.vertical,
                     itemCount: attributeNewList.length,
-                    separatorBuilder: (_, __) => SizedBox(height: 16.0),
+                    separatorBuilder: (_, __) => const SizedBox(height: 16.0),
                     itemBuilder: (context, attributeNewListIndex) {
                       final attributeNewListItem =
                           attributeNewList[attributeNewListIndex];
                       return Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: StreamBuilder<List<BrandsRecord>>(
                           stream: queryBrandsRecord(
@@ -226,7 +220,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
                             if (!snapshot.hasData) {
-                              return Center(
+                              return const Center(
                                 child: SizedBox(
                                   width: 2.0,
                                   height: 2.0,
@@ -254,16 +248,16 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                               children: [
                                 if ((contarinerAttributesRecord?.attributeId ==
                                         '1001') ||
-                                    (rowBrandsRecord?.brandInfo?.color != null))
+                                    (rowBrandsRecord?.brandInfo.color != null))
                                   Container(
                                     width: 40.0,
                                     height: 40.0,
                                     decoration: BoxDecoration(
-                                      color: rowBrandsRecord?.brandInfo?.color,
+                                      color: rowBrandsRecord?.brandInfo.color,
                                       borderRadius:
                                           BorderRadius.circular(100.0),
                                       border: Border.all(
-                                        color: Color(0x27000000),
+                                        color: const Color(0x27000000),
                                       ),
                                     ),
                                   ),
@@ -273,45 +267,45 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                       enText: () {
                                         if (rowBrandsRecord
                                                 ?.brandInfoCustomTranslate
-                                                ?.name
-                                                ?.en !=
+                                                .name
+                                                .en !=
                                             '') {
                                           return rowBrandsRecord
                                               ?.brandInfoCustomTranslate
-                                              ?.name
-                                              ?.en;
+                                              .name
+                                              .en;
                                         } else if (rowBrandsRecord
                                                 ?.brandInfoTranslate
-                                                ?.name
-                                                ?.en !=
+                                                .name
+                                                .en !=
                                             '') {
                                           return rowBrandsRecord
-                                              ?.brandInfoTranslate?.name?.en;
+                                              ?.brandInfoTranslate.name.en;
                                         } else {
                                           return rowBrandsRecord
-                                              ?.brandInfo?.name;
+                                              ?.brandInfo.name;
                                         }
                                       }(),
                                       arText: () {
                                         if (rowBrandsRecord
                                                 ?.brandInfoCustomTranslate
-                                                ?.name
-                                                ?.ar !=
+                                                .name
+                                                .ar !=
                                             '') {
                                           return rowBrandsRecord
                                               ?.brandInfoCustomTranslate
-                                              ?.name
-                                              ?.ar;
+                                              .name
+                                              .ar;
                                         } else if (rowBrandsRecord
                                                 ?.brandInfoTranslate
-                                                ?.name
-                                                ?.ar !=
+                                                .name
+                                                .ar !=
                                             '') {
                                           return rowBrandsRecord
-                                              ?.brandInfoTranslate?.name?.ar;
+                                              ?.brandInfoTranslate.name.ar;
                                         } else {
                                           return rowBrandsRecord
-                                              ?.brandInfo?.name;
+                                              ?.brandInfo.name;
                                         }
                                       }(),
                                     ),
@@ -331,12 +325,12 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                                 .userProductSwatchesList
                                                 .where((e) =>
                                                     e.viewedItemId ==
-                                                    widget!.productID)
+                                                    widget.productID)
                                                 .toList()
                                                 .firstOrNull
                                                 ?.productAttribute
-                                                ?.elementAtOrNull(
-                                                    widget!.index!))
+                                                .elementAtOrNull(
+                                                    widget.index!))
                                             ?.attributesDefaultTermId !=
                                         rowBrandsRecord?.brandId)
                                       InkWell(
@@ -351,7 +345,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                                     .userProductSwatchesList
                                                     .where((e) =>
                                                         e.viewedItemId ==
-                                                        widget!.productID)
+                                                        widget.productID)
                                                     .toList()
                                                     .length ==
                                                 0) {
@@ -361,7 +355,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                                     (productsRecord) =>
                                                         productsRecord.where(
                                                   'product_id',
-                                                  isEqualTo: widget!.productID,
+                                                  isEqualTo: widget.productID,
                                                 ),
                                                 singleRecord: true,
                                               ).then((s) => s.firstOrNull);
@@ -371,7 +365,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                                   ..count = _model
                                                       .presentproductResult
                                                       ?.productAttribute
-                                                      ?.length
+                                                      .length
                                                   ..userSwatchesProductAttribute =
                                                       _model
                                                           .presentproductResult!
@@ -412,7 +406,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                                       createdAt:
                                                           getCurrentTimestamp,
                                                       viewedItemId:
-                                                          widget!.productID,
+                                                          widget.productID,
                                                       productAttribute: FFAppState()
                                                           .UserDataFlow
                                                           .userSwatchesProductAttribute,
@@ -443,7 +437,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                                                   .count -
                                                               1)
                                                       ?.viewedItemId ==
-                                                  widget!.productID) {
+                                                  widget.productID) {
                                                 FFAppState()
                                                     .updateUserDataFlowStruct(
                                                   (e) => e
@@ -454,7 +448,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                                           1]
                                                         ..updateProductAttribute(
                                                           (e) => e[
-                                                              widget!.index!]
+                                                              widget.index!]
                                                             ..attributesDefaultTermId =
                                                                 rowBrandsRecord
                                                                     ?.brandId,
@@ -473,14 +467,14 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                                       1,
                                               );
                                             }
-                                            if (widget!.navigation == 'cart') {
+                                            if (widget.navigation == 'cart') {
                                               FFAppState()
                                                   .updateUserDataFlowStruct(
                                                 (e) => e
                                                   ..count = currentUserDocument
                                                       ?.userCart
-                                                      ?.cartItems
-                                                      ?.length
+                                                      .cartItems
+                                                      .length
                                                   ..userCartItemList =
                                                       currentUserDocument!
                                                           .userCart.cartItems
@@ -499,7 +493,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                                                     .count -
                                                                 1)
                                                         ?.productId ==
-                                                    widget!.productID) {
+                                                    widget.productID) {
                                                   FFAppState()
                                                       .updateUserDataFlowStruct(
                                                     (e) => e
@@ -510,7 +504,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                                             1]
                                                           ..updateCartItemAttribute(
                                                             (e) => e[
-                                                                widget!.index!]
+                                                                widget.index!]
                                                               ..attributesDefaultTermId =
                                                                   rowBrandsRecord
                                                                       ?.brandId,
@@ -584,7 +578,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                               LoginWidget.routeName,
                                               extra: <String, dynamic>{
                                                 '__transition_info__':
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -616,12 +610,12 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                                 .userProductSwatchesList
                                                 .where((e) =>
                                                     e.viewedItemId ==
-                                                    widget!.productID)
+                                                    widget.productID)
                                                 .toList()
                                                 .firstOrNull
                                                 ?.productAttribute
-                                                ?.elementAtOrNull(
-                                                    widget!.index!))
+                                                .elementAtOrNull(
+                                                    widget.index!))
                                             ?.attributesDefaultTermId ==
                                         rowBrandsRecord?.brandId)
                                       InkWell(
@@ -630,7 +624,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          if (widget!.navigation == 'cart') {
+                                          if (widget.navigation == 'cart') {
                                             unawaited(
                                               () async {
                                                 Navigator.pop(context);
@@ -656,7 +650,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                             borderRadius:
                                                 BorderRadius.circular(100.0),
                                             border: Border.all(
-                                              color: Color(0xFF7F56D9),
+                                              color: const Color(0xFF7F56D9),
                                             ),
                                           ),
                                           child: Column(
@@ -668,7 +662,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                                 width: 12.0,
                                                 height: 12.0,
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xFF7F56D9),
+                                                  color: const Color(0xFF7F56D9),
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           100.0),
@@ -680,7 +674,7 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                                       ),
                                   ],
                                 ),
-                              ].divide(SizedBox(width: 12.0)),
+                              ].divide(const SizedBox(width: 12.0)),
                             );
                           },
                         ),
@@ -690,9 +684,9 @@ class _ProductAttributeWidgetState extends State<ProductAttributeWidget> {
                 },
               ),
             ]
-                .divide(SizedBox(height: 16.0))
-                .addToStart(SizedBox(height: 24.0))
-                .addToEnd(SizedBox(height: 24.0)),
+                .divide(const SizedBox(height: 16.0))
+                .addToStart(const SizedBox(height: 24.0))
+                .addToEnd(const SizedBox(height: 24.0)),
           ),
         );
       },

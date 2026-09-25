@@ -1,12 +1,8 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 's1_gift_cards_model.dart';
 export 's1_gift_cards_model.dart';
 
@@ -61,7 +57,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -91,7 +87,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                         ),
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -139,11 +135,11 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                             print('IconButton pressed ...');
                           },
                         ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -151,7 +147,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 1.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 1.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -161,13 +157,13 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                       child: Column(
                         children: [
                           Align(
-                            alignment: Alignment(0.0, 0),
+                            alignment: const Alignment(0.0, 0),
                             child: TabBar(
                               labelColor:
                                   FlutterFlowTheme.of(context).primaryText,
                               unselectedLabelColor:
                                   FlutterFlowTheme.of(context).primaryText,
-                              labelPadding: EdgeInsetsDirectional.fromSTEB(
+                              labelPadding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .titleMedium
@@ -210,17 +206,17 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                               controller: _model.tabBarController,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: GridView(
-                                    padding: EdgeInsets.fromLTRB(
+                                    padding: const EdgeInsets.fromLTRB(
                                       0,
                                       12.0,
                                       0,
                                       12.0,
                                     ),
                                     gridDelegate:
-                                        SliverGridDelegateWithFixedCrossAxisCount(
+                                        const SliverGridDelegateWithFixedCrossAxisCount(
                                       crossAxisCount: 2,
                                       crossAxisSpacing: 8.0,
                                       mainAxisSpacing: 24.0,
@@ -235,11 +231,11 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           border: Border.all(
-                                            color: Color(0x1A000000),
+                                            color: const Color(0x1A000000),
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -248,7 +244,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 18.0, 0.0, 0.0),
                                                 child: ClipRRect(
@@ -263,7 +259,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                         1.0,
                                                     fit: BoxFit.cover,
                                                     alignment:
-                                                        Alignment(0.0, 0.0),
+                                                        const Alignment(0.0, 0.0),
                                                   ),
                                                 ),
                                               ),
@@ -342,7 +338,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               FontWeight.bold,
                                                         ),
                                                   ),
-                                                ].divide(SizedBox(height: 4.0)),
+                                                ].divide(const SizedBox(height: 4.0)),
                                               ),
                                             ],
                                           ),
@@ -355,11 +351,11 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           border: Border.all(
-                                            color: Color(0x1A000000),
+                                            color: const Color(0x1A000000),
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -368,7 +364,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 18.0, 0.0, 0.0),
                                                 child: ClipRRect(
@@ -383,7 +379,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                         1.0,
                                                     fit: BoxFit.cover,
                                                     alignment:
-                                                        Alignment(0.0, 0.0),
+                                                        const Alignment(0.0, 0.0),
                                                   ),
                                                 ),
                                               ),
@@ -462,7 +458,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               FontWeight.bold,
                                                         ),
                                                   ),
-                                                ].divide(SizedBox(height: 4.0)),
+                                                ].divide(const SizedBox(height: 4.0)),
                                               ),
                                             ],
                                           ),
@@ -475,11 +471,11 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           border: Border.all(
-                                            color: Color(0x1A000000),
+                                            color: const Color(0x1A000000),
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -488,7 +484,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 18.0, 0.0, 0.0),
                                                 child: ClipRRect(
@@ -503,7 +499,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                         1.0,
                                                     fit: BoxFit.cover,
                                                     alignment:
-                                                        Alignment(0.0, 0.0),
+                                                        const Alignment(0.0, 0.0),
                                                   ),
                                                 ),
                                               ),
@@ -582,7 +578,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               FontWeight.bold,
                                                         ),
                                                   ),
-                                                ].divide(SizedBox(height: 4.0)),
+                                                ].divide(const SizedBox(height: 4.0)),
                                               ),
                                             ],
                                           ),
@@ -595,11 +591,11 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           border: Border.all(
-                                            color: Color(0x1A000000),
+                                            color: const Color(0x1A000000),
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -608,7 +604,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 18.0, 0.0, 0.0),
                                                 child: ClipRRect(
@@ -623,7 +619,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                         1.0,
                                                     fit: BoxFit.cover,
                                                     alignment:
-                                                        Alignment(0.0, 0.0),
+                                                        const Alignment(0.0, 0.0),
                                                   ),
                                                 ),
                                               ),
@@ -702,7 +698,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               FontWeight.bold,
                                                         ),
                                                   ),
-                                                ].divide(SizedBox(height: 4.0)),
+                                                ].divide(const SizedBox(height: 4.0)),
                                               ),
                                             ],
                                           ),
@@ -715,11 +711,11 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           border: Border.all(
-                                            color: Color(0x1A000000),
+                                            color: const Color(0x1A000000),
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -728,7 +724,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 18.0, 0.0, 0.0),
                                                 child: ClipRRect(
@@ -743,7 +739,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                         1.0,
                                                     fit: BoxFit.cover,
                                                     alignment:
-                                                        Alignment(0.0, 0.0),
+                                                        const Alignment(0.0, 0.0),
                                                   ),
                                                 ),
                                               ),
@@ -822,7 +818,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               FontWeight.bold,
                                                         ),
                                                   ),
-                                                ].divide(SizedBox(height: 4.0)),
+                                                ].divide(const SizedBox(height: 4.0)),
                                               ),
                                             ],
                                           ),
@@ -835,11 +831,11 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           border: Border.all(
-                                            color: Color(0x1A000000),
+                                            color: const Color(0x1A000000),
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -848,7 +844,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 18.0, 0.0, 0.0),
                                                 child: ClipRRect(
@@ -863,7 +859,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                         1.0,
                                                     fit: BoxFit.cover,
                                                     alignment:
-                                                        Alignment(0.0, 0.0),
+                                                        const Alignment(0.0, 0.0),
                                                   ),
                                                 ),
                                               ),
@@ -942,7 +938,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                               FontWeight.bold,
                                                         ),
                                                   ),
-                                                ].divide(SizedBox(height: 4.0)),
+                                                ].divide(const SizedBox(height: 4.0)),
                                               ),
                                             ],
                                           ),
@@ -958,7 +954,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 12.0),
                                         child: Container(
                                           width:
@@ -972,7 +968,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                 BorderRadius.circular(8.0),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(16.0),
+                                            padding: const EdgeInsets.all(16.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -1038,7 +1034,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                                 ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(height: 4.0)),
+                                                        const SizedBox(height: 4.0)),
                                                   ),
                                                 ),
                                                 Flexible(
@@ -1059,14 +1055,14 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                           0.4,
                                                       height: 40.0,
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
                                                                   16.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1102,13 +1098,13 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                     ),
                                                   ),
                                                 ),
-                                              ].divide(SizedBox(width: 8.0)),
+                                              ].divide(const SizedBox(width: 8.0)),
                                             ),
                                           ),
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 24.0),
                                         child: RichText(
                                           textScaler:
@@ -1159,10 +1155,10 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, -1.0),
+                                            const AlignmentDirectional(0.0, -1.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 12.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1176,7 +1172,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -1219,7 +1215,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(height: 12.0)),
+                                                      const SizedBox(height: 12.0)),
                                                 ),
                                               ),
                                               Expanded(
@@ -1229,7 +1225,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -1272,7 +1268,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(height: 12.0)),
+                                                      const SizedBox(height: 12.0)),
                                                 ),
                                               ),
                                               Expanded(
@@ -1282,7 +1278,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -1325,7 +1321,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(height: 12.0)),
+                                                      const SizedBox(height: 12.0)),
                                                 ),
                                               ),
                                             ],
@@ -1335,7 +1331,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1344,7 +1340,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                             children: [
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(16.0),
+                                                  padding: const EdgeInsets.all(16.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1501,12 +1497,12 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(height: 4.0)),
+                                                        const SizedBox(height: 4.0)),
                                                   ),
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsets.all(16.0),
+                                                padding: const EdgeInsets.all(16.0),
                                                 child: RichText(
                                                   textScaler:
                                                       MediaQuery.of(context)
@@ -1590,7 +1586,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1599,7 +1595,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                             children: [
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(16.0),
+                                                  padding: const EdgeInsets.all(16.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1756,12 +1752,12 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(height: 4.0)),
+                                                        const SizedBox(height: 4.0)),
                                                   ),
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsets.all(16.0),
+                                                padding: const EdgeInsets.all(16.0),
                                                 child: RichText(
                                                   textScaler:
                                                       MediaQuery.of(context)
@@ -1843,8 +1839,8 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                             .alternate,
                                       ),
                                     ]
-                                        .addToStart(SizedBox(height: 12.0))
-                                        .addToEnd(SizedBox(height: 12.0)),
+                                        .addToStart(const SizedBox(height: 12.0))
+                                        .addToEnd(const SizedBox(height: 12.0)),
                                   ),
                                 ),
                               ],
@@ -1855,7 +1851,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () {
                           print('Button pressed ...');
@@ -1866,9 +1862,9 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 48.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -1883,8 +1879,8 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                       ),
                     ),
                   ]
-                      .divide(SizedBox(height: 16.0))
-                      .addToEnd(SizedBox(height: 16.0)),
+                      .divide(const SizedBox(height: 16.0))
+                      .addToEnd(const SizedBox(height: 16.0)),
                 ),
               ),
             ),

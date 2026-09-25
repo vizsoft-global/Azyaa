@@ -1,14 +1,10 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:styled_divider/styled_divider.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 's2_coupon_details_model.dart';
 export 's2_coupon_details_model.dart';
 
@@ -56,7 +52,7 @@ class _S2CouponDetailsWidgetState extends State<S2CouponDetailsWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
+              preferredSize: const Size.fromHeight(60.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 automaticallyImplyLeading: false,
@@ -86,7 +82,7 @@ class _S2CouponDetailsWidgetState extends State<S2CouponDetailsWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -119,11 +115,11 @@ class _S2CouponDetailsWidgetState extends State<S2CouponDetailsWidget> {
                             print('IconButton pressed ...');
                           },
                         ),
-                      ].divide(SizedBox(width: 8.0)),
+                      ].divide(const SizedBox(width: 8.0)),
                     ),
                   ],
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 0.0,
               ),
@@ -137,7 +133,7 @@ class _S2CouponDetailsWidgetState extends State<S2CouponDetailsWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -157,12 +153,12 @@ class _S2CouponDetailsWidgetState extends State<S2CouponDetailsWidget> {
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
                                       fit: BoxFit.cover,
-                                      alignment: AlignmentDirectional(0.0, 1.0),
+                                      alignment: const AlignmentDirectional(0.0, 1.0),
                                       image: Image.asset(
                                         'assets/images/Rectangle_416green.png',
                                       ).image,
                                     ),
-                                    borderRadius: BorderRadius.only(
+                                    borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(8.0),
                                       topRight: Radius.circular(8.0),
                                     ),
@@ -171,7 +167,7 @@ class _S2CouponDetailsWidgetState extends State<S2CouponDetailsWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsets.all(8.0),
+                                        padding: const EdgeInsets.all(8.0),
                                         child: Container(
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
@@ -180,7 +176,7 @@ class _S2CouponDetailsWidgetState extends State<S2CouponDetailsWidget> {
                                                 BorderRadius.circular(8.0),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(4.0),
+                                            padding: const EdgeInsets.all(4.0),
                                             child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
@@ -196,7 +192,7 @@ class _S2CouponDetailsWidgetState extends State<S2CouponDetailsWidget> {
                                       ),
                                       Expanded(
                                         child: Padding(
-                                          padding: EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.min,
                                             mainAxisAlignment:
@@ -240,7 +236,7 @@ supply pu... */
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
-                                            ].divide(SizedBox(height: 4.0)),
+                                            ].divide(const SizedBox(height: 4.0)),
                                           ),
                                         ),
                                       ),
@@ -254,7 +250,7 @@ supply pu... */
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.all(16.0),
+                                        padding: const EdgeInsets.all(16.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
                                           mainAxisAlignment:
@@ -334,14 +330,14 @@ supply pu... */
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
-                                          ].divide(SizedBox(height: 4.0)),
+                                          ].divide(const SizedBox(height: 4.0)),
                                         ),
                                       ),
                                     ],
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 24.0, 0.0, 24.0),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(0.0),
@@ -368,7 +364,7 @@ supply pu... */
                                       ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 24.0, 0.0, 24.0),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
@@ -377,12 +373,12 @@ supply pu... */
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       fit: BoxFit.cover,
-                                      alignment: Alignment(0.0, 0.0),
+                                      alignment: const Alignment(0.0, 0.0),
                                     ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 16.0),
                                   child: Container(
                                     decoration: BoxDecoration(
@@ -391,9 +387,9 @@ supply pu... */
                                           FlutterFlowTheme.of(context).primary,
                                           FlutterFlowTheme.of(context).primary
                                         ],
-                                        stops: [0.0, 1.0],
-                                        begin: AlignmentDirectional(1.0, -0.98),
-                                        end: AlignmentDirectional(-1.0, 0.98),
+                                        stops: const [0.0, 1.0],
+                                        begin: const AlignmentDirectional(1.0, -0.98),
+                                        end: const AlignmentDirectional(-1.0, 0.98),
                                       ),
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
@@ -409,10 +405,10 @@ supply pu... */
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         height: 48.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: Colors.transparent,
                                         textStyle: FlutterFlowTheme.of(context)
@@ -432,7 +428,7 @@ supply pu... */
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
                                       'y04jltw0' /* Valid till Mar 2025 */,
@@ -446,16 +442,16 @@ supply pu... */
                                         ),
                                   ),
                                 ),
-                              ].addToEnd(SizedBox(height: 24.0)),
+                              ].addToEnd(const SizedBox(height: 24.0)),
                             ),
                           ),
                         ],
                       ),
                     ),
                   ]
-                      .divide(SizedBox(height: 12.0))
-                      .addToStart(SizedBox(height: 16.0))
-                      .addToEnd(SizedBox(height: 32.0)),
+                      .divide(const SizedBox(height: 12.0))
+                      .addToStart(const SizedBox(height: 16.0))
+                      .addToEnd(const SizedBox(height: 32.0)),
                 ),
               ),
             ),

@@ -1,16 +1,11 @@
 import '/azyaa_group_a/home/components/blank_loading/blank_loading_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'orders_comp_model.dart';
 export 'orders_comp_model.dart';
 
@@ -20,7 +15,7 @@ class OrdersCompWidget extends StatefulWidget {
     required this.order,
     String? navigation,
     required this.orderID,
-  }) : this.navigation = navigation ?? 'default';
+  }) : navigation = navigation ?? 'default';
 
   final OrdersRecord? order;
   final String navigation;
@@ -60,7 +55,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
       stream: queryDeliveryRecord(
         queryBuilder: (deliveryRecord) => deliveryRecord.where(
           'order_ref',
-          isEqualTo: widget!.order?.reference,
+          isEqualTo: widget.order?.reference,
         ),
       ),
       builder: (context, snapshot) {
@@ -86,17 +81,17 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
           hoverColor: Colors.transparent,
           highlightColor: Colors.transparent,
           onTap: () async {
-            if (widget!.navigation == 'default') {
+            if (widget.navigation == 'default') {
               context.pushNamed(
                 OrdersDetailsWidget.routeName,
                 queryParameters: {
                   'order': serializeParam(
-                    widget!.order?.reference,
+                    widget.order?.reference,
                     ParamType.DocumentReference,
                   ),
                 }.withoutNulls,
                 extra: <String, dynamic>{
-                  '__transition_info__': TransitionInfo(
+                  '__transition_info__': const TransitionInfo(
                     hasTransition: true,
                     transitionType: PageTransitionType.fade,
                     duration: Duration(milliseconds: 0),
@@ -111,14 +106,14 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
               borderRadius: BorderRadius.circular(0.0),
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  if (widget!.navigation == 'default')
+                  if (widget.navigation == 'default')
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -127,36 +122,36 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                           Expanded(
                             child: Stack(
                               children: [
-                                if (((widget!.order?.orderStatus ==
+                                if (((widget.order?.orderStatus ==
                                             'CAPTURED') ||
-                                        (widget!.order?.orderStatus ==
+                                        (widget.order?.orderStatus ==
                                             'Succss') ||
-                                        (widget!.order?.orderStatus ==
+                                        (widget.order?.orderStatus ==
                                             'Paid') ||
-                                        (widget!.order?.orderStatus ==
+                                        (widget.order?.orderStatus ==
                                             'SUCCESS') ||
-                                        (widget!.order?.orderStatus ==
+                                        (widget.order?.orderStatus ==
                                             'FAILED')) &&
-                                    (widget!.order!.orderItems.cartItems
+                                    (widget.order!.orderItems.cartItems
                                             .where((e) =>
                                                 e.productType == 'product')
                                             .toList()
                                             .length >
                                         0) &&
-                                    (widget!.order?.returnRequestId == null ||
-                                        widget!.order?.returnRequestId == ''))
+                                    (widget.order?.returnRequestId == null ||
+                                        widget.order?.returnRequestId == ''))
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      if (((widget!.order?.orderStatus ==
+                                      if (((widget.order?.orderStatus ==
                                                   'CAPTURED') ||
-                                              (widget!.order?.orderStatus ==
+                                              (widget.order?.orderStatus ==
                                                   'Succss') ||
-                                              (widget!.order?.orderStatus ==
+                                              (widget.order?.orderStatus ==
                                                   'Paid') ||
-                                              (widget!.order?.orderStatus ==
+                                              (widget.order?.orderStatus ==
                                                   'SUCCESS')) &&
-                                          (widget!.order!.orderItems.cartItems
+                                          (widget.order!.orderItems.cartItems
                                                   .where((e) =>
                                                       e.productType ==
                                                       'product')
@@ -169,15 +164,15 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                               .secondaryText,
                                           size: 18.0,
                                         ),
-                                      if (((widget!.order?.orderStatus ==
+                                      if (((widget.order?.orderStatus ==
                                                   'CAPTURED') ||
-                                              (widget!.order?.orderStatus ==
+                                              (widget.order?.orderStatus ==
                                                   'Succss') ||
-                                              (widget!.order?.orderStatus ==
+                                              (widget.order?.orderStatus ==
                                                   'Paid') ||
-                                              (widget!.order?.orderStatus ==
+                                              (widget.order?.orderStatus ==
                                                   'SUCCESS')) &&
-                                          (widget!.order!.orderItems.cartItems
+                                          (widget.order!.orderItems.cartItems
                                                   .where((e) =>
                                                       e.productType ==
                                                       'product')
@@ -209,7 +204,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                                     "yMMMd",
                                                     functions
                                                         .getDateForSubscription(
-                                                            widget!.order!
+                                                            widget.order!
                                                                 .updatedAt!,
                                                             7),
                                                     locale: FFLocalizations.of(
@@ -222,7 +217,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                                     "yMMMd",
                                                     functions
                                                         .getDateForSubscription(
-                                                            widget!.order!
+                                                            widget.order!
                                                                 .updatedAt!,
                                                             8),
                                                     locale: FFLocalizations.of(
@@ -248,15 +243,15 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                             ),
                                           ),
                                         ),
-                                    ].divide(SizedBox(width: 8.0)),
+                                    ].divide(const SizedBox(width: 8.0)),
                                   ),
-                                if ((widget!.order!.orderItems.cartItems
+                                if ((widget.order!.orderItems.cartItems
                                             .where((e) =>
                                                 e.productType == 'product')
                                             .toList()
                                             .length >
                                         0) &&
-                                    (widget!.order?.orderStatus == 'FAILED'))
+                                    (widget.order?.orderStatus == 'FAILED'))
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -271,7 +266,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 4.0, 8.0, 4.0),
                                           child: RichText(
                                             textScaler: MediaQuery.of(context)
@@ -298,7 +293,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                                       ),
                                                 ),
                                                 TextSpan(
-                                                  text: widget!.order!.orderId,
+                                                  text: widget.order!.orderId,
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -335,10 +330,10 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 2.0, 8.0, 2.0),
                                           child: Text(
-                                            widget!.order!.orderStatus,
+                                            widget.order!.orderStatus,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -349,14 +344,14 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                           ),
                                         ),
                                       ),
-                                    ].divide(SizedBox(width: 16.0)),
+                                    ].divide(const SizedBox(width: 16.0)),
                                   ),
                                 StreamBuilder<List<ReturnRequestsRecord>>(
                                   stream: queryReturnRequestsRecord(
                                     queryBuilder: (returnRequestsRecord) =>
                                         returnRequestsRecord.where(
                                       'return_request_id',
-                                      isEqualTo: widget!.order?.returnRequestId,
+                                      isEqualTo: widget.order?.returnRequestId,
                                     ),
                                     singleRecord: true,
                                   ),
@@ -367,7 +362,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                         child: Container(
                                           width: 0.0,
                                           height: 0.0,
-                                          child: BlankLoadingWidget(),
+                                          child: const BlankLoadingWidget(),
                                         ),
                                       );
                                     }
@@ -398,15 +393,15 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                               .secondaryText,
                                           size: 18.0,
                                         ),
-                                        if (((widget!.order?.orderStatus ==
+                                        if (((widget.order?.orderStatus ==
                                                     'CAPTURED') ||
-                                                (widget!.order?.orderStatus ==
+                                                (widget.order?.orderStatus ==
                                                     'Succss') ||
-                                                (widget!.order?.orderStatus ==
+                                                (widget.order?.orderStatus ==
                                                     'Paid') ||
-                                                (widget!.order?.orderStatus ==
+                                                (widget.order?.orderStatus ==
                                                     'SUCCESS')) &&
-                                            (widget!.order!.orderItems.cartItems
+                                            (widget.order!.orderItems.cartItems
                                                     .where((e) =>
                                                         e.productType ==
                                                         'product')
@@ -462,7 +457,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                                       ),
                                             ),
                                           ),
-                                      ].divide(SizedBox(width: 8.0)),
+                                      ].divide(const SizedBox(width: 8.0)),
                                     );
                                   },
                                 ),
@@ -471,13 +466,13 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                           ),
                           Stack(
                             children: [
-                              if (((widget!.order?.orderStatus == 'CAPTURED') ||
-                                      (widget!.order?.orderStatus ==
+                              if (((widget.order?.orderStatus == 'CAPTURED') ||
+                                      (widget.order?.orderStatus ==
                                           'Succss') ||
-                                      (widget!.order?.orderStatus == 'Paid') ||
-                                      (widget!.order?.orderStatus ==
+                                      (widget.order?.orderStatus == 'Paid') ||
+                                      (widget.order?.orderStatus ==
                                           'SUCCESS')) &&
-                                  (widget!.order!.orderItems.cartItems
+                                  (widget.order!.orderItems.cartItems
                                           .where(
                                               (e) => e.productType == 'product')
                                           .toList()
@@ -497,10 +492,10 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 2.0, 8.0, 2.0),
                                         child: Text(
-                                          widget!.order!.orderStatus,
+                                          widget.order!.orderStatus,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -521,7 +516,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 4.0, 8.0, 4.0),
                                         child: RichText(
                                           textScaler:
@@ -547,7 +542,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                                         ),
                                               ),
                                               TextSpan(
-                                                text: widget!.order!.orderId,
+                                                text: widget.order!.orderId,
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -571,15 +566,15 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                         ),
                                       ),
                                     ),
-                                  ].divide(SizedBox(height: 4.0)),
+                                  ].divide(const SizedBox(height: 4.0)),
                                 ),
-                              if (((widget!.order!.orderItems.cartItems
+                              if (((widget.order!.orderItems.cartItems
                                               .where((e) =>
                                                   e.productType == 'product')
                                               .toList()
                                               .length >
                                           0) &&
-                                      (widget!.order?.orderStatus ==
+                                      (widget.order?.orderStatus ==
                                           'FAILED')) &&
                                   responsiveVisibility(
                                     context: context,
@@ -601,10 +596,10 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 2.0, 8.0, 2.0),
                                         child: Text(
-                                          widget!.order!.orderStatus,
+                                          widget.order!.orderStatus,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -625,7 +620,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 4.0, 8.0, 4.0),
                                         child: RichText(
                                           textScaler:
@@ -651,7 +646,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                                         ),
                                               ),
                                               TextSpan(
-                                                text: widget!.order!.orderId,
+                                                text: widget.order!.orderId,
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -675,14 +670,14 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                         ),
                                       ),
                                     ),
-                                  ].divide(SizedBox(width: 16.0)),
+                                  ].divide(const SizedBox(width: 16.0)),
                                 ),
                             ],
                           ),
-                        ].divide(SizedBox(width: 8.0)),
+                        ].divide(const SizedBox(width: 8.0)),
                       ),
                     ),
-                  if (widget!.navigation == 'default')
+                  if (widget.navigation == 'default')
                     Divider(
                       height: 10.0,
                       thickness: 1.0,
@@ -691,10 +686,10 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                   Builder(
                     builder: (context) {
                       final activeOrderItems =
-                          widget!.order?.orderItems?.cartItems?.toList() ?? [];
+                          widget.order?.orderItems.cartItems.toList() ?? [];
 
                       return ListView.separated(
-                        padding: EdgeInsets.fromLTRB(
+                        padding: const EdgeInsets.fromLTRB(
                           0,
                           8.0,
                           0,
@@ -704,15 +699,15 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                         shrinkWrap: true,
                         scrollDirection: Axis.vertical,
                         itemCount: activeOrderItems.length,
-                        separatorBuilder: (_, __) => SizedBox(height: 16.0),
+                        separatorBuilder: (_, __) => const SizedBox(height: 16.0),
                         itemBuilder: (context, activeOrderItemsIndex) {
                           final activeOrderItemsItem =
                               activeOrderItems[activeOrderItemsIndex];
                           return Stack(
-                            alignment: AlignmentDirectional(1.0, 1.0),
+                            alignment: const AlignmentDirectional(1.0, 1.0),
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -734,8 +729,8 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
-                                        child: Image.network(
-                                          activeOrderItemsItem.productType ==
+                                        child: CachedNetworkImage(
+                                          imageUrl: activeOrderItemsItem.productType ==
                                                   'membership'
                                               ? 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/kwcb1kmteqoh/Frame_2087324774.png'
                                               : activeOrderItemsItem
@@ -747,7 +742,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                                   .height *
                                               1.0,
                                           fit: BoxFit.cover,
-                                          alignment: Alignment(0.0, -1.0),
+                                          alignment: const Alignment(0.0, -1.0),
                                         ),
                                       ),
                                     ),
@@ -786,7 +781,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                                       width: 0.0,
                                                       height: 0.0,
                                                       child:
-                                                          BlankLoadingWidget(),
+                                                          const BlankLoadingWidget(),
                                                     ),
                                                   );
                                                 }
@@ -805,29 +800,29 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                                         : null;
 
                                                 return Container(
-                                                  decoration: BoxDecoration(),
+                                                  decoration: const BoxDecoration(),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getVariableText(
                                                       enText: () {
                                                         if (containerProductsRecord
                                                                 ?.productInfoCustomTranslate
-                                                                ?.name
-                                                                ?.en !=
+                                                                .name
+                                                                .en !=
                                                             '') {
                                                           return containerProductsRecord
                                                               ?.productInfoCustomTranslate
-                                                              ?.name
-                                                              ?.en;
+                                                              .name
+                                                              .en;
                                                         } else if (containerProductsRecord
                                                                 ?.productInfoTranslate
-                                                                ?.name
-                                                                ?.en !=
+                                                                .name
+                                                                .en !=
                                                             '') {
                                                           return containerProductsRecord
                                                               ?.productInfoTranslate
-                                                              ?.name
-                                                              ?.en;
+                                                              .name
+                                                              .en;
                                                         } else {
                                                           return activeOrderItemsItem
                                                               .productInfo.name;
@@ -836,26 +831,26 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                                       arText: () {
                                                         if (containerProductsRecord
                                                                 ?.productInfoCustomTranslate
-                                                                ?.name
-                                                                ?.ar !=
+                                                                .name
+                                                                .ar !=
                                                             '') {
                                                           return containerProductsRecord
                                                               ?.productInfoCustomTranslate
-                                                              ?.name
-                                                              ?.ar;
+                                                              .name
+                                                              .ar;
                                                         } else if (containerProductsRecord
                                                                 ?.productInfoTranslate
-                                                                ?.name
-                                                                ?.ar !=
+                                                                .name
+                                                                .ar !=
                                                             '') {
                                                           return containerProductsRecord
                                                               ?.productInfoTranslate
-                                                              ?.name
-                                                              ?.ar;
+                                                              .name
+                                                              .ar;
                                                         } else {
                                                           return containerProductsRecord
                                                               ?.productInfo
-                                                              ?.name;
+                                                              .name;
                                                         }
                                                       }(),
                                                     ),
@@ -948,7 +943,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                                         (context, snapshot) {
                                                       // Customize what your widget looks like when it's loading.
                                                       if (!snapshot.hasData) {
-                                                        return Center(
+                                                        return const Center(
                                                           child: SizedBox(
                                                             width: 2.0,
                                                             height: 2.0,
@@ -991,51 +986,51 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                                               enText: () {
                                                                 if (rowAttributesRecord
                                                                         ?.attributeInfoCustomTranslate
-                                                                        ?.name
-                                                                        ?.en !=
+                                                                        .name
+                                                                        .en !=
                                                                     '') {
                                                                   return rowAttributesRecord
                                                                       ?.attributeInfoCustomTranslate
-                                                                      ?.name
-                                                                      ?.en;
+                                                                      .name
+                                                                      .en;
                                                                 } else if (rowAttributesRecord
                                                                         ?.attributeInfoTranslate
-                                                                        ?.name
-                                                                        ?.en !=
+                                                                        .name
+                                                                        .en !=
                                                                     '') {
                                                                   return rowAttributesRecord
                                                                       ?.attributeInfoTranslate
-                                                                      ?.name
-                                                                      ?.en;
+                                                                      .name
+                                                                      .en;
                                                                 } else {
                                                                   return rowAttributesRecord
                                                                       ?.attributeInfo
-                                                                      ?.name;
+                                                                      .name;
                                                                 }
                                                               }(),
                                                               arText: () {
                                                                 if (rowAttributesRecord
                                                                         ?.attributeInfoCustomTranslate
-                                                                        ?.name
-                                                                        ?.ar !=
+                                                                        .name
+                                                                        .ar !=
                                                                     '') {
                                                                   return rowAttributesRecord
                                                                       ?.attributeInfoCustomTranslate
-                                                                      ?.name
-                                                                      ?.ar;
+                                                                      .name
+                                                                      .ar;
                                                                 } else if (rowAttributesRecord
                                                                         ?.attributeInfoTranslate
-                                                                        ?.name
-                                                                        ?.ar !=
+                                                                        .name
+                                                                        .ar !=
                                                                     '') {
                                                                   return rowAttributesRecord
                                                                       ?.attributeInfoTranslate
-                                                                      ?.name
-                                                                      ?.ar;
+                                                                      .name
+                                                                      .ar;
                                                                 } else {
                                                                   return rowAttributesRecord
                                                                       ?.attributeInfo
-                                                                      ?.name;
+                                                                      .name;
                                                                 }
                                                               }(),
                                                             )}${FFLocalizations.of(context).getVariableText(
@@ -1081,7 +1076,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                                               // Customize what your widget looks like when it's loading.
                                                               if (!snapshot
                                                                   .hasData) {
-                                                                return Center(
+                                                                return const Center(
                                                                   child:
                                                                       SizedBox(
                                                                     width: 2.0,
@@ -1146,7 +1141,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                               );
                                             },
                                           ),
-                                        ].divide(SizedBox(height: 4.0)),
+                                        ].divide(const SizedBox(height: 4.0)),
                                       ),
                                     ),
                                     Text(
@@ -1162,34 +1157,15 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                             fontWeight: FontWeight.w600,
                                           ),
                                     ),
-                                  ].divide(SizedBox(width: 12.0)),
+                                  ].divide(const SizedBox(width: 12.0)),
                                 ),
                               ),
-                              if ((widget!.order?.paymentStatus ==
+                              if ((widget.order?.paymentStatus ==
                                       'CAPTURED') &&
                                   (valueOrDefault<String>(
                                             containerDeliveryRecordList
                                                 .where((e) =>
-                                                    widget!
-                                                        .order!.deliveryInfoList
-                                                        .where((e) =>
-                                                            e.productIds.contains(
-                                                                activeOrderItemsItem
-                                                                    .productId) ==
-                                                            true)
-                                                        .toList()
-                                                        .length >
-                                                    0)
-                                                .toList()
-                                                .firstOrNull
-                                                ?.deliveryTrackingId,
-                                            '-',
-                                          ) !=
-                                          null &&
-                                      valueOrDefault<String>(
-                                            containerDeliveryRecordList
-                                                .where((e) =>
-                                                    widget!
+                                                    widget
                                                         .order!.deliveryInfoList
                                                         .where((e) =>
                                                             e.productIds.contains(
@@ -1206,7 +1182,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                           ) !=
                                           ''))
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 16.0, 0.0),
                                   child: Container(
                                     decoration: BoxDecoration(
@@ -1217,29 +1193,29 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 2.0, 8.0, 2.0),
                                       child: Text(
                                         valueOrDefault<String>(
-                                          (widget!.order?.orderStatus ==
+                                          (widget.order?.orderStatus ==
                                                       'completed') ||
-                                                  ((widget!.order
+                                                  ((widget.order
                                                               ?.orderStatus ==
                                                           'FAILED') ||
-                                                      (widget!.order
+                                                      (widget.order
                                                               ?.orderStatus ==
                                                           'Cancelled') ||
-                                                      (widget!.order
+                                                      (widget.order
                                                               ?.orderStatus ==
                                                           'Initialization') ||
-                                                      (widget!.order
+                                                      (widget.order
                                                               ?.orderStatus ==
                                                           'CAPTURED'))
-                                              ? widget!.order?.orderStatus
+                                              ? widget.order?.orderStatus
                                               : valueOrDefault<String>(
                                                   containerDeliveryRecordList
                                                       .where((e) =>
-                                                          widget!.order!
+                                                          widget.order!
                                                               .deliveryInfoList
                                                               .where((e) =>
                                                                   e.productIds.contains(
@@ -1273,7 +1249,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                       );
                     },
                   ),
-                  if (widget!.navigation == 'default')
+                  if (widget.navigation == 'default')
                     Divider(
                       height: 10.0,
                       thickness: 1.0,
@@ -1281,10 +1257,10 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                       endIndent: 16.0,
                       color: FlutterFlowTheme.of(context).alternate,
                     ),
-                  if (widget!.navigation == 'default')
+                  if (widget.navigation == 'default')
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -1295,9 +1271,9 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                 children: [
                                   TextSpan(
                                     text: valueOrDefault<String>(
-                                      widget!
-                                          .order?.orderItems?.cartItems?.length
-                                          ?.toString(),
+                                      widget
+                                          .order?.orderItems.cartItems.length
+                                          .toString(),
                                       '0',
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -1337,7 +1313,7 @@ class _OrdersCompWidgetState extends State<OrdersCompWidget> {
                                   ),
                                   TextSpan(
                                     text:
-                                        '${widget!.order?.totalPrice?.toString()}${FFLocalizations.of(context).getVariableText(
+                                        '${widget.order?.totalPrice.toString()}${FFLocalizations.of(context).getVariableText(
                                       enText: ' KD',
                                       arText: ' KD',
                                     )}',

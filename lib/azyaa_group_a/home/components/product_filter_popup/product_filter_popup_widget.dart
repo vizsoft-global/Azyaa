@@ -3,19 +3,16 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/home/components/blank_loading/blank_loading_widget.dart';
 import '/azyaa_group_a/home/components/loading_animation/loading_animation_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
-import 'dart:ui';
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'product_filter_popup_model.dart';
 export 'product_filter_popup_model.dart';
@@ -66,7 +63,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
       width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 5.0,
             color: Color(0x3B1D2429),
@@ -76,21 +73,21 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
             ),
           )
         ],
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
         ),
       ),
       child: Stack(
-        alignment: AlignmentDirectional(0.0, 1.0),
+        alignment: const AlignmentDirectional(0.0, 1.0),
         children: [
           Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                   child: Container(
                     width: 35.0,
                     height: 3.0,
@@ -102,7 +99,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -150,11 +147,11 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                         size: 24.0,
                       ),
                     ),
-                  ].divide(SizedBox(width: 8.0)),
+                  ].divide(const SizedBox(width: 8.0)),
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 1.0,
@@ -178,7 +175,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                       return Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 150.0,
-                        child: LoadingAnimationWidget(),
+                        child: const LoadingAnimationWidget(),
                       );
                     }
                     List<AttributesRecord> containerAttributesRecordList =
@@ -203,7 +200,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
-                                          padding: EdgeInsets.all(4.0),
+                                          padding: const EdgeInsets.all(4.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -251,7 +248,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 12.0, 16.0, 12.0),
                                                 child: Row(
@@ -288,7 +285,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     4.0,
                                                                     2.0,
@@ -364,14 +361,14 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(width: 4.0)),
+                                                      const SizedBox(width: 4.0)),
                                                 ),
                                               ),
                                             ),
                                           ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.all(4.0),
+                                          padding: const EdgeInsets.all(4.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -410,7 +407,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 12.0, 16.0, 12.0),
                                                 child: Row(
@@ -447,7 +444,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     4.0,
                                                                     2.0,
@@ -473,14 +470,14 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(width: 4.0)),
+                                                      const SizedBox(width: 4.0)),
                                                 ),
                                               ),
                                             ),
                                           ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.all(4.0),
+                                          padding: const EdgeInsets.all(4.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -519,7 +516,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 12.0, 16.0, 12.0),
                                                 child: Row(
@@ -556,7 +553,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     4.0,
                                                                     2.0,
@@ -582,7 +579,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(width: 4.0)),
+                                                      const SizedBox(width: 4.0)),
                                                 ),
                                               ),
                                             ),
@@ -607,7 +604,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                     attributeList[
                                                         attributeListIndex];
                                                 return Padding(
-                                                  padding: EdgeInsets.all(4.0),
+                                                  padding: const EdgeInsets.all(4.0),
                                                   child: InkWell(
                                                     splashColor:
                                                         Colors.transparent,
@@ -677,7 +674,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     12.0,
@@ -767,7 +764,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             4.0,
                                                                             2.0,
@@ -796,7 +793,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                 ),
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               width: 4.0)),
                                                         ),
                                                       ),
@@ -807,7 +804,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                             );
                                           },
                                         ),
-                                      ].addToEnd(SizedBox(height: 64.0)),
+                                      ].addToEnd(const SizedBox(height: 64.0)),
                                     ),
                                   ),
                                 ),
@@ -833,7 +830,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                             loggedIn)
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
@@ -847,7 +844,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                 onChanged: (_) =>
                                                     EasyDebounce.debounce(
                                                   '_model.categorySearchTextController',
-                                                  Duration(milliseconds: 2000),
+                                                  const Duration(milliseconds: 2000),
                                                   () async {
                                                     if (_model
                                                             .categorySearchTextController
@@ -912,7 +909,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                       ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Color(0x00000000),
                                                       width: 1.0,
                                                     ),
@@ -922,7 +919,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                   ),
                                                   focusedBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Color(0x00000000),
                                                       width: 1.0,
                                                     ),
@@ -961,7 +958,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .accent2,
-                                                  prefixIcon: Icon(
+                                                  prefixIcon: const Icon(
                                                     FFIcons.ksearch,
                                                     size: 18.0,
                                                   ),
@@ -986,7 +983,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                             loggedIn)
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
@@ -1000,7 +997,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                 onChanged: (_) =>
                                                     EasyDebounce.debounce(
                                                   '_model.atrrbuiteSearchTextController',
-                                                  Duration(milliseconds: 2000),
+                                                  const Duration(milliseconds: 2000),
                                                   () async {
                                                     if (_model
                                                             .atrrbuiteSearchTextController
@@ -1051,9 +1048,9 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                           context)
                                                       .getVariableText(
                                                     enText:
-                                                        'يبحث${containerAttributesRecordList.where((e) => e.attributeInfo.name == _model.navigationName).toList().firstOrNull?.attributeInfo?.name}',
+                                                        'يبحث${containerAttributesRecordList.where((e) => e.attributeInfo.name == _model.navigationName).toList().firstOrNull?.attributeInfo.name}',
                                                     arText:
-                                                        'يبحث${containerAttributesRecordList.where((e) => e.attributeInfo.name == _model.navigationName).toList().firstOrNull?.attributeInfoTranslate?.name?.ar}',
+                                                        'يبحث${containerAttributesRecordList.where((e) => e.attributeInfo.name == _model.navigationName).toList().firstOrNull?.attributeInfoTranslate.name.ar}',
                                                   ),
                                                   hintStyle: FlutterFlowTheme
                                                           .of(context)
@@ -1065,7 +1062,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                       ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Color(0x00000000),
                                                       width: 1.0,
                                                     ),
@@ -1075,7 +1072,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                   ),
                                                   focusedBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Color(0x00000000),
                                                       width: 1.0,
                                                     ),
@@ -1176,12 +1173,12 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                             snapshot.data!;
 
                                         return Container(
-                                          decoration: BoxDecoration(),
+                                          decoration: const BoxDecoration(),
                                           child: Visibility(
                                             visible: _model.navigationName ==
                                                 'default',
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 8.0),
                                               child: Builder(
@@ -1298,7 +1295,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Column(
                                                               mainAxisSize:
@@ -1328,7 +1325,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                         color: FFAppState().UserFilter.categoryId.contains(categoryVarItem.categoryId) ==
                                                                                 true
                                                                             ? FlutterFlowTheme.of(context).primary
-                                                                            : Color(0x0A000000),
+                                                                            : const Color(0x0A000000),
                                                                         width: FFAppState().UserFilter.categoryId.contains(categoryVarItem.categoryId) ==
                                                                                 true
                                                                             ? 2.0
@@ -1338,7 +1335,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                     child:
                                                                         Stack(
                                                                       alignment:
-                                                                          AlignmentDirectional(
+                                                                          const AlignmentDirectional(
                                                                               0.0,
                                                                               1.0),
                                                                       children: [
@@ -1355,18 +1352,18 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                             fit:
                                                                                 BoxFit.contain,
                                                                             alignment:
-                                                                                Alignment(0.0, 1.0),
+                                                                                const Alignment(0.0, 1.0),
                                                                           ),
                                                                         ),
                                                                         ClipRRect(
                                                                           borderRadius:
                                                                               BorderRadius.circular(8.0),
                                                                           child:
-                                                                              Image.network(
-                                                                            () {
-                                                                              if (categoryVarItem.categoryInfo.featureImage != null && categoryVarItem.categoryInfo.featureImage != '') {
+                                                                              CachedNetworkImage(
+                                                                            imageUrl: () {
+                                                                              if (categoryVarItem.categoryInfo.featureImage != '') {
                                                                                 return categoryVarItem.categoryInfo.featureImage;
-                                                                              } else if (categoryVarItem.categoryInfo.iconImage != null && categoryVarItem.categoryInfo.iconImage != '') {
+                                                                              } else if (categoryVarItem.categoryInfo.iconImage != '') {
                                                                                 return categoryVarItem.categoryInfo.iconImage;
                                                                               } else {
                                                                                 return 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/na2nsnluxz7g/Vacation_Wear.png';
@@ -1377,7 +1374,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                             fit:
                                                                                 BoxFit.cover,
                                                                             alignment:
-                                                                                Alignment(0.0, -1.0),
+                                                                                const Alignment(0.0, -1.0),
                                                                           ),
                                                                         ),
                                                                       ],
@@ -1385,7 +1382,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           4.0,
                                                                           0.0,
@@ -1448,7 +1445,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                         ),
                                                                   ),
                                                                 ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   height: 4.0)),
                                                             ),
                                                           ),
@@ -1478,7 +1475,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -1512,7 +1509,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                           8.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(12.0, 10.0,
                                                           12.0, 10.0),
                                                   child: Row(
@@ -1549,7 +1546,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                           size: 24.0,
                                                         ),
                                                     ].divide(
-                                                        SizedBox(width: 8.0)),
+                                                        const SizedBox(width: 8.0)),
                                                   ),
                                                 ),
                                               ),
@@ -1557,7 +1554,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -1591,7 +1588,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                           8.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(12.0, 10.0,
                                                           12.0, 10.0),
                                                   child: Row(
@@ -1628,7 +1625,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                           size: 24.0,
                                                         ),
                                                     ].divide(
-                                                        SizedBox(width: 8.0)),
+                                                        const SizedBox(width: 8.0)),
                                                   ),
                                                 ),
                                               ),
@@ -1651,9 +1648,9 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
+                                                const AlignmentDirectional(-1.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
                                               child: Wrap(
@@ -1671,7 +1668,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 8.0,
                                                                 0.0, 8.0),
                                                     child: InkWell(
@@ -1737,7 +1734,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 8.0,
                                                                 0.0, 8.0),
                                                     child: InkWell(
@@ -1804,7 +1801,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 8.0,
                                                                 0.0, 8.0),
                                                     child: InkWell(
@@ -1871,7 +1868,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 8.0,
                                                                 0.0, 8.0),
                                                     child: InkWell(
@@ -2001,7 +1998,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                   .priceRange ==
                                               'Custom Range')
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 16.0, 0.0, 0.0),
                                               child: Slider(
@@ -2058,7 +2055,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                           .brandId) ==
                                                                   true))
                                                           .toList()
-                                                          ?.map(
+                                                          .map(
                                                               (e) => e.brandId)
                                                           .toList()
                                                       : _model.brandLists)
@@ -2083,7 +2080,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                   brandColorList[
                                                       brandColorListIndex];
                                               return Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: StreamBuilder<
@@ -2111,7 +2108,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                         width: 0.0,
                                                         height: 0.0,
                                                         child:
-                                                            BlankLoadingWidget(),
+                                                            const BlankLoadingWidget(),
                                                       );
                                                     }
                                                     List<BrandsRecord>
@@ -2193,7 +2190,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       12.0,
                                                                       10.0,
@@ -2208,7 +2205,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                 children: [
                                                                   if (colorValueBrandsRecord
                                                                           ?.brandInfo
-                                                                          ?.color !=
+                                                                          .color !=
                                                                       null)
                                                                     Container(
                                                                       width:
@@ -2219,7 +2216,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                           BoxDecoration(
                                                                         color: colorValueBrandsRecord
                                                                             ?.brandInfo
-                                                                            ?.color,
+                                                                            .color,
                                                                         shape: BoxShape
                                                                             .circle,
                                                                         border:
@@ -2231,11 +2228,11 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                     ),
                                                                   if (colorValueBrandsRecord
                                                                               ?.brandInfo
-                                                                              ?.featureImage !=
+                                                                              .featureImage !=
                                                                           null &&
                                                                       colorValueBrandsRecord
                                                                               ?.brandInfo
-                                                                              ?.featureImage !=
+                                                                              .featureImage !=
                                                                           '')
                                                                     ClipRRect(
                                                                       borderRadius:
@@ -2262,51 +2259,51 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                     enText: () {
                                                                       if (colorValueBrandsRecord
                                                                               ?.brandInfoCustomTranslate
-                                                                              ?.name
-                                                                              ?.en !=
+                                                                              .name
+                                                                              .en !=
                                                                           '') {
                                                                         return colorValueBrandsRecord
                                                                             ?.brandInfoCustomTranslate
-                                                                            ?.name
-                                                                            ?.en;
+                                                                            .name
+                                                                            .en;
                                                                       } else if (colorValueBrandsRecord
                                                                               ?.brandInfoTranslate
-                                                                              ?.name
-                                                                              ?.en !=
+                                                                              .name
+                                                                              .en !=
                                                                           '') {
                                                                         return colorValueBrandsRecord
                                                                             ?.brandInfoTranslate
-                                                                            ?.name
-                                                                            ?.en;
+                                                                            .name
+                                                                            .en;
                                                                       } else {
                                                                         return colorValueBrandsRecord
                                                                             ?.brandInfo
-                                                                            ?.name;
+                                                                            .name;
                                                                       }
                                                                     }(),
                                                                     arText: () {
                                                                       if (colorValueBrandsRecord
                                                                               ?.brandInfoCustomTranslate
-                                                                              ?.name
-                                                                              ?.ar !=
+                                                                              .name
+                                                                              .ar !=
                                                                           '') {
                                                                         return colorValueBrandsRecord
                                                                             ?.brandInfoCustomTranslate
-                                                                            ?.name
-                                                                            ?.ar;
+                                                                            .name
+                                                                            .ar;
                                                                       } else if (colorValueBrandsRecord
                                                                               ?.brandInfoTranslate
-                                                                              ?.name
-                                                                              ?.ar !=
+                                                                              .name
+                                                                              .ar !=
                                                                           '') {
                                                                         return colorValueBrandsRecord
                                                                             ?.brandInfoTranslate
-                                                                            ?.name
-                                                                            ?.ar;
+                                                                            .name
+                                                                            .ar;
                                                                       } else {
                                                                         return colorValueBrandsRecord
                                                                             ?.brandInfo
-                                                                            ?.name;
+                                                                            .name;
                                                                       }
                                                                     }(),
                                                                   ),
@@ -2335,7 +2332,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                                       .primaryText,
                                                                   size: 24.0,
                                                                 ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 width: 8.0)),
                                                           ),
                                                         ),
@@ -2349,9 +2346,9 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                         },
                                       ),
                                   ]
-                                      .divide(SizedBox(height: 8.0))
-                                      .addToStart(SizedBox(height: 8.0))
-                                      .addToEnd(SizedBox(height: 64.0)),
+                                      .divide(const SizedBox(height: 8.0))
+                                      .addToStart(const SizedBox(height: 8.0))
+                                      .addToEnd(const SizedBox(height: 64.0)),
                                 ),
                               ),
                             ),
@@ -2363,11 +2360,11 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                 ),
               ),
             ]
-                .addToStart(SizedBox(height: 24.0))
-                .addToEnd(SizedBox(height: 69.0)),
+                .addToStart(const SizedBox(height: 24.0))
+                .addToEnd(const SizedBox(height: 69.0)),
           ),
           Align(
-            alignment: AlignmentDirectional(0.0, 1.0),
+            alignment: const AlignmentDirectional(0.0, 1.0),
             child: Container(
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).primaryBackground,
@@ -2382,7 +2379,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 16.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 16.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -2394,7 +2391,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                               context.goNamed(
                                 ProductListWidget.routeName,
                                 extra: <String, dynamic>{
-                                  '__transition_info__': TransitionInfo(
+                                  '__transition_info__': const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 0),
@@ -2408,9 +2405,9 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
@@ -2475,7 +2472,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                         .categoryProductList.length >
                                     0) {
                                   _model.count = _model.filterCategoryResult
-                                      ?.categoryProductList?.length;
+                                      ?.categoryProductList.length;
                                   while (_model.count! > 0) {
                                     if (FFAppState()
                                             .UserFilter
@@ -2483,7 +2480,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                             .contains(_model
                                                 .filterCategoryResult
                                                 ?.categoryProductList
-                                                ?.elementAtOrNull(
+                                                .elementAtOrNull(
                                                     (_model.count!) - 1)) !=
                                         true) {
                                       FFAppState().updateUserFilterStruct(
@@ -2526,14 +2523,14 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                         .length >
                                     0) {
                                   _model.count = _model.filterBrandResult
-                                      ?.brandProductId?.length;
+                                      ?.brandProductId.length;
                                   while (_model.count! > 0) {
                                     if (FFAppState()
                                             .UserFilter
                                             .productId
                                             .contains(_model.filterBrandResult
                                                 ?.brandProductId
-                                                ?.elementAtOrNull(
+                                                .elementAtOrNull(
                                                     (_model.count!) - 1)) !=
                                         true) {
                                       FFAppState().updateUserFilterStruct(
@@ -2570,9 +2567,9 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                   .elementAtOrNull(
                                                       (_model.count!) - 1))
                                           .toList()
-                                          ?.firstOrNull
+                                          .firstOrNull
                                           ?.product
-                                          ?.productType ==
+                                          .productType ==
                                       'ready') {
                                     _model.addToProductIds(_model
                                         .allProductsDoc!
@@ -2608,9 +2605,9 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                     .elementAtOrNull(
                                                         (_model.count!) - 1))
                                             .toList()
-                                            ?.firstOrNull
+                                            .firstOrNull
                                             ?.product
-                                            ?.productType ==
+                                            .productType ==
                                         'custom') {
                                       _model.addToProductIds(_model
                                           .allProductsDoc!
@@ -2643,7 +2640,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                               context.goNamed(
                                 ProductListWidget.routeName,
                                 extra: <String, dynamic>{
-                                  '__transition_info__': TransitionInfo(
+                                  '__transition_info__': const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 0),
@@ -2659,9 +2656,9 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -2677,7 +2674,7 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                             ),
                           ),
                         ),
-                      ].divide(SizedBox(width: 16.0)),
+                      ].divide(const SizedBox(width: 16.0)),
                     ),
                   ),
                 ],

@@ -1,11 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'highlights3_model.dart';
 export 'highlights3_model.dart';
 
@@ -55,13 +52,13 @@ class _Highlights3WidgetState extends State<Highlights3Widget> {
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(0.0, -1.0),
+                      alignment: const AlignmentDirectional(0.0, -1.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -91,7 +88,7 @@ class _Highlights3WidgetState extends State<Highlights3Widget> {
                                     color: FlutterFlowTheme.of(context).primary,
                                   ),
                                 ),
-                              ].divide(SizedBox(height: 24.0)),
+                              ].divide(const SizedBox(height: 24.0)),
                             ),
                           ),
                           Expanded(
@@ -121,7 +118,7 @@ class _Highlights3WidgetState extends State<Highlights3Widget> {
                                     color: FlutterFlowTheme.of(context).primary,
                                   ),
                                 ),
-                              ].divide(SizedBox(height: 24.0)),
+                              ].divide(const SizedBox(height: 24.0)),
                             ),
                           ),
                           Expanded(
@@ -151,7 +148,7 @@ class _Highlights3WidgetState extends State<Highlights3Widget> {
                                     color: FlutterFlowTheme.of(context).primary,
                                   ),
                                 ),
-                              ].divide(SizedBox(height: 24.0)),
+                              ].divide(const SizedBox(height: 24.0)),
                             ),
                           ),
                         ],
@@ -160,14 +157,14 @@ class _Highlights3WidgetState extends State<Highlights3Widget> {
                     Expanded(
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 24.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 24.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.asset(
                             'assets/images/h3.jpg',
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             fit: BoxFit.cover,
-                            alignment: Alignment(0.0, -1.0),
+                            alignment: const Alignment(0.0, -1.0),
                           ),
                         ),
                       ),
@@ -177,9 +174,9 @@ class _Highlights3WidgetState extends State<Highlights3Widget> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(-1.0, -1.0),
+                          alignment: const AlignmentDirectional(-1.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 8.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -197,9 +194,9 @@ class _Highlights3WidgetState extends State<Highlights3Widget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, -1.0),
+                          alignment: const AlignmentDirectional(-1.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 8.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -217,9 +214,9 @@ class _Highlights3WidgetState extends State<Highlights3Widget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, -1.0),
+                          alignment: const AlignmentDirectional(-1.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 24.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -240,7 +237,7 @@ class _Highlights3WidgetState extends State<Highlights3Widget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 16.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -249,7 +246,7 @@ class _Highlights3WidgetState extends State<Highlights3Widget> {
                               context.goNamed(
                                 HomeWidget.routeName,
                                 extra: <String, dynamic>{
-                                  '__transition_info__': TransitionInfo(
+                                  '__transition_info__': const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 0),
@@ -263,9 +260,9 @@ class _Highlights3WidgetState extends State<Highlights3Widget> {
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 48.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -295,7 +292,7 @@ class _Highlights3WidgetState extends State<Highlights3Widget> {
                             context.goNamed(
                               HomeWidget.routeName,
                               extra: <String, dynamic>{
-                                '__transition_info__': TransitionInfo(
+                                '__transition_info__': const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -323,8 +320,8 @@ class _Highlights3WidgetState extends State<Highlights3Widget> {
                       ],
                     ),
                   ]
-                      .addToStart(SizedBox(height: 16.0))
-                      .addToEnd(SizedBox(height: 32.0)),
+                      .addToStart(const SizedBox(height: 16.0))
+                      .addToEnd(const SizedBox(height: 32.0)),
                 ),
               ),
             ),

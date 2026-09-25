@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'loglist_model.dart';
 export 'loglist_model.dart';
@@ -45,13 +42,13 @@ class _LoglistWidgetState extends State<LoglistWidget> {
     context.watch<FFAppState>();
 
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 20.0, 0.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 20.0, 0.0),
       child: Container(
         width: double.infinity,
         height: 60.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               blurRadius: 5.0,
               color: Color(0x3416202A),
@@ -74,10 +71,10 @@ class _LoglistWidgetState extends State<LoglistWidget> {
                 children: List.generate(logs.length, (logsIndex) {
                   final logsItem = logs[logsIndex];
                   return Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 8.0),
+                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 8.0),
                       child: SelectionArea(
                           child: AutoSizeText(
                         valueOrDefault<String>(
@@ -95,8 +92,8 @@ class _LoglistWidgetState extends State<LoglistWidget> {
                     ),
                   );
                 })
-                    .divide(SizedBox(height: 4.0))
-                    .addToStart(SizedBox(height: 4.0)),
+                    .divide(const SizedBox(height: 4.0))
+                    .addToStart(const SizedBox(height: 4.0)),
               ),
             );
           },

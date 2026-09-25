@@ -1,20 +1,14 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/instant_timer.dart';
 import 'dart:async';
-import 'dart:convert';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'payment_checker_model.dart';
@@ -44,7 +38,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.instantTimer = InstantTimer.periodic(
-        duration: Duration(milliseconds: 10000),
+        duration: const Duration(milliseconds: 10000),
         callback: (timer) async {
           if (FFAppState().PaymentFlow.paymentProcessesStatus == 'initialize') {
             _model.paymentResponseResult = await queryPaymentResponseRecordOnce(
@@ -125,7 +119,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                         ..paymentCartBackup =
                             _model.updatedPresentOrderResult?.orderItems
                         ..paymentCartCount = _model.updatedPresentOrderResult
-                            ?.orderItems?.cartItems?.length
+                            ?.orderItems.cartItems.length
                         ..paymentId = UpaymentGroup.statusCall.paymentID(
                           (_model.upaymentApiResult?.jsonBody ?? ''),
                         )
@@ -147,7 +141,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                   FFAppState().PaymentFlow.paymentCartCount - 1)
                               ?.productType ==
                           'membership') {
-                        if (currentUserDocument?.userMemberships?.status ==
+                        if (currentUserDocument?.userMemberships.status ==
                             'active') {
                           unawaited(
                             () async {
@@ -228,7 +222,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                                           .paymentCartCount -
                                                       1)
                                                   ?.productInfo
-                                                  ?.name,
+                                                  .name,
                                               purchaseDate: getCurrentTimestamp,
                                               amountPaid: FFAppState()
                                                   .PaymentFlow
@@ -323,7 +317,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                                           .paymentCartCount -
                                                       1)
                                                   ?.productInfo
-                                                  ?.name,
+                                                  .name,
                                               purchaseDate: getCurrentTimestamp,
                                               amountPaid: FFAppState()
                                                   .PaymentFlow
@@ -674,12 +668,12 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                         salesUserInfo:
                                             createSalesUserInfoStruct(
                                           customerId: currentUserDocument
-                                              ?.userInfo?.userId,
+                                              ?.userInfo.userId,
                                           customerRef: currentUserReference,
                                           customerName: currentUserDisplayName,
                                           email: currentUserEmail,
                                           phoneNumber: currentUserDocument
-                                              ?.userInfo?.phoneNumber,
+                                              ?.userInfo.phoneNumber,
                                           shippingAddress:
                                               updateUserShippingaddressStruct(
                                             _model.presentOrderResult
@@ -698,7 +692,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                               ),
                             ));
                             if (_model.upayCartProductResult?.product
-                                    ?.productType ==
+                                    .productType ==
                                 'custom') {
                               _model.notiificationIdmap3 =
                                   await queryIdMapRecordOnce(
@@ -716,14 +710,14 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                     createdAt: getCurrentTimestamp,
                                     notificationId: _model
                                         .notiificationIdmap3?.notificationId
-                                        ?.toString(),
+                                        .toString(),
                                     updatedAt: getCurrentTimestamp,
                                     notificationType: 'customorder',
                                     messageType: 'CUSTOM ORDER PLACED',
                                     message:
-                                        'Order for Custom Product ${_model.upayCartProductResult?.productId} || ${_model.upayCartProductResult?.productInfo?.name} is placed Order ID : ${_model.presentOrderResult?.orderId}',
+                                        'Order for Custom Product ${_model.upayCartProductResult?.productId} || ${_model.upayCartProductResult?.productInfo.name} is placed Order ID : ${_model.presentOrderResult?.orderId}',
                                     toUserRef: _model.upayCartProductResult
-                                        ?.productAuthorizer?.productDesignerRef,
+                                        ?.productAuthorizer.productDesignerRef,
                                     sentFrom: 'system',
                                     markAsRead: false,
                                   ));
@@ -747,9 +741,9 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                               FFAppState().PaymentFlow.paymentCartCount - 1,
                       );
                     }
-                    if (currentUserDocument?.userCart?.couponInfo?.couponId !=
+                    if (currentUserDocument?.userCart.couponInfo.couponId !=
                             null &&
-                        currentUserDocument?.userCart?.couponInfo?.couponId !=
+                        currentUserDocument?.userCart.couponInfo.couponId !=
                             '') {
                       await currentUserDocument!.userCart.couponInfo.couponRef!
                           .update({
@@ -809,23 +803,23 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                     }
 
                     _model.count = _model
-                        .presentOrderResult?.orderItems?.cartItems?.length;
+                        .presentOrderResult?.orderItems.cartItems.length;
                     while (_model.count! > 0) {
                       _model.cartAttCount = (_model
-                              .presentOrderResult?.orderItems?.cartItems
-                              ?.elementAtOrNull((_model.count!) - 1))
+                              .presentOrderResult?.orderItems.cartItems
+                              .elementAtOrNull((_model.count!) - 1))
                           ?.cartItemAttribute
-                          ?.length;
+                          .length;
                       safeSetState(() {});
                       while (_model.cartAttCount! > 0) {
                         _model.brandCartResult = await queryBrandsRecordOnce(
                           queryBuilder: (brandsRecord) => brandsRecord.where(
                             'brand_id',
                             isEqualTo: ((_model.presentOrderResult?.orderItems
-                                        ?.cartItems
-                                        ?.elementAtOrNull((_model.count!) - 1))
+                                        .cartItems
+                                        .elementAtOrNull((_model.count!) - 1))
                                     ?.cartItemAttribute
-                                    ?.elementAtOrNull(
+                                    .elementAtOrNull(
                                         (_model.cartAttCount!) - 1))
                                 ?.attributesDefaultTermId,
                           ),
@@ -837,10 +831,10 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                               attributesRecord.where(
                             'attribute_id',
                             isEqualTo: ((_model.presentOrderResult?.orderItems
-                                        ?.cartItems
-                                        ?.elementAtOrNull((_model.count!) - 1))
+                                        .cartItems
+                                        .elementAtOrNull((_model.count!) - 1))
                                     ?.cartItemAttribute
-                                    ?.elementAtOrNull(
+                                    .elementAtOrNull(
                                         (_model.cartAttCount!) - 1))
                                 ?.attributesId,
                           ),
@@ -848,11 +842,11 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                         ).then((s) => s.firstOrNull);
                         if (_model.attributeCartResult?.attributeId == '1001') {
                           _model.colorName =
-                              _model.brandCartResult?.brandInfo?.name;
+                              _model.brandCartResult?.brandInfo.name;
                           safeSetState(() {});
                         } else {
                           _model.sizeName =
-                              _model.brandCartResult?.brandInfo?.name;
+                              _model.brandCartResult?.brandInfo.name;
                           safeSetState(() {});
                         }
 
@@ -861,27 +855,27 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                       }
                       _model.addToItems(EmailProductDataStruct(
                         productName: (_model
-                                .presentOrderResult?.orderItems?.cartItems
-                                ?.elementAtOrNull((_model.count!) - 1))
+                                .presentOrderResult?.orderItems.cartItems
+                                .elementAtOrNull((_model.count!) - 1))
                             ?.productInfo
-                            ?.name,
+                            .name,
                         productQty: (_model
-                                .presentOrderResult?.orderItems?.cartItems
-                                ?.elementAtOrNull((_model.count!) - 1))
+                                .presentOrderResult?.orderItems.cartItems
+                                .elementAtOrNull((_model.count!) - 1))
                             ?.quantity
-                            ?.toString(),
+                            .toString(),
                         productPrice: (_model
-                                .presentOrderResult?.orderItems?.cartItems
-                                ?.elementAtOrNull((_model.count!) - 1))
+                                .presentOrderResult?.orderItems.cartItems
+                                .elementAtOrNull((_model.count!) - 1))
                             ?.totalPrice
-                            ?.toString(),
+                            .toString(),
                         productSize: _model.sizeName,
                         productColor: _model.colorName,
                         productImage: (_model
-                                .presentOrderResult?.orderItems?.cartItems
-                                ?.elementAtOrNull((_model.count!) - 1))
+                                .presentOrderResult?.orderItems.cartItems
+                                .elementAtOrNull((_model.count!) - 1))
                             ?.productInfo
-                            ?.featureImage,
+                            .featureImage,
                       ));
                       safeSetState(() {});
                       _model.count = _model.count! + -1;
@@ -898,21 +892,21 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                               orderId: _model.presentOrderResult?.orderId,
                               storeName: 'Azyaa',
                               orderTime: _model
-                                  .presentOrderResult?.orderItems?.createdAt
+                                  .presentOrderResult?.orderItems.createdAt
                                   ?.toString(),
                               storeAddress: 'Azyaa',
                               paymentMethod:
                                   _model.presentOrderResult?.paymentMethod,
                               total: _model.presentOrderResult?.totalPrice
-                                  ?.toString(),
+                                  .toString(),
                               subtotal: _model.presentOrderResult?.totalPrice
-                                  ?.toString(),
+                                  .toString(),
                               deliveryCharge: _model
                                   .presentOrderResult?.shippingPrice
-                                  ?.toString(),
+                                  .toString(),
                               couponSave: _model.presentOrderResult?.orderItems
-                                  ?.couponInfo?.couponDiscountedPrice
-                                  ?.toString(),
+                                  .couponInfo.couponDiscountedPrice
+                                  .toString(),
                               supportPhone: '+965 65690900',
                               supportEmail: 'info@azyaa.ai',
                               email: currentUserEmail,
@@ -929,7 +923,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                             create: true,
                           ),
                         ));
-                    if ((currentUserDocument?.userBody?.toList() ?? [])
+                    if ((currentUserDocument?.userBody.toList() ?? [])
                             .where((e) => e.isDefault == true)
                             .toList()
                             .length >
@@ -937,7 +931,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                       FFAppState().updateUserDataFlowStruct(
                         (e) => e
                           ..userSelectedBody =
-                              (currentUserDocument?.userBody?.toList() ?? [])
+                              (currentUserDocument?.userBody.toList() ?? [])
                                   .where((e) => e.isDefault == true)
                                   .toList()
                                   .firstOrNull,
@@ -947,7 +941,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                     context.goNamed(
                       SuccessWidget.routeName,
                       extra: <String, dynamic>{
-                        '__transition_info__': TransitionInfo(
+                        '__transition_info__': const TransitionInfo(
                           hasTransition: true,
                           transitionType: PageTransitionType.fade,
                           duration: Duration(milliseconds: 0),
@@ -970,7 +964,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                     context.goNamed(
                       FailedWidget.routeName,
                       extra: <String, dynamic>{
-                        '__transition_info__': TransitionInfo(
+                        '__transition_info__': const TransitionInfo(
                           hasTransition: true,
                           transitionType: PageTransitionType.fade,
                           duration: Duration(milliseconds: 0),
@@ -1033,8 +1027,8 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                           ..paymentCartCount = _model
                               .tapUpdatedPresentOrderResult
                               ?.orderItems
-                              ?.cartItems
-                              ?.length
+                              .cartItems
+                              .length
                           ..paymentId = TapGroup.statusAPICall.chargeId(
                             (_model.tappaymentApiResult?.jsonBody ?? ''),
                           )
@@ -1057,7 +1051,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                         1)
                                 ?.productType ==
                             'membership') {
-                          if (currentUserDocument?.userMemberships?.status ==
+                          if (currentUserDocument?.userMemberships.status ==
                               'active') {
                             unawaited(
                               () async {
@@ -1140,7 +1134,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                                             .paymentCartCount -
                                                         1)
                                                     ?.productInfo
-                                                    ?.name,
+                                                    .name,
                                                 purchaseDate:
                                                     getCurrentTimestamp,
                                                 amountPaid: FFAppState()
@@ -1239,7 +1233,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                                             .paymentCartCount -
                                                         1)
                                                     ?.productInfo
-                                                    ?.name,
+                                                    .name,
                                                 purchaseDate:
                                                     getCurrentTimestamp,
                                                 amountPaid: FFAppState()
@@ -1593,13 +1587,13 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                           salesUserInfo:
                                               createSalesUserInfoStruct(
                                             customerId: currentUserDocument
-                                                ?.userInfo?.userId,
+                                                ?.userInfo.userId,
                                             customerRef: currentUserReference,
                                             customerName:
                                                 currentUserDisplayName,
                                             email: currentUserEmail,
                                             phoneNumber: currentUserDocument
-                                                ?.userInfo?.phoneNumber,
+                                                ?.userInfo.phoneNumber,
                                             shippingAddress:
                                                 updateUserShippingaddressStruct(
                                               _model.presentOrderResult
@@ -1618,7 +1612,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                 ),
                               ));
                               if (_model.tapCartProductResult?.product
-                                      ?.productType ==
+                                      .productType ==
                                   'custom') {
                                 _model.notiificationIdmap2 =
                                     await queryIdMapRecordOnce(
@@ -1636,16 +1630,16 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                       createdAt: getCurrentTimestamp,
                                       notificationId: _model
                                           .notiificationIdmap2?.notificationId
-                                          ?.toString(),
+                                          .toString(),
                                       updatedAt: getCurrentTimestamp,
                                       notificationType: 'customorder',
                                       messageType: 'CUSTOM ORDER PLACED',
                                       message:
-                                          'Order for Custom Product ${_model.tapCartProductResult?.productId} || ${_model.tapCartProductResult?.productInfo?.name} is placed Order ID : ${_model.presentOrderResult?.orderId}',
+                                          'Order for Custom Product ${_model.tapCartProductResult?.productId} || ${_model.tapCartProductResult?.productInfo.name} is placed Order ID : ${_model.presentOrderResult?.orderId}',
                                       toUserRef: _model
                                           .tapCartProductResult
                                           ?.productAuthorizer
-                                          ?.productDesignerRef,
+                                          .productDesignerRef,
                                       sentFrom: 'system',
                                       markAsRead: false,
                                     ));
@@ -1670,9 +1664,9 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                 FFAppState().PaymentFlow.paymentCartCount - 1,
                         );
                       }
-                      if (currentUserDocument?.userCart?.couponInfo?.couponId !=
+                      if (currentUserDocument?.userCart.couponInfo.couponId !=
                               null &&
-                          currentUserDocument?.userCart?.couponInfo?.couponId !=
+                          currentUserDocument?.userCart.couponInfo.couponId !=
                               '') {
                         await currentUserDocument!
                             .userCart.couponInfo.couponRef!
@@ -1733,24 +1727,24 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                       }
 
                       _model.count = _model
-                          .presentOrderResult?.orderItems?.cartItems?.length;
+                          .presentOrderResult?.orderItems.cartItems.length;
                       while (_model.count! > 0) {
                         _model.cartAttCount = (_model
-                                .presentOrderResult?.orderItems?.cartItems
-                                ?.elementAtOrNull((_model.count!) - 1))
+                                .presentOrderResult?.orderItems.cartItems
+                                .elementAtOrNull((_model.count!) - 1))
                             ?.cartItemAttribute
-                            ?.length;
+                            .length;
                         safeSetState(() {});
                         while (_model.cartAttCount! > 0) {
                           _model.brandCartResult1 = await queryBrandsRecordOnce(
                             queryBuilder: (brandsRecord) => brandsRecord.where(
                               'brand_id',
                               isEqualTo: ((_model.presentOrderResult?.orderItems
-                                          ?.cartItems
-                                          ?.elementAtOrNull(
+                                          .cartItems
+                                          .elementAtOrNull(
                                               (_model.count!) - 1))
                                       ?.cartItemAttribute
-                                      ?.elementAtOrNull(
+                                      .elementAtOrNull(
                                           (_model.cartAttCount!) - 1))
                                   ?.attributesDefaultTermId,
                             ),
@@ -1762,11 +1756,11 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                 attributesRecord.where(
                               'attribute_id',
                               isEqualTo: ((_model.presentOrderResult?.orderItems
-                                          ?.cartItems
-                                          ?.elementAtOrNull(
+                                          .cartItems
+                                          .elementAtOrNull(
                                               (_model.count!) - 1))
                                       ?.cartItemAttribute
-                                      ?.elementAtOrNull(
+                                      .elementAtOrNull(
                                           (_model.cartAttCount!) - 1))
                                   ?.attributesId,
                             ),
@@ -1775,11 +1769,11 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                           if (_model.attributeCartResult1?.attributeId ==
                               '1001') {
                             _model.colorName =
-                                _model.brandCartResult1?.brandInfo?.name;
+                                _model.brandCartResult1?.brandInfo.name;
                             safeSetState(() {});
                           } else {
                             _model.sizeName =
-                                _model.brandCartResult1?.brandInfo?.name;
+                                _model.brandCartResult1?.brandInfo.name;
                             safeSetState(() {});
                           }
 
@@ -1788,27 +1782,27 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                         }
                         _model.addToItems(EmailProductDataStruct(
                           productName: (_model
-                                  .presentOrderResult?.orderItems?.cartItems
-                                  ?.elementAtOrNull((_model.count!) - 1))
+                                  .presentOrderResult?.orderItems.cartItems
+                                  .elementAtOrNull((_model.count!) - 1))
                               ?.productInfo
-                              ?.name,
+                              .name,
                           productQty: (_model
-                                  .presentOrderResult?.orderItems?.cartItems
-                                  ?.elementAtOrNull((_model.count!) - 1))
+                                  .presentOrderResult?.orderItems.cartItems
+                                  .elementAtOrNull((_model.count!) - 1))
                               ?.quantity
-                              ?.toString(),
+                              .toString(),
                           productPrice: (_model
-                                  .presentOrderResult?.orderItems?.cartItems
-                                  ?.elementAtOrNull((_model.count!) - 1))
+                                  .presentOrderResult?.orderItems.cartItems
+                                  .elementAtOrNull((_model.count!) - 1))
                               ?.totalPrice
-                              ?.toString(),
+                              .toString(),
                           productSize: _model.sizeName,
                           productColor: _model.colorName,
                           productImage: (_model
-                                  .presentOrderResult?.orderItems?.cartItems
-                                  ?.elementAtOrNull((_model.count!) - 1))
+                                  .presentOrderResult?.orderItems.cartItems
+                                  .elementAtOrNull((_model.count!) - 1))
                               ?.productInfo
-                              ?.featureImage,
+                              .featureImage,
                         ));
                         safeSetState(() {});
                         _model.count = _model.count! + -1;
@@ -1827,24 +1821,24 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                 orderId: _model.presentOrderResult?.orderId,
                                 storeName: 'Azyaa',
                                 orderTime: _model
-                                    .presentOrderResult?.orderItems?.createdAt
+                                    .presentOrderResult?.orderItems.createdAt
                                     ?.toString(),
                                 storeAddress: 'Azyaa',
                                 paymentMethod:
                                     _model.presentOrderResult?.paymentMethod,
                                 total: _model.presentOrderResult?.totalPrice
-                                    ?.toString(),
+                                    .toString(),
                                 subtotal: _model.presentOrderResult?.totalPrice
-                                    ?.toString(),
+                                    .toString(),
                                 deliveryCharge: _model
                                     .presentOrderResult?.shippingPrice
-                                    ?.toString(),
+                                    .toString(),
                                 couponSave: _model
                                     .presentOrderResult
                                     ?.orderItems
-                                    ?.couponInfo
-                                    ?.couponDiscountedPrice
-                                    ?.toString(),
+                                    .couponInfo
+                                    .couponDiscountedPrice
+                                    .toString(),
                                 supportPhone: '+965 65690900',
                                 supportEmail: 'info@azyaa.ai',
                                 fieldValues: {
@@ -1860,7 +1854,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                               create: true,
                             ),
                           ));
-                      if ((currentUserDocument?.userBody?.toList() ?? [])
+                      if ((currentUserDocument?.userBody.toList() ?? [])
                               .where((e) => e.isDefault == true)
                               .toList()
                               .length >
@@ -1868,7 +1862,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                         FFAppState().updateUserDataFlowStruct(
                           (e) => e
                             ..userSelectedBody =
-                                (currentUserDocument?.userBody?.toList() ?? [])
+                                (currentUserDocument?.userBody.toList() ?? [])
                                     .where((e) => e.isDefault == true)
                                     .toList()
                                     .firstOrNull,
@@ -1878,7 +1872,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                       context.goNamed(
                         SuccessWidget.routeName,
                         extra: <String, dynamic>{
-                          '__transition_info__': TransitionInfo(
+                          '__transition_info__': const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -1961,8 +1955,8 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                           ..paymentCartCount = _model
                               .myfatoorahUpdatedPresentOrderResult
                               ?.orderItems
-                              ?.cartItems
-                              ?.length
+                              .cartItems
+                              .length
                           ..paymentId =
                               MyfatoorahGroup.invoiceStatusCall.paymentID(
                             (_model.myfatoorahpaymentApiResult?.jsonBody ?? ''),
@@ -1986,7 +1980,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                         1)
                                 ?.productType ==
                             'membership') {
-                          if (currentUserDocument?.userMemberships?.status ==
+                          if (currentUserDocument?.userMemberships.status ==
                               'active') {
                             unawaited(
                               () async {
@@ -2069,7 +2063,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                                             .paymentCartCount -
                                                         1)
                                                     ?.productInfo
-                                                    ?.name,
+                                                    .name,
                                                 purchaseDate:
                                                     getCurrentTimestamp,
                                                 amountPaid: FFAppState()
@@ -2168,7 +2162,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                                             .paymentCartCount -
                                                         1)
                                                     ?.productInfo
-                                                    ?.name,
+                                                    .name,
                                                 purchaseDate:
                                                     getCurrentTimestamp,
                                                 amountPaid: FFAppState()
@@ -2526,13 +2520,13 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                           salesUserInfo:
                                               createSalesUserInfoStruct(
                                             customerId: currentUserDocument
-                                                ?.userInfo?.userId,
+                                                ?.userInfo.userId,
                                             customerRef: currentUserReference,
                                             customerName:
                                                 currentUserDisplayName,
                                             email: currentUserEmail,
                                             phoneNumber: currentUserDocument
-                                                ?.userInfo?.phoneNumber,
+                                                ?.userInfo.phoneNumber,
                                             shippingAddress:
                                                 updateUserShippingaddressStruct(
                                               _model.presentOrderResult
@@ -2551,7 +2545,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                 ),
                               ));
                               if (_model.myfatoorahCartProductResult?.product
-                                      ?.productType ==
+                                      .productType ==
                                   'custom') {
                                 _model.notiificationIdmap1 =
                                     await queryIdMapRecordOnce(
@@ -2569,16 +2563,16 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                       createdAt: getCurrentTimestamp,
                                       notificationId: _model
                                           .notiificationIdmap1?.notificationId
-                                          ?.toString(),
+                                          .toString(),
                                       updatedAt: getCurrentTimestamp,
                                       notificationType: 'customorder',
                                       messageType: 'CUSTOM ORDER PLACED',
                                       message:
-                                          'Order for Custom Product ${_model.myfatoorahCartProductResult?.productId} || ${_model.myfatoorahCartProductResult?.productInfo?.name} is placed Order ID : ${_model.presentOrderResult?.orderId}',
+                                          'Order for Custom Product ${_model.myfatoorahCartProductResult?.productId} || ${_model.myfatoorahCartProductResult?.productInfo.name} is placed Order ID : ${_model.presentOrderResult?.orderId}',
                                       toUserRef: _model
                                           .myfatoorahCartProductResult
                                           ?.productAuthorizer
-                                          ?.productDesignerRef,
+                                          .productDesignerRef,
                                       sentFrom: 'system',
                                       markAsRead: false,
                                     ));
@@ -2603,9 +2597,9 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                 FFAppState().PaymentFlow.paymentCartCount - 1,
                         );
                       }
-                      if (currentUserDocument?.userCart?.couponInfo?.couponId !=
+                      if (currentUserDocument?.userCart.couponInfo.couponId !=
                               null &&
-                          currentUserDocument?.userCart?.couponInfo?.couponId !=
+                          currentUserDocument?.userCart.couponInfo.couponId !=
                               '') {
                         await currentUserDocument!
                             .userCart.couponInfo.couponRef!
@@ -2666,24 +2660,24 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                       }
 
                       _model.count = _model
-                          .presentOrderResult?.orderItems?.cartItems?.length;
+                          .presentOrderResult?.orderItems.cartItems.length;
                       while (_model.count! > 0) {
                         _model.cartAttCount = (_model
-                                .presentOrderResult?.orderItems?.cartItems
-                                ?.elementAtOrNull((_model.count!) - 1))
+                                .presentOrderResult?.orderItems.cartItems
+                                .elementAtOrNull((_model.count!) - 1))
                             ?.cartItemAttribute
-                            ?.length;
+                            .length;
                         safeSetState(() {});
                         while (_model.cartAttCount! > 0) {
                           _model.brandCartResult2 = await queryBrandsRecordOnce(
                             queryBuilder: (brandsRecord) => brandsRecord.where(
                               'brand_id',
                               isEqualTo: ((_model.presentOrderResult?.orderItems
-                                          ?.cartItems
-                                          ?.elementAtOrNull(
+                                          .cartItems
+                                          .elementAtOrNull(
                                               (_model.count!) - 1))
                                       ?.cartItemAttribute
-                                      ?.elementAtOrNull(
+                                      .elementAtOrNull(
                                           (_model.cartAttCount!) - 1))
                                   ?.attributesDefaultTermId,
                             ),
@@ -2695,11 +2689,11 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                 attributesRecord.where(
                               'attribute_id',
                               isEqualTo: ((_model.presentOrderResult?.orderItems
-                                          ?.cartItems
-                                          ?.elementAtOrNull(
+                                          .cartItems
+                                          .elementAtOrNull(
                                               (_model.count!) - 1))
                                       ?.cartItemAttribute
-                                      ?.elementAtOrNull(
+                                      .elementAtOrNull(
                                           (_model.cartAttCount!) - 1))
                                   ?.attributesId,
                             ),
@@ -2708,11 +2702,11 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                           if (_model.attributeCartResult2?.attributeId ==
                               '1001') {
                             _model.colorName =
-                                _model.brandCartResult2?.brandInfo?.name;
+                                _model.brandCartResult2?.brandInfo.name;
                             safeSetState(() {});
                           } else {
                             _model.sizeName =
-                                _model.brandCartResult2?.brandInfo?.name;
+                                _model.brandCartResult2?.brandInfo.name;
                             safeSetState(() {});
                           }
 
@@ -2721,27 +2715,27 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                         }
                         _model.addToItems(EmailProductDataStruct(
                           productName: (_model
-                                  .presentOrderResult?.orderItems?.cartItems
-                                  ?.elementAtOrNull((_model.count!) - 1))
+                                  .presentOrderResult?.orderItems.cartItems
+                                  .elementAtOrNull((_model.count!) - 1))
                               ?.productInfo
-                              ?.name,
+                              .name,
                           productQty: (_model
-                                  .presentOrderResult?.orderItems?.cartItems
-                                  ?.elementAtOrNull((_model.count!) - 1))
+                                  .presentOrderResult?.orderItems.cartItems
+                                  .elementAtOrNull((_model.count!) - 1))
                               ?.quantity
-                              ?.toString(),
+                              .toString(),
                           productPrice: (_model
-                                  .presentOrderResult?.orderItems?.cartItems
-                                  ?.elementAtOrNull((_model.count!) - 1))
+                                  .presentOrderResult?.orderItems.cartItems
+                                  .elementAtOrNull((_model.count!) - 1))
                               ?.totalPrice
-                              ?.toString(),
+                              .toString(),
                           productSize: _model.sizeName,
                           productColor: _model.colorName,
                           productImage: (_model
-                                  .presentOrderResult?.orderItems?.cartItems
-                                  ?.elementAtOrNull((_model.count!) - 1))
+                                  .presentOrderResult?.orderItems.cartItems
+                                  .elementAtOrNull((_model.count!) - 1))
                               ?.productInfo
-                              ?.featureImage,
+                              .featureImage,
                         ));
                         safeSetState(() {});
                         _model.count = _model.count! + -1;
@@ -2760,24 +2754,24 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                 orderId: _model.presentOrderResult?.orderId,
                                 storeName: 'Azyaa',
                                 orderTime: _model
-                                    .presentOrderResult?.orderItems?.createdAt
+                                    .presentOrderResult?.orderItems.createdAt
                                     ?.toString(),
                                 storeAddress: 'Azyaa',
                                 paymentMethod:
                                     _model.presentOrderResult?.paymentMethod,
                                 total: _model.presentOrderResult?.totalPrice
-                                    ?.toString(),
+                                    .toString(),
                                 subtotal: _model.presentOrderResult?.totalPrice
-                                    ?.toString(),
+                                    .toString(),
                                 deliveryCharge: _model
                                     .presentOrderResult?.shippingPrice
-                                    ?.toString(),
+                                    .toString(),
                                 couponSave: _model
                                     .presentOrderResult
                                     ?.orderItems
-                                    ?.couponInfo
-                                    ?.couponDiscountedPrice
-                                    ?.toString(),
+                                    .couponInfo
+                                    .couponDiscountedPrice
+                                    .toString(),
                                 supportPhone: '+965 65690900',
                                 supportEmail: 'info@azyaa.ai',
                                 fieldValues: {
@@ -2793,7 +2787,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                               create: true,
                             ),
                           ));
-                      if ((currentUserDocument?.userBody?.toList() ?? [])
+                      if ((currentUserDocument?.userBody.toList() ?? [])
                               .where((e) => e.isDefault == true)
                               .toList()
                               .length >
@@ -2801,7 +2795,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                         FFAppState().updateUserDataFlowStruct(
                           (e) => e
                             ..userSelectedBody =
-                                (currentUserDocument?.userBody?.toList() ?? [])
+                                (currentUserDocument?.userBody.toList() ?? [])
                                     .where((e) => e.isDefault == true)
                                     .toList()
                                     .firstOrNull,
@@ -2811,7 +2805,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                       context.goNamed(
                         SuccessWidget.routeName,
                         extra: <String, dynamic>{
-                          '__transition_info__': TransitionInfo(
+                          '__transition_info__': const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -2866,7 +2860,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                       context.goNamed(
                         FailedWidget.routeName,
                         extra: <String, dynamic>{
-                          '__transition_info__': TransitionInfo(
+                          '__transition_info__': const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 0),
@@ -2904,7 +2898,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                 context.goNamed(
                   FailedWidget.routeName,
                   extra: <String, dynamic>{
-                    '__transition_info__': TransitionInfo(
+                    '__transition_info__': const TransitionInfo(
                       hasTransition: true,
                       transitionType: PageTransitionType.fade,
                       duration: Duration(milliseconds: 0),
@@ -2916,7 +2910,7 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
               }
             } else {
               await Future.delayed(
-                Duration(
+                const Duration(
                   milliseconds: 5000,
                 ),
               );

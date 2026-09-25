@@ -1,22 +1,18 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:convert';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'phone_model.dart';
@@ -118,10 +114,10 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                             return Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: MediaQuery.sizeOf(context).height * 1.0,
-                              decoration: BoxDecoration(),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              decoration: const BoxDecoration(),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -129,7 +125,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: ClipRRect(
                                         borderRadius:
@@ -143,7 +139,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -160,7 +156,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 24.0),
                                       child: Text(
                                         () {
@@ -208,9 +204,9 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                       ),
                                     ),
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 12.0),
                                         child: Container(
                                           width:
@@ -230,14 +226,14 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                             ),
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Stack(
                                             children: [
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(2.0),
+                                                  padding: const EdgeInsets.all(2.0),
                                                   child: FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model
@@ -318,7 +314,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                     borderWidth: 0.0,
                                                     borderRadius: 0.0,
                                                     margin:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(65.0, 4.0,
                                                                 12.0, 4.0),
                                                     hidesUnderline: true,
@@ -329,12 +325,12 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(8.0),
-                                                  child: Image.network(
-                                                    functions.getCountryFlag(
+                                                  padding: const EdgeInsets.all(8.0),
+                                                  child: CachedNetworkImage(
+                                                    imageUrl: functions.getCountryFlag(
                                                         _model
                                                             .countryListValue)!,
                                                     width: 35.0,
@@ -348,12 +344,12 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 12.0),
                                       child: Stack(
                                         children: [
                                           Align(
-                                            alignment: AlignmentDirectional(
+                                            alignment: const AlignmentDirectional(
                                                 -1.0, -1.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
@@ -459,7 +455,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                               context)
                                                           .primaryBackground,
                                                   contentPadding:
-                                                      EdgeInsetsDirectional
+                                                      const EdgeInsetsDirectional
                                                           .fromSTEB(68.0, 0.0,
                                                               0.0, 8.0),
                                                 ),
@@ -490,10 +486,10 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                             ),
                                           ),
                                           Align(
-                                            alignment: AlignmentDirectional(
+                                            alignment: const AlignmentDirectional(
                                                 -1.0, -1.0),
                                             child: Padding(
-                                              padding: EdgeInsets.all(16.0),
+                                              padding: const EdgeInsets.all(16.0),
                                               child: Text(
                                                 '+${functions.getDailCode(_model.countryListValue)}',
                                                 style:
@@ -511,7 +507,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 12.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
@@ -615,8 +611,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                               );
                                               final phoneNumberVal =
                                                   '${functions.getDialCodeWithPlus(_model.countryListValue)}${_model.phonenumberTextController.text}';
-                                              if (phoneNumberVal == null ||
-                                                  phoneNumberVal.isEmpty ||
+                                              if (phoneNumberVal.isEmpty ||
                                                   !phoneNumberVal
                                                       .startsWith('+')) {
                                                 ScaffoldMessenger.of(context)
@@ -652,7 +647,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                 if (_model
                                                         .settingsResultPhoneOtpType
                                                         ?.settingsCompanyInfo
-                                                        ?.phoneOtpType ==
+                                                        .phoneOtpType ==
                                                     'SMS') {
                                                   _model.otpSmsSendApiStatus =
                                                       await OTPlessGroup
@@ -707,7 +702,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                           .routeName,
                                                       extra: <String, dynamic>{
                                                         '__transition_info__':
-                                                            TransitionInfo(
+                                                            const TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -737,7 +732,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                                 .primaryText,
                                                           ),
                                                         ),
-                                                        duration: Duration(
+                                                        duration: const Duration(
                                                             milliseconds: 4000),
                                                         backgroundColor:
                                                             FlutterFlowTheme.of(
@@ -799,7 +794,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                           .routeName,
                                                       extra: <String, dynamic>{
                                                         '__transition_info__':
-                                                            TransitionInfo(
+                                                            const TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -829,7 +824,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                                 .primaryText,
                                                           ),
                                                         ),
-                                                        duration: Duration(
+                                                        duration: const Duration(
                                                             milliseconds: 4000),
                                                         backgroundColor:
                                                             FlutterFlowTheme.of(
@@ -855,10 +850,10 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                   1.0,
                                           height: 48.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -880,9 +875,9 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(0.0, -1.0),
+                                          const AlignmentDirectional(0.0, -1.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 24.0),
                                         child: RichText(
                                           textScaler:
@@ -934,7 +929,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                           extra: <String,
                                                               dynamic>{
                                                             '__transition_info__':
-                                                                TransitionInfo(
+                                                                const TransitionInfo(
                                                               hasTransition:
                                                                   true,
                                                               transitionType:
@@ -990,7 +985,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                                           extra: <String,
                                                               dynamic>{
                                                             '__transition_info__':
-                                                                TransitionInfo(
+                                                                const TransitionInfo(
                                                               hasTransition:
                                                                   true,
                                                               transitionType:
@@ -1023,9 +1018,9 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(0.0, -1.0),
+                                          const AlignmentDirectional(0.0, -1.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 24.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -1044,7 +1039,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                                               context.mounted,
                                               extra: <String, dynamic>{
                                                 '__transition_info__':
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,

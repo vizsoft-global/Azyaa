@@ -1,14 +1,10 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/home/components/blank_loading/blank_loading_widget.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'cart_item_non_refund_model.dart';
 export 'cart_item_non_refund_model.dart';
 
@@ -54,11 +50,11 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
     return AuthUserStreamWidget(
       builder: (context) => Builder(
         builder: (context) {
-          final nonRefundItems = currentUserDocument?.userCart?.cartItems
-                  ?.where(
+          final nonRefundItems = currentUserDocument?.userCart.cartItems
+                  .where(
                       (e) => e.productStockInfo.isProductRefundable == false)
                   .toList()
-                  ?.toList() ??
+                  .toList() ??
               [];
 
           return Column(
@@ -78,7 +74,7 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                 builder: (context, snapshot) {
                   // Customize what your widget looks like when it's loading.
                   if (!snapshot.hasData) {
-                    return BlankLoadingWidget();
+                    return const BlankLoadingWidget();
                   }
                   List<ProductsRecord> rowProductsRecordList = snapshot.data!;
                   final rowProductsRecord = rowProductsRecordList.isNotEmpty
@@ -93,12 +89,12 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Stack(
-                            alignment: AlignmentDirectional(0.0, 1.0),
+                            alignment: const AlignmentDirectional(0.0, 1.0),
                             children: [
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
-                                child: Image.network(
-                                  (nonRefundItemsItem.productType ==
+                                child: CachedNetworkImage(
+                                  imageUrl: (nonRefundItemsItem.productType ==
                                               'membership') ||
                                           (nonRefundItemsItem.productType ==
                                               'virtualtryon')
@@ -108,13 +104,13 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                                   width: 80.0,
                                   height: 80.0,
                                   fit: BoxFit.cover,
-                                  alignment: Alignment(0.0, 1.0),
+                                  alignment: const Alignment(0.0, 1.0),
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, -1.0),
+                                alignment: const AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 2.0),
                                   child: Container(
                                     decoration: BoxDecoration(
@@ -122,13 +118,13 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                                           FlutterFlowTheme.of(context).purple,
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           6.0, 2.0, 6.0, 2.0),
                                       child: Text(
                                         rowProductsRecord
-                                                    ?.product?.productType ==
+                                                    ?.product.productType ==
                                                 'ready'
                                             ? FFLocalizations.of(context)
                                                 .getVariableText(
@@ -197,7 +193,7 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                                         fontWeight: FontWeight.bold,
                                       ),
                                 ),
-                              ].divide(SizedBox(width: 8.0)),
+                              ].divide(const SizedBox(width: 8.0)),
                             ),
                             Row(
                               mainAxisSize: MainAxisSize.max,
@@ -222,10 +218,10 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                                       return '${FFLocalizations.of(context).getVariableText(
                                         enText: 'Quantity : ',
                                         arText: 'كمية :',
-                                      )}${nonRefundItemsItem.quantity.toString()}${rowProductsRecord?.product?.productType != null && rowProductsRecord?.product?.productType != '' ? FFLocalizations.of(context).getVariableText(
+                                      )}${nonRefundItemsItem.quantity.toString()}${rowProductsRecord.product.productType != '' ? FFLocalizations.of(context).getVariableText(
                                           enText: '(',
                                           arText: '(',
-                                        ) : '  '}${rowProductsRecord?.product?.productType != null && rowProductsRecord?.product?.productType != '' ? rowProductsRecord?.product?.productType : ' '}${rowProductsRecord?.product?.productType != null && rowProductsRecord?.product?.productType != '' ? FFLocalizations.of(context).getVariableText(
+                                        ) : '  '}${rowProductsRecord.product.productType != '' ? rowProductsRecord.product.productType : ' '}${rowProductsRecord.product.productType != '' ? FFLocalizations.of(context).getVariableText(
                                           enText: ')',
                                           arText: ')',
                                         ) : ' '}';
@@ -288,7 +284,7 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
                                         if (!snapshot.hasData) {
-                                          return Center(
+                                          return const Center(
                                             child: SizedBox(
                                               width: 2.0,
                                               height: 2.0,
@@ -325,49 +321,49 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                                                 enText: () {
                                                   if (rowAttributesRecord
                                                           ?.attributeInfoCustomTranslate
-                                                          ?.name
-                                                          ?.en !=
+                                                          .name
+                                                          .en !=
                                                       '') {
                                                     return rowAttributesRecord
                                                         ?.attributeInfoCustomTranslate
-                                                        ?.name
-                                                        ?.en;
+                                                        .name
+                                                        .en;
                                                   } else if (rowAttributesRecord
                                                           ?.attributeInfoTranslate
-                                                          ?.name
-                                                          ?.en !=
+                                                          .name
+                                                          .en !=
                                                       '') {
                                                     return rowAttributesRecord
                                                         ?.attributeInfoTranslate
-                                                        ?.name
-                                                        ?.en;
+                                                        .name
+                                                        .en;
                                                   } else {
                                                     return rowAttributesRecord
-                                                        ?.attributeInfo?.name;
+                                                        ?.attributeInfo.name;
                                                   }
                                                 }(),
                                                 arText: () {
                                                   if (rowAttributesRecord
                                                           ?.attributeInfoCustomTranslate
-                                                          ?.name
-                                                          ?.ar !=
+                                                          .name
+                                                          .ar !=
                                                       '') {
                                                     return rowAttributesRecord
                                                         ?.attributeInfoCustomTranslate
-                                                        ?.name
-                                                        ?.ar;
+                                                        .name
+                                                        .ar;
                                                   } else if (rowAttributesRecord
                                                           ?.attributeInfoTranslate
-                                                          ?.name
-                                                          ?.ar !=
+                                                          .name
+                                                          .ar !=
                                                       '') {
                                                     return rowAttributesRecord
                                                         ?.attributeInfoTranslate
-                                                        ?.name
-                                                        ?.ar;
+                                                        .name
+                                                        .ar;
                                                   } else {
                                                     return rowAttributesRecord
-                                                        ?.attributeInfo?.name;
+                                                        ?.attributeInfo.name;
                                                   }
                                                 }(),
                                               ),
@@ -402,7 +398,7 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
                                                 if (!snapshot.hasData) {
-                                                  return Center(
+                                                  return const Center(
                                                     child: SizedBox(
                                                       width: 2.0,
                                                       height: 2.0,
@@ -437,49 +433,49 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                                                     enText: () {
                                                       if (attributeDefaultTermBrandsRecord
                                                               ?.brandInfoCustomTranslate
-                                                              ?.name
-                                                              ?.en !=
+                                                              .name
+                                                              .en !=
                                                           '') {
                                                         return attributeDefaultTermBrandsRecord
                                                             ?.brandInfoCustomTranslate
-                                                            ?.name
-                                                            ?.en;
+                                                            .name
+                                                            .en;
                                                       } else if (attributeDefaultTermBrandsRecord
                                                               ?.brandInfoTranslate
-                                                              ?.name
-                                                              ?.en !=
+                                                              .name
+                                                              .en !=
                                                           '') {
                                                         return attributeDefaultTermBrandsRecord
                                                             ?.brandInfoTranslate
-                                                            ?.name
-                                                            ?.en;
+                                                            .name
+                                                            .en;
                                                       } else {
                                                         return attributeDefaultTermBrandsRecord
-                                                            ?.brandInfo?.name;
+                                                            ?.brandInfo.name;
                                                       }
                                                     }(),
                                                     arText: () {
                                                       if (attributeDefaultTermBrandsRecord
                                                               ?.brandInfoCustomTranslate
-                                                              ?.name
-                                                              ?.ar !=
+                                                              .name
+                                                              .ar !=
                                                           '') {
                                                         return attributeDefaultTermBrandsRecord
                                                             ?.brandInfoCustomTranslate
-                                                            ?.name
-                                                            ?.ar;
+                                                            .name
+                                                            .ar;
                                                       } else if (attributeDefaultTermBrandsRecord
                                                               ?.brandInfoTranslate
-                                                              ?.name
-                                                              ?.ar !=
+                                                              .name
+                                                              .ar !=
                                                           '') {
                                                         return attributeDefaultTermBrandsRecord
                                                             ?.brandInfoTranslate
-                                                            ?.name
-                                                            ?.ar;
+                                                            .name
+                                                            .ar;
                                                       } else {
                                                         return attributeDefaultTermBrandsRecord
-                                                            ?.brandInfo?.name;
+                                                            ?.brandInfo.name;
                                                       }
                                                     }(),
                                                   ),
@@ -507,7 +503,7 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                                     .productStockInfo.isProductReturn ==
                                 true)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -527,14 +523,14 @@ class _CartItemNonRefundWidgetState extends State<CartItemNonRefundWidget> {
                               thickness: 1.0,
                               color: FlutterFlowTheme.of(context).alternate,
                             ),
-                          ].divide(SizedBox(height: 4.0)),
+                          ].divide(const SizedBox(height: 4.0)),
                         ),
                       ),
-                    ].divide(SizedBox(width: 8.0)),
+                    ].divide(const SizedBox(width: 8.0)),
                   );
                 },
               );
-            }).divide(SizedBox(height: 8.0)),
+            }).divide(const SizedBox(height: 8.0)),
           );
         },
       ),
