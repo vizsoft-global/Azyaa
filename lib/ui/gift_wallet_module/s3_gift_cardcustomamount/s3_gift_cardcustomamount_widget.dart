@@ -125,7 +125,6 @@ class _S3GiftCardcustomamountWidgetState
                             size: 20.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                         FlutterFlowIconButton(
@@ -140,7 +139,6 @@ class _S3GiftCardcustomamountWidgetState
                             size: 20.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                       ].divide(const SizedBox(width: 8.0)),
@@ -888,7 +886,6 @@ class _S3GiftCardcustomamountWidgetState
                         const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () {
-                        print('Button pressed ...');
                       },
                       text: FFLocalizations.of(context).getText(
                         '67vht9vu' /* Add  to Bag */,

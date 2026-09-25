@@ -143,7 +143,6 @@ class _DesignerBookingCompleteWidgetState
                               size: 24.0,
                             ),
                             onPressed: () {
-                              print('IconButton pressed ...');
                             },
                           ),
                           Column(
@@ -317,7 +316,6 @@ class _DesignerBookingCompleteWidgetState
                     ),
                     FFButtonWidget(
                       onPressed: () {
-                        print('Button pressed ...');
                       },
                       text: FFLocalizations.of(context).getText(
                         'a6vmulw8' /* See Bookings */,

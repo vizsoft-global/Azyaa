@@ -94,7 +94,6 @@ class _VTODeleteConfirmWidgetState extends State<VTODeleteConfirmWidget> {
                           size: 24.0,
                         ),
                         onPressed: () {
-                          print('IconButton pressed ...');
                         },
                       ),
                     ),

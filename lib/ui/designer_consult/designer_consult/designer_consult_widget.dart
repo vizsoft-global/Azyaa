@@ -121,7 +121,6 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                             size: 18.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                       ].divide(const SizedBox(width: 8.0)),
@@ -497,7 +496,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                             size: 24.0,
                                                           ),
                                                           onPressed: () {
-                                                            print(
+                                                            debugPrint(
                                                                 'IconButton pressed ...');
                                                           },
                                                         ),
@@ -692,7 +691,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                               ),
                                                               FFButtonWidget(
                                                                 onPressed: () {
-                                                                  print(
+                                                                  debugPrint(
                                                                       'Button pressed ...');
                                                                 },
                                                                 text: FFLocalizations.of(
@@ -761,7 +760,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                       size: 24.0,
                                                     ),
                                                     onPressed: () {
-                                                      print(
+                                                      debugPrint(
                                                           'IconButton pressed ...');
                                                     },
                                                   ),
@@ -940,7 +939,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                               ),
                                                               FFButtonWidget(
                                                                 onPressed: () {
-                                                                  print(
+                                                                  debugPrint(
                                                                       'Button pressed ...');
                                                                 },
                                                                 text: FFLocalizations.of(
@@ -1009,7 +1008,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                       size: 24.0,
                                                     ),
                                                     onPressed: () {
-                                                      print(
+                                                      debugPrint(
                                                           'IconButton pressed ...');
                                                     },
                                                   ),
@@ -1188,7 +1187,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                               ),
                                                               FFButtonWidget(
                                                                 onPressed: () {
-                                                                  print(
+                                                                  debugPrint(
                                                                       'Button pressed ...');
                                                                 },
                                                                 text: FFLocalizations.of(
@@ -1257,7 +1256,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                       size: 24.0,
                                                     ),
                                                     onPressed: () {
-                                                      print(
+                                                      debugPrint(
                                                           'IconButton pressed ...');
                                                     },
                                                   ),
@@ -1436,7 +1435,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                               ),
                                                               FFButtonWidget(
                                                                 onPressed: () {
-                                                                  print(
+                                                                  debugPrint(
                                                                       'Button pressed ...');
                                                                 },
                                                                 text: FFLocalizations.of(
@@ -1505,7 +1504,7 @@ class _DesignerConsultWidgetState extends State<DesignerConsultWidget>
                                                       size: 24.0,
                                                     ),
                                                     onPressed: () {
-                                                      print(
+                                                      debugPrint(
                                                           'IconButton pressed ...');
                                                     },
                                                   ),

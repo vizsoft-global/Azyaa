@@ -169,7 +169,6 @@ class _DesignerFormWidgetState extends State<DesignerFormWidget> {
                               size: 20.0,
                             ),
                             onPressed: () {
-                              print('IconButton pressed ...');
                             },
                           ),
                       ].divide(const SizedBox(width: 8.0)),

@@ -1,4 +1,5 @@
 // Automatic FlutterFlow imports
+import 'dart:developer';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 // Imports other custom actions
@@ -15,15 +16,15 @@ Future<String> getFcmTokenAndSave(String userId) async {
         await FirebaseFirestore.instance.collection('users').doc(userId).get();
 
     if (!userDoc.exists) {
-      print("User not found");
+      log("User not found");
       return '';
     }
 
     final token = userDoc.data()?['fcm_token'] ?? '';
-    print("Retrieved FCM token: $token");
+    log("Retrieved FCM token: $token");
     return token;
   } catch (e) {
-    print("Error fetching FCM token: $e");
+    log("Error fetching FCM token: $e");
     return '';
   }
 }

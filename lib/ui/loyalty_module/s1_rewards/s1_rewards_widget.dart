@@ -120,7 +120,6 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                             size: 20.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                       ].divide(const SizedBox(width: 8.0)),
@@ -1208,7 +1207,6 @@ class _S1RewardsWidgetState extends State<S1RewardsWidget>
                                           16.0, 0.0, 16.0, 0.0),
                                       child: FFButtonWidget(
                                         onPressed: () {
-                                          print('Button pressed ...');
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(

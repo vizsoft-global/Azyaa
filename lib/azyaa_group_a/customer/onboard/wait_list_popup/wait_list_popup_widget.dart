@@ -123,7 +123,6 @@ class _WaitListPopupWidgetState extends State<WaitListPopupWidget> {
             ),
             FFButtonWidget(
               onPressed: () {
-                print('send pressed ...');
               },
               text: FFLocalizations.of(context).getText(
                 'ue7ia0ph' /* Okay */,

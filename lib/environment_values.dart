@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:flutter/services.dart';
 
 class FFDevEnvironmentValues {
@@ -23,7 +24,7 @@ class FFDevEnvironmentValues {
       _branchHostUrl = data['branchHostUrl'];
       _branchKey = data['branchKey'];
     } catch (e) {
-      print('Error loading environment values: $e');
+      log('Error loading environment values: $e');
     }
   }
 

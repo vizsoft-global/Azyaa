@@ -884,7 +884,6 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                               size: 16.0,
                                             ),
                                             onPressed: () {
-                                              print('sharecon pressed ...');
                                             },
                                           ),
                                         ),
@@ -1665,7 +1664,6 @@ class _CreatorSpaceWidgetState extends State<CreatorSpaceWidget> {
                                       0.0, 0.0, 0.0, 24.0),
                                   child: FFButtonWidget(
                                     onPressed: () {
-                                      print('Button pressed ...');
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'q9pp9okk' /* View More */,

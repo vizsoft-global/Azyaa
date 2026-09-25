@@ -112,7 +112,6 @@ class _S2CouponDetailsWidgetState extends State<S2CouponDetailsWidget> {
                             size: 20.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                       ].divide(const SizedBox(width: 8.0)),
@@ -395,7 +394,6 @@ supply pu... */
                                     ),
                                     child: FFButtonWidget(
                                       onPressed: () {
-                                        print('Button pressed ...');
                                       },
                                       text: FFLocalizations.of(context).getText(
                                         'mgn7e4jx' /* Redeem */,

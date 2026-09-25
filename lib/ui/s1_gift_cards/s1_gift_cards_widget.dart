@@ -117,7 +117,6 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                             size: 18.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                         FlutterFlowIconButton(
@@ -132,7 +131,6 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                             size: 18.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                       ].divide(const SizedBox(width: 8.0)),
@@ -1040,7 +1038,7 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                                                 Flexible(
                                                   child: FFButtonWidget(
                                                     onPressed: () {
-                                                      print(
+                                                      debugPrint(
                                                           'Button pressed ...');
                                                     },
                                                     text: FFLocalizations.of(
@@ -1854,7 +1852,6 @@ class _S1GiftCardsWidgetState extends State<S1GiftCardsWidget>
                           const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () {
-                          print('Button pressed ...');
                         },
                         text: FFLocalizations.of(context).getText(
                           '2tn01z2t' /* Create a Gift Card */,

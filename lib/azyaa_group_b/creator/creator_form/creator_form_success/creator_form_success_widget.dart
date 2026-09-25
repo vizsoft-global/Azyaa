@@ -210,7 +210,6 @@ class _CreatorFormSuccessWidgetState extends State<CreatorFormSuccessWidget> {
                               16.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () {
-                              print('Button pressed ...');
                             },
                             text: FFLocalizations.of(context).getText(
                               'ay0kbhdl' /* Turn on notification */,

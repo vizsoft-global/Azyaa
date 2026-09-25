@@ -69,7 +69,7 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
         }
       }
     } catch (e) {
-      print('Error: $e');
+      debugPrint('Error: $e');
     } finally {
       safeSetState(() => _loading = false);
     }
@@ -280,7 +280,7 @@ Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {
     }
     return jsonDecode(parameterDataStr) as Map<String, dynamic>;
   } catch (e) {
-    print('Error parsing parameter data: $e');
+    debugPrint('Error parsing parameter data: $e');
     return {};
   }
 }

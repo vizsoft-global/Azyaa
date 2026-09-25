@@ -1,4 +1,5 @@
 import 'package:cloud_functions/cloud_functions.dart';
+import 'dart:developer';
 
 /// The 70s default matches the Firebase Functions SDK's built-in default
 /// and is fine for chat / image-gen / STT / TTS. Long-running callers
@@ -24,14 +25,14 @@ Future<Map<String, dynamic>> makeCloudCall(
         ? Map<String, dynamic>.from(response.data as Map)
         : {};
   } on FirebaseFunctionsException catch (e) {
-    print(
+    log(
       'Cloud call error!\n ${callName}'
       'Code: ${e.code}\n'
       'Details: ${e.details}\n'
       'Message: ${e.message}',
     );
   } catch (e) {
-    print('Cloud call error:${callName} $e');
+    log('Cloud call error:${callName} $e');
   }
   return {};
 }

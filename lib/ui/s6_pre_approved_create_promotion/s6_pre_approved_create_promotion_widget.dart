@@ -128,7 +128,6 @@ class _S6PreApprovedCreatePromotionWidgetState
                               size: 20.0,
                             ),
                             onPressed: () {
-                              print('IconButton pressed ...');
                             },
                           ),
                       ].divide(const SizedBox(width: 8.0)),
@@ -1311,7 +1310,6 @@ class _S6PreApprovedCreatePromotionWidgetState
                           const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () {
-                          print('Button pressed ...');
                         },
                         text: FFLocalizations.of(context).getText(
                           'ywfuw51a' /* Promotion */,

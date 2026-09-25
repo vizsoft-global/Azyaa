@@ -109,7 +109,6 @@ class _OrderReturnSubmitWidgetState extends State<OrderReturnSubmitWidget> {
                                 size: 20.0,
                               ),
                               onPressed: () {
-                                print('IconButton pressed ...');
                               },
                             ),
                         ].divide(const SizedBox(width: 8.0)),
@@ -203,7 +202,6 @@ class _OrderReturnSubmitWidgetState extends State<OrderReturnSubmitWidget> {
                             16.0, 0.0, 16.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () {
-                            print('Button pressed ...');
                           },
                           text: FFLocalizations.of(context).getText(
                             '4wgyblmq' /* Turn on notification */,

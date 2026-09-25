@@ -165,7 +165,6 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
                   Expanded(
                     child: FFButtonWidget(
                       onPressed: () {
-                        print('save pressed ...');
                       },
                       text: FFLocalizations.of(context).getText(
                         'ar0ww573' /* View Bag */,
@@ -192,7 +191,6 @@ class _CartPopupWidgetState extends State<CartPopupWidget> {
                   Expanded(
                     child: FFButtonWidget(
                       onPressed: () {
-                        print('save pressed ...');
                       },
                       text: FFLocalizations.of(context).getText(
                         'josxudz4' /* Checkout */,

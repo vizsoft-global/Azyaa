@@ -49,7 +49,6 @@ class _ShortlistIconWidgetState extends State<ShortlistIconWidget> {
         size: 24.0,
       ),
       onPressed: () {
-        print('IconButton pressed ...');
       },
     );
   }

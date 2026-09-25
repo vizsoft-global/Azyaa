@@ -308,7 +308,6 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                             size: 24.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                         Text(
@@ -348,7 +347,6 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                             size: 24.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                         Text(
@@ -388,7 +386,6 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                             size: 24.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                         Text(
@@ -428,7 +425,6 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                             size: 24.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                         Text(

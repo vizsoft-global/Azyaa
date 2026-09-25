@@ -1,4 +1,5 @@
 // Automatic FlutterFlow imports
+import 'dart:developer';
 import '/backend/backend.dart';
 // Imports other custom actions
 // Imports custom functions
@@ -14,7 +15,7 @@ Future registerFcmTokenIfMissing() async {
   try {
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) {
-      print("No logged-in user");
+      log("No logged-in user");
       return;
     }
 
@@ -26,7 +27,7 @@ Future registerFcmTokenIfMissing() async {
     if (existingToken != null &&
         existingToken is String &&
         existingToken.isNotEmpty) {
-      print("FCM token already exists: $existingToken");
+      log("FCM token already exists: $existingToken");
       return;
     }
 
@@ -37,14 +38,14 @@ Future registerFcmTokenIfMissing() async {
     final newToken = await FirebaseMessaging.instance.getToken();
 
     if (newToken == null || newToken.isEmpty) {
-      print("Failed to generate FCM token");
+      log("Failed to generate FCM token");
       return;
     }
 
     // Save to Firestore
     await userRef.set({'fcm_token': newToken}, SetOptions(merge: true));
-    print("New FCM token saved: $newToken");
+    log("New FCM token saved: $newToken");
   } catch (e) {
-    print("Error registering FCM token: $e");
+    log("Error registering FCM token: $e");
   }
 }

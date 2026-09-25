@@ -1,4 +1,5 @@
 import 'dart:io' show Platform;
+import 'dart:developer';
 import 'package:intl/intl.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -40,7 +41,7 @@ Future initialize(
     PurchasesConfiguration configuration;
     if (kIsWeb) {
       if (webKey.isEmpty) {
-        print(
+        log(
           'RevenueCat web support requires a web API key. '
           'RevenueCat features will be disabled in Test Mode.',
         );
@@ -52,7 +53,7 @@ Future initialize(
     } else if (Platform.isAndroid) {
       configuration = PurchasesConfiguration(playStoreKey);
     } else {
-      print("RevenueCat is not supported on this platform.");
+      log("RevenueCat is not supported on this platform.");
       return;
     }
 
@@ -73,14 +74,14 @@ Future initialize(
       customerInfo = info;
     });
   } on Exception catch (e) {
-    print("RevenueCat initialization failed: $e");
+    log("RevenueCat initialization failed: $e");
   }
 }
 
 // Purchase a package.
 Future<bool> purchasePackage(String package) async {
   if (!_isConfigured) {
-    print('RevenueCat is not configured. Cannot purchase package.');
+    log('RevenueCat is not configured. Cannot purchase package.');
     return false;
   }
   try {
@@ -110,7 +111,7 @@ Future loadOfferings() async {
   try {
     _offerings = await Purchases.getOfferings();
   } on PlatformException catch (e) {
-    print("Error loading offerings info: $e");
+    log("Error loading offerings info: $e");
   }
 }
 
@@ -121,7 +122,7 @@ Future loadCustomerInfo() async {
   try {
     _customerInfo = await Purchases.getCustomerInfo();
   } on PlatformException catch (e) {
-    print("Error loading purchaser info: $e");
+    log("Error loading purchaser info: $e");
   }
 }
 
@@ -138,7 +139,7 @@ Future<bool?> isEntitled(String entitlementId) async {
     customerInfo = await Purchases.getCustomerInfo();
     return customerInfo!.entitlements.all[entitlementId]?.isActive ?? false;
   } on Exception catch (e) {
-    print("Unable to check RevenueCat entitlements: $e");
+    log("Unable to check RevenueCat entitlements: $e");
     return null;
   }
 }
@@ -179,7 +180,7 @@ Future login(String? uid) async {
     // RevenueCat targeting, so they are stale after an identity change.
     await loadOfferings();
   } on Exception catch (e) {
-    print("Unable to logIn or logOut user in RevenueCat: $e");
+    log("Unable to logIn or logOut user in RevenueCat: $e");
   }
 }
 
@@ -191,7 +192,7 @@ Future restorePurchases() async {
   // Note: On web, purchases are automatically restored by Web Billing.
   // This method is only needed for iOS/Android.
   if (kIsWeb) {
-    print(
+    log(
       'Restore purchases is not needed on web - Web Billing handles this automatically.',
     );
     return;
@@ -199,7 +200,7 @@ Future restorePurchases() async {
   try {
     customerInfo = await Purchases.restorePurchases();
   } on PlatformException catch (e) {
-    print("Unable to restore purchases in RevenueCat: $e");
+    log("Unable to restore purchases in RevenueCat: $e");
   }
 }
 
@@ -218,7 +219,7 @@ Future loadAppUserId() async {
   try {
     _appUserId = await Purchases.appUserID;
   } on PlatformException catch (e) {
-    print("Unable to read the RevenueCat app user id: $e");
+    log("Unable to read the RevenueCat app user id: $e");
   }
 }
 
@@ -271,7 +272,7 @@ Future refreshCustomerInfo() async {
     await Purchases.invalidateCustomerInfoCache();
     customerInfo = await Purchases.getCustomerInfo();
   } on PlatformException catch (e) {
-    print("Unable to refresh RevenueCat customer info: $e");
+    log("Unable to refresh RevenueCat customer info: $e");
   }
 }
 
@@ -286,7 +287,7 @@ Future syncPurchases() async {
     await Purchases.syncPurchases();
     await refreshCustomerInfo();
   } on PlatformException catch (e) {
-    print("Unable to sync RevenueCat purchases: $e");
+    log("Unable to sync RevenueCat purchases: $e");
   }
 }
 
@@ -318,7 +319,7 @@ Future setCustomerAttributes({
       await Purchases.setAttributes(attributes);
     }
   } on PlatformException catch (e) {
-    print("Unable to set RevenueCat subscriber attributes: $e");
+    log("Unable to set RevenueCat subscriber attributes: $e");
   }
 }
 
@@ -485,7 +486,7 @@ String? get webPaywallUrl {
 Future<bool> openWebPaywall() async {
   final url = webPaywallUrl;
   if (url == null) {
-    print(
+    log(
       'No RevenueCat Web Paywall link is set. Add one under '
       'Settings > RevenueCat to use this action.',
     );
@@ -501,7 +502,7 @@ Future<bool> openWebPaywall() async {
 Future<bool> openManageSubscriptions() async {
   final url = _customerInfo?.managementURL;
   if (url == null || url.isEmpty) {
-    print(
+    log(
       'This customer has no RevenueCat management URL, which means they have '
       'no store subscription to manage.',
     );
@@ -520,7 +521,7 @@ Future<bool> _launch(String url) async {
       webOnlyWindowName: '_blank',
     );
   } catch (e) {
-    print('Could not launch $url: $e');
+    log('Could not launch $url: $e');
     return false;
   }
 }

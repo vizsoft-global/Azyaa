@@ -216,7 +216,6 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                 size: 24.0,
                                               ),
                                               onPressed: () {
-                                                print('IconButton pressed ...');
                                               },
                                             ),
                                           ),
@@ -321,7 +320,6 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                 size: 24.0,
                                               ),
                                               onPressed: () {
-                                                print('IconButton pressed ...');
                                               },
                                             ),
                                           ),
@@ -415,7 +413,6 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                 size: 24.0,
                                               ),
                                               onPressed: () {
-                                                print('IconButton pressed ...');
                                               },
                                             ),
                                           ),
@@ -509,7 +506,6 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                 size: 24.0,
                                               ),
                                               onPressed: () {
-                                                print('IconButton pressed ...');
                                               },
                                             ),
                                           ),

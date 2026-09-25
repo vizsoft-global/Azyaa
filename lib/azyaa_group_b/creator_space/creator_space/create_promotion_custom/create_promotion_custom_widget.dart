@@ -140,7 +140,6 @@ class _CreatePromotionCustomWidgetState
                               size: 20.0,
                             ),
                             onPressed: () {
-                              print('IconButton pressed ...');
                             },
                           ),
                       ].divide(const SizedBox(width: 8.0)),
@@ -1544,7 +1543,6 @@ class _CreatePromotionCustomWidgetState
                                                 size: 14.0,
                                               ),
                                               onPressed: () {
-                                                print('IconButton pressed ...');
                                               },
                                             ),
                                           ),

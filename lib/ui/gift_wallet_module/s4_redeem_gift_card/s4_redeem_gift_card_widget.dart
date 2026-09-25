@@ -113,7 +113,6 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                             size: 20.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                         FlutterFlowIconButton(
@@ -128,7 +127,6 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                             size: 20.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                       ].divide(const SizedBox(width: 8.0)),
@@ -207,7 +205,6 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                                   ),
                                   FFButtonWidget(
                                     onPressed: () {
-                                      print('Button pressed ...');
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       '3z484ovk' /* Shop Now */,
@@ -392,7 +389,6 @@ class _S4RedeemGiftCardWidgetState extends State<S4RedeemGiftCardWidget> {
                           const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () {
-                          print('Button pressed ...');
                         },
                         text: FFLocalizations.of(context).getText(
                           '18b3m4hz' /* Redeem */,

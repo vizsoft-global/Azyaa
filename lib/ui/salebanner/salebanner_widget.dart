@@ -102,7 +102,6 @@ Sale Now */
                   size: 16.0,
                 ),
                 onPressed: () {
-                  print('IconButton pressed ...');
                 },
               ),
             ),

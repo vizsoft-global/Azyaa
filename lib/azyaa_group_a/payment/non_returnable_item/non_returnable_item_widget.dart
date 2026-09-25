@@ -102,7 +102,6 @@ class _NonReturnableItemWidgetState extends State<NonReturnableItemWidget> {
                         size: 24.0,
                       ),
                       onPressed: () {
-                        print('IconButton pressed ...');
                       },
                     ),
                   ),

@@ -2161,7 +2161,6 @@ class _ProductFiltersWidgetState extends State<ProductFiltersWidget> {
                           flex: 2,
                           child: FFButtonWidget(
                             onPressed: () {
-                              print('save pressed ...');
                             },
                             text: FFLocalizations.of(context).getText(
                               '27mfoja3' /* Apply Changes */,

@@ -304,7 +304,6 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
                             size: 24.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                         Text(
@@ -344,7 +343,6 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
                             size: 24.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                         Text(
@@ -384,7 +382,6 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
                             size: 24.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                         Text(
@@ -424,7 +421,6 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
                             size: 24.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                         Text(
@@ -462,7 +458,6 @@ class _ProductShareWidgetState extends State<ProductShareWidget> {
               padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
               child: FFButtonWidget(
                 onPressed: () {
-                  print('download pressed ...');
                 },
                 text: FFLocalizations.of(context).getText(
                   '3dg5yj02' /* Download all Images */,

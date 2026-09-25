@@ -224,7 +224,6 @@ dre... */
                                             ),
                                             FFButtonWidget(
                                               onPressed: () {
-                                                print('consult pressed ...');
                                               },
                                               text: FFLocalizations.of(context)
                                                   .getText(
@@ -462,7 +461,7 @@ selecting dre... */
                                                             ),
                                                             FFButtonWidget(
                                                               onPressed: () {
-                                                                print(
+                                                                debugPrint(
                                                                     'consult pressed ...');
                                                               },
                                                               text: FFLocalizations

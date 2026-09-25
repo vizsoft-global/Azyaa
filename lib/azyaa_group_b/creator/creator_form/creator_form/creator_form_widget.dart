@@ -221,7 +221,6 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                               size: 20.0,
                             ),
                             onPressed: () {
-                              print('IconButton pressed ...');
                             },
                           ),
                       ].divide(const SizedBox(width: 8.0)),

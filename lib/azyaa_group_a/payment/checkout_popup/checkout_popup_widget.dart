@@ -300,7 +300,6 @@ class _CheckoutPopupWidgetState extends State<CheckoutPopupWidget> {
                   Expanded(
                     child: FFButtonWidget(
                       onPressed: () {
-                        print('save pressed ...');
                       },
                       text: FFLocalizations.of(context).getText(
                         '8gww47un' /* Proceed to Pay */,

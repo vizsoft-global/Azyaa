@@ -351,7 +351,7 @@ class _VirtualTryOnSlidesWidgetState extends State<VirtualTryOnSlidesWidget> {
                                                                 size: 18.0,
                                                               ),
                                                               onPressed: () {
-                                                                print(
+                                                                debugPrint(
                                                                     'IconButton pressed ...');
                                                               },
                                                             ),

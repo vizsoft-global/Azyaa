@@ -99,7 +99,7 @@ class _MyAppState extends State<MyApp> {
     // browser without the Notification API, a revoked permission, a blocked
     // cloud call). Swallow it here so it can't surface as an unhandled zone
     // error and take down the app on login.
-    onError: (e) => print('Error registering FCM token: $e'),
+    onError: (e) => debugPrint('Error registering FCM token: $e'),
   );
 
   @override

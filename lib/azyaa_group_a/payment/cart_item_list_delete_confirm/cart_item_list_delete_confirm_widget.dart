@@ -101,7 +101,6 @@ class _CartItemListDeleteConfirmWidgetState
                           size: 24.0,
                         ),
                         onPressed: () {
-                          print('IconButton pressed ...');
                         },
                       ),
                     ),

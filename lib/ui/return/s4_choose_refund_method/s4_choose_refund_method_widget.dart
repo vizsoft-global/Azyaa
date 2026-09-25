@@ -111,7 +111,6 @@ class _S4ChooseRefundMethodWidgetState
                             size: 20.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                       ].divide(const SizedBox(width: 8.0)),
@@ -275,7 +274,6 @@ class _S4ChooseRefundMethodWidgetState
                               16.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () {
-                              print('WalletRefund pressed ...');
                             },
                             text: FFLocalizations.of(context).getText(
                               'tm3k3lg0' /* Wallet Refund */,
@@ -312,7 +310,6 @@ class _S4ChooseRefundMethodWidgetState
                               16.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () {
-                              print('BankRefund pressed ...');
                             },
                             text: FFLocalizations.of(context).getText(
                               'y2qy0w7b' /* Bank Refund */,
@@ -404,7 +401,6 @@ class _S4ChooseRefundMethodWidgetState
                         const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () {
-                        print('Button pressed ...');
                       },
                       text: FFLocalizations.of(context).getText(
                         '9fmret03' /* Submit */,

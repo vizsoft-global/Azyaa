@@ -1339,7 +1339,6 @@ class _OrdersDetailsWidgetState extends State<OrdersDetailsWidget> {
                                               Expanded(
                                                 child: FFButtonWidget(
                                                   onPressed: () {
-                                                    print('Button pressed ...');
                                                   },
                                                   text: FFLocalizations.of(
                                                           context)
@@ -1390,7 +1389,6 @@ class _OrdersDetailsWidgetState extends State<OrdersDetailsWidget> {
                                               Expanded(
                                                 child: FFButtonWidget(
                                                   onPressed: () {
-                                                    print('Button pressed ...');
                                                   },
                                                   text: FFLocalizations.of(
                                                           context)

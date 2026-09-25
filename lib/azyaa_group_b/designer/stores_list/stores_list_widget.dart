@@ -158,7 +158,6 @@ dre... */
                                   ),
                                   FFButtonWidget(
                                     onPressed: () {
-                                      print('consult pressed ...');
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       '2vaeir2v' /* Consult Now */,
@@ -373,7 +372,7 @@ selecting dre... */
                                                         ),
                                                         FFButtonWidget(
                                                           onPressed: () {
-                                                            print(
+                                                            debugPrint(
                                                                 'consult pressed ...');
                                                           },
                                                           text: FFLocalizations

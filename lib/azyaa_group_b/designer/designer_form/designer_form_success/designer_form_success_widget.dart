@@ -107,7 +107,6 @@ class _DesignerFormSuccessWidgetState extends State<DesignerFormSuccessWidget> {
                               size: 20.0,
                             ),
                             onPressed: () {
-                              print('IconButton pressed ...');
                             },
                           ),
                       ].divide(const SizedBox(width: 8.0)),
@@ -208,7 +207,6 @@ class _DesignerFormSuccessWidgetState extends State<DesignerFormSuccessWidget> {
                               16.0, 0.0, 16.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () {
-                              print('Button pressed ...');
                             },
                             text: FFLocalizations.of(context).getText(
                               'hemg0zvm' /* Turn on notification */,

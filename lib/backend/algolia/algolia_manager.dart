@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:algolia/algolia.dart';
 import 'package:equatable/equatable.dart';
@@ -80,7 +81,7 @@ class FFAlgoliaManager {
         .getObjects()
         .then((value) => snapshot = value)
         .catchError((error, stackTrace) {
-      print('Algolia error: $error\nStack trace: $stackTrace');
+      log('Algolia error: $error\nStack trace: $stackTrace');
     });
     return _algoliaCache[params] = snapshot?.hits ?? [];
   }

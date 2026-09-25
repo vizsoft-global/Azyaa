@@ -215,7 +215,6 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                       Expanded(
                                         child: FFButtonWidget(
                                           onPressed: () {
-                                            print('english pressed ...');
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
@@ -267,7 +266,6 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                       Expanded(
                                         child: FFButtonWidget(
                                           onPressed: () {
-                                            print('arabic pressed ...');
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(

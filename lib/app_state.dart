@@ -28,7 +28,7 @@ class FFAppState extends ChangeNotifier {
           _PaymentFlow = PaymentProcessingTimeStruct.fromSerializableMap(
               jsonDecode(serializedData));
         } catch (e) {
-          print("Can't decode persisted data type. Error: $e.");
+          debugPrint("Can't decode persisted data type. Error: $e.");
         }
       }
     });
@@ -39,7 +39,7 @@ class FFAppState extends ChangeNotifier {
           _UserDataFlow =
               UserFlowStruct.fromSerializableMap(jsonDecode(serializedData));
         } catch (e) {
-          print("Can't decode persisted data type. Error: $e.");
+          debugPrint("Can't decode persisted data type. Error: $e.");
         }
       }
     });
@@ -50,7 +50,7 @@ class FFAppState extends ChangeNotifier {
           _UserFilter =
               UserFiltersStruct.fromSerializableMap(jsonDecode(serializedData));
         } catch (e) {
-          print("Can't decode persisted data type. Error: $e.");
+          debugPrint("Can't decode persisted data type. Error: $e.");
         }
       }
     });
@@ -62,7 +62,7 @@ class FFAppState extends ChangeNotifier {
           _desginerRequestFlow = DesignerRequestsStruct.fromSerializableMap(
               jsonDecode(serializedData));
         } catch (e) {
-          print("Can't decode persisted data type. Error: $e.");
+          debugPrint("Can't decode persisted data type. Error: $e.");
         }
       }
     });

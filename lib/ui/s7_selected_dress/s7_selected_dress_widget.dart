@@ -120,7 +120,6 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
                               size: 20.0,
                             ),
                             onPressed: () {
-                              print('IconButton pressed ...');
                             },
                           ),
                       ].divide(const SizedBox(width: 8.0)),
@@ -311,7 +310,6 @@ class _S7SelectedDressWidgetState extends State<S7SelectedDressWidget> {
                         const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () {
-                        print('Button pressed ...');
                       },
                       text: FFLocalizations.of(context).getText(
                         'u2fjhw04' /* Add */,

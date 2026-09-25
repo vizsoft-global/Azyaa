@@ -2438,7 +2438,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                         size: 18.0,
                                                       ),
                                                       onPressed: () {
-                                                        print(
+                                                        debugPrint(
                                                             'IconButton pressed ...');
                                                       },
                                                     ),
@@ -2502,7 +2502,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                       size: 18.0,
                                                     ),
                                                     onPressed: () {
-                                                      print(
+                                                      debugPrint(
                                                           'IconButton pressed ...');
                                                     },
                                                   ),

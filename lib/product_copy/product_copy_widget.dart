@@ -2347,7 +2347,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                 ))
                                                   FFButtonWidget(
                                                     onPressed: () {
-                                                      print(
+                                                      debugPrint(
                                                           'viewall pressed ...');
                                                     },
                                                     text: FFLocalizations.of(
@@ -2872,7 +2872,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   FFButtonWidget(
                                                                     onPressed:
                                                                         () {
-                                                                      print(
+                                                                      debugPrint(
                                                                           'Button pressed ...');
                                                                     },
                                                                     text: FFLocalizations.of(

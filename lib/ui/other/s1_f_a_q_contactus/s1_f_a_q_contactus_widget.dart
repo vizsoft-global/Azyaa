@@ -136,7 +136,6 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                             size: 20.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                         FlutterFlowIconButton(
@@ -151,7 +150,6 @@ class _S1FAQContactusWidgetState extends State<S1FAQContactusWidget>
                             size: 20.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                       ].divide(const SizedBox(width: 8.0)),

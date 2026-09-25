@@ -238,7 +238,6 @@ class _DesignerConsultDetailsWidgetState
                             size: 18.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                         FlutterFlowIconButton(
@@ -253,7 +252,6 @@ class _DesignerConsultDetailsWidgetState
                             size: 18.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                       ].divide(const SizedBox(width: 8.0)),
@@ -1313,7 +1311,6 @@ class _DesignerConsultDetailsWidgetState
                                 children: [
                                   FFButtonWidget(
                                     onPressed: () {
-                                      print('Button pressed ...');
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       '9a93jlh4' /* 11:00 PM */,
@@ -1343,7 +1340,6 @@ class _DesignerConsultDetailsWidgetState
                                   ),
                                   FFButtonWidget(
                                     onPressed: () {
-                                      print('Button pressed ...');
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'igkuqne8' /* 11:00 PM */,
@@ -1373,7 +1369,6 @@ class _DesignerConsultDetailsWidgetState
                                   ),
                                   FFButtonWidget(
                                     onPressed: () {
-                                      print('Button pressed ...');
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'rdwcabcl' /* 12:00 AM */,
@@ -1403,7 +1398,6 @@ class _DesignerConsultDetailsWidgetState
                                   ),
                                   FFButtonWidget(
                                     onPressed: () {
-                                      print('Button pressed ...');
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'fluc0gut' /* 01:00 AM */,
@@ -1507,7 +1501,6 @@ class _DesignerConsultDetailsWidgetState
                           ),
                           FFButtonWidget(
                             onPressed: () {
-                              print('Button pressed ...');
                             },
                             text: FFLocalizations.of(context).getText(
                               'v56lopki' /* Book Appointment */,

@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import 'dart:developer';
 import '../../flutter_flow/nav/serialization_util.dart';
 
 dynamic convertAlgoliaParam<T>(
@@ -67,7 +68,7 @@ dynamic convertAlgoliaParam<T>(
         return data;
     }
   } catch (e) {
-    print('Error deserializing parameter: $e');
+    log('Error deserializing parameter: $e');
     return null;
   }
 }

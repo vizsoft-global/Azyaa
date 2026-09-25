@@ -2357,7 +2357,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                 ))
                                                   FFButtonWidget(
                                                     onPressed: () {
-                                                      print(
+                                                      debugPrint(
                                                           'viewall pressed ...');
                                                     },
                                                     text: FFLocalizations.of(
@@ -2881,7 +2881,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   FFButtonWidget(
                                                                     onPressed:
                                                                         () {
-                                                                      print(
+                                                                      debugPrint(
                                                                           'Button pressed ...');
                                                                     },
                                                                     text: FFLocalizations.of(

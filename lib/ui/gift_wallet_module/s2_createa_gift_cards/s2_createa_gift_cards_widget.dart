@@ -123,7 +123,6 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                             size: 18.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                         FlutterFlowIconButton(
@@ -138,7 +137,6 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                             size: 18.0,
                           ),
                           onPressed: () {
-                            print('IconButton pressed ...');
                           },
                         ),
                       ].divide(const SizedBox(width: 8.0)),
@@ -953,7 +951,6 @@ class _S2CreateaGiftCardsWidgetState extends State<S2CreateaGiftCardsWidget> {
                         const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () {
-                        print('Button pressed ...');
                       },
                       text: FFLocalizations.of(context).getText(
                         '5o2dutiw' /* Add to Bag */,
