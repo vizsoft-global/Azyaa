@@ -333,7 +333,7 @@ class _CreatorFormWidgetState extends State<CreatorFormWidget> {
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         child: Image.asset(
-                                          'assets/images/creator1_1_(3).png',
+                                          'assets/images/creator1.webp',
                                           width: 150.0,
                                           height: 200.0,
                                           fit: BoxFit.cover,

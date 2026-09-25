@@ -270,7 +270,7 @@ class _Step2MeasurementsWidgetState extends State<Step2MeasurementsWidget> {
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
                                               child: Image.asset(
-                                                'assets/images/ChatGPT_Image_Apr_9,_2025_at_02_44_41_PM-Photoroom_1.png',
+                                                'assets/images/measurement_guide.webp',
                                                 width:
                                                     MediaQuery.sizeOf(context)
                                                             .width *

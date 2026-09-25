@@ -41,7 +41,7 @@ class _LoadingAnimationWidgetState extends State<LoadingAnimationWidget> {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(8.0),
         child: Image.asset(
-          'assets/images/Azyaa_Loading_Animation.gif',
+          'assets/images/loading_animation.webp',
           width: 200.0,
           height: 200.0,
           fit: BoxFit.cover,

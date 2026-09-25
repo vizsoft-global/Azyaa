@@ -162,7 +162,7 @@ class _Highlights2WidgetState extends State<Highlights2Widget> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.asset(
-                            'assets/images/h2.jpg',
+                            'assets/images/h2.webp',
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             fit: BoxFit.cover,
                             alignment: const Alignment(0.0, -1.0),

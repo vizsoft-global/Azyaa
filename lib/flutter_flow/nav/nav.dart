@@ -875,7 +875,7 @@ class FFRoute {
               ? Container(
                   color: Colors.transparent,
                   child: Image.asset(
-                    'assets/images/Splash_Video_Azyaa_(1)_(1)_(1).gif',
+                    'assets/images/splash_video.webp',
                     fit: BoxFit.cover,
                   ),
                 )

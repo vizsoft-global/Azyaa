@@ -344,7 +344,7 @@ class _ProfileBodyAddWidgetState extends State<ProfileBodyAddWidget> {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
                                   child: Image.asset(
-                                    'assets/images/ChatGPT_Image_Apr_9,_2025_at_02_44_41_PM-Photoroom_1.png',
+                                    'assets/images/measurement_guide.webp',
                                     width:
                                         MediaQuery.sizeOf(context).width * 1.0,
                                     height:

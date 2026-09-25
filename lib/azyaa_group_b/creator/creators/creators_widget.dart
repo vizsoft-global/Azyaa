@@ -247,7 +247,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
                                 child: Image.asset(
-                                  'assets/images/creator1_1_(3).png',
+                                  'assets/images/creator1.webp',
                                   width: 150.0,
                                   height: 90.0,
                                   fit: BoxFit.cover,

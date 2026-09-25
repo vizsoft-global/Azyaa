@@ -591,7 +591,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                     .circular(
                                                                         8.0),
                                                             child: Image.asset(
-                                                              'assets/images/creator1_1_(3).png',
+                                                              'assets/images/creator1.webp',
                                                               width: MediaQuery
                                                                           .sizeOf(
                                                                               context)
