@@ -102,11 +102,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
         builder: (context, params) => const HomeWidget(),
       ),
       FFRoute(
-        name: TestPageWidget.routeName,
-        path: TestPageWidget.routePath,
-        builder: (context, params) => const TestPageWidget(),
-      ),
-      FFRoute(
         name: Highlights1Widget.routeName,
         path: Highlights1Widget.routePath,
         builder: (context, params) => const Highlights1Widget(),
@@ -135,11 +130,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
         name: ProductListWidget.routeName,
         path: ProductListWidget.routePath,
         builder: (context, params) => const ProductListWidget(),
-      ),
-      FFRoute(
-        name: S2HighlightsssbcWidget.routeName,
-        path: S2HighlightsssbcWidget.routePath,
-        builder: (context, params) => const S2HighlightsssbcWidget(),
       ),
       FFRoute(
         name: Highlights2Widget.routeName,
@@ -530,17 +520,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
         ),
       ),
       FFRoute(
-        name: TestListWidget.routeName,
-        path: TestListWidget.routePath,
-        builder: (context, params) => const TestListWidget(),
-      ),
-      FFRoute(
-        name: CreatorSpacetestpageWidget.routeName,
-        path: CreatorSpacetestpageWidget.routePath,
-        requireAuth: true,
-        builder: (context, params) => const CreatorSpacetestpageWidget(),
-      ),
-      FFRoute(
         name: CreatorsIndividualPromoWidget.routeName,
         path: CreatorsIndividualPromoWidget.routePath,
         builder: (context, params) => CreatorsIndividualPromoWidget(
@@ -553,12 +532,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
             ParamType.String,
           ),
         ),
-      ),
-      FFRoute(
-        name: ProfileEditTEMPWidget.routeName,
-        path: ProfileEditTEMPWidget.routePath,
-        requireAuth: true,
-        builder: (context, params) => const ProfileEditTEMPWidget(),
       ),
       FFRoute(
         name: AddressWidget.routeName,
@@ -593,11 +566,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
         builder: (context, params) => const VirtualTryOnWidget(),
       ),
       FFRoute(
-        name: TestWidget.routeName,
-        path: TestWidget.routePath,
-        builder: (context, params) => const TestWidget(),
-      ),
-      FFRoute(
         name: VirtualTryOnSlidesWidget.routeName,
         path: VirtualTryOnSlidesWidget.routePath,
         builder: (context, params) => VirtualTryOnSlidesWidget(
@@ -608,11 +576,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
             collectionNamePath: ['products'],
           ),
         ),
-      ),
-      FFRoute(
-        name: VirtualTryOnCopyWidget.routeName,
-        path: VirtualTryOnCopyWidget.routePath,
-        builder: (context, params) => const VirtualTryOnCopyWidget(),
       ),
       FFRoute(
         name: WaitlistSecretWidget.routeName,
@@ -676,11 +639,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
         ),
       ),
       FFRoute(
-        name: TESTheaderWidget.routeName,
-        path: TESTheaderWidget.routePath,
-        builder: (context, params) => const TESTheaderWidget(),
-      ),
-      FFRoute(
         name: FreePaymentWidget.routeName,
         path: FreePaymentWidget.routePath,
         requireAuth: true,
@@ -691,16 +649,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
         path: HomeSearchWidget.routePath,
         requireAuth: true,
         builder: (context, params) => const HomeSearchWidget(),
-      ),
-      FFRoute(
-        name: AddresstestWidget.routeName,
-        path: AddresstestWidget.routePath,
-        builder: (context, params) => const AddresstestWidget(),
-      ),
-      FFRoute(
-        name: DeleteWidget.routeName,
-        path: DeleteWidget.routePath,
-        builder: (context, params) => const DeleteWidget(),
       ),
       FFRoute(
         name: ProductCopyWidget.routeName,

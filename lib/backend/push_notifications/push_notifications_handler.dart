@@ -117,14 +117,12 @@ class ParameterData {
 final parametersBuilderMap =
     <String, Future<ParameterData> Function(Map<String, dynamic>)>{
   'Home': ParameterData.none(),
-  'testPage': ParameterData.none(),
   'Highlights1': ParameterData.none(),
   'Entry': ParameterData.none(),
   'Register': ParameterData.none(),
   'Shop': ParameterData.none(),
   'Step1-Personal': ParameterData.none(),
   'ProductList': ParameterData.none(),
-  's2-Highlightsssbc': ParameterData.none(),
   'Highlights2': ParameterData.none(),
   'Highlights3': ParameterData.none(),
   'Step2-Measurements': ParameterData.none(),
@@ -222,8 +220,6 @@ final parametersBuilderMap =
               data, 'products', ProductsRecord.fromSnapshot),
         },
       ),
-  'test_list': ParameterData.none(),
-  'CreatorSpacetestpage': ParameterData.none(),
   'Creators-IndividualPromo': (data) async => ParameterData(
         allParams: {
           'promo': getParameter<String>(data, 'promo'),
@@ -240,13 +236,11 @@ final parametersBuilderMap =
       ),
   'Stores-List': ParameterData.none(),
   'VirtualTryOn': ParameterData.none(),
-  'TEST': ParameterData.none(),
   'VirtualTryOn_Slides': (data) async => ParameterData(
         allParams: {
           'product': getParameter<DocumentReference>(data, 'product'),
         },
       ),
-  'VirtualTryOnCopy': ParameterData.none(),
   'Waitlist_Secret': (data) async => ParameterData(
         allParams: {
           'navigation': getParameter<String>(data, 'navigation'),
@@ -267,11 +261,8 @@ final parametersBuilderMap =
           'order': getParameter<DocumentReference>(data, 'order'),
         },
       ),
-  'TESTheader': ParameterData.none(),
   'freePayment': ParameterData.none(),
   'home-search': ParameterData.none(),
-  'addresstest': ParameterData.none(),
-  'Delete': ParameterData.none(),
   'ProductCopy': (data) async => ParameterData(
         allParams: {
           'productID': getParameter<String>(data, 'productID'),
