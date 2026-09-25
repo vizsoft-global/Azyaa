@@ -11,26 +11,20 @@ import 'schema/users_record.dart';
 import 'schema/user_referral_activities_record.dart';
 import 'schema/user_membership_plans_record.dart';
 import 'schema/settings_record.dart';
-import 'schema/images_record.dart';
-import 'schema/videos_record.dart';
 import 'schema/mail_record.dart';
 import 'schema/orders_record.dart';
 import 'schema/payment_response_record.dart';
 import 'schema/category_record.dart';
 import 'schema/products_record.dart';
-import 'schema/review_record.dart';
 import 'schema/tags_record.dart';
 import 'schema/brands_record.dart';
 import 'schema/attributes_record.dart';
-import 'schema/banners_record.dart';
 import 'schema/tryon_requests_record.dart';
 import 'schema/user_waitlist_record.dart';
 import 'schema/inventory_record.dart';
-import 'schema/inventorymovementlog_record.dart';
 import 'schema/return_requests_record.dart';
 import 'schema/user_vto_plans_record.dart';
 import 'schema/coupon_record.dart';
-import 'schema/transactions_record.dart';
 import 'schema/sales_history_record.dart';
 import 'schema/logistics_response_record.dart';
 import 'schema/delivery_record.dart';
@@ -48,26 +42,20 @@ export 'schema/users_record.dart';
 export 'schema/user_referral_activities_record.dart';
 export 'schema/user_membership_plans_record.dart';
 export 'schema/settings_record.dart';
-export 'schema/images_record.dart';
-export 'schema/videos_record.dart';
 export 'schema/mail_record.dart';
 export 'schema/orders_record.dart';
 export 'schema/payment_response_record.dart';
 export 'schema/category_record.dart';
 export 'schema/products_record.dart';
-export 'schema/review_record.dart';
 export 'schema/tags_record.dart';
 export 'schema/brands_record.dart';
 export 'schema/attributes_record.dart';
-export 'schema/banners_record.dart';
 export 'schema/tryon_requests_record.dart';
 export 'schema/user_waitlist_record.dart';
 export 'schema/inventory_record.dart';
-export 'schema/inventorymovementlog_record.dart';
 export 'schema/return_requests_record.dart';
 export 'schema/user_vto_plans_record.dart';
 export 'schema/coupon_record.dart';
-export 'schema/transactions_record.dart';
 export 'schema/sales_history_record.dart';
 export 'schema/logistics_response_record.dart';
 export 'schema/delivery_record.dart';
@@ -259,80 +247,6 @@ Future<List<SettingsRecord>> querySettingsRecordOnce({
       singleRecord: singleRecord,
     );
 
-/// Functions to query ImagesRecords (as a Stream and as a Future).
-Future<int> queryImagesRecordCount({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      ImagesRecord.collection,
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<ImagesRecord>> queryImagesRecord({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      ImagesRecord.collection,
-      ImagesRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<ImagesRecord>> queryImagesRecordOnce({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      ImagesRecord.collection,
-      ImagesRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-/// Functions to query VideosRecords (as a Stream and as a Future).
-Future<int> queryVideosRecordCount({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      VideosRecord.collection,
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<VideosRecord>> queryVideosRecord({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      VideosRecord.collection,
-      VideosRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<VideosRecord>> queryVideosRecordOnce({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      VideosRecord.collection,
-      VideosRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
 /// Functions to query MailRecords (as a Stream and as a Future).
 Future<int> queryMailRecordCount({
   Query Function(Query)? queryBuilder,
@@ -518,43 +432,6 @@ Future<List<ProductsRecord>> queryProductsRecordOnce({
       singleRecord: singleRecord,
     );
 
-/// Functions to query ReviewRecords (as a Stream and as a Future).
-Future<int> queryReviewRecordCount({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      ReviewRecord.collection,
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<ReviewRecord>> queryReviewRecord({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      ReviewRecord.collection,
-      ReviewRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<ReviewRecord>> queryReviewRecordOnce({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      ReviewRecord.collection,
-      ReviewRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
 /// Functions to query TagsRecords (as a Stream and as a Future).
 Future<int> queryTagsRecordCount({
   Query Function(Query)? queryBuilder,
@@ -661,43 +538,6 @@ Future<List<AttributesRecord>> queryAttributesRecordOnce({
     queryCollectionOnce(
       AttributesRecord.collection,
       AttributesRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-/// Functions to query BannersRecords (as a Stream and as a Future).
-Future<int> queryBannersRecordCount({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      BannersRecord.collection,
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<BannersRecord>> queryBannersRecord({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      BannersRecord.collection,
-      BannersRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<BannersRecord>> queryBannersRecordOnce({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      BannersRecord.collection,
-      BannersRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
@@ -814,43 +654,6 @@ Future<List<InventoryRecord>> queryInventoryRecordOnce({
       singleRecord: singleRecord,
     );
 
-/// Functions to query InventorymovementlogRecords (as a Stream and as a Future).
-Future<int> queryInventorymovementlogRecordCount({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      InventorymovementlogRecord.collection,
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<InventorymovementlogRecord>> queryInventorymovementlogRecord({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      InventorymovementlogRecord.collection,
-      InventorymovementlogRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<InventorymovementlogRecord>> queryInventorymovementlogRecordOnce({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      InventorymovementlogRecord.collection,
-      InventorymovementlogRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
 /// Functions to query ReturnRequestsRecords (as a Stream and as a Future).
 Future<int> queryReturnRequestsRecordCount({
   Query Function(Query)? queryBuilder,
@@ -957,43 +760,6 @@ Future<List<CouponRecord>> queryCouponRecordOnce({
     queryCollectionOnce(
       CouponRecord.collection,
       CouponRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-/// Functions to query TransactionsRecords (as a Stream and as a Future).
-Future<int> queryTransactionsRecordCount({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      TransactionsRecord.collection,
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<TransactionsRecord>> queryTransactionsRecord({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      TransactionsRecord.collection,
-      TransactionsRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<TransactionsRecord>> queryTransactionsRecordOnce({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      TransactionsRecord.collection,
-      TransactionsRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
