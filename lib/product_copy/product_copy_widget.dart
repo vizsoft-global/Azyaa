@@ -2427,6 +2427,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                         );
                                                                                       },
                                                                                     );
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     'g6kfhewy' /* Unfollow */,

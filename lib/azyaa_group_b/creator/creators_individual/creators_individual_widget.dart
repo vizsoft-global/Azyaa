@@ -528,6 +528,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                         );
                                                       },
                                                     );
+                                                    safeSetState(() {});
                                                   },
                                                   text: FFLocalizations.of(
                                                           context)

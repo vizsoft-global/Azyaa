@@ -2456,6 +2456,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                         );
                                                                                       },
                                                                                     );
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     'wliy4nun' /* Unfollow */,

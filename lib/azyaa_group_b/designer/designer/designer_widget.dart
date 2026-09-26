@@ -526,6 +526,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                                           );
                                                         },
                                                       );
+                                                      safeSetState(() {});
                                                     },
                                                     text: FFLocalizations.of(
                                                             context)

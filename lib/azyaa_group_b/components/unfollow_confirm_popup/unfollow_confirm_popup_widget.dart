@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
-import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'unfollow_confirm_popup_model.dart';
@@ -208,23 +207,6 @@ class _UnfollowConfirmPopupWidgetState
                       ),
                     });
                     Navigator.pop(context);
-
-                    context.pushNamed(
-                      DesignerWidget.routeName,
-                      queryParameters: {
-                        'designerUid': serializeParam(
-                          widget.userRef?.id,
-                          ParamType.String,
-                        ),
-                      }.withoutNulls,
-                      extra: <String, dynamic>{
-                        '__transition_info__': const TransitionInfo(
-                          hasTransition: true,
-                          transitionType: PageTransitionType.fade,
-                          duration: Duration(milliseconds: 0),
-                        ),
-                      },
-                    );
                   } else {
                     await currentUserReference!.update({
                       ...mapToFirestore(
@@ -235,23 +217,6 @@ class _UnfollowConfirmPopupWidgetState
                       ),
                     });
                     Navigator.pop(context);
-
-                    context.pushNamed(
-                      CreatorsIndividualWidget.routeName,
-                      queryParameters: {
-                        'creatorUid': serializeParam(
-                          widget.userRef?.id,
-                          ParamType.String,
-                        ),
-                      }.withoutNulls,
-                      extra: <String, dynamic>{
-                        '__transition_info__': const TransitionInfo(
-                          hasTransition: true,
-                          transitionType: PageTransitionType.fade,
-                          duration: Duration(milliseconds: 0),
-                        ),
-                      },
-                    );
                   }
 
                   FFAppState().updateUserDataFlowStruct(
