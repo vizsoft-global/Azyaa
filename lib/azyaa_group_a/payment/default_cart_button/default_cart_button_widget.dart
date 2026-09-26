@@ -29,6 +29,7 @@ class DefaultCartButtonWidget extends StatefulWidget {
     this.options,
     this.quantity,
     this.onAdded,
+    this.height,
   }) : type = type ?? 'button';
 
   final String type;
@@ -45,6 +46,9 @@ class DefaultCartButtonWidget extends StatefulWidget {
 
   /// Called after a line is added, so the page can reset its quantity.
   final VoidCallback? onAdded;
+
+  /// Button height; the product page's compact panel passes a smaller one.
+  final double? height;
 
   @override
   State<DefaultCartButtonWidget> createState() =>
@@ -677,7 +681,7 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                   ),
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: 48.0,
+                          height: widget.height ?? 48.0,
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           iconAlignment: IconAlignment.end,

@@ -46,9 +46,6 @@ class ProductPurchasePanelWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final remaining = remainingFor(product, FFAppState());
-    final hasChoices = AzyProductOptions.requiredOptionIds(
-      product.productAttribute,
-    ).isNotEmpty;
 
     return AnimatedSwitcher(
       duration: const Duration(milliseconds: 220),
@@ -63,7 +60,7 @@ class ProductPurchasePanelWidget extends StatelessWidget {
       ),
       child: minimized
           ? _bubble(context, remaining)
-          : _panel(context, remaining, hasChoices),
+          : _panel(context),
     );
   }
 
@@ -125,7 +122,7 @@ class ProductPurchasePanelWidget extends StatelessWidget {
     );
   }
 
-  Widget _panel(BuildContext context, int remaining, bool hasChoices) {
+  Widget _panel(BuildContext context) {
     final theme = FlutterFlowTheme.of(context);
     return Container(
       key: const ValueKey('panel'),
@@ -144,66 +141,34 @@ class ProductPurchasePanelWidget extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Padding(
-              padding:
-                  const EdgeInsetsDirectional.fromSTEB(16.0, 6.0, 4.0, 0.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: !hasChoices
-                        ? const SizedBox.shrink()
-                        : Text(
-                      FFLocalizations.of(context).getVariableText(
-                        enText: 'Choose your options',
-                        arText: 'اختر الخيارات',
-                      ),
-                      style: theme.titleSmall.override(
-                        fontFamily: 'almarai',
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                  if (hasChoices && remaining > 0)
-                    Text(
-                      FFLocalizations.of(context).getVariableText(
-                        enText: '$remaining left',
-                        arText: 'متبقي $remaining',
-                      ),
-                      style: theme.bodySmall.override(
-                        fontFamily: 'almarai',
-                        color: theme.velvet,
-                        letterSpacing: 0.0,
-                      ),
-                    )
-                  else if (hasChoices)
-                    Icon(
-                      Icons.check_circle_rounded,
-                      color: theme.velvet,
-                      size: 18.0,
-                    ),
-                  IconButton(
-                    tooltip: FFLocalizations.of(context).getVariableText(
-                      enText: 'Minimize',
-                      arText: 'تصغير',
-                    ),
-                    onPressed: () => onMinimizedChanged(true),
-                    icon: Icon(
-                      Icons.close_fullscreen_rounded,
-                      color: theme.secondaryText,
-                      size: 20.0,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+          const SizedBox(height: 8.0),
           if (product.productAttribute.isNotEmpty)
             ProductOptionsBarWidget(product: product),
-          AnimatedSize(
-            duration: const Duration(milliseconds: 250),
-            curve: Curves.easeOut,
-            alignment: Alignment.topCenter,
-            child: actions,
+          Row(
+            children: [
+              Expanded(
+                child: AnimatedSize(
+                  duration: const Duration(milliseconds: 250),
+                  curve: Curves.easeOut,
+                  alignment: Alignment.topCenter,
+                  child: actions,
+                ),
+              ),
+              IconButton(
+                tooltip: FFLocalizations.of(context).getVariableText(
+                  enText: 'Minimize',
+                  arText: 'تصغير',
+                ),
+                visualDensity: VisualDensity.compact,
+                onPressed: () => onMinimizedChanged(true),
+                icon: Icon(
+                  Icons.close_fullscreen_rounded,
+                  color: theme.secondaryText,
+                  size: 20.0,
+                ),
+              ),
+              const SizedBox(width: 4.0),
+            ],
           ),
         ],
       ),

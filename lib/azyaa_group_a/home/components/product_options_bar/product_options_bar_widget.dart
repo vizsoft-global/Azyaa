@@ -93,7 +93,7 @@ class ProductOptionsBarWidget extends StatelessWidget {
       itemBuilder: (context, attributeListIndex) {
         final attributeListItem = attributeList[attributeListIndex];
         return Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 4.0),
           child: StreamBuilder<List<AttributesRecord>>(
             stream: queryAttributesRecord(
               queryBuilder: (attributesRecord) => attributesRecord
@@ -115,51 +115,57 @@ class ProductOptionsBarWidget extends StatelessWidget {
               final termList =
                   attributeListItem.attributesBrandTermIds.toList();
 
-              return Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
+              return Row(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        FFLocalizations.of(context).getVariableText(
-                          enText: _attributeName(variationAttributesRecord,
-                              arabic: false),
-                          arText: _attributeName(variationAttributesRecord,
-                              arabic: true),
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyLarge.override(
-                              fontFamily: 'Cairo',
-                              letterSpacing: 0.0,
-                            ),
-                      ),
-                      if (variationAttributesRecord.attributeId == '1000')
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () => _openSizeChart(context),
-                          child: Text(
-                            FFLocalizations.of(context).getText(
-                              'vhv11107' /* Size Chart */,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodySmall
-                                .override(
-                                  fontFamily: 'almarai',
-                                  color: FlutterFlowTheme.of(context).velvet,
-                                  letterSpacing: 0.0,
-                                  decoration: TextDecoration.underline,
-                                ),
-                          ),
-                        ),
-                    ],
-                  ),
-                  const SizedBox(height: 6.0),
                   SizedBox(
-                    height: 46.0,
+                    width: 64.0,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          FFLocalizations.of(context).getVariableText(
+                            enText: _attributeName(variationAttributesRecord,
+                                arabic: false),
+                            arText: _attributeName(variationAttributesRecord,
+                                arabic: true),
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Cairo',
+                                    letterSpacing: 0.0,
+                                  ),
+                        ),
+                        if (variationAttributesRecord.attributeId == '1000')
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () => _openSizeChart(context),
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                'vhv11107' /* Size Chart */,
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodySmall
+                                  .override(
+                                    fontFamily: 'almarai',
+                                    color: FlutterFlowTheme.of(context).velvet,
+                                    fontSize: 11.0,
+                                    letterSpacing: 0.0,
+                                    decoration: TextDecoration.underline,
+                                  ),
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: SizedBox(
+                    height: 34.0,
                     child: ListView.separated(
                       padding: EdgeInsets.zero,
                       primary: false,
@@ -211,6 +217,7 @@ class ProductOptionsBarWidget extends StatelessWidget {
                         );
                       },
                     ),
+                  ),
                   ),
                 ],
               );
@@ -267,8 +274,8 @@ class ProductOptionsBarWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(2.0),
         child: Container(
-          width: 36.0,
-          height: 36.0,
+          width: 26.0,
+          height: 26.0,
           decoration: BoxDecoration(
             color: term.brandInfo.color,
             shape: BoxShape.circle,
@@ -289,13 +296,13 @@ class ProductOptionsBarWidget extends StatelessWidget {
         border: Border.all(color: color, width: selected ? 1.5 : 1.0),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(10.0, 4.0, 10.0, 4.0),
         child: Text(
           FFLocalizations.of(context).getVariableText(
             enText: _termName(term, arabic: false),
             arText: _termName(term, arabic: true),
           ),
-          style: FlutterFlowTheme.of(context).bodyLarge.override(
+          style: FlutterFlowTheme.of(context).bodyMedium.override(
                 fontFamily: 'almarai',
                 color: color,
                 letterSpacing: 0.0,

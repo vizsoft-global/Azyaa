@@ -3484,8 +3484,8 @@ class _ProductWidgetState extends State<ProductWidget> {
                                   .divide(const SizedBox(height: 12.0))
                                   .addToStart(const SizedBox(height: 16.0))
                                   .addToEnd(SizedBox(
-                                      height: 165.0 +
-                                          80.0 *
+                                      height: 110.0 +
+                                          42.0 *
                                               stackProductsRecord
                                                   .productAttribute.length)),
                             ),
@@ -3616,9 +3616,9 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   .productAuthorizer
                                                                   .isAffiliateProduct ==
                                                               true)
-                                                      ? 135.0
-                                                      : 82.0,
-                                                  82.0,
+                                                      ? 96.0
+                                                      : 50.0,
+                                                  50.0,
                                                 ),
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
@@ -3628,7 +3628,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                 child: Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          0.0, 4.0, 0.0, 4.0),
+                                                          0.0, 2.0, 0.0, 2.0),
                                                   child: Stack(
                                                     children: [
                                                       if (() {
@@ -3654,11 +3654,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                         Padding(
                                                           padding:
                                                               const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      8.0,
-                                                                      8.0,
-                                                                      8.0,
-                                                                      8.0),
+                                                                  .fromSTEB(8.0, 4.0, 0.0, 4.0),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -3667,11 +3663,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            8.0),
+                                                                        .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -3694,10 +3686,8 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             0.0),
                                                                         child:
                                                                             Container(
-                                                                          width:
-                                                                              120.0,
-                                                                          height:
-                                                                              50.0,
+                                                                          width: 88.0,
+                                                                          height: 36.0,
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             borderRadius:
@@ -3715,18 +3705,18 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                 Icon(
                                                                               Icons.remove_rounded,
                                                                               color: enabled ? FlutterFlowTheme.of(context).secondaryText : FlutterFlowTheme.of(context).alternate,
-                                                                              size: 24.0,
+                                                                              size: 18.0,
                                                                             ),
                                                                             incrementIconBuilder: (enabled) =>
                                                                                 Icon(
                                                                               Icons.add_rounded,
                                                                               color: enabled ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).alternate,
-                                                                              size: 24.0,
+                                                                              size: 18.0,
                                                                             ),
                                                                             countBuilder: (count) =>
                                                                                 Text(
                                                                               count.toString(),
-                                                                              style: FlutterFlowTheme.of(context).titleLarge.override(
+                                                                              style: FlutterFlowTheme.of(context).titleMedium.override(
                                                                                     fontFamily: 'almarai',
                                                                                     letterSpacing: 0.0,
                                                                                   ),
@@ -3747,9 +3737,9 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             maximum:
                                                                                 readymadeInventoryRecord.stock,
                                                                             contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                12.0,
+                                                                                4.0,
                                                                                 0.0,
-                                                                                12.0,
+                                                                                4.0,
                                                                                 0.0),
                                                                           ),
                                                                         ),
@@ -3791,6 +3781,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             child:
                                                                                 DefaultCartButtonWidget(
                                                                               type: 'button',
+                                                                              height: 36.0,
                                                                               product: widget.product!,
                                                                               navigation: 'cart',
                                                                               options: stackProductsRecord.productAttribute,
@@ -3991,8 +3982,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               FFButtonOptions(
                                                                             width:
                                                                                 MediaQuery.sizeOf(context).width * 1.0,
-                                                                            height:
-                                                                                48.0,
+                                                                            height: 36.0,
                                                                             padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 16.0,
                                                                                 0.0,
@@ -4065,8 +4055,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               FFButtonOptions(
                                                                             width:
                                                                                 MediaQuery.sizeOf(context).width * 1.0,
-                                                                            height:
-                                                                                48.0,
+                                                                            height: 36.0,
                                                                             padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 16.0,
                                                                                 0.0,
@@ -4196,11 +4185,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                         0,
                                                                 child: Padding(
                                                                   padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          16.0,
-                                                                          0.0,
-                                                                          16.0),
+                                                                      .fromSTEB(0.0, 8.0, 0.0, 8.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -4289,9 +4274,9 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   .productAuthorizer
                                                                   .isAffiliateProduct ==
                                                               true)
-                                                      ? 135.0
-                                                      : 82.0,
-                                                  82.0,
+                                                      ? 96.0
+                                                      : 50.0,
+                                                  50.0,
                                                 ),
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
@@ -4301,17 +4286,13 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                 child: Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          0.0, 4.0, 0.0, 4.0),
+                                                          0.0, 2.0, 0.0, 2.0),
                                                   child: Stack(
                                                     children: [
                                                       Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    8.0,
-                                                                    8.0,
-                                                                    8.0,
-                                                                    8.0),
+                                                                .fromSTEB(8.0, 4.0, 0.0, 4.0),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -4319,11 +4300,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                             Padding(
                                                               padding:
                                                                   const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          8.0),
+                                                                      .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -4348,6 +4325,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               updateOnChange: true,
                                                                               child: DefaultCartButtonWidget(
                                                                                 type: 'button',
+                                                                              height: 36.0,
                                                                                 product: widget.product!,
                                                                                 navigation: 'cart',
                                                                                 options: stackProductsRecord.productAttribute,
@@ -4387,7 +4365,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             options:
                                                                                 FFButtonOptions(
                                                                               width: MediaQuery.sizeOf(context).width * 1.0,
-                                                                              height: 48.0,
+                                                                              height: 36.0,
                                                                               padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                               iconAlignment: IconAlignment.end,
                                                                               iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
@@ -4613,8 +4591,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             FFButtonOptions(
                                                                           width:
                                                                               MediaQuery.sizeOf(context).width * 1.0,
-                                                                          height:
-                                                                              48.0,
+                                                                          height: 36.0,
                                                                           padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               16.0,
                                                                               0.0,
@@ -4703,8 +4680,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             FFButtonOptions(
                                                                           width:
                                                                               MediaQuery.sizeOf(context).width * 1.0,
-                                                                          height:
-                                                                              48.0,
+                                                                          height: 36.0,
                                                                           padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               16.0,
                                                                               0.0,

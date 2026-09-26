@@ -20,9 +20,12 @@
 //   58 needed - 51 available = 7.0 pixels, exactly the reported number.
 //
 // The first test rebuilds that exact chain so the arithmetic is verified by
-// the real layout engine rather than by reading the code, and pins BOTH the
-// broken and the fixed height. The second test stops the four hard-coded
-// heights in the two generated product pages from drifting back to 75.0.
+// the real layout engine rather than by reading the code.
+//
+// The bar has since been made compact (2026-09-26): 36px stepper and button,
+// 2px outer and 4px inner vertical padding, no row gap -- 36 + 12 = 48, so a
+// 50px bar fits with 2px to spare. The later tests pin that layout and stop
+// the two product pages drifting from it.
 
 import 'dart:io';
 
@@ -32,14 +35,31 @@ import 'package:flutter_test/flutter_test.dart';
 /// The height the generated pages used to declare (overflows by 7.0).
 const double _shippedBrokenHeight = 75.0;
 
-/// The height that actually fits the content (see the arithmetic above).
-const double _minimumFittingHeight = 82.0;
+/// The compact bar's height.
+const double _compactHeight = 50.0;
 
-/// Height of the quantity stepper's bordered box in the generated code.
-const double _stepperHeight = 50.0;
+/// The affiliate-creator bar, which adds a 36px promotion row.
+const double _compactCreatorHeight = 96.0;
 
-/// Height of the `DefaultCartButtonWidget(type: 'button')` CTA.
-const double _addToBagButtonHeight = 48.0;
+class _Chain {
+  const _Chain({
+    required this.outerV,
+    required this.innerTop,
+    required this.innerBottom,
+    required this.rowBottom,
+    required this.stepper,
+    required this.button,
+  });
+  final double outerV, innerTop, innerBottom, rowBottom, stepper, button;
+}
+
+/// The generated layout, as shipped when the overflow was reported.
+const _original = _Chain(
+    outerV: 4, innerTop: 8, innerBottom: 8, rowBottom: 8, stepper: 50, button: 48);
+
+/// The compact layout the pages use now.
+const _compact = _Chain(
+    outerV: 2, innerTop: 4, innerBottom: 4, rowBottom: 0, stepper: 36, button: 36);
 
 /// Product pages that carry the bottom bar (both are live routes).
 const List<String> _barOwners = <String>[
@@ -49,24 +69,24 @@ const List<String> _barOwners = <String>[
 
 /// The bottom bar's widget chain, copied verbatim from the generated page
 /// (indentation aside) with the two leaf heights parameterised.
-Widget _bottomBar(double containerHeight) {
+Widget _bottomBar(double containerHeight, _Chain c) {
   return Align(
     alignment: Alignment.topCenter,
     child: SizedBox(
       width: 390.0,
       height: containerHeight,
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 4.0),
+        padding: EdgeInsetsDirectional.fromSTEB(0.0, c.outerV, 0.0, c.outerV),
         child: Stack(
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+              padding: EdgeInsetsDirectional.fromSTEB(8.0, c.innerTop, 0.0, c.innerBottom),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, c.rowBottom),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,13 +95,13 @@ Widget _bottomBar(double containerHeight) {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: Container(
-                            width: 120.0,
-                            height: _stepperHeight,
+                            width: 88.0,
+                            height: c.stepper,
                             color: const Color(0xFFF5F5F5),
                           ),
                         ),
-                        const Expanded(
-                          child: SizedBox(height: _addToBagButtonHeight),
+                        Expanded(
+                          child: SizedBox(height: c.button),
                         ),
                       ],
                     ),
@@ -98,11 +118,12 @@ Widget _bottomBar(double containerHeight) {
 
 /// Lays the bar out at [height] and returns the overflow report Flutter
 /// produced, or null when the layout fits.
-Future<String?> _overflowReportAt(WidgetTester tester, double height) async {
+Future<String?> _overflowReportAt(
+    WidgetTester tester, double height, _Chain chain) async {
   await tester.pumpWidget(
     Directionality(
       textDirection: TextDirection.ltr,
-      child: _bottomBar(height),
+      child: _bottomBar(height, chain),
     ),
   );
   final Object? exception = tester.takeException();
@@ -122,7 +143,8 @@ double _reportedPixels(String report) {
 void main() {
   testWidgets('the shipped 75.0 bar overflows by exactly 7.0 pixels',
       (tester) async {
-    final report = await _overflowReportAt(tester, _shippedBrokenHeight);
+    final report =
+        await _overflowReportAt(tester, _shippedBrokenHeight, _original);
 
     expect(
       report,
@@ -139,18 +161,20 @@ void main() {
     );
   });
 
-  testWidgets('the fixed 82.0 bar fits the stepper and the CTA',
+  testWidgets('the compact 50.0 bar fits the stepper and the CTA',
       (tester) async {
-    final report = await _overflowReportAt(tester, _minimumFittingHeight);
-    expect(
-      report,
-      isNull,
-      reason: '$_minimumFittingHeight px is the smallest height that fits the '
-          '58px of content plus the 24px of padding.',
-    );
+    expect(await _overflowReportAt(tester, _compactHeight, _compact), isNull);
   });
 
-  test('both product pages keep a bottom bar tall enough for the stepper', () {
+  testWidgets('the compact bar has no slack to lose', (tester) async {
+    // 2px of headroom: shaving the bar to 47 must overflow, so a later padding
+    // tweak cannot silently eat the margin.
+    final report = await _overflowReportAt(tester, 47.0, _compact);
+    expect(report, isNotNull);
+    expect(_reportedPixels(report!), closeTo(1.0, 0.001));
+  });
+
+  test('both product pages keep the compact bar heights', () {
     for (final path in _barOwners) {
       final file = File(path);
       expect(file.existsSync(), isTrue, reason: '$path is missing');
@@ -160,23 +184,20 @@ void main() {
         body.contains(': $_shippedBrokenHeight,'),
         isFalse,
         reason: '$path declares the $_shippedBrokenHeight bottom-bar height '
-            'again, which overflows by 7.0px. Use $_minimumFittingHeight.',
+            'again, which overflows by 7.0px.',
       );
       expect(
-        RegExp(RegExp.escape(': $_minimumFittingHeight,'))
-            .allMatches(body)
-            .length,
+        RegExp(r':\s*50\.0,\s*50\.0,').allMatches(body).length,
         2,
         reason: '$path should hold exactly two fixed bars (ready + custom) at '
-            '$_minimumFittingHeight.',
+            '$_compactHeight.',
       );
       expect(
-        RegExp(RegExp.escape('? 135.0')).allMatches(body).length,
+        RegExp(RegExp.escape('? $_compactCreatorHeight')).allMatches(body).length,
         2,
-        reason: '$path should keep the two affiliate-creator bars at 135.0; '
-            'they already have room for the extra promotion row.',
+        reason: '$path should keep the two affiliate-creator bars at '
+            '$_compactCreatorHeight, room for the extra promotion row.',
       );
     }
   });
 }
-
