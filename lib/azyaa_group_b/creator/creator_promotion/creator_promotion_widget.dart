@@ -18,6 +18,37 @@ class CreatorPromotionWidget extends StatefulWidget {
   final CreatorPromotionsStruct? promotionInfo;
   final UsersRecord? creator;
 
+  static void open(
+    BuildContext context, {
+    required String? promotionId,
+    required String? creatorUid,
+  }) {
+    FFAppState().updateUserDataFlowStruct(
+      (e) => e..userSelectedProductList = [],
+    );
+
+    context.pushNamed(
+      CreatorsIndividualPromoWidget.routeName,
+      queryParameters: {
+        'promo': serializeParam(
+          promotionId,
+          ParamType.String,
+        ),
+        'creatorUid': serializeParam(
+          creatorUid,
+          ParamType.String,
+        ),
+      }.withoutNulls,
+      extra: <String, dynamic>{
+        '__transition_info__': const TransitionInfo(
+          hasTransition: true,
+          transitionType: PageTransitionType.fade,
+          duration: Duration(milliseconds: 0),
+        ),
+      },
+    );
+  }
+
   @override
   State<CreatorPromotionWidget> createState() => _CreatorPromotionWidgetState();
 }
@@ -69,32 +100,11 @@ class _CreatorPromotionWidgetState extends State<CreatorPromotionWidget> {
       focusColor: Colors.transparent,
       hoverColor: Colors.transparent,
       highlightColor: Colors.transparent,
-      onTap: () async {
-        FFAppState().updateUserDataFlowStruct(
-          (e) => e..userSelectedProductList = [],
-        );
-
-        context.pushNamed(
-          CreatorsIndividualPromoWidget.routeName,
-          queryParameters: {
-            'promo': serializeParam(
-              widget.promotionInfo?.promotionId,
-              ParamType.String,
-            ),
-            'creatorUid': serializeParam(
-              widget.creator?.uid,
-              ParamType.String,
-            ),
-          }.withoutNulls,
-          extra: <String, dynamic>{
-            '__transition_info__': const TransitionInfo(
-              hasTransition: true,
-              transitionType: PageTransitionType.fade,
-              duration: Duration(milliseconds: 0),
-            ),
-          },
-        );
-      },
+      onTap: () => CreatorPromotionWidget.open(
+        context,
+        promotionId: widget.promotionInfo?.promotionId,
+        creatorUid: widget.creator?.uid,
+      ),
       child: Container(
         decoration: const BoxDecoration(),
         child: Column(

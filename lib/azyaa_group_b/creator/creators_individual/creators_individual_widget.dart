@@ -1187,7 +1187,19 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                       final imageListItem =
                                                           imageList[
                                                               imageListIndex];
-                                                      return Container(
+                                                      return GestureDetector(
+                                                        onTap: () =>
+                                                            CreatorPromotionWidget
+                                                                .open(
+                                                          context,
+                                                          promotionId:
+                                                              imageListItem
+                                                                  .promotionId,
+                                                          creatorUid:
+                                                              columnUsersRecord
+                                                                  .uid,
+                                                        ),
+                                                        child: Container(
                                                         decoration:
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
@@ -1218,6 +1230,7 @@ class _CreatorsIndividualWidgetState extends State<CreatorsIndividualWidget>
                                                                 const Alignment(
                                                                     0.0, -1.0),
                                                           ),
+                                                        ),
                                                         ),
                                                       );
                                                     },

@@ -13,6 +13,7 @@ import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
+import '/azyaa_group_b/creator/creator_promotion/creator_promotion_widget.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
@@ -1091,7 +1092,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                           builder:
                                                                               (context) {
                                                                             final portfolioImageList =
-                                                                                allCreatorListItem.creatorMainInfo.creatorPromotions.where((e) => e.promotionStatus == 'active').toList().sortedList(keyOf: (e) => e.promotionCreatedAt!, desc: true).map((e) => e.promotionInfo.galleryImage.firstOrNull).withoutNulls.toList().take(4).toList();
+                                                                                allCreatorListItem.creatorMainInfo.creatorPromotions.where((e) => e.promotionStatus == 'active' && e.promotionInfo.galleryImage.isNotEmpty).toList().sortedList(keyOf: (e) => e.promotionCreatedAt!, desc: true).take(4).toList();
 
                                                                             return ListView.separated(
                                                                               padding: const EdgeInsets.fromLTRB(
@@ -1107,22 +1108,29 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                                               separatorBuilder: (_, __) => const SizedBox(width: 8.0),
                                                                               itemBuilder: (context, portfolioImageListIndex) {
                                                                                 final portfolioImageListItem = portfolioImageList[portfolioImageListIndex];
-                                                                                return Container(
-                                                                                  decoration: BoxDecoration(
-                                                                                    borderRadius: BorderRadius.circular(4.0),
-                                                                                    border: Border.all(
-                                                                                      color: FlutterFlowTheme.of(context).border,
-                                                                                      width: 1.0,
-                                                                                    ),
+                                                                                return GestureDetector(
+                                                                                  onTap: () => CreatorPromotionWidget.open(
+                                                                                    context,
+                                                                                    promotionId: portfolioImageListItem.promotionId,
+                                                                                    creatorUid: allCreatorListItem.uid,
                                                                                   ),
-                                                                                  child: ClipRRect(
-                                                                                    borderRadius: BorderRadius.circular(4.0),
-                                                                                    child: CachedNetworkImage(
-                                                                                      imageUrl: portfolioImageListItem,
-                                                                                      width: 40.0,
-                                                                                      height: 45.0,
-                                                                                      fit: BoxFit.cover,
-                                                                                      alignment: const Alignment(0.0, 0.0),
+                                                                                  child: Container(
+                                                                                    decoration: BoxDecoration(
+                                                                                      borderRadius: BorderRadius.circular(4.0),
+                                                                                      border: Border.all(
+                                                                                        color: FlutterFlowTheme.of(context).border,
+                                                                                        width: 1.0,
+                                                                                      ),
+                                                                                    ),
+                                                                                    child: ClipRRect(
+                                                                                      borderRadius: BorderRadius.circular(4.0),
+                                                                                      child: CachedNetworkImage(
+                                                                                        imageUrl: portfolioImageListItem.promotionInfo.galleryImage.first,
+                                                                                        width: 40.0,
+                                                                                        height: 45.0,
+                                                                                        fit: BoxFit.cover,
+                                                                                        alignment: const Alignment(0.0, 0.0),
+                                                                                      ),
                                                                                     ),
                                                                                   ),
                                                                                 );
