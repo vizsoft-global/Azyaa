@@ -5,6 +5,7 @@ import '/azyaa_group_a/home/components/loading_animation/loading_animation_widge
 import '/azyaa_group_a/home/components/product_grid/product_grid_widget.dart';
 import '/azyaa_group_a/home/components/product_small_grid/product_small_grid_widget.dart';
 import '/backend/backend.dart';
+import '/backend/search/search.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
@@ -164,28 +165,45 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                 focusNode: _model.searchFocusNode,
                                 onChanged: (_) => EasyDebounce.debounce(
                                   '_model.searchTextController',
-                                  const Duration(milliseconds: 2000),
+                                  const Duration(milliseconds: 250),
                                   () async {
-                                    if (_model.searchTextController.text !=
-                                        '') {
-                                      safeSetState(() =>
-                                          _model.algoliaSearchResults = null);
-                                      await ProductsRecord.search(
-                                        term: _model.searchTextController.text,
-                                      )
-                                          .then((r) =>
-                                              _model.algoliaSearchResults = r)
-                                          .onError((_, __) =>
-                                              _model.algoliaSearchResults = [])
-                                          .whenComplete(
-                                              () => safeSetState(() {}));
+                                    final term = _model
+                                        .searchTextController.text
+                                        .trim();
 
-                                      _model.serachStatus = true;
-                                      safeSetState(() {});
-                                    } else {
+                                    // 250ms rather than the previous 2000ms, and
+                                    // the same local pattern search the shop
+                                    // page runs, rather than an Algolia
+                                    // round-trip. Was:
+                                    // `ProductsRecord.search(...)` against the
+                                    // 'products' index.
+                                    //
+                                    // Below the minimum length there is nothing
+                                    // selective to match, so the page stays on
+                                    // its default listing instead of claiming
+                                    // there are no results.
+                                    if (!AzyMatch.meetsMinimumLength(term)) {
                                       _model.serachStatus = false;
                                       safeSetState(() {});
+                                      return;
                                     }
+
+                                    await AzySearchService.instance
+                                        .ensureLoaded();
+
+                                    final products = <ProductsRecord>[];
+                                    for (final hit in AzySearchService.instance
+                                        .search(term)
+                                        .of(AzySearchKind.product)) {
+                                      final payload = hit.document.payload;
+                                      if (payload is ProductsRecord) {
+                                        products.add(payload);
+                                      }
+                                    }
+
+                                    _model.algoliaSearchResults = products;
+                                    _model.serachStatus = true;
+                                    safeSetState(() {});
                                   },
                                 ),
                                 autofocus: true,

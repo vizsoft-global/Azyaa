@@ -8,7 +8,9 @@ import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_w
 import '/azyaa_group_a/home/components/blank_loading/blank_loading_widget.dart';
 import '/azyaa_group_a/home/components/loading_animation/loading_animation_widget.dart';
 import '/azyaa_group_a/home/components/product_attribute/product_attribute_widget.dart';
+import '/backend/inventory/stock_service.dart';
 import '/azyaa_group_a/home/components/product_grid/product_grid_widget.dart';
+import '/azyaa_group_a/home/components/product_options_bar/product_options_bar_widget.dart';
 import '/azyaa_group_a/home/components/product_small_grid/product_small_grid_widget.dart';
 import '/azyaa_group_a/home/components/size_chart_default/size_chart_default_widget.dart';
 import '/azyaa_group_a/home/main/product_measurement_popup/product_measurement_popup_widget.dart';
@@ -18,6 +20,7 @@ import '/azyaa_group_b/creator_space/creator_space/c1_share_promotion/c1_share_p
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
+import '/backend/catalog/product_options.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -235,6 +238,23 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                         child: CachedNetworkImage(
                                                           imageUrl: imageListItem,
                                                           fit: BoxFit.contain,
+                                                          // Decode at the size it is
+                                                          // actually drawn. Without
+                                                          // this, a 3000px photo is
+                                                          // decoded in full for a
+                                                          // ~400px card, several
+                                                          // times over as the
+                                                          // carousel builds its
+                                                          // pages -- which is what
+                                                          // made this page hang on
+                                                          // open.
+                                                          memCacheWidth: (MediaQuery
+                                                                      .sizeOf(
+                                                                          context)
+                                                                      .width *
+                                                                  MediaQuery.devicePixelRatioOf(
+                                                                      context))
+                                                              .round(),
                                                         ),
                                                       ),
                                                     ),
@@ -1153,595 +1173,6 @@ class _ProductWidgetState extends State<ProductWidget> {
                                   verticalDirection: VerticalDirection.down,
                                   clipBehavior: Clip.none,
                                   children: [
-                                    Builder(
-                                      builder: (context) {
-                                        final attributeList =
-                                            stackProductsRecord
-                                                .productAttribute
-                                                .sortedList(
-                                                    keyOf: (e) =>
-                                                        e.attributesId,
-                                                    desc: false)
-                                                .toList();
-
-                                        return ListView.builder(
-                                          padding: EdgeInsets.zero,
-                                          primary: false,
-                                          shrinkWrap: true,
-                                          scrollDirection: Axis.vertical,
-                                          itemCount: attributeList.length,
-                                          itemBuilder:
-                                              (context, attributeListIndex) {
-                                            final attributeListItem =
-                                                attributeList[
-                                                    attributeListIndex];
-                                            return Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 0.0, 16.0, 0.0),
-                                              child: StreamBuilder<
-                                                  List<AttributesRecord>>(
-                                                stream: queryAttributesRecord(
-                                                  queryBuilder:
-                                                      (attributesRecord) =>
-                                                          attributesRecord
-                                                              .where(
-                                                                'attribute_id',
-                                                                isEqualTo:
-                                                                    attributeListItem
-                                                                        .attributesId,
-                                                              )
-                                                              .where(
-                                                                'status',
-                                                                isEqualTo:
-                                                                    'active',
-                                                              ),
-                                                  singleRecord: true,
-                                                ),
-                                                builder: (context, snapshot) {
-                                                  // Customize what your widget looks like when it's loading.
-                                                  if (!snapshot.hasData) {
-                                                    return const Center(
-                                                      child: SizedBox(
-                                                        width: 2.0,
-                                                        height: 2.0,
-                                                        child:
-                                                            CircularProgressIndicator(
-                                                          valueColor:
-                                                              AlwaysStoppedAnimation<
-                                                                  Color>(
-                                                            Colors.transparent,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    );
-                                                  }
-                                                  List<AttributesRecord>
-                                                      variationAttributesRecordList =
-                                                      snapshot.data!;
-                                                  // Return an empty Container when the item does not exist.
-                                                  if (snapshot.data!.isEmpty) {
-                                                    return Container();
-                                                  }
-                                                  final variationAttributesRecord =
-                                                      variationAttributesRecordList
-                                                              .isNotEmpty
-                                                          ? variationAttributesRecordList
-                                                              .first
-                                                          : null;
-
-                                                  return Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Divider(
-                                                        height: 4.0,
-                                                        thickness: 1.0,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .alternate,
-                                                      ),
-                                                      Container(
-                                                        height: 50.0,
-                                                        decoration:
-                                                            const BoxDecoration(),
-                                                        child: Builder(
-                                                          builder: (context) =>
-                                                              InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              await showDialog(
-                                                                context:
-                                                                    context,
-                                                                builder:
-                                                                    (dialogContext) {
-                                                                  return Dialog(
-                                                                    elevation:
-                                                                        0,
-                                                                    insetPadding:
-                                                                        EdgeInsets
-                                                                            .zero,
-                                                                    backgroundColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    alignment: const AlignmentDirectional(
-                                                                            0.0,
-                                                                            1.0)
-                                                                        .resolve(
-                                                                            Directionality.of(context)),
-                                                                    child:
-                                                                        WebViewAware(
-                                                                      child:
-                                                                          GestureDetector(
-                                                                        onTap:
-                                                                            () {
-                                                                          FocusScope.of(dialogContext)
-                                                                              .unfocus();
-                                                                          FocusManager
-                                                                              .instance
-                                                                              .primaryFocus
-                                                                              ?.unfocus();
-                                                                        },
-                                                                        child:
-                                                                            ProductAttributeWidget(
-                                                                          index:
-                                                                              attributeListIndex,
-                                                                          attribute:
-                                                                              attributeListItem,
-                                                                          productID:
-                                                                              stackProductsRecord.productId,
-                                                                          navigation:
-                                                                              FFLocalizations.of(context).getVariableText(
-                                                                            enText:
-                                                                                'default',
-                                                                            arText:
-                                                                                'تقصير',
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  );
-                                                                },
-                                                              );
-                                                            },
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceBetween,
-                                                              children: [
-                                                                Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getVariableText(
-                                                                    enText: () {
-                                                                      if (variationAttributesRecord
-                                                                              ?.attributeInfoCustomTranslate
-                                                                              .name
-                                                                              .en !=
-                                                                          '') {
-                                                                        return variationAttributesRecord
-                                                                            ?.attributeInfoCustomTranslate
-                                                                            .name
-                                                                            .en;
-                                                                      } else if (variationAttributesRecord
-                                                                              ?.attributeInfoTranslate
-                                                                              .name
-                                                                              .en !=
-                                                                          '') {
-                                                                        return variationAttributesRecord
-                                                                            ?.attributeInfoTranslate
-                                                                            .name
-                                                                            .en;
-                                                                      } else {
-                                                                        return variationAttributesRecord
-                                                                            ?.attributeInfo
-                                                                            .name;
-                                                                      }
-                                                                    }(),
-                                                                    arText: () {
-                                                                      if (variationAttributesRecord
-                                                                              ?.attributeInfoCustomTranslate
-                                                                              .name
-                                                                              .ar !=
-                                                                          '') {
-                                                                        return variationAttributesRecord
-                                                                            ?.attributeInfoCustomTranslate
-                                                                            .name
-                                                                            .ar;
-                                                                      } else if (variationAttributesRecord
-                                                                              ?.attributeInfoTranslate
-                                                                              .name
-                                                                              .ar !=
-                                                                          '') {
-                                                                        return variationAttributesRecord
-                                                                            ?.attributeInfoTranslate
-                                                                            .name
-                                                                            .ar;
-                                                                      } else {
-                                                                        return variationAttributesRecord
-                                                                            ?.attributeInfo
-                                                                            .name;
-                                                                      }
-                                                                    }(),
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLarge
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Cairo',
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                                if (variationAttributesRecord
-                                                                        ?.attributeId ==
-                                                                    '1000')
-                                                                  Builder(
-                                                                    builder:
-                                                                        (context) =>
-                                                                            InkWell(
-                                                                      splashColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      focusColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      hoverColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      highlightColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      onTap:
-                                                                          () async {
-                                                                        await showDialog(
-                                                                          context:
-                                                                              context,
-                                                                          builder:
-                                                                              (dialogContext) {
-                                                                            return Dialog(
-                                                                              elevation: 0,
-                                                                              insetPadding: EdgeInsets.zero,
-                                                                              backgroundColor: Colors.transparent,
-                                                                              alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                              child: WebViewAware(
-                                                                                child: GestureDetector(
-                                                                                  onTap: () {
-                                                                                    FocusScope.of(dialogContext).unfocus();
-                                                                                    FocusManager.instance.primaryFocus?.unfocus();
-                                                                                  },
-                                                                                  child: Container(
-                                                                                    width: 600.0,
-                                                                                    child: SizeChartDefaultWidget(
-                                                                                      product: stackProductsRecord,
-                                                                                    ),
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            );
-                                                                          },
-                                                                        );
-                                                                      },
-                                                                      child:
-                                                                          Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'vhv11107' /* Size Chart */,
-                                                                        ),
-                                                                        textAlign:
-                                                                            TextAlign.center,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodySmall
-                                                                            .override(
-                                                                              fontFamily: 'almarai',
-                                                                              color: FlutterFlowTheme.of(context).velvet,
-                                                                              letterSpacing: 0.0,
-                                                                              decoration: TextDecoration.underline,
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                Expanded(
-                                                                  child:
-                                                                      Container(
-                                                                    height:
-                                                                        50.0,
-                                                                    decoration:
-                                                                        const BoxDecoration(),
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            1.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Builder(
-                                                                      builder:
-                                                                          (context) {
-                                                                        final termList = attributeListItem
-                                                                            .attributesBrandTermIds
-                                                                            .toList();
-
-                                                                        return ListView
-                                                                            .builder(
-                                                                          padding:
-                                                                              EdgeInsets.zero,
-                                                                          primary:
-                                                                              false,
-                                                                          shrinkWrap:
-                                                                              true,
-                                                                          scrollDirection:
-                                                                              Axis.horizontal,
-                                                                          itemCount:
-                                                                              termList.length,
-                                                                          itemBuilder:
-                                                                              (context, termListIndex) {
-                                                                            final termListItem =
-                                                                                termList[termListIndex];
-                                                                            return StreamBuilder<List<BrandsRecord>>(
-                                                                              stream: queryBrandsRecord(
-                                                                                queryBuilder: (brandsRecord) => brandsRecord
-                                                                                    .where(
-                                                                                      'brand_id',
-                                                                                      isEqualTo: termListItem,
-                                                                                    )
-                                                                                    .where(
-                                                                                      'status',
-                                                                                      isEqualTo: 'active',
-                                                                                    ),
-                                                                                singleRecord: true,
-                                                                              ),
-                                                                              builder: (context, snapshot) {
-                                                                                // Customize what your widget looks like when it's loading.
-                                                                                if (!snapshot.hasData) {
-                                                                                  return const Center(
-                                                                                    child: SizedBox(
-                                                                                      width: 2.0,
-                                                                                      height: 2.0,
-                                                                                      child: CircularProgressIndicator(
-                                                                                        valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                          Colors.transparent,
-                                                                                        ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  );
-                                                                                }
-                                                                                List<BrandsRecord> stackBrandsRecordList = snapshot.data!;
-                                                                                // Return an empty Container when the item does not exist.
-                                                                                if (snapshot.data!.isEmpty) {
-                                                                                  return Container();
-                                                                                }
-                                                                                final stackBrandsRecord = stackBrandsRecordList.isNotEmpty ? stackBrandsRecordList.first : null;
-
-                                                                                return InkWell(
-                                                                                  splashColor: Colors.transparent,
-                                                                                  focusColor: Colors.transparent,
-                                                                                  hoverColor: Colors.transparent,
-                                                                                  highlightColor: Colors.transparent,
-                                                                                  onTap: () async {
-                                                                                    if (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().length == 0) {
-                                                                                      FFAppState().updateUserDataFlowStruct(
-                                                                                        (e) => e
-                                                                                          ..count = stackProductsRecord.productAttribute.length
-                                                                                          ..userSwatchesProductAttribute = stackProductsRecord.productAttribute.toList(),
-                                                                                      );
-                                                                                      while (FFAppState().UserDataFlow.count > 0) {
-                                                                                        FFAppState().updateUserDataFlowStruct(
-                                                                                          (e) => e
-                                                                                            ..updateUserSwatchesProductAttribute(
-                                                                                              (e) => e[FFAppState().UserDataFlow.count - 1]..attributesDefaultTermId = null,
-                                                                                            ),
-                                                                                        );
-                                                                                        FFAppState().updateUserDataFlowStruct(
-                                                                                          (e) => e..count = FFAppState().UserDataFlow.count - 1,
-                                                                                        );
-                                                                                      }
-                                                                                      FFAppState().updateUserDataFlowStruct(
-                                                                                        (e) => e
-                                                                                          ..updateUserProductSwatchesList(
-                                                                                            (e) => e.add(UserRecentViewedListStruct(
-                                                                                              createdAt: getCurrentTimestamp,
-                                                                                              viewedItemId: stackProductsRecord.productId,
-                                                                                              productAttribute: FFAppState().UserDataFlow.userSwatchesProductAttribute,
-                                                                                              viewedEntityType: 'product',
-                                                                                            )),
-                                                                                          ),
-                                                                                      );
-                                                                                    }
-                                                                                    FFAppState().updateUserDataFlowStruct(
-                                                                                      (e) => e..count = FFAppState().UserDataFlow.userProductSwatchesList.length,
-                                                                                    );
-                                                                                    while (FFAppState().UserDataFlow.count > 0) {
-                                                                                      if (FFAppState().UserDataFlow.userProductSwatchesList.elementAtOrNull(FFAppState().UserDataFlow.count - 1)?.viewedItemId == stackProductsRecord.productId) {
-                                                                                        FFAppState().updateUserDataFlowStruct(
-                                                                                          (e) => e
-                                                                                            ..updateUserProductSwatchesList(
-                                                                                              (e) => e[FFAppState().UserDataFlow.count - 1]
-                                                                                                ..updateProductAttribute(
-                                                                                                  (e) => e[attributeListIndex]..attributesDefaultTermId = termListItem,
-                                                                                                ),
-                                                                                            ),
-                                                                                        );
-                                                                                        FFAppState().update(() {});
-                                                                                        return;
-                                                                                      }
-                                                                                      FFAppState().updateUserDataFlowStruct(
-                                                                                        (e) => e..count = FFAppState().UserDataFlow.count - 1,
-                                                                                      );
-                                                                                    }
-                                                                                  },
-                                                                                  child: Stack(
-                                                                                    children: [
-                                                                                      if ((variationAttributesRecord?.attributeId == '1001') && (stackBrandsRecord?.brandInfo.color != null))
-                                                                                        Align(
-                                                                                          alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                          child: Container(
-                                                                                            decoration: BoxDecoration(
-                                                                                              shape: BoxShape.circle,
-                                                                                              border: Border.all(
-                                                                                                color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).primaryBackground,
-                                                                                              ),
-                                                                                            ),
-                                                                                            child: Padding(
-                                                                                              padding: const EdgeInsets.all(2.0),
-                                                                                              child: Container(
-                                                                                                width: 40.0,
-                                                                                                height: 40.0,
-                                                                                                decoration: BoxDecoration(
-                                                                                                  color: stackBrandsRecord?.brandInfo.color,
-                                                                                                  borderRadius: BorderRadius.circular(100.0),
-                                                                                                  border: Border.all(
-                                                                                                    color: const Color(0x27000000),
-                                                                                                  ),
-                                                                                                ),
-                                                                                              ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ),
-                                                                                      if (!((variationAttributesRecord?.attributeId == '1001') && (stackBrandsRecord?.brandInfo.color != null)))
-                                                                                        Align(
-                                                                                          alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                          child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
-                                                                                            child: Container(
-                                                                                              decoration: BoxDecoration(
-                                                                                                borderRadius: BorderRadius.circular(4.0),
-                                                                                                border: Border.all(
-                                                                                                  color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
-                                                                                                ),
-                                                                                              ),
-                                                                                              child: Padding(
-                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
-                                                                                                child: Text(
-                                                                                                  FFLocalizations.of(context).getVariableText(
-                                                                                                    enText: () {
-                                                                                                      if (stackBrandsRecord?.brandInfoCustomTranslate.name.en != '') {
-                                                                                                        return stackBrandsRecord?.brandInfoCustomTranslate.name.en;
-                                                                                                      } else if (stackBrandsRecord?.brandInfoTranslate.name.en != '') {
-                                                                                                        return stackBrandsRecord?.brandInfoTranslate.name.en;
-                                                                                                      } else {
-                                                                                                        return stackBrandsRecord?.brandInfo.name;
-                                                                                                      }
-                                                                                                    }(),
-                                                                                                    arText: () {
-                                                                                                      if (stackBrandsRecord?.brandInfoCustomTranslate.name.ar != '') {
-                                                                                                        return stackBrandsRecord?.brandInfoCustomTranslate.name.ar;
-                                                                                                      } else if (stackBrandsRecord?.brandInfoTranslate.name.ar != '') {
-                                                                                                        return stackBrandsRecord?.brandInfoTranslate.name.ar;
-                                                                                                      } else {
-                                                                                                        return stackBrandsRecord?.brandInfo.name;
-                                                                                                      }
-                                                                                                    }(),
-                                                                                                  ),
-                                                                                                  style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                        fontFamily: 'almarai',
-                                                                                                        color: (FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute.elementAtOrNull(attributeListIndex))?.attributesDefaultTermId == stackBrandsRecord?.brandId ? FlutterFlowTheme.of(context).primaryText : FlutterFlowTheme.of(context).secondaryText,
-                                                                                                        letterSpacing: 0.0,
-                                                                                                      ),
-                                                                                                ),
-                                                                                              ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ),
-                                                                                    ],
-                                                                                  ),
-                                                                                );
-                                                                              },
-                                                                            );
-                                                                          },
-                                                                        );
-                                                                      },
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                Builder(
-                                                                  builder:
-                                                                      (context) =>
-                                                                          InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      await showDialog(
-                                                                        context:
-                                                                            context,
-                                                                        builder:
-                                                                            (dialogContext) {
-                                                                          return Dialog(
-                                                                            elevation:
-                                                                                0,
-                                                                            insetPadding:
-                                                                                EdgeInsets.zero,
-                                                                            backgroundColor:
-                                                                                Colors.transparent,
-                                                                            alignment:
-                                                                                const AlignmentDirectional(0.0, 1.0).resolve(Directionality.of(context)),
-                                                                            child:
-                                                                                WebViewAware(
-                                                                              child: GestureDetector(
-                                                                                onTap: () {
-                                                                                  FocusScope.of(dialogContext).unfocus();
-                                                                                  FocusManager.instance.primaryFocus?.unfocus();
-                                                                                },
-                                                                                child: ProductAttributeWidget(
-                                                                                  index: attributeListIndex,
-                                                                                  attribute: attributeListItem,
-                                                                                  productID: stackProductsRecord.productId,
-                                                                                  navigation: 'default',
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                          );
-                                                                        },
-                                                                      );
-                                                                    },
-                                                                    child: Icon(
-                                                                      FFIcons
-                                                                          .klayer1,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      size:
-                                                                          14.0,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ].divide(const SizedBox(
-                                                                  width: 8.0)),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  );
-                                                },
-                                              ),
-                                            );
-                                          },
-                                        );
-                                      },
-                                    ),
                                     Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -3727,40 +3158,30 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                               .textScaler,
                                                       text: TextSpan(
                                                         children: [
+                                                          // Was two spans concatenated -- the
+                                                          // 'Bought ' string plus a separate
+                                                          // 'With' -- which reads as a stutter and
+                                                          // breaks in any language that orders
+                                                          // those words differently. One string.
                                                           TextSpan(
                                                             text: FFLocalizations
                                                                     .of(context)
-                                                                .getText(
-                                                              'o2g1qvgb' /* Bought  */,
+                                                                .getVariableText(
+                                                              enText:
+                                                                  'Bought with',
+                                                              arText:
+                                                                  'اشتُري مع',
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyLarge
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'almarai',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
-                                                          ),
-                                                          TextSpan(
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'e4fbjx4h' /* With */,
+                                                              fontFamily:
+                                                                  'almarai',
+                                                              letterSpacing: 0.0,
+                                                              fontWeight:
+                                                                  FontWeight.bold,
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'almarai',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
                                                           )
                                                         ],
                                                         style:
@@ -3809,13 +3230,22 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: Builder(
                                                   builder: (context) {
+                                                    // In-stock first: a sold-out
+                                                    // product stays listed but
+                                                    // must not lead the row.
                                                     final popularList =
-                                                        popularProductsRecordList
-                                                            .where((e) =>
-                                                                e.productId !=
-                                                                stackProductsRecord
-                                                                    .productId)
-                                                            .toList();
+                                                        AzyInventoryStock.instance
+                                                            .orderInStockFirst(
+                                                      popularProductsRecordList
+                                                          .where((e) =>
+                                                              e.productId !=
+                                                              stackProductsRecord
+                                                                  .productId)
+                                                          .toList(),
+                                                      (p) => p
+                                                          .product
+                                                          .inventoryId,
+                                                    );
 
                                                     return GridView.builder(
                                                       padding: EdgeInsets.zero,
@@ -4013,9 +3443,16 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                       ),
                                                     );
                                                   }
+                                                  // In-stock first, and the
+                                                  // lookup for anything not yet
+                                                  // known is started here.
                                                   List<ProductsRecord>
                                                       listViewProductsRecordList =
-                                                      snapshot.data!;
+                                                      AzyInventoryStock.instance
+                                                          .orderInStockFirst(
+                                                    snapshot.data!,
+                                                    (p) => p.product.inventoryId,
+                                                  );
 
                                                   return ListView.separated(
                                                     padding:
@@ -4058,7 +3495,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                               ]
                                   .divide(const SizedBox(height: 12.0))
                                   .addToStart(const SizedBox(height: 16.0))
-                                  .addToEnd(const SizedBox(height: 100.0)),
+                                  .addToEnd(const SizedBox(height: 165.0)),
                             ),
                           ),
                           Align(
@@ -4098,10 +3535,31 @@ class _ProductWidgetState extends State<ProductWidget> {
                                     containerSettingsRecordList.isNotEmpty
                                         ? containerSettingsRecordList.first
                                         : null;
+                                final productOptionsReady =
+                                    AzyProductOptions.isCompleteForSelection(
+                                  options: stackProductsRecord.productAttribute,
+                                  selection: FFAppState()
+                                      .UserDataFlow
+                                      .userProductSwatchesList
+                                      .where((e) =>
+                                          e.viewedItemId ==
+                                          stackProductsRecord.productId)
+                                      .toList()
+                                      .firstOrNull
+                                      ?.productAttribute,
+                                );
 
                                 return Container(
                                   decoration: const BoxDecoration(),
-                                  child: Stack(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      if (stackProductsRecord
+                                          .productAttribute.isNotEmpty)
+                                        ProductOptionsBarWidget(
+                                          product: stackProductsRecord,
+                                        ),
+                                      Stack(
                                     children: [
                                       if (stackProductsRecord
                                               .product.productType ==
@@ -4140,8 +3598,8 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   .isAffiliateProduct ==
                                                               true)
                                                       ? 135.0
-                                                      : 75.0,
-                                                  75.0,
+                                                      : 82.0,
+                                                  82.0,
                                                 ),
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
@@ -4207,7 +3665,8 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                         (stackProductsRecord.product.productType ==
                                                                             'ready') &&
                                                                         (readymadeInventoryRecord.stock >
-                                                                            0))
+                                                                            0) &&
+                                                                        productOptionsReady)
                                                                       Padding(
                                                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             8.0,
@@ -4277,6 +3736,9 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                         ),
                                                                       ),
                                                                     if (() {
+                                                                      if (!productOptionsReady) {
+                                                                        return false;
+                                                                      }
                                                                       if (!loggedIn) {
                                                                         return true;
                                                                       } else if ((stackProductsRecord.product.productType ==
@@ -4312,6 +3774,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               type: 'button',
                                                                               product: widget.product!,
                                                                               navigation: 'cart',
+                                                                              options: stackProductsRecord.productAttribute,
                                                                               defaultTerms: FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute,
                                                                               quantity: stackProductsRecord.product.productType == 'ready' ? _model.countControllerValue : 1,
                                                                             ),
@@ -4643,7 +4106,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                     child:
                                                                         FFButtonWidget(
                                                                       onPressed:
-                                                                          () async {
+                                                                          !AzyProductOptions.isCompleteFor(stackProductsRecord, FFAppState()) ? null : () async {
                                                                         var _shouldSetState =
                                                                             false;
                                                                         if (loggedIn) {
@@ -4834,11 +4297,19 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                           safeSetState(
                                                                               () {});
                                                                       },
-                                                                      text: loggedIn
-                                                                          ? (currentUserDocument!.userCart.cartItems.where((e) => (e.productId == stackProductsRecord.productId) && (e.productType == 'product')).toList().length > 0
-                                                                              ? 'Update Bag'
-                                                                              : 'Add to Bag')
-                                                                          : 'Login',
+                                                                      // Nothing is added until every option that needs a
+                                                                      // choice has one. The label says so, rather than
+                                                                      // letting the shopper discover it at checkout.
+                                                                      text: !AzyProductOptions
+                                                                              .isCompleteFor(
+                                                                                  stackProductsRecord,
+                                                                                  FFAppState())
+                                                                          ? 'Select options'
+                                                                          : loggedIn
+                                                                              ? (currentUserDocument!.userCart.cartItems.where((e) => (e.productId == stackProductsRecord.productId) && (e.productType == 'product')).toList().length > 0
+                                                                                  ? 'Update Bag'
+                                                                                  : 'Add to Bag')
+                                                                              : 'Login',
                                                                       options:
                                                                           FFButtonOptions(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -4857,6 +4328,10 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
+                                                                        // The locked state has to look locked: a disabled FlutterFlow button
+                                                                        // keeps its fill colour when none is given, so both say it here.
+                                                                        disabledColor: FlutterFlowTheme.of(context).secondaryText,
+                                                                        disabledTextColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                         color: loggedIn
                                                                             ? (currentUserDocument!.userCart.cartItems.where((e) => (e.productId == stackProductsRecord.productId) && (e.productType == 'product')).toList().length > 0
                                                                                 ? FlutterFlowTheme.of(context).success
@@ -5223,8 +4698,8 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                   .isAffiliateProduct ==
                                                               true)
                                                       ? 135.0
-                                                      : 75.0,
-                                                  75.0,
+                                                      : 82.0,
+                                                  82.0,
                                                 ),
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
@@ -5283,6 +4758,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                 type: 'button',
                                                                                 product: widget.product!,
                                                                                 navigation: 'cart',
+                                                                                options: stackProductsRecord.productAttribute,
                                                                                 defaultTerms: FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute,
                                                                                 quantity: 1,
                                                                               ),
@@ -5682,6 +5158,8 @@ class _ProductWidgetState extends State<ProductWidget> {
                                             },
                                           ),
                                         ),
+                                    ],
+                                      ),
                                     ],
                                   ),
                                 );

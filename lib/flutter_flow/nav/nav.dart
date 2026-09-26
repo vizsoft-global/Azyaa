@@ -6,6 +6,7 @@ import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
+import '/backend/navigation/azy_back_policy.dart';
 import '/backend/push_notifications/push_notifications_handler.dart'
     show PushNotificationsHandler;
 import '/flutter_flow/flutter_flow_util.dart';
@@ -39,7 +40,15 @@ class AppStateNotifier extends ChangeNotifier {
   /// Otherwise, this will trigger a refresh and interrupt the action(s).
   bool notifyOnAuthChange = true;
 
-  bool get loading => user == null || showSplashImage;
+  /// True only while the signed-in user is still unknown.
+  ///
+  /// This used to read `|| showSplashImage`, which held a splash video on screen
+  /// for a fixed two seconds after launch -- so every opening of the home page
+  /// sat through an animation before showing anything. That is removed: a page
+  /// now renders as soon as auth resolves. The auth half stays, because
+  /// rendering a protected page before the user is known would flash the entry
+  /// screen and then redirect straight back.
+  bool get loading => user == null;
   bool get loggedIn => user?.loggedIn ?? false;
   bool get initiallyLoggedIn => initialUser?.loggedIn ?? false;
   bool get shouldRedirect => loggedIn && _redirectLocation != null;
@@ -881,12 +890,18 @@ class FFRoute {
                 )
               : PushNotificationsHandler(child: page);
 
+          // Every page gets the app-wide back policy. This is the one place all
+          // routes are built, so no page can be missed -- and it has to be here,
+          // inside the route, because PopScope registers through
+          // `ModalRoute.of(context)` and would do nothing above the Navigator.
+          final guardedChild = AzyBackGuard(child: child);
+
           final transitionInfo = state.transitionInfo;
           return transitionInfo.hasTransition
               ? CustomTransitionPage(
                   key: state.pageKey,
                   name: state.name,
-                  child: child,
+                  child: guardedChild,
                   transitionDuration: transitionInfo.duration,
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) =>
@@ -904,7 +919,7 @@ class FFRoute {
                   ),
                 )
               : MaterialPage(
-                  key: state.pageKey, name: state.name, child: child);
+                  key: state.pageKey, name: state.name, child: guardedChild);
         },
         routes: routes,
       );

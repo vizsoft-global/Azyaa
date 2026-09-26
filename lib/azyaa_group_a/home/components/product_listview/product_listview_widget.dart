@@ -262,6 +262,52 @@ class _ProductListviewWidgetState extends State<ProductListviewWidget> {
                         ),
                       ),
                     ),
+                    // Same treatment as the grid card: a pink wash over a
+                    // sold-out image plus a badge saying why. Without this the
+                    // row only reported stock in the price line, so a shopper
+                    // scanning a list had to read every row to spot what could
+                    // not be bought.
+                    if (rowInventoryRecord!.stock <= 0)
+                      Positioned.fill(
+                        child: IgnorePointer(
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              color: const Color(0x8CF8BBD0),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                        ),
+                      ),
+                    if (rowInventoryRecord.stock <= 0)
+                      Positioned(
+                        left: 0.0,
+                        bottom: 0.0,
+                        child: IgnorePointer(
+                          child: Container(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                6.0, 2.0, 6.0, 2.0),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFF7A8C4),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Text(
+                              FFLocalizations.of(context).getVariableText(
+                                enText: 'Out of stock',
+                                arText: 'نفاد المخزون',
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'almarai',
+                                    color: const Color(0xFF7A1F3D),
+                                    fontSize: 8.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                            ),
+                          ),
+                        ),
+                      ),
                     if (widget.product!.productReview.length > 0)
                       Align(
                         alignment: const AlignmentDirectional(-1.0, 1.0),

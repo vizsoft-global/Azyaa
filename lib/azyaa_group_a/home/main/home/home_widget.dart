@@ -9,6 +9,8 @@ import '/azyaa_group_a/home/components/product_grid/product_grid_widget.dart';
 import '/azyaa_group_a/home/components/product_small_grid/product_small_grid_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
+import '/backend/inventory/stock_order.dart';
+import '/backend/inventory/stock_service.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/ui/shortlist_icon/shortlist_icon_widget.dart';
@@ -1017,7 +1019,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     .orderBy('created_at',
                                                         descending: true),
                                             limit: 10,
-                                          ),
+                                          ).then(azyWithStockLoaded),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
                                             if (!snapshot.hasData) {
@@ -1190,9 +1192,26 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                             const BoxDecoration(),
                                                         child: Builder(
                                                           builder: (context) {
+                                                            // Sold-out products
+                                                            // are dropped before
+                                                            // the rail is built,
+                                                            // not just hidden by
+                                                            // the card, so the row
+                                                            // closes its gap
+                                                            // instead of holding an
+                                                            // empty slot.
                                                             final newProduct =
-                                                                newlyProductsRecordList
-                                                                    .toList();
+                                                                AzyStockOrder
+                                                                    .inStockOnly(
+                                                              newlyProductsRecordList
+                                                                  .toList(),
+                                                              (p) => p
+                                                                  .product
+                                                                  .inventoryId,
+                                                              AzyInventoryStock
+                                                                  .instance
+                                                                  .snapshot,
+                                                            );
 
                                                             return ListView
                                                                 .separated(
@@ -1226,6 +1245,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       'Keyu2v_${newProductIndex}_of_${newProduct.length}'),
                                                                   product:
                                                                       newProductItem,
+                                                                  hideWhenOutOfStock:
+                                                                      true,
                                                                 );
                                                               },
                                                             );
@@ -1447,10 +1468,16 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                               // Customize what your widget looks like when it's loading.
                                                               if (!snapshot
                                                                   .hasData) {
-                                                                return Image
-                                                                    .asset(
-                                                                  '',
-                                                                );
+                                                                // Was `Image.asset('')`,
+                                                                // an empty asset path that
+                                                                // threw "Unable to load
+                                                                // asset: \"\"" on every
+                                                                // load of this rail. A
+                                                                // zero-size box is what a
+                                                                // placeholder should have
+                                                                // been.
+                                                                return const SizedBox
+                                                                    .shrink();
                                                               }
                                                               List<ProductsRecord>
                                                                   productSmallGridProductsRecordList =
@@ -1473,6 +1500,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     'Keycd7_${recentViewListIndex}_of_${recentViewList.length}'),
                                                                 product:
                                                                     productSmallGridProductsRecord,
+                                                                hideWhenOutOfStock:
+                                                                    true,
                                                               );
                                                             },
                                                           );
@@ -1518,7 +1547,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       descending:
                                                                           true),
                                                       limit: 20,
-                                                    )))
+                                                    ).then(azyWithStockLoaded)))
                                               .future,
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
@@ -1775,15 +1804,28 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                   8.0),
                                                       child: Builder(
                                                         builder: (context) {
+                                                          // Sold-out products are
+                                                          // dropped before the
+                                                          // rail is built, not just
+                                                          // hidden by the card, so
+                                                          // the row closes its gap.
                                                           final popularList =
-                                                              popularProductsRecordList
-                                                                  .sortedList(
-                                                                      keyOf: (e) =>
-                                                                          e.createdAt!,
-                                                                      desc: true)
-                                                                  .toList()
-                                                                  .take(20)
-                                                                  .toList();
+                                                              AzyStockOrder.inStockOnly(
+                                                            popularProductsRecordList
+                                                                .sortedList(
+                                                                    keyOf: (e) =>
+                                                                        e.createdAt!,
+                                                                    desc: true)
+                                                                .toList()
+                                                                .take(20)
+                                                                .toList(),
+                                                            (p) => p
+                                                                .product
+                                                                .inventoryId,
+                                                            AzyInventoryStock
+                                                                .instance
+                                                                .snapshot,
+                                                          );
 
                                                           return InkWell(
                                                             splashColor: Colors
@@ -1842,6 +1884,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       'Key1yp_${popularListIndex}_of_${popularList.length}'),
                                                                   product:
                                                                       popularListItem,
+                                                                  hideWhenOutOfStock:
+                                                                      true,
                                                                 );
                                                               },
                                                             ),

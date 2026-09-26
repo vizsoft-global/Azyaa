@@ -2,6 +2,8 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/payment/chosseoption_popup/chosseoption_popup_widget.dart';
 import '/azyaa_group_a/payment/product_attribute_cart_level/product_attribute_cart_level_widget.dart';
 import '/backend/backend.dart';
+import '/backend/catalog/product_options.dart';
+import '/backend/catalog/cart_variants.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -25,6 +27,7 @@ class DefaultCartButtonWidget extends StatefulWidget {
     required this.product,
     required this.navigation,
     this.defaultTerms,
+    this.options,
     this.quantity,
   }) : type = type ?? 'button';
 
@@ -32,6 +35,12 @@ class DefaultCartButtonWidget extends StatefulWidget {
   final DocumentReference? product;
   final String? navigation;
   final List<ProductAttributesNewStruct>? defaultTerms;
+
+  /// The product's own attribute list, when the caller has the record to hand.
+  ///
+  /// The product page does; listing cards do not, and they do not gate this
+  /// way -- their tap opens the product page instead.
+  final List<ProductAttributesNewStruct>? options;
   final int? quantity;
 
   @override
@@ -41,6 +50,26 @@ class DefaultCartButtonWidget extends StatefulWidget {
 
 class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
   late DefaultCartButtonModel _model;
+
+  /// True when every option this product offers has a chosen term.
+  ///
+  /// `options` is the product's own attribute list and `defaultTerms` is the
+  /// shopper's selection for it, so the decision needs no network call and no
+  /// knowledge of which page is rendering the button.
+  ///
+  /// A caller that passes no `options` gets the permissive answer: listing
+  /// cards hand the tap to the product page rather than disabling a button the
+  /// shopper can do nothing about.
+  bool get _optionsReady {
+    final options = widget.options;
+    if (options == null) {
+      return true;
+    }
+    return AzyProductOptions.isCompleteForSelection(
+      options: options,
+      selection: widget.defaultTerms,
+    );
+  }
 
   @override
   void setState(VoidCallback callback) {
@@ -112,7 +141,14 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                   Builder(
                     builder: (context) => AuthUserStreamWidget(
                       builder: (context) => FFButtonWidget(
-                        onPressed: () async {
+                        // Disabled until every option has a chosen term.
+                        //
+                        // This is the shared cart button -- the product page, the
+                        // shop cards and every listing all render it -- so the
+                        // check lives here rather than at six call sites.
+                        onPressed: !_optionsReady
+                            ? null
+                            : () async {
                           var _shouldSetState = false;
                           if (loggedIn) {
                             _model.normalProductResult =
@@ -275,106 +311,56 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                         .userCart.cartItems
                                         .toList()
                                     ..userSwatchesProductAttribute =
-                                        widget.defaultTerms!.toList()
+                                        widget.defaultTerms?.toList() ??
+                                            <ProductAttributesNewStruct>[]
                                     ..count = currentUserDocument
                                         ?.userCart.cartItems.length
                                     ..userCartItemPAFound = 'notfound',
                                 );
-                                while (FFAppState().UserDataFlow.count > 0) {
-                                  if (FFAppState()
-                                          .UserDataFlow
-                                          .userCartItemList
-                                          .elementAtOrNull(
-                                              FFAppState().UserDataFlow.count -
-                                                  1)
-                                          ?.productId ==
+                                final selectedTerms =
+                                    widget.defaultTerms?.toList() ??
+                                        <ProductAttributesNewStruct>[];
+                                var matchedCartItemIndex = -1;
+                                for (var i = FFAppState()
+                                        .UserDataFlow
+                                        .userCartItemList
+                                        .length -
+                                    1; i >= 0; i--) {
+                                  final cartLine = FFAppState()
+                                      .UserDataFlow
+                                      .userCartItemList
+                                      .elementAtOrNull(i);
+                                  if (cartLine?.productId !=
                                       _model.normalProductResult?.productId) {
-                                    FFAppState().updateUserDataFlowStruct(
-                                      (e) => e
-                                        ..userCartItemProductAttribute =
-                                            FFAppState()
+                                    continue;
+                                  }
+                                  if (!AzyCartVariants.isSameVariant(
+                                    line: cartLine!.cartItemAttribute.toList(),
+                                    selection: selectedTerms,
+                                  )) {
+                                    continue;
+                                  }
+                                  matchedCartItemIndex = i;
+                                  break;
+                                }
+                                FFAppState().updateUserDataFlowStruct(
+                                  (e) => e
+                                    ..userCartItemProductAttribute =
+                                        matchedCartItemIndex >= 0
+                                            ? FFAppState()
                                                 .UserDataFlow
                                                 .userCartItemList
-                                                .elementAtOrNull(FFAppState()
-                                                        .UserDataFlow
-                                                        .count -
-                                                    1)!
+                                                .elementAtOrNull(
+                                                    matchedCartItemIndex)!
                                                 .cartItemAttribute
                                                 .toList()
-                                        ..userCartItemPAFound = 'notfound'
-                                        ..userCartItemPAIndex =
-                                            FFAppState().UserDataFlow.count - 1,
-                                    );
-                                    FFAppState().updateUserDataFlowStruct(
-                                      (e) => e
-                                        ..count = FFAppState()
-                                            .UserDataFlow
-                                            .userCartItemList
-                                            .elementAtOrNull(FFAppState()
-                                                    .UserDataFlow
-                                                    .count -
-                                                1)
-                                            ?.cartItemAttribute
-                                            .length,
-                                    );
-                                    while (
-                                        FFAppState().UserDataFlow.count > 0) {
-                                      if ((FFAppState()
-                                                  .UserDataFlow
-                                                  .userCartItemProductAttribute
-                                                  .elementAtOrNull(FFAppState()
-                                                          .UserDataFlow
-                                                          .count -
-                                                      1)
-                                                  ?.attributesDefaultTermId ==
-                                              (widget.defaultTerms
-                                                      ?.elementAtOrNull(
-                                                          FFAppState()
-                                                                  .UserDataFlow
-                                                                  .count -
-                                                              1))
-                                                  ?.attributesDefaultTermId) ||
-                                          (FFAppState()
-                                                  .UserDataFlow
-                                                  .userCartItemProductAttribute
-                                                  .elementAtOrNull(FFAppState()
-                                                          .UserDataFlow
-                                                          .count -
-                                                      1)
-                                                  ?.attributesDefaultTermId ==
-                                              (widget.defaultTerms
-                                                      ?.elementAtOrNull(
-                                                          FFAppState()
-                                                                  .UserDataFlow
-                                                                  .count -
-                                                              1))
-                                                  ?.attributesBrandTermIds
-                                                  .firstOrNull)) {
-                                        FFAppState().updateUserDataFlowStruct(
-                                          (e) =>
-                                              e..userCartItemPAFound = 'found',
-                                        );
-                                      } else {
-                                        FFAppState().updateUserDataFlowStruct(
-                                          (e) => e
-                                            ..userCartItemPAFound = 'notfound',
-                                        );
-                                      }
-
-                                      FFAppState().updateUserDataFlowStruct(
-                                        (e) => e
-                                          ..count =
-                                              FFAppState().UserDataFlow.count -
-                                                  1,
-                                      );
-                                    }
-                                  }
-                                  FFAppState().updateUserDataFlowStruct(
-                                    (e) => e
-                                      ..count =
-                                          FFAppState().UserDataFlow.count - 1,
-                                  );
-                                }
+                                            : <ProductAttributesNewStruct>[]
+                                    ..userCartItemPAIndex = matchedCartItemIndex
+                                    ..userCartItemPAFound =
+                                        matchedCartItemIndex >= 0
+                                            ? 'found'
+                                            : 'notfound',
+                                );
                                 if (FFAppState()
                                         .UserDataFlow
                                         .userCartItemPAFound ==
@@ -745,26 +731,34 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                           }
 
                         },
-                        text: loggedIn
-                            ? (currentUserDocument!.userCart.cartItems
-                                        .where((e) =>
-                                            (e.productRef == widget.product) &&
-                                            (e.productType == 'product'))
-                                        .toList()
-                                        .length >
-                                    0
-                                ? FFLocalizations.of(context).getVariableText(
-                                    enText: 'Go to Bag',
-                                    arText: 'اذهب إلى الحقيبة',
-                                  )
+                        text: !_optionsReady
+                            ? FFLocalizations.of(context).getVariableText(
+                                enText: 'Select options',
+                                arText: 'اختر الخيارات',
+                              )
+                            : loggedIn
+                                ? (currentUserDocument!.userCart.cartItems
+                                            .where((e) =>
+                                                (e.productRef ==
+                                                    widget.product) &&
+                                                (e.productType == 'product'))
+                                            .toList()
+                                            .length >
+                                        0
+                                    ? FFLocalizations.of(context)
+                                        .getVariableText(
+                                        enText: 'Go to Bag',
+                                        arText: 'اذهب إلى الحقيبة',
+                                      )
+                                    : FFLocalizations.of(context)
+                                        .getVariableText(
+                                        enText: 'Add to Bag',
+                                        arText: 'أضف إلى الحقيبة',
+                                      ))
                                 : FFLocalizations.of(context).getVariableText(
-                                    enText: 'Add to Bag',
-                                    arText: 'أضف إلى الحقيبة',
-                                  ))
-                            : FFLocalizations.of(context).getVariableText(
-                                enText: 'Login',
-                                arText: 'تسجيل الدخول',
-                              ),
+                                    enText: 'Login',
+                                    arText: 'تسجيل الدخول',
+                                  ),
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 48.0,
@@ -773,6 +767,12 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                           iconAlignment: IconAlignment.end,
                           iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
+                          // The locked state has to look locked: a disabled
+                          // FlutterFlow button keeps its fill colour otherwise.
+                          disabledColor:
+                              FlutterFlowTheme.of(context).secondaryText,
+                          disabledTextColor:
+                              FlutterFlowTheme.of(context).secondaryBackground,
                           color: loggedIn
                               ? (currentUserDocument!.userCart.cartItems
                                           .where((e) =>
@@ -821,6 +821,35 @@ class _DefaultCartButtonWidgetState extends State<DefaultCartButtonWidget> {
                                 await InventoryRecord.getDocumentOnce(_model
                                     .iconProductResult!.product.inventoryRef!);
                             if (_model.iconInventoryResult!.stock > 0) {
+                              // A listing card has no room for a chooser, so
+                              // while options are unanswered the tap opens the
+                              // product page: the shopper picks there and the
+                              // bag button unlocks itself.
+                              if (!AzyProductOptions.isCompleteFor(
+                                  _model.iconProductResult!, FFAppState())) {
+                                if (!context.mounted) {
+                                  return;
+                                }
+                                safeSetState(() {});
+                                context.pushNamed(
+                                  ProductWidget.routeName,
+                                  queryParameters: {
+                                    'product': serializeParam(
+                                      widget.product,
+                                      ParamType.DocumentReference,
+                                    ),
+                                  }.withoutNulls,
+                                  extra: <String, dynamic>{
+                                    '__transition_info__':
+                                        const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                    ),
+                                  },
+                                );
+                                return;
+                              }
                               await showDialog(
                                 context: context,
                                 builder: (dialogContext) {

@@ -3720,40 +3720,29 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                               .textScaler,
                                                       text: TextSpan(
                                                         children: [
+                                                          // Same fix as the product page: the
+                                                          // header was two locale strings
+                                                          // concatenated ('Bought ' + 'With'),
+                                                          // which reads as a stutter. One string.
                                                           TextSpan(
                                                             text: FFLocalizations
                                                                     .of(context)
-                                                                .getText(
-                                                              'jxoob770' /* Bought  */,
+                                                                .getVariableText(
+                                                              enText:
+                                                                  'Bought with',
+                                                              arText:
+                                                                  'اشتُري مع',
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyLarge
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'almarai',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
-                                                          ),
-                                                          TextSpan(
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'ctl5h74q' /* With */,
+                                                              fontFamily:
+                                                                  'almarai',
+                                                              letterSpacing: 0.0,
+                                                              fontWeight:
+                                                                  FontWeight.bold,
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'almarai',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
                                                           )
                                                         ],
                                                         style:
@@ -4133,8 +4122,8 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   .isAffiliateProduct ==
                                                               true)
                                                       ? 135.0
-                                                      : 75.0,
-                                                  75.0,
+                                                      : 82.0,
+                                                  82.0,
                                                 ),
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
@@ -4305,6 +4294,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                               type: 'button',
                                                                               product: stackProductsRecord.reference,
                                                                               navigation: 'cart',
+                                                                              options: stackProductsRecord.productAttribute,
                                                                               defaultTerms: FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute,
                                                                               quantity: stackProductsRecord.product.productType == 'ready' ? _model.countControllerValue : 1,
                                                                             ),
@@ -5216,8 +5206,8 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                   .isAffiliateProduct ==
                                                               true)
                                                       ? 135.0
-                                                      : 75.0,
-                                                  75.0,
+                                                      : 82.0,
+                                                  82.0,
                                                 ),
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
@@ -5276,6 +5266,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                 type: 'button',
                                                                                 product: stackProductsRecord.reference,
                                                                                 navigation: 'cart',
+                                                                                options: stackProductsRecord.productAttribute,
                                                                                 defaultTerms: FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute,
                                                                                 quantity: 1,
                                                                               ),

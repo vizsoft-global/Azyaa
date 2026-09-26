@@ -3,6 +3,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/home/components/blank_loading/blank_loading_widget.dart';
 import '/azyaa_group_a/home/components/loading_animation/loading_animation_widget.dart';
 import '/backend/backend.dart';
+import '/backend/search/search.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
@@ -53,6 +54,49 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
     _model.maybeDispose();
 
     super.dispose();
+  }
+
+  /// True when a category's display names match [query] as a literal pattern.
+  ///
+  /// The candidates mirror the fallback order the grid itself uses to label a
+  /// tile, so a tile is filtered on exactly the text it shows. Arabic names are
+  /// included because the app ships both.
+  bool _categoryMatches(CategoryRecord category, String query) {
+    final names = [
+      category.categoryInfoCustomTranslate.name.en,
+      category.categoryInfoTranslate.name.en,
+      category.categoryInfo.name,
+      category.categoryInfoCustomTranslate.name.ar,
+      category.categoryInfoTranslate.name.ar,
+    ];
+    for (final name in names) {
+      if (name.isNotEmpty && AzyMatch.scoreQuery(query, name) > 0) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /// Brand ids in [allowed] whose names match [query] as a literal pattern.
+  ///
+  /// Reads the shared on-device index rather than querying Algolia, so brand
+  /// search in this popup matches names exactly the way the shop page's own
+  /// search does. Returns an empty set when the index has not loaded yet; the
+  /// caller repaints once it has.
+  Set<String> _matchingBrandIds(String query, List<String> allowed) {
+    final matched = <String>{};
+    final hits = AzySearchService.instance
+        .search(query, kinds: {AzySearchKind.shop})
+        .of(AzySearchKind.shop);
+    for (final hit in hits) {
+      final payload = hit.document.payload;
+      if (payload is BrandsRecord &&
+          payload.status == 'active' &&
+          allowed.contains(payload.brandId)) {
+        matched.add(payload.brandId);
+      }
+    }
+    return matched;
   }
 
   @override
@@ -844,39 +888,22 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                 onChanged: (_) =>
                                                     EasyDebounce.debounce(
                                                   '_model.categorySearchTextController',
-                                                  const Duration(milliseconds: 2000),
+                                                  const Duration(milliseconds: 250),
                                                   () async {
-                                                    if (_model
-                                                            .categorySearchTextController
-                                                            .text !=
-                                                        '') {
-                                                      safeSetState(() => _model
-                                                              .algoliaSearchResults1 =
-                                                          null);
-                                                      await CategoryRecord
-                                                              .search(
-                                                        term: _model
-                                                            .categorySearchTextController
-                                                            .text,
-                                                      )
-                                                          .then((r) => _model
-                                                                  .algoliaSearchResults1 =
-                                                              r)
-                                                          .onError((_, __) =>
-                                                              _model.algoliaSearchResults1 =
-                                                                  [])
-                                                          .whenComplete(() =>
-                                                              safeSetState(
-                                                                  () {}));
-
-                                                      _model.categorySerach =
-                                                          true;
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      _model.categorySerach =
-                                                          false;
-                                                      safeSetState(() {});
-                                                    }
+                                                    // Only flips the flag now.
+                                                    // The grid below narrows the
+                                                    // category list it already
+                                                    // holds, so there is no
+                                                    // round-trip and no second
+                                                    // copy of the list. Was:
+                                                    // `CategoryRecord.search(...)`
+                                                    // behind a 2000ms debounce.
+                                                    _model.categorySerach = _model
+                                                        .categorySearchTextController
+                                                        .text
+                                                        .trim()
+                                                        .isNotEmpty;
+                                                    safeSetState(() {});
                                                   },
                                                 ),
                                                 autofocus: false,
@@ -997,36 +1024,31 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                 onChanged: (_) =>
                                                     EasyDebounce.debounce(
                                                   '_model.atrrbuiteSearchTextController',
-                                                  const Duration(milliseconds: 2000),
+                                                  const Duration(milliseconds: 250),
                                                   () async {
-                                                    if (_model
-                                                            .atrrbuiteSearchTextController
-                                                            .text !=
-                                                        '') {
-                                                      safeSetState(() => _model
-                                                              .algoliaSearchResults2 =
-                                                          null);
-                                                      await BrandsRecord.search(
-                                                        term: _model
-                                                            .atrrbuiteSearchTextController
-                                                            .text,
-                                                      )
-                                                          .then((r) => _model
-                                                                  .algoliaSearchResults2 =
-                                                              r)
-                                                          .onError((_, __) =>
-                                                              _model.algoliaSearchResults2 =
-                                                                  [])
-                                                          .whenComplete(() =>
-                                                              safeSetState(
-                                                                  () {}));
+                                                    // Only flips the flag: the
+                                                    // list below is narrowed in
+                                                    // memory from the shared
+                                                    // search index. Was:
+                                                    // `BrandsRecord.search(...)`
+                                                    // behind a 2000ms debounce.
+                                                    _model.attrSearch = _model
+                                                        .atrrbuiteSearchTextController
+                                                        .text
+                                                        .trim()
+                                                        .isNotEmpty;
+                                                    safeSetState(() {});
 
-                                                      _model.attrSearch = true;
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      _model.attrSearch = false;
-                                                      safeSetState(() {});
-                                                    }
+                                                    // The index may not have
+                                                    // loaded yet. Warm it, and
+                                                    // repaint when it lands.
+                                                    AzySearchService.instance
+                                                        .ensureLoaded()
+                                                        .then((_) {
+                                                      if (mounted) {
+                                                        safeSetState(() {});
+                                                      }
+                                                    });
                                                   },
                                                 ),
                                                 autofocus: false,
@@ -1183,18 +1205,26 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                                       16.0, 0.0, 16.0, 8.0),
                                               child: Builder(
                                                 builder: (context) {
-                                                  final categoryVar = (_model
-                                                                      .categorySerach ==
-                                                                  true
-                                                              ? _model
-                                                                  .algoliaSearchResults1
-                                                                  ?.where((e) =>
+                                                  final categoryQuery = _model
+                                                      .categorySearchTextController
+                                                      .text
+                                                      .trim();
+                                                  final categorySearchOn =
+                                                      _model.categorySerach ==
+                                                              true &&
+                                                          AzyMatch.meetsMinimumLength(
+                                                              categoryQuery);
+                                                  final categoryVar =
+                                                      (categorySearchOn
+                                                              ? categoryCategoryRecordList
+                                                                  .where((e) =>
                                                                       e.status ==
-                                                                      'active')
-                                                                  .toList()
+                                                                          'active' &&
+                                                                      _categoryMatches(
+                                                                          e,
+                                                                          categoryQuery))
                                                               : categoryCategoryRecordList)
-                                                          ?.toList() ??
-                                                      [];
+                                                          .toList();
 
                                                   return GridView.builder(
                                                     padding: EdgeInsets.zero,
@@ -2042,25 +2072,29 @@ class _ProductFilterPopupWidgetState extends State<ProductFilterPopupWidget> {
                                         (_model.navigationName != 'style'))
                                       Builder(
                                         builder: (context) {
-                                          final brandColorList = (_model
-                                                              .attrSearch ==
-                                                          true
-                                                      ? _model
-                                                          .algoliaSearchResults2
-                                                          ?.where((e) =>
-                                                              (e.status ==
-                                                                  'active') &&
-                                                              (_model.brandLists
-                                                                      .contains(e
-                                                                          .brandId) ==
-                                                                  true))
-                                                          .toList()
-                                                          .map(
-                                                              (e) => e.brandId)
-                                                          .toList()
-                                                      : _model.brandLists)
-                                                  ?.toList() ??
-                                              [];
+                                          final brandQuery = _model
+                                              .atrrbuiteSearchTextController
+                                              .text
+                                              .trim();
+                                          // Narrowed in memory from the shared
+                                          // search index, then restricted to
+                                          // the brand ids this filter allows.
+                                          // Was: `BrandsRecord.search(...)`.
+                                          final brandMatches = (_model
+                                                          .attrSearch ==
+                                                      true &&
+                                                  AzyMatch.meetsMinimumLength(
+                                                      brandQuery))
+                                              ? _matchingBrandIds(
+                                                  brandQuery,
+                                                  _model.brandLists)
+                                              : null;
+                                          final brandColorList = (brandMatches ==
+                                                      null
+                                                  ? _model.brandLists
+                                                  : _model.brandLists.where(
+                                                      brandMatches.contains))
+                                              .toList();
 
                                           return Wrap(
                                             spacing: 4.0,

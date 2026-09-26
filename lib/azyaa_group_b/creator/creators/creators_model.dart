@@ -10,6 +10,20 @@ import 'creators_widget.dart' show CreatorsWidget;
 import 'package:flutter/material.dart';
 
 class CreatorsModel extends FlutterFlowModel<CreatorsWidget> {
+  ///  Local state fields for this page.
+
+  /// Live text of the creator search box.
+  ///
+  /// Kept separate from the controller so the list can be filtered without
+  /// reading (and rebuilding on) the raw controller value.
+  String creatorSearchQuery = '';
+
+  /// Recent creator searches, loaded from local storage on first build.
+  List<String> recentCreatorSearches = const [];
+
+  /// True while a search is narrowing the creator list.
+  bool get isCreatorSearching => creatorSearchQuery.trim().isNotEmpty;
+
   ///  State fields for stateful widgets in this page.
 
   // Model for Universal_AppBar component.

@@ -8,6 +8,10 @@ import '/azyaa_group_a/home/components/loading_animation/loading_animation_widge
 import '/azyaa_group_a/home/components/product_grid/product_grid_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
+import '/backend/inventory/stock_service.dart';
+import '/backend/search/search.dart';
+import '/custom_code/widgets/azy_recent_searches.dart';
+import '/custom_code/widgets/azy_search_results.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/ui/salebanner/salebanner_widget.dart';
 import '/index.dart';
@@ -48,6 +52,21 @@ class _ShopWidgetState extends State<ShopWidget> {
     _model.searchFiledsTextController ??= TextEditingController();
     _model.searchFiledsFocusNode ??= FocusNode();
 
+    // Warm the on-device search index and load persisted history. Both are
+    // best-effort and must not block first paint, so neither is awaited.
+    AzySearchService.instance.ensureLoaded().then((_) {
+      if (mounted) {
+        safeSetState(() {});
+      }
+    });
+    AzySearchHistory.recent(AzySearchHistory.scopeShop).then((terms) {
+      if (!mounted) {
+        return;
+      }
+      _model.recentShopSearches = terms;
+      safeSetState(() {});
+    });
+
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -56,6 +75,24 @@ class _ShopWidgetState extends State<ShopWidget> {
     _model.dispose();
 
     super.dispose();
+  }
+
+  /// Runs a local pattern search for [term] and switches the page into results.
+  ///
+  /// Kept as the single place the query -> results -> view-state transition
+  /// happens, so typing, tapping a recent chip and tapping a shop all leave the
+  /// page in exactly the same state.
+  void _searchShop(String term) {
+    final trimmed = term.trim();
+    _model.shopSearchQuery = term;
+    // Under the minimum length there is nothing selective to match, so the page
+    // stays on recent searches instead of claiming there are no results.
+    final canSearch = AzyMatch.meetsMinimumLength(trimmed);
+    _model.shopSearchResults = canSearch
+        ? AzySearchService.instance.search(trimmed)
+        : AzySearchResults.empty;
+    _model.searchStatus = canSearch;
+    safeSetState(() {});
   }
 
   @override
@@ -151,32 +188,33 @@ class _ShopWidgetState extends State<ShopWidget> {
                                         focusNode: _model.searchFiledsFocusNode,
                                         onChanged: (_) => EasyDebounce.debounce(
                                           '_model.searchFiledsTextController',
-                                          const Duration(milliseconds: 2000),
+                                          const Duration(milliseconds: 180),
                                           () async {
-                                            if (_model
-                                                    .searchFiledsTextController
-                                                    .text !=
-                                                '') {
-                                              safeSetState(() => _model
-                                                  .algoliaSearchResults = null);
-                                              await ProductsRecord.search(
-                                                term: _model
-                                                    .searchFiledsTextController
-                                                    .text,
-                                                maxResults: 10,
-                                              )
-                                                  .then((r) => _model
-                                                      .algoliaSearchResults = r)
-                                                  .onError((_, __) => _model
-                                                          .algoliaSearchResults =
-                                                      [])
-                                                  .whenComplete(() =>
-                                                      safeSetState(() {}));
+                                            // 180ms rather than the previous
+                                            // 2000ms, and a local fuzzy search
+                                            // rather than an Algolia round-trip,
+                                            // so results track typing instead of
+                                            // arriving two seconds after it.
+                                            //
+                                            // Was: `ProductsRecord.search(...)`
+                                            // against the 'products' index.
+                                            final term = _model
+                                                .searchFiledsTextController.text;
+                                            final trimmed = term.trim();
 
-                                              _model.searchStatus = true;
-                                              safeSetState(() {});
-                                            } else {
-                                              _model.searchStatus = false;
+                                            _searchShop(term);
+
+                                            // Only persist a term worth
+                                            // recalling, not every keystroke of
+                                            // a longer word.
+                                            if (trimmed.length >= 3) {
+                                              final updated =
+                                                  await AzySearchHistory.record(
+                                                AzySearchHistory.scopeShop,
+                                                term,
+                                              );
+                                              _model.recentShopSearches =
+                                                  updated;
                                               safeSetState(() {});
                                             }
                                           },
@@ -282,7 +320,45 @@ class _ShopWidgetState extends State<ShopWidget> {
                                 SingleChildScrollView(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
+
                                     children: [
+                                      // Recent searches sit above the browse
+                                      // content, so they are reachable without
+                                      // typing yet never cover what is below.
+                                      if (_model.searchStatus == false &&
+                                          _model.recentShopSearches.isNotEmpty)
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 16.0),
+                                          child: AzyRecentSearchesView(
+                                            terms: _model.recentShopSearches,
+                                            onSelected: (term) {
+                                              _model.searchFiledsTextController
+                                                  .text = term;
+                                              _searchShop(term);
+                                            },
+                                            onRemoved: (term) async {
+                                              await AzySearchHistory.remove(
+                                                AzySearchHistory.scopeShop,
+                                                term,
+                                              );
+                                              _model.recentShopSearches =
+                                                  await AzySearchHistory.recent(
+                                                AzySearchHistory.scopeShop,
+                                              );
+                                              safeSetState(() {});
+                                            },
+                                            onCleared: () async {
+                                              await AzySearchHistory.clear(
+                                                AzySearchHistory.scopeShop,
+                                              );
+                                              _model.recentShopSearches =
+                                                  const [];
+                                              safeSetState(() {});
+                                            },
+                                          ),
+                                        ),
                                       if (_model.searchStatus == false)
                                         Padding(
                                           padding:
@@ -1088,7 +1164,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                     'created_at',
                                                                     descending:
                                                                         true),
-                                                      )))
+                                                      ).then(azyWithStockLoaded)))
                                                 .future,
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
@@ -1309,9 +1385,22 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                       0.0),
                                                           child: Builder(
                                                             builder: (context) {
+                                                              // In-stock first, so a
+                                                              // sold-out product does not
+                                                              // lead the grid. The query is
+                                                              // gated on stock above, so this
+                                                              // ordering is correct on the
+                                                              // first paint.
                                                               final popularPicks =
-                                                                  popularProductListProductsRecordList
-                                                                      .toList();
+                                                                  AzyInventoryStock
+                                                                      .instance
+                                                                      .orderInStockFirst(
+                                                                popularProductListProductsRecordList
+                                                                    .toList(),
+                                                                (p) => p
+                                                                    .product
+                                                                    .inventoryId,
+                                                              );
 
                                                               return RefreshIndicator(
                                                                 color: const Color(
@@ -1397,283 +1486,45 @@ class _ShopWidgetState extends State<ShopWidget> {
                                   child: Container(
                                     decoration: const BoxDecoration(),
                                     child: SingleChildScrollView(
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 16.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    RichText(
-                                                      textScaler:
-                                                          MediaQuery.of(context)
-                                                              .textScaler,
-                                                      text: TextSpan(
-                                                        children: [
-                                                          TextSpan(
-                                                            text:
-                                                                valueOrDefault<
-                                                                    String>(
-                                                              _model
-                                                                  .algoliaSearchResults
-                                                                  ?.where((e) =>
-                                                                      e.status ==
-                                                                      'active')
-                                                                  .toList()
-                                                                  .length
-                                                                  .toString(),
-                                                              '0',
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'almarai',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
-                                                          ),
-                                                          TextSpan(
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'mnxm3yx9' /*  results */,
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'almarai',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          )
-                                                        ],
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'almarai',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                      ),
-                                                    ),
-                                                    if (responsiveVisibility(
-                                                      context: context,
-                                                      phone: false,
-                                                      tablet: false,
-                                                      tabletLandscape: false,
-                                                      desktop: false,
-                                                    ))
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          context.pushNamed(
-                                                            ProductListWidget
-                                                                .routeName,
-                                                            extra: <String,
-                                                                dynamic>{
-                                                              '__transition_info__':
-                                                                  const TransitionInfo(
-                                                                hasTransition:
-                                                                    true,
-                                                                transitionType:
-                                                                    PageTransitionType
-                                                                        .fade,
-                                                                duration: Duration(
-                                                                    milliseconds:
-                                                                        0),
-                                                              ),
-                                                            },
-                                                          );
-                                                        },
-                                                        child: Container(
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .alternate,
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        100.0),
-                                                          ),
-                                                          child: Padding(
-                                                            padding:
-                                                                const EdgeInsets.all(
-                                                                    4.0),
-                                                            child: Icon(
-                                                              Icons
-                                                                  .navigate_next_rounded,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryText,
-                                                              size: 16.0,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                  ].divide(
-                                                      const SizedBox(width: 8.0)),
-                                                ),
-                                                if (responsiveVisibility(
-                                                  context: context,
-                                                  phone: false,
-                                                  tablet: false,
-                                                  tabletLandscape: false,
-                                                  desktop: false,
-                                                ))
-                                                  InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      context.pushNamed(
-                                                        ProductListWidget
-                                                            .routeName,
-                                                        extra: <String,
-                                                            dynamic>{
-                                                          '__transition_info__':
-                                                              const TransitionInfo(
-                                                            hasTransition: true,
-                                                            transitionType:
-                                                                PageTransitionType
-                                                                    .fade,
-                                                            duration: Duration(
-                                                                milliseconds:
-                                                                    0),
-                                                          ),
-                                                        },
-                                                      );
-                                                    },
-                                                    child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '7jplrpub' /* View All */,
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'almarai',
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            decoration:
-                                                                TextDecoration
-                                                                    .underline,
-                                                          ),
-                                                    ),
-                                                  ),
-                                              ].divide(const SizedBox(width: 8.0)),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 16.0, 0.0),
-                                            child: Builder(
-                                              builder: (context) {
-                                                if (_model.algoliaSearchResults
-                                                        ?.where((e) =>
-                                                            e.status ==
-                                                            'active')
-                                                        .toList() ==
-                                                    null) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 10.0,
-                                                      height: 10.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                final searchPicks = _model
-                                                        .algoliaSearchResults
-                                                        ?.where((e) =>
-                                                            e.status ==
-                                                            'active')
-                                                        .toList()
-                                                        .toList() ??
-                                                    [];
-
-                                                return GridView.builder(
-                                                  padding: EdgeInsets.zero,
-                                                  gridDelegate:
-                                                      SliverGridDelegateWithFixedCrossAxisCount(
-                                                    crossAxisCount: MediaQuery
-                                                                    .sizeOf(
-                                                                        context)
-                                                                .width <
-                                                            kBreakpointMedium
-                                                        ? 2
-                                                        : 4,
-                                                    crossAxisSpacing: 8.0,
-                                                    mainAxisSpacing: 24.0,
-                                                    childAspectRatio: 0.58,
-                                                  ),
-                                                  primary: false,
-                                                  shrinkWrap: true,
-                                                  scrollDirection:
-                                                      Axis.vertical,
-                                                  itemCount: searchPicks.length,
-                                                  itemBuilder: (context,
-                                                      searchPicksIndex) {
-                                                    final searchPicksItem =
-                                                        searchPicks[
-                                                            searchPicksIndex];
-                                                    return ProductGridWidget(
-                                                      key: Key(
-                                                          'Key0qi_${searchPicksIndex}_of_${searchPicks.length}'),
-                                                      product: searchPicksItem,
-                                                    );
-                                                  },
-                                                );
-                                              },
-                                            ),
-                                          ),
-                                        ]
-                                            .divide(const SizedBox(height: 12.0))
-                                            .addToStart(const SizedBox(height: 8.0))
-                                            .addToEnd(const SizedBox(height: 8.0)),
+                                      child: AzySearchResultsView(
+                                        results: _model.shopSearchResults,
+                                        query: _model.shopSearchQuery,
+                                        recent: _model.recentShopSearches,
+                                        onRecentSelected: (term) {
+                                          _model.searchFiledsTextController
+                                              .text = term;
+                                          _searchShop(term);
+                                        },
+                                        onRecentRemoved: (term) async {
+                                          await AzySearchHistory.remove(
+                                            AzySearchHistory.scopeShop,
+                                            term,
+                                          );
+                                          _model.recentShopSearches =
+                                              await AzySearchHistory.recent(
+                                            AzySearchHistory.scopeShop,
+                                          );
+                                          safeSetState(() {});
+                                        },
+                                        onRecentCleared: () async {
+                                          await AzySearchHistory.clear(
+                                            AzySearchHistory.scopeShop,
+                                          );
+                                          _model.recentShopSearches = const [];
+                                          safeSetState(() {});
+                                        },
+                                        // No brand-detail route exists in this
+                                        // app, so tapping a shop narrows the
+                                        // search to that shop instead of
+                                        // navigating. Products carry their
+                                        // shop's name as a hidden keyword, so
+                                        // this is what actually surfaces that
+                                        // shop's catalogue.
+                                        onShopSelected: (shopName) {
+                                          _model.searchFiledsTextController
+                                              .text = shopName;
+                                          _searchShop(shopName);
+                                        },
                                       ),
                                     ),
                                   ),

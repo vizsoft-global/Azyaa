@@ -28,6 +28,7 @@ class ProductGridWidget extends StatefulWidget {
     String? cartButtonStatus,
     this.creatorDoc,
     this.promoID,
+    this.hideWhenOutOfStock = false,
   })  : checkboxStatus = checkboxStatus ?? 'hide',
         cartCheckboxStatus = cartCheckboxStatus ?? 'hide',
         cartButtonStatus = cartButtonStatus ?? 'show';
@@ -41,6 +42,14 @@ class ProductGridWidget extends StatefulWidget {
   final String cartButtonStatus;
   final UsersRecord? creatorDoc;
   final String? promoID;
+
+  /// When true, a sold-out product renders as nothing at all.
+  ///
+  /// The home page's rails hide sold-out items instead of tinting them: a rail
+  /// is a merchandising strip, so a tile nobody can buy takes a slot from one
+  /// they can. Everywhere else this stays false and the card tints pink and
+  /// badges itself, so the product is still findable.
+  final bool hideWhenOutOfStock;
 
   @override
   State<ProductGridWidget> createState() => _ProductGridWidgetState();
@@ -105,6 +114,14 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
         final columnInventoryRecord = columnInventoryRecordList.isNotEmpty
             ? columnInventoryRecordList.first
             : null;
+
+        // The home page's popular rail hides what cannot be bought rather than
+        // tinting it. Read off the list, which is already known to be non-empty,
+        // so there is nothing to null-assert here.
+        if (widget.hideWhenOutOfStock &&
+            columnInventoryRecordList.first.stock <= 0) {
+          return const SizedBox.shrink();
+        }
 
         return InkWell(
           splashColor: Colors.transparent,
@@ -301,6 +318,68 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                                 ),
                               ),
                             ),
+                            // Tint the image when nothing is in stock.
+                            //
+                            // This replaces a guard that read
+                            //   responsiveVisibility(phone: false, tablet: false,
+                            //     tabletLandscape: false, desktop: false)
+                            // which returns false at EVERY width, so the
+                            // grey-out never actually rendered. That version was
+                            // also sized `MediaQuery.sizeOf(context).width *
+                            // 1.0` by `height * 1.0` -- the whole screen -- so
+                            // enabling it as-was would have blown out the grid
+                            // cell. `Positioned.fill` sizes it to the image
+                            // without hard-coding a height.
+                            //
+                            // Pink rather than the original 83%-opaque grey: a
+                            // sold-out product should read as "unavailable"
+                            // without the photograph going muddy, and a pink
+                            // wash is a different signal from the neutral grey
+                            // used for a missing image.
+                            if (columnInventoryRecord!.stock <= 0)
+                              Positioned.fill(
+                                child: IgnorePointer(
+                                  child: DecoratedBox(
+                                    decoration: BoxDecoration(
+                                      color: const Color(0x8CF8BBD0),
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            // The badge explains the tint, so it is not optional
+                            // and not login-gated -- a shopper who is signed out
+                            // still needs to know the item cannot be bought.
+                            if (columnInventoryRecord.stock <= 0)
+                              Positioned(
+                                left: 6.0,
+                                bottom: 6.0,
+                                child: IgnorePointer(
+                                  child: Container(
+                                    padding: const EdgeInsetsDirectional
+                                        .fromSTEB(8.0, 3.0, 8.0, 3.0),
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFFF7A8C4),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        't0ffzigk' /* Out of stock */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'almarai',
+                                            color: const Color(0xFF7A1F3D),
+                                            fontSize: 10.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+
                             if (((columnInventoryRecord!.stock > 0) &&
                                     (widget.checkboxStatus == 'show')) &&
                                 responsiveVisibility(
@@ -729,30 +808,6 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                           ],
                         ),
                       ),
-                      if ((((columnInventoryRecord.stock <= 0) &&
-                                  (getCurrentRouteStack(context).lastOrNull !=
-                                      '/home')) ||
-                              ((columnInventoryRecord.stock <= 0) &&
-                                  (getCurrentRouteStack(context).lastOrNull !=
-                                      '/')) ||
-                              ((columnInventoryRecord.stock <= 0) &&
-                                  (getCurrentRouteStack(context).lastOrNull !=
-                                      '/azyaa-product-list'))) &&
-                          responsiveVisibility(
-                            context: context,
-                            phone: false,
-                            tablet: false,
-                            tabletLandscape: false,
-                            desktop: false,
-                          ))
-                        Container(
-                          width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: MediaQuery.sizeOf(context).height * 1.0,
-                          decoration: BoxDecoration(
-                            color: const Color(0xD3B9B4B4),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                        ),
                     ],
                   ),
                 ),
@@ -1035,7 +1090,7 @@ class _ProductGridWidgetState extends State<ProductGridWidget> {
                     ),
                     Stack(
                       children: [
-                        if (loggedIn && (columnInventoryRecord.stock <= 0))
+                        if (columnInventoryRecord.stock <= 0)
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 4.0, 0.0, 0.0, 0.0),

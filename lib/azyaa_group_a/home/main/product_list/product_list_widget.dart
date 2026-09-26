@@ -8,6 +8,7 @@ import '/azyaa_group_a/home/components/product_listview/product_listview_widget.
 import '/azyaa_group_a/home/components/product_sort/product_sort_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
+import '/backend/inventory/stock_service.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
@@ -133,6 +134,9 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                               0.0, 0.0, 0.0, 24.0),
                           child: Stack(
                             children: [
+                              ListenableBuilder(
+                                listenable: AzyInventoryStock.instance,
+                                builder: (context, _) =>
                               StreamBuilder<List<ProductsRecord>>(
                                 stream: queryProductsRecord(
                                   queryBuilder: (productsRecord) =>
@@ -154,9 +158,18 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                       child: const LoadingAnimationWidget(),
                                     );
                                   }
+                                  // The entire page derives from this one list:
+                                  // all four grid variants and all four list
+                                  // variants read it, so ordering it here orders
+                                  // every one of them. Sold-out products go
+                                  // last, and the ListenableBuilder above re-runs
+                                  // this as soon as their stock is known.
                                   List<ProductsRecord>
                                       productList1ProductsRecordList =
-                                      snapshot.data!;
+                                      AzyInventoryStock.instance.orderInStockFirst(
+                                    snapshot.data!,
+                                    (p) => p.product.inventoryId,
+                                  );
 
                                   return Container(
                                     decoration: const BoxDecoration(),
@@ -1196,6 +1209,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                   );
                                 },
                               ),
+                                ),
                             ],
                           ),
                         ),

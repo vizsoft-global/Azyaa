@@ -8,6 +8,7 @@ import '/azyaa_group_b/components/unfollow_confirm_popup/unfollow_confirm_popup_
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
+import '/backend/inventory/stock_service.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -957,7 +958,23 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                       designerCollectionGridListProductsRecordList =
                                       snapshot.data!;
 
-                                  return GridView.builder(
+                                  return ListenableBuilder(
+                                    listenable: AzyInventoryStock.instance,
+                                    builder: (context, _) {
+                                      // Recomputed whenever more stock is
+                                      // learned, so a sold-out product drops to
+                                      // the end as soon as its inventory is
+                                      // known. A Firestore stream will not
+                                      // re-emit just because stock arrived, so
+                                      // without this the order would stay stale.
+                                      final orderedCollection =
+                                          AzyInventoryStock.instance
+                                              .orderInStockFirst(
+                                        designerCollectionGridListProductsRecordList,
+                                        (p) => p.product.inventoryId,
+                                      );
+
+                                      return GridView.builder(
                                     padding: EdgeInsets.zero,
                                     gridDelegate:
                                         SliverGridDelegateWithFixedCrossAxisCount(
@@ -973,13 +990,11 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                     primary: false,
                                     shrinkWrap: true,
                                     scrollDirection: Axis.vertical,
-                                    itemCount:
-                                        designerCollectionGridListProductsRecordList
-                                            .length,
+                                    itemCount: orderedCollection.length,
                                     itemBuilder: (context,
                                         designerCollectionGridListIndex) {
                                       final designerCollectionGridListProductsRecord =
-                                          designerCollectionGridListProductsRecordList[
+                                          orderedCollection[
                                               designerCollectionGridListIndex];
                                       return ProductGridWidget(
                                         key: Key(
@@ -987,6 +1002,8 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                         product:
                                             designerCollectionGridListProductsRecord,
                                       );
+                                    },
+                                  );
                                     },
                                   );
                                 },

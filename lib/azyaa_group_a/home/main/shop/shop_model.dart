@@ -3,6 +3,7 @@ import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_w
 import '/azyaa_group_a/home/components/bar/universal_navigation_bar/universal_navigation_bar_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
+import '/backend/search/search.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/ui/salebanner/salebanner_widget.dart';
 import '/index.dart';
@@ -14,6 +15,15 @@ class ShopModel extends FlutterFlowModel<ShopWidget> {
   ///  Local state fields for this page.
 
   bool searchStatus = false;
+
+  /// Live text of the shop search box.
+  String shopSearchQuery = '';
+
+  /// Results of the last local fuzzy search, grouped by kind.
+  AzySearchResults shopSearchResults = AzySearchResults.empty;
+
+  /// Recent shop searches, loaded from local storage on first build.
+  List<String> recentShopSearches = const [];
 
   ///  State fields for stateful widgets in this page.
 

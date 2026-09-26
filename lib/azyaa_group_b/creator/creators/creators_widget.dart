@@ -6,6 +6,8 @@ import '/azyaa_group_a/home/components/empty/empty_widget.dart';
 import '/azyaa_group_a/home/components/loading_animation/loading_animation_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
+import '/backend/search/search.dart';
+import '/custom_code/widgets/azy_recent_searches.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -42,6 +44,16 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
     _model.searchFiledsTextController ??= TextEditingController();
     _model.searchFiledsFocusNode ??= FocusNode();
 
+    // Load persisted creator searches. Async and best-effort: the chips simply
+    // do not appear if storage fails.
+    AzySearchHistory.recent(AzySearchHistory.scopeCreators).then((terms) {
+      if (!mounted) {
+        return;
+      }
+      _model.recentCreatorSearches = terms;
+      safeSetState(() {});
+    });
+
     _model.tabBarController = TabController(
       vsync: this,
       length: 2,
@@ -77,6 +89,73 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
     _model.dispose();
 
     super.dispose();
+  }
+
+  /// Narrows [creators] to those matching the live search box text.
+  ///
+  /// Runs the creators through the shared [AzySearchIndex] rather than a
+  /// hand-rolled `contains`, so creator search gets the same literal matching,
+  /// handle matching and deterministic ordering that product search does — one
+  /// ranking implementation, not two.
+  ///
+  /// The creator list is already in memory from the stream above, so this adds
+  /// no query and no latency; it only re-ranks what is already on screen.
+  List<UsersRecord> _applyCreatorSearch(List<UsersRecord> creators) {
+    final query = _model.creatorSearchQuery.trim();
+    if (query.isEmpty || creators.isEmpty) {
+      return creators;
+    }
+    // Under the minimum length the index refuses the query, so filtering here
+    // would blank the page mid-word. Leave the list whole instead.
+    if (!AzyMatch.meetsMinimumLength(query)) {
+      return creators;
+    }
+
+    final index = AzySearchIndex();
+    for (final creator in creators) {
+      final info = creator.creatorMainInfo.creatorInfo;
+      index.add(
+        AzySearchDocument(
+          kind: AzySearchKind.creator,
+          id: creator.uid.isNotEmpty ? creator.uid : creator.reference.id,
+          title: creator.displayName.isNotEmpty
+              ? creator.displayName
+              : (info.name.isNotEmpty ? info.name : creator.userName),
+          subtitle: creator.userName.isNotEmpty ? '@${creator.userName}' : '',
+          imageUrl:
+              creator.photoUrl.isNotEmpty ? creator.photoUrl : info.brandPhoto,
+          // Handles, bio and categories, so "beauty" or an @handle finds them.
+          keywords: [
+            creator.userName,
+            info.name,
+            info.bio,
+            info.instagramProfile,
+            info.tiktokHandle,
+            info.youtubeChannel,
+            info.location,
+            ...info.contentCategory,
+          ],
+          payload: creator,
+        ),
+      );
+    }
+
+    final hits = index
+        .search(
+          query,
+          kinds: {AzySearchKind.creator},
+          perKind: creators.length,
+        )
+        .of(AzySearchKind.creator);
+
+    final matched = <UsersRecord>[];
+    for (final hit in hits) {
+      final payload = hit.document.payload;
+      if (payload is UsersRecord) {
+        matched.add(payload);
+      }
+    }
+    return matched;
   }
 
   @override
@@ -279,28 +358,33 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                         focusNode: _model.searchFiledsFocusNode,
                                         onChanged: (_) => EasyDebounce.debounce(
                                           '_model.searchFiledsTextController',
-                                          const Duration(milliseconds: 2000),
+                                          const Duration(milliseconds: 180),
                                           () async {
-                                            if (_model.searchFiledsTextController
-                                                        .text !=
-                                                    '') {
-                                              safeSetState(() => _model
-                                                  .algoliaSearchResults = null);
-                                              await UsersRecord.search(
-                                                term: _model
-                                                    .searchFiledsTextController
-                                                    .text,
-                                              )
-                                                  .then((r) => _model
-                                                      .algoliaSearchResults = r)
-                                                  .onError((_, __) => _model
-                                                          .algoliaSearchResults =
-                                                      [])
-                                                  .whenComplete(() =>
-                                                      safeSetState(() {}));
+                                            // Local, synchronous fuzzy filter over
+                                            // the creator list already streaming
+                                            // in below -- no Algolia call, no
+                                            // network round-trip, so results
+                                            // update as the user types.
+                                            //
+                                            // Was: `UsersRecord.search(...)`
+                                            // against the 'users' Algolia index
+                                            // on a 2000ms debounce.
+                                            final term = _model
+                                                .searchFiledsTextController.text;
+                                            _model.creatorSearchQuery = term;
+                                            safeSetState(() {});
 
-                                              safeSetState(() {});
-                                            } else {
+                                            // Persist only real terms, and not
+                                            // on every keystroke of a longer
+                                            // word.
+                                            if (term.trim().length >= 3) {
+                                              final updated =
+                                                  await AzySearchHistory.record(
+                                                AzySearchHistory.scopeCreators,
+                                                term,
+                                              );
+                                              _model.recentCreatorSearches =
+                                                  updated;
                                               safeSetState(() {});
                                             }
                                           },
@@ -395,59 +479,47 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                       ),
                                     ),
                                   ),
-                                if ((_model.searchFiledsTextController
-                                                .text !=
-                                            '') &&
-                                    responsiveVisibility(
-                                      context: context,
-                                      phone: false,
-                                      tablet: false,
-                                      tabletLandscape: false,
-                                      desktop: false,
-                                    ))
-                                  Container(
-                                    height: 200.0,
-                                    decoration: const BoxDecoration(),
-                                    child: Builder(
-                                      builder: (context) {
-                                        if (_model.algoliaSearchResults ==
-                                            null) {
-                                          return Center(
-                                            child: SizedBox(
-                                              width: 10.0,
-                                              height: 10.0,
-                                              child: CircularProgressIndicator(
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                                ),
-                                              ),
-                                            ),
-                                          );
-                                        }
-                                        final searchList = _model
-                                                .algoliaSearchResults
-                                                ?.toList() ??
-                                            [];
-
-                                        return ListView.builder(
-                                          padding: EdgeInsets.zero,
-                                          primary: false,
-                                          shrinkWrap: true,
-                                          scrollDirection: Axis.vertical,
-                                          itemCount: searchList.length,
-                                          itemBuilder:
-                                              (context, searchListIndex) {
-                                            return Container(
-                                                width: 100,
-                                                height: 100,
-                                                color: Colors.green);
-                                          },
-                                        );
-                                      },
-                                    ),
+                                // Recent creator searches.
+                                //
+                                // This replaces a placeholder block that was
+                                // guarded by
+                                //   responsiveVisibility(phone: false,
+                                //     tablet: false, tabletLandscape: false,
+                                //     desktop: false)
+                                // -- false at every width, so it never
+                                // rendered -- and whose list items were literal
+                                // `Container(color: Colors.green)` boxes. The
+                                // live narrowing now happens in
+                                // _applyCreatorSearch, where the signed-in and
+                                // signed-out lists both converge.
+                                if (_model.creatorSearchQuery.isEmpty &&
+                                    _model.recentCreatorSearches.isNotEmpty)
+                                  AzyRecentSearchesView(
+                                    terms: _model.recentCreatorSearches,
+                                    onSelected: (term) {
+                                      _model.searchFiledsTextController.text =
+                                          term;
+                                      _model.creatorSearchQuery = term;
+                                      safeSetState(() {});
+                                    },
+                                    onRemoved: (term) async {
+                                      await AzySearchHistory.remove(
+                                        AzySearchHistory.scopeCreators,
+                                        term,
+                                      );
+                                      _model.recentCreatorSearches =
+                                          await AzySearchHistory.recent(
+                                        AzySearchHistory.scopeCreators,
+                                      );
+                                      safeSetState(() {});
+                                    },
+                                    onCleared: () async {
+                                      await AzySearchHistory.clear(
+                                        AzySearchHistory.scopeCreators,
+                                      );
+                                      _model.recentCreatorSearches = const [];
+                                      safeSetState(() {});
+                                    },
                                   ),
                               ],
                             ),
@@ -489,6 +561,14 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                 .data!
                                 .where((u) => u.uid != currentUserUid)
                                 .toList();
+
+                            // Narrow by the search box HERE, before either the
+                            // signed-in or the signed-out branch reads the list,
+                            // so both get identical filtered results from one
+                            // filter pass.
+                            creatorUsersRecordList = _applyCreatorSearch(
+                              creatorUsersRecordList,
+                            );
 
                             return Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,

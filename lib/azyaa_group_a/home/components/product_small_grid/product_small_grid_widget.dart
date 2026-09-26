@@ -1,6 +1,8 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_wishlist/user_wishlist_widget.dart';
 import '/backend/backend.dart';
+import '/backend/inventory/stock_order.dart';
+import '/backend/inventory/stock_service.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -14,9 +16,18 @@ class ProductSmallGridWidget extends StatefulWidget {
   const ProductSmallGridWidget({
     super.key,
     this.product,
+    this.hideWhenOutOfStock = false,
   });
 
   final ProductsRecord? product;
+
+  /// When true, a sold-out product renders as nothing at all.
+  ///
+  /// The home page's rails hide sold-out items rather than tinting them: a rail
+  /// is a merchandising strip, so a tile nobody can buy takes a slot from one
+  /// they can. Everywhere else this stays false, and the card tints itself pink
+  /// and badges itself so the product is still findable.
+  final bool hideWhenOutOfStock;
 
   @override
   State<ProductSmallGridWidget> createState() => _ProductSmallGridWidgetState();
@@ -50,7 +61,48 @@ class _ProductSmallGridWidgetState extends State<ProductSmallGridWidget> {
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 
-    return InkWell(
+    // Stock, read exactly the way the large grid card reads it: this product's
+    // own inventory document. That is what lets the card hide itself, or tint
+    // and badge itself, and the value is published to the shared cache so the
+    // page-level filters agree with what is on screen.
+    return StreamBuilder<List<InventoryRecord>>(
+      stream: queryInventoryRecord(
+        queryBuilder: (inventoryRecord) => inventoryRecord.where(
+          'inventory_id',
+          isEqualTo: widget.product?.product.inventoryId,
+        ),
+        singleRecord: true,
+      ),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return Center(
+            child: SizedBox(
+              width: 24.0,
+              height: 24.0,
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  FlutterFlowTheme.of(context).primary,
+                ),
+              ),
+            ),
+          );
+        }
+
+        // A product with no inventory document counts as available, not sold
+        // out: inventory rows are not guaranteed to exist for every product,
+        // and hiding those would empty the rails of stock we simply cannot see.
+        final inventory =
+            snapshot.data!.isNotEmpty ? snapshot.data!.first : null;
+        final stock = inventory?.stock;
+        AzyInventoryStock.instance
+            .noteStock(widget.product?.product.inventoryId ?? '', stock);
+        final soldOut = AzyStockOrder.isSoldOut(stock);
+
+        if (soldOut && widget.hideWhenOutOfStock) {
+          return const SizedBox.shrink();
+        }
+
+        return InkWell(
       splashColor: Colors.transparent,
       focusColor: Colors.transparent,
       hoverColor: Colors.transparent,
@@ -230,6 +282,51 @@ class _ProductSmallGridWidgetState extends State<ProductSmallGridWidget> {
                       ),
                     ),
                   ),
+                  // The same out-of-stock treatment as the other two cards, so a
+                  // sold-out product cannot look buyable in one part of the app
+                  // and unavailable in another. Not reached on the home rails:
+                  // there the whole card renders as nothing instead.
+                  if (soldOut)
+                    Positioned.fill(
+                      child: IgnorePointer(
+                        child: DecoratedBox(
+                          decoration: BoxDecoration(
+                            color: const Color(0x8CF8BBD0),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                      ),
+                    ),
+                  if (soldOut)
+                    Positioned(
+                      left: 4.0,
+                      bottom: 4.0,
+                      child: IgnorePointer(
+                        child: Container(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              6.0, 2.0, 6.0, 2.0),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFF7A8C4),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          child: Text(
+                            FFLocalizations.of(context).getVariableText(
+                              enText: 'Out of stock',
+                              arText: 'نفاد المخزون',
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodySmall
+                                .override(
+                                  fontFamily: 'almarai',
+                                  color: const Color(0xFF7A1F3D),
+                                  fontSize: 8.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                          ),
+                        ),
+                      ),
+                    ),
                   if (responsiveVisibility(
                     context: context,
                     phone: false,
@@ -326,6 +423,8 @@ class _ProductSmallGridWidgetState extends State<ProductSmallGridWidget> {
           ),
         ].divide(const SizedBox(height: 4.0)),
       ),
+    );
+      },
     );
   }
 }

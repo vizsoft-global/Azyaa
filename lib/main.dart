@@ -18,8 +18,64 @@ import 'flutter_flow/revenue_cat_util.dart' as revenue_cat;
 
 
 
+// ===========================================================================
+// TEMPORARY OVERFLOW MITIGATION
+// Remove this block (and the `builder:` in MyApp.build below) once the
+// individual layouts have been fixed.
+// ===========================================================================
+//
+// Why this exists:
+// The generated screens in this project use ~570 `Row`s against ~4,100 `Text`s,
+// but only two of those `Text`s set an explicit `overflow:` and only 65 set
+// `maxLines:`. Long content therefore has very little room to give -- a long
+// translated string (the Arabic bundle is mostly longer than the English one),
+// a long product title, a long user name, or a large system font can make a
+// layout report "A RenderFlex overflowed by N pixels".
+//
+// Neither switch below changes any layout maths. A widget that genuinely does
+// not fit is still clipped exactly as it was before; the app just stops
+// shouting about it. Set all three to `false` to get the full reports back.
+//
+// About the yellow/black stripes:
+// Those are painted by Flutter's `DebugOverflowIndicatorMixin`, and its only
+// call site in `RenderFlex` sits inside an `assert`. There is no public API to
+// disable them (unlike, say, `debugDisableShadows`). Two consequences:
+//   1. They are stripped out of profile and release builds entirely, so
+//      `flutter run --profile` or a release build is already stripe-free.
+//   2. In a debug build they cannot be suppressed from app code -- the only
+//      real cure is to fix the layout that overflows.
+
+/// Silence "overflowed by N pixels" reports so they cannot bury real errors in
+/// the console or trip the debug error overlay.
+const bool kQuietOverflowReports = true;
+
+/// Let any `Text` that does not set its own value ellipsise instead of
+/// hard-clipping once it is squeezed. `Text` falls back to the ambient
+/// `DefaultTextStyle.overflow`, so this covers the generated widgets globally.
+const bool kDefaultTextEllipsis = true;
+
+/// Cap the system font scale so an extreme accessibility setting cannot blow up
+/// the fixed-height generated layouts. 1.3 matches Android's own "Largest"
+/// step, which is the largest value the UI is expected to survive.
+const bool kClampTextScale = true;
+const double kMaxTextScaleFactor = 1.3;
+
+void _installOverflowReportFilter() {
+  if (!kQuietOverflowReports) {
+    return;
+  }
+  final previousOnError = FlutterError.onError;
+  FlutterError.onError = (FlutterErrorDetails details) {
+    if (details.exceptionAsString().contains('overflowed by')) {
+      return; // Layout overflow -- suppressed on purpose, see above.
+    }
+    previousOnError?.call(details);
+  };
+}
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  _installOverflowReportFilter();
   GoRouter.optionURLReflectsImperativeAPIs = true;
   usePathUrlStrategy();
 
@@ -113,10 +169,6 @@ class _MyAppState extends State<MyApp> {
         _appStateNotifier.update(user);
       });
     jwtTokenStream.listen((_) {});
-    Future.delayed(
-      const Duration(milliseconds: 2000),
-      () => _appStateNotifier.stopShowingSplashImage(),
-    );
   }
 
   @override
@@ -159,6 +211,31 @@ class _MyAppState extends State<MyApp> {
         useMaterial3: false,
       ),
       themeMode: _themeMode,
+      // TEMPORARY overflow mitigation -- see the note above `main()`.
+      //
+      // This `builder` is inserted below `AnimatedTheme`/`ScaffoldMessenger` and
+      // above the `Navigator` (MaterialApp's own `_materialBuilder` calls it
+      // with the Navigator as `child`), so it wraps every route without
+      // interfering with theming.
+      builder: (context, child) {
+        if (child == null) {
+          return const SizedBox.shrink();
+        }
+        Widget content = child;
+        if (kClampTextScale) {
+          content = MediaQuery.withClampedTextScaling(
+            maxScaleFactor: kMaxTextScaleFactor,
+            child: content,
+          );
+        }
+        if (kDefaultTextEllipsis) {
+          content = DefaultTextStyle.merge(
+            overflow: TextOverflow.ellipsis,
+            child: content,
+          );
+        }
+        return content;
+      },
       routerConfig: _router,
     );
   }
