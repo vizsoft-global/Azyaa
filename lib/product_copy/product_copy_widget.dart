@@ -1,3 +1,4 @@
+import '/azyaa_group_a/home/components/product_gallery_viewer/product_gallery_viewer.dart';
 import '/azyaa_group_a/home/components/product_purchase_panel/product_purchase_panel_widget.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/virtual_try_on/v_t_o_begin/v_t_o_begin_widget.dart';
@@ -248,31 +249,19 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                     highlightColor:
                                                         Colors.transparent,
                                                     onTap: () async {
-                                                      await Navigator.push(
+                                                      final index = await ProductGalleryViewer.open(
                                                         context,
-                                                        PageTransition(
-                                                          type:
-                                                              PageTransitionType
-                                                                  .fade,
-                                                          child:
-                                                              FlutterFlowExpandedImageView(
-                                                            image:
-                                                                CachedNetworkImage(
-                                                              imageUrl: imageListItem,
-                                                              fit: BoxFit
-                                                                  .contain,
-                                                            ),
-                                                            allowRotation:
-                                                                false,
-                                                            tag: imageListItem,
-                                                            useHeroAnimation:
-                                                                true,
-                                                          ),
-                                                        ),
+                                                        images: imageList,
+                                                        initialIndex: imageListIndex,
                                                       );
+                                                      if (!mounted || index == null || index == imageListIndex) {
+                                                        return;
+                                                      }
+                                                      _model.galleryController?.jumpToPage(index);
                                                     },
                                                     child: Hero(
-                                                      tag: imageListItem,
+                                                      tag: ProductGalleryViewer.heroTag(
+                                                          imageListItem, imageListIndex),
                                                       transitionOnUserGestures:
                                                           true,
                                                       child: ClipRRect(
