@@ -4,6 +4,7 @@ import '/azyaa_group_a/home/components/size_chart_default/size_chart_default_wid
 import '/azyaa_group_a/home/main/product_measurement_popup/product_measurement_popup_widget.dart';
 import '/azyaa_group_a/payment/chosseoption_popup/chosseoption_popup_widget.dart';
 import '/backend/backend.dart';
+import '/backend/catalog/cart_variants.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
@@ -163,9 +164,12 @@ class _ProductAttributeCartLevelWidgetState
                                                 e.viewedItemId ==
                                                 widget.product?.productId)
                                             .toList()
-                                            .firstOrNull!
-                                            .productAttribute
-                                            .toList(),
+                                            .firstOrNull
+                                            ?.productAttribute
+                                            .toList() ??
+                                        AzyCartVariants.copyForLine(null,
+                                            options: widget
+                                                .product?.productAttribute),
                                 );
                                 while (FFAppState().UserDataFlow.count > 0) {
                                   if (FFAppState()
@@ -376,111 +380,34 @@ class _ProductAttributeCartLevelWidgetState
                                       ?.userCart.cartItems.length
                                   ..userCartItemPAFound = 'notfound',
                               );
-                              while (FFAppState().UserDataFlow.count > 0) {
-                                if (FFAppState()
-                                        .UserDataFlow
-                                        .userCartItemList
-                                        .elementAtOrNull(
-                                            FFAppState().UserDataFlow.count - 1)
-                                        ?.productId ==
-                                    widget.product?.productId) {
-                                  FFAppState().updateUserDataFlowStruct(
-                                    (e) => e
-                                      ..userCartItemProductAttribute =
-                                          FFAppState()
-                                              .UserDataFlow
-                                              .userCartItemList
-                                              .elementAtOrNull(FFAppState()
-                                                      .UserDataFlow
-                                                      .count -
-                                                  1)!
-                                              .cartItemAttribute
-                                              .toList()
-                                      ..userCartItemPAFound = 'notfound'
-                                      ..userCartItemPAIndex =
-                                          FFAppState().UserDataFlow.count - 1,
-                                  );
-                                  FFAppState().updateUserDataFlowStruct(
-                                    (e) => e
-                                      ..count = FFAppState()
-                                          .UserDataFlow
-                                          .userCartItemList
-                                          .elementAtOrNull(
-                                              FFAppState().UserDataFlow.count -
-                                                  1)
-                                          ?.cartItemAttribute
-                                          .length,
-                                  );
-                                  while (FFAppState().UserDataFlow.count > 0) {
-                                    if ((FFAppState()
-                                                .UserDataFlow
-                                                .userCartItemProductAttribute
-                                                .elementAtOrNull(FFAppState()
-                                                        .UserDataFlow
-                                                        .count -
-                                                    1)
-                                                ?.attributesDefaultTermId ==
-                                            FFAppState()
-                                                .UserDataFlow
-                                                .userProductSwatchesList
-                                                .where((e) =>
-                                                    e.viewedItemId ==
-                                                    widget.product?.productId)
-                                                .toList()
-                                                .elementAtOrNull(FFAppState()
-                                                        .UserDataFlow
-                                                        .count -
-                                                    1)
-                                                ?.productAttribute
-                                                .firstOrNull
-                                                ?.attributesDefaultTermId) ||
-                                        (FFAppState()
-                                                .UserDataFlow
-                                                .userCartItemProductAttribute
-                                                .elementAtOrNull(FFAppState()
-                                                        .UserDataFlow
-                                                        .count -
-                                                    1)
-                                                ?.attributesDefaultTermId ==
-                                            (FFAppState()
-                                                    .UserDataFlow
-                                                    .userProductSwatchesList
-                                                    .where((e) =>
-                                                        e.viewedItemId ==
-                                                        widget
-                                                            .product?.productId)
-                                                    .toList()
-                                                    .firstOrNull
-                                                    ?.productAttribute
-                                                    .elementAtOrNull(
-                                                        FFAppState()
-                                                                .UserDataFlow
-                                                                .count -
-                                                            1))
-                                                ?.attributesDefaultTermId)) {
-                                      FFAppState().updateUserDataFlowStruct(
-                                        (e) => e..userCartItemPAFound = 'found',
-                                      );
-                                    } else {
-                                      FFAppState().updateUserDataFlowStruct(
-                                        (e) =>
-                                            e..userCartItemPAFound = 'notfound',
-                                      );
-                                    }
-
-                                    FFAppState().updateUserDataFlowStruct(
-                                      (e) => e
-                                        ..count =
-                                            FFAppState().UserDataFlow.count - 1,
-                                    );
-                                  }
-                                }
-                                FFAppState().updateUserDataFlowStruct(
-                                  (e) => e
-                                    ..count =
-                                        FFAppState().UserDataFlow.count - 1,
-                                );
-                              }
+                              final selectedTerms = FFAppState()
+                                      .UserDataFlow
+                                      .userProductSwatchesList
+                                      .where((e) =>
+                                          e.viewedItemId ==
+                                          widget.product?.productId)
+                                      .firstOrNull
+                                      ?.productAttribute
+                                      .toList() ??
+                                  <ProductAttributesNewStruct>[];
+                              final matchedCartItemIndex = FFAppState()
+                                  .UserDataFlow
+                                  .userCartItemList
+                                  .indexWhere((line) =>
+                                      line.productId ==
+                                          widget.product?.productId &&
+                                      AzyCartVariants.isSameVariant(
+                                        line: line.cartItemAttribute.toList(),
+                                        selection: selectedTerms,
+                                      ));
+                              FFAppState().updateUserDataFlowStruct(
+                                (e) => e
+                                  ..userCartItemPAIndex = matchedCartItemIndex
+                                  ..userCartItemPAFound =
+                                      matchedCartItemIndex >= 0
+                                          ? 'found'
+                                          : 'notfound',
+                              );
                               if (FFAppState()
                                       .UserDataFlow
                                       .userCartItemPAFound ==
@@ -646,9 +573,12 @@ class _ProductAttributeCartLevelWidgetState
                                                 e.viewedItemId ==
                                                 widget.product?.productId)
                                             .toList()
-                                            .firstOrNull!
-                                            .productAttribute
-                                            .toList(),
+                                            .firstOrNull
+                                            ?.productAttribute
+                                            .toList() ??
+                                        AzyCartVariants.copyForLine(null,
+                                            options: widget
+                                                .product?.productAttribute),
                                 );
                                 while (FFAppState().UserDataFlow.count > 0) {
                                   if (FFAppState()
@@ -706,9 +636,10 @@ class _ProductAttributeCartLevelWidgetState
                                           cartItemId:
                                               _model.idMapResultNew?.cartItemId,
                                           productType: 'product',
-                                          cartItemAttribute: FFAppState()
-                                              .UserDataFlow
-                                              .userSwatchesProductAttribute,
+                                          cartItemAttribute: AzyCartVariants.copyForLine(
+                                              FFAppState()
+                                                  .UserDataFlow
+                                                  .userSwatchesProductAttribute),
                                           productId: widget.product?.productId,
                                           productInfo:
                                               widget.product?.productInfo,
@@ -802,9 +733,10 @@ class _ProductAttributeCartLevelWidgetState
                                             cartItemId: _model
                                                 .idMapResultNew?.cartItemId,
                                             productType: 'product',
-                                            cartItemAttribute: FFAppState()
-                                                .UserDataFlow
-                                                .userSwatchesProductAttribute,
+                                            cartItemAttribute: AzyCartVariants.copyForLine(
+                                                FFAppState()
+                                                    .UserDataFlow
+                                                    .userSwatchesProductAttribute),
                                             productId:
                                                 widget.product?.productId,
                                             productInfo:

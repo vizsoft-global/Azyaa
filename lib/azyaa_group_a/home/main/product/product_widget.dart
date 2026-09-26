@@ -7,12 +7,10 @@ import '/azyaa_group_a/customer/zone/user_wishlist/user_wishlist_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
 import '/azyaa_group_a/home/components/blank_loading/blank_loading_widget.dart';
 import '/azyaa_group_a/home/components/loading_animation/loading_animation_widget.dart';
-import '/azyaa_group_a/home/components/product_attribute/product_attribute_widget.dart';
 import '/backend/inventory/stock_service.dart';
 import '/azyaa_group_a/home/components/product_grid/product_grid_widget.dart';
-import '/azyaa_group_a/home/components/product_options_bar/product_options_bar_widget.dart';
+import '/azyaa_group_a/home/components/product_purchase_panel/product_purchase_panel_widget.dart';
 import '/azyaa_group_a/home/components/product_small_grid/product_small_grid_widget.dart';
-import '/azyaa_group_a/home/components/size_chart_default/size_chart_default_widget.dart';
 import '/azyaa_group_a/home/main/product_measurement_popup/product_measurement_popup_widget.dart';
 import '/azyaa_group_a/payment/default_cart_button/default_cart_button_widget.dart';
 import '/azyaa_group_b/components/unfollow_confirm_popup/unfollow_confirm_popup_widget.dart';
@@ -27,7 +25,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/ui/reviewgrid/reviewgrid_widget.dart';
-import 'dart:async';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
@@ -3495,7 +3492,27 @@ class _ProductWidgetState extends State<ProductWidget> {
                               ]
                                   .divide(const SizedBox(height: 12.0))
                                   .addToStart(const SizedBox(height: 16.0))
-                                  .addToEnd(const SizedBox(height: 165.0)),
+                                  .addToEnd(SizedBox(
+                                      height: 165.0 +
+                                          80.0 *
+                                              stackProductsRecord
+                                                  .productAttribute.length)),
+                            ),
+                          ),
+                          Positioned.fill(
+                            child: IgnorePointer(
+                              child: AnimatedOpacity(
+                                opacity: ProductPurchasePanelWidget.remainingFor(
+                                            stackProductsRecord,
+                                            FFAppState()) >
+                                        0
+                                    ? 1.0
+                                    : 0.0,
+                                duration: const Duration(milliseconds: 250),
+                                child: const ColoredBox(
+                                  color: Color(0x8CFFFFFF),
+                                ),
+                              ),
                             ),
                           ),
                           Align(
@@ -3549,17 +3566,9 @@ class _ProductWidgetState extends State<ProductWidget> {
                                       ?.productAttribute,
                                 );
 
-                                return Container(
-                                  decoration: const BoxDecoration(),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      if (stackProductsRecord
-                                          .productAttribute.isNotEmpty)
-                                        ProductOptionsBarWidget(
-                                          product: stackProductsRecord,
-                                        ),
-                                      Stack(
+                                return ProductPurchasePanelWidget(
+                                  product: stackProductsRecord,
+                                  actions: Stack(
                                     children: [
                                       if (stackProductsRecord
                                               .product.productType ==
@@ -3777,6 +3786,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                               options: stackProductsRecord.productAttribute,
                                                                               defaultTerms: FFAppState().UserDataFlow.userProductSwatchesList.where((e) => e.viewedItemId == stackProductsRecord.productId).toList().firstOrNull?.productAttribute,
                                                                               quantity: stackProductsRecord.product.productType == 'ready' ? _model.countControllerValue : 1,
+                                                                              onAdded: () => safeSetState(() => _model.countControllerValue = 1),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -4078,449 +4088,6 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                         ),
                                                                       ),
                                                                   ],
-                                                                ),
-                                                              if ((readymadeInventoryRecord
-                                                                          .stock >
-                                                                      0) &&
-                                                                  responsiveVisibility(
-                                                                    context:
-                                                                        context,
-                                                                    phone:
-                                                                        false,
-                                                                    tablet:
-                                                                        false,
-                                                                    tabletLandscape:
-                                                                        false,
-                                                                    desktop:
-                                                                        false,
-                                                                  ))
-                                                                Expanded(
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            8.0,
-                                                                            0.0,
-                                                                            8.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        FFButtonWidget(
-                                                                      onPressed:
-                                                                          !AzyProductOptions.isCompleteFor(stackProductsRecord, FFAppState()) ? null : () async {
-                                                                        var _shouldSetState =
-                                                                            false;
-                                                                        if (loggedIn) {
-                                                                          if (readymadeInventoryRecord.stock >
-                                                                              0) {
-                                                                            FFAppState().updateUserDataFlowStruct(
-                                                                              (e) => e..userCartCount = currentUserDocument?.userCart.cartItems.where((e) => e.productType != 'membership').toList().length,
-                                                                            );
-                                                                            _model.idMapResult =
-                                                                                await queryIdMapRecordOnce(
-                                                                              queryBuilder: (idMapRecord) => idMapRecord.where(
-                                                                                'type',
-                                                                                isEqualTo: 'Main',
-                                                                              ),
-                                                                              singleRecord: true,
-                                                                            ).then((s) => s.firstOrNull);
-                                                                            _shouldSetState =
-                                                                                true;
-                                                                            if (FFAppState().UserDataFlow.userCartCount ==
-                                                                                0) {
-                                                                              await currentUserReference!.update(createUsersRecordData(
-                                                                                userCart: createUserCartStruct(
-                                                                                  cartId: _model.idMapResult?.cartId,
-                                                                                  createdAt: getCurrentTimestamp,
-                                                                                  updatedAt: getCurrentTimestamp,
-                                                                                  subtotal: functions.newCartTotal(currentUserDocument!.userCart.cartItems.map((e) => e.totalPrice).toList()),
-                                                                                  total: functions.newCartTotal(currentUserDocument!.userCart.cartItems.map((e) => e.totalPrice).toList()),
-                                                                                  fieldValues: {
-                                                                                    'cart_items': FieldValue.arrayUnion([
-                                                                                      getUserCartItemsFirestoreData(
-                                                                                        createUserCartItemsStruct(
-                                                                                          cartItemId: _model.idMapResult?.cartItemId,
-                                                                                          productId: stackProductsRecord.productId,
-                                                                                          productInfo: updateInfoStruct(
-                                                                                            stackProductsRecord.productInfo,
-                                                                                            clearUnsetFields: false,
-                                                                                          ),
-                                                                                          quantity: 1,
-                                                                                          price: stackProductsRecord.product.productPrice,
-                                                                                          totalPrice: stackProductsRecord.product.productPrice,
-                                                                                          productType: 'product',
-                                                                                          productDesignerRef: stackProductsRecord.productAuthorizer.productDesignerRef,
-                                                                                          productDesignerId: stackProductsRecord.productAuthorizer.productDesignerId,
-                                                                                          productRef: stackProductsRecord.reference,
-                                                                                          fieldValues: {
-                                                                                            'cart_item_attribute': getProductAttributesNewListFirestoreData(
-                                                                                              (currentUserDocument?.userRecentViews.toList() ?? []).where((e) => stackProductsRecord.productId == e.viewedItemId).toList().firstOrNull?.productAttribute,
-                                                                                            ),
-                                                                                          },
-                                                                                          clearUnsetFields: false,
-                                                                                        ),
-                                                                                        true,
-                                                                                      )
-                                                                                    ]),
-                                                                                  },
-                                                                                  clearUnsetFields: false,
-                                                                                ),
-                                                                              ));
-
-                                                                              await _model.idMapResult!.reference.update({
-                                                                                ...mapToFirestore(
-                                                                                  {
-                                                                                    'cart_id': FieldValue.increment(1),
-                                                                                    'cart_item_id': FieldValue.increment(1),
-                                                                                  },
-                                                                                ),
-                                                                              });
-                                                                            } else {
-                                                                              FFAppState().updateUserDataFlowStruct(
-                                                                                (e) => e
-                                                                                  ..userCartCount = currentUserDocument?.userCart.cartItems.length
-                                                                                  ..userCartItemList = currentUserDocument!.userCart.cartItems.toList(),
-                                                                              );
-                                                                              while (FFAppState().UserDataFlow.userCartCount > 0) {
-                                                                                if (FFAppState().UserDataFlow.userCartItemList.elementAtOrNull(FFAppState().UserDataFlow.userCartCount - 1)?.productId == stackProductsRecord.productId) {
-                                                                                  FFAppState().updateUserDataFlowStruct(
-                                                                                    (e) => e
-                                                                                      ..updateUserCartItemList(
-                                                                                        (e) => e[FFAppState().UserDataFlow.userCartCount - 1]
-                                                                                          ..productId = stackProductsRecord.productId
-                                                                                          ..productType = 'product'
-                                                                                          ..productInfo = stackProductsRecord.productInfo
-                                                                                          ..quantity = 1
-                                                                                          ..price = stackProductsRecord.product.productPrice
-                                                                                          ..totalPrice = stackProductsRecord.product.productPrice
-                                                                                          ..cartItemAttribute = (currentUserDocument?.userRecentViews.toList() ?? []).where((e) => stackProductsRecord.productId == e.viewedItemId).toList().firstOrNull!.productAttribute.toList()
-                                                                                          ..productDesignerRef = stackProductsRecord.productAuthorizer.productDesignerRef
-                                                                                          ..productDesignerId = stackProductsRecord.productAuthorizer.productDesignerId
-                                                                                          ..productRef = stackProductsRecord.reference,
-                                                                                      ),
-                                                                                  );
-
-                                                                                  await currentUserReference!.update(createUsersRecordData(
-                                                                                    userCart: createUserCartStruct(
-                                                                                      updatedAt: getCurrentTimestamp,
-                                                                                      subtotal: functions.newCartTotal(FFAppState().UserDataFlow.userCartItemList.map((e) => e.totalPrice).toList()),
-                                                                                      total: functions.newCartTotal(FFAppState().UserDataFlow.userCartItemList.map((e) => e.totalPrice).toList()),
-                                                                                      fieldValues: {
-                                                                                        'cart_items': getUserCartItemsListFirestoreData(
-                                                                                          FFAppState().UserDataFlow.userCartItemList,
-                                                                                        ),
-                                                                                      },
-                                                                                      clearUnsetFields: false,
-                                                                                    ),
-                                                                                  ));
-                                                                                  if (Navigator.of(context).canPop()) {
-                                                                                    context.pop();
-                                                                                  }
-                                                                                  context.pushNamed(
-                                                                                    CartWidget.routeName,
-                                                                                    extra: <String, dynamic>{
-                                                                                      '__transition_info__': const TransitionInfo(
-                                                                                        hasTransition: true,
-                                                                                        transitionType: PageTransitionType.fade,
-                                                                                        duration: Duration(milliseconds: 0),
-                                                                                      ),
-                                                                                    },
-                                                                                  );
-
-                                                                                  if (_shouldSetState) safeSetState(() {});
-                                                                                  return;
-                                                                                }
-                                                                                FFAppState().updateUserDataFlowStruct(
-                                                                                  (e) => e..userCartCount = FFAppState().UserDataFlow.userCartCount - 1,
-                                                                                );
-                                                                              }
-                                                                              FFAppState().updateUserDataFlowStruct(
-                                                                                (e) => e
-                                                                                  ..updateUserCartItemList(
-                                                                                    (e) => e.add(UserCartItemsStruct(
-                                                                                      cartItemId: _model.idMapResult?.cartItemId,
-                                                                                      productType: 'product',
-                                                                                      productId: stackProductsRecord.productId,
-                                                                                      productInfo: stackProductsRecord.productInfo,
-                                                                                      quantity: 1,
-                                                                                      price: stackProductsRecord.product.productPrice,
-                                                                                      totalPrice: stackProductsRecord.product.productPrice,
-                                                                                      cartItemAttribute: (currentUserDocument?.userRecentViews.toList() ?? []).where((e) => stackProductsRecord.productId == e.viewedItemId).toList().firstOrNull?.productAttribute,
-                                                                                      productDesignerRef: stackProductsRecord.productAuthorizer.productDesignerRef,
-                                                                                      productDesignerId: stackProductsRecord.productAuthorizer.productDesignerId,
-                                                                                      productRef: stackProductsRecord.reference,
-                                                                                    )),
-                                                                                  ),
-                                                                              );
-
-                                                                              await currentUserReference!.update(createUsersRecordData(
-                                                                                userCart: createUserCartStruct(
-                                                                                  updatedAt: getCurrentTimestamp,
-                                                                                  subtotal: functions.newCartTotal(FFAppState().UserDataFlow.userCartItemList.map((e) => e.totalPrice).toList()),
-                                                                                  total: functions.newCartTotal(FFAppState().UserDataFlow.userCartItemList.map((e) => e.totalPrice).toList()),
-                                                                                  fieldValues: {
-                                                                                    'cart_items': getUserCartItemsListFirestoreData(
-                                                                                      FFAppState().UserDataFlow.userCartItemList,
-                                                                                    ),
-                                                                                  },
-                                                                                  clearUnsetFields: false,
-                                                                                ),
-                                                                              ));
-                                                                            }
-
-                                                                            context.pushNamed(
-                                                                              CartWidget.routeName,
-                                                                              extra: <String, dynamic>{
-                                                                                '__transition_info__': const TransitionInfo(
-                                                                                  hasTransition: true,
-                                                                                  transitionType: PageTransitionType.fade,
-                                                                                  duration: Duration(milliseconds: 0),
-                                                                                ),
-                                                                              },
-                                                                            );
-                                                                          }
-                                                                        } else {
-                                                                          context
-                                                                              .goNamed(
-                                                                            LoginWidget.routeName,
-                                                                            extra: <String,
-                                                                                dynamic>{
-                                                                              '__transition_info__': const TransitionInfo(
-                                                                                hasTransition: true,
-                                                                                transitionType: PageTransitionType.fade,
-                                                                                duration: Duration(milliseconds: 0),
-                                                                              ),
-                                                                            },
-                                                                          );
-                                                                        }
-
-                                                                        if (_shouldSetState)
-                                                                          safeSetState(
-                                                                              () {});
-                                                                      },
-                                                                      // Nothing is added until every option that needs a
-                                                                      // choice has one. The label says so, rather than
-                                                                      // letting the shopper discover it at checkout.
-                                                                      text: !AzyProductOptions
-                                                                              .isCompleteFor(
-                                                                                  stackProductsRecord,
-                                                                                  FFAppState())
-                                                                          ? 'Select options'
-                                                                          : loggedIn
-                                                                              ? (currentUserDocument!.userCart.cartItems.where((e) => (e.productId == stackProductsRecord.productId) && (e.productType == 'product')).toList().length > 0
-                                                                                  ? 'Update Bag'
-                                                                                  : 'Add to Bag')
-                                                                              : 'Login',
-                                                                      options:
-                                                                          FFButtonOptions(
-                                                                        width: MediaQuery.sizeOf(context).width *
-                                                                            1.0,
-                                                                        height:
-                                                                            48.0,
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            16.0,
-                                                                            0.0,
-                                                                            16.0,
-                                                                            0.0),
-                                                                        iconAlignment:
-                                                                            IconAlignment.end,
-                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        // The locked state has to look locked: a disabled FlutterFlow button
-                                                                        // keeps its fill colour when none is given, so both say it here.
-                                                                        disabledColor: FlutterFlowTheme.of(context).secondaryText,
-                                                                        disabledTextColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                        color: loggedIn
-                                                                            ? (currentUserDocument!.userCart.cartItems.where((e) => (e.productId == stackProductsRecord.productId) && (e.productType == 'product')).toList().length > 0
-                                                                                ? FlutterFlowTheme.of(context).success
-                                                                                : FlutterFlowTheme.of(context).primary)
-                                                                            : FlutterFlowTheme.of(context).primary,
-                                                                        textStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .override(
-                                                                              fontFamily: 'almarai',
-                                                                              color: FlutterFlowTheme.of(context).info,
-                                                                              letterSpacing: 0.0,
-                                                                            ),
-                                                                        elevation:
-                                                                            0.0,
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(8.0),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              if ((readymadeInventoryRecord
-                                                                          .stock >
-                                                                      0) &&
-                                                                  responsiveVisibility(
-                                                                    context:
-                                                                        context,
-                                                                    phone:
-                                                                        false,
-                                                                    tablet:
-                                                                        false,
-                                                                    tabletLandscape:
-                                                                        false,
-                                                                    desktop:
-                                                                        false,
-                                                                  ))
-                                                                Expanded(
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            8.0,
-                                                                            0.0,
-                                                                            8.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        FFButtonWidget(
-                                                                      onPressed:
-                                                                          () async {
-                                                                        if (loggedIn) {
-                                                                          if (readymadeInventoryRecord.stock >
-                                                                              0) {
-                                                                            _model.idMapResultNew =
-                                                                                await queryIdMapRecordOnce(
-                                                                              queryBuilder: (idMapRecord) => idMapRecord.where(
-                                                                                'type',
-                                                                                isEqualTo: 'Main',
-                                                                              ),
-                                                                              singleRecord: true,
-                                                                            ).then((s) => s.firstOrNull);
-                                                                            FFAppState().updateUserDataFlowStruct(
-                                                                              (e) => e..userCartItemList = currentUserDocument!.userCart.cartItems.toList(),
-                                                                            );
-                                                                            FFAppState().updateUserDataFlowStruct(
-                                                                              (e) => e
-                                                                                ..updateUserCartItemList(
-                                                                                  (e) => e.add(UserCartItemsStruct(
-                                                                                    cartItemId: _model.idMapResult?.cartItemId,
-                                                                                    productType: 'product',
-                                                                                    cartItemAttribute: stackProductsRecord.productAttribute,
-                                                                                    productId: stackProductsRecord.productId,
-                                                                                    productInfo: stackProductsRecord.productInfo,
-                                                                                    quantity: 1,
-                                                                                    price: stackProductsRecord.product.productPrice,
-                                                                                    totalPrice: stackProductsRecord.product.productPrice,
-                                                                                    productDesignerRef: stackProductsRecord.productAuthorizer.productDesignerRef,
-                                                                                    productDesignerId: stackProductsRecord.productAuthorizer.productDesignerId,
-                                                                                    productRef: stackProductsRecord.reference,
-                                                                                  )),
-                                                                                ),
-                                                                            );
-
-                                                                            await currentUserReference!.update(createUsersRecordData(
-                                                                              userCart: createUserCartStruct(
-                                                                                cartId: _model.idMapResult?.cartId,
-                                                                                createdAt: getCurrentTimestamp,
-                                                                                updatedAt: getCurrentTimestamp,
-                                                                                subtotal: functions.newCartTotal(currentUserDocument!.userCart.cartItems.map((e) => e.totalPrice).toList()),
-                                                                                total: functions.newCartTotal(currentUserDocument!.userCart.cartItems.map((e) => e.totalPrice).toList()),
-                                                                                fieldValues: {
-                                                                                  'cart_items': getUserCartItemsListFirestoreData(
-                                                                                    FFAppState().UserDataFlow.userCartItemList,
-                                                                                  ),
-                                                                                },
-                                                                                clearUnsetFields: false,
-                                                                              ),
-                                                                            ));
-                                                                            unawaited(
-                                                                              () async {
-                                                                                await _model.idMapResult!.reference.update({
-                                                                                  ...mapToFirestore(
-                                                                                    {
-                                                                                      'cart_id': FieldValue.increment(1),
-                                                                                      'cart_item_id': FieldValue.increment(1),
-                                                                                    },
-                                                                                  ),
-                                                                                });
-                                                                              }(),
-                                                                            );
-
-                                                                            context.pushNamed(
-                                                                              CartWidget.routeName,
-                                                                              extra: <String, dynamic>{
-                                                                                '__transition_info__': const TransitionInfo(
-                                                                                  hasTransition: true,
-                                                                                  transitionType: PageTransitionType.fade,
-                                                                                  duration: Duration(milliseconds: 0),
-                                                                                ),
-                                                                              },
-                                                                            );
-                                                                          }
-                                                                        } else {
-                                                                          context
-                                                                              .goNamed(
-                                                                            LoginWidget.routeName,
-                                                                            extra: <String,
-                                                                                dynamic>{
-                                                                              '__transition_info__': const TransitionInfo(
-                                                                                hasTransition: true,
-                                                                                transitionType: PageTransitionType.fade,
-                                                                                duration: Duration(milliseconds: 0),
-                                                                              ),
-                                                                            },
-                                                                          );
-                                                                        }
-
-                                                                        safeSetState(
-                                                                            () {});
-                                                                      },
-                                                                      text: loggedIn
-                                                                          ? (currentUserDocument!.userCart.cartItems.where((e) => (e.productId == stackProductsRecord.productId) && (e.productType == 'product')).toList().length > 0
-                                                                              ? FFLocalizations.of(context).getVariableText(
-                                                                                  enText: 'Add to Bag',
-                                                                                  arText: 'أضف إلى الحقيبة',
-                                                                                )
-                                                                              : FFLocalizations.of(context).getVariableText(
-                                                                                  enText: 'Add to Bag',
-                                                                                  arText: 'أضف إلى الحقيبة',
-                                                                                ))
-                                                                          : FFLocalizations.of(context).getVariableText(
-                                                                              enText: 'Login',
-                                                                              arText: 'تسجيل الدخول',
-                                                                            ),
-                                                                      options:
-                                                                          FFButtonOptions(
-                                                                        width: MediaQuery.sizeOf(context).width *
-                                                                            1.0,
-                                                                        height:
-                                                                            48.0,
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            16.0,
-                                                                            0.0,
-                                                                            16.0,
-                                                                            0.0),
-                                                                        iconAlignment:
-                                                                            IconAlignment.end,
-                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        color: loggedIn
-                                                                            ? (currentUserDocument!.userCart.cartItems.where((e) => (e.productId == stackProductsRecord.productId) && (e.productType == 'product')).toList().length > 0
-                                                                                ? FlutterFlowTheme.of(context).success
-                                                                                : FlutterFlowTheme.of(context).primary)
-                                                                            : FlutterFlowTheme.of(context).primary,
-                                                                        textStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .override(
-                                                                              fontFamily: 'almarai',
-                                                                              color: FlutterFlowTheme.of(context).info,
-                                                                              letterSpacing: 0.0,
-                                                                            ),
-                                                                        elevation:
-                                                                            0.0,
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(8.0),
-                                                                      ),
-                                                                    ),
-                                                                  ),
                                                                 ),
                                                             ],
                                                           ),
@@ -5158,8 +4725,6 @@ class _ProductWidgetState extends State<ProductWidget> {
                                             },
                                           ),
                                         ),
-                                    ],
-                                      ),
                                     ],
                                   ),
                                 );

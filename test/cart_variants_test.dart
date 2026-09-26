@@ -12,6 +12,7 @@
 
 import 'package:azyaa/backend/catalog/cart_variants.dart';
 import 'package:azyaa/backend/schema/structs/product_attributes_new_struct.dart';
+import 'package:azyaa/backend/schema/structs/user_cart_items_struct.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 const _size = '1000';
@@ -118,6 +119,117 @@ void main() {
           selection: _line('1019', '1014'),
         ),
         isTrue,
+      );
+    });
+  });
+
+  group('AzyCartVariants.copyForLine', () {
+    test('a bag line built from the raw selection shares it', () {
+      // The cause of lines changing behind the shopper's back: the struct keeps
+      // the list it is given, so the line and the page's choice are one object.
+      final selection = _line('1019', '1014');
+      final line = UserCartItemsStruct(cartItemAttribute: selection);
+      selection[1].attributesDefaultTermId = '1044';
+      expect(line.cartItemAttribute[1].attributesDefaultTermId, '1044');
+    });
+
+    test('changing the selection after adding leaves the line alone', () {
+      final selection = _line('1019', '1014');
+      final line = UserCartItemsStruct(
+        cartItemAttribute: AzyCartVariants.copyForLine(selection),
+      );
+
+      selection[1].attributesDefaultTermId = '1044';
+      selection.add(_picked('1002', '1050'));
+
+      expect(line.cartItemAttribute, hasLength(2));
+      expect(line.cartItemAttribute[1].attributesDefaultTermId, '1014');
+    });
+
+    test('the copy keeps the option ids and term lists', () {
+      final selection = [
+        ProductAttributesNewStruct(
+          attributesId: _color,
+          attributesDefaultTermId: '1014',
+          attributesBrandTermIds: ['1014', '1044'],
+        ),
+      ];
+      final copy = AzyCartVariants.copyForLine(selection);
+      selection[0].attributesBrandTermIds.add('1099');
+
+      expect(copy[0].attributesId, _color);
+      expect(copy[0].attributesDefaultTermId, '1014');
+      expect(copy[0].attributesBrandTermIds, ['1014', '1044']);
+    });
+
+    test('with no selection, one-term options are taken as chosen', () {
+      // A product whose options each offer one term asks the shopper nothing,
+      // so there is no stored selection; the line still records the terms.
+      final options = [
+        ProductAttributesNewStruct(
+          attributesId: _size,
+          attributesDefaultTermId: '9999',
+          attributesBrandTermIds: ['1019'],
+        ),
+        ProductAttributesNewStruct(
+          attributesId: _color,
+          attributesBrandTermIds: ['1014', '1044'],
+        ),
+      ];
+      final copy = AzyCartVariants.copyForLine(null, options: options);
+
+      expect(copy.map((o) => o.attributesId), [_size, _color]);
+      expect(copy[0].attributesDefaultTermId, '1019');
+      expect(copy[1].attributesDefaultTermId, '');
+    });
+  });
+
+  group('AzyCartVariants.quantityInBag', () {
+    UserCartItemsStruct bagLine(String productId, String color, int qty) =>
+        UserCartItemsStruct(
+          productId: productId,
+          productType: 'product',
+          quantity: qty,
+          cartItemAttribute: _line('1019', color),
+        );
+
+    final bag = [
+      bagLine('p1', '1014', 2),
+      bagLine('p2', '1044', 5),
+    ];
+
+    test('counts the exact variant', () {
+      expect(
+        AzyCartVariants.quantityInBag(
+          lines: bag,
+          productId: 'p1',
+          selection: _line('1019', '1014'),
+        ),
+        2,
+      );
+    });
+
+    test('another colour of a product in the bag is not in the bag', () {
+      // The page said "Go to Bag" here, so a shopper who had red in the bag
+      // believed blue could not be added.
+      expect(
+        AzyCartVariants.quantityInBag(
+          lines: bag,
+          productId: 'p1',
+          selection: _line('1019', '1044'),
+        ),
+        0,
+      );
+    });
+
+    test('the same variant of another product does not count', () {
+      expect(
+        AzyCartVariants.quantityInBag(
+          lines: bag,
+          productId: 'p3',
+          selection: _line('1019', '1044'),
+        ),
+        0,
       );
     });
   });

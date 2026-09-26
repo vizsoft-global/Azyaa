@@ -1,4 +1,4 @@
-// Ratchets for the bottom-bar option pickers and same-variant bag adds.
+// Ratchets for the sticky purchase panel and same-variant bag adds.
 //
 // These are SOURCE-level guards: they read lib/ and fail if the specific mistakes
 // they describe come back. They are deliberately narrow -- each one names the
@@ -24,6 +24,11 @@ const String _optionsBar =
 const String _cartButton =
     'lib/azyaa_group_a/payment/default_cart_button/default_cart_button_widget.dart';
 const String _variantRule = 'lib/backend/catalog/cart_variants.dart';
+const String _panel =
+    'lib/azyaa_group_a/home/components/product_purchase_panel/product_purchase_panel_widget.dart';
+const String _deepLinkPage = 'lib/product_copy/product_copy_widget.dart';
+const String _cartLevel =
+    'lib/azyaa_group_a/payment/product_attribute_cart_level/product_attribute_cart_level_widget.dart';
 
 String _read(String path) {
   final file = File(path);
@@ -43,17 +48,40 @@ String _readCode(String path) => _read(path)
     .join('\n');
 
 void main() {
-  group('the option pickers live in the bottom bar', () {
-    test('the product page renders them there', () {
-      final page = _readCode(_productPage);
+  group('the option pickers live in the sticky purchase panel', () {
+    test('both product pages render the panel, and the panel the chips', () {
+      for (final path in [_productPage, _deepLinkPage]) {
+        expect(
+          _readCode(path),
+          contains('ProductPurchasePanelWidget('),
+          reason: '$path no longer renders the purchase panel, so the shopper '
+              'has to scroll back up through the description to answer the '
+              'options',
+        );
+      }
+      expect(_readCode(_panel), contains('ProductOptionsBarWidget('));
+    });
 
+    test('the deep-link page no longer builds its own sorted copy', () {
       expect(
-        page,
-        contains('ProductOptionsBarWidget('),
-        reason: 'the bottom bar no longer renders the option pickers, so the '
-            'shopper has to scroll back up through the description to answer '
-            'them',
+        _readCode(_deepLinkPage),
+        isNot(contains('queryAttributesRecord(')),
+        reason: 'the deep-link page lists the options in the body again, '
+            'sorted by id, out of step with the stored order the pick is '
+            'written in',
       );
+    });
+
+    test('the page is dimmed until every option is chosen', () {
+      for (final path in [_productPage, _deepLinkPage]) {
+        final page = _readCode(path);
+        expect(page, contains('ProductPurchasePanelWidget.remainingFor('));
+        expect(
+          page,
+          contains('IgnorePointer('),
+          reason: 'the dim layer must not swallow scrolls and taps on the page',
+        );
+      }
     });
 
     test('the page body no longer builds its own copy of them', () {
@@ -85,7 +113,7 @@ void main() {
       );
     });
 
-    test('each row still saves the pick and still opens the sheet', () {
+    test('each row saves the pick inline, without a popup', () {
       final bar = _readCode(_optionsBar);
 
       expect(
@@ -103,9 +131,15 @@ void main() {
       );
       expect(
         bar,
-        contains('ProductAttributeWidget('),
-        reason: 'the row no longer opens the option sheet, so a product with '
-            'too many terms to fit on a row cannot be answered at all',
+        isNot(contains('ProductAttributeWidget(')),
+        reason: 'the chips open the option sheet again; picking is meant to '
+            'happen inline in the panel',
+      );
+      expect(
+        bar,
+        contains('Axis.horizontal'),
+        reason: 'the chips no longer scroll sideways, so a product with many '
+            'terms cannot show them all',
       );
     });
   });
@@ -155,6 +189,51 @@ void main() {
             'comparison again, so the last option compared -- size -- excuses a '
             'different colour and the add becomes a quantity bump',
       );
+    });
+
+    test('a new bag line stores a copy of the selection', () {
+      final button = _readCode(_cartButton);
+      expect(button, contains('AzyCartVariants.copyForLine('));
+      expect(
+        button,
+        isNot(contains(RegExp(r'cartItemAttribute:\s*widget\.defaultTerms'))),
+        reason: 'a bag line holds the live selection again, so the next chip '
+            'tap rewrites a line that is already in the bag',
+      );
+    });
+
+    test('the label counts the exact variant, not the product', () {
+      final button = _readCode(_cartButton);
+      expect(button, contains('AzyCartVariants.quantityInBag('));
+      expect(
+        button,
+        isNot(contains("'Go to Bag'")),
+        reason: 'the button says "Go to Bag" when any colour of the product '
+            'is in the bag, so shoppers think another colour cannot be added',
+      );
+    });
+
+    test('adding stays on the page, without the choose-option popup', () {
+      final button = _readCode(_cartButton);
+      expect(button, contains("'Added to bag'"));
+      expect(button, isNot(contains('ChosseoptionPopupWidget(')));
+    });
+
+    test('the cart-level picker matches whole variants too', () {
+      final picker = _readCode(_cartLevel);
+      expect(picker, contains('AzyCartVariants.isSameVariant('));
+      expect(picker, isNot(contains("..userCartItemPAFound = 'found',")));
+    });
+
+    test('the hidden product-only bag buttons are gone', () {
+      for (final path in [_productPage, _deepLinkPage]) {
+        expect(
+          _readCode(path),
+          isNot(contains("'Update Bag'")),
+          reason: '$path carries the old buttons that add by product id '
+              'alone, ignoring the chosen colour and size',
+        );
+      }
     });
 
     test('the rule is a pure function with its own home', () {

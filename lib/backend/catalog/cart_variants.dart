@@ -55,4 +55,59 @@ abstract final class AzyCartVariants {
 
     return true;
   }
+
+  /// An independent copy of [selection] to store on a bag line.
+  ///
+  /// The line struct keeps whatever list it is given, and the page's selection
+  /// is edited in place as chips are tapped, so storing it directly would let a
+  /// later choice rewrite a line that is already in the bag.
+  ///
+  /// With no [selection] the shopper was asked nothing, so the line is built
+  /// from the product's [options], taking each one-term option's only term.
+  /// The options' own default term is not used: it can name a term the
+  /// product does not offer.
+  static List<ProductAttributesNewStruct> copyForLine(
+    List<ProductAttributesNewStruct>? selection, {
+    List<ProductAttributesNewStruct>? options,
+  }) {
+    if (selection == null || selection.isEmpty) {
+      return [
+        for (final option in options ?? const <ProductAttributesNewStruct>[])
+          ProductAttributesNewStruct(
+            attributesId: option.attributesId,
+            attributesDefaultTermId: option.attributesBrandTermIds.length == 1
+                ? option.attributesBrandTermIds.first
+                : null,
+            attributesBrandTermIds: option.attributesBrandTermIds.toList(),
+          ),
+      ];
+    }
+    return [
+      for (final option in selection)
+        ProductAttributesNewStruct(
+          attributesId: option.attributesId,
+          attributesDefaultTermId: option.attributesDefaultTermId,
+          attributesBrandTermIds: option.attributesBrandTermIds.toList(),
+        ),
+    ];
+  }
+
+  /// How many of this exact variant of [productId] are already in the bag.
+  static int quantityInBag({
+    required List<UserCartItemsStruct> lines,
+    required String productId,
+    required List<ProductAttributesNewStruct> selection,
+  }) {
+    var total = 0;
+    for (final line in lines) {
+      if (line.productType != 'product' || line.productId != productId) {
+        continue;
+      }
+      if (isSameVariant(
+          line: line.cartItemAttribute.toList(), selection: selection)) {
+        total += line.quantity;
+      }
+    }
+    return total;
+  }
 }
