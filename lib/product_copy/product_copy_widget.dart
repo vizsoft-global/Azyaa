@@ -3512,6 +3512,12 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                         ? containerSettingsRecordList.first
                                         : null;
 
+                                final productOptionsReady =
+                                    ProductPurchasePanelWidget.remainingFor(
+                                            stackProductsRecord,
+                                            FFAppState()) ==
+                                        0;
+
                                 return ProductPurchasePanelWidget(
                                   product: stackProductsRecord,
                                   minimized: _purchasePanelMinimized,
@@ -3542,6 +3548,21 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
 
                                               final readymadeInventoryRecord =
                                                   snapshot.data!;
+                                              if (!productOptionsReady &&
+                                                  readymadeInventoryRecord.stock > 0 &&
+                                                  !(loggedIn &&
+                                                      valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.userRole,
+                                                              '') ==
+                                                          'Creator' &&
+                                                      stackProductsRecord
+                                                          .productAuthorizer
+                                                          .isAffiliateProduct)) {
+                                                return const SizedBox(
+                                                    width: double.infinity,
+                                                    height: 8.0);
+                                              }
 
                                               return Container(
                                                 height: valueOrDefault<double>(
@@ -4196,6 +4217,21 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
 
                                               final custommadeInventoryRecord =
                                                   snapshot.data!;
+                                              if (!productOptionsReady &&
+                                                  custommadeInventoryRecord.stock > 0 &&
+                                                  !(loggedIn &&
+                                                      valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.userRole,
+                                                              '') ==
+                                                          'Creator' &&
+                                                      stackProductsRecord
+                                                          .productAuthorizer
+                                                          .isAffiliateProduct)) {
+                                                return const SizedBox(
+                                                    width: double.infinity,
+                                                    height: 8.0);
+                                              }
 
                                               return Container(
                                                 height: valueOrDefault<double>(

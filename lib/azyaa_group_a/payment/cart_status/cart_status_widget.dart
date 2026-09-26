@@ -36,200 +36,103 @@ class _CartStatusWidgetState extends State<CartStatusWidget> {
       _model.instantTimer = InstantTimer.periodic(
         duration: const Duration(milliseconds: 10000),
         callback: (timer) async {
-          if (currentUserDocument!.userCart.cartItems.length > 0) {
+          // Works on a private copy: the bag's shared app-state list and
+          // counters are also written by the cart page and the Add to Bag
+          // button while this loop awaits the network.
+          final items = currentUserDocument!.userCart.cartItems
+              .map((e) =>
+                  UserCartItemsStruct.fromSerializableMap(e.toSerializableMap()))
+              .toList();
+          var changed = false;
+          for (var i = items.length - 1; i >= 0; i--) {
+            final item = items[i];
+            if (item.productType == 'product') {
+              _model.productResult1 = await queryProductsRecordOnce(
+                queryBuilder: (productsRecord) => productsRecord.where(
+                  'product_id',
+                  isEqualTo: item.productId,
+                ),
+                singleRecord: true,
+              ).then((s) => s.firstOrNull);
+              _model.inventoryResult1 = await queryInventoryRecordOnce(
+                queryBuilder: (inventoryRecord) => inventoryRecord.where(
+                  'inventory_id',
+                  isEqualTo: _model.productResult1?.product.inventoryId,
+                ),
+                singleRecord: true,
+              ).then((s) => s.firstOrNull);
+              final product = _model.productResult1;
+              final inventory = _model.inventoryResult1;
+              if (product == null || inventory == null) {
+                continue;
+              }
+              final price = product.product.productPrice;
+              if (item.quantity <= inventory.stock) {
+                if (item.price != price) {
+                  item
+                    ..productInfo = product.productInfo
+                    ..price = price
+                    ..totalPrice = item.quantity * price;
+                  changed = true;
+                }
+              } else if (inventory.stock <= 0) {
+                items.removeAt(i);
+                changed = true;
+              } else {
+                item
+                  ..productInfo = product.productInfo
+                  ..quantity = inventory.stock
+                  ..price = price
+                  ..totalPrice = inventory.stock * price
+                  ..updateProductInventoryInfo(
+                    (e) => e
+                      ..stock = inventory.stock
+                      ..stockOnHand = inventory.stockOnHand
+                      ..stockReserved = inventory.stockReserved
+                      ..stockUnavailable = inventory.stockUnavailable,
+                  );
+                changed = true;
+              }
+            } else if (item.productType == 'membership') {
+              final planId = int.tryParse(item.productId);
+              if (planId == null) {
+                continue;
+              }
+              _model.membershipResult1 =
+                  await queryUserMembershipPlansRecordOnce(
+                queryBuilder: (userMembershipPlansRecord) =>
+                    userMembershipPlansRecord.where(
+                  'membership_plan_id',
+                  isEqualTo: planId,
+                ),
+                singleRecord: true,
+              ).then((s) => s.firstOrNull);
+              final plan = _model.membershipResult1;
+              if (plan != null && item.price != plan.price) {
+                item
+                  ..productInfo = plan.planInfo
+                  ..price = plan.price
+                  ..totalPrice = item.quantity * plan.price;
+                changed = true;
+              }
+            }
+          }
+
+          if (changed) {
             FFAppState().updateUserDataFlowStruct(
               (e) => e
-                ..userCartCount =
-                    currentUserDocument?.userCart.cartItems.length
-                ..userCartItemList =
-                    currentUserDocument!.userCart.cartItems.toList(),
+                ..userCartCount = items.length
+                ..userCartItemList = items,
             );
-            while (FFAppState().UserDataFlow.userCartCount > 0) {
-              if (FFAppState()
-                      .UserDataFlow
-                      .userCartItemList
-                      .elementAtOrNull(
-                          FFAppState().UserDataFlow.userCartCount - 1)
-                      ?.productType ==
-                  'product') {
-                _model.productResult1 = await queryProductsRecordOnce(
-                  queryBuilder: (productsRecord) => productsRecord.where(
-                    'product_id',
-                    isEqualTo: FFAppState()
-                        .UserDataFlow
-                        .userCartItemList
-                        .elementAtOrNull(
-                            FFAppState().UserDataFlow.userCartCount - 1)
-                        ?.productId,
-                  ),
-                  singleRecord: true,
-                ).then((s) => s.firstOrNull);
-                _model.inventoryResult1 = await queryInventoryRecordOnce(
-                  queryBuilder: (inventoryRecord) => inventoryRecord.where(
-                    'inventory_id',
-                    isEqualTo: _model.productResult1?.product.inventoryId,
-                  ),
-                  singleRecord: true,
-                ).then((s) => s.firstOrNull);
-                if (FFAppState()
-                        .UserDataFlow
-                        .userCartItemList
-                        .elementAtOrNull(
-                            FFAppState().UserDataFlow.userCartCount - 1)!
-                        .quantity <=
-                    _model.inventoryResult1!.stock) {
-                  if (FFAppState()
-                          .UserDataFlow
-                          .userCartItemList
-                          .elementAtOrNull(
-                              FFAppState().UserDataFlow.userCartCount - 1)
-                          ?.price !=
-                      _model.productResult1?.product.productPrice) {
-                    FFAppState().updateUserDataFlowStruct(
-                      (e) => e
-                        ..updateUserCartItemList(
-                          (e) => e[FFAppState().UserDataFlow.userCartCount - 1]
-                            ..productInfo = _model.productResult1?.productInfo
-                            ..quantity = FFAppState()
-                                .UserDataFlow
-                                .userCartItemList
-                                .elementAtOrNull(
-                                    FFAppState().UserDataFlow.userCartCount - 1)
-                                ?.quantity
-                            ..price =
-                                _model.productResult1?.product.productPrice
-                            ..totalPrice = FFAppState()
-                                    .UserDataFlow
-                                    .userCartItemList
-                                    .elementAtOrNull(FFAppState()
-                                            .UserDataFlow
-                                            .userCartCount -
-                                        1)!
-                                    .quantity *
-                                _model.productResult1!.product.productPrice,
-                        ),
-                    );
-                  }
-                } else {
-                  if (_model.inventoryResult1!.stock <= 0) {
-                    FFAppState().updateUserDataFlowStruct(
-                      (e) => e
-                        ..updateUserCartItemList(
-                          (e) => e.removeAt(
-                              FFAppState().UserDataFlow.userCartCount - 1),
-                        ),
-                    );
-                  } else {
-                    FFAppState().updateUserDataFlowStruct(
-                      (e) => e
-                        ..updateUserCartItemList(
-                          (e) => e[FFAppState().UserDataFlow.userCartCount - 1]
-                            ..productInfo = _model.productResult1?.productInfo
-                            ..quantity = _model.inventoryResult1?.stock
-                            ..price =
-                                _model.productResult1?.product.productPrice
-                            ..totalPrice = _model.inventoryResult1!.stock *
-                                _model.productResult1!.product.productPrice
-                            ..updateProductInventoryInfo(
-                              (e) => e
-                                ..stock = _model.inventoryResult1?.stock
-                                ..stockOnHand =
-                                    _model.inventoryResult1?.stockOnHand
-                                ..stockReserved =
-                                    _model.inventoryResult1?.stockReserved
-                                ..stockUnavailable =
-                                    _model.inventoryResult1?.stockUnavailable,
-                            ),
-                        ),
-                    );
-                  }
-                }
-              } else {
-                if (FFAppState()
-                        .UserDataFlow
-                        .userCartItemList
-                        .elementAtOrNull(
-                            FFAppState().UserDataFlow.userCartCount - 1)
-                        ?.productType ==
-                    'membership') {
-                  _model.membershipResult1 =
-                      await queryUserMembershipPlansRecordOnce(
-                    queryBuilder: (userMembershipPlansRecord) =>
-                        userMembershipPlansRecord.where(
-                      'membership_plan_id',
-                      isEqualTo: int.parse(FFAppState()
-                          .UserDataFlow
-                          .userCartItemList
-                          .elementAtOrNull(
-                              FFAppState().UserDataFlow.userCartCount - 1)!
-                          .productId),
-                    ),
-                    singleRecord: true,
-                  ).then((s) => s.firstOrNull);
-                  if (FFAppState()
-                          .UserDataFlow
-                          .userCartItemList
-                          .elementAtOrNull(
-                              FFAppState().UserDataFlow.userCartCount - 1)
-                          ?.price !=
-                      _model.membershipResult1?.price) {
-                    FFAppState().updateUserDataFlowStruct(
-                      (e) => e
-                        ..updateUserCartItemList(
-                          (e) => e[FFAppState().UserDataFlow.userCartCount - 1]
-                            ..productInfo = _model.membershipResult1?.planInfo
-                            ..quantity = FFAppState()
-                                .UserDataFlow
-                                .userCartItemList
-                                .elementAtOrNull(
-                                    FFAppState().UserDataFlow.userCartCount - 1)
-                                ?.quantity
-                            ..price = _model.membershipResult1?.price
-                            ..totalPrice = FFAppState()
-                                    .UserDataFlow
-                                    .userCartItemList
-                                    .elementAtOrNull(FFAppState()
-                                            .UserDataFlow
-                                            .userCartCount -
-                                        1)!
-                                    .quantity *
-                                _model.membershipResult1!.price,
-                        ),
-                    );
-                  }
-                }
-                FFAppState().updateUserDataFlowStruct(
-                  (e) => e
-                    ..userCartCount =
-                        FFAppState().UserDataFlow.userCartCount - 1,
-                );
-              }
-
-              FFAppState().updateUserDataFlowStruct(
-                (e) => e
-                  ..userCartCount = FFAppState().UserDataFlow.userCartCount - 1,
-              );
-            }
-
             await currentUserReference!.update(createUsersRecordData(
               userCart: createUserCartStruct(
                 updatedAt: getCurrentTimestamp,
-                subtotal: functions.newCartTotal(FFAppState()
-                    .UserDataFlow
-                    .userCartItemList
-                    .map((e) => e.totalPrice)
-                    .toList()
-                    .toList()),
-                total: functions.newCartTotal(FFAppState()
-                    .UserDataFlow
-                    .userCartItemList
-                    .map((e) => e.totalPrice)
-                    .toList()
-                    .toList()),
+                subtotal: functions
+                    .newCartTotal(items.map((e) => e.totalPrice).toList()),
+                total: functions
+                    .newCartTotal(items.map((e) => e.totalPrice).toList()),
                 fieldValues: {
-                  'cart_items': getUserCartItemsListFirestoreData(
-                    FFAppState().UserDataFlow.userCartItemList,
-                  ),
+                  'cart_items': getUserCartItemsListFirestoreData(items),
                 },
                 clearUnsetFields: false,
               ),

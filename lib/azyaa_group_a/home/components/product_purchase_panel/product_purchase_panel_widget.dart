@@ -22,7 +22,9 @@ class ProductPurchasePanelWidget extends StatelessWidget {
 
   final ProductsRecord product;
 
-  /// Quantity, Add to Bag and the other buttons, revealed once complete.
+  /// Quantity, Add to Bag and the other buttons. The page keeps the buy
+  /// controls out until every option is chosen; "Notify me" and the creator
+  /// buttons do not wait for options.
   final Widget actions;
 
   /// Collapsed to a bubble at the bottom end, so the page can be read unobstructed.
@@ -201,9 +203,7 @@ class ProductPurchasePanelWidget extends StatelessWidget {
             duration: const Duration(milliseconds: 250),
             curve: Curves.easeOut,
             alignment: Alignment.topCenter,
-            child: remaining == 0
-                ? actions
-                : const SizedBox(width: double.infinity, height: 8.0),
+            child: actions,
           ),
         ],
       ),

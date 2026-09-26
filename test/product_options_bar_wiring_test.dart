@@ -236,6 +236,17 @@ void main() {
       }
     });
 
+    test('the bag refresh loop does not index through shared state', () {
+      final status = _readCode(
+          'lib/azyaa_group_a/payment/cart_status/cart_status_widget.dart');
+      expect(
+        status,
+        isNot(contains('userCartCount - 1')),
+        reason: 'the refresh loop indexes the bag by a shared counter again; '
+            'another screen changing it mid-loop crashes with index -1',
+      );
+    });
+
     test('the rule is a pure function with its own home', () {
       final rule = _readCode(_variantRule);
 

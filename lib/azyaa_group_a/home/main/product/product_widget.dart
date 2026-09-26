@@ -3599,6 +3599,21 @@ class _ProductWidgetState extends State<ProductWidget> {
 
                                               final readymadeInventoryRecord =
                                                   snapshot.data!;
+                                              if (!productOptionsReady &&
+                                                  readymadeInventoryRecord.stock > 0 &&
+                                                  !(loggedIn &&
+                                                      valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.userRole,
+                                                              '') ==
+                                                          'Creator' &&
+                                                      stackProductsRecord
+                                                          .productAuthorizer
+                                                          .isAffiliateProduct)) {
+                                                return const SizedBox(
+                                                    width: double.infinity,
+                                                    height: 8.0);
+                                              }
 
                                               return Container(
                                                 height: valueOrDefault<double>(
@@ -4257,6 +4272,21 @@ class _ProductWidgetState extends State<ProductWidget> {
 
                                               final custommadeInventoryRecord =
                                                   snapshot.data!;
+                                              if (!productOptionsReady &&
+                                                  custommadeInventoryRecord.stock > 0 &&
+                                                  !(loggedIn &&
+                                                      valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.userRole,
+                                                              '') ==
+                                                          'Creator' &&
+                                                      stackProductsRecord
+                                                          .productAuthorizer
+                                                          .isAffiliateProduct)) {
+                                                return const SizedBox(
+                                                    width: double.infinity,
+                                                    height: 8.0);
+                                              }
 
                                               return Container(
                                                 height: valueOrDefault<double>(
