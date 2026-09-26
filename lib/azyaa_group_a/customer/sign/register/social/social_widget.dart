@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/home/components/blank_loading/blank_loading_widget.dart';
 import '/backend/backend.dart';
@@ -42,6 +44,80 @@ class _SocialWidgetState extends State<SocialWidget> {
     _model.maybeDispose();
 
     super.dispose();
+  }
+
+  static const _googleSignInTimeout = Duration(seconds: 45);
+
+  OverlayEntry _googleSigningInOverlay() {
+    return OverlayEntry(
+      builder: (overlayContext) {
+        final theme = FlutterFlowTheme.of(overlayContext);
+        final localizations = FFLocalizations.of(overlayContext);
+        return Stack(
+          children: [
+            const ModalBarrier(
+              dismissible: false,
+              color: Color(0x99000000),
+            ),
+            Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 320),
+                child: Material(
+                  color: theme.primaryBackground,
+                  borderRadius: BorderRadius.circular(16),
+                  child: Padding(
+                    padding: const EdgeInsets.all(24),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SizedBox(
+                          width: 28,
+                          height: 28,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2.5,
+                            color: theme.primary,
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        Text(
+                          localizations.getVariableText(
+                            enText: 'Signing in with Google',
+                            arText: 'جارٍ تسجيل الدخول بواسطة Google',
+                          ),
+                          textAlign: TextAlign.center,
+                          style: theme.bodyMedium.override(
+                            fontFamily: 'almarai',
+                            fontSize: 16,
+                            letterSpacing: 0,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          localizations.getVariableText(
+                            enText:
+                                'Please wait. Don’t tap anything else until this finishes.',
+                            arText:
+                                'يرجى الانتظار. لا تضغط على أي شيء آخر حتى ينتهي.',
+                          ),
+                          textAlign: TextAlign.center,
+                          style: theme.bodyMedium.override(
+                            fontFamily: 'almarai',
+                            color: theme.secondaryText,
+                            fontSize: 14,
+                            letterSpacing: 0,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -91,13 +167,65 @@ class _SocialWidgetState extends State<SocialWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        _model.googlestatus = 'show';
-                        GoRouter.of(context).prepareAuthEvent();
-                        final user =
-                            await authManager.signInWithGoogle(context);
-                        if (user == null) {
+                        if (_model.googlestatus == 'show') {
                           return;
                         }
+                        _model.googlestatus = 'show';
+                        safeSetState(() {});
+                        final overlay = _googleSigningInOverlay();
+                        try {
+                          Overlay.of(context, rootOverlay: true)
+                              .insert(overlay);
+                          GoRouter.of(context).prepareAuthEvent();
+                          final user = await () async {
+                            try {
+                              return await authManager
+                                  .signInWithGoogle(context)
+                                  .timeout(_googleSignInTimeout);
+                            } on TimeoutException {
+                              try {
+                                await authManager
+                                    .signOut()
+                                    .timeout(const Duration(seconds: 5));
+                              } catch (_) {}
+                              if (context.mounted) {
+                                ScaffoldMessenger.of(context)
+                                    .hideCurrentSnackBar();
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(FFLocalizations.of(context)
+                                        .getVariableText(
+                                      enText:
+                                          'Google sign-in took too long. Close the Google window if it is still open, then try again.',
+                                      arText:
+                                          'استغرق تسجيل الدخول بواسطة Google وقتاً طويلاً. أغلق نافذة Google إن كانت مفتوحة، ثم حاول مرة أخرى.',
+                                    )),
+                                  ),
+                                );
+                              }
+                              return null;
+                            } catch (_) {
+                              if (context.mounted) {
+                                ScaffoldMessenger.of(context)
+                                    .hideCurrentSnackBar();
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(FFLocalizations.of(context)
+                                        .getVariableText(
+                                      enText:
+                                          'Google sign-in could not be completed. Please try again.',
+                                      arText:
+                                          'تعذر إكمال تسجيل الدخول بواسطة Google. يرجى المحاولة مرة أخرى.',
+                                    )),
+                                  ),
+                                );
+                              }
+                              return null;
+                            }
+                          }();
+                          if (!context.mounted || user == null) {
+                            return;
+                          }
                         if (FFAppState().UserDataFlow.userWaiterStatus ==
                             true) {
                           if (FFAppState().UserDataFlow.userEmail !=
@@ -422,6 +550,15 @@ class _SocialWidgetState extends State<SocialWidget> {
                                 ),
                               },
                             );
+                          }
+                        }
+                        } finally {
+                          if (overlay.mounted) {
+                            overlay.remove();
+                          }
+                          if (mounted) {
+                            _model.googlestatus = 'hide';
+                            safeSetState(() {});
                           }
                         }
                       },
