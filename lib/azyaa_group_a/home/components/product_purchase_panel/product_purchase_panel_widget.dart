@@ -16,12 +16,18 @@ class ProductPurchasePanelWidget extends StatelessWidget {
     super.key,
     required this.product,
     required this.actions,
+    required this.minimized,
+    required this.onMinimizedChanged,
   });
 
   final ProductsRecord product;
 
   /// Quantity, Add to Bag and the other buttons, revealed once complete.
   final Widget actions;
+
+  /// Collapsed to a bubble at the bottom end, so the page can be read unobstructed.
+  final bool minimized;
+  final ValueChanged<bool> onMinimizedChanged;
 
   /// Options the shopper still has to pick for [product].
   static int remainingFor(ProductsRecord product, FFAppState appState) {
@@ -37,13 +43,90 @@ class ProductPurchasePanelWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = FlutterFlowTheme.of(context);
     final remaining = remainingFor(product, FFAppState());
     final hasChoices = AzyProductOptions.requiredOptionIds(
       product.productAttribute,
     ).isNotEmpty;
 
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 220),
+      transitionBuilder: (child, animation) => FadeTransition(
+        opacity: animation,
+        child: ScaleTransition(
+          scale: animation,
+          alignment: AlignmentDirectional.bottomEnd
+              .resolve(Directionality.of(context)),
+          child: child,
+        ),
+      ),
+      child: minimized
+          ? _bubble(context, remaining)
+          : _panel(context, remaining, hasChoices),
+    );
+  }
+
+  Widget _bubble(BuildContext context, int remaining) {
+    final theme = FlutterFlowTheme.of(context);
+    return Align(
+      key: const ValueKey('bubble'),
+      alignment: AlignmentDirectional.bottomEnd,
+      heightFactor: 1.0,
+      child: Padding(
+        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 16.0),
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            Material(
+              color: theme.primary,
+              shape: const CircleBorder(),
+              elevation: 6.0,
+              child: InkWell(
+                customBorder: const CircleBorder(),
+                onTap: () => onMinimizedChanged(false),
+                child: SizedBox(
+                  width: 56.0,
+                  height: 56.0,
+                  child: Icon(
+                    Icons.shopping_bag_outlined,
+                    color: theme.info,
+                    size: 26.0,
+                  ),
+                ),
+              ),
+            ),
+            if (remaining > 0)
+              PositionedDirectional(
+                top: -2.0,
+                end: -2.0,
+                child: Container(
+                  constraints:
+                      const BoxConstraints(minWidth: 20.0, minHeight: 20.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: theme.velvet,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: Text(
+                    '$remaining',
+                    style: theme.bodySmall.override(
+                      fontFamily: 'almarai',
+                      color: theme.info,
+                      letterSpacing: 0.0,
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _panel(BuildContext context, int remaining, bool hasChoices) {
+    final theme = FlutterFlowTheme.of(context);
     return Container(
+      key: const ValueKey('panel'),
       width: double.infinity,
       decoration: BoxDecoration(
         color: theme.primaryBackground,
@@ -59,14 +142,15 @@ class ProductPurchasePanelWidget extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (hasChoices)
-            Padding(
+          Padding(
               padding:
-                  const EdgeInsetsDirectional.fromSTEB(16.0, 14.0, 16.0, 8.0),
+                  const EdgeInsetsDirectional.fromSTEB(16.0, 6.0, 4.0, 0.0),
               child: Row(
                 children: [
                   Expanded(
-                    child: Text(
+                    child: !hasChoices
+                        ? const SizedBox.shrink()
+                        : Text(
                       FFLocalizations.of(context).getVariableText(
                         enText: 'Choose your options',
                         arText: 'اختر الخيارات',
@@ -78,7 +162,7 @@ class ProductPurchasePanelWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  if (remaining > 0)
+                  if (hasChoices && remaining > 0)
                     Text(
                       FFLocalizations.of(context).getVariableText(
                         enText: '$remaining left',
@@ -90,12 +174,24 @@ class ProductPurchasePanelWidget extends StatelessWidget {
                         letterSpacing: 0.0,
                       ),
                     )
-                  else
+                  else if (hasChoices)
                     Icon(
                       Icons.check_circle_rounded,
                       color: theme.velvet,
                       size: 18.0,
                     ),
+                  IconButton(
+                    tooltip: FFLocalizations.of(context).getVariableText(
+                      enText: 'Minimize',
+                      arText: 'تصغير',
+                    ),
+                    onPressed: () => onMinimizedChanged(true),
+                    icon: Icon(
+                      Icons.close_fullscreen_rounded,
+                      color: theme.secondaryText,
+                      size: 20.0,
+                    ),
+                  ),
                 ],
               ),
             ),

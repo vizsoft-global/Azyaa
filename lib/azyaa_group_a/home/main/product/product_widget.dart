@@ -57,6 +57,8 @@ class ProductWidget extends StatefulWidget {
 }
 
 class _ProductWidgetState extends State<ProductWidget> {
+  bool _purchasePanelMinimized = false;
+
   late ProductModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -3502,10 +3504,11 @@ class _ProductWidgetState extends State<ProductWidget> {
                           Positioned.fill(
                             child: IgnorePointer(
                               child: AnimatedOpacity(
-                                opacity: ProductPurchasePanelWidget.remainingFor(
-                                            stackProductsRecord,
-                                            FFAppState()) >
-                                        0
+                                opacity: !_purchasePanelMinimized &&
+                                        ProductPurchasePanelWidget.remainingFor(
+                                                stackProductsRecord,
+                                                FFAppState()) >
+                                            0
                                     ? 1.0
                                     : 0.0,
                                 duration: const Duration(milliseconds: 250),
@@ -3568,6 +3571,9 @@ class _ProductWidgetState extends State<ProductWidget> {
 
                                 return ProductPurchasePanelWidget(
                                   product: stackProductsRecord,
+                                  minimized: _purchasePanelMinimized,
+                                  onMinimizedChanged: (value) => safeSetState(
+                                      () => _purchasePanelMinimized = value),
                                   actions: Stack(
                                     children: [
                                       if (stackProductsRecord

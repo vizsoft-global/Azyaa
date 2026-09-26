@@ -55,6 +55,8 @@ class ProductCopyWidget extends StatefulWidget {
 }
 
 class _ProductCopyWidgetState extends State<ProductCopyWidget> {
+  bool _purchasePanelMinimized = false;
+
   late ProductCopyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -3458,10 +3460,11 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                           Positioned.fill(
                             child: IgnorePointer(
                               child: AnimatedOpacity(
-                                opacity: ProductPurchasePanelWidget.remainingFor(
-                                            stackProductsRecord,
-                                            FFAppState()) >
-                                        0
+                                opacity: !_purchasePanelMinimized &&
+                                        ProductPurchasePanelWidget.remainingFor(
+                                                stackProductsRecord,
+                                                FFAppState()) >
+                                            0
                                     ? 1.0
                                     : 0.0,
                                 duration: const Duration(milliseconds: 250),
@@ -3511,6 +3514,9 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
 
                                 return ProductPurchasePanelWidget(
                                   product: stackProductsRecord,
+                                  minimized: _purchasePanelMinimized,
+                                  onMinimizedChanged: (value) => safeSetState(
+                                      () => _purchasePanelMinimized = value),
                                   actions: Stack(
                                     children: [
                                       if (stackProductsRecord
