@@ -1038,7 +1038,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                                   .center,
                                           hasIcon: true,
                                           expandIcon: Icons.add,
-                                          collapseIcon: FontAwesomeIcons.minus,
+                                          collapseIcon: FontAwesomeIcons.minus.data,
                                           iconSize: 18.0,
                                           iconColor:
                                               FlutterFlowTheme.of(context)
@@ -1409,7 +1409,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                             hasIcon: true,
                                             expandIcon: Icons.add,
                                             collapseIcon:
-                                                FontAwesomeIcons.minus,
+                                                FontAwesomeIcons.minus.data,
                                             iconSize: 18.0,
                                             iconColor:
                                                 FlutterFlowTheme.of(context)
@@ -1826,7 +1826,7 @@ class _S2CreatorWalletWidgetState extends State<S2CreatorWalletWidget> {
                                             hasIcon: true,
                                             expandIcon: Icons.add,
                                             collapseIcon:
-                                                FontAwesomeIcons.minus,
+                                                FontAwesomeIcons.minus.data,
                                             iconSize: 18.0,
                                             iconColor:
                                                 FlutterFlowTheme.of(context)

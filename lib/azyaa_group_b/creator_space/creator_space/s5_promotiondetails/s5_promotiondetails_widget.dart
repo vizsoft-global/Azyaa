@@ -1288,7 +1288,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                           ExpandablePanelHeaderAlignment.center,
                                       hasIcon: true,
                                       expandIcon: Icons.add,
-                                      collapseIcon: FontAwesomeIcons.minus,
+                                      collapseIcon: FontAwesomeIcons.minus.data,
                                       iconSize: 18.0,
                                       iconColor:
                                           FlutterFlowTheme.of(context).primary,
