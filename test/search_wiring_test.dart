@@ -162,10 +162,8 @@ void main() {
       expect(
         code.contains('UsersRecord.search('),
         isFalse,
-        reason: 'The creators page filters the list it already has in memory '
-            'via _applyCreatorSearch + AzySearchIndex.',
+        reason: 'The creators hub is a posts feed and has no search box.',
       );
-      expect(code.contains('_applyCreatorSearch'), isTrue);
     });
 
     test('neither page debounces at 2 seconds', () {
@@ -232,7 +230,7 @@ void main() {
       // Two characters of a catalogue this size match too much to be a filter,
       // and the pages have to agree on that or one of them will show "no
       // results" for a query the other simply has not run yet.
-      for (final path in [_shopPage, _creatorsPage, _homeSearchPage]) {
+      for (final path in [_shopPage, _homeSearchPage]) {
         expect(
           _readCode(path).contains('AzyMatch.meetsMinimumLength'),
           isTrue,
