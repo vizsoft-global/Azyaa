@@ -38,6 +38,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
   late CheckoutModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  bool _showAllAddresses = false;
 
   @override
   void initState() {
@@ -58,39 +59,7 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
           ),
           singleRecord: true,
         ).then((s) => s.firstOrNull);
-        if (((currentUserDocument?.userShippingaddress.toList() ?? [])
-                    .where((e) => e.isDefault == true)
-                    .toList()
-                    .firstOrNull
-                    ?.shippingAddressInfo
-                    .country ==
-                'Kuwait') ||
-            ((currentUserDocument?.userShippingaddress.toList() ?? [])
-                    .where((e) => e.isDefault == true)
-                    .toList()
-                    .firstOrNull
-                    ?.shippingAddressInfo
-                    .country ==
-                'الكويت')) {
-          _model.shippingCharge = _model
-              .settingsDocResult1!.settingsLogisticsInfo.shippingChargeKuwait;
-        } else {
-          _model.orderCount = currentUserDocument?.userCart.cartItems.length;
-          while (_model.orderCount! > 0) {
-            _model.weight = _model.weight +
-                currentUserDocument!.userCart.cartItems
-                    .elementAtOrNull((_model.orderCount!) - 1)!
-                    .productStockInfo
-                    .weightGm;
-            _model.orderCount = _model.orderCount! + -1;
-          }
-          _model.shippingCharge = functions.shippingPriceforGCC(
-              _model.weight,
-              _model
-                  .settingsDocResult1!.settingsLogisticsInfo.shippingChargeGcc,
-              _model.settingsDocResult1!.settingsLogisticsInfo
-                  .shippingChargeGccExtra);
-        }
+        _applyShippingForSettings(_model.settingsDocResult1);
 
         safeSetState(() {});
       }
@@ -109,6 +78,32 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
     _model.couponFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+  }
+
+  void _applyShippingForSettings(SettingsRecord? settings) {
+    if (settings == null) {
+      return;
+    }
+    final country = (currentUserDocument?.userShippingaddress.toList() ?? [])
+        .where((e) => e.isDefault == true)
+        .toList()
+        .firstOrNull
+        ?.shippingAddressInfo
+        .country;
+    if (country == 'Kuwait' || country == 'الكويت') {
+      _model.shippingCharge =
+          settings.settingsLogisticsInfo.shippingChargeKuwait;
+      return;
+    }
+    final lines = currentUserDocument?.userCart.cartItems.toList() ?? [];
+    for (final line in lines) {
+      _model.weight = _model.weight + line.productStockInfo.weightGm;
+    }
+    _model.shippingCharge = functions.shippingPriceforGCC(
+      _model.weight,
+      settings.settingsLogisticsInfo.shippingChargeGcc,
+      settings.settingsLogisticsInfo.shippingChargeGccExtra,
+    );
   }
 
   @override
@@ -474,8 +469,30 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                       .toList() ??
                                                                   [])
                                                               .toList();
+                                                      final shownAddresses =
+                                                          _showAllAddresses ||
+                                                                  addressList1
+                                                                          .length <=
+                                                                      1
+                                                              ? addressList1
+                                                              : [
+                                                                  addressList1
+                                                                          .where((e) =>
+                                                                              e.isDefault ==
+                                                                              true)
+                                                                          .firstOrNull ??
+                                                                      addressList1
+                                                                          .first,
+                                                                ];
 
-                                                      return ListView.separated(
+                                                      return Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.min,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                      ListView.separated(
                                                         padding:
                                                             EdgeInsets.zero,
                                                         primary: false,
@@ -483,14 +500,15 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                         scrollDirection:
                                                             Axis.vertical,
                                                         itemCount:
-                                                            addressList1.length,
+                                                            shownAddresses
+                                                                .length,
                                                         separatorBuilder:
                                                             (_, __) => const SizedBox(
                                                                 height: 8.0),
                                                         itemBuilder: (context,
                                                             addressList1Index) {
                                                           final addressList1Item =
-                                                              addressList1[
+                                                              shownAddresses[
                                                                   addressList1Index];
                                                           return Padding(
                                                             padding:
@@ -669,23 +687,8 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                                             singleRecord:
                                                                                 true,
                                                                           ).then((s) => s.firstOrNull);
-                                                                          if (((currentUserDocument?.userShippingaddress.toList() ?? []).where((e) => e.isDefault == true).toList().firstOrNull?.shippingAddressInfo.country == 'Kuwait') ||
-                                                                              ((currentUserDocument?.userShippingaddress.toList() ?? []).where((e) => e.isDefault == true).toList().firstOrNull?.shippingAddressInfo.country == 'الكويت')) {
-                                                                            _model.shippingCharge =
-                                                                                _model.settingsDocResult2!.settingsLogisticsInfo.shippingChargeKuwait;
-                                                                          } else {
-                                                                            _model.orderCount =
-                                                                                currentUserDocument?.userCart.cartItems.length;
-                                                                            while (_model.orderCount! >
-                                                                                0) {
-                                                                              _model.weight = _model.weight + currentUserDocument!.userCart.cartItems.elementAtOrNull((_model.orderCount!) - 1)!.productStockInfo.weightGm;
-                                                                              _model.orderCount = _model.orderCount! + -1;
-                                                                            }
-                                                                            _model.shippingCharge = functions.shippingPriceforGCC(
-                                                                                _model.weight,
-                                                                                _model.settingsDocResult2!.settingsLogisticsInfo.shippingChargeGcc,
-                                                                                _model.settingsDocResult2!.settingsLogisticsInfo.shippingChargeGccExtra);
-                                                                          }
+                                                                          _applyShippingForSettings(
+                                                                              _model.settingsDocResult2);
 
                                                                           safeSetState(
                                                                               () {});
@@ -710,6 +713,51 @@ class _CheckoutWidgetState extends State<CheckoutWidget> {
                                                             ),
                                                           );
                                                         },
+                                                      ),
+                                                      if (!_showAllAddresses &&
+                                                          addressList1.length >
+                                                              1)
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              safeSetState(() =>
+                                                                  _showAllAddresses =
+                                                                      true),
+                                                          style: TextButton
+                                                              .styleFrom(
+                                                            padding:
+                                                                EdgeInsets.zero,
+                                                            minimumSize:
+                                                                const Size(
+                                                                    0, 32),
+                                                            tapTargetSize:
+                                                                MaterialTapTargetSize
+                                                                    .shrinkWrap,
+                                                          ),
+                                                          child: Text(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getVariableText(
+                                                              enText: 'Change',
+                                                              arText: 'تغيير',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodySmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'almarai',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                        ],
                                                       );
                                                     },
                                                   ),
