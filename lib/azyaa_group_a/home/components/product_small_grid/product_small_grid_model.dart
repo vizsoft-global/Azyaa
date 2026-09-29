@@ -1,0 +1,21 @@
+import '/azyaa_group_a/customer/zone/user_wishlist/user_wishlist_widget.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import 'product_small_grid_widget.dart' show ProductSmallGridWidget;
+import 'package:flutter/material.dart';
+
+class ProductSmallGridModel extends FlutterFlowModel<ProductSmallGridWidget> {
+  ///  State fields for stateful widgets in this component.
+
+  // Model for User-Wishlist component.
+  late UserWishlistModel userWishlistModel;
+
+  @override
+  void initState(BuildContext context) {
+    userWishlistModel = createModel(context, () => UserWishlistModel());
+  }
+
+  @override
+  void dispose() {
+    userWishlistModel.dispose();
+  }
+}

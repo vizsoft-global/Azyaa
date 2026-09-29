@@ -1,0 +1,158 @@
+// Export pages
+export '/azyaa_group_a/home/main/home/home_widget.dart' show HomeWidget;
+export '/azyaa_group_a/customer/onboard/highlights1/highlights1_widget.dart'
+    show Highlights1Widget;
+export '/azyaa_group_a/customer/onboard/entry/entry_widget.dart'
+    show EntryWidget;
+export '/azyaa_group_a/customer/sign/register/register/register_widget.dart'
+    show RegisterWidget;
+export '/azyaa_group_a/home/main/shop/shop_widget.dart' show ShopWidget;
+export '/azyaa_group_a/customer/steps/step1_personal/step1_personal_widget.dart'
+    show Step1PersonalWidget;
+export '/azyaa_group_a/home/main/product_list/product_list_widget.dart'
+    show ProductListWidget;
+export '/azyaa_group_a/customer/onboard/highlights2/highlights2_widget.dart'
+    show Highlights2Widget;
+export '/azyaa_group_a/customer/onboard/highlights3/highlights3_widget.dart'
+    show Highlights3Widget;
+export '/azyaa_group_a/customer/steps/step2_measurements/step2_measurements_widget.dart'
+    show Step2MeasurementsWidget;
+export '/azyaa_group_a/customer/steps/step3_preferred_style/step3_preferred_style_widget.dart'
+    show Step3PreferredStyleWidget;
+export '/azyaa_group_a/customer/steps/step4_referral_code/step4_referral_code_widget.dart'
+    show Step4ReferralCodeWidget;
+export '/azyaa_group_a/customer/sign/login/login/login_widget.dart'
+    show LoginWidget;
+export '/azyaa_group_b/designer/designers_list/designers_list_widget.dart'
+    show DesignersListWidget;
+export '/azyaa_group_b/designer/designer/designer_widget.dart'
+    show DesignerWidget;
+export '/ui/designer_consult/designer_consult/designer_consult_widget.dart'
+    show DesignerConsultWidget;
+export '/ui/designer_consult/designer_consult_details/designer_consult_details_widget.dart'
+    show DesignerConsultDetailsWidget;
+export '/ui/designer_consult/designer_booking_complete/designer_booking_complete_widget.dart'
+    show DesignerBookingCompleteWidget;
+export '/azyaa_group_b/creator/creators/creators_widget.dart'
+    show CreatorsWidget;
+export '/azyaa_group_b/creator/creators_individual/creators_individual_widget.dart'
+    show CreatorsIndividualWidget;
+export '/azyaa_group_a/customer/zone/profile/profile_widget.dart'
+    show ProfileWidget;
+export '/azyaa_group_a/customer/zone/profile_edit/profile_edit_widget.dart'
+    show ProfileEditWidget;
+export '/azyaa_group_a/customer/onboard/welcome/welcome_widget.dart'
+    show WelcomeWidget;
+export '/azyaa_group_a/customer/sign/register/register_verification/register_verification_widget.dart'
+    show RegisterVerificationWidget;
+export '/azyaa_group_a/home/main/product/product_widget.dart'
+    show ProductWidget;
+export '/ui/s1_gift_cards/s1_gift_cards_widget.dart' show S1GiftCardsWidget;
+export '/ui/gift_wallet_module/s2_createa_gift_cards/s2_createa_gift_cards_widget.dart'
+    show S2CreateaGiftCardsWidget;
+export '/ui/gift_wallet_module/s3_gift_cardcustomamount/s3_gift_cardcustomamount_widget.dart'
+    show S3GiftCardcustomamountWidget;
+export '/azyaa_group_a/customer/sign/phone/phone/phone_widget.dart'
+    show PhoneWidget;
+export '/azyaa_group_a/customer/sign/phone/phone_verification/phone_verification_widget.dart'
+    show PhoneVerificationWidget;
+export '/azyaa_group_a/payment/cart/cart_widget.dart' show CartWidget;
+export '/ui/gift_wallet_module/s4_redeem_gift_card/s4_redeem_gift_card_widget.dart'
+    show S4RedeemGiftCardWidget;
+export '/azyaa_group_a/customer/zone/wishlist/wishlist_widget.dart'
+    show WishlistWidget;
+export '/azyaa_group_a/payment/checkout/checkout_widget.dart'
+    show CheckoutWidget;
+export '/ui/loyalty_module/s1_rewards/s1_rewards_widget.dart'
+    show S1RewardsWidget;
+export '/azyaa_group_a/membership/membership/membership_widget.dart'
+    show MembershipWidget;
+export '/ui/loyalty_module/s2_coupon_details/s2_coupon_details_widget.dart'
+    show S2CouponDetailsWidget;
+export '/azyaa_group_a/payment/success/success_widget.dart' show SuccessWidget;
+export '/azyaa_group_a/membership/membership_plan/membership_plan_widget.dart'
+    show MembershipPlanWidget;
+export '/azyaa_group_b/designer/designer_form/designer_form_widget.dart'
+    show DesignerFormWidget;
+export '/azyaa_group_b/designer/designer_form/designer_portofolio/designer_portofolio_widget.dart'
+    show DesignerPortofolioWidget;
+export '/azyaa_group_b/designer/designer_form/designer_form_upload/designer_form_upload_widget.dart'
+    show DesignerFormUploadWidget;
+export '/azyaa_group_b/designer/designer_form/designer_form_success/designer_form_success_widget.dart'
+    show DesignerFormSuccessWidget;
+export '/azyaa_group_b/creator/creator_form/creator_form/creator_form_widget.dart'
+    show CreatorFormWidget;
+export '/azyaa_group_b/creator/creator_form/creator_form_upload/creator_form_upload_widget.dart'
+    show CreatorFormUploadWidget;
+export '/azyaa_group_b/creator/creator_form/creator_form_success/creator_form_success_widget.dart'
+    show CreatorFormSuccessWidget;
+export '/azyaa_group_a/customer/order/orders/orders_widget.dart'
+    show OrdersWidget;
+export '/azyaa_group_a/payment/payment/payment_widget.dart' show PaymentWidget;
+export '/azyaa_group_a/customer/order/orders_details/orders_details_widget.dart'
+    show OrdersDetailsWidget;
+export '/azyaa_group_a/payment/failed/failed_widget.dart' show FailedWidget;
+export '/azyaa_group_a/payment/verify/verify_widget.dart' show VerifyWidget;
+export '/ui/return/s4_choose_refund_method/s4_choose_refund_method_widget.dart'
+    show S4ChooseRefundMethodWidget;
+export '/azyaa_group_b/return/order_return_submit/order_return_submit_widget.dart'
+    show OrderReturnSubmitWidget;
+export '/azyaa_group_b/creator_space/creator_space/creator_space/creator_space_widget.dart'
+    show CreatorSpaceWidget;
+export '/azyaa_group_b/creator_space/creator_space/s2_creator_wallet/s2_creator_wallet_widget.dart'
+    show S2CreatorWalletWidget;
+export '/azyaa_group_b/creator_space/creator_space/s3_quick_stats/s3_quick_stats_widget.dart'
+    show S3QuickStatsWidget;
+export '/azyaa_group_b/creator_space/creator_space/promoted_products_listing/promoted_products_listing_widget.dart'
+    show PromotedProductsListingWidget;
+export '/azyaa_group_b/creator_space/creator_space/s5_promotiondetails/s5_promotiondetails_widget.dart'
+    show S5PromotiondetailsWidget;
+export '/ui/s6_pre_approved_create_promotion/s6_pre_approved_create_promotion_widget.dart'
+    show S6PreApprovedCreatePromotionWidget;
+export '/ui/s7_selected_dress/s7_selected_dress_widget.dart'
+    show S7SelectedDressWidget;
+export '/azyaa_group_b/creator_space/creator_space/create_promotion_custom/create_promotion_custom_widget.dart'
+    show CreatePromotionCustomWidget;
+export '/azyaa_group_b/creator_space/creator_space/creators_promotion_submitted_succesfully/creators_promotion_submitted_succesfully_widget.dart'
+    show CreatorsPromotionSubmittedSuccesfullyWidget;
+export '/ui/other/s1_f_a_q_contactus/s1_f_a_q_contactus_widget.dart'
+    show S1FAQContactusWidget;
+export '/azyaa_group_a/customer/sign/phone/forgot_password/forgot_password_widget.dart'
+    show ForgotPasswordWidget;
+export '/ui/s8_custom_uploads_create_promotionbc/s8_custom_uploads_create_promotionbc_widget.dart'
+    show S8CustomUploadsCreatePromotionbcWidget;
+export '/azyaa_group_b/creator/creators_individual_promo/creators_individual_promo_widget.dart'
+    show CreatorsIndividualPromoWidget;
+export '/azyaa_group_a/customer/zone/address/address_widget.dart'
+    show AddressWidget;
+export '/azyaa_group_a/customer/zone/measurement/measurement_widget.dart'
+    show MeasurementWidget;
+export '/azyaa_group_a/home/coming_soon/coming_soon/coming_soon_widget.dart'
+    show ComingSoonWidget;
+export '/azyaa_group_b/designer/stores_list/stores_list_widget.dart'
+    show StoresListWidget;
+export '/azyaa_group_a/customer/virtual_try_on/virtual_try_on/virtual_try_on_widget.dart'
+    show VirtualTryOnWidget;
+export '/azyaa_group_a/customer/virtual_try_on/virtual_try_on_slides/virtual_try_on_slides_widget.dart'
+    show VirtualTryOnSlidesWidget;
+export '/azyaa_group_a/customer/waitlist/waitlist_secret/waitlist_secret_widget.dart'
+    show WaitlistSecretWidget;
+export '/azyaa_group_a/customer/onboard/terms/terms_widget.dart'
+    show TermsWidget;
+export '/azyaa_group_a/customer/onboard/privacy_policy/privacy_policy_widget.dart'
+    show PrivacyPolicyWidget;
+export '/azyaa_group_a/customer/zone/shortlist/shortlist_widget.dart'
+    show ShortlistWidget;
+export '/azyaa_group_a/customer/waitlist/waitlist_form/waitlist_form_widget.dart'
+    show WaitlistFormWidget;
+export '/azyaa_group_a/customer/waitlist/waitlist_main/waitlist_main_widget.dart'
+    show WaitlistMainWidget;
+export '/azyaa_group_a/customer/waitlist/waitlist_success/waitlist_success_widget.dart'
+    show WaitlistSuccessWidget;
+export '/azyaa_group_b/return/order_return/order_return_widget.dart'
+    show OrderReturnWidget;
+export '/azyaa_group_a/payment/free_payment/free_payment_widget.dart'
+    show FreePaymentWidget;
+export '/azyaa_group_a/home/main/home_search/home_search_widget.dart'
+    show HomeSearchWidget;
+export '/product_copy/product_copy_widget.dart' show ProductCopyWidget;

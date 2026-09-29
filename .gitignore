@@ -1,0 +1,15 @@
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+build/
+pubspec.lock
+
+ios/Flutter/ephemeral/
+ios/Pods/
+*.iml
+
+# macOS / IDE noise
+.DS_Store
+.idea/
+.vscode/

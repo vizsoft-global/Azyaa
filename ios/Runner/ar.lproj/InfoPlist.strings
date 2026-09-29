@@ -1,0 +1,4 @@
+NSCameraUsageDescription = "للصورة الشخصية.";
+NSPhotoLibraryUsageDescription = "لطلب الصورة.";
+NSMicrophoneUsageDescription = "لكي يتمكن هذا التطبيق من تسجيل الصوت للفيديو، فإنه يحتاج إلى إذن للوصول إلى الميكروفون.";
+PermissionGroupNotification = "للحصول على تحديثات الطلب.";

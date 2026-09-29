@@ -1,0 +1,6 @@
+NSCameraUsageDescription = "to add profile photo.";
+NSPhotoLibraryUsageDescription = "to add photos from gallery.";
+NSMicrophoneUsageDescription = "In order to record audio for video.";
+NSLocationWhenInUseUsageDescription = "Your location is used to provide accurate delivery tracking, estimate arrival times, and help our couriers find your exact address for a seamless delivery experience.";
+PermissionGroupNotification = "to receive updates.";
+NSLocationAlwaysAndWhenInUseUsageDescription = "Your location is used to provide accurate delivery tracking, estimate arrival times, and help our couriers find your exact address for a seamless delivery experience.";
