@@ -845,7 +845,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                           ExpandablePanelHeaderAlignment.center,
                                       hasIcon: true,
                                       expandIcon: Icons.add,
-                                      collapseIcon: FontAwesomeIcons.minus,
+                                      collapseIcon: FontAwesomeIcons.minus.data,
                                       iconSize: 18.0,
                                       iconColor:
                                           FlutterFlowTheme.of(context).primary,

@@ -1079,7 +1079,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                                   .center,
                                           hasIcon: true,
                                           expandIcon: Icons.add,
-                                          collapseIcon: FontAwesomeIcons.minus,
+                                          collapseIcon: FontAwesomeIcons.minus.data,
                                           iconSize: 18.0,
                                           iconColor:
                                               FlutterFlowTheme.of(context)
@@ -1514,7 +1514,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                             hasIcon: true,
                                             expandIcon: Icons.add,
                                             collapseIcon:
-                                                FontAwesomeIcons.minus,
+                                                FontAwesomeIcons.minus.data,
                                             iconSize: 18.0,
                                             iconColor:
                                                 FlutterFlowTheme.of(context)
@@ -1945,7 +1945,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                             hasIcon: true,
                                             expandIcon: Icons.add,
                                             collapseIcon:
-                                                FontAwesomeIcons.minus,
+                                                FontAwesomeIcons.minus.data,
                                             iconSize: 18.0,
                                             iconColor:
                                                 FlutterFlowTheme.of(context)
