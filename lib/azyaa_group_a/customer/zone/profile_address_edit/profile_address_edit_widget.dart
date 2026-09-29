@@ -633,17 +633,26 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                       ),
                                     ),
                                   ),
-                                  Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: CachedNetworkImage(
-                                        imageUrl: functions.getCountryFlag(
-                                            _model.countryListValue)!,
-                                        width: 35.0,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
+                                  Builder(
+                                    builder: (context) {
+                                      final flagUrl = functions.getCountryFlag(
+                                          _model.countryListValue);
+                                      if (flagUrl == null) {
+                                        return const SizedBox.shrink();
+                                      }
+                                      return Align(
+                                        alignment: const AlignmentDirectional(
+                                            -1.0, 0.0),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: CachedNetworkImage(
+                                            imageUrl: flagUrl,
+                                            width: 35.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      );
+                                    },
                                   ),
                                 ],
                               ),
@@ -681,7 +690,8 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                                       padding: const EdgeInsets.all(12.0),
                                       child: Text(
                                         functions.getDailCode(
-                                            _model.countryListValue)!,
+                                                _model.countryListValue) ??
+                                            '',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -1348,12 +1358,20 @@ class _ProfileAddressEditWidgetState extends State<ProfileAddressEditWidget> {
                               child: FlutterFlowDropDown<String>(
                                 controller: _model.countryGCCValueController ??=
                                     FormFieldController<String>(
-                                  _model.countryGCCValue ??=
-                                      valueOrDefault<String>(
-                                    widget.shippingAddress?.shippingAddressInfo
-                                        .country,
-                                    'Kuwait',
-                                  ),
+                                  _model.countryGCCValue ??= () {
+                                    final stored = widget.shippingAddress
+                                        ?.shippingAddressInfo.country;
+                                    if (stored != null &&
+                                        functions
+                                            .getGCCCountrList()
+                                            .contains(stored)) {
+                                      return stored;
+                                    }
+                                    if (stored == null || stored.isEmpty) {
+                                      return 'Kuwait';
+                                    }
+                                    return null;
+                                  }(),
                                 ),
                                 options: List<String>.from(
                                     functions.getGCCCountrList()),
