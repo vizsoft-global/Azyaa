@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 
 import '/azyaa_group_a/home/components/product_grid/product_grid_widget.dart';
 import '/backend/backend.dart';
+import '/backend/catalog/product_frame.dart';
 import '/backend/search/search.dart';
 import '/azyaa_group_b/creator/creators_individual/creators_individual_widget.dart';
 import '/custom_code/widgets/azy_recent_searches.dart';
@@ -187,7 +188,7 @@ class AzySearchResultsView extends StatelessWidget {
               MediaQuery.sizeOf(context).width < kBreakpointMedium ? 2 : 4,
           crossAxisSpacing: 8.0,
           mainAxisSpacing: 24.0,
-          childAspectRatio: 0.58,
+          childAspectRatio: AzyProductFrame.cardAspectRatio,
         ),
         itemCount: hits.length,
         itemBuilder: (context, index) {

@@ -9,6 +9,7 @@ import '/azyaa_group_a/home/components/product_grid/product_grid_widget.dart';
 import '/azyaa_group_a/home/components/product_small_grid/product_small_grid_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
+import '/backend/catalog/product_frame.dart';
 import '/backend/inventory/stock_order.dart';
 import '/backend/inventory/stock_service.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -1865,7 +1866,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 mainAxisSpacing:
                                                                     24.0,
                                                                 childAspectRatio:
-                                                                    0.55,
+                                                                    AzyProductFrame.cardAspectRatio,
                                                               ),
                                                               primary: false,
                                                               shrinkWrap: true,

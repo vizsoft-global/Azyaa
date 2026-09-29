@@ -17,6 +17,7 @@ import '/azyaa_group_b/components/unfollow_confirm_popup/unfollow_confirm_popup_
 import '/azyaa_group_b/creator_space/creator_space/c1_share_promotion/c1_share_promotion_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
+import '/backend/catalog/product_frame.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -206,11 +207,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
-                                  height: (MediaQuery.sizeOf(context).width <
-                                              kBreakpointMedium
-                                          ? 450
-                                          : 650)
-                                      .toDouble(),
+                                  height: AzyProductFrame.galleryHeight(MediaQuery.sizeOf(context).width),
                                   child: Stack(
                                     children: [
                                       if (stackProductsRecord!
@@ -227,12 +224,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                             return Container(
                                               width: double.infinity,
                                               height:
-                                                  (MediaQuery.sizeOf(context)
-                                                                  .width <
-                                                              kBreakpointMedium
-                                                          ? 450
-                                                          : 650)
-                                                      .toDouble(),
+                                                  AzyProductFrame.galleryHeight(MediaQuery.sizeOf(context).width),
                                               child: CarouselSlider.builder(
                                                 itemCount: imageList.length,
                                                 itemBuilder: (context,
@@ -459,13 +451,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                 context)
                                                             .width *
                                                         1.0,
-                                                    height: (MediaQuery.sizeOf(
-                                                                        context)
-                                                                    .width <
-                                                                kBreakpointMedium
-                                                            ? 450
-                                                            : 650)
-                                                        .toDouble(),
+                                                    height: AzyProductFrame.galleryHeight(MediaQuery.sizeOf(context).width),
                                                     fit: BoxFit.cover,
                                                     alignment:
                                                         const Alignment(0.0, -1.0),
@@ -3212,7 +3198,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                             : 4,
                                                         crossAxisSpacing: 8.0,
                                                         mainAxisSpacing: 24.0,
-                                                        childAspectRatio: 0.6,
+                                                        childAspectRatio: AzyProductFrame.cardAspectRatio,
                                                       ),
                                                       primary: false,
                                                       shrinkWrap: true,

@@ -8,6 +8,7 @@ import '/azyaa_group_b/components/unfollow_confirm_popup/unfollow_confirm_popup_
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
+import '/backend/catalog/product_frame.dart';
 import '/backend/inventory/stock_service.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -986,7 +987,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                               : 4,
                                       crossAxisSpacing: 8.0,
                                       mainAxisSpacing: 24.0,
-                                      childAspectRatio: 0.6,
+                                      childAspectRatio: AzyProductFrame.cardAspectRatio,
                                     ),
                                     primary: false,
                                     shrinkWrap: true,

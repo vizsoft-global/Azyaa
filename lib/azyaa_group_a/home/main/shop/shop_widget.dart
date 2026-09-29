@@ -8,6 +8,7 @@ import '/azyaa_group_a/home/components/loading_animation/loading_animation_widge
 import '/azyaa_group_a/home/components/product_grid/product_grid_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
 import '/backend/backend.dart';
+import '/backend/catalog/product_frame.dart';
 import '/backend/inventory/stock_service.dart';
 import '/backend/search/search.dart';
 import '/custom_code/widgets/azy_recent_searches.dart';
@@ -1433,7 +1434,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                     mainAxisSpacing:
                                                                         24.0,
                                                                     childAspectRatio:
-                                                                        0.58,
+                                                                        AzyProductFrame.cardAspectRatio,
                                                                   ),
                                                                   primary:
                                                                       false,

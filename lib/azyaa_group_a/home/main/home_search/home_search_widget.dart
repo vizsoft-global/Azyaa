@@ -5,6 +5,7 @@ import '/azyaa_group_a/home/components/loading_animation/loading_animation_widge
 import '/azyaa_group_a/home/components/product_grid/product_grid_widget.dart';
 import '/azyaa_group_a/home/components/product_small_grid/product_small_grid_widget.dart';
 import '/backend/backend.dart';
+import '/backend/catalog/product_frame.dart';
 import '/backend/search/search.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -877,7 +878,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                                                         : 4,
                                                 crossAxisSpacing: 8.0,
                                                 mainAxisSpacing: 24.0,
-                                                childAspectRatio: 0.6,
+                                                childAspectRatio: AzyProductFrame.cardAspectRatio,
                                               ),
                                               primary: false,
                                               shrinkWrap: true,
