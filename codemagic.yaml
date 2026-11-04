@@ -1,26 +1,66 @@
 workflows:
-# ─────────────────────────────────────────────
-# ANDROID — TESTING (develop branch → debug APK)
-# ─────────────────────────────────────────────
- android-testing:
-    name: Android Test Build
+  ios-unsigned:
+    name: iOS - build without signing (works right away)
+    instance_type: mac_mini_m2
     max_build_duration: 60
-    triggering:
-      events: []             # manual only
     environment:
       flutter: stable
-      java: 17
+      xcode: latest
+      cocoapods: default
     scripts:
-      - name: Get Flutter packages
+      - name: Flutter version
+        script: flutter --version
+      - name: Get packages
         script: flutter pub get
-      - name: Build debug APK
-        script: flutter build apk --debug
+      - name: Build iOS (no code signing)
+        script: |
+          flutter build ios --release --no-codesign \
+            --build-name=1.8.2 \
+            --build-number=$BUILD_NUMBER
     artifacts:
-      - build/app/outputs/apk/debug/app-debug.apk
+      - build/ios/iphoneos/Runner.app
+      - flutter_drive.log
+
+  # ---------------------------------------------------------------------------
+  # Enable this workflow only after you have configured signing in Codemagic.
+  # Required before it can pass:
+  #   1. Codemagic > Teams > Integrations > App Store Connect
+  #      -> add your API key (.p8, Issuer ID, Key ID) and name it: azyaa_asc
+  #   2. A Bundle ID registered on your Apple Developer account: com.azya.app
+  #   3. A valid Development Team / certificate for that account
+  # ---------------------------------------------------------------------------
+  ios-signed:
+    name: iOS - signed IPA (needs App Store Connect key)
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    integrations:
+      app_store_connect: azyaa_asc
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.azya.app
+    scripts:
+      - name: Get packages
+        script: flutter pub get
+      - name: Install signing profiles
+        script: xcode-project use-profiles
+      - name: Build IPA
+        script: |
+          flutter build ipa --release \
+            --build-name=1.8.2 \
+            --build-number=$BUILD_NUMBER \
+            --export-options-plist=$HOME/build/ios_signing/export_options.plist
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - flutter_drive.log
     publishing:
       email:
         recipients:
-          - rohit@vizsoft.in
+          - your-email@example.com
         notify:
           success: true
           failure: true
