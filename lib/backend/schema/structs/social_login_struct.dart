@@ -11,10 +11,12 @@ class SocialLoginStruct extends FFFirebaseStruct {
     bool? googleLogin,
     bool? appleLogin,
     bool? facebookLogin,
+    bool? appleLoginAndroid,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _googleLogin = googleLogin,
         _appleLogin = appleLogin,
         _facebookLogin = facebookLogin,
+        _appleLoginAndroid = appleLoginAndroid,
         super(firestoreUtilData);
 
   // "google_login" field.
@@ -38,11 +40,21 @@ class SocialLoginStruct extends FFFirebaseStruct {
 
   bool hasFacebookLogin() => _facebookLogin != null;
 
+  // "apple_login_android" field. Shows the Apple button on Android phones.
+  // Kept separate from "apple_login" because Android needs an Apple Services
+  // ID and key set up in Firebase before it can work.
+  bool? _appleLoginAndroid;
+  bool get appleLoginAndroid => _appleLoginAndroid ?? false;
+  set appleLoginAndroid(bool? val) => _appleLoginAndroid = val;
+
+  bool hasAppleLoginAndroid() => _appleLoginAndroid != null;
+
   static SocialLoginStruct fromMap(Map<String, dynamic> data) =>
       SocialLoginStruct(
         googleLogin: data['google_login'] as bool?,
         appleLogin: data['apple_login'] as bool?,
         facebookLogin: data['facebook_login'] as bool?,
+        appleLoginAndroid: data['apple_login_android'] as bool?,
       );
 
   static SocialLoginStruct? maybeFromMap(dynamic data) => data is Map
@@ -53,6 +65,7 @@ class SocialLoginStruct extends FFFirebaseStruct {
         'google_login': _googleLogin,
         'apple_login': _appleLogin,
         'facebook_login': _facebookLogin,
+        'apple_login_android': _appleLoginAndroid,
       }.withoutNulls;
 
   @override
@@ -67,6 +80,10 @@ class SocialLoginStruct extends FFFirebaseStruct {
         ),
         'facebook_login': serializeParam(
           _facebookLogin,
+          ParamType.bool,
+        ),
+        'apple_login_android': serializeParam(
+          _appleLoginAndroid,
           ParamType.bool,
         ),
       }.withoutNulls;
@@ -85,6 +102,11 @@ class SocialLoginStruct extends FFFirebaseStruct {
         ),
         facebookLogin: deserializeParam(
           data['facebook_login'],
+          ParamType.bool,
+          false,
+        ),
+        appleLoginAndroid: deserializeParam(
+          data['apple_login_android'],
           ParamType.bool,
           false,
         ),
@@ -107,6 +129,11 @@ class SocialLoginStruct extends FFFirebaseStruct {
           ParamType.bool,
           false,
         ),
+        appleLoginAndroid: convertAlgoliaParam(
+          data['apple_login_android'],
+          ParamType.bool,
+          false,
+        ),
         firestoreUtilData: const FirestoreUtilData(
           clearUnsetFields: false,
           create: true,
@@ -121,18 +148,21 @@ class SocialLoginStruct extends FFFirebaseStruct {
     return other is SocialLoginStruct &&
         googleLogin == other.googleLogin &&
         appleLogin == other.appleLogin &&
-        facebookLogin == other.facebookLogin;
+        facebookLogin == other.facebookLogin &&
+        appleLoginAndroid == other.appleLoginAndroid;
   }
 
   @override
   int get hashCode =>
-      const ListEquality().hash([googleLogin, appleLogin, facebookLogin]);
+      const ListEquality().hash(
+          [googleLogin, appleLogin, facebookLogin, appleLoginAndroid]);
 }
 
 SocialLoginStruct createSocialLoginStruct({
   bool? googleLogin,
   bool? appleLogin,
   bool? facebookLogin,
+  bool? appleLoginAndroid,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -142,6 +172,7 @@ SocialLoginStruct createSocialLoginStruct({
       googleLogin: googleLogin,
       appleLogin: appleLogin,
       facebookLogin: facebookLogin,
+      appleLoginAndroid: appleLoginAndroid,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,

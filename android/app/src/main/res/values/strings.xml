@@ -2,4 +2,11 @@
 <resources>
     <string name="app_name">Azyaa</string>
 
+    <!-- Facebook sign-in. TEMPORARY values: replace all three with the real
+         Meta app ID and client token before turning Facebook sign-in on.
+         See lib/auth/firebase_auth/facebook_auth.dart for the full steps. -->
+    <string name="facebook_app_id">000000000000000</string>
+    <string name="fb_login_protocol_scheme">fb000000000000000</string>
+    <string name="facebook_client_token">00000000000000000000000000000000</string>
+
 </resources>

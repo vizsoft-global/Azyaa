@@ -125,6 +125,8 @@ export '/azyaa_group_b/creator/creators_individual_promo/creators_individual_pro
     show CreatorsIndividualPromoWidget;
 export '/azyaa_group_a/customer/zone/address/address_widget.dart'
     show AddressWidget;
+export '/azyaa_group_a/customer/zone/refer_friend/refer_friend_widget.dart'
+    show ReferFriendWidget;
 export '/azyaa_group_a/customer/zone/measurement/measurement_widget.dart'
     show MeasurementWidget;
 export '/azyaa_group_a/home/coming_soon/coming_soon/coming_soon_widget.dart'

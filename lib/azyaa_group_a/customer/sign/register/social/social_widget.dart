@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import '/auth/firebase_auth/auth_util.dart';
+import '/auth/firebase_auth/facebook_auth.dart'
+    show kFacebookSignInAvailable;
 import '/azyaa_group_a/home/components/blank_loading/blank_loading_widget.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -622,9 +624,13 @@ class _SocialWidgetState extends State<SocialWidget> {
                     ),
                   ),
                 ),
-              if ((isiOS == true) &&
-                  (socialSettingsRecord?.settingsSocialLogin.appleLogin ==
-                      true))
+              if (((isiOS == true) &&
+                      (socialSettingsRecord?.settingsSocialLogin.appleLogin ==
+                          true)) ||
+                  ((isAndroid == true) &&
+                      (socialSettingsRecord
+                              ?.settingsSocialLogin.appleLoginAndroid ==
+                          true)))
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
@@ -1010,8 +1016,9 @@ class _SocialWidgetState extends State<SocialWidget> {
                     ),
                   ),
                 ),
-              if (socialSettingsRecord?.settingsSocialLogin.facebookLogin ==
-                  true)
+              if (kFacebookSignInAvailable &&
+                  (socialSettingsRecord?.settingsSocialLogin.facebookLogin ==
+                      true))
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
@@ -1023,7 +1030,8 @@ class _SocialWidgetState extends State<SocialWidget> {
                       onTap: () async {
                         _model.applestatus = 'show';
                         GoRouter.of(context).prepareAuthEvent();
-                        final user = await authManager.signInWithApple(context);
+                        final user =
+                            await authManager.signInWithFacebook(context);
                         if (user == null) {
                           return;
                         }

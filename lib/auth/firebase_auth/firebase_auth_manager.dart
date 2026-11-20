@@ -10,6 +10,7 @@ import '/backend/backend.dart';
 import 'anonymous_auth.dart';
 import 'apple_auth.dart';
 import 'email_auth.dart';
+import 'facebook_auth.dart';
 import 'firebase_user_provider.dart';
 import 'google_auth.dart';
 import 'jwt_token_auth.dart';
@@ -45,6 +46,7 @@ class FirebaseAuthManager extends AuthManager
         EmailSignInManager,
         GoogleSignInManager,
         AppleSignInManager,
+        FacebookSignInManager,
         AnonymousSignInManager,
         JwtSignInManager,
         GithubSignInManager,
@@ -190,6 +192,10 @@ class FirebaseAuthManager extends AuthManager
   @override
   Future<BaseAuthUser?> signInWithApple(BuildContext context) =>
       _signInOrCreateAccount(context, appleSignIn, 'APPLE');
+
+  @override
+  Future<BaseAuthUser?> signInWithFacebook(BuildContext context) =>
+      _signInOrCreateAccount(context, facebookSignIn, 'FACEBOOK');
 
   @override
   Future<BaseAuthUser?> signInWithGoogle(BuildContext context) =>
