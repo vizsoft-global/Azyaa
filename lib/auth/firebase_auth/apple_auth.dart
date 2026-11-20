@@ -32,6 +32,15 @@ Future<UserCredential> appleSignIn() async {
     // Sign in the user with Firebase.
     return await FirebaseAuth.instance.signInWithPopup(provider);
   }
+  if (defaultTargetPlatform == TargetPlatform.android) {
+    // Android has no built-in Apple sheet, so Firebase opens Apple's sign-in
+    // page in a browser tab and hands the result back to the app. This needs
+    // the Apple provider in Firebase to have a Services ID and key.
+    final provider = AppleAuthProvider()
+      ..addScope('email')
+      ..addScope('name');
+    return await FirebaseAuth.instance.signInWithProvider(provider);
+  }
   // To prevent replay attacks with the credential returned from Apple, we
   // include a nonce in the credential request. When signing in in with
   // Firebase, the nonce in the id token returned by Apple, is expected to

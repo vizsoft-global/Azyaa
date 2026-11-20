@@ -274,11 +274,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                                 .text ==
                                             '') {
                                           _model.referralStatys =
-                                              FFLocalizations.of(context)
-                                                  .getVariableText(
-                                            enText: 'notYet',
-                                            arText: 'ليس بعد',
-                                          );
+                                              'notYet';
                                           _model.referredUserRef = null;
                                           safeSetState(() {});
                                         } else {
@@ -303,21 +299,13 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                                   null) ==
                                               true) {
                                             _model.referralStatys =
-                                                FFLocalizations.of(context)
-                                                    .getVariableText(
-                                              enText: 'Referred',
-                                              arText: 'مشار إليه',
-                                            );
+                                                'Referred';
                                             _model.referredUserRef =
                                                 _model.referredUserRef;
                                             safeSetState(() {});
                                           } else {
                                             _model.referralStatys =
-                                                FFLocalizations.of(context)
-                                                    .getVariableText(
-                                              enText: 'notYet',
-                                              arText: 'ليس بعد',
-                                            );
+                                                'notYet';
                                             _model.referredUserRef = null;
                                             safeSetState(() {});
                                           }
@@ -409,10 +397,7 @@ class _Step4ReferralCodeWidgetState extends State<Step4ReferralCodeWidget> {
                                 ),
                               ),
                               if (_model.referralStatys !=
-                                  FFLocalizations.of(context).getVariableText(
-                                    enText: 'notYet',
-                                    arText: 'ليس بعد',
-                                  ))
+                                  'notYet')
                                 Align(
                                   alignment: const AlignmentDirectional(0.0, -1.0),
                                   child: Padding(

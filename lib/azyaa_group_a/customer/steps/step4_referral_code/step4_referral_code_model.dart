@@ -4,6 +4,9 @@ import '/index.dart';
 import 'step4_referral_code_widget.dart' show Step4ReferralCodeWidget;
 import 'package:flutter/material.dart';
 
+/// Reward points the referrer earns when a friend joins with their code.
+const int kReferralRewardPoints = 30;
+
 class Step4ReferralCodeModel extends FlutterFlowModel<Step4ReferralCodeWidget> {
   ///  Local state fields for this page.
 
@@ -11,7 +14,7 @@ class Step4ReferralCodeModel extends FlutterFlowModel<Step4ReferralCodeWidget> {
 
   UsersRecord? referredUserRef;
 
-  int? referralPoints = 30;
+  int? referralPoints = kReferralRewardPoints;
 
   ///  State fields for stateful widgets in this page.
 
