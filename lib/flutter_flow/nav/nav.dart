@@ -549,6 +549,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
         builder: (context, params) => const AddressWidget(),
       ),
       FFRoute(
+        name: DesignerApplicationStatusWidget.routeName,
+        path: DesignerApplicationStatusWidget.routePath,
+        requireAuth: true,
+        builder: (context, params) => const DesignerApplicationStatusWidget(),
+      ),
+      FFRoute(
         name: ReferFriendWidget.routeName,
         path: ReferFriendWidget.routePath,
         requireAuth: true,

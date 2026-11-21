@@ -1,3 +1,4 @@
+import '/backend/designer/designer_application.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/coming_soon/coming_soon_comp/coming_soon_comp_widget.dart';
@@ -1559,6 +1560,133 @@ Creator */
                                     endIndent: 16.0,
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
+                                  ),
+                                  // Designer application status. Shown exactly when the
+                                  // "Become a designer" tile above is hidden because an
+                                  // application is waiting or was declined.
+                                  AuthUserStreamWidget(
+                                    builder: (context) {
+                                      final application =
+                                          DesignerApplication.fromRequests(
+                                        currentUserDocument
+                                            ?.snapshotData['designer_requests'],
+                                      );
+                                      if (!application.showsStatus) {
+                                        return const SizedBox.shrink();
+                                      }
+                                      final declined = application.state ==
+                                          DesignerApplicationState.rejected;
+                                      return Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor: Colors.transparent,
+                                              onTap: () async {
+                                                context.pushNamed(
+                                                  DesignerApplicationStatusWidget
+                                                      .routeName,
+                                                  extra: <String, dynamic>{
+                                                    '__transition_info__':
+                                                        const TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType.fade,
+                                                      duration: Duration(
+                                                          milliseconds: 0),
+                                                    ),
+                                                  },
+                                                );
+                                              },
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Expanded(
+                                                    child: Text(
+                                                      FFLocalizations.of(context)
+                                                          .getVariableText(
+                                                        enText:
+                                                            'Designer application',
+                                                        arText: 'طلب المصمم',
+                                                      ),
+                                                      style: FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLarge
+                                                          .override(
+                                                            fontFamily: 'almarai',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                            fontSize: 14.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.normal,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    declined
+                                                        ? FFLocalizations.of(
+                                                                context)
+                                                            .getVariableText(
+                                                            enText:
+                                                                'Not approved',
+                                                            arText:
+                                                                'لم تتم الموافقة',
+                                                          )
+                                                        : FFLocalizations.of(
+                                                                context)
+                                                            .getVariableText(
+                                                            enText:
+                                                                'Under review',
+                                                            arText:
+                                                                'قيد المراجعة',
+                                                          ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'almarai',
+                                                          color: declined
+                                                              ? FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .error
+                                                              : FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryText,
+                                                          fontSize: 12.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                                  ),
+                                                  Icon(
+                                                    Icons.chevron_right,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    size: 24.0,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          Divider(
+                                            height: 24.0,
+                                            thickness: 1.0,
+                                            indent: 16.0,
+                                            endIndent: 16.0,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
+                                        ],
+                                      );
+                                    },
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
