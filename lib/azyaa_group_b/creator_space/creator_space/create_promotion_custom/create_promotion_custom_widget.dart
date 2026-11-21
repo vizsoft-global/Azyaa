@@ -1,3 +1,4 @@
+import '/backend/links/azy_links.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_b/creator_space/creator_space/components/creatorproduct_img/creatorproduct_img_widget.dart';
 import '/azyaa_group_b/creator_space/creator_space/components/selected_dress_component/selected_dress_component_widget.dart';
@@ -1127,14 +1128,7 @@ class _CreatePromotionCustomWidgetState
                                 verticalDirection: VerticalDirection.down,
                                 clipBehavior: Clip.none,
                                 children: [
-                                  if (responsiveVisibility(
-                                    context: context,
-                                    phone: false,
-                                    tablet: false,
-                                    tabletLandscape: false,
-                                    desktop: false,
-                                  ))
-                                    Align(
+                                  Align(
                                       alignment:
                                           const AlignmentDirectional(-1.0, -1.0),
                                       child: FFButtonWidget(
@@ -1223,10 +1217,19 @@ class _CreatePromotionCustomWidgetState
                                             );
                                           }
                                         },
-                                        text:
-                                            FFLocalizations.of(context).getText(
-                                          'ut35fmj8' /* Add Videos */,
-                                        ),
+                                        text: _model.isDataUploading_uploadData5by2
+              ? FFLocalizations.of(context).getVariableText(
+                  enText: 'Uploading video…',
+                  arText: 'جارٍ رفع الفيديو…',
+                )
+              : _model.uploadedFileUrl_uploadData5by2 != ''
+                  ? FFLocalizations.of(context).getVariableText(
+                      enText: 'Video added. Tap to replace',
+                      arText: 'تمت إضافة الفيديو. اضغط للاستبدال',
+                    )
+                  : FFLocalizations.of(context).getText(
+                      'ut35fmj8' /* Add Videos */,
+                    ),
                                         icon: const Icon(
                                           Icons.add,
                                           size: 14.0,
@@ -1752,6 +1755,10 @@ class _CreatePromotionCustomWidgetState
                                                 promotionStatus: 'pending',
                                                 promotionId:
                                                     'PROMOC${_model.idmapresult1?.promotionId.toString()}',
+                                                promotionUrl: AzyLinks.promoOrNull(
+                                                  currentUserUid,
+                                                  'PROMOC${_model.idmapresult1?.promotionId.toString()}',
+                                                ),
                                                 promotionType: 'custom',
                                                 promotionCaption: _model
                                                     .nameYourpromotionTextController

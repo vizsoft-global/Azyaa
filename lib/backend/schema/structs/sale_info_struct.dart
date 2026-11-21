@@ -10,6 +10,7 @@ class SaleInfoStruct extends FFFirebaseStruct {
   SaleInfoStruct({
     DateTime? saleDate,
     double? saleAmount,
+    double? saleCommission,
     int? saleQuantity,
     String? saleProductId,
     DocumentReference? saleProductRef,
@@ -21,6 +22,7 @@ class SaleInfoStruct extends FFFirebaseStruct {
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _saleDate = saleDate,
         _saleAmount = saleAmount,
+        _saleCommission = saleCommission,
         _saleQuantity = saleQuantity,
         _saleProductId = saleProductId,
         _saleProductRef = saleProductRef,
@@ -39,13 +41,19 @@ class SaleInfoStruct extends FFFirebaseStruct {
   bool hasSaleDate() => _saleDate != null;
 
   // "sale_amount" field.
+  // "sale_commission" field.
   double? _saleAmount;
+  double? _saleCommission;
   double get saleAmount => _saleAmount ?? 0.0;
+  double get saleCommission => _saleCommission ?? 0.0;
   set saleAmount(double? val) => _saleAmount = val;
+  set saleCommission(double? val) => _saleCommission = val;
 
   void incrementSaleAmount(double amount) => saleAmount = saleAmount + amount;
+  void incrementSaleCommission(double amount) => saleCommission = saleCommission + amount;
 
   bool hasSaleAmount() => _saleAmount != null;
+  bool hasSaleCommission() => _saleCommission != null;
 
   // "sale_quantity" field.
   int? _saleQuantity;
@@ -109,6 +117,7 @@ class SaleInfoStruct extends FFFirebaseStruct {
   static SaleInfoStruct fromMap(Map<String, dynamic> data) => SaleInfoStruct(
         saleDate: data['sale_date'] as DateTime?,
         saleAmount: castToType<double>(data['sale_amount']),
+        saleCommission: castToType<double>(data['sale_commission']),
         saleQuantity: castToType<int>(data['sale_quantity']),
         saleProductId: data['sale_product_id'] as String?,
         saleProductRef: data['sale_product_ref'] as DocumentReference?,
@@ -125,6 +134,7 @@ class SaleInfoStruct extends FFFirebaseStruct {
   Map<String, dynamic> toMap() => {
         'sale_date': _saleDate,
         'sale_amount': _saleAmount,
+        'sale_commission': _saleCommission,
         'sale_quantity': _saleQuantity,
         'sale_product_id': _saleProductId,
         'sale_product_ref': _saleProductRef,
@@ -143,6 +153,10 @@ class SaleInfoStruct extends FFFirebaseStruct {
         ),
         'sale_amount': serializeParam(
           _saleAmount,
+          ParamType.double,
+        ),
+        'sale_commission': serializeParam(
+          _saleCommission,
           ParamType.double,
         ),
         'sale_quantity': serializeParam(
@@ -188,6 +202,11 @@ class SaleInfoStruct extends FFFirebaseStruct {
         ),
         saleAmount: deserializeParam(
           data['sale_amount'],
+          ParamType.double,
+          false,
+        ),
+        saleCommission: deserializeParam(
+          data['sale_commission'],
           ParamType.double,
           false,
         ),
@@ -246,6 +265,11 @@ class SaleInfoStruct extends FFFirebaseStruct {
           ParamType.double,
           false,
         ),
+        saleCommission: convertAlgoliaParam(
+          data['sale_commission'],
+          ParamType.double,
+          false,
+        ),
         saleQuantity: convertAlgoliaParam(
           data['sale_quantity'],
           ParamType.int,
@@ -300,6 +324,7 @@ class SaleInfoStruct extends FFFirebaseStruct {
     return other is SaleInfoStruct &&
         saleDate == other.saleDate &&
         saleAmount == other.saleAmount &&
+        saleCommission == other.saleCommission &&
         saleQuantity == other.saleQuantity &&
         saleProductId == other.saleProductId &&
         saleProductRef == other.saleProductRef &&
@@ -314,6 +339,7 @@ class SaleInfoStruct extends FFFirebaseStruct {
   int get hashCode => const ListEquality().hash([
         saleDate,
         saleAmount,
+        saleCommission,
         saleQuantity,
         saleProductId,
         saleProductRef,
@@ -328,6 +354,7 @@ class SaleInfoStruct extends FFFirebaseStruct {
 SaleInfoStruct createSaleInfoStruct({
   DateTime? saleDate,
   double? saleAmount,
+  double? saleCommission,
   int? saleQuantity,
   String? saleProductId,
   DocumentReference? saleProductRef,
@@ -344,6 +371,7 @@ SaleInfoStruct createSaleInfoStruct({
     SaleInfoStruct(
       saleDate: saleDate,
       saleAmount: saleAmount,
+      saleCommission: saleCommission,
       saleQuantity: saleQuantity,
       saleProductId: saleProductId,
       saleProductRef: saleProductRef,

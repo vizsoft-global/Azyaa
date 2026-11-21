@@ -1,3 +1,4 @@
+import '/backend/links/azy_links.dart';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -670,6 +671,52 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) {
         path: HomeSearchWidget.routePath,
         requireAuth: true,
         builder: (context, params) => const HomeSearchWidget(),
+      ),
+      // Share links (see AzyLinks). Each opens the same screen as the older
+      // route beside it, with the ids taken from the link's path.
+      FFRoute(
+        name: 'LinkProduct',
+        path: AzyLinks.productPath,
+        builder: (context, params) => ProductCopyWidget(
+          productID: params.getParam(
+            'productID',
+            ParamType.String,
+          ),
+        ),
+      ),
+      FFRoute(
+        name: 'LinkCreator',
+        path: AzyLinks.creatorPath,
+        builder: (context, params) => CreatorsIndividualWidget(
+          creatorUid: params.getParam(
+            'creatorUid',
+            ParamType.String,
+          ),
+        ),
+      ),
+      FFRoute(
+        name: 'LinkDesigner',
+        path: AzyLinks.designerPath,
+        builder: (context, params) => DesignerWidget(
+          designerUid: params.getParam(
+            'designerUid',
+            ParamType.String,
+          ),
+        ),
+      ),
+      FFRoute(
+        name: 'LinkPromo',
+        path: AzyLinks.promoPath,
+        builder: (context, params) => CreatorsIndividualPromoWidget(
+          promo: params.getParam(
+            'promo',
+            ParamType.String,
+          ),
+          creatorUid: params.getParam(
+            'creatorUid',
+            ParamType.String,
+          ),
+        ),
       ),
       FFRoute(
         name: ProductCopyWidget.routeName,

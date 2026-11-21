@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["85BP76L773.com.azya.app"],
+        "components": [
+          { "/": "/p/*", "comment": "Product" },
+          { "/": "/creator/*", "comment": "Creator page" },
+          { "/": "/designer/*", "comment": "Designer page" },
+          { "/": "/promo/*", "comment": "Creator promotion" }
+        ]
+      }
+    ]
+  }
+}

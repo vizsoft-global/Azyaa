@@ -1,3 +1,4 @@
+import '/backend/links/azy_links.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -50,6 +51,16 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
 
     super.dispose();
   }
+
+  /// The promotion's share link, rebuilt from its id. Promotions saved before
+  /// the link fix carry a stored URL that leads nowhere, so the stored one is
+  /// only a fallback.
+  String get _azyPromotionLink =>
+      AzyLinks.promoOrNull(
+        currentUserUid,
+        widget.promotionInfo?.promotionId,
+      ) ??
+      (widget.promotionInfo?.promotionUrl ?? '');
 
   @override
   Widget build(BuildContext context) {
@@ -529,7 +540,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     6.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  widget.promotionInfo!.promotionUrl,
+                                  _azyPromotionLink,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -541,8 +552,7 @@ class _S5PromotiondetailsWidgetState extends State<S5PromotiondetailsWidget> {
                             ),
                             FFButtonWidget(
                               onPressed: () async {
-                                await Clipboard.setData(ClipboardData(
-                                    text: widget.promotionInfo!.promotionUrl));
+                                await Clipboard.setData(ClipboardData(text: _azyPromotionLink));
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                     content: Text(
