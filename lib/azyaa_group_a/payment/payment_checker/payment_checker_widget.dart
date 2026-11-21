@@ -1,3 +1,4 @@
+import '/backend/creator/creator_sales.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
@@ -494,6 +495,11 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                     getSaleInfoFirestoreData(
                                       createSaleInfoStruct(
                                         saleDate: getCurrentTimestamp,
+                                        saleAmount: azySaleAmount(
+                                          totalPrice: _azySaleLine?.totalPrice,
+                                          price: _azySaleLine?.price,
+                                          quantity: _azySaleLine?.quantity,
+                                        ),
                                         saleQuantity: FFAppState()
                                             .PaymentFlow
                                             .paymentCart
@@ -593,6 +599,19 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                       getSaleInfoFirestoreData(
                                         createSaleInfoStruct(
                                           saleDate: getCurrentTimestamp,
+                                          saleAmount: azySaleAmount(
+                                            totalPrice: _azySaleLine?.totalPrice,
+                                            price: _azySaleLine?.price,
+                                            quantity: _azySaleLine?.quantity,
+                                          ),
+                                          saleCommission: azyCreatorCommission(
+                                            azySaleAmount(
+                                              totalPrice: _azySaleLine?.totalPrice,
+                                              price: _azySaleLine?.price,
+                                              quantity: _azySaleLine?.quantity,
+                                            ),
+                                            _azySaleLine?.promotionCommisionRate,
+                                          ),
                                           saleQuantity: FFAppState()
                                               .PaymentFlow
                                               .paymentCart
@@ -1413,6 +1432,11 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                       getSaleInfoFirestoreData(
                                         createSaleInfoStruct(
                                           saleDate: getCurrentTimestamp,
+                                          saleAmount: azySaleAmount(
+                                            totalPrice: _azySaleLine?.totalPrice,
+                                            price: _azySaleLine?.price,
+                                            quantity: _azySaleLine?.quantity,
+                                          ),
                                           saleQuantity: FFAppState()
                                               .PaymentFlow
                                               .paymentCart
@@ -1512,6 +1536,19 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                         getSaleInfoFirestoreData(
                                           createSaleInfoStruct(
                                             saleDate: getCurrentTimestamp,
+                                            saleAmount: azySaleAmount(
+                                              totalPrice: _azySaleLine?.totalPrice,
+                                              price: _azySaleLine?.price,
+                                              quantity: _azySaleLine?.quantity,
+                                            ),
+                                            saleCommission: azyCreatorCommission(
+                                              azySaleAmount(
+                                                totalPrice: _azySaleLine?.totalPrice,
+                                                price: _azySaleLine?.price,
+                                                quantity: _azySaleLine?.quantity,
+                                              ),
+                                              _azySaleLine?.promotionCommisionRate,
+                                            ),
                                             saleQuantity: FFAppState()
                                                 .PaymentFlow
                                                 .paymentCart
@@ -2344,6 +2381,11 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                       getSaleInfoFirestoreData(
                                         createSaleInfoStruct(
                                           saleDate: getCurrentTimestamp,
+                                          saleAmount: azySaleAmount(
+                                            totalPrice: _azySaleLine?.totalPrice,
+                                            price: _azySaleLine?.price,
+                                            quantity: _azySaleLine?.quantity,
+                                          ),
                                           saleQuantity: FFAppState()
                                               .PaymentFlow
                                               .paymentCart
@@ -2444,6 +2486,19 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
                                         getSaleInfoFirestoreData(
                                           createSaleInfoStruct(
                                             saleDate: getCurrentTimestamp,
+                                            saleAmount: azySaleAmount(
+                                              totalPrice: _azySaleLine?.totalPrice,
+                                              price: _azySaleLine?.price,
+                                              quantity: _azySaleLine?.quantity,
+                                            ),
+                                            saleCommission: azyCreatorCommission(
+                                              azySaleAmount(
+                                                totalPrice: _azySaleLine?.totalPrice,
+                                                price: _azySaleLine?.price,
+                                                quantity: _azySaleLine?.quantity,
+                                              ),
+                                              _azySaleLine?.promotionCommisionRate,
+                                            ),
                                             saleQuantity: FFAppState()
                                                 .PaymentFlow
                                                 .paymentCart
@@ -2936,6 +2991,13 @@ class _PaymentCheckerWidgetState extends State<PaymentCheckerWidget> {
 
     super.dispose();
   }
+
+  /// The cart line whose sale is being recorded. The payment flow walks the
+  /// cart from the last line to the first.
+  UserCartItemsStruct? get _azySaleLine =>
+      FFAppState().PaymentFlow.paymentCart.cartItems.elementAtOrNull(
+            FFAppState().PaymentFlow.paymentCartCount - 1,
+          );
 
   @override
   Widget build(BuildContext context) {

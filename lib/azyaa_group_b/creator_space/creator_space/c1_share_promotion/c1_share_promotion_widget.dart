@@ -205,7 +205,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                     FFButtonWidget(
                       onPressed: () async {
                         await Clipboard.setData(
-                            ClipboardData(text: widget.promotionURL!));
+                            ClipboardData(text: widget.promotionURL ?? ''));
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(
@@ -292,7 +292,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       await launchURL(
-                          'https://wa.me/?text=${widget.promotionURL}');
+                          'https://wa.me/?text=${Uri.encodeComponent(widget.promotionURL ?? '')}');
                     },
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -331,7 +331,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       await launchURL(
-                          'https://www.facebook.com/sharer/sharer.php?u=${widget.promotionURL}');
+                          'https://www.facebook.com/sharer/sharer.php?u=${Uri.encodeComponent(widget.promotionURL ?? '')}');
                     },
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -370,7 +370,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       await launchURL(
-                          'https://www.instagram.com/stories/create/?media=${widget.promotionURL}');
+                          'https://www.instagram.com/stories/create/?media=${Uri.encodeComponent(widget.promotionURL ?? '')}');
                     },
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -409,7 +409,7 @@ class _C1SharePromotionWidgetState extends State<C1SharePromotionWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       await launchURL(
-                          'https://twitter.com/intent/tweet?text=${widget.promotionURL}');
+                          'https://twitter.com/intent/tweet?text=${Uri.encodeComponent(widget.promotionURL ?? '')}');
                     },
                     child: Column(
                       mainAxisSize: MainAxisSize.max,

@@ -11,6 +11,8 @@
     <key>com.apple.developer.associated-domains</key>
     <array>
       <string>applinks:azyaa.ai</string>
+      <string>applinks:azyaa-link.pages.dev</string>
+      <string>applinks:link.azyaa.ai</string>
     </array>
   </dict>
 </plist>

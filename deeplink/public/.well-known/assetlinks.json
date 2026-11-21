@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.azya.app",
+      "sha256_cert_fingerprints": [
+        "5A:58:08:02:DC:A8:1F:F7:99:89:57:5E:45:EF:F0:8A:44:BE:D9:19:A7:AF:59:BA:91:DD:61:F4:C4:67:77:D1"
+      ]
+    }
+  }
+]

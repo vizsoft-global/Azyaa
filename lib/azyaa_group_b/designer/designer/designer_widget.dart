@@ -1,3 +1,4 @@
+import '/backend/links/azy_links.dart';
 import '/custom_code/widgets/azy_scroll_refresh.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
@@ -144,74 +145,14 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                         ),
                         showLoadingIndicator: true,
                         onPressed: () async {
-                          _model.idmapDoc = await queryIdMapRecordOnce(
-                            queryBuilder: (idMapRecord) => idMapRecord.where(
-                              'type',
-                              isEqualTo: 'Main',
-                            ),
-                            singleRecord: true,
-                          ).then((s) => s.firstOrNull);
-                          _model.designerDoc = await queryUsersRecordOnce(
-                            queryBuilder: (usersRecord) => usersRecord.where(
-                              'uid',
-                              isEqualTo: widget.designerUid,
-                            ),
-                            singleRecord: true,
-                          ).then((s) => s.firstOrNull);
-                          _model.dubshortlink =
-                              await DuoDeeplinkGroup.createLinkCall.call(
-                            url: 'https://azyaa.ai',
-                            title: _model.designerDoc?.designerMainInfo
-                                .designerInfo.name,
-                            image: _model.designerDoc?.designerMainInfo
-                                .designerInfo.brandPhoto,
-                            ios:
-                                'https://azyaa.ai/azyaa-designer?designerUid=${widget.designerUid}',
-                            domain: 'azyaa.link',
-                            externalID:
-                                '${currentUserUid}-DS${_model.idmapDoc?.shareLinkId.toString()}',
-                            android:
-                                'https://azyaa.ai/azyaa-designer?designerUid=${widget.designerUid}',
-                          );
-
-                          if ((_model.dubshortlink?.succeeded ?? true)) {
+                          // A link the app itself opens; see AzyLinks.
+                          final link = AzyLinks.designerOrNull(widget.designerUid);
+                          if (link != null) {
                             await Share.share(
-                              DuoDeeplinkGroup.createLinkCall.shortLink(
-                                (_model.dubshortlink?.jsonBody ?? ''),
-                              )!,
-                              sharePositionOrigin:
-                                  getWidgetBoundingBox(context),
-                            );
-
-                            await _model.idmapDoc!.reference.update({
-                              ...mapToFirestore(
-                                {
-                                  'share_link_id': FieldValue.increment(1),
-                                },
-                              ),
-                            });
-                          } else {
-                            await showDialog(
-                              context: context,
-                              builder: (alertDialogContext) {
-                                return WebViewAware(
-                                  child: AlertDialog(
-                                    content:
-                                        const Text('Server busy try after sometime.'),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () =>
-                                            Navigator.pop(alertDialogContext),
-                                        child: const Text('Ok'),
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              },
+                              link,
+                              sharePositionOrigin: getWidgetBoundingBox(context),
                             );
                           }
-
-                          safeSetState(() {});
                         },
                       ),
                     ),

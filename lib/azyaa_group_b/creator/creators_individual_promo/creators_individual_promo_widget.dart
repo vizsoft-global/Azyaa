@@ -1,3 +1,4 @@
+import '/backend/links/azy_links.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
@@ -122,95 +123,14 @@ class _CreatorsIndividualPromoWidgetState
                         ),
                         showLoadingIndicator: true,
                         onPressed: () async {
-                          _model.idmapDoc = await queryIdMapRecordOnce(
-                            queryBuilder: (idMapRecord) => idMapRecord.where(
-                              'type',
-                              isEqualTo: 'Main',
-                            ),
-                            singleRecord: true,
-                          ).then((s) => s.firstOrNull);
-                          _model.creatorDoc = await queryUsersRecordOnce(
-                            queryBuilder: (usersRecord) => usersRecord.where(
-                              'uid',
-                              isEqualTo: widget.creatorUid,
-                            ),
-                            singleRecord: true,
-                          ).then((s) => s.firstOrNull);
-                          _model.dubshortlink =
-                              await DuoDeeplinkGroup.createLinkCall.call(
-                            url: 'https://azyaa.ai',
-                            title: valueOrDefault<String>(
-                              _model.creatorDoc?.creatorMainInfo
-                                  .creatorPromotions
-                                  .where((e) => e.promotionId == widget.promo)
-                                  .toList()
-                                  .firstOrNull
-                                  ?.promotionCaption,
-                              '-',
-                            ),
-                            description: valueOrDefault<String>(
-                              _model.creatorDoc?.creatorMainInfo
-                                  .creatorPromotions
-                                  .where((e) => e.promotionId == widget.promo)
-                                  .toList()
-                                  .firstOrNull
-                                  ?.promotionDescription,
-                              '-',
-                            ),
-                            image: _model
-                                .creatorDoc?.creatorMainInfo.creatorPromotions
-                                .where((e) => e.promotionId == widget.promo)
-                                .toList()
-                                .firstOrNull
-                                ?.promotionImages
-                                .firstOrNull,
-                            ios:
-                                'https://azyaa.ai/azyaa-creator-promo?promo=${widget.promo}&creatorUid=${widget.creatorUid}',
-                            domain: 'azyaa.link',
-                            externalID:
-                                '${currentUserUid}-PR${_model.idmapDoc?.shareLinkId.toString()}',
-                            android:
-                                'https://azyaa.ai/azyaa-creator-promo?promo=${widget.promo}&creatorUid=${widget.creatorUid}',
-                          );
-
-                          if ((_model.dubshortlink?.succeeded ?? true)) {
+                          // A link the app itself opens; see AzyLinks.
+                          final link = AzyLinks.promoOrNull(widget.creatorUid, widget.promo);
+                          if (link != null) {
                             await Share.share(
-                              DuoDeeplinkGroup.createLinkCall.shortLink(
-                                (_model.dubshortlink?.jsonBody ?? ''),
-                              )!,
-                              sharePositionOrigin:
-                                  getWidgetBoundingBox(context),
-                            );
-
-                            await _model.idmapDoc!.reference.update({
-                              ...mapToFirestore(
-                                {
-                                  'share_link_id': FieldValue.increment(1),
-                                },
-                              ),
-                            });
-                          } else {
-                            await showDialog(
-                              context: context,
-                              builder: (alertDialogContext) {
-                                return WebViewAware(
-                                  child: AlertDialog(
-                                    content:
-                                        const Text('Server busy try after sometime.'),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () =>
-                                            Navigator.pop(alertDialogContext),
-                                        child: const Text('Ok'),
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              },
+                              link,
+                              sharePositionOrigin: getWidgetBoundingBox(context),
                             );
                           }
-
-                          safeSetState(() {});
                         },
                       ),
                     ),

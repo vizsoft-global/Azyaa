@@ -1,3 +1,4 @@
+import '/backend/creator/creator_sales.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -151,20 +152,34 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                   }
                   List<OrdersRecord> containerOrdersRecordList = snapshot.data!;
 
+                  // Real figures for the four tiles below, from this creator's lines on
+                  // completed orders. Paid-out commission is whatever the promotions
+                  // record; it stays at zero until payouts exist.
+                  final azyTotals = azyCreatorTotals(
+                    containerOrdersRecordList.expand(
+                      (order) => order.orderItems.cartItems
+                          .where((line) => line.creatorRef == currentUserReference)
+                          .map(
+                            (line) => (
+                              totalPrice: line.totalPrice,
+                              price: line.price,
+                              quantity: line.quantity,
+                              ratePercent: line.promotionCommisionRate,
+                            ),
+                          ),
+                    ),
+                    withdrawals: (currentUserDocument?.creatorMainInfo.creatorPromotions ??
+                            const <CreatorPromotionsStruct>[])
+                        .fold<double>(0.0, (sum, promo) => sum + promo.promotionWithdrawals),
+                  );
+
                   return Container(
                     decoration: const BoxDecoration(),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          if (responsiveVisibility(
-                            context: context,
-                            phone: false,
-                            tablet: false,
-                            tabletLandscape: false,
-                            desktop: false,
-                          ))
-                            Padding(
+                          Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 16.0),
                               child: Wrap(
@@ -329,11 +344,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                             text: TextSpan(
                                               children: [
                                                 TextSpan(
-                                                  text: FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    '5pzyzgxc' /* 400  */,
-                                                  ),
+                                                  text: azyKd(azyTotals.earnings),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -422,11 +433,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                             text: TextSpan(
                                               children: [
                                                 TextSpan(
-                                                  text: FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    '6zys7q66' /* 40  */,
-                                                  ),
+                                                  text: azyKd(azyTotals.withdrawals),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -515,11 +522,7 @@ class _S3QuickStatsWidgetState extends State<S3QuickStatsWidget> {
                                             text: TextSpan(
                                               children: [
                                                 TextSpan(
-                                                  text: FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    'emxdq7qp' /* 20 */,
-                                                  ),
+                                                  text: azyKd(azyTotals.balance),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium

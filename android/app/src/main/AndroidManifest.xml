@@ -42,6 +42,33 @@
         <category android:name="android.intent.category.BROWSABLE"/>
         <data android:scheme="https" android:host="v2qlt.test-app.link"/>
       </intent-filter>
+      <!-- Azyaa share links (lib/backend/links/azy_links.dart, deeplink/).
+           The host must serve /.well-known/assetlinks.json naming this app's
+           signing certificate, or Android opens the link in the browser
+           instead. link.azyaa.ai is reserved for moving the links to Azyaa's
+           own domain later. -->
+      <intent-filter android:autoVerify="true">
+        <action android:name="android.intent.action.VIEW"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <category android:name="android.intent.category.BROWSABLE"/>
+        <data android:scheme="https"/>
+        <data android:host="azyaa-link.pages.dev"/>
+        <data android:pathPrefix="/p/"/>
+        <data android:pathPrefix="/creator/"/>
+        <data android:pathPrefix="/designer/"/>
+        <data android:pathPrefix="/promo/"/>
+      </intent-filter>
+      <intent-filter android:autoVerify="true">
+        <action android:name="android.intent.action.VIEW"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <category android:name="android.intent.category.BROWSABLE"/>
+        <data android:scheme="https"/>
+        <data android:host="link.azyaa.ai"/>
+        <data android:pathPrefix="/p/"/>
+        <data android:pathPrefix="/creator/"/>
+        <data android:pathPrefix="/designer/"/>
+        <data android:pathPrefix="/promo/"/>
+      </intent-filter>
       <!-- Start of Launch App -->
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>

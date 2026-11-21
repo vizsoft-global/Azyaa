@@ -1,3 +1,4 @@
+import '/backend/links/azy_links.dart';
 import '/azyaa_group_a/home/components/product_gallery_viewer/product_gallery_viewer.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/virtual_try_on/v_t_o_begin/v_t_o_begin_widget.dart';
@@ -979,98 +980,14 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                 ),
                                                 showLoadingIndicator: true,
                                                 onPressed: () async {
-                                                  _model.idmapDoc =
-                                                      await queryIdMapRecordOnce(
-                                                    queryBuilder:
-                                                        (idMapRecord) =>
-                                                            idMapRecord.where(
-                                                      'type',
-                                                      isEqualTo: 'Main',
-                                                    ),
-                                                    singleRecord: true,
-                                                  ).then((s) => s.firstOrNull);
-                                                  _model.dubshortlink =
-                                                      await DuoDeeplinkGroup
-                                                          .createLinkCall
-                                                          .call(
-                                                    url: 'https://azyaa.ai',
-                                                    title: stackProductsRecord
-                                                        .productInfo.name,
-                                                    description:
-                                                        'Azyaa Product',
-                                                    image: stackProductsRecord
-                                                        .productInfo
-                                                        .featureImage,
-                                                    ios:
-                                                        'azyaa://azyaa.ai/azyaa-producttest?productID=${stackProductsRecord.productId}',
-                                                    domain: 'azyaa.link',
-                                                    externalID:
-                                                        '${currentUserUid}-${_model.idmapDoc?.shareLinkId.toString()}',
-                                                    android:
-                                                        'azyaa://azyaa.ai/azyaa-producttest?productID=${stackProductsRecord.productId}',
-                                                  );
-
-                                                  if ((_model.dubshortlink
-                                                          ?.succeeded ??
-                                                      true)) {
+                                                  // A link the app itself opens; see AzyLinks.
+                                                  final link = AzyLinks.productOrNull(stackProductsRecord.productId);
+                                                  if (link != null) {
                                                     await Share.share(
-                                                      DuoDeeplinkGroup
-                                                          .createLinkCall
-                                                          .shortLink(
-                                                        (_model.dubshortlink
-                                                                ?.jsonBody ??
-                                                            ''),
-                                                      )!,
-                                                      sharePositionOrigin:
-                                                          getWidgetBoundingBox(
-                                                              context),
-                                                    );
-
-                                                    await _model
-                                                        .idmapDoc!.reference
-                                                        .update({
-                                                      ...mapToFirestore(
-                                                        {
-                                                          'share_link_id':
-                                                              FieldValue
-                                                                  .increment(1),
-                                                        },
-                                                      ),
-                                                    });
-                                                  } else {
-                                                    await showDialog(
-                                                      context: context,
-                                                      builder:
-                                                          (alertDialogContext) {
-                                                        return WebViewAware(
-                                                          child: AlertDialog(
-                                                            title: Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                              getJsonField(
-                                                                (_model.dubshortlink
-                                                                        ?.jsonBody ??
-                                                                    ''),
-                                                                r'''$''',
-                                                              )?.toString(),
-                                                              '-',
-                                                            )),
-                                                            actions: [
-                                                              TextButton(
-                                                                onPressed: () =>
-                                                                    Navigator.pop(
-                                                                        alertDialogContext),
-                                                                child:
-                                                                    const Text('Ok'),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        );
-                                                      },
+                                                      link,
+                                                      sharePositionOrigin: getWidgetBoundingBox(context),
                                                     );
                                                   }
-
-                                                  safeSetState(() {});
                                                 },
                                               ),
                                             ),
@@ -3862,7 +3779,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                   ..promotionStartDate = functions.presentDateFromZerotime()
                                                                                   ..promotionEndDate = stackProductsRecord.productAuthorizer.affiliateEndDate,
                                                                               );
-                                                                              _model.productUrl = 'https://azyaa.kw${_model.promotion?.promotionCode}';
+                                                                              _model.productUrl = AzyLinks.promoOrNull(currentUserUid, _model.promotion?.promotionId);
                                                                               _model.updatePromotionStruct(
                                                                                 (e) => e..promotionUrl = _model.productUrl,
                                                                               );
@@ -4468,8 +4385,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                                                                                 ..promotionStartDate = functions.presentDateFromZerotime()
                                                                                 ..promotionEndDate = stackProductsRecord.productAuthorizer.affiliateEndDate,
                                                                             );
-                                                                            _model.productUrl =
-                                                                                'https://azyaa.kw${_model.promotion?.promotionCode}';
+                                                                            _model.productUrl = AzyLinks.promoOrNull(currentUserUid, _model.promotion?.promotionId);
                                                                             _model.updatePromotionStruct(
                                                                               (e) => e..promotionUrl = _model.productUrl,
                                                                             );

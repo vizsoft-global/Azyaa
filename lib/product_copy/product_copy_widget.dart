@@ -1,3 +1,4 @@
+import '/backend/links/azy_links.dart';
 import '/azyaa_group_a/home/components/product_gallery_viewer/product_gallery_viewer.dart';
 import '/azyaa_group_a/home/components/product_purchase_panel/product_purchase_panel_widget.dart';
 import '/auth/firebase_auth/auth_util.dart';
@@ -1012,35 +1013,14 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                   ),
                                                   showLoadingIndicator: true,
                                                   onPressed: () async {
-                                                    _model.newlink =
-                                                        await actions
-                                                            .generateLinkNew(
-                                                      context,
-                                                      '/azyaa-product',
-                                                      stackProductsRecord
-                                                          .productInfo.name,
-                                                      'Azyaa Product',
-                                                      <String, String>{
-                                                        'page_name': 'Product',
-                                                        'page_parameter':
-                                                            stackProductsRecord
-                                                                .reference.id,
-                                                      },
-                                                      <String, String>{
-                                                        'channel': 'Share',
-                                                        'feature': 'feature',
-                                                        'campaign': 'campaign',
-                                                        'stage': 'stage',
-                                                      },
-                                                    );
-                                                    await Share.share(
-                                                      _model.newlink!,
-                                                      sharePositionOrigin:
-                                                          getWidgetBoundingBox(
-                                                              context),
-                                                    );
-
-                                                    safeSetState(() {});
+                                                    // A link the app itself opens; see AzyLinks.
+                                                    final link = AzyLinks.productOrNull(stackProductsRecord.productId);
+                                                    if (link != null) {
+                                                      await Share.share(
+                                                        link,
+                                                        sharePositionOrigin: getWidgetBoundingBox(context),
+                                                      );
+                                                    }
                                                   },
                                                 ),
                                               ),
@@ -3807,7 +3787,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                   ..promotionStartDate = functions.presentDateFromZerotime()
                                                                                   ..promotionEndDate = stackProductsRecord.productAuthorizer.affiliateEndDate,
                                                                               );
-                                                                              _model.productUrl = 'https://azyaa.kw${_model.promotion?.promotionCode}';
+                                                                              _model.productUrl = AzyLinks.promoOrNull(currentUserUid, _model.promotion?.promotionId);
                                                                               _model.updatePromotionStruct(
                                                                                 (e) => e..promotionUrl = _model.productUrl,
                                                                               );
@@ -4417,8 +4397,7 @@ class _ProductCopyWidgetState extends State<ProductCopyWidget> {
                                                                                 ..promotionStartDate = functions.presentDateFromZerotime()
                                                                                 ..promotionEndDate = stackProductsRecord.productAuthorizer.affiliateEndDate,
                                                                             );
-                                                                            _model.productUrl =
-                                                                                'https://azyaa.kw${_model.promotion?.promotionCode}';
+                                                                            _model.productUrl = AzyLinks.promoOrNull(currentUserUid, _model.promotion?.promotionId);
                                                                             _model.updatePromotionStruct(
                                                                               (e) => e..promotionUrl = _model.productUrl,
                                                                             );
