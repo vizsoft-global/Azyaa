@@ -1,3 +1,4 @@
+import '/custom_code/widgets/azy_scroll_refresh.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_navigation_bar/universal_navigation_bar_widget.dart';
@@ -24,6 +25,9 @@ class ShopModel extends FlutterFlowModel<ShopWidget> {
 
   /// Recent shop searches, loaded from local storage on first build.
   List<String> recentShopSearches = const [];
+
+  /// Shows the product list a page at a time; grows as the user scrolls.
+  final AzyPager pager = AzyPager();
 
   ///  State fields for stateful widgets in this page.
 

@@ -1,3 +1,5 @@
+import '/custom_code/widgets/azy_scroll_refresh.dart';
+import '/backend/inventory/stock_service.dart';
 import '/azyaa_group_a/home/components/blank_loading/blank_loading_widget.dart';
 import '/azyaa_group_a/home/components/category_style_home/category_style_home_widget.dart';
 import '/azyaa_group_a/home/components/emptysearch/emptysearch_widget.dart';
@@ -48,6 +50,16 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
     _model.dispose();
 
     super.dispose();
+  }
+
+  /// Pull to refresh. Rebuilding re-runs every query on the page, and the
+  /// stock numbers are looked up again alongside.
+  Future<void> _azyRefresh() async {
+    final stock = AzyInventoryStock.instance.refresh();
+    safeSetState(() {
+      _model.firestoreRequestCompleter = null;
+    });
+    await azyRefreshHold(stock);
   }
 
   @override
@@ -148,7 +160,10 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
             ),
             body: SafeArea(
               top: true,
-              child: SingleChildScrollView(
+              child: AzyScrollRefresh(
+                onRefresh: _azyRefresh,
+                child: SingleChildScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -912,6 +927,7 @@ class _HomeSearchWidgetState extends State<HomeSearchWidget> {
                       .addToStart(const SizedBox(height: 16.0))
                       .addToEnd(const SizedBox(height: 16.0)),
                 ),
+              ),
               ),
             ),
           ),

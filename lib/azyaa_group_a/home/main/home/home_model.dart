@@ -1,3 +1,4 @@
+import '/custom_code/widgets/azy_scroll_refresh.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/home_app_bar/home_app_bar_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_navigation_bar/universal_navigation_bar_widget.dart';
@@ -32,6 +33,17 @@ class HomeModel extends FlutterFlowModel<HomeWidget> {
       ? bannerListController!.page!.round()
       : 0;
   Completer<List<ProductsRecord>>? firestoreRequestCompleter;
+
+  /// How many popular products the home page asks for. Starts at one page and
+  /// grows by a page each time the scroll nears the end.
+  int popularLimit = kAzyPageSize;
+
+  /// How many the last popular query returned. Fewer than [popularLimit] means
+  /// the server has no more.
+  int popularLoaded = 0;
+
+  /// True while a popular query is still on its way.
+  bool popularFetching = false;
   // Model for Universal_NavigationBar component.
   late UniversalNavigationBarModel universalNavigationBarModel;
   // Model for shortlist_icon component.

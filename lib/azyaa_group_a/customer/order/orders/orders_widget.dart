@@ -1,3 +1,5 @@
+import '/custom_code/widgets/azy_scroll_refresh.dart';
+import '/backend/inventory/stock_service.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/order/orders_comp/orders_comp_widget.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
@@ -48,6 +50,14 @@ class _OrdersWidgetState extends State<OrdersWidget>
     _model.dispose();
 
     super.dispose();
+  }
+
+  /// Pull to refresh. Rebuilding re-runs every query on the page, and the
+  /// stock numbers are looked up again alongside.
+  Future<void> _azyRefresh() async {
+    final stock = AzyInventoryStock.instance.refresh();
+    safeSetState(() {});
+    await azyRefreshHold(stock);
   }
 
   @override
@@ -211,7 +221,10 @@ class _OrdersWidgetState extends State<OrdersWidget>
                                     child: TabBarView(
                                       controller: _model.tabBarController,
                                       children: [
-                                        SingleChildScrollView(
+                                        AzyScrollRefresh(
+                                          onRefresh: _azyRefresh,
+                                          child: SingleChildScrollView(
+                                            physics: const AlwaysScrollableScrollPhysics(),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -587,7 +600,11 @@ class _OrdersWidgetState extends State<OrdersWidget>
                                                     const SizedBox(height: 12.0)),
                                           ),
                                         ),
-                                        SingleChildScrollView(
+                                        ),
+                                        AzyScrollRefresh(
+                                          onRefresh: _azyRefresh,
+                                          child: SingleChildScrollView(
+                                            physics: const AlwaysScrollableScrollPhysics(),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -973,7 +990,11 @@ class _OrdersWidgetState extends State<OrdersWidget>
                                                     const SizedBox(height: 12.0)),
                                           ),
                                         ),
-                                        SingleChildScrollView(
+                                        ),
+                                        AzyScrollRefresh(
+                                          onRefresh: _azyRefresh,
+                                          child: SingleChildScrollView(
+                                            physics: const AlwaysScrollableScrollPhysics(),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -1359,6 +1380,7 @@ class _OrdersWidgetState extends State<OrdersWidget>
                                                 .addToEnd(
                                                     const SizedBox(height: 12.0)),
                                           ),
+                                        ),
                                         ),
                                       ],
                                     ),

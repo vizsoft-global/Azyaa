@@ -1,3 +1,4 @@
+import '/custom_code/widgets/azy_scroll_refresh.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
 import '/azyaa_group_a/home/components/empty/empty_widget.dart';
@@ -58,6 +59,23 @@ class _ProductListWidgetState extends State<ProductListWidget> {
     _model.dispose();
 
     super.dispose();
+  }
+
+  /// Pull to refresh: back to the first page, queries run again, and the stock
+  /// numbers are looked up again alongside.
+  Future<void> _azyRefresh() async {
+    final stock = AzyInventoryStock.instance.refresh();
+    safeSetState(() {
+      _model.pager.reset();
+    });
+    await azyRefreshHold(stock);
+  }
+
+  /// Shows the next page of products once the scroll nears the end.
+  void _azyLoadMore() {
+    if (_model.pager.loadMore()) {
+      safeSetState(() {});
+    }
   }
 
   @override
@@ -124,7 +142,11 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                     updateCallback: () => safeSetState(() {}),
                     child: const AppUpdateCheckerWidget(),
                   ),
-                  SingleChildScrollView(
+                  AzyScrollRefresh(
+                    onRefresh: _azyRefresh,
+                    onNearEnd: _azyLoadMore,
+                    child: SingleChildScrollView(
+                      physics: const AlwaysScrollableScrollPhysics(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -207,7 +229,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                   0.0),
                                                       child: Builder(
                                                         builder: (context) {
-                                                          final allProductList = productList1ProductsRecordList
+                                                          final allProductList = _model.pager.window(productList1ProductsRecordList
                                                               .where((e) => (FFAppState().UserFilter.filterStatus ==
                                                                           'set') &&
                                                                       (FFAppState()
@@ -227,7 +249,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                   keyOf: (e) =>
                                                                       e.createdAt!,
                                                                   desc: true)
-                                                              .toList();
+                                                              .toList());
                                                           if (allProductList
                                                               .isEmpty) {
                                                             return Center(
@@ -336,7 +358,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                   0.0),
                                                       child: Builder(
                                                         builder: (context) {
-                                                          final allProductList = productList1ProductsRecordList
+                                                          final allProductList = _model.pager.window(productList1ProductsRecordList
                                                               .where((e) => (FFAppState().UserFilter.filterStatus == 'set') &&
                                                                       (FFAppState().UserFilter.productId.length >
                                                                           0)
@@ -360,7 +382,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                           .isRecommendedProduct
                                                                           .toString(),
                                                                   desc: false)
-                                                              .toList();
+                                                              .toList());
                                                           if (allProductList
                                                               .isEmpty) {
                                                             return Center(
@@ -465,7 +487,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                   0.0),
                                                       child: Builder(
                                                         builder: (context) {
-                                                          final allProductList = productList1ProductsRecordList
+                                                          final allProductList = _model.pager.window(productList1ProductsRecordList
                                                               .where((e) => (FFAppState().UserFilter.filterStatus ==
                                                                           'set') &&
                                                                       (FFAppState()
@@ -486,7 +508,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                       .product
                                                                       .productPrice,
                                                                   desc: false)
-                                                              .toList();
+                                                              .toList());
                                                           if (allProductList
                                                               .isEmpty) {
                                                             return Center(
@@ -591,7 +613,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                   0.0),
                                                       child: Builder(
                                                         builder: (context) {
-                                                          final allProductList = productList1ProductsRecordList
+                                                          final allProductList = _model.pager.window(productList1ProductsRecordList
                                                               .where((e) => (FFAppState().UserFilter.filterStatus ==
                                                                           'set') &&
                                                                       (FFAppState()
@@ -612,7 +634,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                       .product
                                                                       .productPrice,
                                                                   desc: true)
-                                                              .toList();
+                                                              .toList());
                                                           if (allProductList
                                                               .isEmpty) {
                                                             return Center(
@@ -722,7 +744,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                   16.0),
                                                       child: Builder(
                                                         builder: (context) {
-                                                          final productList = productList1ProductsRecordList
+                                                          final productList = _model.pager.window(productList1ProductsRecordList
                                                               .where((e) => (FFAppState().UserFilter.filterStatus ==
                                                                           'set') &&
                                                                       (FFAppState()
@@ -742,7 +764,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                   keyOf: (e) =>
                                                                       e.createdAt!,
                                                                   desc: true)
-                                                              .toList();
+                                                              .toList());
                                                           if (productList
                                                               .isEmpty) {
                                                             return Center(
@@ -849,7 +871,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                   16.0),
                                                       child: Builder(
                                                         builder: (context) {
-                                                          final productList = productList1ProductsRecordList
+                                                          final productList = _model.pager.window(productList1ProductsRecordList
                                                               .where((e) => (FFAppState().UserFilter.filterStatus == 'set') &&
                                                                       (FFAppState().UserFilter.productId.length >
                                                                           0)
@@ -873,7 +895,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                           .isRecommendedProduct
                                                                           .toString(),
                                                                   desc: false)
-                                                              .toList();
+                                                              .toList());
                                                           if (productList
                                                               .isEmpty) {
                                                             return EmptyWidget(
@@ -972,7 +994,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                   16.0),
                                                       child: Builder(
                                                         builder: (context) {
-                                                          final productList = productList1ProductsRecordList
+                                                          final productList = _model.pager.window(productList1ProductsRecordList
                                                               .where((e) => (FFAppState().UserFilter.filterStatus ==
                                                                           'set') &&
                                                                       (FFAppState()
@@ -993,7 +1015,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                       .product
                                                                       .productPrice,
                                                                   desc: false)
-                                                              .toList();
+                                                              .toList());
                                                           if (productList
                                                               .isEmpty) {
                                                             return Center(
@@ -1095,7 +1117,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                   16.0),
                                                       child: Builder(
                                                         builder: (context) {
-                                                          final productList = productList1ProductsRecordList
+                                                          final productList = _model.pager.window(productList1ProductsRecordList
                                                               .where((e) => (FFAppState().UserFilter.filterStatus ==
                                                                           'set') &&
                                                                       (FFAppState()
@@ -1116,7 +1138,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                                                                       .product
                                                                       .productPrice,
                                                                   desc: true)
-                                                              .toList();
+                                                              .toList());
                                                           if (productList
                                                               .isEmpty) {
                                                             return Center(
@@ -1222,6 +1244,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                           .divide(const SizedBox(height: 8.0))
                           .addToStart(const SizedBox(height: 16.0)),
                     ),
+                  ),
                   ),
                   Align(
                     alignment: const AlignmentDirectional(0.0, 1.0),

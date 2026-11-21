@@ -1,3 +1,4 @@
+import '/custom_code/widgets/azy_scroll_refresh.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
@@ -61,6 +62,23 @@ class _DesignerWidgetState extends State<DesignerWidget> {
     _model.dispose();
 
     super.dispose();
+  }
+
+  /// Pull to refresh: back to the first page, queries run again, and the stock
+  /// numbers are looked up again alongside.
+  Future<void> _azyRefresh() async {
+    final stock = AzyInventoryStock.instance.refresh();
+    safeSetState(() {
+      _model.pager.reset();
+    });
+    await azyRefreshHold(stock);
+  }
+
+  /// Shows the next page of products once the scroll nears the end.
+  void _azyLoadMore() {
+    if (_model.pager.loadMore()) {
+      safeSetState(() {});
+    }
   }
 
   @override
@@ -245,7 +263,11 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                           ? columnUsersRecordList.first
                           : null;
 
-                      return SingleChildScrollView(
+                      return AzyScrollRefresh(
+                        onRefresh: _azyRefresh,
+                        onNearEnd: _azyLoadMore,
+                        child: SingleChildScrollView(
+                          physics: const AlwaysScrollableScrollPhysics(),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -970,11 +992,11 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                                       // re-emit just because stock arrived, so
                                       // without this the order would stay stale.
                                       final orderedCollection =
-                                          AzyInventoryStock.instance
+                                          _model.pager.window(AzyInventoryStock.instance
                                               .orderInStockFirst(
                                         designerCollectionGridListProductsRecordList,
                                         (p) => p.product.inventoryId,
-                                      );
+                                      ));
 
                                       return GridView.builder(
                                     padding: EdgeInsets.zero,
@@ -1015,6 +1037,7 @@ class _DesignerWidgetState extends State<DesignerWidget> {
                               .addToStart(const SizedBox(height: 16.0))
                               .addToEnd(const SizedBox(height: 16.0)),
                         ),
+                      ),
                       );
                     },
                   ),
