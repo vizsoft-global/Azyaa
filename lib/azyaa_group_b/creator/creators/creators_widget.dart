@@ -1,3 +1,5 @@
+import '/custom_code/widgets/azy_scroll_refresh.dart';
+import '/backend/inventory/stock_service.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
@@ -76,6 +78,14 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
     super.dispose();
   }
 
+
+  /// Pull to refresh. Rebuilding re-runs every query on the page, and the
+  /// stock numbers are looked up again alongside.
+  Future<void> _azyRefresh() async {
+    final stock = AzyInventoryStock.instance.refresh();
+    safeSetState(() {});
+    await azyRefreshHold(stock);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -351,7 +361,10 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                     child: TabBarView(
                                       controller: _model.tabBarController,
                                       children: [
-                                        SingleChildScrollView(
+                                        AzyScrollRefresh(
+                                          onRefresh: _azyRefresh,
+                                          child: SingleChildScrollView(
+                                            physics: const AlwaysScrollableScrollPhysics(),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             crossAxisAlignment:
@@ -930,6 +943,7 @@ class _CreatorsWidgetState extends State<CreatorsWidget>
                                                 .addToEnd(
                                                     const SizedBox(height: 12.0)),
                                           ),
+                                        ),
                                         ),
                                         Column(
                                           mainAxisSize: MainAxisSize.max,

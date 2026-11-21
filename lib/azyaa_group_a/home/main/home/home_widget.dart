@@ -1,3 +1,4 @@
+import '/custom_code/widgets/azy_scroll_refresh.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/home_app_bar/home_app_bar_widget.dart';
@@ -96,6 +97,33 @@ class _HomeWidgetState extends State<HomeWidget> {
     super.dispose();
   }
 
+  /// Pull to refresh: back to the first page of popular products, queries run
+  /// again, and the stock numbers are looked up again alongside.
+  Future<void> _azyRefresh() async {
+    final stock = AzyInventoryStock.instance.refresh();
+    safeSetState(() {
+      _model.popularLimit = kAzyPageSize;
+      _model.firestoreRequestCompleter = null;
+    });
+    await azyRefreshHold(stock);
+  }
+
+  /// Asks for one more page of popular products once the scroll nears the end.
+  ///
+  /// Skipped while a query is on its way, and once a query has come back with
+  /// fewer products than it asked for, because then there are no more.
+  void _azyLoadMore() {
+    if (_model.popularFetching ||
+        _model.popularLoaded < _model.popularLimit) {
+      return;
+    }
+    safeSetState(() {
+      _model.popularLimit += kAzyPageSize;
+      _model.popularFetching = true;
+      _model.firestoreRequestCompleter = null;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Title(
@@ -173,7 +201,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Expanded(
-                              child: SingleChildScrollView(
+                              child: AzyScrollRefresh(
+                                onRefresh: _azyRefresh,
+                                onNearEnd: _azyLoadMore,
+                                child: SingleChildScrollView(
+                                  physics: const AlwaysScrollableScrollPhysics(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -1547,7 +1579,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       'created_at',
                                                                       descending:
                                                                           true),
-                                                      limit: 20,
+                                                      limit: _model.popularLimit,
                                                     ).then(azyWithStockLoaded)))
                                               .future,
                                           builder: (context, snapshot) {
@@ -1562,6 +1594,14 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             List<ProductsRecord>
                                                 popularProductsRecordList =
                                                 snapshot.data!;
+                                            // Read by _azyLoadMore to decide
+                                            // whether another page is worth
+                                            // asking for.
+                                            _model.popularLoaded =
+                                                popularProductsRecordList.length;
+                                            _model.popularFetching =
+                                                snapshot.connectionState !=
+                                                    ConnectionState.done;
 
                                             return Container(
                                               decoration: const BoxDecoration(),
@@ -1818,7 +1858,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         e.createdAt!,
                                                                     desc: true)
                                                                 .toList()
-                                                                .take(20)
+                                                                .take(_model.popularLimit)
                                                                 .toList(),
                                                             (p) => p
                                                                 .product
@@ -1828,7 +1868,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 .snapshot,
                                                           );
 
-                                                          return InkWell(
+                                                          return Column(
+                                                            mainAxisSize: MainAxisSize.min,
+                                                            children: [
+                                                              InkWell(
                                                             splashColor: Colors
                                                                 .transparent,
                                                             focusColor: Colors
@@ -1890,6 +1933,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 );
                                                               },
                                                             ),
+                                                          ),
+                                                              AzyLoadMoreFooter(
+                                                                visible: _model.popularFetching &&
+                                                                    _model.popularLimit > kAzyPageSize,
+                                                              ),
+                                                            ],
                                                           );
                                                         },
                                                       ),
@@ -1906,6 +1955,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                       .divide(const SizedBox(height: 16.0))
                                       .addToEnd(const SizedBox(height: 16.0)),
                                 ),
+                              ),
                               ),
                             ),
                             Align(

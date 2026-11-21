@@ -1,3 +1,4 @@
+import '/custom_code/widgets/azy_scroll_refresh.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
@@ -14,6 +15,9 @@ class ProductListModel extends FlutterFlowModel<ProductListWidget> {
   double screenwidth = 0.0;
 
   double gridWidth = 0.0;
+
+  /// Shows the product list a page at a time; grows as the user scrolls.
+  final AzyPager pager = AzyPager();
 
   ///  State fields for stateful widgets in this page.
 

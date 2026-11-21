@@ -91,6 +91,19 @@ class AzyInventoryStock extends ChangeNotifier {
     return future;
   }
 
+  /// Looks up again every id already known, for pull to refresh.
+  ///
+  /// Unlike [invalidate] the old numbers stay until the new ones land, so a
+  /// list ordered or filtered by stock does not jump to "everything in stock"
+  /// and back while the lookup runs.
+  Future<void> refresh() {
+    final ids = _known.toList();
+    if (ids.isEmpty) {
+      return Future<void>.value();
+    }
+    return _load(ids);
+  }
+
   /// Discards everything, so the next [ensureLoaded] refetches.
   void invalidate() {
     _stock.clear();

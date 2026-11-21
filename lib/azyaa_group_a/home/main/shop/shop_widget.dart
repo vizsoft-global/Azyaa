@@ -1,3 +1,4 @@
+import '/custom_code/widgets/azy_scroll_refresh.dart';
 import '/auth/base_auth_user_provider.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
@@ -94,6 +95,25 @@ class _ShopWidgetState extends State<ShopWidget> {
         : AzySearchResults.empty;
     _model.searchStatus = canSearch;
     safeSetState(() {});
+  }
+
+  /// Pull to refresh: back to the first page, queries run again, and the stock
+  /// numbers are looked up again alongside.
+  Future<void> _azyRefresh() async {
+    final stock = AzyInventoryStock.instance.refresh();
+    safeSetState(() {
+      _model.firestoreRequestCompleter1 = null;
+      _model.firestoreRequestCompleter2 = null;
+      _model.pager.reset();
+    });
+    await azyRefreshHold(stock);
+  }
+
+  /// Shows the next page of products once the scroll nears the end.
+  void _azyLoadMore() {
+    if (_model.pager.loadMore()) {
+      safeSetState(() {});
+    }
   }
 
   @override
@@ -318,7 +338,11 @@ class _ShopWidgetState extends State<ShopWidget> {
                           child: Stack(
                             children: [
                               if (_model.searchStatus == false)
-                                SingleChildScrollView(
+                                AzyScrollRefresh(
+                                  onRefresh: _azyRefresh,
+                                  onNearEnd: _azyLoadMore,
+                                  child: SingleChildScrollView(
+                                    physics: const AlwaysScrollableScrollPhysics(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
 
@@ -1393,7 +1417,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                               // ordering is correct on the
                                                               // first paint.
                                                               final popularPicks =
-                                                                  AzyInventoryStock
+                                                                  _model.pager.window(AzyInventoryStock
                                                                       .instance
                                                                       .orderInStockFirst(
                                                                 popularProductListProductsRecordList
@@ -1401,7 +1425,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                                                 (p) => p
                                                                     .product
                                                                     .inventoryId,
-                                                              );
+                                                              ));
 
                                                               return RefreshIndicator(
                                                                 color: const Color(
@@ -1479,6 +1503,7 @@ class _ShopWidgetState extends State<ShopWidget> {
                                         ),
                                     ],
                                   ),
+                                ),
                                 ),
                               if (_model.searchStatus == true)
                                 Padding(
