@@ -1,14 +1,10 @@
 import '/custom_code/widgets/azy_scroll_refresh.dart';
+import '/custom_code/widgets/azy_shortlist_body.dart';
 import '/backend/inventory/stock_service.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/azyaa_group_a/customer/zone/user_initial/user_initial_widget.dart';
 import '/azyaa_group_a/home/components/bar/universal_app_bar/universal_app_bar_widget.dart';
-import '/azyaa_group_a/home/components/designer_grid/designer_grid_widget.dart';
-import '/azyaa_group_a/home/components/empty/empty_widget.dart';
-import '/azyaa_group_a/home/components/loading_animation/loading_animation_widget.dart';
-import '/azyaa_group_a/home/components/product_grid/product_grid_widget.dart';
 import '/azyaa_group_b/update_notifier/app_update_checker/app_update_checker_widget.dart';
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
@@ -60,11 +56,14 @@ class _ShortlistWidgetState extends State<ShortlistWidget> {
     super.dispose();
   }
 
+  /// Bumped on pull to refresh so the list loads again.
+  int _azyRefreshTick = 0;
+
   /// Pull to refresh. Rebuilding re-runs every query on the page, and the
   /// stock numbers are looked up again alongside.
   Future<void> _azyRefresh() async {
     final stock = AzyInventoryStock.instance.refresh();
-    safeSetState(() {});
+    safeSetState(() => _azyRefreshTick++);
     await azyRefreshHold(stock);
   }
 
@@ -225,185 +224,9 @@ class _ShortlistWidgetState extends State<ShortlistWidget> {
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: AuthUserStreamWidget(
-                                builder: (context) => Builder(
-                                  builder: (context) {
-                                    final allWishlist1 = (currentUserDocument
-                                                ?.userWishlistItem
-                                                .toList() ??
-                                            [])
-                                        .where((e) => valueOrDefault<bool>(
-                                              () {
-                                                if (_model.choiceChipsValue ==
-                                                    'Product') {
-                                                  return (e.entityType ==
-                                                      'product');
-                                                } else if (_model
-                                                        .choiceChipsValue ==
-                                                    'Designer') {
-                                                  return (e.entityType ==
-                                                      'designer');
-                                                } else if (_model
-                                                        .choiceChipsValue ==
-                                                    'Creator') {
-                                                  return (e.entityType ==
-                                                      'creator');
-                                                } else {
-                                                  return true;
-                                                }
-                                              }(),
-                                              true,
-                                            ))
-                                        .toList();
-                                    if (allWishlist1.isEmpty) {
-                                      return Center(
-                                        child: EmptyWidget(
-                                          messageOne:
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                            'fmcvv2hz' /* Nothing here yet! Start adding... */,
-                                          ),
-                                          image:
-                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/azyaa-0uiv4k/assets/lt4x4jbz3kkp/Group_(2).svg',
-                                          messageTwo:
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                            'q666blv1' /* Go ahead—add your dream picks! */,
-                                          ),
-                                          buttonText:
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                            'f7gafm4z' /* Start adding */,
-                                          ),
-                                        ),
-                                      );
-                                    }
-
-                                    return Wrap(
-                                      spacing: 8.0,
-                                      runSpacing: 24.0,
-                                      alignment: WrapAlignment.start,
-                                      crossAxisAlignment:
-                                          WrapCrossAlignment.start,
-                                      direction: Axis.horizontal,
-                                      runAlignment: WrapAlignment.start,
-                                      verticalDirection: VerticalDirection.down,
-                                      clipBehavior: Clip.none,
-                                      children:
-                                          List.generate(allWishlist1.length,
-                                              (allWishlist1Index) {
-                                        final allWishlist1Item =
-                                            allWishlist1[allWishlist1Index];
-                                        return Stack(
-                                          children: [
-                                            if (allWishlist1Item.entityType ==
-                                                'product')
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 8.0, 24.0),
-                                                child: Container(
-                                                  width: (MediaQuery.sizeOf(
-                                                                      context)
-                                                                  .width <
-                                                              kBreakpointMedium
-                                                          ? 160
-                                                          : 180)
-                                                      .toDouble(),
-                                                  height: 280.0,
-                                                  decoration: const BoxDecoration(),
-                                                  child: StreamBuilder<
-                                                      List<ProductsRecord>>(
-                                                    stream: queryProductsRecord(
-                                                      queryBuilder:
-                                                          (productsRecord) =>
-                                                              productsRecord
-                                                                  .where(
-                                                                    'status',
-                                                                    isEqualTo:
-                                                                        'active',
-                                                                  )
-                                                                  .where(
-                                                                    'product_id',
-                                                                    isEqualTo:
-                                                                        allWishlist1Item
-                                                                            .wishlistItemId,
-                                                                  ),
-                                                      singleRecord: true,
-                                                    ),
-                                                    builder:
-                                                        (context, snapshot) {
-                                                      // Customize what your widget looks like when it's loading.
-                                                      if (!snapshot.hasData) {
-                                                        return Container(
-                                                          width:
-                                                              MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .width *
-                                                                  1.0,
-                                                          height: 150.0,
-                                                          child:
-                                                              const LoadingAnimationWidget(),
-                                                        );
-                                                      }
-                                                      List<ProductsRecord>
-                                                          productGridProductsRecordList =
-                                                          snapshot.data!;
-                                                      // Return an empty Container when the item does not exist.
-                                                      if (snapshot
-                                                          .data!.isEmpty) {
-                                                        return Container();
-                                                      }
-                                                      final productGridProductsRecord =
-                                                          productGridProductsRecordList
-                                                                  .isNotEmpty
-                                                              ? productGridProductsRecordList
-                                                                  .first
-                                                              : null;
-
-                                                      return ProductGridWidget(
-                                                        key: Key(
-                                                            'Key2ey_${allWishlist1Index}_of_${allWishlist1.length}'),
-                                                        product:
-                                                            productGridProductsRecord,
-                                                        checkboxStatus: 'show',
-                                                        checkboxComponentType:
-                                                            'wishlist',
-                                                        wishlistDatatype:
-                                                            allWishlist1Item,
-                                                      );
-                                                    },
-                                                  ),
-                                                ),
-                                              ),
-                                            if ((allWishlist1Item.entityType ==
-                                                    'designer') ||
-                                                (allWishlist1Item.entityType ==
-                                                    'creator'))
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 8.0, 16.0),
-                                                child: Container(
-                                                  width: (MediaQuery.sizeOf(
-                                                                      context)
-                                                                  .width <
-                                                              kBreakpointMedium
-                                                          ? 160
-                                                          : 180)
-                                                      .toDouble(),
-                                                  height: 280.0,
-                                                  decoration: const BoxDecoration(),
-                                                  child: DesignerGridWidget(
-                                                    key: Key(
-                                                        'Keypza_${allWishlist1Index}_of_${allWishlist1.length}'),
-                                                  ),
-                                                ),
-                                              ),
-                                          ],
-                                        );
-                                      }),
-                                    );
-                                  },
+                                builder: (context) => AzyShortlistBody(
+                                  chosen: _model.choiceChipsValue,
+                                  refreshTick: _azyRefreshTick,
                                 ),
                               ),
                             ),
